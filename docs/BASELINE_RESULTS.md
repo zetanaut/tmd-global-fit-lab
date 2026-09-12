@@ -43,4 +43,3 @@ Portable preparation evidence: `validation/port-equivalence-2026-09-12.json`
 checks six DY/SIDIS rows at all three widths. Portable versus original CPU
 predictions and fixed-cotangent VJPs matched exactly in that check; saved-prediction
 differences were <=2.80e-14 fixed sigma. This limited test does not replace PORT.
-

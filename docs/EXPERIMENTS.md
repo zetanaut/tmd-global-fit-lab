@@ -78,4 +78,3 @@ No automatic infinite continuation: at each completed matrix assess whether
 another bounded round is scientifically informative. Inconclusive or negative
 findings are valid outcomes. A genuine new physics/reference question is a
 recorded escalation, not an in-scope optimization tweak.
-

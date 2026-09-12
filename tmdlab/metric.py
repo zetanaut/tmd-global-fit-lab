@@ -54,4 +54,3 @@ class Metric:
             r = residual[ix]/self.sigma[ix]
             return dict(rows=int(r.size), mean=float(r.mean()), rms=float(np.sqrt(np.mean(r*r))), underpredicted=int((residual[ix]>0).sum()))
         return dict(q_per_measurement=q/self.n, finite=True, negative=int((values<0).sum()), zero=int((values==0).sum()), min_T_over_sigma=float((values/self.sigma).min()), high_COMPASS=describe(high), processes={"DY":describe(slice(0,743)), "HERMES":describe(slice(743,1087)), "COMPASS":describe(slice(1087,2290))}, DY_nuisances=dict(zip(names, map(float,eta[:len(names)]))), experimental_nuisance_penalty=float(eta[:len(names)]@eta[:len(names)]), numerical_nuisance_penalty=float(eta[len(names):]@eta[len(names):]), DY_adjusted_RMS_fixed_sigma=float(np.sqrt(np.mean((adjusted/self.sigma[:743])**2))), DY_profile_closure_abs_error=closure)
-

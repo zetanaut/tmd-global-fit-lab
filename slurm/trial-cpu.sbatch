@@ -14,4 +14,3 @@ set -euo pipefail
 : "${TMD_OUTPUT:?absolute output base required}"
 cd "$TMD_REPO"
 exec "$TMD_PYTHON" scripts/array_task.py --tasks "$TMD_TASKS" --index "${SLURM_ARRAY_TASK_ID:-0}" --bundle "$TMD_BUNDLE" --output "$TMD_OUTPUT" --device cpu
-

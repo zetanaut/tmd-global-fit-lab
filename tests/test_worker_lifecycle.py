@@ -59,4 +59,3 @@ def test_budget_stop_is_partial_not_converged(tmp_path,monkeypatch):
     assert summary["stop_reason"]=="call_budget"
     assert summary["counters"]["forwards"]==1
     assert not summary["preflight"].get("passed",False)
-

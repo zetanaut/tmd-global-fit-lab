@@ -56,4 +56,3 @@ class Bundle:
         if not all(np.isfinite(v).all() for v in arrays.values()):
             raise ValueError("nonfinite checkpoint")
         return entry, arrays
-

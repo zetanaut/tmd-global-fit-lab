@@ -71,4 +71,3 @@ def test_json_duplicates_and_path_escape(tmp_path):
 
 def test_canonical_digest_independent_of_dictionary_order():
     assert digest({"a":1,"b":2})==digest({"b":2,"a":1})
-

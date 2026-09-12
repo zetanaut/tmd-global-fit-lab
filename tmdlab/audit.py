@@ -26,4 +26,3 @@ if __name__=="__main__":
     args=p.parse_args(); result=audit(args.bundle,args.out)
     print(result["status"])
     raise SystemExit(0 if result["passed"] else 2)
-

@@ -68,4 +68,3 @@ all2,290 raw observables; plateau uses21 states at unchanged mu; residual change
 are not mislabeled as residual levels; and conclusions qualify censored or
 unconverged comparisons. New implementation/hardware results are not silently
 merged with historical scores as though their optimization histories matched.
-

@@ -18,4 +18,3 @@ title: '[trial/task] '
 
 An issue is not an execution lock. Commit the trial specification and create
 the atomic remote claim before scheduling work.
-

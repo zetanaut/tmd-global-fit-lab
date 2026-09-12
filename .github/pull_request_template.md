@@ -15,4 +15,3 @@ Trial/result/implementation/decision IDs:
 ## Conclusion and next bounded action
 
 Separate execution completion, numerical validity, and scientific conclusions.
-

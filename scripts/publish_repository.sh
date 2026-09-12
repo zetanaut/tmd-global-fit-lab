@@ -18,4 +18,3 @@ fi
 "$gh_bin" repo create "$repo" --private --description 'Portable fixed-physics DY/SIDIS architecture experiments, cluster execution and immutable results' --source . --remote origin
 git -c "credential.https://github.com.helper=!$gh_bin auth git-credential" push -u origin main
 "$gh_bin" repo view "$repo" --json nameWithOwner,url,visibility
-

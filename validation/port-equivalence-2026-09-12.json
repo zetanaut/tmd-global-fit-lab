@@ -27,7 +27,7 @@
       "width": 24
     }
   ],
-  "generated_utc": "2026-09-12T22:58:27Z",
+  "generated_utc": "2026-09-12T23:05:30Z",
   "indices": [
     0,
     100,
@@ -41,10 +41,10 @@
   "schema": "tmd-port-equivalence-v1",
   "scope": "six measured rows, three widths; forward and fixed-cotangent VJP; not a full2290 GPU certificate",
   "source_pins": {
-    "tmdlab/bundle.py": "ad0413d242e2299df256bd0e9465e8bbe46814aeaf9e20ae21b0d9b4f0e57a42",
-    "tmdlab/engine.py": "a019cdf62a0e78124666b55fd432100ff711c2c4207cc2e0e6827bd918ec3cb3",
-    "tmdlab/io.py": "b77f3700325982078dc15b4588cbcd607f5ae806aef4a3dd59e87400fbe58edb",
-    "tmdlab/metric.py": "45a32f3dff8d5b3536fa547bef948579bc82642a7037d8c2b042d557f23a999b",
-    "tmdlab/models.py": "bfad5192a7bb0ec38e909fdfe4180abc8cb889708c3126ed7222fdc5e7c657ca"
+    "tmdlab/bundle.py": "2026b917ec55632168a272e936542ed7032f1dc39e38ae779a8cbf31d1e0ccd0",
+    "tmdlab/engine.py": "a2992e1755cfe842dfc400aba3313e10494b4855148b0af1aa934ebb16b32178",
+    "tmdlab/io.py": "382277539f69fcc5147d413ced61700fcc089ad7439182e8609e8c7791a23206",
+    "tmdlab/metric.py": "5f33ef93e32abcfdf0b5b6bd34df34b1d536b1e28d781af86e8045b2edaec6dc",
+    "tmdlab/models.py": "26a0b07c45d5c447f01338aac830fd7bc920c2c4d47fe7005a53b27913103ea4"
   }
 }

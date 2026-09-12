@@ -106,4 +106,3 @@ class Engine:
         self.model = None
         if self.device.type == "cuda":
             torch.cuda.empty_cache()
-

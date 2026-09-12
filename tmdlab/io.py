@@ -54,4 +54,3 @@ def within(root, relative):
     if not result.is_relative_to(root):
         raise ValueError("artifact symlink escapes bundle")
     return result
-

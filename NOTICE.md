@@ -17,4 +17,3 @@ transcript, credential file or full workspace history is packaged.
 Prepared scripts do not reconstruct experimental measurements, regenerate
 perturbative inputs, or confer permission to change the scientific prescription.
 Public scientific publication and a production extraction require separate review.
-

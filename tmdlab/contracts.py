@@ -34,4 +34,3 @@ def validate_trial(t, *, require_ready=True):
         if type(phase["updates"]) is not int or phase["updates"]<1 or phase["mu"] not in (1e-2,1e-3,1e-4,1e-5,1e-6):
             raise ValueError("invalid preregistered phase")
     return t
-

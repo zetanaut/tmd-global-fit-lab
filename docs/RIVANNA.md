@@ -88,4 +88,3 @@ storage, publish run assets from a GitHub-authenticated workstation and submit
 the result PR. Compute nodes need neither GitHub credentials nor network access.
 UVA scratch is temporary; consult the current retention policy rather than
 assuming archival durability.
-

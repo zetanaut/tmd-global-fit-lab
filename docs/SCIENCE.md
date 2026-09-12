@@ -95,4 +95,3 @@ calibrate any uncertainty decomposition. Persistent deficits support targeted
 future questions, not an irreducible floor, dataset invalidation or a proof
 against universal CS. No production selection, replicas, BNN or public-science
 release is authorized by completing one matrix.
-

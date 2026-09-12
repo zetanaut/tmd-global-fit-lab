@@ -89,4 +89,3 @@ but their adapters/initialization factories still require implementation and
 preregistration. The backlog is detailed enough for another agent to own those
 tasks; they are not falsely labeled ready-to-run models. Existing lower-loss
 historical endpoints remain diagnostic and do not select a production model.
-

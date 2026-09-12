@@ -63,4 +63,3 @@ if __name__=="__main__":
     a=sub.add_parser("pack");a.add_argument("--bundle",required=True);a.add_argument("--out",default="dist/input-assets");a.add_argument("--lock",default="data/baseline-v1.json")
     a=sub.add_parser("fetch");a.add_argument("--lock",default="data/baseline-v1.json");a.add_argument("--cache",default="artifacts/downloads");a.add_argument("--dest",default="inputs");a.add_argument("--gh",default="gh")
     args=p.parse_args();pack(args) if args.command=="pack" else fetch(args)
-

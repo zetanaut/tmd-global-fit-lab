@@ -21,4 +21,3 @@ def test_full_observable_positivity_is_not_clipped():
     m=tiny_metric()
     assert m.score(np.array([-.01,1.,1.]),1e-6) is None
     assert m.score(np.array([0.,1.,1.]),1e-6) is None
-

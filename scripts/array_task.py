@@ -16,4 +16,3 @@ if __name__=="__main__":
     claim=Path(task["claim"]).resolve()
     out=Path(args.output).resolve()/spec["trial_id"]
     os.execv(sys.executable,[sys.executable,"-m","tmdlab.run","--trial",str(trial),"--bundle",str(Path(args.bundle).resolve()),"--out",str(out),"--device",args.device,"--claim",str(claim)])
-

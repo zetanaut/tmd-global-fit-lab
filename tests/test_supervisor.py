@@ -57,4 +57,3 @@ def test_real_sample_peaks_persist(tmp_path):
     assert r["peaks"]["rss_gib"]>=2
     assert r["peaks"]["samples"]>=2
     assert (tmp_path/"resources.ndjson").read_text().strip()
-

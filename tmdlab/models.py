@@ -128,4 +128,3 @@ def put(model, theta):
 
 def schema(model):
     return [{"name": n, "shape": list(p.shape), "dtype": str(p.dtype)} for n,p in model.named_parameters()]
-

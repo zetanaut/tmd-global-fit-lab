@@ -29,4 +29,3 @@ if __name__=="__main__":
             mode,path=line.split("\t",1)
             if mode!="A" and (path.startswith("results/") or path.startswith("trials/")):raise ValueError("immutable result/trial modified or deleted: "+path)
     print(f"validated {len(trials)} trial specs, result records, generated table and Python syntax")
-

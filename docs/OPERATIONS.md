@@ -84,4 +84,3 @@ Keep checkpoints and outputs on shared project/scratch storage during a run;
 copy them to retained storage and GitHub release assets promptly. Never rely on
 scratch as the sole archive. Never run cleanup against a broad home/workspace
 directory. Input bundles and run outputs are excluded from Git history.
-

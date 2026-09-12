@@ -74,4 +74,3 @@ logs, committed files and prompts. Publish from a login/transfer workstation.
 Default repository visibility is private. There is no blanket redistribution
 license for historical scientific assets; see `NOTICE.md`. Do not push raw
 workspace histories, personal onboarding, agent thread IDs or credential stores.
-

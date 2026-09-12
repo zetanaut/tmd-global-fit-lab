@@ -15,4 +15,3 @@ if __name__=="__main__":
             dest=Path("trials")/(trial["trial_id"]+".json")
             if dest.exists():raise ValueError("immutable trial already exists")
             write(dest,trial)
-

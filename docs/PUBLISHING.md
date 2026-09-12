@@ -44,4 +44,3 @@ The original owner-side input export command is documented in
 checkpoints and writes a new transport bundle. Remote agents consume the release
 and never need those original local paths. Do not rebuild the frozen bundle to
 add future checkpoints; implement the separate hashed checkpoint overlay in W02.
-

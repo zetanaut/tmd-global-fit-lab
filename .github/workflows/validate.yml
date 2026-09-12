@@ -31,4 +31,3 @@ jobs:
           else
             python scripts/check_repository.py
           fi
-

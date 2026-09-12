@@ -17,4 +17,3 @@ cd "$TMD_REPO"
 # Keep CUDA_VISIBLE_DEVICES assigned by Slurm; cuda:0 means the allocated GPU.
 # Credentials belong on a transfer/login host, never in this batch environment.
 exec "$TMD_PYTHON" scripts/array_task.py --tasks "$TMD_TASKS" --index "${SLURM_ARRAY_TASK_ID:-0}" --bundle "$TMD_BUNDLE" --output "$TMD_OUTPUT" --device cuda:0
-
