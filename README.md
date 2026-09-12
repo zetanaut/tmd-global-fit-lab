@@ -4,9 +4,12 @@ A portable experiment and results repository for the fixed-physics, unpolarized
 DY/SIDIS b-space architecture study. It is designed for autonomous Codex agents,
 local GPU workstations, and UVA Rivanna/Afton CPU/GPU allocations.
 
-**Status:** repository and numerical input release prepared locally; GitHub
-publication requires the owner's `zetanaut` login. The baseline portable model
-and evaluator pass the recorded six-row CPU comparison against the original
+**Status:** [private GitHub repository](https://github.com/zetanaut/tmd-global-fit-lab)
+and [frozen input release](https://github.com/zetanaut/tmd-global-fit-lab/releases/tag/inputs-baseline-v1)
+published on 12 September 2026. A fresh clone/download passed all release-part,
+4,600 input-file and bundle identity checks; GitHub CPU CI passed all 30 tests.
+See the [publication receipt](validation/publication-2026-09-12.json).
+The baseline portable model and evaluator pass the recorded six-row CPU comparison against the original
 implementation at all three widths. Full 2,290-row CPU/GPU portability trials
 are preregistered, not yet reported as completed. Subsequent architecture phases
 have explicit dependencies and implementation tasks below.
@@ -21,6 +24,7 @@ architecture winner, or an uncertainty estimate.
 
 Read [the scientific contract](docs/SCIENCE.md), [experiment program](docs/EXPERIMENTS.md),
 [historical evidence](docs/BASELINE_RESULTS.md), and [current result ledger](RESULTS.md).
+Coordinate initial access and staged work in the [launch tracker](https://github.com/zetanaut/tmd-global-fit-lab/issues/1).
 
 ## Agent quick start
 
@@ -37,8 +41,9 @@ python scripts/input_assets.py fetch
 python scripts/check_repository.py
 ```
 
-These commands require publication and repository access; they are not evidence
-that publication has already happened. See [publisher setup](docs/PUBLISHING.md).
+These commands require access to this private repository and GitHub CLI
+authentication on the transfer workstation. See [publisher setup](docs/PUBLISHING.md)
+for access and the current private-repository branch-protection limitation.
 The input release is approximately 2.2 GB, split into sub-1-GiB tar assets with
 SHA-256 hashes. It contains the exact 2,290 operator arrays, fixed metric, four
 positive checkpoint starts, and selected original-source provenance. Large
