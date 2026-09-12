@@ -18,7 +18,7 @@
   ],
   "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
   "bundle_json_sha256": "4e8a088fb42c290ca48c3c87cce4fa5f74bda7e2262378f05eb214572c86e283",
-  "publication_status": "prepared_not_uploaded",
+  "publication_status": "uploaded_and_download_verified",
   "repository": "zetanaut/tmd-global-fit-lab",
   "schema": "tmd-input-release-v1",
   "tag": "inputs-baseline-v1"

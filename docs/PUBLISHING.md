@@ -5,11 +5,12 @@ release and access controls must be created before a remote agent can clone/run.
 No password or token should be pasted into an agent conversation.
 
 Authenticate GitHub CLI as `zetanaut` through its supported login flow:
-`gh auth login --hostname github.com --git-protocol https --web`.
+`gh auth login --hostname github.com --git-protocol https --web --scopes workflow`.
 Verify with `gh api user --jq .login` and `gh auth status`.
 See [GitHub CLI authentication](https://cli.github.com/manual/gh_auth_login).
 Use a narrowly scoped dedicated credential for later automation; tokens must
 not appear in clone URLs, scripts, issues, logs or Slurm exports.
+The initial publisher needs workflow permission to push the CPU CI definition.
 
 After content/rights review and a clean committed checkout:
 
@@ -34,6 +35,14 @@ have permission to bypass review or delete historical release assets. A claim
 writer needs permission to create `claims/*` refs; compute jobs need no GitHub
 credential. Configure protections to preserve claim creation while disallowing
 arbitrary main updates and claim overwrite/deletion.
+
+On 12 September 2026, GitHub returned HTTP 403 for private-repository branch
+protection on this account, requiring GitHub Pro or public visibility. Neither
+an upgrade nor a visibility change was made. CI, PR review conventions and
+client-side create-only claims work, but server-enforced branch protection is
+not enabled. Write-capable collaborators remain trusted; these conventions do
+not prevent a collaborator from deliberately bypassing them. A change in plan
+or visibility requires the owner's decision. Recheck before granting access.
 
 The publisher refuses to overwrite or initialize an existing remote repository.
 If the name is taken, inspect it and ask the owner before changing its contents.
