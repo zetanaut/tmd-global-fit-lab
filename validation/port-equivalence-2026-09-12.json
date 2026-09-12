@@ -1,0 +1,50 @@
+{
+  "GPU_calls": 0,
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "checks": [
+    {
+      "checkpoint": "anchor-w8",
+      "gradient_absolute_error": 0.0,
+      "parameters": 1570,
+      "prediction_error_fixed_sigma": 0.0,
+      "saved_prediction_error_fixed_sigma": 2.7996965800196926e-14,
+      "width": 8
+    },
+    {
+      "checkpoint": "p0-w16-096",
+      "gradient_absolute_error": 0.0,
+      "parameters": 2882,
+      "prediction_error_fixed_sigma": 0.0,
+      "saved_prediction_error_fixed_sigma": 8.520815678320803e-15,
+      "width": 16
+    },
+    {
+      "checkpoint": "p0-w24-064",
+      "gradient_absolute_error": 0.0,
+      "parameters": 4706,
+      "prediction_error_fixed_sigma": 0.0,
+      "saved_prediction_error_fixed_sigma": 1.4607112591407092e-14,
+      "width": 24
+    }
+  ],
+  "generated_utc": "2026-09-12T22:58:27Z",
+  "indices": [
+    0,
+    100,
+    328,
+    743,
+    1087,
+    2289
+  ],
+  "optimizer_updates": 0,
+  "passed": true,
+  "schema": "tmd-port-equivalence-v1",
+  "scope": "six measured rows, three widths; forward and fixed-cotangent VJP; not a full2290 GPU certificate",
+  "source_pins": {
+    "tmdlab/bundle.py": "ad0413d242e2299df256bd0e9465e8bbe46814aeaf9e20ae21b0d9b4f0e57a42",
+    "tmdlab/engine.py": "a019cdf62a0e78124666b55fd432100ff711c2c4207cc2e0e6827bd918ec3cb3",
+    "tmdlab/io.py": "b77f3700325982078dc15b4588cbcd607f5ae806aef4a3dd59e87400fbe58edb",
+    "tmdlab/metric.py": "45a32f3dff8d5b3536fa547bef948579bc82642a7037d8c2b042d557f23a999b",
+    "tmdlab/models.py": "bfad5192a7bb0ec38e909fdfe4180abc8cb889708c3126ed7222fdc5e7c657ca"
+  }
+}

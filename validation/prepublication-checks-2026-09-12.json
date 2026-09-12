@@ -1,0 +1,23 @@
+{
+  "schema": "tmd-prepublication-checks-v1",
+  "date": "2026-09-12",
+  "cpu_tests_passed": 30,
+  "trial_specs_validated": 6,
+  "shell_templates_syntax_checked": true,
+  "original_vs_portable_cpu_comparison": "Six measured DY/SIDIS rows at widths8/16/24; exact forward and fixed-cotangent VJP agreement. See port-equivalence-2026-09-12.json.",
+  "input_files": 4600,
+  "input_payload_bytes": 2200498093,
+  "input_bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "release_parts": 3,
+  "local_pack_extract_full_hash_roundtrip_passed": true,
+  "remote_download_verified": false,
+  "full_2290_portable_model_replay_completed": false,
+  "gpu_model_calls_during_preparation": 0,
+  "new_optimizer_trials_launched": 0,
+  "slurm_jobs_submitted": 0,
+  "github_repository_created": false,
+  "github_release_assets_uploaded": false,
+  "publishing_blocker": "No authenticated zetanaut GitHub account in this session. Existing SSH deployment identity is scoped to another repository.",
+  "initial_executable_scope": "PORT replays and same-schema Nested-FiLM continuation machinery. Additional-family/initialization tasks remain explicitly listed in docs/EXPERIMENTS.md."
+}
+

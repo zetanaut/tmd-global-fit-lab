@@ -1,0 +1,14 @@
+{
+  "schema": "tmd-development-environment-v1",
+  "date": "2026-09-12",
+  "python": "3.11.14",
+  "numpy": "2.4.2",
+  "scipy": "1.17.1",
+  "torch": "2.12.0+cu126",
+  "psutil": "7.2.2",
+  "pytest": "9.1.1",
+  "environment_isolation": "Repository-owned venv inherits existing numerical packages; psutil and pytest installed only in the new venv.",
+  "original_fit_environment_modified": false,
+  "qualification": "Development CPU tests and limited CPU port comparison; not a universally qualified GPU software lock."
+}
+

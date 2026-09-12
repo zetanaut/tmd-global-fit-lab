@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tmd-global-fit-lab"
+version = "0.1.0"
+description = "Portable, auditable fixed-physics DY/SIDIS architecture experiments"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "torch>=2.7,<3", "psutil>=5.9,<8"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+include = ["tmdlab*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+

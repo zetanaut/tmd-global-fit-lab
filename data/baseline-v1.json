@@ -1,0 +1,25 @@
+{
+  "assets": [
+    {
+      "bytes": 942796800,
+      "name": "baseline-v1-000.tar",
+      "sha256": "8a8330a2a368bfcb82f38930c84f186c379c283551a8fd575ef9bd8213d2e0b1"
+    },
+    {
+      "bytes": 944261120,
+      "name": "baseline-v1-001.tar",
+      "sha256": "c915023efa48eecf950a9e9f6dda1f12ce6952f8479babe6d2188124dc4ed910"
+    },
+    {
+      "bytes": 317829120,
+      "name": "baseline-v1-002.tar",
+      "sha256": "8169b0957a54d3c704eb9f0add3b8e03547245b6a90e7c47126ba2904e136c39"
+    }
+  ],
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "bundle_json_sha256": "4e8a088fb42c290ca48c3c87cce4fa5f74bda7e2262378f05eb214572c86e283",
+  "publication_status": "prepared_not_uploaded",
+  "repository": "zetanaut/tmd-global-fit-lab",
+  "schema": "tmd-input-release-v1",
+  "tag": "inputs-baseline-v1"
+}

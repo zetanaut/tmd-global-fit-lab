@@ -1,0 +1,36 @@
+{
+  "budget": {
+    "accepted_updates": 96,
+    "cache_gib": 12,
+    "cpu_threads": 1,
+    "forwards": 600,
+    "full_calls": 240,
+    "gpu_gib": 20,
+    "host_available_gib": 8,
+    "rss_gib": 48,
+    "segment_seconds": 1800,
+    "total_seconds": 3600
+  },
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "claim_required": true,
+  "dtype": "float64",
+  "execution_class": "cpu",
+  "hypothesis": "The portable evaluator preserves the exact saved predictions and derivatives under the fixed scientific contract.",
+  "kind": "replay",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "model": {
+    "depth": 1,
+    "width": 24
+  },
+  "model_family": "nested-film-v1",
+  "phase": "PORT",
+  "phases": [],
+  "production_selection": false,
+  "rows": 2290,
+  "schema": "tmd-trial-v1",
+  "seed": 2026091224,
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "start_checkpoint": "p0-w24-064",
+  "status": "ready",
+  "trial_id": "replay-w24-cpu-a01"
+}
