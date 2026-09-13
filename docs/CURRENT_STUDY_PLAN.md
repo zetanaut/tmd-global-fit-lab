@@ -61,7 +61,7 @@ paired starting functions, repeat seeds and convergence checks.
    state and do not silently give one architecture a new scientific allowance.
 3. **Track a common milestone.** First complete the existing P1 trajectories to
    96 cumulative portable accepted steps (or the unchanged convergence gate),
-   retaining their spent 18/38/28 steps. Report checkpoints at common cumulative
+   retaining the selected parents' spent30/38/28 steps after calibration. Report checkpoints at common cumulative
    steps, model calls and elapsed work. A job interrupted by infrastructure is
    resumed with a new claim and remaining allowance, rather than ranked lower.
 4. **Calibrate the optimizer before expanding the matrix.** Many calls went to
