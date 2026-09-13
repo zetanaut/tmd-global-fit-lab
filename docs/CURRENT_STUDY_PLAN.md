@@ -52,11 +52,18 @@ new cell, and none of this migrates the active A6000 P1 continuations or
 constitutes an architecture comparison.
 
 That separately scoped [B200 width16 A01 PORT plan](../decisions/2026-09-13-b200-w16-a01-plan.md)
-is now preregistered and awaiting independent review, exact-source CPU checks,
-claim and launch. It uses one newly reviewed temporary fourth-GPU exception
-only for the bounded width16 cell; the three A6000 P1 continuations remain
-independent. It is not submitted yet, does not authorize B200 width24, and
-will publish a terminal result whether it passes or fails.
+passed independent review and its exact-source CPU-contract gate, then was
+claimed and submitted once as job`19822749`. Its claim
+`a22a04e9daa789db95d830c7b9bfa7f4a9decc3d` was remote-readback verified;
+the immutable source is`498bc0de54f06bad4ff69a2a8e57789f0a775764` and the
+trial SHA-256 is
+`ce912eac237c43b7f63a69f5eadd280a1b9a862e5bfd3aad0b35f4d955dd37d3`.
+The scheduler recorded `spinquest_standard`, one B200, two CPUs,16GiB,
+40 minutes and no requeue. This is a submitted execution gate, not a result:
+it uses one newly reviewed temporary fourth-GPU exception only for the bounded
+width16 cell, while the three A6000 P1 continuations remain independent.
+It does not authorize B200 width24 and will publish a terminal result whether
+it passes or fails.
 
 ## What has actually been tested
 
