@@ -51,6 +51,13 @@ preregistered B200 width16 replay only; width24 remains conditional on that
 new cell, and none of this migrates the active A6000 P1 continuations or
 constitutes an architecture comparison.
 
+That separately scoped [B200 width16 A01 PORT plan](../decisions/2026-09-13-b200-w16-a01-plan.md)
+is now preregistered and awaiting independent review, exact-source CPU checks,
+claim and launch. It uses one newly reviewed temporary fourth-GPU exception
+only for the bounded width16 cell; the three A6000 P1 continuations remain
+independent. It is not submitted yet, does not authorize B200 width24, and
+will publish a terminal result whether it passes or fails.
+
 ## What has actually been tested
 
 Six full-data PORT cells (widths 8, 16 and 24 on CPU and RTX A6000) passed the
