@@ -1,0 +1,67 @@
+{
+  "schema": "tmd-trial-v1",
+  "trial_id": "replay-w24-cpu-a02",
+  "status": "ready",
+  "phase": "PORT",
+  "kind": "replay",
+  "hypothesis": "The portable evaluator preserves the exact saved predictions and derivatives under the fixed scientific contract.",
+  "model_family": "nested-film-v1",
+  "model": {
+    "depth": 1,
+    "width": 24
+  },
+  "seed": 2026091224,
+  "start_checkpoint": "p0-w24-064",
+  "rows": 2290,
+  "dtype": "float64",
+  "execution_class": "cpu",
+  "claim_required": true,
+  "production_selection": false,
+  "phases": [],
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "budget": {
+    "accepted_updates": 96,
+    "cache_gib": 12,
+    "cpu_threads": 4,
+    "forwards": 600,
+    "full_calls": 240,
+    "gpu_gib": 20,
+    "host_available_gib": 8,
+    "rss_gib": 48,
+    "segment_seconds": 1800,
+    "total_seconds": 3600
+  },
+  "attempt_reason": "Fresh four-thread CPU PORT profile after width-8 single-thread qualification used 1529.59 of 1800 model seconds. Original one-thread trial is unchanged and unconsumed; no speedup or gate success is presumed.",
+  "resource_profile": {
+    "site": "UVA Rivanna/Afton",
+    "account": "spinquest_standard",
+    "partition": "standard",
+    "gpus": 0,
+    "cpus_per_task": 5,
+    "torch_intraop_threads": 4,
+    "numpy_scipy_threads": 1,
+    "host_memory_gib": 48,
+    "wall_seconds": 3900
+  },
+  "prerequisites": {
+    "engineering_code_commit": "85264ee04a6831d3a09ee1fd77f53e07ad3ec306",
+    "cpu_validation_job": "19760633",
+    "cpu_tests_passed": 161,
+    "container_sha256": "7feff211863de2df3ee524fa958a7da09c0de5acea327d18b39a2cdd50bb8264",
+    "verified_input_files": 4600,
+    "qualifying_cpu_run": "replay-w8-cpu-a01-fe0e2232a8a7",
+    "qualifying_gpu_run": "replay-w8-gpu-a02-65b3fcf031c1",
+    "qualifying_cpu_job": "19760962",
+    "qualifying_gpu_job": "19762121"
+  },
+  "decision_record": "decisions/2026-09-13-rivanna-remaining-port-profiles.md",
+  "derived_from_trial": "replay-w24-cpu-a01",
+  "original_trial_disposition": {
+    "owner_submitted": false,
+    "owner_claimed": false,
+    "model_calls": 0,
+    "accepted_updates": 0
+  }
+}
