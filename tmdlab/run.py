@@ -39,6 +39,31 @@ def cgroup_memory_headroom_bytes(pid, *, proc_root=Path("/proc")):
     for line in (proc_root/"mounts").read_text().splitlines():
         fields=line.split()
         if len(fields)>=4: mounts.append((fields[1],fields[2],set(fields[3].split(","))))
+    def ancestors(path, root):
+        if not path.is_relative_to(root): raise ValueError("cgroup path escapes mount")
+        while True:
+            yield path
+            if path==root: return
+            path=path.parent
+
+    def finite_headroom(path, limit_name, usage_name):
+        values=[]
+        for candidate in ancestors(path, root):
+            limit_path=candidate/limit_name; usage_path=candidate/usage_name
+            if not limit_path.is_file() or not usage_path.is_file(): continue
+            limit=limit_path.read_text().strip(); usage=usage_path.read_text().strip()
+            if limit=="max": continue
+            try: ceiling,used=int(limit),int(usage)
+            except ValueError as exc: raise ValueError("noninteger cgroup memory accounting") from exc
+            if ceiling<=0 or used<0: raise ValueError("invalid cgroup memory accounting")
+            # cgroup v1 represents no limit with a value near INT64_MAX.
+            if ceiling>=2**60: continue
+            values.append(max(0,ceiling-used))
+        if not values: raise ValueError("finite cgroup limit unavailable")
+        # Every finite ancestor is a cap. The smallest remaining headroom is
+        # the only safe allocation-level answer for this process.
+        return min(values)
+
     for _,controllers,relative in entries:
         if "memory" not in controllers.split(","): continue
         choices=[m for m in mounts if m[1]=="cgroup" and "memory" in m[2]]
@@ -46,12 +71,7 @@ def cgroup_memory_headroom_bytes(pid, *, proc_root=Path("/proc")):
         root=Path(choices[0][0]); rel=PurePosixPath(relative)
         if rel.is_absolute(): rel=PurePosixPath(*rel.parts[1:])
         path=root.joinpath(*rel.parts)
-        limit=(path/"memory.limit_in_bytes").read_text().strip()
-        usage=(path/"memory.usage_in_bytes").read_text().strip()
-        try: ceiling,used=int(limit),int(usage)
-        except ValueError as exc: raise ValueError("noninteger v1 cgroup memory accounting") from exc
-        if ceiling<=0 or used<0 or ceiling>=2**60: raise ValueError("finite v1 cgroup limit unavailable")
-        return max(0,ceiling-used)
+        return finite_headroom(path,"memory.limit_in_bytes","memory.usage_in_bytes")
     for hierarchy,controllers,relative in entries:
         if hierarchy!="0" or controllers: continue
         choices=[m for m in mounts if m[1]=="cgroup2"]
@@ -59,13 +79,7 @@ def cgroup_memory_headroom_bytes(pid, *, proc_root=Path("/proc")):
         root=Path(choices[0][0]); rel=PurePosixPath(relative)
         if rel.is_absolute(): rel=PurePosixPath(*rel.parts[1:])
         path=root.joinpath(*rel.parts)
-        limit=(path/"memory.max").read_text().strip()
-        usage=(path/"memory.current").read_text().strip()
-        if limit=="max": raise ValueError("finite v2 cgroup limit unavailable")
-        try: ceiling,used=int(limit),int(usage)
-        except ValueError as exc: raise ValueError("noninteger v2 cgroup memory accounting") from exc
-        if ceiling<=0 or used<0: raise ValueError("invalid v2 cgroup memory accounting")
-        return max(0,ceiling-used)
+        return finite_headroom(path,"memory.max","memory.current")
     raise ValueError("memory cgroup entry unavailable")
 
 def allocated_gpu_selector():

@@ -79,6 +79,18 @@ def test_cgroup_headroom_fails_closed_without_finite_limit(tmp_path):
     with pytest.raises(ValueError,match='finite'):
         cgroup_memory_headroom_bytes(pid,proc_root=proc)
 
+def test_cgroup_headroom_uses_finite_job_parent_when_step_is_unlimited(tmp_path):
+    proc=tmp_path/'proc'; pid=4242; mount=tmp_path/'memory'
+    job=mount/'slurm'/'job_7'; step=job/'step_0'; step.mkdir(parents=True)
+    (proc/str(pid)).mkdir(parents=True)
+    (proc/str(pid)/'cgroup').write_text('9:memory:/slurm/job_7/step_0\n')
+    (proc/'mounts').write_text(f'none {mount} cgroup rw,memory 0 0\n')
+    (step/'memory.limit_in_bytes').write_text(str(2**61))
+    (step/'memory.usage_in_bytes').write_text('1')
+    (job/'memory.limit_in_bytes').write_text(str(16*2**30))
+    (job/'memory.usage_in_bytes').write_text(str(5*2**30))
+    assert cgroup_memory_headroom_bytes(pid,proc_root=proc)==11*2**30
+
 def test_allocated_gpu_telemetry_parser_rejects_malformed_rows():
     row='GPU-123, RTX A6000, 595.71.05, 85, 61, 10948, 49140, 192.4, 67'
     parsed=parse_gpu_row(row)
