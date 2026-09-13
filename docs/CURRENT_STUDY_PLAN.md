@@ -40,7 +40,9 @@ anchor, zero updates and the durable monitor; it preserves A01/A02 costs and
 can only establish clean B200 width8 execution. It temporarily permits one
 extra B200 allocation alongside the three A6000 cells, then returns to the
 three-GPU project cap at terminal state. A03 cannot promote widths16/24,
-migrate active fits, select an architecture or authorize a fourth retry.
+migrate active fits or select an architecture. A clean A03 only permits
+separately preregistered sequential width16/24 PORT checks; it cannot authorize
+any further attempt automatically.
 
 ## What has actually been tested
 
