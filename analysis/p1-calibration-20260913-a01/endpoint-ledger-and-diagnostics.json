@@ -1,0 +1,262 @@
+{
+  "adaptive": {
+    "artifact": {
+      "bytes": 4904820,
+      "sha256": "f8b5e3b479fa9212bc2c4f0a1486956b5e88a018d79183f6ef75579a4dd905d0",
+      "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-calibration-w8-p1-adaptive-a01-63c238cc1d3b/p1-calibration-w8-adaptive-a01.tar.gz"
+    },
+    "audit": {
+      "DY_adjusted_RMS_fixed_sigma": 2.230090166980097,
+      "DY_nuisances": {
+        "CDF_RUN_1:normalization": 2.50343166410941,
+        "CDF_RUN_2:efficiency": 1.8784687042867536,
+        "CDF_RUN_2:normalization": 0.5692244100998876,
+        "D0_RUN_1:normalization": 0.371505878964555,
+        "E288_200:normalization": 3.060160664521657,
+        "E288_300:normalization": 4.096956994722818,
+        "E288_400:normalization": 4.094028396669364,
+        "E605:normalization": 5.686270640301394,
+        "E772:normalization": 6.980608614479007,
+        "LHCb_7:beam": 0.6789938498676906,
+        "LHCb_7:lumi": 0.9308637565984427
+      },
+      "DY_profile_closure_abs_error": 7.275957614183426e-12,
+      "atomic_restart_recovery": false,
+      "endpoint_path": "last.npz",
+      "endpoint_sha256": "cd43a5678b3f2a694fc894b868155c18260940546f9872690e9bbd43dcab8617",
+      "experimental_nuisance_penalty": 135.558666643837,
+      "finite": true,
+      "generated_utc": "2026-09-13T13:58:43Z",
+      "high_COMPASS": {
+        "mean": 7.733815125071557,
+        "rms": 7.979765450183706,
+        "rows": 188,
+        "underpredicted": 188
+      },
+      "min_T_over_sigma": 3.531445729236952e-06,
+      "model_calls": 0,
+      "negative": 0,
+      "numerical_nuisance_penalty": 3.208137448028659,
+      "passed": true,
+      "penalized_gradient_max": 0.1432252516815181,
+      "processes": {
+        "COMPASS": {
+          "mean": 3.0563075083930036,
+          "rms": 4.963534452954448,
+          "rows": 1203,
+          "underpredicted": 817
+        },
+        "DY": {
+          "mean": 2.692860955321298,
+          "rms": 3.6303839933517548,
+          "rows": 743,
+          "underpredicted": 690
+        },
+        "HERMES": {
+          "mean": 0.577511805952785,
+          "rms": 2.39565178257514,
+          "rows": 344,
+          "underpredicted": 214
+        }
+      },
+      "q_per_measurement": 16.949877882230293,
+      "raw_gradient_max": 0.14335401003707954,
+      "raw_gradient_missing_reason": null,
+      "schema": "tmd-endpoint-audit-v1",
+      "status": "verified",
+      "zero": 0
+    },
+    "counters": {
+      "accepted_updates": 12,
+      "forwards": 72,
+      "full_calls": 15,
+      "infeasible_trials": 10,
+      "line_search_rejections": 10
+    },
+    "identity": "8ce5f8c9e322e2e77f3cce7501a0c09d4392f0874f531e769920e677b80d9d94",
+    "model_seconds_before": 1187.385132752941,
+    "plateau": {
+      "eligible": true,
+      "passed": false,
+      "windows": [
+        {
+          "gradient_max": 0.14559128553364223,
+          "passed": false,
+          "prediction_span_max": 0.22485764122151508,
+          "prediction_span_rms": 0.03247451433221695,
+          "q_range": 0.0032799580110527415,
+          "same_mu": true
+        },
+        {
+          "gradient_max": 0.1432252516815181,
+          "passed": false,
+          "prediction_span_max": 0.08238860996189246,
+          "prediction_span_rms": 0.010005288503244883,
+          "q_range": 0.0014901366860442522,
+          "same_mu": true
+        }
+      ]
+    },
+    "run_id": "calibration-w8-p1-adaptive-a01-63c238cc1d3b",
+    "supervisor": {
+      "elapsed_seconds": 923.5146684739739,
+      "end_utc": "2026-09-13T13:58:42Z",
+      "exit_code": 0,
+      "model_stop_escalation_seconds": 2.0,
+      "peaks": {
+        "gpu_device_memory_total_gib": 47.98828125,
+        "gpu_device_memory_used_gib_max": 9.65985107421875,
+        "gpu_memory_utilization_percent_max": 23.0,
+        "gpu_owned_gib": 9.06640625,
+        "gpu_power_watts_max": 194.999,
+        "gpu_temperature_celsius_max": 55.0,
+        "gpu_utilization_percent_max": 99.0,
+        "host_available_min_gib": 13.436901092529297,
+        "rss_gib": 1.3071937561035156,
+        "samples": 4220
+      },
+      "resource_peaks_are_sampled_not_continuous": true,
+      "resource_telemetry_status": "sampled",
+      "stop_reason": null,
+      "telemetry_staleness_limit_seconds": 1.0
+    },
+    "trajectory_counters": {
+      "accepted_updates": 30,
+      "forwards": 273,
+      "full_calls": 36,
+      "infeasible_trials": 165,
+      "line_search_rejections": 166
+    },
+    "trajectory_model_seconds": 2110.899801226915
+  },
+  "unit": {
+    "artifact": {
+      "bytes": 4967285,
+      "sha256": "c9336bf7db3277aa22694320c8a7449c2787a97515f49a9016a0ababf8f7e8f2",
+      "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-calibration-w8-p1-unit-a01-e2245d062b5d/p1-calibration-w8-unit-a01.tar.gz"
+    },
+    "audit": {
+      "DY_adjusted_RMS_fixed_sigma": 2.2285822151890664,
+      "DY_nuisances": {
+        "CDF_RUN_1:normalization": 2.4957771949017094,
+        "CDF_RUN_2:efficiency": 1.9582156465342693,
+        "CDF_RUN_2:normalization": 0.5547507086777208,
+        "D0_RUN_1:normalization": 0.36948662665809867,
+        "E288_200:normalization": 3.0095881515517897,
+        "E288_300:normalization": 4.025815658281981,
+        "E288_400:normalization": 4.017514140564595,
+        "E605:normalization": 5.654155668585862,
+        "E772:normalization": 6.922782206614124,
+        "LHCb_7:beam": 0.6782709280103544,
+        "LHCb_7:lumi": 0.9305324733244157
+      },
+      "DY_profile_closure_abs_error": 8.185452315956354e-12,
+      "atomic_restart_recovery": false,
+      "endpoint_path": "last.npz",
+      "endpoint_sha256": "67763245e1f02195d7de8e97ace5cc6aafccdd9ce8e61022f9ea526284ae92d5",
+      "experimental_nuisance_penalty": 133.1333454075565,
+      "finite": true,
+      "generated_utc": "2026-09-13T14:04:11Z",
+      "high_COMPASS": {
+        "mean": 7.733858045696438,
+        "rms": 7.979799300242284,
+        "rows": 188,
+        "underpredicted": 188
+      },
+      "min_T_over_sigma": 0.0004428058611227076,
+      "model_calls": 0,
+      "negative": 0,
+      "numerical_nuisance_penalty": 2.933633279521738,
+      "passed": true,
+      "penalized_gradient_max": 0.19061517693316318,
+      "processes": {
+        "COMPASS": {
+          "mean": 3.073897871239226,
+          "rms": 4.966761394917532,
+          "rows": 1203,
+          "underpredicted": 818
+        },
+        "DY": {
+          "mean": 2.682586347746735,
+          "rms": 3.6144407824928653,
+          "rows": 743,
+          "underpredicted": 692
+        },
+        "HERMES": {
+          "mean": 0.5373217750320431,
+          "rms": 2.385467201173858,
+          "rows": 344,
+          "underpredicted": 210
+        }
+      },
+      "q_per_measurement": 16.938637228981964,
+      "raw_gradient_max": 0.190614863107673,
+      "raw_gradient_missing_reason": null,
+      "schema": "tmd-endpoint-audit-v1",
+      "status": "verified",
+      "zero": 0
+    },
+    "counters": {
+      "accepted_updates": 12,
+      "forwards": 121,
+      "full_calls": 19,
+      "infeasible_trials": 51,
+      "line_search_rejections": 55
+    },
+    "identity": "c7149b615a3b7af046a2412d9bfa58b937db74b65c4701bae3915fda4c21ba9e",
+    "model_seconds_before": 1187.385132752941,
+    "plateau": {
+      "eligible": true,
+      "passed": false,
+      "windows": [
+        {
+          "gradient_max": 0.23421130980829713,
+          "passed": false,
+          "prediction_span_max": 0.3375620329000242,
+          "prediction_span_rms": 0.04515532359988129,
+          "q_range": 0.0037530806104761893,
+          "same_mu": true
+        },
+        {
+          "gradient_max": 0.19061517693316318,
+          "passed": false,
+          "prediction_span_max": 1.2485406430317774,
+          "prediction_span_rms": 0.16728915834369296,
+          "q_range": 0.012257667334949929,
+          "same_mu": true
+        }
+      ]
+    },
+    "run_id": "calibration-w8-p1-unit-a01-e2245d062b5d",
+    "supervisor": {
+      "elapsed_seconds": 1192.6046057920903,
+      "end_utc": "2026-09-13T14:03:12Z",
+      "exit_code": 0,
+      "model_stop_escalation_seconds": 2.0,
+      "peaks": {
+        "gpu_device_memory_total_gib": 47.98828125,
+        "gpu_device_memory_used_gib_max": 9.65985107421875,
+        "gpu_memory_utilization_percent_max": 24.0,
+        "gpu_owned_gib": 9.06640625,
+        "gpu_power_watts_max": 177.413,
+        "gpu_temperature_celsius_max": 52.0,
+        "gpu_utilization_percent_max": 99.0,
+        "host_available_min_gib": 13.428516387939453,
+        "rss_gib": 1.287567138671875,
+        "samples": 5420
+      },
+      "resource_peaks_are_sampled_not_continuous": true,
+      "resource_telemetry_status": "sampled",
+      "stop_reason": null,
+      "telemetry_staleness_limit_seconds": 1.0
+    },
+    "trajectory_counters": {
+      "accepted_updates": 30,
+      "forwards": 322,
+      "full_calls": 40,
+      "infeasible_trials": 206,
+      "line_search_rejections": 211
+    },
+    "trajectory_model_seconds": 2379.9897385450313
+  }
+}

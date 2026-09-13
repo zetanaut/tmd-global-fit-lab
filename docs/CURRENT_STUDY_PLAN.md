@@ -6,6 +6,23 @@ historical trial specifications and results. The study remains active until
 adequate optimization and controlled architecture comparisons support a choice.
 Completing a job batch or publishing partial results does not complete the study.
 
+## Latest completed decision
+
+The [paired optimizer calibration](../decisions/2026-09-13-p1-calibration-outcome.md)
+completed both arms at30 cumulative accepted steps with valid endpoint/raw
+gradients and no execution censoring. Unit q/N=16.938637229 versus adaptive
+16.949877882. Adaptive saved40.5% charged new forwards but failed the frozen
+progress criteria, so **retain unit backtracking** for all next width arms.
+Published records, full archives, learning curves, residual/nuisance diagnostics
+and the executable decision accompany that outcome. Neither arm converged.
+
+Next: preserve unit width8 at30 steps and widths16/24 at38/28, then complete
+the common96-step milestone under reviewed longer, resumable allocations.
+These are three independent one-GPU jobs, not a distributed single-model fit.
+The [B200 width8 numerical result](../decisions/2026-09-13-b200-w8-a01-outcome.md)
+matched the references but had partial execution; the separately preregistered
+technical retry must clear execution before further B200 promotion.
+
 ## What has actually been tested
 
 Six full-data PORT cells (widths 8, 16 and 24 on CPU and RTX A6000) passed the
@@ -52,9 +69,10 @@ paired starting functions, repeat seeds and convergence checks.
    sizes and gradient progress, and qualify any step-selection change on equal
    short budgets from identical saved states. Apply a selected policy to all
    comparison arms; preserve original and changed trajectories separately.
-   The next exact comparison is the [paired width8 line-search calibration](P1_OPTIMIZER_CALIBRATION.md):
+   The completed exact comparison is the [paired width8 line-search calibration](P1_OPTIMIZER_CALIBRATION.md):
    two policies from the same saved state,12 new accepted steps each, frozen
    progress/call-saving criteria and cumulative bounds that survive job changes.
+   Its outcome retained unit backtracking; do not rerun this completed pair.
 5. **Fix monitoring and termination at the source.** Establish GPU identity by
    UUID within the actual allocation, including concurrent nonzero GPU indices.
    Timestamp completed measurements and separate prompt mandatory memory
