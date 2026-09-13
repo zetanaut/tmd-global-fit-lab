@@ -34,6 +34,10 @@ def test_nvml_attributes_memory_only_to_owned_process_tree():
     assert result['gpu_device_memory_used_gib']==10
     assert result['gpu_utilization_percent']==91
 
+@pytest.mark.parametrize('cuda_uuid',[UUID[4:],UUID,UUID.lower()])
+def test_nvml_handle_lookup_normalizes_bare_cuda_uuid(cuda_uuid):
+    assert NvmlDevice(cuda_uuid,library=FakeNvml()).sample({123})['gpu_owned_gib']==3
+
 def test_nvml_errors_fail_closed():
     class Failed(FakeNvml):
         def nvmlDeviceGetMemoryInfo(self,*_):return 15

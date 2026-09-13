@@ -1,0 +1,85 @@
+{
+  "schema": "tmd-trial-v1",
+  "status": "ready",
+  "phase": "P1",
+  "kind": "continuation",
+  "hypothesis": "From the exact same verified 18-step width8 P1 state, compare unit versus previous-alpha-double line search at 12 new accepted steps; select adaptive only with q disadvantage <=1e-4, objective disadvantage <=5e-5 and >=25% fewer charged new forwards, per the frozen paired design.",
+  "model_family": "nested-film-v1",
+  "rows": 2290,
+  "dtype": "float64",
+  "execution_class": "gpu",
+  "claim_required": true,
+  "production_selection": false,
+  "phases": [
+    {
+      "mu": 0.000001,
+      "updates": 12
+    }
+  ],
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "budget": {
+    "accepted_updates": 12,
+    "cache_gib": 12,
+    "cpu_threads": 1,
+    "forwards": 512,
+    "full_calls": 128,
+    "gpu_gib": 20,
+    "host_available_gib": 8,
+    "rss_gib": 12,
+    "segment_seconds": 3600,
+    "total_seconds": 4200,
+    "endpoint_reserve_seconds": 180
+  },
+  "resource_profile": {
+    "site": "UVA",
+    "account": "spinquest_standard",
+    "partition": "gpu",
+    "gpu_model": "NVIDIA RTX A6000",
+    "gres": "gpu:a6000:1",
+    "gpus": 1,
+    "cpus_per_task": 2,
+    "host_memory_gib": 16,
+    "wall_seconds": 4500,
+    "max_concurrent_cells": 2
+  },
+  "prerequisites": {
+    "portable_PORT_decision": "decisions/2026-09-13-rivanna-port-complete.md",
+    "portable_PORT_cells_passed": 6,
+    "container_sha256": "7feff211863de2df3ee524fa958a7da09c0de5acea327d18b39a2cdd50bb8264",
+    "verified_input_files": 4600,
+    "baseline_bundle_verified": true,
+    "independent_restart_reviewer": "p1-saved-evidence-review-20260913",
+    "runtime_qualification_commit": "e405bc8e7c47187030c40fffb6ef977d94f6bf73",
+    "runtime_qualification_job": "19809889",
+    "runtime_qualification_required": true,
+    "runtime_qualification_passed": true
+  },
+  "decision_record": "docs/P1_OPTIMIZER_CALIBRATION.md",
+  "trial_id": "calibration-w8-p1-adaptive-a01",
+  "model": {
+    "depth": 1,
+    "width": 8
+  },
+  "seed": 2026091208,
+  "start_checkpoint": "restart:22f93b2263cf2494d1fc5e40a70f15f82ffed173c0f0bec76e86e97735972dff",
+  "execution_policy": "p1-resume-v1",
+  "restart_binding": {
+    "parent_run_id": "continuation-w8-p1-a02-38d1bf1023dc",
+    "state_sha256": "029d90b23aca3e7e789ad836e37c0d60f022605112e543d315f7cccfcf7c6107",
+    "accepted_updates_before": 18,
+    "optimizer_history_reset": false
+  },
+  "trajectory_budget": {
+    "accepted_updates": 30,
+    "forwards": 713,
+    "full_calls": 149,
+    "model_seconds": 6000
+  },
+  "study_role": "paired optimizer calibration; not an architecture selection",
+  "optimizer": {
+    "line_search": "previous-alpha-double"
+  },
+  "paired_trial": "calibration-w8-p1-unit-a01"
+}
