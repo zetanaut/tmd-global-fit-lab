@@ -74,6 +74,7 @@ claim at two sites. Follow [coordination](docs/COORDINATION.md),
 | `trials/*.json` | Immutable, executable preregistrations; exact starts and budgets |
 | `decisions/` | Evidence-based phase promotions and scope decisions |
 | `data/baseline-v1.json` | Immutable numerical release inventory and checksums |
+| `checkpoints/`, `checkpoint-objects/`, `evidence/` | Hash-addressed V7 finals, lineage and historical evidence; baseline unchanged |
 | `tmdlab/` | Portable model, signed evaluator, fixed metric, supervisor and result tools |
 | `slurm/` | One-GPU and CPU job-array templates |
 | `validation/`, `tests/` | Development evidence and executable CPU safeguards |
@@ -88,8 +89,12 @@ The portable evaluator supports CPU and a single assigned CUDA device; multiple
 GPUs run independent cells. The computation was ported into a new version with
 relative paths, not copied with broken local absolute-path imports.
 
-Before training, complete the PORT gates and import the latest closed P0
-endpoints. The family/depth/conditioning matrices are scientifically declared,
+Before portable training, complete the PORT gates. The exact closed V7 P0 w8/w24
+endpoints are now imported; w16 remains the released reference. P0 is complete
+but unconverged. See [checkpoint overlays](docs/CHECKPOINT_OVERLAYS.md) and
+[historical results](docs/BASELINE_RESULTS.md). The separately owned native P1
+program does not wait for portable qualification. No new portable trial is
+authorized by this import. The family/depth/conditioning matrices are scientifically declared,
 but their adapters/initialization factories still require implementation and
 preregistration. The backlog is detailed enough for another agent to own those
 tasks; they are not falsely labeled ready-to-run models. Existing lower-loss

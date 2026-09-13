@@ -16,6 +16,7 @@ from .metric import Metric
 from .models import build,Config,schema
 from .engine import Engine
 from .contracts import validate_trial
+from .checkpoints import load_overlay
 
 class Stop(RuntimeError):
     pass
@@ -90,7 +91,10 @@ def run(args):
         guard(); bundle=Bundle(args.bundle)
         if bundle.index["identity"]!=trial["bundle_identity"]: raise ValueError("wrong pinned input bundle")
         metric=Metric(bundle)
-        entry,saved=bundle.checkpoint(trial["start_checkpoint"])
+        if trial["start_checkpoint"].startswith("overlay:"):
+            entry,saved=load_overlay(Path(__file__).resolve().parents[1],trial["start_checkpoint"][8:],bundle,metric,trial=trial)
+        else:
+            entry,saved=bundle.checkpoint(trial["start_checkpoint"])
         cfg=Config(**trial["model"])
         if asdict(cfg)!=asdict(Config(**entry["model"])): raise ValueError("checkpoint/model mismatch; a new initialization must be registered first")
         model=build(cfg,trial["seed"])

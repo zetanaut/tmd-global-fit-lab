@@ -33,4 +33,8 @@ def validate_trial(t, *, require_ready=True):
     for phase in phases:
         if type(phase["updates"]) is not int or phase["updates"]<1 or phase["mu"] not in (1e-2,1e-3,1e-4,1e-5,1e-6):
             raise ValueError("invalid preregistered phase")
+    start=t.get("start_checkpoint", "")
+    if start.startswith("overlay:"):
+        if not re.fullmatch(r"overlay:[0-9a-f]{64}", start) or not isinstance(t.get("checkpoint_binding"),dict):
+            raise ValueError("exact overlay identity and lineage binding required")
     return t

@@ -1,0 +1,123 @@
+{
+  "content": {
+    "accepted_successor_clock": {
+      "clock_resets": 0,
+      "exact_matrix_consumed": true,
+      "final_deadline_utc": "2026-09-12T23:46:24.200234Z",
+      "model_work_stop_utc": "2026-09-12T23:16:24.200234Z",
+      "no_duplicate_launch": true,
+      "owner_after_cleanup": false,
+      "root": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7",
+      "t0_utc": "2026-09-12T21:46:24.200234Z"
+    },
+    "final_disposition": "The old v1 segment is closed. The v8 watchdog repair is executable-test verified, but this receipt is not a new compute allowance and does not authorize a duplicate rerun of the already-consumed exact addendum. Preserve all v1/v7 evidence; any further model work requires a genuinely new, nonduplicate declared matrix.",
+    "finding_dispositions": {
+      "directional_derivative_gate": {
+        "actual_new_window_values": "unavailable because no new model/GPU calls were authorized after the exact matrix was already consumed; no gradient conclusion is asserted",
+        "old_v1": "hard-coded h=1e-5/diagnostic setup did not establish the active mu=1e-6 objective; the two failed directions remain a gate failure only",
+        "optional_stress": "mu=0.01 is not the active phase and is not used as clearance; any such probe must be labeled optional",
+        "repair": "v8 uses the persisted phase mu and a bounded h ladder from 1e-5 down to 1e-10; analytic, finite-difference, feasibility and failed-trial records are retained by the new runner"
+      },
+      "endpoint_and_scientific_contract": {
+        "physics_or_data_changes": false,
+        "repair": "existing endpoint writer requires actual q replay/reference, DY adjusted-quadratic plus penalty closure, named E772/E605 shifts, nuisance split and exact 188-row high-COMPASS deltas",
+        "winner_or_production_claim": false
+      },
+      "independent_in_call_watchdog": {
+        "coverage_limit": "CPU-controlled evaluator surrogate only; no new model/GPU call was made",
+        "executable_result": "passed: active-call deadline interruption, malformed telemetry interruption, and hung-sampler interruption under 1.0s",
+        "old_v1": "unresolved; sampler was synchronous and only flagged through later guard",
+        "repair": "v8 watchdog runs each injected telemetry sample in a daemon helper and fails closed after 0.20s without blocking the deadline loop"
+      },
+      "plateau_window": {
+        "executable_result": "passed boundary test; no plateau is claimed for historical data",
+        "old_v1": "20-state behavior is not a valid two ten-update test",
+        "repair": "v8 requires 21 states with shared-boundary windows states[-21:-10] and states[-11:] at unchanged mu"
+      },
+      "provenance_and_ledgers": {
+        "old_v1_counters_preserved": true,
+        "repair": "checkpoint-origin, terminal consumption and fresh-window counters remain separate; elapsed time/peaks/history are unavailable when not persisted, not zero"
+      },
+      "resource_telemetry": {
+        "executable_result": "passed hung-sampler and missing/nonfinite/malformed telemetry checks",
+        "old_v1": "fail-closed field validation existed but independent sampler latency was not enforced",
+        "peak_qualification": "preflight resource_peak is not a worker maximum",
+        "repair": "v8 adds a hard sample wait bound while retaining explicit required keys and actual zero values"
+      },
+      "setup_inclusive_segment_timing": {
+        "coverage_limit": "no new evaluator construction was run after exact addendum consumption",
+        "executable_result": "passed source/runtime setup-order test",
+        "old_v1": "unresolved; DeviceEngine setup was outside the segment timer",
+        "repair": "v8 retains segment start before cell creation/replay/engine setup and installs the segment deadline before setup"
+      },
+      "typed_stop_finalization": {
+        "coverage_limit": "the exact addendum was already consumed in v7; no duplicate capped model path is run",
+        "old_v1": "attempt_002 finalizer evidence preserved; no attempt_003 or old-segment restart",
+        "repair": "v7/v8 runner preserves last feasible endpoint, counters, raw-gradient reason and cleanup on bounded exits"
+      }
+    },
+    "historical_v7_revalidation": {
+      "output_sha256": "ecbf6edd93b6e4822e434274623c6a69b3b5f139e27cd854396c4c6d1d2a0728",
+      "qualification": "This suite is retained as historical evidence; the separate v8 hung-sampler test is the runtime recheck that closes the previously observed sampler-latency gap.",
+      "result": "23 tests passed in 0.535s; zero model calls, zero GPU calls"
+    },
+    "old_v1_disposition": {
+      "attempt_002": {
+        "accepted_updates": 0,
+        "attempt_003_allowed": false,
+        "classification": "terminal_old_window_failure",
+        "forward_budget_units": 420,
+        "full_calls": 87,
+        "pid": 1040864,
+        "pid_absent_at_close": true,
+        "raw_call_records": 742,
+        "segment_resume_allowed": false,
+        "stop": "two total-barrier directional checks failed; finalizer evidence preserved"
+      },
+      "original_clock": {
+        "clock_resets": 0,
+        "final_deadline_utc": "2026-09-12T19:50:14.865382Z",
+        "model_work_stop_utc": "2026-09-12T19:20:14.865382Z",
+        "segment_exhaustion_is_terminal": true,
+        "t0_utc": "2026-09-12T17:50:14.865382Z"
+      },
+      "raw_and_provenance": {
+        "attempt_001_terminal_forwards": 410,
+        "attempt_001_terminal_full_calls": 83,
+        "attempt_002_disk_source_sha256": "785e7f1865f90efc28b6f17459f9aabd429d61d19659e323241a322ee638d666",
+        "attempt_002_incremental_forward_units": 10,
+        "attempt_002_incremental_full_calls": 4,
+        "failed_directional_report": "attempt_002 failed before first resumed update; do not infer an evaluator-gradient or physics failure",
+        "later_disk_runner_sha256": "302eb15754407dc2e7f7b8109b924a2c33f4f1144306357af44039d31b1f40b9",
+        "loaded_runner_sha256": "abbb7fd6ae23a9ff951990f1bd7bd0dd03f36f486bbb92d12565c451e54d2cfc",
+        "loaded_vs_disk_distinguished": true
+      },
+      "root": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v1",
+      "w8_policy_correction": {
+        "historical_terminal_forwards": 600,
+        "historical_terminal_full_calls": 106,
+        "new_addendum_allocation": "separate fresh bounded window; do not encode as w8_terminal_skip",
+        "new_allocation_in_old_v1": false,
+        "old_window_saved_only": true
+      }
+    },
+    "recorded_utc": "2026-09-12T22:31:15.992509233Z",
+    "repair_root": {
+      "acceptance": "not created; repair root reuses v7's already accepted clock and cannot add a window or reset counters",
+      "launch": "none",
+      "owner": "none",
+      "root": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8",
+      "source_sha256": "9b3e23c3998ce0908be1b8ac50953a357527bb24093b0730c3fac8dff382d43f",
+      "test_command": "CUDA_VISIBLE_DEVICES=0 PYTHONPATH=source://study/2026-09-03/i-x20/work/global_fit_foundation:source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8 [local-path-redacted] -m unittest -v test_runtime_enforcement.py",
+      "test_output_sha256": "b03d04396e9cbf9138fe2d6adeb093a5e64d2197e166337f53082889ece81767",
+      "test_result": "7 tests passed in 0.703s; zero model calls, zero GPU calls",
+      "test_sha256": "0f1f80b25abf6178091bd329b28a74f2d90d646fd5a1af76d20e1df36fca76c4"
+    },
+    "schema": "gpu-film-execution-gate-repair-disposition-v1",
+    "status": "repair_verified_no_model_execution"
+  },
+  "original_sha256": "bb42f11398d4acc69badb9b594ef292666882b20659cd030f502975e2746bc46",
+  "original_source": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8/gate_repair_disposition.json",
+  "schema": "tmd-redacted-evidence-v1",
+  "transformation": "Local paths normalized; coordination identifiers and commands omitted. Scientific numbers retained. Not byte-identical to original."
+}

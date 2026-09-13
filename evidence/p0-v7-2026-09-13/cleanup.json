@@ -1,0 +1,19 @@
+{
+  "content": {
+    "end_utc": "2026-09-12T22:14:27Z",
+    "fit_gpu_owner_absent_after_exit": true,
+    "historical_roots_untouched": true,
+    "no_unowned_signal": true,
+    "owner_marker": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/owner.pid",
+    "owner_marker_absent_after_exit": true,
+    "pid": 1131506,
+    "resource_peak_field_qualification": "campaign_state.resource_peak is the initial preflight sample only; true worker peak is unavailable and is not certified from this field",
+    "schema": "gpu-film-comparable-continuation-cleanup-v1",
+    "started_utc": "2026-09-12T21:52:14Z",
+    "watchdog_samples": 4808
+  },
+  "original_sha256": "191594536fa01ae1ac72aae9b9391a0e14d2f93bff6e1ad05fdb44656f094d83",
+  "original_source": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/cleanup_receipt.json",
+  "schema": "tmd-redacted-evidence-v1",
+  "transformation": "Local paths normalized; coordination identifiers and commands omitted. Scientific numbers retained. Not byte-identical to original."
+}

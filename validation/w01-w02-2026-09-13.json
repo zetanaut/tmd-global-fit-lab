@@ -1,0 +1,19 @@
+{
+  "schema": "tmd-implementation-validation-v1",
+  "recorded_utc": "2026-09-13T02:04:00Z",
+  "scope": "W01 closed-V7 import and bounded W02 baseline-parent overlay adapter",
+  "owner_role": "connector-w01-w02",
+  "base_commit": "79cc433e359b56f93d79b940a6d1a12260aa1cc0",
+  "branch": "implementation/w01-w02-v7-overlays",
+  "local_tests": {"command": "python -m pytest -q tests/test_checkpoints.py", "passed": 22, "failed": 0, "pytest_seconds": 0.07, "process_wall_seconds": 0.16, "process_max_rss_kib": 47708},
+  "saved_verification": {"command": "python scripts/verify_checkpoints.py --bundle <unchanged-baseline>", "passed": true, "process_wall_seconds": 0.37, "process_max_rss_kib": 165464, "w8_q_per_measurement": 16.955715679396871, "w24_q_per_measurement": 16.807363793595989, "w16_q_per_measurement": 16.661796604788403},
+  "structural_check": {"command": "python scripts/check_repository.py", "passed": true, "existing_trial_specs": 6, "new_ready_trials": 0},
+  "source_pins_rechecked": 93,
+  "exact_endpoint_object_bytes": 182708,
+  "baseline_release_lock_sha256": "24bc7654d3450301912548dada4018b4b12e7bcd97f69e1d4bb2df0588b80092",
+  "baseline_release_mutations": 0,
+  "local_compute": {"cpu_affinity": [22,23], "numeric_library_threads": 1, "per_process_address_space_limit_gib": 8, "per_process_cpu_seconds_limit": 120, "concurrent_numeric_processes": 1, "model_calls": 0, "optimizer_calls": 0, "gpu_calls": 0},
+  "resource_qualification": "Process maxima measured with GNU time for the two listed verification processes, not claimed as telemetry for all orchestration or any historical native run.",
+  "ci_status_at_record": "Not yet submitted; existing repository CPU-fixture workflow will report separately on the private implementation PR.",
+  "limits": ["No portable prereq harness duplicated", "No GPU PORT or UVA submission", "No native runner or shared foundation header changes", "No production or architecture selection", "V1 adapter supports exact V7 inventory/evidence with immutable baseline parents; later result formats and parent chains require reviewed adapters"]
+}

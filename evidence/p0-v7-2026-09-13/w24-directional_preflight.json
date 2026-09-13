@@ -1,0 +1,50 @@
+{
+  "content": {
+    "checks": [
+      {
+        "absolute_error": 8.64699435405153e-09,
+        "analytic": -0.005033620485450763,
+        "attempted_steps": [
+          {
+            "absolute_error": 8.64699435405153e-09,
+            "finite_difference": -0.005033611838456409,
+            "minus_feasible": true,
+            "passed": true,
+            "plus_feasible": true,
+            "step": 1e-05
+          }
+        ],
+        "direction": 0,
+        "finite_difference": -0.005033611838456409,
+        "passed": true,
+        "probe_mu": 1e-06,
+        "step": 1e-05
+      },
+      {
+        "absolute_error": 5.24841378690688e-10,
+        "analytic": 0.0018209656812818579,
+        "attempted_steps": [
+          {
+            "absolute_error": 5.24841378690688e-10,
+            "finite_difference": 0.0018209651564404792,
+            "minus_feasible": true,
+            "passed": true,
+            "plus_feasible": true,
+            "step": 1e-05
+          }
+        ],
+        "direction": 1,
+        "finite_difference": 0.0018209651564404792,
+        "passed": true,
+        "probe_mu": 1e-06,
+        "step": 1e-05
+      }
+    ],
+    "passed": true,
+    "schema": "gpu-film-two-direction-preflight-v1"
+  },
+  "original_sha256": "12c8a22b684cd1c3fb1bf491fe6f11c36686edd2934976334d67232ed47d3504",
+  "original_source": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/directional_preflight.json",
+  "schema": "tmd-redacted-evidence-v1",
+  "transformation": "Local paths normalized; coordination identifiers and commands omitted. Scientific numbers retained. Not byte-identical to original."
+}

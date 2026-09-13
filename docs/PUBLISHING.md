@@ -58,4 +58,6 @@ The original owner-side input export command is documented in
 `scripts/export_inputs.py --help`. It reads the original source tree and Manager
 checkpoints and writes a new transport bundle. Remote agents consume the release
 and never need those original local paths. Do not rebuild the frozen bundle to
-add future checkpoints; implement the separate hashed checkpoint overlay in W02.
+add future checkpoints. The W02 [checkpoint overlay](CHECKPOINT_OVERLAYS.md)
+stores the small exact V7 finals separately in Git. Later formats/parent chains
+need reviewed adapters; never overwrite the frozen input release.

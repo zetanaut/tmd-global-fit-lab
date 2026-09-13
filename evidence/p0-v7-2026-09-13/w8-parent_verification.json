@@ -1,0 +1,45 @@
+{
+  "content": {
+    "architecture": "film_w8_d1_c12_v1",
+    "passed": true,
+    "prediction_max_fixed_sigma": 0.0,
+    "prior": {
+      "accepted_steps": 83,
+      "checkpoint_elapsed_seconds": null,
+      "checkpoint_forwards": 594,
+      "checkpoint_full_calls": 103,
+      "historical_ledger": {
+        "accepted_steps": 83,
+        "checkpoint_forwards": 594,
+        "checkpoint_full_calls": 103,
+        "elapsed_seconds": null,
+        "infeasible_trials": 389,
+        "raw_call_count": 495,
+        "rejected_feasible_trials": 21,
+        "rejected_trials_total": 410,
+        "screening_accepted_steps": 64,
+        "terminal_forward_accounting": "600 terminal forward units; checkpoint origin is 594",
+        "terminal_forwards": 600,
+        "terminal_full_calls": 106,
+        "terminal_rejection_accounting": "389 infeasible entries and 21 feasible line-search rejections retained as separate raw components",
+        "unknown_elapsed_seconds": true,
+        "unknown_interrupted_calls": 0
+      },
+      "optimizer_history_reset": true,
+      "optimizer_history_reset_reason": "no verifiable L-BFGS history in saved artifact",
+      "stage": 1
+    },
+    "q_replay_abs_error": 0.0,
+    "read_only_source": true,
+    "replay_q_per_measurement": 16.960843107401328,
+    "saved_q_per_measurement": 16.960843107401328,
+    "schema": "gpu-film-continuation-start-verification-v1",
+    "source_artifact": "source://study/manager/gpu_film_refinement_2026_09_12_v1/film_w8_d1_c12_v1/S01/checkpoint_083.npz",
+    "source_artifact_sha256": "d195ecee17317e5164872dfcf096040ba69542ef1b8852f6995d28232a0ed075",
+    "start": "S01"
+  },
+  "original_sha256": "2d66a5496d4663160cd08683d20483854cb934fd8c90d1c9ca772ecb08c0306c",
+  "original_source": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/parent_verification.json",
+  "schema": "tmd-redacted-evidence-v1",
+  "transformation": "Local paths normalized; coordination identifiers and commands omitted. Scientific numbers retained. Not byte-identical to original."
+}

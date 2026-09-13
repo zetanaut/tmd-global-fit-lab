@@ -1,0 +1,388 @@
+{
+  "accepted_updates": {
+    "new_in_segment": 32,
+    "refinement": 96,
+    "screening": 64,
+    "total": 160
+  },
+  "budget_policy": "new_allocation_only",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "classification": "P0_complete_unconverged",
+  "evidence": {
+    "original_sha256": "79b83c05939b5142c96f9ebe90034f7dd978c754afc33980003f64d380650147",
+    "path": "evidence/p0-v7-2026-09-13/saved-scientific-audit.json",
+    "sha256": "c4da1b46ce27ccc78800be706da5eb884cfcf37d5fc79d89e0b0c7e8aa810094"
+  },
+  "identity": "7744bbd6e185b8c706c2a84e3f0bc80a61824a85cd8ab1c27d5ccea62e8ebfd8",
+  "label": "p0-v7-w24-s00",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "model": {
+    "depth": 1,
+    "width": 24
+  },
+  "mu": 1e-06,
+  "object": {
+    "bytes": 127548,
+    "path": "checkpoint-objects/bfe8a29ab9e2e8ed203f2e5a781038be41aeac76cf52818b00015d9495384ae6.npz",
+    "sha256": "bfe8a29ab9e2e8ed203f2e5a781038be41aeac76cf52818b00015d9495384ae6"
+  },
+  "optimizer_history": "reset_required",
+  "origin_allocation": "p0-remaining32-13-v7",
+  "parameter_schema": [
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.raw_widths",
+      "shape": [
+        10
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.flavor.weight",
+      "shape": [
+        10,
+        4
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.condition.0.weight",
+      "shape": [
+        12,
+        7
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.condition.0.bias",
+      "shape": [
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.condition.2.weight",
+      "shape": [
+        12,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.condition.2.bias",
+      "shape": [
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.radial.weight",
+      "shape": [
+        24,
+        4
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.radial.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.linear1.weight",
+      "shape": [
+        24,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.linear1.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.linear2.weight",
+      "shape": [
+        24,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.linear2.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.modulation.weight",
+      "shape": [
+        48,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.modulation.bias",
+      "shape": [
+        48
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.delta_width_head.weight",
+      "shape": [
+        1,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.delta_width_head.bias",
+      "shape": [
+        1
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.shape_head.weight",
+      "shape": [
+        1,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.shape_head.bias",
+      "shape": [
+        1
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.raw_widths",
+      "shape": [
+        30
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.flavor.weight",
+      "shape": [
+        10,
+        4
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.hadron.weight",
+      "shape": [
+        3,
+        3
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.condition.0.weight",
+      "shape": [
+        12,
+        10
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.condition.0.bias",
+      "shape": [
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.condition.2.weight",
+      "shape": [
+        12,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.condition.2.bias",
+      "shape": [
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.radial.weight",
+      "shape": [
+        24,
+        4
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.radial.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.linear1.weight",
+      "shape": [
+        24,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.linear1.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.linear2.weight",
+      "shape": [
+        24,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.linear2.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.modulation.weight",
+      "shape": [
+        48,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.modulation.bias",
+      "shape": [
+        48
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.delta_width_head.weight",
+      "shape": [
+        1,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.delta_width_head.bias",
+      "shape": [
+        1
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.shape_head.weight",
+      "shape": [
+        1,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.shape_head.bias",
+      "shape": [
+        1
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "cs.network.0.weight",
+      "shape": [
+        12,
+        4
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "cs.network.0.bias",
+      "shape": [
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "cs.network.2.weight",
+      "shape": [
+        1,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "cs.network.2.bias",
+      "shape": [
+        1
+      ]
+    }
+  ],
+  "parameters": 4706,
+  "parent": {
+    "checkpoint": "p0-w24-064",
+    "q_per_measurement": 16.86379653181469,
+    "sha256": "549a6d01fa45e956f3651c70f8b5475ef991e41475d7fec6b6de39087d0483e2"
+  },
+  "plateau": {
+    "eligible": true,
+    "first": {
+      "gradient_max": 0.0830264353962498,
+      "passed": false,
+      "prediction_span_max": 1.1496563092684982,
+      "prediction_span_rms": 0.22146090207140784,
+      "q_range": 0.04745850054607459
+    },
+    "passed": false,
+    "second": {
+      "gradient_max": 0.08180878791623286,
+      "passed": false,
+      "prediction_span_max": 0.31168916275316144,
+      "prediction_span_rms": 0.02833678658012352,
+      "q_range": 0.005194699998121166
+    }
+  },
+  "q_per_measurement": 16.807363793595997,
+  "remaining_origin_updates": 0,
+  "schema": "tmd-checkpoint-overlay-v1",
+  "segment_cost": {
+    "accepted_steps": 32,
+    "elapsed_seconds": 931.6293544108048,
+    "feasible_full_evaluations": 36,
+    "forwards": 217,
+    "full_calls": 40,
+    "full_evaluation_attempts": 172,
+    "infeasible_trials": 136,
+    "line_search_failures": 0,
+    "line_search_rejections": 139,
+    "raw_call_count": 389,
+    "segment_limit_seconds": 1800,
+    "setup_elapsed_seconds": 35.05375570990145
+  },
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "terminal_receipt": {
+    "original_sha256": "8be5ed6162473e3192e52fa3ffaeec1400a750814d293f78ad1cc3f8640643d9",
+    "path": "evidence/p0-v7-2026-09-13/terminal.json",
+    "sha256": "f4126278e033242489362b081d65453bb94e666d75d40eb5cfadecb69ba5589f"
+  }
+}
