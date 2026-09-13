@@ -1,0 +1,54 @@
+{
+  "schema": "tmd-trial-v1",
+  "trial_id": "replay-w8-b200-a03",
+  "status": "ready",
+  "phase": "PORT",
+  "kind": "replay",
+  "hypothesis": "Perform one explicitly reviewed B200 width8 full2290 execution requalification using fresh allocation-cgroup accounting that passed an allocated natural-exit test; require numerical and clean execution evidence before any B200 promotion.",
+  "model_family": "nested-film-v1",
+  "model": {"depth": 1, "width": 8},
+  "seed": 2026091208,
+  "start_checkpoint": "anchor-w8",
+  "rows": 2290,
+  "dtype": "float64",
+  "execution_class": "gpu",
+  "claim_required": true,
+  "production_selection": false,
+  "phases": [],
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "budget": {
+    "accepted_updates": 96, "cache_gib": 12, "cpu_threads": 1,
+    "forwards": 600, "full_calls": 240, "gpu_gib": 20,
+    "host_available_gib": 8, "rss_gib": 12,
+    "segment_seconds": 300, "total_seconds": 2100
+  },
+  "resource_profile": {
+    "site": "UVA", "account": "spinquest_standard", "partition": "gpu",
+    "gpu_model": "NVIDIA B200", "gres": "gpu:b200:1", "constraint": "b200",
+    "gpus": 1, "cpus_per_task": 2, "host_memory_gib": 16,
+    "wall_seconds": 2400, "max_concurrent_b200_cells": 1,
+    "temporary_project_gpu_cap": 4
+  },
+  "prerequisites": {
+    "container_sha256": "7feff211863de2df3ee524fa958a7da09c0de5acea327d18b39a2cdd50bb8264",
+    "baseline_bundle_verified": true, "verified_input_files": 4600,
+    "engineering_qualification_job": "19811128",
+    "engineering_qualification_commit": "e405bc8e7c47187030c40fffb6ef977d94f6bf73",
+    "engineering_qualification_passed": true,
+    "allocation_lifecycle_qualification_job": "19817220",
+    "allocation_lifecycle_qualification_commit": "21844e17c475ace4821f983118c74105a1f1e3c3",
+    "allocation_lifecycle_qualification_marker_sha256": "b31451aa31601d9c25c311924f725ceddfd1f53e54582735ea6def1b1d4846ec",
+    "allocation_lifecycle_qualification_passed": true,
+    "reference_cpu_run": "replay-w8-cpu-a01-fe0e2232a8a7",
+    "reference_a6000_run": "replay-w8-gpu-a02-65b3fcf031c1",
+    "terminal_monitor_fix_commit": "21844e17c475ace4821f983118c74105a1f1e3c3"
+  },
+  "prior_attempts": [
+    {"run_id": "replay-w8-b200-a01-be77a3c05e10", "record": "results/replay-w8-b200-a01/replay-w8-b200-a01-be77a3c05e10.json", "status": "partial", "charged_forwards": 8, "charged_full_calls": 3, "accepted_updates": 0, "model_window_seconds": 57.89922590833157},
+    {"run_id": "replay-w8-b200-a02-b113439ba956", "record": "results/replay-w8-b200-a02/replay-w8-b200-a02-b113439ba956.json", "status": "partial", "charged_forwards": 8, "charged_full_calls": 3, "accepted_updates": 0, "model_window_seconds": 57.88729783613235}
+  ],
+  "decision_record": "decisions/2026-09-13-b200-w8-a03-plan.md",
+  "attempt_reason": "One new technical execution qualification after the independently reviewed fresh-allocation monitor and allocated A6000 natural-exit proof. This is not an automatic retry chain, continuation, fit, or architecture comparison. Do not overwrite or reclassify A01/A02."
+}
