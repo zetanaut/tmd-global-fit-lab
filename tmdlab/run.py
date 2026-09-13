@@ -170,7 +170,7 @@ def stop_owned(process):
 
 def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
     """Separate telemetry thread; stale/failed telemetry fails closed."""
-    stop=threading.Event(); latest={"sample":None,"error":None}; started=time.monotonic()
+    stop=threading.Event(); latest={"sample":None,"error":None,"terminal_error":None}; started=time.monotonic()
     peak=dict(rss_gib=None,gpu_owned_gib=None,host_available_min_gib=None,samples=0)
     if gpu:
         peak.update(gpu_utilization_percent_max=None,gpu_memory_utilization_percent_max=None,
@@ -190,7 +190,14 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
                         raise ValueError("missing/nonfinite resource telemetry: "+k)
                 latest["sample"]=s
             except (psutil.NoSuchProcess,ProcessLookupError): return
-            except Exception as exc: latest["error"]=type(exc).__name__+": "+str(exc); return
+            except Exception as exc:
+                error=type(exc).__name__+': '+str(exc)
+                # A worker can exit between the loop's poll and /proc/cgroup
+                # reads. Reap/check that SAME owned process before treating an
+                # unavailable sample as a failure of live-worker monitoring.
+                if process.poll() is not None:latest['terminal_error']=error
+                else:latest['error']=error
+                return
             stop.wait(.2)
     thread=threading.Thread(target=telemetry,daemon=True); thread.start()
     reason=None; seen=None
@@ -220,7 +227,7 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
         stop.set(); thread.join(timeout=1)
     if peak["samples"]==0 and reason is None:
         reason="telemetry_failure: "+latest["error"] if latest["error"] else "telemetry_missing_no_samples"
-    return dict(stop_reason=reason,peaks=peak,resource_telemetry_status="sampled" if peak["samples"] else "unknown_no_samples",resource_peaks_are_sampled_not_continuous=True,telemetry_staleness_limit_seconds=1.,model_stop_escalation_seconds=2.,exit_code=process.wait())
+    return dict(stop_reason=reason,peaks=peak,resource_telemetry_status="sampled" if peak["samples"] else "unknown_no_samples",resource_peaks_are_sampled_not_continuous=True,telemetry_staleness_limit_seconds=1.,model_stop_escalation_seconds=2.,terminal_sample_unavailable_after_owned_exit=latest['terminal_error'],exit_code=process.wait())
 
 def main(args):
     trial=validate_trial(read(args.trial)); budget=trial["budget"]

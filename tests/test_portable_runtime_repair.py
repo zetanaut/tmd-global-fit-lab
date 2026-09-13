@@ -120,6 +120,36 @@ def test_healthy_samples_persist_peaks(tmp_path, fake_stop):
     assert len((tmp_path / 'resources.ndjson').read_text().splitlines()) >= 2
     assert fake_stop == []
 
+def test_cgroup_sample_unavailable_after_verified_owned_exit_is_not_live_failure(tmp_path,fake_stop):
+    owned=FakeProcess(); calls=[]
+    def sampler(pid,gpu):
+        calls.append(pid)
+        if len(calls)>1:
+            owned.code=0
+            raise ValueError('finite cgroup limit unavailable')
+        return healthy(pid,gpu)
+    result=run.supervise(owned,deadline=time.monotonic()+3,budget=BUDGET,gpu=False,out=tmp_path,sampler=sampler)
+    assert result['exit_code']==0 and result['stop_reason'] is None
+    assert result['peaks']['samples']>=1
+    assert 'finite cgroup limit' in result['terminal_sample_unavailable_after_owned_exit']
+    assert fake_stop==[]
+
+def test_terminal_sample_error_never_certifies_a_run_with_zero_valid_samples(tmp_path,fake_stop):
+    owned=FakeProcess()
+    def sampler(pid,gpu):
+        owned.code=0
+        raise ValueError('finite cgroup limit unavailable')
+    result=run.supervise(owned,deadline=time.monotonic()+3,budget=BUDGET,gpu=False,out=tmp_path,sampler=sampler)
+    assert result['stop_reason']=='telemetry_missing_no_samples'
+    assert result['resource_telemetry_status']=='unknown_no_samples'
+
+def test_missing_cgroup_for_a_live_worker_still_fails_closed(tmp_path,fake_stop):
+    owned=FakeProcess()
+    def sampler(pid,gpu):raise ValueError('finite cgroup limit unavailable')
+    result=run.supervise(owned,deadline=time.monotonic()+3,budget=BUDGET,gpu=False,out=tmp_path,sampler=sampler)
+    assert result['stop_reason'].startswith('telemetry_failure: ValueError: finite cgroup limit')
+    assert fake_stop==[owned]
+
 def test_term_to_kill_escalation_is_owned_only(monkeypatch):
     class Resistant(FakeProcess):
         def wait(self, timeout=None):
