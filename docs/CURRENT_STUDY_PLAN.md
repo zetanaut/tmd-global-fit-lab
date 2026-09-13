@@ -62,12 +62,16 @@ not yet claimed or submitted; no B200 optimization or architecture conclusion
 is authorized. The three A6000 P1 continuations remain independent.
 
 That final [B200 width24 A01 PORT plan](../decisions/2026-09-13-b200-w24-a01-plan.md)
-is now preregistered and awaiting independent review, exact-source CI, a fresh
-claim and launch. It fixes the original width24 anchor, preserves completed
-B200 execution lineage, and requires a saved raw gradient plus a hash-pinned
-saved-only comparison to the retained CPU and A6000 width24 endpoints. It is
-not submitted, is the last B200 PORT cell, and cannot support optimizer,
-throughput or architecture claims.
+passed independent review and exact-source CI, then was claimed and submitted
+once as job`19825150`. Its remote-readback claim is
+`958da82806c3c4b3e6743cdf61e01c0ae05f2f10`; immutable source is
+`397af101a7ac99b40d8708196c0f7a0742b5e09d`; trial SHA-256 is
+`6994c7015e22eb51c3dae5e9d11a0b23174b238df7b291f0ca4de44da11c5399`.
+The scheduler recorded `spinquest_standard`, one B200, two CPUs,16GiB,
+40 minutes and no requeue. The batch retains both hash-pinned CPU/A6000
+width24 endpoints and must pass its saved-only raw-gradient comparison within
+the original total bound. This is a submitted final PORT gate, not a result,
+optimizer, throughput or architecture claim.
 
 ## What has actually been tested
 
