@@ -4,13 +4,13 @@ A portable experiment and results repository for the fixed-physics, unpolarized
 DY/SIDIS b-space architecture study. It is designed for autonomous Codex agents,
 local GPU workstations, and UVA Rivanna/Afton CPU/GPU allocations.
 
-**Status, 13 September 2026:** Six full-data CPU/A6000 PORT cells passed.
-The completed paired optimizer calibration retains unit backtracking: adaptive
-saved40.5% charged forwards but failed the frozen progress criteria. Both arms
-reached30 cumulative accepted steps without censoring; neither converged.
-The exact next width8/16/24 trials preserve30/38/28 updates and target a common96
-under longer resumable allocations, followed by controlled paired architecture
-comparisons. The architecture study remains active. Read the
+**Status, 13 September 2026:** The common96 continuations advanced widths8/16/24
+to81/46/30 cumulative accepted updates before a shared monitoring failure.
+All three have valid audited endpoints and verified optimizer recovery states;
+none converged. The [result review](decisions/2026-09-13-p1-m96-interrupted-outcome.md)
+calls for repairing progress monitoring and completing the remaining15/50/66
+updates with the calibrated unit-backtracking optimizer. The architecture study
+remains active. Read the
 [current study plan](docs/CURRENT_STUDY_PLAN.md)
 and [published results](RESULTS.md) before claiming any further work.
 
