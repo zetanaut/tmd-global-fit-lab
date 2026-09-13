@@ -33,19 +33,6 @@
     "segment_seconds": 1800,
     "total_seconds": 3600
   },
-  "parent_attempt": "replay-w8-gpu-a01",
-  "prior_attempt_costs": {
-    "scheduler_job_id": "19761013",
-    "scheduler_state": "CANCELLED",
-    "scheduler_start": null,
-    "allocated_seconds": 0,
-    "model_seconds": 0,
-    "forwards": 0,
-    "full_calls": 0,
-    "accepted_updates": 0,
-    "scientific_launch": false,
-    "claim_preserved": true
-  },
   "resource_profile": {
     "site": "UVA",
     "account": "spinquest_standard",
