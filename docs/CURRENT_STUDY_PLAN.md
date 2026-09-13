@@ -44,6 +44,13 @@ migrate active fits or select an architecture. A clean A03 only permits
 separately preregistered sequential width16/24 PORT checks; it cannot authorize
 any further attempt automatically.
 
+A03 subsequently completed every numerical, audit and execution gate; see its
+[outcome](../decisions/2026-09-13-b200-w8-a03-outcome.md) and immutable result.
+The temporary fourth-GPU exception has ended. A03 permits a separately
+preregistered B200 width16 replay only; width24 remains conditional on that
+new cell, and none of this migrates the active A6000 P1 continuations or
+constitutes an architecture comparison.
+
 ## What has actually been tested
 
 Six full-data PORT cells (widths 8, 16 and 24 on CPU and RTX A6000) passed the
