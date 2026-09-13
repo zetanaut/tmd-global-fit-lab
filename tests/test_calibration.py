@@ -21,3 +21,32 @@ def test_unpaired_or_wrong_parent_comparison_rejected():
     c,a=arms()
     for key,value in (('start','wrong'),('seed',2),('model',dict(width=16,depth=1))):
         with pytest.raises(ValueError):decide(c,dict(a,**{key:value}))
+
+def test_evidence_binds_registry_bytes_and_semantically_equal_runtime_serialization(tmp_path):
+    import json
+    from pathlib import Path
+    from tmdlab.calibration import evidence
+    from tmdlab.io import read,write,sha,digest
+    root=Path(__file__).resolve().parents[1]
+    record=read(root/'results/continuation-w8-p1-a02/continuation-w8-p1-a02-38d1bf1023dc.json')
+    run=tmp_path/'run'; run.mkdir(); registry=tmp_path/'trials'; registry.mkdir()
+    trial=dict(trial_id='synthetic-calibration',start_checkpoint=RESTART,
+        optimizer=dict(line_search='unit-backtracking'),seed=1,model=dict(width=8,depth=1),
+        bundle_identity=record['bundle_identity'],metric_identity=record['metric_identity'],source_identity=record['source_identity'])
+    spec=registry/'synthetic-calibration.json'; spec.write_text(json.dumps(trial))
+    write(run/'trial.json',trial)
+    assert sha(spec)!=sha(run/'trial.json')
+    record.update(trial_id=trial['trial_id'],run_id='synthetic-calibration-run',trial_sha256=sha(spec),
+        status='completed',worker_status='completed',supervisor=dict(stop_reason=None),
+        audit=dict(passed=True,raw_gradient_max=.1,q_per_measurement=16.9),
+        trajectory_counters=dict(accepted_updates=30,forwards=401))
+    write(run/'launch.json',dict(run_id=record['run_id'],trial_sha256=sha(spec)))
+    write(run/'preflight.json',dict(passed=True))
+    write(run/'accepted-012.json',dict(trajectory_counters=dict(accepted_updates=30),q_per_measurement=16.9,objective=8.45))
+    record['files']={p.name:dict(sha256=sha(p),bytes=p.stat().st_size) for p in run.iterdir()}
+    record.pop('identity'); record['identity']=digest(record)
+    record_path=tmp_path/'record.json'; write(record_path,record)
+    result=evidence(run,record_path,root=tmp_path)
+    assert result['comparable'] and result['new_forwards']==200
+    write(run/'trial.json',dict(trial,seed=2))
+    with pytest.raises(ValueError,match='run/spec mismatch'):evidence(run,record_path,root=tmp_path)

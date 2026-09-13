@@ -26,11 +26,15 @@ def origin(trial,root):
         start=prior['start_checkpoint']
     return start
 
-def evidence(run,record_path):
+def evidence(run,record_path,*,root=None):
+    root=Path(__file__).resolve().parents[1] if root is None else Path(root)
     run=Path(run); record=validate_record(read(record_path))
     launch=read(run/'launch.json'); trial=read(run/'trial.json')
-    if record['run_id']!=launch['run_id'] or sha(run/'trial.json')!=record['trial_sha256']:
+    spec=within(root,'trials/'+record['trial_id']+'.json')
+    if (record['run_id']!=launch['run_id'] or sha(spec)!=record['trial_sha256']
+        or launch['trial_sha256']!=record['trial_sha256'] or read(spec)!=trial):
         raise ValueError('calibration run/spec mismatch')
+    if 'trial.json' not in record['files']:raise ValueError('missing published runtime trial bytes')
     for name,item in record['files'].items():
         path=within(run,name)
         if sha(path)!=item['sha256'] or path.stat().st_size!=item['bytes']:
@@ -47,7 +51,7 @@ def evidence(run,record_path):
         raise ValueError('calibration accepted score/audit mismatch')
     counts=record.get('trajectory_counters') or {}
     return dict(run_id=record['run_id'],result_identity=record['identity'],
-        policy=trial['optimizer']['line_search'],start=origin(trial,Path(__file__).resolve().parents[1]),
+        policy=trial['optimizer']['line_search'],start=origin(trial,root),
         comparable=bool(ready),q=record['audit'].get('q_per_measurement') if record['audit'] else None,
         objective=step.get('objective'),new_forwards=counts.get('forwards',201)-201,
         seed=trial['seed'],model=trial['model'],bundle=trial['bundle_identity'],
