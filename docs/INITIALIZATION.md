@@ -14,6 +14,15 @@ New feature internals remain seeded and nonzero. New output and cross-channel
 connections can learn; initially insulated new internals do not falsely acquire
 gradients before those connections move.
 
+`tmdlab.paired_starts` now makes deterministic **candidate** sets in the
+correct order: it first makes distinct, bounded narrow parameter vectors from
+three distinct narrow seeds, then applies `widen` to each exact narrow candidate.
+The widening seed therefore only initializes added features and cannot be
+misrepresented as an independent narrow start. Candidate receipts bind source
+and candidate parameter hashes, perturbation norm and zero model calls. The
+factory returns in-memory models only; it does not write checkpoints, register
+trials, assert feasibility or grant an optimizer budget.
+
 CPU tests use nonzero learned parameters and cover widths8/16/24 at unchanged
 depth1/2/3, boundary values and b derivatives, CS equality, parameter counts,
 source immutability and non-dead new output features. Floating-point transport
