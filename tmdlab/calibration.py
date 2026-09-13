@@ -1,10 +1,11 @@
 """Frozen paired line-search decision; no model calls or plotting inference."""
 from pathlib import Path
 import numpy as np
-from .io import read,sha,within,digest
+from .io import read,sha,within,digest,SOURCE_ID,METRIC_ID
 from .results import validate_record
 
 RESTART='restart:22f93b2263cf2494d1fc5e40a70f15f82ffed173c0f0bec76e86e97735972dff'
+BUNDLE='09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c'
 
 def origin(trial,root):
     """Verify calibration identity through any interrupted native segments."""
@@ -39,6 +40,11 @@ def evidence(run,record_path,*,root=None):
         path=within(run,name)
         if sha(path)!=item['sha256'] or path.stat().st_size!=item['bytes']:
             raise ValueError('calibration published file mismatch: '+name)
+    env=read(run/'environment.json') if 'environment.json' in record['files'] else {}
+    hardware_qualified=(launch.get('device')=='cuda:0'
+        and env.get('gpu_name') in ('NVIDIA RTX A6000','RTX A6000')
+        and env.get('dtype')=='float64' and env.get('deterministic_algorithms') is True
+        and env.get('TF32') is False and env.get('torch_threads')==1)
     ready=(record['status']=='completed' and record['audit']['passed']
         and record.get('trajectory_counters',{}).get('accepted_updates')==30
         and record['audit'].get('raw_gradient_max') is not None
@@ -55,7 +61,7 @@ def evidence(run,record_path,*,root=None):
         comparable=bool(ready),q=record['audit'].get('q_per_measurement') if record['audit'] else None,
         objective=step.get('objective'),new_forwards=counts.get('forwards',201)-201,
         seed=trial['seed'],model=trial['model'],bundle=trial['bundle_identity'],
-        metric=trial['metric_identity'],source=trial['source_identity'])
+        metric=trial['metric_identity'],source=trial['source_identity'],hardware_qualified=hardware_qualified)
 
 def decide(control,adaptive):
     if control['policy']!='unit-backtracking' or adaptive['policy']!='previous-alpha-double':
@@ -64,11 +70,17 @@ def decide(control,adaptive):
         raise ValueError('calibration needs the fixed common parent')
     for key in ('seed','model','bundle','metric','source'):
         if control[key]!=adaptive[key]:raise ValueError('unpaired calibration: '+key)
+    for arm in (control,adaptive):
+        if (arm['seed']!=2026091208 or arm['model']!={'width':8,'depth':1}
+            or arm['source']!=SOURCE_ID or arm['metric']!=METRIC_ID or arm['bundle']!=BUNDLE):
+            raise ValueError('calibration differs from fixed protocol')
     result=dict(schema='tmd-p1-optimizer-calibration-decision-v1',control=control,adaptive=adaptive,
         thresholds=dict(max_q_disadvantage=1e-4,max_objective_disadvantage=5e-5,min_forward_saving_fraction=.25),
         architecture_selected=False,production_selected=False)
     if not control['comparable'] or not adaptive['comparable']:
         return dict(result,status='incomplete-common-milestone',selected_policy=None)
+    if not control['hardware_qualified'] or not adaptive['hardware_qualified']:
+        raise ValueError('calibration execution environment not qualified')
     for arm in (control,adaptive):
         if not all(np.isfinite(arm[k]) for k in ('q','objective','new_forwards')) or arm['new_forwards']<=0:
             raise ValueError('invalid paired decision metrics')
