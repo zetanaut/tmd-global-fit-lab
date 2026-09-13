@@ -19,14 +19,31 @@ def validate_trial(t, *, require_ready=True):
     b=t["budget"]
     limits={"segment_seconds":1800,"total_seconds":7200,"full_calls":240,"forwards":600,"accepted_updates":96,"cache_gib":12,"gpu_gib":20,"rss_gib":48,"cpu_threads":12}
     resumable=t.get('execution_policy')=='p1-resume-v1'
-    if t.get('execution_policy') not in (None,'p1-resume-v1'):
+    if t.get('execution_policy') not in (None,'p1-resume-v1','paired-feasibility-v1'):
         raise ValueError('unregistered execution policy')
+    paired=t.get('execution_policy')=='paired-feasibility-v1'
+    if paired:
+        if t['kind']!='replay' or t.get('phase')!='W03' or t.get('phases') or t.get('start_checkpoint')!='anchor-w8':
+            raise ValueError('paired feasibility is a W03 zero-update anchor check')
+        if t['model']!={'width':8,'depth':1} or b['accepted_updates']!=0:
+            raise ValueError('paired feasibility has a fixed width8 source and zero optimizer updates')
+        if any(b[key] != value for key,value in dict(segment_seconds=1800,total_seconds=3600,forwards=300,full_calls=96,cache_gib=12,cpu_threads=2).items()):
+            raise ValueError('paired feasibility resource bound changed')
+        start=t.get('paired_start')
+        if not isinstance(start,dict) or not re.fullmatch(r'[0-9a-f]{64}',start.get('source_checkpoint_sha256','')):
+            raise ValueError('paired feasibility needs pinned source checkpoint')
+        if (not isinstance(start.get('seeds'),list) or len(start['seeds'])!=3 or len(set(start['seeds']))!=3
+            or any(type(seed) is not int for seed in start['seeds'])
+            or type(start.get('radius')) not in (int,float) or not 0<start['radius']<=.1
+            or type(start.get('min_diversity_rms')) not in (int,float) or not 0<start['min_diversity_rms']<1):
+            raise ValueError('invalid paired start protocol')
     if resumable:
         if t['kind']!='continuation' or t.get('phase')!='P1' or len(t['phases'])!=1 or t['phases'][0]['mu']!=1e-6:
             raise ValueError('resumable policy requires fixed-mu P1')
         limits.update(segment_seconds=13200,total_seconds=13800,full_calls=512,forwards=4096)
     for key,limit in limits.items():
-        if type(b[key]) not in (int,float) or not 0 < b[key] <= limit:
+        zero_update = key=='accepted_updates' and t.get('execution_policy')=='paired-feasibility-v1' and b[key]==0
+        if type(b[key]) not in (int,float) or not (zero_update or 0 < b[key] <= limit):
             raise ValueError("invalid bounded resource: "+key)
     if b["host_available_gib"] < 8 or b["total_seconds"]-b["segment_seconds"] < (600 if resumable else 1800):
         raise ValueError("host floor and reserved saved-QA interval required")

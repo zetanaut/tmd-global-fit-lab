@@ -23,6 +23,21 @@ from .restart import elapsed_before,segment_allowance
 
 _gpu_local=threading.local()
 
+def paired_launch_binding(trial, trial_path, claim, claim_path, commit, bundle, device, deadline):
+    """Create the exact receipt consumed by the W03 child evaluator."""
+    entry,_=bundle.checkpoint(trial['start_checkpoint'])
+    source_sha=sha(bundle.file(entry['path']))
+    if source_sha!=trial['paired_start']['source_checkpoint_sha256']:
+        raise ValueError('paired feasibility source checkpoint hash mismatch')
+    budget=trial['budget']; start=trial['paired_start']
+    return dict(schema='tmd-paired-width-feasibility-launch-v1',trial_id=trial['trial_id'],
+        trial_sha256=sha(trial_path),code_commit=commit,claim_commit=claim['claim_commit'],
+        claim_sha256=sha(claim_path),spec_sha256=sha(trial_path),bundle_identity=trial['bundle_identity'],
+        source_checkpoint=trial['start_checkpoint'],source_checkpoint_sha256=source_sha,device=device,
+        seeds=start['seeds'],radius=start['radius'],min_diversity_rms=start['min_diversity_rms'],
+        cache_gib=budget['cache_gib'],max_forwards=budget['forwards'],max_full_calls=budget['full_calls'],
+        seconds=budget['segment_seconds'],model_deadline_monotonic=deadline)
+
 def git(*args):
     return subprocess.check_output(["git",*args],text=True).strip()
 
@@ -300,6 +315,7 @@ def main(args):
         manifest=read(root/'restarts'/(trial['start_checkpoint'][8:]+'.json'))
         prior_seconds=elapsed_before(root,manifest)
         model_seconds=segment_allowance(trial,prior_seconds)
+    paired=trial.get('execution_policy')=='paired-feasibility-v1'
     args.out.mkdir(parents=True,exist_ok=False)
     def terminate(*_): raise KeyboardInterrupt("supervisor termination requested")
     signal.signal(signal.SIGTERM,terminate)
@@ -319,7 +335,21 @@ def main(args):
             trajectory_budget=trial['trajectory_budget'])
     write(args.out/"launch.json",launch)
     write(args.out/"trial.json",trial)
-    command=[sys.executable,"-m","tmdlab.worker","--trial",str(args.trial.resolve()),"--bundle",str(args.bundle.resolve()),"--out",str(args.out.resolve()),"--device",args.device]
+    if paired:
+        # This check occurs in the supervising, pinned and clean checkout
+        # before the child gets a non-forgeable binding.  The child repeats it
+        # against the mounted bundle after it starts.
+        from .bundle import Bundle
+        binding=paired_launch_binding(trial,args.trial,claim,args.claim,commit,Bundle(args.bundle),args.device,
+            launch['model_deadline_monotonic'])
+        binding_path=args.out/'paired-launch-binding.json'; write(binding_path,binding)
+        command=[sys.executable,'-m','tmdlab.paired_feasibility','--bundle',str(args.bundle.resolve()),
+            '--source-checkpoint',trial['start_checkpoint'],'--device',args.device,'--seeds',*map(str,trial['paired_start']['seeds']),
+            '--radius',str(trial['paired_start']['radius']),'--min-diversity-rms',str(trial['paired_start']['min_diversity_rms']),
+            '--cache-gib',str(budget['cache_gib']),'--max-forwards',str(budget['forwards']),'--max-full-calls',str(budget['full_calls']),
+            '--seconds',str(budget['segment_seconds']),'--launch-binding',str(binding_path.resolve()),'--out',str((args.out/'worker').resolve())]
+    else:
+        command=[sys.executable,"-m","tmdlab.worker","--trial",str(args.trial.resolve()),"--bundle",str(args.bundle.resolve()),"--out",str(args.out.resolve()),"--device",args.device]
     process=None
     try:
         with (args.out/"worker.log").open("x") as log:

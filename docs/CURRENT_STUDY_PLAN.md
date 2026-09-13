@@ -72,6 +72,34 @@ throughput or architecture claim follows. The normal project cap is three and
 the independently queued A6000 P1 continuations remain the next scientific
 source of optimization evidence.
 
+## Parallel non-duplicate initialization evidence (W03)
+
+The next proposed work that can inform the architecture study without
+duplicating the queued P1 continuations is **W03 paired-width feasibility**.
+It is a bounded, zero-update test of whether three distinct small perturbations
+of the exact width8 anchor can each be transported to width16 and width24 while
+retaining all2,290 fixed-physics predictions and satisfying feasibility,
+penalized/raw-VJP replay, and two directional checks on the actual backend.
+Candidate generation itself makes zero model calls.
+
+The required order is deliberate: evaluate all three width8 candidates first,
+measure their preregistered all-observable fixed-sigma diversity, and only then
+evaluate the six widened partners. Thus an infeasible or insufficiently diverse
+start set terminates before it wastes wide-model compute. A passing complete
+set has nine cells and needs at least63 forwards and18 VJPs; all calls,
+interrupted dispatches, failed values/probes, transport receipts and endpoints
+are retained. It is evidence that a controlled paired-width matrix can start
+fairly—not evidence of optimizer convergence, independent attraction basins,
+or an architecture winner.
+
+The evaluator/supervisor and exact trial protocol are under independent review;
+there is **no W03 claim or submitted job yet**. Subject to that review and an
+explicit temporary fourth-GPU exception, the resource plan is one sequential
+B200 allocation (one GPU, two CPUs,16GiB), not three concurrent allocations.
+It will coexist with, but never modify or duplicate, the three queued A6000 P1
+cells. If the feasibility gate passes, the registered immutable paired starts
+become the input to a separately preregistered multi-seed architecture matrix.
+
 ## What has actually been tested
 
 Six full-data PORT cells (widths 8, 16 and 24 on CPU and RTX A6000) passed the

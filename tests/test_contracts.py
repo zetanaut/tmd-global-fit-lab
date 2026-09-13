@@ -33,6 +33,21 @@ def test_trial_is_ready_and_replay_cannot_train():
     t["phases"]=[{"mu":1e-6,"updates":1}]
     with pytest.raises(ValueError):validate_trial(t)
 
+def paired_example():
+    t=example();t.update(phase="W03",execution_policy="paired-feasibility-v1",seed=2026091301,
+        paired_start=dict(source_checkpoint_sha256="a"*64,seeds=[2026091301,2026091302,2026091303],
+            radius=.01,min_diversity_rms=.001))
+    t['budget'].update(accepted_updates=0,cache_gib=12,cpu_threads=2,forwards=300,full_calls=96,
+        segment_seconds=1800,total_seconds=3600)
+    return t
+
+def test_paired_feasibility_contract_is_zero_update_and_exactly_bounded():
+    t=paired_example();validate_trial(t)
+    t['budget']['forwards']=301
+    with pytest.raises(ValueError,match='resource bound'):validate_trial(t)
+    t=paired_example();t['paired_start']['seeds'][2]=t['paired_start']['seeds'][1]
+    with pytest.raises(ValueError,match='paired start protocol'):validate_trial(t)
+
 @pytest.mark.parametrize("key,value",[("forwards",601),("full_calls",241),("segment_seconds",1801),("gpu_gib",21),("rss_gib",49),("cpu_threads",13)])
 def test_cap_mutations_rejected(key,value):
     t=example();t["budget"][key]=value

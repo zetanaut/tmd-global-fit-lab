@@ -21,14 +21,16 @@ def collect(args):
     run=Path(args.run); launch=read(run/"launch.json"); trial=read(run/"trial.json")
     if any(p.is_symlink() for p in run.rglob("*")): raise ValueError("run archive cannot contain symlinks to other trees")
     supervisor=read(run/"supervisor.json")
-    summary_path=run/"worker-summary.json"
+    paired=trial.get('execution_policy')=='paired-feasibility-v1'
+    worker_root=run/"worker" if paired else run
+    summary_path=worker_root/"worker-summary.json"
     summary_missing=not summary_path.is_file()
     if summary_missing:
         # A declared supervisor deadline can reap a worker while it is already
         # handling the evaluator deadline, before the worker's final summary is
         # written.  Preserve that absence, but do not replace the authoritative
         # supervisor reason with a misleading generic missing-summary label.
-        counters_path=run/"counters.json"
+        counters_path=worker_root/"counters.json"
         worker=dict(status="partial" if supervisor.get("stop_reason") else "failed",
             stop_reason=supervisor.get("stop_reason") or "worker_killed_or_missing_summary",
             counters=read(counters_path) if counters_path.is_file() else None,
