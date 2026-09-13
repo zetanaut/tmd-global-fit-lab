@@ -52,18 +52,14 @@ new cell, and none of this migrates the active A6000 P1 continuations or
 constitutes an architecture comparison.
 
 That separately scoped [B200 width16 A01 PORT plan](../decisions/2026-09-13-b200-w16-a01-plan.md)
-passed independent review and its exact-source CPU-contract gate, then was
-claimed and submitted once as job`19822749`. Its claim
-`a22a04e9daa789db95d830c7b9bfa7f4a9decc3d` was remote-readback verified;
-the immutable source is`498bc0de54f06bad4ff69a2a8e57789f0a775764` and the
-trial SHA-256 is
-`ce912eac237c43b7f63a69f5eadd280a1b9a862e5bfd3aad0b35f4d955dd37d3`.
-The scheduler recorded `spinquest_standard`, one B200, two CPUs,16GiB,
-40 minutes and no requeue. This is a submitted execution gate, not a result:
-it uses one newly reviewed temporary fourth-GPU exception only for the bounded
-width16 cell, while the three A6000 P1 continuations remain independent.
-It does not authorize B200 width24 and will publish a terminal result whether
-it passes or fails.
+completed cleanly; its independently reviewed [outcome](../decisions/2026-09-13-b200-w16-a01-outcome.md)
+and immutable result preserve the claim, source, archive, numerical and monitor
+evidence. It is the first B200 width16 cell, eight forwards/three VJPs/zero
+updates, and establishes B200 execution for that fixed replay only. The
+temporary fourth-GPU exception ended at terminal state. A separately
+preregistered and reviewed B200 width24 PORT plan may now be prepared, but is
+not yet claimed or submitted; no B200 optimization or architecture conclusion
+is authorized. The three A6000 P1 continuations remain independent.
 
 ## What has actually been tested
 
@@ -159,11 +155,12 @@ That dependency does not hold up P1 convergence or initialization work.
 ## Execution and public coordination
 
 Use independent one-GPU cells, initially up to three qualified A6000 allocations
-under `spinquest_standard`. The single temporary fourth-GPU exception is the
-explicitly bounded B200 A03 PORT cell above; it does not change the normal cap.
-Resource selection and changes require the UVA HPC specialist's review. Afton
-or another accelerator family is useful only after an exact full-data PORT check
-and measured throughput benefit. Never mutate the
+under `spinquest_standard`. The separately scoped temporary fourth-GPU
+exceptions for completed B200 A03 and width16 A01 have both ended; the normal
+cap is three. Any future exception, including a separately reviewed width24
+PORT cell, requires a fresh UVA HPC specialist review. Afton or another
+accelerator family is useful only after an exact full-data PORT check and
+measured throughput benefit. Never mutate the
 checkout mounted by an active job; each executable revision has an isolated
 pinned checkout. Credentials remain on the transfer host.
 

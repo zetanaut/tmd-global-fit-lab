@@ -1,0 +1,212 @@
+{
+  "artifact": {
+    "bytes": 4357494,
+    "sha256": "95ab129a154982e10c6588244e16ceb376aec6ec2267cb680973e1e080d7d65f",
+    "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-replay-w16-b200-a01-dd7169659beb/replay-w16-b200-a01-dd7169659beb-local.tar.gz"
+  },
+  "audit": {
+    "DY_adjusted_RMS_fixed_sigma": 2.172206110951454,
+    "DY_nuisances": {
+      "CDF_RUN_1:normalization": 2.5171467100718896,
+      "CDF_RUN_2:efficiency": 1.5592975281103134,
+      "CDF_RUN_2:normalization": 0.6280194903606349,
+      "D0_RUN_1:normalization": 0.3771665402425457,
+      "E288_200:normalization": 3.6488437100818865,
+      "E288_300:normalization": 4.930145716732965,
+      "E288_400:normalization": 4.905082533276578,
+      "E605:normalization": 6.517479861903896,
+      "E772:normalization": 7.754103647991985,
+      "LHCb_7:beam": 0.41929624317397585,
+      "LHCb_7:lumi": 0.5782432458550988
+    },
+    "DY_profile_closure_abs_error": 7.275957614183426e-12,
+    "atomic_restart_recovery": false,
+    "endpoint_path": "last.npz",
+    "endpoint_sha256": "33420bbb26a62a446652e328d83374e24502fddda0a6068aa27b9835d26d5069",
+    "experimental_nuisance_penalty": 174.09817301266983,
+    "finite": true,
+    "generated_utc": "2026-09-13T15:39:25Z",
+    "high_COMPASS": {
+      "mean": 7.733501147019685,
+      "rms": 7.979384359501987,
+      "rows": 188,
+      "underpredicted": 188
+    },
+    "min_T_over_sigma": 0.00968456656148073,
+    "model_calls": 0,
+    "negative": 0,
+    "numerical_nuisance_penalty": 5.807824727395427,
+    "passed": true,
+    "penalized_gradient_max": 0.10862212815709839,
+    "processes": {
+      "COMPASS": {
+        "mean": 2.9972074339252,
+        "rms": 4.946693941430197,
+        "rows": 1203,
+        "underpredicted": 815
+      },
+      "DY": {
+        "mean": 2.9377256565013656,
+        "rms": 3.898668696584784,
+        "rows": 743,
+        "underpredicted": 701
+      },
+      "HERMES": {
+        "mean": 0.6061027418195746,
+        "rms": 2.314557064517909,
+        "rows": 344,
+        "underpredicted": 223
+      }
+    },
+    "q_per_measurement": 16.661796604788403,
+    "raw_gradient_max": 0.10862242152560608,
+    "raw_gradient_missing_reason": null,
+    "schema": "tmd-endpoint-audit-v1",
+    "status": "verified",
+    "zero": 0
+  },
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "claim": {
+    "claim_commit": "a22a04e9daa789db95d830c7b9bfa7f4a9decc3d",
+    "claimed_utc": "2026-09-13T15:35:15Z",
+    "code_commit": "498bc0de54f06bad4ff69a2a8e57789f0a775764",
+    "nonce": "496a2024bccd4f8c88d75dab732eb2bb",
+    "owner": "uva-b200-port-w16-a01-20260913",
+    "remote_ref": "refs/heads/claims/replay-w16-b200-a01",
+    "schema": "tmd-claim-v1",
+    "trial_id": "replay-w16-b200-a01",
+    "trial_sha256": "ce912eac237c43b7f63a69f5eadd280a1b9a862e5bfd3aad0b35f4d955dd37d3"
+  },
+  "code_commit": "498bc0de54f06bad4ff69a2a8e57789f0a775764",
+  "counters": {
+    "accepted_updates": 0,
+    "forwards": 8,
+    "full_calls": 3,
+    "infeasible_trials": 0,
+    "line_search_rejections": 0
+  },
+  "files": {
+    "audit.json": {
+      "bytes": 1875,
+      "sha256": "074f4e2bbea4bae1f26ec24eda868583fbbe3ad87dcb699e5743eddea8eb4712"
+    },
+    "audit.log": {
+      "bytes": 9,
+      "sha256": "672eb8316fec83f94119a4193f9fc552513d56a147502f8be4830e017d817831"
+    },
+    "cleanup.json": {
+      "bytes": 187,
+      "sha256": "91d464091fb87cfb23d4ae4ec5f103cc93d3737a70cd31ca97110deaa68b8660"
+    },
+    "counters.json": {
+      "bytes": 386,
+      "sha256": "79a611478aeeeef65b5a1807b25b3ad8daa0b1db5031f07258623506deeaa486"
+    },
+    "environment.json": {
+      "bytes": 290,
+      "sha256": "04aeb578770264057a522cf21bcba0704d410ec7c05af3f73db09d9e68320f03"
+    },
+    "initial.npz": {
+      "bytes": 84806,
+      "sha256": "33420bbb26a62a446652e328d83374e24502fddda0a6068aa27b9835d26d5069"
+    },
+    "last.npz": {
+      "bytes": 84806,
+      "sha256": "33420bbb26a62a446652e328d83374e24502fddda0a6068aa27b9835d26d5069"
+    },
+    "launch.json": {
+      "bytes": 1681,
+      "sha256": "2a11442646e0c194da0b3e8298d3e7eb4407a95b65f0ce436df931c9a42a80da"
+    },
+    "owner.json": {
+      "bytes": 88,
+      "sha256": "01cc7acb60ec8e0dbe8b7fd52b3b8d0d7c7f6de450deb7b611bdaadf555730cd"
+    },
+    "preflight.json": {
+      "bytes": 580,
+      "sha256": "9bba6adb3bd8657a1885d6b6c425edecf37ffac8eee97a8f4023d04b41893e28"
+    },
+    "preparation.json": {
+      "bytes": 90,
+      "sha256": "ac4621d8b779d98120a20e73746a2c58f4164892a1b25b97b2d1326a98ac1bd1"
+    },
+    "resources.ndjson": {
+      "bytes": 206340,
+      "sha256": "ca3349bb337f895204f035dd06b00f953a1c856085bbd733337d24b2f1dd6e3b"
+    },
+    "supervisor.json": {
+      "bytes": 787,
+      "sha256": "bc3bf2f1d737ef30e05f4c8c7e6b56427b951b2ced6ec0c37ad69b653e8aba4d"
+    },
+    "trial.json": {
+      "bytes": 3745,
+      "sha256": "cb6a7f65652abad5476a9d1e16bac7f6d503ed2b0fd13fa4a8521e169fc99e13"
+    },
+    "worker-summary.json": {
+      "bytes": 1315,
+      "sha256": "b0beef153b5670a67379547ec4f67835d0594b3ac8158709ba1fa1e9fd33a0d1"
+    },
+    "worker.log": {
+      "bytes": 638,
+      "sha256": "7c88dceb7e56fe93b63328f42f2ebe80ebb702b0de100f4e6869fc86d1eeb056"
+    }
+  },
+  "hardware": "cuda:0",
+  "identity": "2caec21f8a99ee22acefb923a1a3b76591b2d451460430a3d0d30ca91ef0ea75",
+  "kind": "replay",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "model": {
+    "depth": 1,
+    "width": 16
+  },
+  "optimizer_history_reset": true,
+  "phase": "PORT",
+  "plateau": {
+    "eligible": false,
+    "passed": false,
+    "reason": "fewer_than_21_states"
+  },
+  "production_selected": false,
+  "recorded_utc": "2026-09-13T15:46:36Z",
+  "run_id": "replay-w16-b200-a01-dd7169659beb",
+  "schema": "tmd-result-v1",
+  "slurm": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "SLURM_ARRAY_JOB_ID": null,
+    "SLURM_ARRAY_TASK_ID": null,
+    "SLURM_CPUS_PER_TASK": "2",
+    "SLURM_JOB_GPUS": "7",
+    "SLURM_JOB_ID": "19822749"
+  },
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "start_checkpoint": "p0-w16-096",
+  "status": "completed",
+  "stop_reason": "replay_passed",
+  "supervisor": {
+    "elapsed_seconds": 58.10458451602608,
+    "end_utc": "2026-09-13T15:39:24Z",
+    "exit_code": 0,
+    "model_stop_escalation_seconds": 2.0,
+    "peaks": {
+      "gpu_device_memory_total_gib": 179.0615234375,
+      "gpu_device_memory_used_gib_max": 11.03753662109375,
+      "gpu_memory_utilization_percent_max": 16.0,
+      "gpu_owned_gib": 10.185546875,
+      "gpu_power_watts_max": 294.491,
+      "gpu_temperature_celsius_max": 33.0,
+      "gpu_utilization_percent_max": 96.0,
+      "host_available_min_gib": 14.161998748779297,
+      "rss_gib": 1.6345024108886719,
+      "samples": 262
+    },
+    "resource_peaks_are_sampled_not_continuous": true,
+    "resource_telemetry_status": "sampled",
+    "stop_reason": null,
+    "telemetry_staleness_limit_seconds": 1.0,
+    "terminal_sample_unavailable_after_owned_exit": null
+  },
+  "trial_id": "replay-w16-b200-a01",
+  "trial_sha256": "ce912eac237c43b7f63a69f5eadd280a1b9a862e5bfd3aad0b35f4d955dd37d3",
+  "worker_status": "completed",
+  "worker_summary_missing": false
+}
