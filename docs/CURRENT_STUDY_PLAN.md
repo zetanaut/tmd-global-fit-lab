@@ -29,8 +29,18 @@ awaited a robust allocation-lifecycle monitor review applicable to both GPU type
 That execution gate has now passed: the reviewed fix passed the full CPU suite
 and an allocated A6000 natural-exit check that observed the actual transition
 with fresh memory accounting. The three A6000 width trials are released for
-independent claims and parallel submission at source`21844e1`; no historical
+independent claims and were submitted in parallel at source`21844e1`:
+width8job19818033, width16job19818034 and width24job19818035. Their initial
+pending state is scheduler queueing, not an experimental result. No historical
 B200 partial result is reclassified or promoted by that A6000 proof.
+
+One separately reviewed, bounded [B200 A03 requalification](../decisions/2026-09-13-b200-w8-a03-plan.md)
+was also claimed and submitted asjob19819069. It uses the same all-row width8
+anchor, zero updates and the durable monitor; it preserves A01/A02 costs and
+can only establish clean B200 width8 execution. It temporarily permits one
+extra B200 allocation alongside the three A6000 cells, then returns to the
+three-GPU project cap at terminal state. A03 cannot promote widths16/24,
+migrate active fits, select an architecture or authorize a fourth retry.
 
 ## What has actually been tested
 
@@ -126,9 +136,11 @@ That dependency does not hold up P1 convergence or initialization work.
 ## Execution and public coordination
 
 Use independent one-GPU cells, initially up to three qualified A6000 allocations
-under `spinquest_standard`. Resource selection and changes require the UVA HPC
-specialist's review. Afton or another accelerator family is useful only after
-an exact full-data PORT check and measured throughput benefit. Never mutate the
+under `spinquest_standard`. The single temporary fourth-GPU exception is the
+explicitly bounded B200 A03 PORT cell above; it does not change the normal cap.
+Resource selection and changes require the UVA HPC specialist's review. Afton
+or another accelerator family is useful only after an exact full-data PORT check
+and measured throughput benefit. Never mutate the
 checkout mounted by an active job; each executable revision has an isolated
 pinned checkout. Credentials remain on the transfer host.
 
