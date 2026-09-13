@@ -7,7 +7,7 @@ import argparse
 import json
 import math
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import platform
 import signal
 import subprocess
@@ -22,12 +22,91 @@ from .contracts import validate_trial
 def git(*args):
     return subprocess.check_output(["git",*args],text=True).strip()
 
-def sample(pid,gpu):
+def cgroup_memory_headroom_bytes(pid, *, proc_root=Path("/proc")):
+    """Return this process's finite cgroup memory headroom, or fail closed.
+
+    Slurm's memory reservation is enforced by a task/job cgroup. Node-wide
+    ``psutil.virtual_memory`` cannot prove that the reservation has headroom.
+    Support the cgroup-v1 memory controller used on Rivanna and cgroup-v2 as a
+    guarded fallback for portable local tests.
+    """
+    entries=[]
+    for line in (proc_root/str(pid)/"cgroup").read_text().splitlines():
+        fields=line.split(":",2)
+        if len(fields)!=3: raise ValueError("malformed cgroup entry")
+        entries.append(tuple(fields))
+    mounts=[]
+    for line in (proc_root/"mounts").read_text().splitlines():
+        fields=line.split()
+        if len(fields)>=4: mounts.append((fields[1],fields[2],set(fields[3].split(","))))
+    for _,controllers,relative in entries:
+        if "memory" not in controllers.split(","): continue
+        choices=[m for m in mounts if m[1]=="cgroup" and "memory" in m[2]]
+        if not choices: raise ValueError("memory cgroup mount unavailable")
+        root=Path(choices[0][0]); rel=PurePosixPath(relative)
+        if rel.is_absolute(): rel=PurePosixPath(*rel.parts[1:])
+        path=root.joinpath(*rel.parts)
+        limit=(path/"memory.limit_in_bytes").read_text().strip()
+        usage=(path/"memory.usage_in_bytes").read_text().strip()
+        try: ceiling,used=int(limit),int(usage)
+        except ValueError as exc: raise ValueError("noninteger v1 cgroup memory accounting") from exc
+        if ceiling<=0 or used<0 or ceiling>=2**60: raise ValueError("finite v1 cgroup limit unavailable")
+        return max(0,ceiling-used)
+    for hierarchy,controllers,relative in entries:
+        if hierarchy!="0" or controllers: continue
+        choices=[m for m in mounts if m[1]=="cgroup2"]
+        if not choices: raise ValueError("cgroup-v2 mount unavailable")
+        root=Path(choices[0][0]); rel=PurePosixPath(relative)
+        if rel.is_absolute(): rel=PurePosixPath(*rel.parts[1:])
+        path=root.joinpath(*rel.parts)
+        limit=(path/"memory.max").read_text().strip()
+        usage=(path/"memory.current").read_text().strip()
+        if limit=="max": raise ValueError("finite v2 cgroup limit unavailable")
+        try: ceiling,used=int(limit),int(usage)
+        except ValueError as exc: raise ValueError("noninteger v2 cgroup memory accounting") from exc
+        if ceiling<=0 or used<0: raise ValueError("invalid v2 cgroup memory accounting")
+        return max(0,ceiling-used)
+    raise ValueError("memory cgroup entry unavailable")
+
+def allocated_gpu_selector():
+    """Return one Slurm-assigned physical GPU ID/UUID; reject ambiguous lists."""
+    value=os.environ.get("SLURM_STEP_GPUS") or os.environ.get("SLURM_JOB_GPUS")
+    if not value: raise ValueError("scheduler GPU assignment unavailable")
+    selected=value.strip().split(",")
+    if len(selected)!=1 or not selected[0] or not all(c.isalnum() or c in "_-" for c in selected[0]):
+        raise ValueError("ambiguous scheduler GPU assignment")
+    return selected[0]
+
+def parse_gpu_row(text):
+    fields=[v.strip() for v in text.strip().split(",")]
+    if len(fields)!=9 or not fields[0] or not fields[1] or not fields[2]:
+        raise ValueError("malformed allocated-GPU telemetry")
+    try:
+        values=[float(v) for v in fields[3:]]
+    except ValueError as exc: raise ValueError("non-numeric allocated-GPU telemetry") from exc
+    if not all(math.isfinite(v) and v>=0 for v in values) or values[3]<=0:
+        raise ValueError("invalid allocated-GPU telemetry")
+    return dict(gpu_uuid=fields[0],gpu_name=fields[1],gpu_driver=fields[2],
+        gpu_utilization_percent=values[0],gpu_memory_utilization_percent=values[1],
+        gpu_device_memory_used_gib=values[2]/1024.,gpu_device_memory_total_gib=values[3]/1024.,
+        gpu_power_watts=values[4],gpu_temperature_celsius=values[5])
+
+def observed_accepted_updates(out):
+    if out is None: return 0
+    path=out/"counters.json"
+    if not path.is_file(): return 0
+    count=read(path).get("accepted_updates")
+    if type(count) is not int or count<0: raise ValueError("invalid observed accepted-update counter")
+    return count
+
+def sample(pid,gpu,*,out=None):
     root=psutil.Process(pid)
     owned=[root,*root.children(recursive=True)]
     pids={p.pid for p in owned}
     rss=sum(p.memory_info().rss for p in owned if p.is_running())/2**30
-    info=dict(monotonic=time.monotonic(),rss_gib=rss,host_available_gib=psutil.virtual_memory().available/2**30,gpu_owned_gib=None)
+    info=dict(monotonic=time.monotonic(),rss_gib=rss,
+        host_available_gib=cgroup_memory_headroom_bytes(pid)/2**30,
+        accepted_updates=observed_accepted_updates(out),gpu_owned_gib=None)
     if gpu:
         proc=subprocess.run(["nvidia-smi","--query-compute-apps=pid,used_memory","--format=csv,noheader,nounits"],text=True,capture_output=True,timeout=.75,check=True)
         memory=0.
@@ -36,6 +115,11 @@ def sample(pid,gpu):
             process_id,value=row.split(",")
             if int(process_id.strip()) in pids: memory+=float(value.strip())/1024.
         info["gpu_owned_gib"]=memory
+        selected=allocated_gpu_selector()
+        device=subprocess.run(["nvidia-smi","--id",selected,
+            "--query-gpu=uuid,name,driver_version,utilization.gpu,utilization.memory,memory.used,memory.total,power.draw,temperature.gpu",
+            "--format=csv,noheader,nounits"],text=True,capture_output=True,timeout=.75,check=True)
+        info.update(parse_gpu_row(device.stdout))
     return info
 
 def stop_owned(process):
@@ -52,11 +136,19 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
     """Separate telemetry thread; stale/failed telemetry fails closed."""
     stop=threading.Event(); latest={"sample":None,"error":None}; started=time.monotonic()
     peak=dict(rss_gib=None,gpu_owned_gib=None,host_available_min_gib=None,samples=0)
+    if gpu:
+        peak.update(gpu_utilization_percent_max=None,gpu_memory_utilization_percent_max=None,
+            gpu_device_memory_used_gib_max=None,gpu_device_memory_total_gib=None,
+            gpu_power_watts_max=None,gpu_temperature_celsius_max=None)
     def telemetry():
         while not stop.is_set() and process.poll() is None:
             try:
-                s=sampler(process.pid,gpu)
-                for k in ("monotonic","rss_gib","host_available_gib",*( ["gpu_owned_gib"] if gpu else [])):
+                s=sample(process.pid,gpu,out=out) if sampler is sample else sampler(process.pid,gpu)
+                keys=("monotonic","rss_gib","host_available_gib","accepted_updates")
+                if gpu:
+                    keys+=("gpu_owned_gib","gpu_utilization_percent","gpu_memory_utilization_percent",
+                        "gpu_device_memory_used_gib","gpu_device_memory_total_gib","gpu_power_watts","gpu_temperature_celsius")
+                for k in keys:
                     if type(s.get(k)) not in (int,float) or not math.isfinite(s[k]) or s[k]<0:
                         raise ValueError("missing/nonfinite resource telemetry: "+k)
                 latest["sample"]=s
@@ -78,7 +170,11 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
                         seen=s["monotonic"]; peak["samples"]+=1
                         peak["rss_gib"]=s["rss_gib"] if peak["rss_gib"] is None else max(peak["rss_gib"],s["rss_gib"])
                         peak["host_available_min_gib"]=s["host_available_gib"] if peak["host_available_min_gib"] is None else min(peak["host_available_min_gib"],s["host_available_gib"])
-                        if gpu: peak["gpu_owned_gib"]=max(peak["gpu_owned_gib"] or 0.,s["gpu_owned_gib"])
+                        if gpu:
+                            peak["gpu_owned_gib"]=max(peak["gpu_owned_gib"] or 0.,s["gpu_owned_gib"])
+                            for key in ("gpu_utilization_percent","gpu_memory_utilization_percent","gpu_device_memory_used_gib","gpu_power_watts","gpu_temperature_celsius"):
+                                peak[key+"_max"]=max(peak[key+"_max"] or 0.,s[key])
+                            peak["gpu_device_memory_total_gib"]=s["gpu_device_memory_total_gib"]
                         f.write(json.dumps(s,allow_nan=False)+"\n"); f.flush()
                 if reason:
                     stop_owned(process); break

@@ -70,7 +70,7 @@ class FakeProcess:
 
 def healthy(pid, gpu):
     assert not gpu
-    return dict(monotonic=time.monotonic(), rss_gib=1., host_available_gib=16., gpu_owned_gib=None)
+    return dict(monotonic=time.monotonic(), rss_gib=1., host_available_gib=16., accepted_updates=0, gpu_owned_gib=None)
 
 @pytest.fixture
 def fake_stop(monkeypatch):
