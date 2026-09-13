@@ -67,10 +67,21 @@ last-call status is “unknown/interrupted,” not zero cost.
 - Missing input asset/credential/allocation: record the specific blocker and do
   useful CPU/code/review work that does not require it.
 
-The first runtime intentionally resets L-BFGS history on a new continuation. It
-is not an uninterrupted trajectory. Adding verified optimizer-state restoration
-is an implementation task with format/schema/phase/history replay tests, not a
-reason to infer history from theta alone.
+Historical specifications intentionally reset L-BFGS history on a new
+continuation. They retain their original limits and are not uninterrupted
+trajectories. The separately preregistered `p1-resume-v1` policy restores verified
+curvature pairs and21-state windows. It allows segments up to13,200s plus600s
+saved QA, with at least120s reserved INSIDE model time for endpoint gradients.
+Exact trial limits may be smaller. Ancestor result receipts determine spent
+model-window time; a segment cannot exceed the remaining cumulative allowance
+(at most21,600s in this policy). All dispatched calls remain charged.
+
+The atomic `restart.npz` is authoritative if a hard kill leaves `last.npz`
+behind. Saved-only audit records which file it evaluated; import requires exact
+agreement with that audited endpoint and a hash-bound terminal dispatch ledger.
+TERM is deferred only across a short coherent CPU/file state commit. GPU UUID
+identity is checked against CUDA; mandatory NVML memory samples do not wait for
+optional utilization queries. Optional failures/stale data remain explicit.
 
 ## Data and artifacts
 

@@ -52,6 +52,9 @@ paired starting functions, repeat seeds and convergence checks.
    sizes and gradient progress, and qualify any step-selection change on equal
    short budgets from identical saved states. Apply a selected policy to all
    comparison arms; preserve original and changed trajectories separately.
+   The next exact comparison is the [paired width8 line-search calibration](P1_OPTIMIZER_CALIBRATION.md):
+   two policies from the same saved state,12 new accepted steps each, frozen
+   progress/call-saving criteria and cumulative bounds that survive job changes.
 5. **Fix monitoring and termination at the source.** Establish GPU identity by
    UUID within the actual allocation, including concurrent nonzero GPU indices.
    Timestamp completed measurements and separate prompt mandatory memory
