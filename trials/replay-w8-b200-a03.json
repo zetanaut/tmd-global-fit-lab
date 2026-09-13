@@ -40,6 +40,7 @@
     "allocation_lifecycle_qualification_job": "19817220",
     "allocation_lifecycle_qualification_commit": "21844e17c475ace4821f983118c74105a1f1e3c3",
     "allocation_lifecycle_qualification_marker_sha256": "b31451aa31601d9c25c311924f725ceddfd1f53e54582735ea6def1b1d4846ec",
+    "allocation_lifecycle_qualification_artifact_sha256": "ba36f9225345267206ea14002eb4c8fde37b460a8ca6b58860ee96ed487fda6c",
     "allocation_lifecycle_qualification_passed": true,
     "reference_cpu_run": "replay-w8-cpu-a01-fe0e2232a8a7",
     "reference_a6000_run": "replay-w8-gpu-a02-65b3fcf031c1",
