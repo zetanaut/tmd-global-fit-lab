@@ -30,6 +30,9 @@ Adaptive used40.4959% fewer forwards, but its q/N was0.011240653248 worse
 (allowed1e-4) and its objective0.005620330301 worse (allowed5e-5).
 The lower adaptive gradient maximum is a real diagnostic, not grounds to
 replace the preregistered joint rule. Neither arm satisfies the unchanged
+gradient requirement: the parent maximum was0.14574971319705132, so the
+unit terminal maximum increased, while the adaptive value decreased slightly.
+Both also fail the remaining unchanged
 21-state convergence gate. This single-parent optimizer test establishes
 neither general optimizer superiority nor an architecture winner.
 
