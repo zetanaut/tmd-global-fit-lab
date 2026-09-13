@@ -22,6 +22,7 @@ from .gpu_telemetry import NvmlDevice,canonical_uuid
 from .restart import elapsed_before,segment_allowance
 
 _gpu_local=threading.local()
+_progress_local=threading.local()
 
 def paired_launch_binding(trial, trial_path, claim, claim_path, commit, bundle, device, deadline):
     """Create the exact receipt consumed by the W03 child evaluator."""
@@ -174,15 +175,90 @@ def parse_gpu_row(text):
         gpu_device_memory_used_gib=values[2]/1024.,gpu_device_memory_total_gib=values[3]/1024.,
         gpu_power_watts=values[4],gpu_temperature_celsius=values[5])
 
-def observed_accepted_updates(out):
-    if out is None: return 0
-    path=out/"counters.json"
-    if not path.is_file(): return 0
-    count=read(path).get("accepted_updates")
-    if type(count) is not int or count<0: raise ValueError("invalid observed accepted-update counter")
-    return count
+class AcceptedUpdateProgress:
+    """Best-effort progress metadata, never a substitute for resource telemetry.
 
-def sample(pid,gpu,*,out=None,memory_binding=None):
+    The worker updates ``counters.json`` while it commits work.  Observed live
+    reads can return ENOENT while those shared-file updates occur, even though
+    mandatory process, cgroup, and GPU readings are fresh.  Preserve the last
+    monotonic counter in that case, but make its stale or unavailable state
+    explicit instead of inventing zero progress or stopping the worker.
+    """
+    def __init__(self,out):
+        self.out=out
+        self.last=None
+        self.cached_result=None
+        self.query_thread=None
+        self.last_query_started=None
+
+    def unavailable(self,kind,error=None):
+        status=("stale_" if self.last is not None else "unavailable_")+kind
+        return dict(accepted_updates=self.last,accepted_updates_status=status,
+            accepted_updates_error=error)
+
+    def observe(self):
+        if self.out is None: return self.unavailable("no_output")
+        try:
+            value=read(self.out/"counters.json").get("accepted_updates")
+        except FileNotFoundError:
+            return self.unavailable("missing","FileNotFoundError")
+        except Exception as exc:
+            return self.unavailable("read_error",type(exc).__name__)
+        if type(value) is not int or value<0:
+            return self.unavailable("invalid","invalid accepted-update counter")
+        if self.last is not None and value<self.last:
+            return self.unavailable("nonmonotonic","accepted-update counter decreased")
+        self.last=value
+        return dict(accepted_updates=value,accepted_updates_status="fresh",
+            accepted_updates_error=None)
+
+    def _query(self):
+        result=self.observe()
+        result['accepted_updates_read_monotonic']=time.monotonic()
+        self.cached_result=result
+
+    def _start_query(self,now):
+        if self.out is None: return
+        if self.query_thread is not None and self.query_thread.is_alive(): return
+        if self.last_query_started is not None and now-self.last_query_started<.2:return
+        self.last_query_started=now
+        self.query_thread=threading.Thread(target=self._query,daemon=True)
+        self.query_thread.start()
+
+    def cached(self):
+        """Return progress cache and request one read without waiting for it."""
+        now=time.monotonic(); result=self.cached_result
+        if result is None:
+            result=self.unavailable("pending")
+            read_at=None
+        else:
+            result=dict(result)
+            read_at=result['accepted_updates_read_monotonic']
+        result['accepted_updates_read_monotonic']=read_at
+        result['accepted_updates_read_age_seconds']=(None if read_at is None
+            else max(0.,now-read_at))
+        thread=self.query_thread
+        if thread is not None and thread.is_alive():
+            status=result['accepted_updates_status']
+            if result['accepted_updates'] is None:
+                result['accepted_updates_status']=status+'_refreshing'
+            elif status=='fresh': result['accepted_updates_status']='stale_refreshing'
+        result['accepted_updates_query_in_flight']=bool(thread and thread.is_alive())
+        self._start_query(now)
+        return result
+
+def observed_accepted_updates(out,progress=None):
+    """Read optional worker progress with explicit availability metadata."""
+    return (progress or AcceptedUpdateProgress(out)).observe()
+
+def cached_accepted_updates(out,progress=None):
+    if progress is None:
+        progress=getattr(_progress_local,'progress',None)
+        if progress is None or progress.out!=out:
+            progress=AcceptedUpdateProgress(out); _progress_local.progress=progress
+    return progress.cached()
+
+def sample(pid,gpu,*,out=None,memory_binding=None,progress=None):
     sample_started=time.monotonic()
     root=psutil.Process(pid)
     owned=[root,*root.children(recursive=True)]
@@ -190,8 +266,8 @@ def sample(pid,gpu,*,out=None,memory_binding=None):
     rss=sum(p.memory_info().rss for p in owned if p.is_running())/2**30
     info=dict(monotonic=time.monotonic(),rss_gib=rss,
         host_available_gib=(memory_binding.read() if memory_binding is not None
-            else cgroup_memory_headroom_bytes(pid))/2**30,
-        accepted_updates=observed_accepted_updates(out),gpu_owned_gib=None)
+            else cgroup_memory_headroom_bytes(pid))/2**30,gpu_owned_gib=None)
+    info.update(cached_accepted_updates(out,progress))
     if memory_binding is not None:
         info.update(cgroup_memory_path=str(memory_binding.scope[1]),
             cgroup_worker_exit_transition=memory_binding.exit_transition)
@@ -240,13 +316,14 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
             gpu_power_watts_max=None,gpu_temperature_celsius_max=None)
     def telemetry():
         memory_binding=None
+        progress=AcceptedUpdateProgress(out)
         while not stop.is_set() and process.poll() is None:
             try:
                 if sampler is sample:
                     if memory_binding is None: memory_binding=CgroupMemoryBinding(process.pid)
-                    s=sample(process.pid,gpu,out=out,memory_binding=memory_binding)
+                    s=sample(process.pid,gpu,out=out,memory_binding=memory_binding,progress=progress)
                 else: s=sampler(process.pid,gpu)
-                keys=("monotonic","rss_gib","host_available_gib","accepted_updates")
+                keys=("monotonic","rss_gib","host_available_gib")
                 if gpu:
                     keys+=("gpu_owned_gib","gpu_device_memory_used_gib","gpu_device_memory_total_gib")
                     for key in ('gpu_utilization_percent','gpu_memory_utilization_percent','gpu_power_watts','gpu_temperature_celsius'):
