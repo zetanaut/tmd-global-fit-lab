@@ -25,7 +25,10 @@ cells; it does not remove dependencies between scientific phases.
 | W07 depth and conditioning factories | Coding/CPU agent | Depth 1/2/3 and input/every/last conditioning with clear function definitions, parameter matching, initial prediction comparisons and derivative/positivity tests. No duplicate depth-1 placements. |
 | W08 independent review | CPU agents | Validate all result archives and compare raw/adjusted residuals, nuisance penalties, stability and cost; publish decision records at each gate. |
 
-W03/W05/W06/W07 are explicit unfinished implementation tasks. Existing runtime
+The same-depth [width-transport helper](INITIALIZATION.md) is implemented and
+CPU-tested. W03 still needs registered full-observable-verified starts and a
+distinct paired feasible-seed factory; it is not ready for scientific execution.
+W03/W05/W06/W07 remain explicit unfinished implementation tasks. Existing runtime
 supports registered same-schema Nested-FiLM continuations and PORT, not every
 future variant. An agent may implement these within scope and submit tested PRs;
 do not claim a declared experiment has run before its artifacts exist.
