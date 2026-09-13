@@ -1,6 +1,7 @@
 """Verified L-BFGS restart state; saved arrays only, no model evaluation."""
 from pathlib import Path
 import re
+import math
 import numpy as np
 from .io import read, write, sha, digest, within
 
@@ -93,6 +94,41 @@ def load_restart(root, identity, trial, bundle):
         raise ValueError('restart trial lineage/mu mismatch')
     return m,a
 
+def elapsed_before(root, manifest, seen=None):
+    """Reconcile elapsed model windows from immutable ancestor result receipts.
+
+    Initial imported manifests predate the elapsed field. Their parent result
+    is still authoritative; absence is never interpreted as zero prior work.
+    """
+    seen=set() if seen is None else seen
+    identity=manifest['identity']
+    if identity in seen:raise ValueError('restart lineage cycle')
+    seen.add(identity)
+    if digest({k:v for k,v in manifest.items() if k!='identity'})!=identity:
+        raise ValueError('restart elapsed manifest identity mismatch')
+    parent=manifest['parent_record']; path=within(root,parent['path'])
+    if sha(path)!=parent['sha256']:raise ValueError('restart elapsed parent hash mismatch')
+    record=read(path)
+    if record['run_id']!=manifest['parent_run_id']:raise ValueError('restart elapsed parent run mismatch')
+    elapsed=record['supervisor'].get('elapsed_seconds')
+    if type(elapsed) not in (int,float) or not math.isfinite(elapsed) or elapsed<0:
+        raise ValueError('missing finite parent model elapsed evidence')
+    start=record['start_checkpoint']
+    if start.startswith('restart:'):
+        prior=read(within(root,'restarts/'+start[8:]+'.json'))
+        if prior['identity']!=start[8:]:raise ValueError('restart elapsed ancestor identity mismatch')
+        elapsed+=elapsed_before(root,prior,seen)
+    if 'model_seconds_before' in manifest and not math.isclose(manifest['model_seconds_before'],elapsed,rel_tol=0,abs_tol=1e-6):
+        raise ValueError('restart elapsed ledger mismatch')
+    return elapsed
+
+def segment_allowance(trial, prior_seconds):
+    remaining=trial['trajectory_budget']['model_seconds']-prior_seconds
+    allowed=min(trial['budget']['segment_seconds'],remaining)
+    if allowed<=trial['budget']['endpoint_reserve_seconds']:
+        raise ValueError('trajectory elapsed budget exhausted; preregister a decision before further work')
+    return allowed
+
 def reconstruct_v1(run, record):
     """Recover history from EVERY accepted theta AND gradient, with source proof.
 
@@ -139,3 +175,39 @@ def reconstruct_v1(run, record):
     point=dict(theta=old_theta,values=states[-1]['values'],gradient=old_gradient)
     a=pack_state(point,history,states,counts,mu=mu,last_alpha=last_alpha)
     return validate_arrays(a,old_theta.size)
+
+def recover_native(run, record):
+    """Restore atomic optimizer state and reconcile every charged dispatch.
+
+    A hard kill can leave the checkpoint's call ledger older than counters.json.
+    Preserve its optimizer state but take the greatest observed charge for each
+    counter. An accepted step beyond the atomic state requires investigation.
+    """
+    run=Path(run)
+    for name,item in record['files'].items():
+        path=within(run,name)
+        if sha(path)!=item['sha256'] or path.stat().st_size!=item['bytes']:
+            raise ValueError('published run file mismatch: '+name)
+    with np.load(run/'restart.npz',allow_pickle=False) as z:a={k:z[k].copy() for k in z.files}
+    validate_arrays(a,a['theta'].size)
+    audit=record.get('audit') or {}
+    if not audit.get('passed'):raise ValueError('native restart requires saved endpoint audit')
+    endpoint=within(run,audit.get('endpoint_path') or 'last.npz')
+    if sha(endpoint)!=audit['endpoint_sha256']:raise ValueError('native audited endpoint hash mismatch')
+    with np.load(endpoint,allow_pickle=False) as z:
+        if any(not np.array_equal(z[k],a[k]) for k in ('theta','values','penalized_gradient')):
+            raise ValueError('native restart differs from audited endpoint')
+    counts=dict(zip(COUNTERS,map(int,a['counters'])))
+    if 'counters.json' not in record['files'] or not (run/'counters.json').is_file():
+        raise ValueError('native restart requires hash-bound terminal dispatch ledger')
+    for name in ('counters.json','worker-summary.json'):
+        if not (run/name).is_file():continue
+        charged=read(run/name).get('trajectory_counters')
+        if not charged:raise ValueError('native restart needs cumulative dispatch ledger')
+        if charged['accepted_updates']>counts['accepted_updates']:
+            raise ValueError('accepted work beyond atomic restart state')
+        for key in COUNTERS:
+            if type(charged[key]) is not int or charged[key]<0:raise ValueError('invalid charged work')
+            counts[key]=max(counts[key],charged[key])
+    a['counters']=np.array([counts[k] for k in COUNTERS],dtype=np.int64)
+    return a

@@ -22,7 +22,7 @@ def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None)
         t.update(execution_policy='p1-resume-v1',start_checkpoint='restart:'+'0'*64,
             restart_binding=dict(parent_run_id='synthetic-parent',state_sha256='0'*64,
                 accepted_updates_before=prior,optimizer_history_reset=False),
-            trajectory_budget=dict(accepted_updates=prior+steps,forwards=1000,full_calls=300),
+            trajectory_budget=dict(accepted_updates=prior+steps,forwards=1000,full_calls=300,model_seconds=21600),
             optimizer=dict(line_search='unit-backtracking'))
         t['budget']['endpoint_reserve_seconds']=120
     path=tmp_path/"trial.json";write(path,t)
@@ -97,3 +97,20 @@ def test_real_worker_split_resume_preserves_next_steps_and_charges_preflight(tmp
     with np.load(whole/'restart.npz',allow_pickle=False) as w,np.load(second/'restart.npz',allow_pickle=False) as s:
         assert np.array_equal(w['history_s'],s['history_s'])
         assert np.array_equal(w['state_values'],s['state_values'])
+
+def test_sigterm_from_another_thread_is_deferred_until_commit():
+    import os
+    import threading
+    gate=worker.DeferredTermination(); old=signal.getsignal(signal.SIGTERM)
+    signal.signal(signal.SIGTERM,gate.handle)
+    completed=[]
+    try:
+        with pytest.raises(worker.Stop):
+            with gate.transaction():
+                sender=threading.Thread(target=lambda:os.kill(os.getpid(),signal.SIGTERM))
+                sender.start(); sender.join(timeout=1)
+                assert not sender.is_alive()
+                assert gate.pending
+                completed.append('coherent snapshot')
+        assert completed==['coherent snapshot']
+    finally:signal.signal(signal.SIGTERM,old)

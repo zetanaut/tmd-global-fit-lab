@@ -19,6 +19,7 @@ import psutil
 from .io import read,write,sha,digest,utc
 from .contracts import validate_trial
 from .gpu_telemetry import NvmlDevice,canonical_uuid
+from .restart import elapsed_before,segment_allowance
 
 _gpu_local=threading.local()
 
@@ -136,7 +137,7 @@ def sample(pid,gpu,*,out=None):
         uuid=os.environ.get('TMD_GPU_UUID')
         if uuid:
             if not hasattr(_gpu_local,'device') or _gpu_local.device.uuid!=canonical_uuid(uuid):
-                _gpu_local.device=NvmlDevice(uuid)
+                _gpu_local.device=NvmlDevice(uuid,async_optional=True)
             info.update(_gpu_local.device.sample(pids))
             info['sample_duration_seconds']=time.monotonic()-sample_started
             info['monotonic']=time.monotonic()
@@ -181,8 +182,9 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
                 s=sample(process.pid,gpu,out=out) if sampler is sample else sampler(process.pid,gpu)
                 keys=("monotonic","rss_gib","host_available_gib","accepted_updates")
                 if gpu:
-                    keys+=("gpu_owned_gib","gpu_utilization_percent","gpu_memory_utilization_percent",
-                        "gpu_device_memory_used_gib","gpu_device_memory_total_gib","gpu_power_watts","gpu_temperature_celsius")
+                    keys+=("gpu_owned_gib","gpu_device_memory_used_gib","gpu_device_memory_total_gib")
+                    for key in ('gpu_utilization_percent','gpu_memory_utilization_percent','gpu_power_watts','gpu_temperature_celsius'):
+                        if s.get(key) is not None:keys+=(key,)
                 for k in keys:
                     if type(s.get(k)) not in (int,float) or not math.isfinite(s[k]) or s[k]<0:
                         raise ValueError("missing/nonfinite resource telemetry: "+k)
@@ -208,7 +210,7 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
                         if gpu:
                             peak["gpu_owned_gib"]=max(peak["gpu_owned_gib"] or 0.,s["gpu_owned_gib"])
                             for key in ("gpu_utilization_percent","gpu_memory_utilization_percent","gpu_device_memory_used_gib","gpu_power_watts","gpu_temperature_celsius"):
-                                peak[key+"_max"]=max(peak[key+"_max"] or 0.,s[key])
+                                if s.get(key) is not None:peak[key+"_max"]=max(peak[key+"_max"] or 0.,s[key])
                             peak["gpu_device_memory_total_gib"]=s["gpu_device_memory_total_gib"]
                         f.write(json.dumps(s,allow_nan=False)+"\n"); f.flush()
                 if reason:
@@ -235,6 +237,11 @@ def main(args):
     claim=read(args.claim)
     if claim["trial_id"]!=trial["trial_id"] or claim["trial_sha256"]!=sha(args.trial) or claim["code_commit"]!=commit:
         raise ValueError("claim/spec/code mismatch")
+    prior_seconds=0.; model_seconds=budget['segment_seconds']
+    if trial.get('execution_policy')=='p1-resume-v1':
+        manifest=read(root/'restarts'/(trial['start_checkpoint'][8:]+'.json'))
+        prior_seconds=elapsed_before(root,manifest)
+        model_seconds=segment_allowance(trial,prior_seconds)
     args.out.mkdir(parents=True,exist_ok=False)
     def terminate(*_): raise KeyboardInterrupt("supervisor termination requested")
     signal.signal(signal.SIGTERM,terminate)
@@ -248,6 +255,10 @@ def main(args):
             logical_cuda_device=args.device,slurm_physical_devices=env.get('SLURM_STEP_GPUS') or env.get('SLURM_JOB_GPUS')))
     env.update(PYTHONDONTWRITEBYTECODE="1",PYTHONNOUSERSITE="1",OMP_NUM_THREADS="1",OPENBLAS_NUM_THREADS="1",MKL_NUM_THREADS="1",CUBLAS_WORKSPACE_CONFIG=":4096:8")
     launch=dict(schema="tmd-launch-v1",run_id=trial["trial_id"]+"-"+uuid.uuid4().hex[:12],trial_id=trial["trial_id"],trial_sha256=sha(args.trial),code_commit=commit,bundle_identity=trial["bundle_identity"],claim=claim,t0_utc=utc(),t0_epoch=epoch,t0_monotonic=t0,model_deadline_monotonic=t0+budget["segment_seconds"],final_deadline_monotonic=t0+budget["total_seconds"],budget=budget,device=args.device,platform=platform.platform(),python=sys.version,slurm={k:os.environ.get(k) for k in ("SLURM_JOB_ID","SLURM_ARRAY_JOB_ID","SLURM_ARRAY_TASK_ID","SLURM_CPUS_PER_TASK","SLURM_JOB_GPUS","CUDA_VISIBLE_DEVICES")})
+    if trial.get('execution_policy')=='p1-resume-v1':
+        launch.update(model_deadline_monotonic=t0+model_seconds,
+            model_seconds_before=prior_seconds,effective_segment_seconds=model_seconds,
+            trajectory_budget=trial['trajectory_budget'])
     write(args.out/"launch.json",launch)
     write(args.out/"trial.json",trial)
     command=[sys.executable,"-m","tmdlab.worker","--trial",str(args.trial.resolve()),"--bundle",str(args.bundle.resolve()),"--out",str(args.out.resolve()),"--device",args.device]

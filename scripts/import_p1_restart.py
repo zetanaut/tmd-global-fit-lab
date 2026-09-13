@@ -7,7 +7,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np
 from tmdlab.io import read,write,sha,digest
 from tmdlab.bundle import Bundle
-from tmdlab.restart import reconstruct_v1,ALGORITHM,COUNTERS
+from tmdlab.restart import reconstruct_v1,recover_native,elapsed_before,ALGORITHM,COUNTERS
 from tmdlab.results import validate_record
 
 def main(args):
@@ -15,9 +15,12 @@ def main(args):
     record=validate_record(read(record_path)); trial=read(run/'trial.json')
     if sha(args.archive)!=record['artifact']['sha256']:
         raise ValueError('published archive digest mismatch')
-    a=reconstruct_v1(run,record)
+    native=trial.get('execution_policy')=='p1-resume-v1'
+    a=recover_native(run,record) if native else reconstruct_v1(run,record)
     bundle=Bundle(args.bundle)
-    if trial['start_checkpoint'].startswith('overlay:'):
+    if native:
+        parent=read(root/'restarts'/(trial['start_checkpoint'][8:]+'.json'))
+    elif trial['start_checkpoint'].startswith('overlay:'):
         parent=read(root/'checkpoints'/ (trial['start_checkpoint'][8:]+'.json'))
     else:
         parent,_=bundle.checkpoint(trial['start_checkpoint'])
@@ -36,7 +39,8 @@ def main(args):
         parent_run_id=record['run_id'],parent_record=dict(path=str(record_path.relative_to(root)),sha256=sha(record_path)),
         artifact=record['artifact'],q_per_measurement=record['audit']['q_per_measurement'],mu=float(a['mu']),
         counters=dict(zip(COUNTERS,map(int,a['counters']))),
-        reconstruction=dict(method='all-accepted-theta-and-penalized-gradient-chain',
+        model_seconds_before=(elapsed_before(root,parent) if native else 0.)+record['supervisor']['elapsed_seconds'],
+        reconstruction=dict(method='atomic-native-state-and-dispatch-ledger' if native else 'all-accepted-theta-and-penalized-gradient-chain',
             accepted_transition_absolute_tolerance=1e-12,interrupted_calls_remain_charged=True,
             continuation_scope='accepted-state-boundary; unfinished line search is replayed with additional cost'),
         object=dict(path=str(dest.relative_to(root)),sha256=hashed,bytes=dest.stat().st_size))

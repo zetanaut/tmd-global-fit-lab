@@ -38,3 +38,30 @@ def test_nvml_errors_fail_closed():
     class Failed(FakeNvml):
         def nvmlDeviceGetMemoryInfo(self,*_):return 15
     with pytest.raises(RuntimeError,match='15'): NvmlDevice(UUID,library=Failed()).sample({123})
+
+def test_optional_query_errors_do_not_discard_mandatory_memory():
+    class OptionalFailed(FakeNvml):
+        def nvmlDeviceGetUtilizationRates(self,*_):return 3
+        def nvmlDeviceGetPowerUsage(self,*_):return 3
+        def nvmlDeviceGetTemperature(self,*_):return 3
+    result=NvmlDevice(UUID,library=OptionalFailed()).sample({123})
+    assert result['gpu_owned_gib']==3
+    assert result['gpu_utilization_percent'] is None and result['gpu_power_watts'] is None
+    assert result['optional_gpu_query_errors']==dict(utilization=3,power=3,temperature=3)
+
+def test_blocked_optional_query_does_not_block_mandatory_sampling():
+    import threading
+    import time
+    release=threading.Event(); entered=threading.Event()
+    class Slow(FakeNvml):
+        def nvmlDeviceGetUtilizationRates(self,*args):
+            entered.set(); release.wait(timeout=3)
+            return super().nvmlDeviceGetUtilizationRates(*args)
+    device=NvmlDevice(UUID,library=Slow(),async_optional=True)
+    try:
+        start=time.monotonic(); result=device.sample({123})
+        assert entered.wait(timeout=.5)
+        assert time.monotonic()-start<.8 and result['gpu_owned_gib']==3
+        assert device.sample({123})['gpu_owned_gib']==3
+        assert result['gpu_utilization_percent'] is None
+    finally:release.set(); device._optional_thread.join(timeout=1)

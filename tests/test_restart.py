@@ -48,3 +48,44 @@ def test_restart_rejects_curvature_corruption_and_wrong_endpoint():
 
 def test_nonpositive_curvature_is_not_restored_or_appended():
     assert update_history([],np.zeros(3),np.ones(3),np.ones(3),np.zeros(3))==[]
+
+def test_kill_between_atomic_restart_and_last_audits_new_state_and_charges_dispatch(tmp_path):
+    from tmdlab.audit import endpoint_arrays
+    from tmdlab.restart import recover_native
+    from tmdlab.io import write,sha
+    old=state(np.array([1.,2.,3.])); new,h,s=advance(old,[],[old],1)
+    counts=dict.fromkeys(COUNTERS,0); counts.update(accepted_updates=1,forwards=9,full_calls=3)
+    a=pack_state(new,h,s,counts,mu=1e-6)
+    write(tmp_path/'trial.json',dict(execution_policy='p1-resume-v1'))
+    np.savez_compressed(tmp_path/'last.npz',theta=old['theta'],values=old['values'],penalized_gradient=old['gradient'])
+    np.savez_compressed(tmp_path/'restart.npz',**a)
+    path,endpoint=endpoint_arrays(tmp_path)
+    assert path.name=='restart.npz' and np.array_equal(endpoint['theta'],new['theta'])
+    charged=dict(counts,forwards=10,full_calls=4)
+    write(tmp_path/'counters.json',dict(trajectory_counters=charged,call_in_flight=True))
+    record=dict(files={p.name:dict(sha256=sha(p),bytes=p.stat().st_size) for p in tmp_path.iterdir()},
+        audit=dict(passed=True,endpoint_path=path.name,endpoint_sha256=sha(path)))
+    recovered=recover_native(tmp_path,record)
+    assert dict(zip(COUNTERS,map(int,recovered['counters'])))==charged
+    record['audit'].update(endpoint_path='last.npz',endpoint_sha256=sha(tmp_path/'last.npz'))
+    with pytest.raises(ValueError,match='differs from audited'):recover_native(tmp_path,record)
+    record['audit'].update(endpoint_path=path.name,endpoint_sha256=sha(path))
+    record['files'].pop('counters.json')
+    with pytest.raises(ValueError,match='terminal dispatch ledger'):recover_native(tmp_path,record)
+
+def test_elapsed_ledger_recovers_legacy_time_and_accumulates_without_reset(tmp_path):
+    from tmdlab.io import write,sha,digest
+    from tmdlab.restart import elapsed_before,segment_allowance
+    def manifest(run,start,elapsed):
+        path=tmp_path/(run+'.json')
+        write(path,dict(run_id=run,start_checkpoint=start,supervisor=dict(elapsed_seconds=elapsed)))
+        m=dict(parent_run_id=run,parent_record=dict(path=path.name,sha256=sha(path)))
+        m['identity']=digest(m); write(tmp_path/'restarts'/(m['identity']+'.json'),m)
+        return m
+    first=manifest('old','overlay:'+'0'*64,1200.)
+    second=manifest('new','restart:'+first['identity'],3600.)
+    assert elapsed_before(tmp_path,first)==1200.
+    assert elapsed_before(tmp_path,second)==4800.
+    trial=dict(trajectory_budget=dict(model_seconds=6000),budget=dict(segment_seconds=3600,endpoint_reserve_seconds=120))
+    assert segment_allowance(trial,4800.)==1200.
+    with pytest.raises(ValueError,match='exhausted'):segment_allowance(trial,5900.)

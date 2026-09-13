@@ -50,6 +50,8 @@ def validate_trial(t, *, require_ready=True):
             for key in ('accepted_updates','forwards','full_calls'):
                 if type(ledger.get(key)) is not int or not 0<ledger[key]<=limits[key]:
                     raise ValueError('invalid cumulative trajectory budget')
+            if type(ledger.get('model_seconds')) is not int or not 0<ledger['model_seconds']<=21600:
+                raise ValueError('invalid cumulative elapsed budget')
             if (r['accepted_updates_before']+sum(p['updates'] for p in phases)!=ledger['accepted_updates']
                 or b.get('endpoint_reserve_seconds',0)<120
                 or b['endpoint_reserve_seconds']>=b['segment_seconds']
