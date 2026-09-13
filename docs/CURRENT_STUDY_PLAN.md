@@ -25,7 +25,12 @@ matched the references but had partial execution; the
 [A02 technical retry](../decisions/2026-09-13-b200-w8-a02-outcome.md) reproduced
 that numerical pass and shutdown-monitor failure. B200 promotion and automatic
 retries are paused. The exact A6000 width specs are reviewed; claims briefly
-await a robust allocation-lifecycle monitor review applicable to both GPU types.
+awaited a robust allocation-lifecycle monitor review applicable to both GPU types.
+That execution gate has now passed: the reviewed fix passed the full CPU suite
+and an allocated A6000 natural-exit check that observed the actual transition
+with fresh memory accounting. The three A6000 width trials are released for
+independent claims and parallel submission at source`21844e1`; no historical
+B200 partial result is reclassified or promoted by that A6000 proof.
 
 ## What has actually been tested
 
