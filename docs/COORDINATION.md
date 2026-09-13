@@ -5,6 +5,20 @@ authority for input identity, ownership, completed work, or scientific decisions
 Use Issues for discussion and PRs for persistent changes; machine-readable trial,
 claim and result files are authoritative within their stated scope.
 
+## One GitHub owner, multiple agents
+
+Dustin confirmed that access is limited to him and his own agents, using
+owner-approved authentication under `zetanaut`. No collaborator invitations or
+separate agent GitHub accounts are needed. Authenticate each submission/transfer
+host as appropriate; credentials must not travel with the compute job.
+
+Give each agent an isolated clone or worktree, a unique branch and a unique
+agent/site/session owner ID, such as `rivanna-gpu-session-001`. Do not let two
+agents switch branches or edit files in the same working tree. All agents must
+use the atomic claims below even though their GitHub account is the same.
+Record the reviewing agent's owner ID in review notes as well as the producing
+agent's ID; GitHub account attribution alone cannot distinguish their work.
+
 ## Claim before running
 
 1. Fetch main and read the exact trial spec and prerequisites. Check existing

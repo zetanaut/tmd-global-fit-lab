@@ -28,13 +28,19 @@ the bundle identity. Only after that succeeds change the release lock's
 `publication_status` to `uploaded_and_download_verified`, commit the receipt,
 and update README status. Do not change any existing asset/hash to mask drift.
 
-Add the UVA agent/operator as an appropriate collaborator, enable Issues, and
-protect main with required `cpu-contracts` checks and PR review where account
-features permit. Contributors use separate identities/branches and should not
-have permission to bypass review or delete historical release assets. A claim
-writer needs permission to create `claims/*` refs; compute jobs need no GitHub
-credential. Configure protections to preserve claim creation while disallowing
-arbitrary main updates and claim overwrite/deletion.
+Dustin confirmed owner-only access: just him and his agents. Do not invite
+collaborators or require separate GitHub accounts for agents. Use owner-approved
+authentication under `zetanaut` on the submission/transfer hosts; a new host
+still needs its own authorized setup. Keep agent/site/session owner IDs,
+checkouts, branches and trial claims distinct even though GitHub authentication
+is shared. See [coordination](COORDINATION.md).
+
+Keep Issues enabled and protect main with required `cpu-contracts` checks and
+PR review where account features permit. Agents must follow review conventions
+and never delete historical release assets. A claim writer needs permission to
+create `claims/*` refs; compute jobs need no GitHub credential. Configure
+protections to preserve claim creation while disallowing arbitrary main updates
+and claim overwrite/deletion.
 
 On 12 September 2026, GitHub returned HTTP 403 for private-repository branch
 protection on this account, requiring GitHub Pro or public visibility. Neither

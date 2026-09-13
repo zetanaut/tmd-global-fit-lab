@@ -69,6 +69,12 @@ runtime deliberately has no distributed single-model optimizer.
 
 ## Source and credentials
 
+Access is owner-only: Dustin and his agents use owner-approved authentication
+under `zetanaut`. Do not invite collaborators or create separate GitHub accounts
+for agents. Every agent still needs a unique agent/site/session owner ID, an
+isolated checkout and branch, and its own atomic trial claims; the shared GitHub
+account does not distinguish workers or permit duplicate launches.
+
 Keep GitHub tokens and UVA credentials off compute nodes, out of Slurm exports,
 logs, committed files and prompts. Publish from a login/transfer workstation.
 Default repository visibility is private. There is no blanket redistribution
