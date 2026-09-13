@@ -61,6 +61,14 @@ preregistered and reviewed B200 width24 PORT plan may now be prepared, but is
 not yet claimed or submitted; no B200 optimization or architecture conclusion
 is authorized. The three A6000 P1 continuations remain independent.
 
+That final [B200 width24 A01 PORT plan](../decisions/2026-09-13-b200-w24-a01-plan.md)
+is now preregistered and awaiting independent review, exact-source CI, a fresh
+claim and launch. It fixes the original width24 anchor, preserves completed
+B200 execution lineage, and requires a saved raw gradient plus a hash-pinned
+saved-only comparison to the retained CPU and A6000 width24 endpoints. It is
+not submitted, is the last B200 PORT cell, and cannot support optimizer,
+throughput or architecture claims.
+
 ## What has actually been tested
 
 Six full-data PORT cells (widths 8, 16 and 24 on CPU and RTX A6000) passed the

@@ -1,0 +1,73 @@
+{
+  "schema": "tmd-trial-v1",
+  "trial_id": "replay-w24-b200-a01",
+  "status": "ready",
+  "phase": "PORT",
+  "kind": "replay",
+  "hypothesis": "After clean B200 width8 and width16 execution qualifications, one all2290 width24 anchor replay verifies the unchanged evaluator, directional checks, audit, and durable allocation monitor on B200; it is not an optimizer run or architecture comparison.",
+  "model_family": "nested-film-v1",
+  "model": {"depth": 1, "width": 24},
+  "seed": 2026091224,
+  "start_checkpoint": "p0-w24-064",
+  "rows": 2290,
+  "dtype": "float64",
+  "execution_class": "gpu",
+  "claim_required": true,
+  "production_selection": false,
+  "phases": [],
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "budget": {
+    "accepted_updates": 96, "cache_gib": 12, "cpu_threads": 1,
+    "forwards": 600, "full_calls": 240, "gpu_gib": 20,
+    "host_available_gib": 8, "rss_gib": 12,
+    "segment_seconds": 300, "total_seconds": 2100
+  },
+  "resource_profile": {
+    "site": "UVA", "account": "spinquest_standard", "partition": "gpu",
+    "gpu_model": "NVIDIA B200", "gres": "gpu:b200:1", "constraint": "b200",
+    "gpus": 1, "cpus_per_task": 2, "host_memory_gib": 16,
+    "wall_seconds": 2400, "max_concurrent_b200_cells": 1,
+    "temporary_project_gpu_cap": 4
+  },
+  "prerequisites": {
+    "container_sha256": "7feff211863de2df3ee524fa958a7da09c0de5acea327d18b39a2cdd50bb8264",
+    "baseline_bundle_verified": true, "verified_input_files": 4600,
+    "engineering_qualification_job": "19811128",
+    "engineering_qualification_commit": "e405bc8e7c47187030c40fffb6ef977d94f6bf73",
+    "allocation_lifecycle_qualification_job": "19817220",
+    "allocation_lifecycle_qualification_commit": "21844e17c475ace4821f983118c74105a1f1e3c3",
+    "allocation_lifecycle_qualification_marker_sha256": "b31451aa31601d9c25c311924f725ceddfd1f53e54582735ea6def1b1d4846ec",
+    "reference_cpu_run": "replay-w24-cpu-a02-fa5d2af0bd21",
+    "reference_a6000_run": "replay-w24-gpu-a02-c511ed48adc1",
+    "reference_a6000_model_window_seconds": 147.422,
+    "reference_a6000_peak_gpu_gib": 10.691,
+    "terminal_monitor_fix_commit": "21844e17c475ace4821f983118c74105a1f1e3c3",
+    "b200_width8_execution_result": "results/replay-w8-b200-a03/replay-w8-b200-a03-84bd7ddf4df8.json",
+    "b200_width16_execution_result": "results/replay-w16-b200-a01/replay-w16-b200-a01-dd7169659beb.json"
+  },
+  "postrun_raw_gradient_comparison": {
+    "mode": "saved-only-after-replay",
+    "verifier": "scripts/compare_saved_raw_gradients.py",
+    "retain_reference_endpoint_files": true,
+    "retain_comparison_report": true,
+    "maximum_absolute_error": 1e-7,
+    "require_theta_exact_match": true,
+    "anchor_bundle_raw_gradient_available": false,
+    "references": [
+      {"execution_class": "cpu", "run_id": "replay-w24-cpu-a02-fa5d2af0bd21", "archive_sha256": "0d5cca4f6f560f383f8e1185519340fb2354be91b1556bbdd95b6e86163ee370", "endpoint_sha256": "023b6687cd85730b139bb0965daae2412e4d3f578adabfb356adfa82a8d6e567"},
+      {"execution_class": "gpu-a6000", "run_id": "replay-w24-gpu-a02-c511ed48adc1", "archive_sha256": "905f5dfc8c874af6054671cb81f0dedeefbc9635d78697568abffe7f2d594874", "endpoint_sha256": "72c982aa040104093847db0a7d28d659a9f7d73bc381574ef044eed22394f8b9"}
+    ]
+  },
+  "prior_b200_execution_evidence": {
+    "width8_qualification": {"charged_forwards": 24, "charged_full_calls": 9, "accepted_updates": 0, "model_window_seconds": 173.31992650777102},
+    "width16_completed": {"run_id": "replay-w16-b200-a01-dd7169659beb", "charged_forwards": 8, "charged_full_calls": 3, "accepted_updates": 0, "model_window_seconds": 58.10458451602608},
+    "cumulative_before_width24_forwards": 32,
+    "cumulative_before_width24_full_calls": 12,
+    "cumulative_before_width24_accepted_updates": 0,
+    "cumulative_before_width24_model_window_seconds": 231.4245110237971
+  },
+  "decision_record": "decisions/2026-09-13-b200-w24-a01-plan.md",
+  "attempt_reason": "First B200 width24 cell, separately preregistered after completed width8 and width16 execution qualifications. It is not a retry, continuation, fit, architecture selection, or authorization for B200 optimization."
+}
