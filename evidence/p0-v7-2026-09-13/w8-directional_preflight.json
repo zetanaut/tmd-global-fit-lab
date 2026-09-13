@@ -1,0 +1,151 @@
+{
+  "content": {
+    "checks": [
+      {
+        "absolute_error": 8.008213460150918e-07,
+        "analytic": 0.00689503214051157,
+        "attempted_steps": [
+          {
+            "minus_feasible": false,
+            "plus_feasible": true,
+            "step": 1e-05
+          },
+          {
+            "minus_feasible": false,
+            "plus_feasible": true,
+            "step": 5e-06
+          },
+          {
+            "minus_feasible": false,
+            "plus_feasible": true,
+            "step": 2.5e-06
+          },
+          {
+            "minus_feasible": false,
+            "plus_feasible": true,
+            "step": 1.25e-06
+          },
+          {
+            "absolute_error": 6.615654218122911e-05,
+            "finite_difference": 0.006828875598330341,
+            "minus_feasible": true,
+            "passed": false,
+            "plus_feasible": true,
+            "step": 6.25e-07
+          },
+          {
+            "absolute_error": 1.3491114606690481e-05,
+            "finite_difference": 0.0068815410259048795,
+            "minus_feasible": true,
+            "passed": false,
+            "plus_feasible": true,
+            "step": 3.125e-07
+          },
+          {
+            "absolute_error": 3.228035331371594e-06,
+            "finite_difference": 0.006891804105180198,
+            "minus_feasible": true,
+            "passed": false,
+            "plus_feasible": true,
+            "step": 1.5625e-07
+          },
+          {
+            "absolute_error": 8.008213460150918e-07,
+            "finite_difference": 0.006894231319165555,
+            "minus_feasible": true,
+            "passed": true,
+            "plus_feasible": true,
+            "step": 7.8125e-08
+          }
+        ],
+        "direction": 0,
+        "finite_difference": 0.006894231319165555,
+        "passed": true,
+        "probe_mu": 1e-06,
+        "step": 7.8125e-08
+      },
+      {
+        "absolute_error": 1.7051110973850467e-06,
+        "analytic": -0.005106562830880444,
+        "attempted_steps": [
+          {
+            "minus_feasible": false,
+            "plus_feasible": true,
+            "step": 1e-05
+          },
+          {
+            "minus_feasible": false,
+            "plus_feasible": true,
+            "step": 5e-06
+          },
+          {
+            "minus_feasible": false,
+            "plus_feasible": true,
+            "step": 2.5e-06
+          },
+          {
+            "minus_feasible": false,
+            "plus_feasible": true,
+            "step": 1.25e-06
+          },
+          {
+            "minus_feasible": false,
+            "plus_feasible": true,
+            "step": 6.25e-07
+          },
+          {
+            "absolute_error": 0.0013738285037818276,
+            "finite_difference": -0.006480391334662271,
+            "minus_feasible": true,
+            "passed": false,
+            "plus_feasible": true,
+            "step": 3.125e-07
+          },
+          {
+            "absolute_error": 0.00012003605613992909,
+            "finite_difference": -0.005226598887020373,
+            "minus_feasible": true,
+            "passed": false,
+            "plus_feasible": true,
+            "step": 1.5625e-07
+          },
+          {
+            "absolute_error": 2.6670740661051927e-05,
+            "finite_difference": -0.005133233571541496,
+            "minus_feasible": true,
+            "passed": false,
+            "plus_feasible": true,
+            "step": 7.8125e-08
+          },
+          {
+            "absolute_error": 6.502695649237243e-06,
+            "finite_difference": -0.005113065526529681,
+            "minus_feasible": true,
+            "passed": false,
+            "plus_feasible": true,
+            "step": 3.90625e-08
+          },
+          {
+            "absolute_error": 1.7051110973850467e-06,
+            "finite_difference": -0.005108267941977829,
+            "minus_feasible": true,
+            "passed": true,
+            "plus_feasible": true,
+            "step": 1.953125e-08
+          }
+        ],
+        "direction": 1,
+        "finite_difference": -0.005108267941977829,
+        "passed": true,
+        "probe_mu": 1e-06,
+        "step": 1.953125e-08
+      }
+    ],
+    "passed": true,
+    "schema": "gpu-film-two-direction-preflight-v1"
+  },
+  "original_sha256": "24d57a2807cf9b67033e5f3823d0e7aea4c5c2091d98dfe8d2d089c4b3631a26",
+  "original_source": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/directional_preflight.json",
+  "schema": "tmd-redacted-evidence-v1",
+  "transformation": "Local paths normalized; coordination identifiers and commands omitted. Scientific numbers retained. Not byte-identical to original."
+}

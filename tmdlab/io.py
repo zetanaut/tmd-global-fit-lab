@@ -1,6 +1,7 @@
 """Strict JSON, content identities, and crash-safe local records."""
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import tempfile
@@ -27,9 +28,22 @@ def _unique(pairs):
         result[key] = value
     return result
 
+def require_finite_numbers(value):
+    """Reject nonfinite JSON numbers, including overflow and nested values."""
+    if isinstance(value, dict):
+        for child in value.values():
+            require_finite_numbers(child)
+    elif isinstance(value, (list, tuple)):
+        for child in value:
+            require_finite_numbers(child)
+    elif isinstance(value, float) and not math.isfinite(value):
+        raise ValueError("nonfinite numeric input")
+    return value
+
 def read(path):
-    return json.loads(Path(path).read_text(), object_pairs_hook=_unique,
-                      parse_constant=lambda x: (_ for _ in ()).throw(ValueError(x)))
+    return require_finite_numbers(json.loads(
+        Path(path).read_text(), object_pairs_hook=_unique,
+        parse_constant=lambda x: (_ for _ in ()).throw(ValueError(x))))
 
 def write(path, value):
     path = Path(path)

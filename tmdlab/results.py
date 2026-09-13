@@ -20,13 +20,34 @@ def validate_record(r):
 def collect(args):
     run=Path(args.run); launch=read(run/"launch.json"); trial=read(run/"trial.json")
     if any(p.is_symlink() for p in run.rglob("*")): raise ValueError("run archive cannot contain symlinks to other trees")
-    worker=read(run/"worker-summary.json") if (run/"worker-summary.json").is_file() else {"status":"failed","stop_reason":"worker_killed_or_missing_summary"}
     supervisor=read(run/"supervisor.json")
+    summary_path=run/"worker-summary.json"
+    summary_missing=not summary_path.is_file()
+    if summary_missing:
+        # A declared supervisor deadline can reap a worker while it is already
+        # handling the evaluator deadline, before the worker's final summary is
+        # written.  Preserve that absence, but do not replace the authoritative
+        # supervisor reason with a misleading generic missing-summary label.
+        counters_path=run/"counters.json"
+        worker=dict(status="partial" if supervisor.get("stop_reason") else "failed",
+            stop_reason=supervisor.get("stop_reason") or "worker_killed_or_missing_summary",
+            counters=read(counters_path) if counters_path.is_file() else None,
+            plateau=None,optimizer_history_reset=None,summary_missing=True)
+    else:
+        worker=read(summary_path)
     audit=read(run/"audit.json") if (run/"audit.json").is_file() else None
     status=worker["status"]
     if supervisor["stop_reason"] is not None or not audit or not audit.get("passed"):
         status="partial" if audit and audit.get("passed") else "failed"
-    record=dict(schema="tmd-result-v1",run_id=launch["run_id"],trial_id=launch["trial_id"],trial_sha256=launch["trial_sha256"],code_commit=launch["code_commit"],bundle_identity=launch["bundle_identity"],source_identity=trial["source_identity"],metric_identity=trial["metric_identity"],kind=trial["kind"],phase=trial["phase"],model=trial["model"],start_checkpoint=trial["start_checkpoint"],status=status,worker_status=worker["status"],stop_reason=worker.get("stop_reason"),counters=worker.get("counters"),plateau=worker.get("plateau"),optimizer_history_reset=worker.get("optimizer_history_reset"),audit=audit,supervisor=supervisor,hardware=launch["device"],slurm=launch["slurm"],claim=launch["claim"],artifact={"url":args.artifact_url,"sha256":sha(args.artifact),"bytes":Path(args.artifact).stat().st_size},files={str(p.relative_to(run)):{"sha256":sha(p),"bytes":p.stat().st_size} for p in sorted(run.rglob("*")) if p.is_file()},recorded_utc=utc(),production_selected=False)
+    record=dict(schema="tmd-result-v1",run_id=launch["run_id"],trial_id=launch["trial_id"],trial_sha256=launch["trial_sha256"],code_commit=launch["code_commit"],bundle_identity=launch["bundle_identity"],source_identity=trial["source_identity"],metric_identity=trial["metric_identity"],kind=trial["kind"],phase=trial["phase"],model=trial["model"],start_checkpoint=trial["start_checkpoint"],status=status,worker_status=worker["status"],stop_reason=worker.get("stop_reason"),counters=worker.get("counters"),plateau=worker.get("plateau"),optimizer_history_reset=worker.get("optimizer_history_reset"),worker_summary_missing=summary_missing,audit=audit,supervisor=supervisor,hardware=launch["device"],slurm=launch["slurm"],claim=launch["claim"],artifact={"url":args.artifact_url,"sha256":sha(args.artifact),"bytes":Path(args.artifact).stat().st_size},files={str(p.relative_to(run)):{"sha256":sha(p),"bytes":p.stat().st_size} for p in sorted(run.rglob("*")) if p.is_file()},recorded_utc=utc(),production_selected=False)
+    if trial.get('execution_policy')=='p1-resume-v1':
+        from .restart import recover_native,COUNTERS
+        reconciled=recover_native(run,record) if (run/'restart.npz').is_file() and audit and audit.get('passed') else None
+        ledger=read(run/'counters.json') if (run/'counters.json').is_file() else {}
+        record.update(trajectory_counters=dict(zip(COUNTERS,map(int,reconciled['counters']))) if reconciled is not None else ledger.get('trajectory_counters'),
+            trajectory_budget=trial['trajectory_budget'],
+            model_seconds_before=launch['model_seconds_before'],
+            trajectory_model_seconds=launch['model_seconds_before']+supervisor['elapsed_seconds'])
     record["identity"]=digest(record); validate_record(record)
     dest=Path(args.out)/record["trial_id"]/f"{record['run_id']}.json"
     if dest.exists(): raise ValueError("immutable result already exists")

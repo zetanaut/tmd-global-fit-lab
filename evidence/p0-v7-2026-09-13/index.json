@@ -1,0 +1,262 @@
+{
+  "classification": "P0_complete_unconverged",
+  "gpu_calls": 0,
+  "model_calls": 0,
+  "optimizer_calls": 0,
+  "overlays": {
+    "24": "7744bbd6e185b8c706c2a84e3f0bc80a61824a85cd8ab1c27d5ccea62e8ebfd8",
+    "8": "8cf0e6dd1d50c54e51e727028f566ef9352314e6e7bcc5113d8595b8783d39d0"
+  },
+  "portable_trial_completion": false,
+  "qualifications": [
+    "All endpoints positive and all 188 high-COMPASS rows underpredicted; no architecture winner or convergence.",
+    "V6 w24 is an alternative parent branch. V6 w8 repeats the same path, not an independent seed or extra unique accepted updates; retain separate execution cost.",
+    "Original terminal cumulative counters are historical reports, not complete project totals: older attempt002 adds 10 forwards and 4 full calls with zero accepted updates.",
+    "Missing elapsed time and actual worker peaks remain unknown, not zero; preflight resource_peak is not a worker maximum.",
+    "V8 repair: seven CPU surrogate tests, no model/GPU execution or new allowance; Python signal tests do not certify interruption of native CUDA stalls.",
+    "Native P1 is separately assigned to Manager and does not wait for portable qualification. No PORT or UVA job was submitted by this import."
+  ],
+  "records": {
+    "cleanup": {
+      "original_sha256": "191594536fa01ae1ac72aae9b9391a0e14d2f93bff6e1ad05fdb44656f094d83",
+      "path": "evidence/p0-v7-2026-09-13/cleanup.json",
+      "sha256": "4ce169a2ab3c37c693892e87c902b5cd50593485329ce2f75f18ee7209696fd8"
+    },
+    "saved-scientific-audit": {
+      "original_sha256": "79b83c05939b5142c96f9ebe90034f7dd978c754afc33980003f64d380650147",
+      "path": "evidence/p0-v7-2026-09-13/saved-scientific-audit.json",
+      "sha256": "c4da1b46ce27ccc78800be706da5eb884cfcf37d5fc79d89e0b0c7e8aa810094"
+    },
+    "terminal": {
+      "original_sha256": "8be5ed6162473e3192e52fa3ffaeec1400a750814d293f78ad1cc3f8640643d9",
+      "path": "evidence/p0-v7-2026-09-13/terminal.json",
+      "sha256": "f4126278e033242489362b081d65453bb94e666d75d40eb5cfadecb69ba5589f"
+    },
+    "v8-cpu-repair": {
+      "original_sha256": "bb42f11398d4acc69badb9b594ef292666882b20659cd030f502975e2746bc46",
+      "path": "evidence/p0-v7-2026-09-13/v8-cpu-repair.json",
+      "sha256": "8c41ea19e9a79231a427c1023c00d68b4ad5f5d3b2426980fd4db5ffb2170691"
+    },
+    "w24-directional_preflight": {
+      "original_sha256": "12c8a22b684cd1c3fb1bf491fe6f11c36686edd2934976334d67232ed47d3504",
+      "path": "evidence/p0-v7-2026-09-13/w24-directional_preflight.json",
+      "sha256": "00bc57cca8a088fe5be1ea69d2b243acd2daa36ab5d1b189c04a139710d0c1f6"
+    },
+    "w24-final_endpoint": {
+      "original_sha256": "9b78dd71eb475b15701140f44f0401821912a8d367b1205d22d4f984e5df9d2c",
+      "path": "evidence/p0-v7-2026-09-13/w24-final_endpoint.json",
+      "sha256": "84bd8b5612bfbaa5b36828f17c8c9969087796d288e3d1f2276e2aa9626b6358"
+    },
+    "w24-initial_endpoint": {
+      "original_sha256": "a15efd90b06456d5aa7ea9afbdf3b523dff66afcad8443d267c832e7356c94e4",
+      "path": "evidence/p0-v7-2026-09-13/w24-initial_endpoint.json",
+      "sha256": "02b5de6653e04b293349d422fd72c9f34ccf956171c07c572fedbaf37819efae"
+    },
+    "w24-parent_verification": {
+      "original_sha256": "02b2e7fad4766804308a77c7eee4ede9944bf01087feb3c4b5bb6b4512bb8a6a",
+      "path": "evidence/p0-v7-2026-09-13/w24-parent_verification.json",
+      "sha256": "f063fa24a8f124c0050f86bf7388cc638709cf1660bbbe8c1026a412bad6a2a5"
+    },
+    "w24-summary": {
+      "original_sha256": "6645e1f4fc8c93afee5cd02c79cbbb04a84cc26bafdadd31f483cabb5728c4ef",
+      "path": "evidence/p0-v7-2026-09-13/w24-summary.json",
+      "sha256": "9dbd6fd410bbd4a96b913cfa1edd2f024574d4559bec788bba7a9c159a681b03"
+    },
+    "w8-directional_preflight": {
+      "original_sha256": "24d57a2807cf9b67033e5f3823d0e7aea4c5c2091d98dfe8d2d089c4b3631a26",
+      "path": "evidence/p0-v7-2026-09-13/w8-directional_preflight.json",
+      "sha256": "1e690e35c87973eebf22cccfaeeded3e70467e763ea6c9f880bd05c8a1ab3abc"
+    },
+    "w8-final_endpoint": {
+      "original_sha256": "fb18ebe775c957cf4b0f962948f9ed3e795139b5bf4ac0adbadd7ea5cdf9410e",
+      "path": "evidence/p0-v7-2026-09-13/w8-final_endpoint.json",
+      "sha256": "57f7e98f6936bfb05703fa0eced5c90c07c04443763d2308a844ea85b403c01b"
+    },
+    "w8-initial_endpoint": {
+      "original_sha256": "0c9d39fb7b9687f53362b450e593d6c96a651dc9ffd7faf3c3739d06192af614",
+      "path": "evidence/p0-v7-2026-09-13/w8-initial_endpoint.json",
+      "sha256": "a182b109c02205af0fc045878e15385d18976a00e7b213ed0b75e885754931fb"
+    },
+    "w8-parent_verification": {
+      "original_sha256": "2d66a5496d4663160cd08683d20483854cb934fd8c90d1c9ca772ecb08c0306c",
+      "path": "evidence/p0-v7-2026-09-13/w8-parent_verification.json",
+      "sha256": "9c5086211f510d7bff1382c61698d8dfc776a0658e227b598e65c8d4fd00391d"
+    },
+    "w8-summary": {
+      "original_sha256": "229c501325aac6831466a40663b95a1fc3e1130ee581f20387538c96f7a39df1",
+      "path": "evidence/p0-v7-2026-09-13/w8-summary.json",
+      "sha256": "e77abc28256f71d5bbb31e4e2c242c64b99a505f998dde05802ffffa0d75bda5"
+    }
+  },
+  "saved_array_checks": {
+    "16": {
+      "DY_adjusted_RMS_fixed_sigma": 2.172206110951454,
+      "DY_nuisances": {
+        "CDF_RUN_1:normalization": 2.5171467100718905,
+        "CDF_RUN_2:efficiency": 1.5592975281103185,
+        "CDF_RUN_2:normalization": 0.6280194903606339,
+        "D0_RUN_1:normalization": 0.3771665402425454,
+        "E288_200:normalization": 3.648843710081888,
+        "E288_300:normalization": 4.930145716732965,
+        "E288_400:normalization": 4.905082533276578,
+        "E605:normalization": 6.517479861903896,
+        "E772:normalization": 7.754103647991985,
+        "LHCb_7:beam": 0.4192962431739752,
+        "LHCb_7:lumi": 0.5782432458550998
+      },
+      "DY_profile_closure_abs_error": 7.275957614183426e-12,
+      "experimental_nuisance_penalty": 174.09817301266986,
+      "finite": true,
+      "high_COMPASS": {
+        "mean": 7.733501147019685,
+        "rms": 7.979384359501987,
+        "rows": 188,
+        "underpredicted": 188
+      },
+      "min_T_over_sigma": 0.00968456656148073,
+      "negative": 0,
+      "numerical_nuisance_penalty": 5.80782472739544,
+      "processes": {
+        "COMPASS": {
+          "mean": 2.9972074339252,
+          "rms": 4.946693941430197,
+          "rows": 1203,
+          "underpredicted": 815
+        },
+        "DY": {
+          "mean": 2.9377256565013656,
+          "rms": 3.898668696584784,
+          "rows": 743,
+          "underpredicted": 701
+        },
+        "HERMES": {
+          "mean": 0.6061027418195745,
+          "rms": 2.314557064517909,
+          "rows": 344,
+          "underpredicted": 223
+        }
+      },
+      "q_per_measurement": 16.661796604788403,
+      "zero": 0
+    },
+    "24": {
+      "DY_adjusted_RMS_fixed_sigma": 2.178467333450321,
+      "DY_nuisances": {
+        "CDF_RUN_1:normalization": 2.503087902476913,
+        "CDF_RUN_2:efficiency": 1.7660131327916395,
+        "CDF_RUN_2:normalization": 0.5893050791702119,
+        "D0_RUN_1:normalization": 0.3662030837349436,
+        "E288_200:normalization": 3.6911407771072082,
+        "E288_300:normalization": 4.799849043215369,
+        "E288_400:normalization": 4.795587606871519,
+        "E605:normalization": 6.3428441114981045,
+        "E772:normalization": 7.474289504038463,
+        "LHCb_7:beam": 0.4644020862531833,
+        "LHCb_7:lumi": 0.6370056543953894
+      },
+      "DY_profile_closure_abs_error": 7.275957614183426e-12,
+      "experimental_nuisance_penalty": 166.24448869124413,
+      "finite": true,
+      "high_COMPASS": {
+        "mean": 7.733821126664472,
+        "rms": 7.979771257563018,
+        "rows": 188,
+        "underpredicted": 188
+      },
+      "min_T_over_sigma": 5.819201461802712e-06,
+      "negative": 0,
+      "numerical_nuisance_penalty": 2.872533768892724,
+      "processes": {
+        "COMPASS": {
+          "mean": 3.0549170126570364,
+          "rms": 4.96883475080979,
+          "rows": 1203,
+          "underpredicted": 819
+        },
+        "DY": {
+          "mean": 2.91024480806594,
+          "rms": 3.855688332170983,
+          "rows": 743,
+          "underpredicted": 699
+        },
+        "HERMES": {
+          "mean": 0.5770088766920398,
+          "rms": 2.3551180959606457,
+          "rows": 344,
+          "underpredicted": 215
+        }
+      },
+      "q_per_measurement": 16.80736379359599,
+      "zero": 0
+    },
+    "8": {
+      "DY_adjusted_RMS_fixed_sigma": 2.228396528819452,
+      "DY_nuisances": {
+        "CDF_RUN_1:normalization": 2.502937798173255,
+        "CDF_RUN_2:efficiency": 1.8302401724778783,
+        "CDF_RUN_2:normalization": 0.5785821095319845,
+        "D0_RUN_1:normalization": 0.37221918047276975,
+        "E288_200:normalization": 3.136220340162584,
+        "E288_300:normalization": 4.1741658691868935,
+        "E288_400:normalization": 4.150711304379428,
+        "E605:normalization": 5.712184359133379,
+        "E772:normalization": 7.030462929169516,
+        "LHCb_7:beam": 0.6714409860959887,
+        "LHCb_7:lumi": 0.9204305885903825
+      },
+      "DY_profile_closure_abs_error": 1.000444171950221e-11,
+      "experimental_nuisance_penalty": 137.9302087614732,
+      "finite": true,
+      "high_COMPASS": {
+        "mean": 7.733878087157504,
+        "rms": 7.979834084048125,
+        "rows": 188,
+        "underpredicted": 188
+      },
+      "min_T_over_sigma": 3.870023761106051e-06,
+      "negative": 0,
+      "numerical_nuisance_penalty": 3.257934752737009,
+      "processes": {
+        "COMPASS": {
+          "mean": 3.0916817089327484,
+          "rms": 4.9639061335411485,
+          "rows": 1203,
+          "underpredicted": 824
+        },
+        "DY": {
+          "mean": 2.7036025663244185,
+          "rms": 3.644157111100957,
+          "rows": 743,
+          "underpredicted": 690
+        },
+        "HERMES": {
+          "mean": 0.5599622720017299,
+          "rms": 2.3970230886162174,
+          "rows": 344,
+          "underpredicted": 210
+        }
+      },
+      "q_per_measurement": 16.95571567939687,
+      "zero": 0
+    }
+  },
+  "schema": "tmd-historical-evidence-import-v1",
+  "source_only_hash_pins": {
+    "source://study/2026-09-03/i-x20/outputs/DIRECTOR_GLOBAL_FIT_STATUS_2026-09-13.md": "8b26b49aa30a7df3ab04f6ebc5fd94409a355632dfaf8ded0d6f614c0b16d339",
+    "source://study/2026-09-03/i-x20/outputs/GPU_FILM_P1_ROUND1_ASSIGNMENT_2026-09-13.md": "c2ad07eb3dc8a6170d818277b238de00b981e13a09486f9c099105a169ccfb32",
+    "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8/continuation_runner.py": "9b3e23c3998ce0908be1b8ac50953a357527bb24093b0730c3fac8dff382d43f",
+    "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8/runtime_gate_test_output.txt": "b03d04396e9cbf9138fe2d6adeb093a5e64d2197e166337f53082889ece81767",
+    "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8/test_runtime_enforcement.py": "0f1f80b25abf6178091bd329b28a74f2d90d646fd5a1af76d20e1df36fca76c4"
+  },
+  "unchanged_baseline": {
+    "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+    "bundle_json_sha256": "4e8a088fb42c290ca48c3c87cce4fa5f74bda7e2262378f05eb214572c86e283",
+    "release_lock_sha256": "24bc7654d3450301912548dada4018b4b12e7bcd97f69e1d4bb2df0588b80092"
+  },
+  "unchanged_w16": {
+    "accepted_total": 160,
+    "checkpoint": "p0-w16-096",
+    "sha256": "cf634461ee7bddae3d76ca90cc03e339bd5b6b272cbb26fb3b5bd7eeb0285843"
+  },
+  "verified_scientific_source_pins": 93
+}

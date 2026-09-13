@@ -1,0 +1,45 @@
+{
+  "content": {
+    "architecture": "film_w24_d1_c12_v1",
+    "passed": true,
+    "prediction_max_fixed_sigma": 0.0,
+    "prior": {
+      "accepted_steps": 64,
+      "checkpoint_elapsed_seconds": null,
+      "checkpoint_forwards": 407,
+      "checkpoint_full_calls": 83,
+      "historical_ledger": {
+        "accepted_steps": 64,
+        "checkpoint_forwards": 407,
+        "checkpoint_full_calls": 83,
+        "elapsed_seconds": null,
+        "infeasible_trials": 241,
+        "raw_call_count": 731,
+        "rejected_feasible_trials": 12,
+        "rejected_trials_total": 253,
+        "screening_accepted_steps": 64,
+        "terminal_forward_accounting": "410 attempted = 409 ok + 1 interrupted",
+        "terminal_forwards": 410,
+        "terminal_full_calls": 83,
+        "terminal_rejection_accounting": "241 infeasible trials plus 12 feasible line-search rejections; raw calls.ndjson also retains final unfinished line-search work",
+        "unknown_elapsed_seconds": true,
+        "unknown_interrupted_calls": 1
+      },
+      "optimizer_history_reset": true,
+      "optimizer_history_reset_reason": "no verifiable L-BFGS history in saved artifact",
+      "stage": 1
+    },
+    "q_replay_abs_error": 0.0,
+    "read_only_source": true,
+    "replay_q_per_measurement": 16.863796531814693,
+    "saved_q_per_measurement": 16.863796531814693,
+    "schema": "gpu-film-continuation-start-verification-v1",
+    "source_artifact": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v1/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_064.npz",
+    "source_artifact_sha256": "549a6d01fa45e956f3651c70f8b5475ef991e41475d7fec6b6de39087d0483e2",
+    "start": "S00"
+  },
+  "original_sha256": "02b2e7fad4766804308a77c7eee4ede9944bf01087feb3c4b5bb6b4512bb8a6a",
+  "original_source": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/parent_verification.json",
+  "schema": "tmd-redacted-evidence-v1",
+  "transformation": "Local paths normalized; coordination identifiers and commands omitted. Scientific numbers retained. Not byte-identical to original."
+}

@@ -14,6 +14,7 @@ scratch/
 *.tar.gz
 *.part-*
 *.npz
+!checkpoint-objects/*.npz
 .env
 .env.*
 *.pem

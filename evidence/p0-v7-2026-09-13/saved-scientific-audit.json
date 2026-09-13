@@ -1,0 +1,656 @@
+{
+  "content": {
+    "GPU_calls": 0,
+    "Manager_mutations": false,
+    "cpu_workers": 1,
+    "endpoints": {
+      "film_w16_d1_c12_v1/S02": {
+        "artifact": "source://study/manager/gpu_film_refinement_2026_09_12_v1/film_w16_d1_c12_v1/S02/final.npz",
+        "endpoint": {
+          "COMPASS": {
+            "adjusted_mean": 2.9972074339252,
+            "adjusted_rms": 4.946693941430197,
+            "n": 1203,
+            "raw_mean": 2.9972074339252,
+            "raw_rms": 4.946693941430197,
+            "underpredicted": 815
+          },
+          "DY": {
+            "adjusted_mean": 0.7182295758530167,
+            "adjusted_rms": 2.172206110951454,
+            "n": 743,
+            "raw_mean": 2.9377256565013656,
+            "raw_rms": 3.898668696584784,
+            "underpredicted": 701
+          },
+          "HERMES": {
+            "adjusted_mean": 0.6061027418195745,
+            "adjusted_rms": 2.314557064517909,
+            "n": 344,
+            "raw_mean": 0.6061027418195745,
+            "raw_rms": 2.314557064517909,
+            "underpredicted": 223
+          },
+          "experimental_penalty": 174.0981730126698,
+          "high_COMPASS": {
+            "adjusted_mean": 7.733501147019685,
+            "adjusted_rms": 7.979384359501987,
+            "n": 188,
+            "raw_mean": 7.733501147019685,
+            "raw_rms": 7.979384359501987,
+            "underpredicted": 188
+          },
+          "min_T_over_sigma": 0.00968456656148073,
+          "minimum_prediction": 5.282010756638511e-05,
+          "minimum_row_id": "obs:E288_200:68",
+          "negative": 0,
+          "nuisances": {
+            "CDF_RUN_1:normalization": 2.5171467100718905,
+            "CDF_RUN_2:efficiency": 1.5592975281103043,
+            "CDF_RUN_2:normalization": 0.6280194903606363,
+            "D0_RUN_1:normalization": 0.37716654024254537,
+            "E288_200:normalization": 3.6488437100818873,
+            "E288_300:normalization": 4.930145716732966,
+            "E288_400:normalization": 4.905082533276578,
+            "E605:normalization": 6.517479861903895,
+            "E772:normalization": 7.754103647991985,
+            "LHCb_7:beam": 0.4192962431739761,
+            "LHCb_7:lumi": 0.5782432458550996
+          },
+          "numerical_penalty": 5.807824727395437,
+          "positive": 2290,
+          "profile_closure_error": 7.275957614183426e-12,
+          "q_per_measurement": 16.661796604788414,
+          "zero": 0
+        },
+        "new_accepted": 0,
+        "penalized_gradient_max": 0.1086221281571017,
+        "raw_gradient_max": 0.1086224215256094,
+        "sha256": "cf634461ee7bddae3d76ca90cc03e339bd5b6b272cbb26fb3b5bd7eeb0285843",
+        "total_accepted": 160
+      },
+      "film_w24_d1_c12_v1/S00": {
+        "all_accepted_checkpoints_positive": true,
+        "artifact": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/final.npz",
+        "budget": {
+          "accepted_steps": 32,
+          "elapsed_seconds": 931.6293544108048,
+          "feasible_full_evaluations": 36,
+          "forwards": 217,
+          "full_calls": 40,
+          "full_evaluation_attempts": 172,
+          "infeasible_trials": 136,
+          "line_search_failures": 0,
+          "line_search_rejections": 139,
+          "raw_call_count": 389,
+          "segment_limit_seconds": 1800,
+          "setup_elapsed_seconds": 35.05375570990145
+        },
+        "endpoint": {
+          "COMPASS": {
+            "adjusted_mean": 3.0549170126570364,
+            "adjusted_rms": 4.96883475080979,
+            "n": 1203,
+            "raw_mean": 3.0549170126570364,
+            "raw_rms": 4.96883475080979,
+            "underpredicted": 819
+          },
+          "DY": {
+            "adjusted_mean": 0.7447943319995859,
+            "adjusted_rms": 2.178467333450321,
+            "n": 743,
+            "raw_mean": 2.91024480806594,
+            "raw_rms": 3.855688332170983,
+            "underpredicted": 699
+          },
+          "HERMES": {
+            "adjusted_mean": 0.5770088766920398,
+            "adjusted_rms": 2.3551180959606457,
+            "n": 344,
+            "raw_mean": 0.5770088766920398,
+            "raw_rms": 2.3551180959606457,
+            "underpredicted": 215
+          },
+          "experimental_penalty": 166.2444886912441,
+          "high_COMPASS": {
+            "adjusted_mean": 7.733821126664472,
+            "adjusted_rms": 7.979771257563018,
+            "n": 188,
+            "raw_mean": 7.733821126664472,
+            "raw_rms": 7.979771257563018,
+            "underpredicted": 188
+          },
+          "min_T_over_sigma": 5.819201461802712e-06,
+          "minimum_prediction": 5.373337567948777e-08,
+          "minimum_row_id": "obs:E288_200:66",
+          "negative": 0,
+          "nuisances": {
+            "CDF_RUN_1:normalization": 2.503087902476913,
+            "CDF_RUN_2:efficiency": 1.7660131327916382,
+            "CDF_RUN_2:normalization": 0.5893050791702121,
+            "D0_RUN_1:normalization": 0.3662030837349436,
+            "E288_200:normalization": 3.691140777107208,
+            "E288_300:normalization": 4.799849043215369,
+            "E288_400:normalization": 4.795587606871518,
+            "E605:normalization": 6.3428441114981045,
+            "E772:normalization": 7.474289504038463,
+            "LHCb_7:beam": 0.4644020862531877,
+            "LHCb_7:lumi": 0.6370056543953861
+          },
+          "numerical_penalty": 2.8725337688927217,
+          "positive": 2290,
+          "profile_closure_error": 6.366462912410498e-12,
+          "q_per_measurement": 16.807363793596,
+          "zero": 0
+        },
+        "full_delta_max": 1.0050268242484044,
+        "full_delta_rms": 0.1659461824248444,
+        "high_delta_max": 0.00839772573787862,
+        "high_delta_rms": 0.000813692717181727,
+        "mu": 1e-06,
+        "new_accepted": 32,
+        "parent": {
+          "COMPASS": {
+            "adjusted_mean": 3.0449813639850136,
+            "adjusted_rms": 4.955545597819631,
+            "n": 1203,
+            "raw_mean": 3.0449813639850136,
+            "raw_rms": 4.955545597819631,
+            "underpredicted": 819
+          },
+          "DY": {
+            "adjusted_mean": 0.7391416292388117,
+            "adjusted_rms": 2.1935232482914286,
+            "n": 743,
+            "raw_mean": 2.887955964510382,
+            "raw_rms": 3.8439666467494216,
+            "underpredicted": 694
+          },
+          "HERMES": {
+            "adjusted_mean": 0.5685211780793207,
+            "adjusted_rms": 2.399956394380315,
+            "n": 344,
+            "raw_mean": 0.5685211780793207,
+            "raw_rms": 2.399956394380315,
+            "underpredicted": 205
+          },
+          "experimental_penalty": 162.96180672801074,
+          "high_COMPASS": {
+            "adjusted_mean": 7.733691194257657,
+            "adjusted_rms": 7.979614603957018,
+            "n": 188,
+            "raw_mean": 7.733691194257657,
+            "raw_rms": 7.979614603957018,
+            "underpredicted": 188
+          },
+          "min_T_over_sigma": 2.0504485566593487e-05,
+          "minimum_prediction": 1.8933443588376592e-07,
+          "minimum_row_id": "obs:E288_200:66",
+          "negative": 0,
+          "nuisances": {
+            "CDF_RUN_1:normalization": 2.5152710568896364,
+            "CDF_RUN_2:efficiency": 1.7170892095702952,
+            "CDF_RUN_2:normalization": 0.6130083292112268,
+            "D0_RUN_1:normalization": 0.42577900487541037,
+            "E288_200:normalization": 3.3959923516975583,
+            "E288_300:normalization": 4.70899836002651,
+            "E288_400:normalization": 4.81839831124355,
+            "E605:normalization": 6.31650010375651,
+            "E772:normalization": 7.436866109299658,
+            "LHCb_7:beam": 0.58942780079169,
+            "LHCb_7:lumi": 0.8079528439326776
+          },
+          "numerical_penalty": 3.251153761789602,
+          "positive": 2290,
+          "profile_closure_error": 7.275957614183426e-12,
+          "q_per_measurement": 16.86379653181469,
+          "zero": 0
+        },
+        "parent_artifact": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v1/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_064.npz",
+        "parent_replay_exact": true,
+        "parent_sha256": "549a6d01fa45e956f3651c70f8b5475ef991e41475d7fec6b6de39087d0483e2",
+        "penalized_gradient_max": 0.08180878791623286,
+        "plateau": {
+          "eligible": true,
+          "first": {
+            "gradient_max": 0.0830264353962498,
+            "passed": false,
+            "prediction_span_max": 1.1496563092684982,
+            "prediction_span_rms": 0.22146090207140784,
+            "q_range": 0.04745850054607459
+          },
+          "passed": false,
+          "second": {
+            "gradient_max": 0.08180878791623286,
+            "passed": false,
+            "prediction_span_max": 0.31168916275316144,
+            "prediction_span_rms": 0.02833678658012352,
+            "q_range": 0.005194699998121166
+          }
+        },
+        "raw_call_types": {
+          "forward:ok": 177,
+          "full_eval:feasible": 36,
+          "full_eval:infeasible_trial": 136,
+          "vjp:ok": 40
+        },
+        "raw_gradient_max": 0.08192947256362629,
+        "sha256": "bfe8a29ab9e2e8ed203f2e5a781038be41aeac76cf52818b00015d9495384ae6",
+        "terminal_checkpoint_exact": true,
+        "total_accepted": 160
+      },
+      "film_w8_d1_c12_v1/S01": {
+        "all_accepted_checkpoints_positive": true,
+        "artifact": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/final.npz",
+        "budget": {
+          "accepted_steps": 13,
+          "elapsed_seconds": 400.09886229224503,
+          "feasible_full_evaluations": 15,
+          "forwards": 141,
+          "full_calls": 19,
+          "full_evaluation_attempts": 85,
+          "infeasible_trials": 70,
+          "line_search_failures": 0,
+          "line_search_rejections": 71,
+          "raw_call_count": 226,
+          "segment_limit_seconds": 1800,
+          "setup_elapsed_seconds": 35.7387782195583
+        },
+        "endpoint": {
+          "COMPASS": {
+            "adjusted_mean": 3.0916817089327484,
+            "adjusted_rms": 4.9639061335411485,
+            "n": 1203,
+            "raw_mean": 3.0916817089327484,
+            "raw_rms": 4.9639061335411485,
+            "underpredicted": 824
+          },
+          "DY": {
+            "adjusted_mean": 0.7522062741272082,
+            "adjusted_rms": 2.228396528819452,
+            "n": 743,
+            "raw_mean": 2.7036025663244185,
+            "raw_rms": 3.644157111100957,
+            "underpredicted": 690
+          },
+          "HERMES": {
+            "adjusted_mean": 0.5599622720017299,
+            "adjusted_rms": 2.3970230886162174,
+            "n": 344,
+            "raw_mean": 0.5599622720017299,
+            "raw_rms": 2.3970230886162174,
+            "underpredicted": 210
+          },
+          "experimental_penalty": 137.93020876147327,
+          "high_COMPASS": {
+            "adjusted_mean": 7.733878087157504,
+            "adjusted_rms": 7.979834084048125,
+            "n": 188,
+            "raw_mean": 7.733878087157504,
+            "raw_rms": 7.979834084048125,
+            "underpredicted": 188
+          },
+          "min_T_over_sigma": 3.870023761106051e-06,
+          "minimum_prediction": 2.202073264142776e-08,
+          "minimum_row_id": "obs:E288_200:78",
+          "negative": 0,
+          "nuisances": {
+            "CDF_RUN_1:normalization": 2.502937798173255,
+            "CDF_RUN_2:efficiency": 1.8302401724778976,
+            "CDF_RUN_2:normalization": 0.5785821095319807,
+            "D0_RUN_1:normalization": 0.37221918047276975,
+            "E288_200:normalization": 3.1362203401625837,
+            "E288_300:normalization": 4.174165869186894,
+            "E288_400:normalization": 4.150711304379427,
+            "E605:normalization": 5.712184359133378,
+            "E772:normalization": 7.030462929169516,
+            "LHCb_7:beam": 0.6714409860959927,
+            "LHCb_7:lumi": 0.9204305885903771
+          },
+          "numerical_penalty": 3.2579347527370115,
+          "positive": 2290,
+          "profile_closure_error": 5.4569682106375694e-12,
+          "q_per_measurement": 16.95571567939688,
+          "zero": 0
+        },
+        "full_delta_max": 0.27521122755113137,
+        "full_delta_rms": 0.06638448814940048,
+        "high_delta_max": 0.0008732505739862154,
+        "high_delta_rms": 0.000144046490713314,
+        "mu": 1e-06,
+        "new_accepted": 13,
+        "parent": {
+          "COMPASS": {
+            "adjusted_mean": 3.031873571873949,
+            "adjusted_rms": 4.964626206467564,
+            "n": 1203,
+            "raw_mean": 3.031873571873949,
+            "raw_rms": 4.964626206467564,
+            "underpredicted": 814
+          },
+          "DY": {
+            "adjusted_mean": 0.7465182180698178,
+            "adjusted_rms": 2.2271531862062113,
+            "n": 743,
+            "raw_mean": 2.709572141297106,
+            "raw_rms": 3.651701235397192,
+            "underpredicted": 690
+          },
+          "HERMES": {
+            "adjusted_mean": 0.5524809736622031,
+            "adjusted_rms": 2.3977311075100225,
+            "n": 344,
+            "raw_mean": 0.5524809736622031,
+            "raw_rms": 2.3977311075100225,
+            "underpredicted": 209
+          },
+          "experimental_penalty": 139.44042551368997,
+          "high_COMPASS": {
+            "adjusted_mean": 7.733822802141296,
+            "adjusted_rms": 7.979778517679239,
+            "n": 188,
+            "raw_mean": 7.733822802141296,
+            "raw_rms": 7.979778517679239,
+            "underpredicted": 188
+          },
+          "min_T_over_sigma": 2.6648979293107363e-08,
+          "minimum_prediction": 1.51634740354345e-10,
+          "minimum_row_id": "obs:E288_200:78",
+          "negative": 0,
+          "nuisances": {
+            "CDF_RUN_1:normalization": 2.502909333695195,
+            "CDF_RUN_2:efficiency": 1.8166311060977562,
+            "CDF_RUN_2:normalization": 0.58130481300574,
+            "D0_RUN_1:normalization": 0.37273987663701674,
+            "E288_200:normalization": 3.190806474487901,
+            "E288_300:normalization": 4.2247739347813695,
+            "E288_400:normalization": 4.18302513922567,
+            "E605:normalization": 5.723511165294696,
+            "E772:normalization": 7.058223051161617,
+            "LHCb_7:beam": 0.6704401308635686,
+            "LHCb_7:lumi": 0.919036866931875
+          },
+          "numerical_penalty": 3.2743494542453955,
+          "positive": 2290,
+          "profile_closure_error": 5.4569682106375694e-12,
+          "q_per_measurement": 16.960843107401328,
+          "zero": 0
+        },
+        "parent_artifact": "source://study/manager/gpu_film_refinement_2026_09_12_v1/film_w8_d1_c12_v1/S01/checkpoint_083.npz",
+        "parent_replay_exact": true,
+        "parent_sha256": "d195ecee17317e5164872dfcf096040ba69542ef1b8852f6995d28232a0ed075",
+        "penalized_gradient_max": 0.26855763912300673,
+        "plateau": {
+          "eligible": false,
+          "passed": false,
+          "reason": "13-update continuation cannot furnish 21 new saved states"
+        },
+        "raw_call_types": {
+          "forward:ok": 122,
+          "full_eval:feasible": 15,
+          "full_eval:infeasible_trial": 70,
+          "vjp:ok": 19
+        },
+        "raw_gradient_max": 0.26872010730157947,
+        "sha256": "de97942f3a030cbc6648b6b452381d316aa945d1a8629a5360313c80ebd6ae61",
+        "terminal_checkpoint_exact": true,
+        "total_accepted": 160
+      }
+    },
+    "generated_utc": "2026-09-13T01:16:38Z",
+    "manifest_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+    "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+    "model_calls": 0,
+    "receipts": {
+      "publication": {
+        "path": "source://study/tmd-global-fit-lab/validation/publication-2026-09-12.json",
+        "scope": "Read local signed-off receipt; not a fresh remote download or CI rerun.",
+        "sha256": "9772f134e4c98492159ee3e7a238766359c19d6cf95a26a18bf3c1ff19280742"
+      },
+      "v7_cleanup": {
+        "path": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/cleanup_receipt.json",
+        "sha256": "191594536fa01ae1ac72aae9b9391a0e14d2f93bff6e1ad05fdb44656f094d83"
+      },
+      "v7_terminal": {
+        "path": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/terminal_receipt.json",
+        "sha256": "8be5ed6162473e3192e52fa3ffaeec1400a750814d293f78ad1cc3f8640643d9"
+      },
+      "v8_repair": {
+        "path": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8/gate_repair_disposition.json",
+        "sha256": "bb42f11398d4acc69badb9b594ef292666882b20659cd030f502975e2746bc46"
+      }
+    },
+    "schema": "director-v7-fresh-saved-status-v1",
+    "scope": "Saved-array arithmetic and file-hash review only; no fit, model/gradient evaluator, GPU call, Manager/GitHub mutation, queue message or monitor change.",
+    "source_pins": {
+      "source://study/2026-09-03/i-x20/work/global_fit_foundation/work/global_residual_assessment_2026_09_11/completed_stage1_regions_v1/regions.json": "4125f287dcadf225e970e92af57d6d836f714e677d4808e770cce0eb3d4b085b",
+      "source://study/2026-09-03/i-x20/work/global_fit_foundation/work/haps_conditional_pilot_2026_09_10/runs_v1/two_scale/snapshot.json": "9ae431c297f4e130a09d7781d00aa084344067eb2a122667dcc890867fae70c7",
+      "source://study/2026-09-03/i-x20/work/global_fit_foundation/work/haps_conditional_pilot_2026_09_10/runs_v1/two_scale/snapshot.npz": "d013488abbb21ceb9087ded809d85f478aca0ff915bef99f00aabdd2861f9d7d",
+      "source://study/2026-09-03/i-x20/work/global_fit_foundation/work/joint_likelihood_numerics/__init__.py": "9b48df6fae208b3cdf34493ad2134abdde897dd93bca258d089c95d768ec2042",
+      "source://study/2026-09-03/i-x20/work/global_fit_foundation/work/joint_likelihood_numerics/config.json": "d086b0ac2e93397f90c7a1839ece86359dd9cf64dd914617cefd5de7aaaf26c6",
+      "source://study/2026-09-03/i-x20/work/global_fit_foundation/work/joint_likelihood_numerics/metric.py": "c16bb2779d0ae1d592892372ee701786383071ba5ece6cb077187ac7146aa85d",
+      "source://study/2026-09-03/i-x20/work/global_fit_foundation/work/real_data_central_pilot/pilot_v1/B_one_t0_refresh/snapshot.json": "9f968a76b54f42e71a27f7fbb1c8044afce2ad88b3a44486141d4e84f3ac07a5",
+      "source://study/2026-09-03/i-x20/work/global_fit_foundation/work/real_data_central_pilot/pilot_v1/B_one_t0_refresh/snapshot.npz": "724cbc311bb2f6294f4266fca92145a1ecc5349be0a938eac7f15b4f60940c15",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v1/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_064.npz": "549a6d01fa45e956f3651c70f8b5475ef991e41475d7fec6b6de39087d0483e2",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v6/attempt_001/film_w24_d1_c12_v1/S00/final.npz": "797f2fe4dd80dfea3d56af463acb1f9dd56ec83fc3f361d42ca27c1a5e815d14",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v6/attempt_001/film_w8_d1_c12_v1/S01/final.npz": "94bfd35368f03d59244ca528de42f6a7b46309b286b9eca427a9a4337f3fc715",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_065.json": "bcfd79246bb303a943c06e63f6eda4b7caca5bb148e98262f2a5ff1861edf4a3",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_066.json": "150bc28ec1973e20ef066e0691074d54729e95bb1ab61d25ef5c050db2b00f00",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_067.json": "4839774bf07faa5044535db7bb2d8e5494ecfb97cb2ae1b7da917efc951d1c48",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_068.json": "df43c77fd995a415f393d1e5903efaecac8507853c365ba92d011edf0f33d997",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_069.json": "e008833134d10165accef7f74c5711b488ffe3428966b1946bf877aaa55e8972",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_070.json": "068b88786a6d3905a1ffa7db56485e2a1abbe36a27e56ed08a765ab13015bc79",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_071.json": "2b9d18ae7d59b416324a016767a6b55962d80b48fbcb621a8e01c3eb7fb4ebed",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_072.json": "d03d1dcd58a8e2e375b9992c823e2a5510bdafac02d8a658048cd8ae8a41a691",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_073.json": "9c0091eb403e692dbe8d267cd1747738bddbee88af599bde4261ba23f038acc8",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_074.json": "b5566571356ca2ef8c2335c3243dcd503cf68a43be71f7f26d41b8ebe011b9e1",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_075.json": "830c0cb6aa5b91d54031c448fd931ecc133247bfb0423a2ae7982257da0f57ea",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_076.json": "298459b148fde74c1fe0b9030173d1c4b4acd6736d74460329ba7fa8ada54c85",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_077.json": "312df9d88a8817afe95c7aaf4b25dbc49d721369706b9e53a0f3b58a274a3855",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_078.json": "1acf7312d935566fae5c9879fe13ea6d460abf8a11a66ba3d6b86f716a938dad",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_079.json": "0de863b5602901e3bb690d303c32ff0165b0043c95644c9740b567f75c1e6111",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_080.json": "acf76f25da90d7f319ca90b392f51751da086b3cd4a8fc15b6ff8edfb34b972a",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_081.json": "2f100b3cc47a0979ebc7a2ac27d1af3c3583378ea03d44ff69fbed1312abd145",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_082.json": "94687deb9c8ee305712cf9b662fe484e3a14527d4252e32f38aa79037643a75e",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_083.json": "bcc0b61fe094449f4b03b39c06cbf479d215215a91e8ddd20abfdd6b43694d80",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_084.json": "9f9bf05637279f8512884438a88f19d955e1d90638d64d34dd994e0b2e770314",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_085.json": "f5387cf2f15b12feeabbd39d0ee87f49fceaeb3060639f4967db2a658fa4f7ea",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_086.json": "1b715c9a561a096104098cf5c660281ffc755a99d2147661daf485a1f200c421",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_087.json": "d08b6c4713e8987fb38953c5249428eee98ba7b5d08153c3858f9409d2564876",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_088.json": "067ae4878c778224b1240e168854b59232b35ca3470bee0f429319a1b109ac95",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_089.json": "c0b350c72a53e1d515b59889970f9e59d3b7be1b491e404222cfe13eee48351b",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_090.json": "a96ecd89d7a2f40995cfe45e8e6817348e969cca8e5d6972ca712e9d54d97a92",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_091.json": "b2d515b197db398f1a2e7207d8f7b3053dd8742de8682a6eee04675844943131",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_092.json": "28c94b22ce777dc00d55cbffd3e9dffb28671efa9747c38773c29bc1de50cdde",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_093.json": "ab8b28b42d0ad75ae6c84be43aec9fa8e2a66c24e7f629f4eb33339601c0ba7e",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_094.json": "3dab53a22b425cdfb541007eb4588f7100b0ded670c859e58ab8c99fc63c1544",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_095.json": "1f5c3ce533cfb6ef6f469b61df84b7f5b120f71c703481aac96165f1b9039fa5",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/accepted_096.json": "1d67b6e018b970119945e5a5af5fe2a03f41acf11e07761544f7b1ff69ecd4e0",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/calls.ndjson": "c0f6dded6a1a8d65e6d29498271c5c566fb42fffe6fa187c9d48d64dc6bef1d8",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_076.npz": "6f6c0b1a08353a88c4761ab0227c28e44d089676cb509fa6633e0dc9cefc5549",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_077.npz": "45f19771b5cf8660dda59e3ea05306149f27c20c83c263d78b96dc21d784a4b0",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_078.npz": "ace6120276c6026a46eec2f471ecf0ec868a8baedadd80e43beae6b2cff8d82c",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_079.npz": "a53f7a0f04621862e5167fbbf1ba9777089549d245a622b7fb82ab41aa1ff599",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_080.npz": "50b3b6663d3fed526b9ea3facc5e7cbfcaf9eab36f7c486e210d98f45f0ff216",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_081.npz": "e7187a80a8f132f18dd14d7e14ab76e231918b39191a3d51a6efe5b1858687a0",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_082.npz": "acb75a4cf89d1ffd7cc9b402e5aea89cfe2a3b65fac6568fb5db1bfdad164b62",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_083.npz": "04eaf327698ce4794add1e219361beb4d702e0f1cc9f5befaf5a14ffc7462428",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_084.npz": "d15e4b98f7f3211795f96604102f595ef633ec68ea2d8f25759794d70cc22cb6",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_085.npz": "8654acb37903aa3e6305a1cbcd76e658d47b100f6190290f3732c33fe419dec8",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_086.npz": "3fe5eea19ee77bac8ea5ebde53fb14cbd734daf5562358da944dce6c9c12925b",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_087.npz": "180ccdce41946f3dd45959d783ee25cb569aac4fb082a0dbed32ff2d8a1afa6a",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_088.npz": "cae5057d46a82a7f991bd6c18d1df78fbb12526e15f2f39f63c1a6489b455a7f",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_089.npz": "7d4c2ab7512177f5e90aa6935c3f5bbbe17fbc5a6b658f94366cc416596ee0a6",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_090.npz": "936361c0afefcb383c525df9ad98288b1afb13611664f900fb78256b497575bc",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_091.npz": "26c2f4e375d040de834a8f2d45c31f42bce4994ff81f08a3f08ccdf8d5de3412",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_092.npz": "8573b767dff8c7c7f49842e36b47a693ff31f998cb38b924d9e23129fbafc36c",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_093.npz": "b569a0087cbd19e607570d5cfaa752b654fae6262107b69e7eca9d753809a09f",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_094.npz": "48c7718815e59f3eda8b622d51048ca072edaec8527eaa65fab221e6c2eefb77",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_095.npz": "093dcf99648d4f9d5a7b468d5afa2f23c479173f3abd969d08d2526ee48fefa1",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_096.npz": "c96c2e29db0fdde2d6c6cb20ef043aa1a95fabc9728cb29923e352365b71b6d5",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/final.npz": "bfe8a29ab9e2e8ed203f2e5a781038be41aeac76cf52818b00015d9495384ae6",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/initial_endpoint.npz": "2c89c26dcff221c8673bcb0594ca7be56a0fc60401b0cf9233ff2ff51f521828",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/summary.json": "6645e1f4fc8c93afee5cd02c79cbbb04a84cc26bafdadd31f483cabb5728c4ef",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_084.json": "0b178e186c17fc4eed958316442038c872f3cffbcf4484e2af4e514b27bdf80f",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_085.json": "e89aeebde53e18b525217ad72c9c3854d4148199530b8b15c0bf8606583b2e05",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_086.json": "27f2ebd4a38164099b05737b06a2fd0793a4e765ae061d22987432da67a60f29",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_087.json": "3372ea697d4f7dfcc2a7c7f7772ba50ebc79127729c33e8842db16ac81a0300e",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_088.json": "e2ebcb7a95df1ce7db453f937c014293726c5ee52e026b6a1e60d98784a66a18",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_089.json": "62ee0178e2f6c36c30395497649d8a476d279aa8bdecdea5fe246ceaa7a3db53",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_090.json": "db5d36f4eab1d6f8d94d87a12820952f01466069fce4678a954c83e4fcdc4291",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_091.json": "4652265db0b325ca6dd21ec81f344f28d91e31fc4a04a927b96cc09ac5ec3aa2",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_092.json": "b37b38d3ffed9c757c68b0f11802e7197a93a51cec2f311ce49821c85fcf4144",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_093.json": "e09a03264140653933a88923916ed2fa606cceb97891157298357edae530cf65",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_094.json": "35c6f5ac8924544669da4751449b4ef53099ccf10a0958ec46033ef0cdf3f2ae",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_095.json": "5fabcd3f631fe85007b339731eb80f55c30a3a56e00c0e7cf111e3fd0c554713",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/accepted_096.json": "c1a4ace583f17905bd9e45f20a205d7f8bea36ca8a2210fbb828268a12b8e601",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/calls.ndjson": "f2334ae56e02ea7f302852114ea0aa2829dc626c190f69b04a46ea17b5eeb9f5",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/checkpoint_096.npz": "99f7e2fc3451564b34a21364b760e84fbcdb3858fc4f09048d37ad506983ffb3",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/final.npz": "de97942f3a030cbc6648b6b452381d316aa945d1a8629a5360313c80ebd6ae61",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/initial_endpoint.npz": "f8dc07fe3fd2835ff3881cec72a43bb341c565b666ba284638d977119baf9481",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/summary.json": "229c501325aac6831466a40663b95a1fc3e1130ee581f20387538c96f7a39df1",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/terminal_receipt.json": "8be5ed6162473e3192e52fa3ffaeec1400a750814d293f78ad1cc3f8640643d9",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8/continuation_runner.py": "9b3e23c3998ce0908be1b8ac50953a357527bb24093b0730c3fac8dff382d43f",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8/gate_repair_disposition.json": "bb42f11398d4acc69badb9b594ef292666882b20659cd030f502975e2746bc46",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8/runtime_gate_test_output.txt": "b03d04396e9cbf9138fe2d6adeb093a5e64d2197e166337f53082889ece81767",
+      "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v8/test_runtime_enforcement.py": "0f1f80b25abf6178091bd329b28a74f2d90d646fd5a1af76d20e1df36fca76c4",
+      "source://study/manager/gpu_film_refinement_2026_09_12_v1/film_w16_d1_c12_v1/S02/final.npz": "cf634461ee7bddae3d76ca90cc03e339bd5b6b272cbb26fb3b5bd7eeb0285843",
+      "source://study/manager/gpu_film_refinement_2026_09_12_v1/film_w8_d1_c12_v1/S01/checkpoint_083.npz": "d195ecee17317e5164872dfcf096040ba69542ef1b8852f6995d28232a0ed075"
+    },
+    "status_note_review_utc": "2026-09-13T01:20:00Z",
+    "v6_comparison": {
+      "film_w24_d1_c12_v1/S00": {
+        "prediction_difference_max": 0.5860720825827536,
+        "prediction_difference_rms": 0.06885712195347121,
+        "v6": {
+          "COMPASS": {
+            "adjusted_mean": 3.0634455888037824,
+            "adjusted_rms": 4.969421849372734,
+            "n": 1203,
+            "raw_mean": 3.0634455888037824,
+            "raw_rms": 4.969421849372734,
+            "underpredicted": 824
+          },
+          "DY": {
+            "adjusted_mean": 0.7550678404974029,
+            "adjusted_rms": 2.1812009098099625,
+            "n": 743,
+            "raw_mean": 2.8878934457850387,
+            "raw_rms": 3.826539875965356,
+            "underpredicted": 702
+          },
+          "HERMES": {
+            "adjusted_mean": 0.5882445635115099,
+            "adjusted_rms": 2.349145793914127,
+            "n": 344,
+            "raw_mean": 0.5882445635115099,
+            "raw_rms": 2.349145793914127,
+            "underpredicted": 221
+          },
+          "experimental_penalty": 161.79652693756483,
+          "high_COMPASS": {
+            "adjusted_mean": 7.733833170405322,
+            "adjusted_rms": 7.979795540911742,
+            "n": 188,
+            "raw_mean": 7.733833170405322,
+            "raw_rms": 7.979795540911742,
+            "underpredicted": 188
+          },
+          "min_T_over_sigma": 0.0010989145687622982,
+          "minimum_prediction": 1.0147163618678783e-05,
+          "minimum_row_id": "obs:E288_200:66",
+          "negative": 0,
+          "nuisances": {
+            "CDF_RUN_1:normalization": 2.5037815960779155,
+            "CDF_RUN_2:efficiency": 1.848966408237032,
+            "CDF_RUN_2:normalization": 0.5700826365704976,
+            "D0_RUN_1:normalization": 0.35510921461831246,
+            "E288_200:normalization": 3.606420771475651,
+            "E288_300:normalization": 4.697800207949051,
+            "E288_400:normalization": 4.700423422136419,
+            "E605:normalization": 6.275841047615172,
+            "E772:normalization": 7.382080563877959,
+            "LHCb_7:beam": 0.4589237428453556,
+            "LHCb_7:lumi": 0.6295616576016705
+          },
+          "numerical_penalty": 2.7451522694268973,
+          "positive": 2290,
+          "profile_closure_error": 7.275957614183426e-12,
+          "q_per_measurement": 16.80483024061286,
+          "zero": 0
+        },
+        "v6_artifact": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v6/attempt_001/film_w24_d1_c12_v1/S00/final.npz",
+        "v6_v7_theta_equal": false,
+        "v6_v7_values_equal": false
+      },
+      "film_w8_d1_c12_v1/S01": {
+        "prediction_difference_max": 3.9883027157267735e-09,
+        "prediction_difference_rms": 1.0581347673176629e-09,
+        "v6": {
+          "COMPASS": {
+            "adjusted_mean": 3.091681709948188,
+            "adjusted_rms": 4.963906133552256,
+            "n": 1203,
+            "raw_mean": 3.091681709948188,
+            "raw_rms": 4.963906133552256,
+            "underpredicted": 824
+          },
+          "DY": {
+            "adjusted_mean": 0.7522062740597476,
+            "adjusted_rms": 2.228396528806792,
+            "n": 743,
+            "raw_mean": 2.7036025664097667,
+            "raw_rms": 3.644157111212542,
+            "underpredicted": 690
+          },
+          "HERMES": {
+            "adjusted_mean": 0.5599622720235554,
+            "adjusted_rms": 2.397023088623149,
+            "n": 344,
+            "raw_mean": 0.5599622720235554,
+            "raw_rms": 2.397023088623149,
+            "underpredicted": 210
+          },
+          "experimental_penalty": 137.93020877916746,
+          "high_COMPASS": {
+            "adjusted_mean": 7.733878087158894,
+            "adjusted_rms": 7.97983408404959,
+            "n": 188,
+            "raw_mean": 7.733878087158894,
+            "raw_rms": 7.97983408404959,
+            "underpredicted": 188
+          },
+          "min_T_over_sigma": 3.870023783894949e-06,
+          "minimum_prediction": 2.202073277109834e-08,
+          "minimum_row_id": "obs:E288_200:78",
+          "negative": 0,
+          "nuisances": {
+            "CDF_RUN_1:normalization": 2.502937798149739,
+            "CDF_RUN_2:efficiency": 1.830240171898589,
+            "CDF_RUN_2:normalization": 0.5785821096454694,
+            "D0_RUN_1:normalization": 0.37221918047769686,
+            "E288_200:normalization": 3.136220340729611,
+            "E288_300:normalization": 4.174165869770743,
+            "E288_400:normalization": 4.15071130482083,
+            "E605:normalization": 5.712184359362446,
+            "E772:normalization": 7.030462929564995,
+            "LHCb_7:beam": 0.6714409859730177,
+            "LHCb_7:lumi": 0.9204305884218593
+          },
+          "numerical_penalty": 3.257934752858088,
+          "positive": 2290,
+          "profile_closure_error": 5.4569682106375694e-12,
+          "q_per_measurement": 16.95571567948545,
+          "zero": 0
+        },
+        "v6_artifact": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v6/attempt_001/film_w8_d1_c12_v1/S01/final.npz",
+        "v6_v7_theta_equal": false,
+        "v6_v7_values_equal": false
+      }
+    }
+  },
+  "original_sha256": "79b83c05939b5142c96f9ebe90034f7dd978c754afc33980003f64d380650147",
+  "original_source": "source://study/2026-09-03/i-x20/outputs/GPU_FILM_V7_SAVED_AUDIT_2026-09-13.json",
+  "schema": "tmd-redacted-evidence-v1",
+  "transformation": "Local paths normalized; coordination identifiers and commands omitted. Scientific numbers retained. Not byte-identical to original."
+}

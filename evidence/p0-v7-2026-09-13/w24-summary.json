@@ -1,0 +1,188 @@
+{
+  "content": {
+    "architecture": "film_w24_d1_c12_v1",
+    "completed": true,
+    "cumulative_ledger": {
+      "cumulative": {
+        "elapsed_qualification": [
+          "historical elapsed wall time unavailable"
+        ],
+        "elapsed_seconds": null,
+        "forwards": 627,
+        "full_calls": 123,
+        "infeasible_trials": 377,
+        "raw_call_count": 1120,
+        "refinement_accepted_steps": 96,
+        "rejected_feasible_trials": 15,
+        "rejected_trials_total": 392,
+        "screening_accepted_steps": 64,
+        "unknown_interrupted_calls": 1
+      },
+      "historical": {
+        "accepted_steps": 64,
+        "checkpoint_forwards": 407,
+        "checkpoint_full_calls": 83,
+        "elapsed_seconds": null,
+        "infeasible_trials": 241,
+        "raw_call_count": 731,
+        "rejected_feasible_trials": 12,
+        "rejected_trials_total": 253,
+        "screening_accepted_steps": 64,
+        "terminal_forward_accounting": "410 attempted = 409 ok + 1 interrupted",
+        "terminal_forwards": 410,
+        "terminal_full_calls": 83,
+        "terminal_rejection_accounting": "241 infeasible trials plus 12 feasible line-search rejections; raw calls.ndjson also retains final unfinished line-search work",
+        "unknown_elapsed_seconds": true,
+        "unknown_interrupted_calls": 1
+      },
+      "window": {
+        "accepted_steps": 32,
+        "elapsed_seconds": 931.6293615708128,
+        "feasible_full_evaluations": 36,
+        "forwards": 217,
+        "full_calls": 40,
+        "full_evaluation_attempts": 172,
+        "infeasible_trials": 136,
+        "line_search_failures": 0,
+        "line_search_rejections": 139,
+        "max_accepted_steps": 96,
+        "max_forwards": 600,
+        "max_full_calls": 240,
+        "raw_call_count": 389,
+        "rejected_trials": 136,
+        "setup_elapsed_seconds": 35.05375570990145,
+        "setup_elapsed_seconds_exact": true
+      }
+    },
+    "engine_identity": "323ac477641882340b791b2940aeb54065ef429606c2f9570cbbe704953e6c8d",
+    "final": {
+      "barrier": -1.3016754242444746e-06,
+      "endpoint_gate": {
+        "dy_profile_closure_verified": true,
+        "full_dy_closure_verified": true,
+        "full_endpoint_gate_verified": true,
+        "missing_requirements": [],
+        "q_replay_verified": true
+      },
+      "min_T_over_sigma": 5.819201461802712e-06,
+      "min_s": 5.809201461802712e-06,
+      "objective": 8.403680595122578,
+      "penalized_gradient_max_abs": 0.08180878791623286,
+      "q_per_measurement": 16.807363793595997,
+      "q_replay_abs_error": 7.105427357601002e-15,
+      "q_replay_status": "verified",
+      "raw_gradient_max_abs": 0.08192947256362629,
+      "theta_hash": "afa352e7d4373dbfa9d65226e4704c22df7fd96cead0fd55a495bcfe721f48e7"
+    },
+    "first_optimizer_pid": 1131506,
+    "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+    "no_physics_or_covariance_changes": true,
+    "optimizer_history_reset": true,
+    "optimizer_history_reset_reason": "no verifiable L-BFGS history in saved artifact",
+    "phases": [
+      {
+        "accepted_steps": 32,
+        "endpoint_objective": 8.403680595122578,
+        "endpoint_q_per_measurement": 16.807363793596004,
+        "mu": 1e-06,
+        "requested_steps": 32,
+        "stability": {
+          "eligible": true,
+          "first": {
+            "criteria": {
+              "gradient_max": false,
+              "objective_span": false,
+              "prediction_max": false,
+              "prediction_rms": false,
+              "same_mu": true
+            },
+            "final_penalized_gradient_max": 0.0830264353962498,
+            "mu": 1e-06,
+            "passed": false,
+            "prediction_span_max": 1.149656309268499,
+            "prediction_span_rms": 0.22146090207140784,
+            "q_range": 0.04745850054607459
+          },
+          "passed": false,
+          "same_mu": true,
+          "second": {
+            "criteria": {
+              "gradient_max": false,
+              "objective_span": false,
+              "prediction_max": false,
+              "prediction_rms": false,
+              "same_mu": true
+            },
+            "final_penalized_gradient_max": 0.08180878791623286,
+            "mu": 1e-06,
+            "passed": false,
+            "prediction_span_max": 0.3116891627531615,
+            "prediction_span_rms": 0.028336786580123518,
+            "q_range": 0.005194699998121166
+          }
+        },
+        "stage": 1,
+        "stop_reason": "phase_schedule_complete"
+      }
+    ],
+    "prior": {
+      "accepted_steps": 64,
+      "checkpoint_elapsed_seconds": null,
+      "checkpoint_forwards": 407,
+      "checkpoint_full_calls": 83,
+      "historical_ledger": {
+        "accepted_steps": 64,
+        "checkpoint_forwards": 407,
+        "checkpoint_full_calls": 83,
+        "elapsed_seconds": null,
+        "infeasible_trials": 241,
+        "raw_call_count": 731,
+        "rejected_feasible_trials": 12,
+        "rejected_trials_total": 253,
+        "screening_accepted_steps": 64,
+        "terminal_forward_accounting": "410 attempted = 409 ok + 1 interrupted",
+        "terminal_forwards": 410,
+        "terminal_full_calls": 83,
+        "terminal_rejection_accounting": "241 infeasible trials plus 12 feasible line-search rejections; raw calls.ndjson also retains final unfinished line-search work",
+        "unknown_elapsed_seconds": true,
+        "unknown_interrupted_calls": 1
+      },
+      "optimizer_history_reset": true,
+      "optimizer_history_reset_reason": "no verifiable L-BFGS history in saved artifact",
+      "stage": 1
+    },
+    "production_selected": false,
+    "recovery_class": "completed",
+    "schema": "gpu-film-comparable-cell-summary-v1",
+    "source_manifest_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+    "start": "S00",
+    "starting_artifact": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v1/attempt_001/film_w24_d1_c12_v1/S00/checkpoint_064.npz",
+    "starting_artifact_sha256": "549a6d01fa45e956f3651c70f8b5475ef991e41475d7fec6b6de39087d0483e2",
+    "status": "completed",
+    "stop_reason": "phase_schedule_complete",
+    "terminal_no_resume": false,
+    "width": 24,
+    "window_budget": {
+      "accepted_steps": 32,
+      "elapsed_seconds": 931.6293544108048,
+      "feasible_full_evaluations": 36,
+      "forwards": 217,
+      "full_calls": 40,
+      "full_evaluation_attempts": 172,
+      "infeasible_trials": 136,
+      "line_search_failures": 0,
+      "line_search_rejections": 139,
+      "max_accepted_steps": 96,
+      "max_forwards": 600,
+      "max_full_calls": 240,
+      "raw_call_count": 389,
+      "rejected_trials": 136,
+      "setup_elapsed_seconds": 35.05375570990145,
+      "setup_elapsed_seconds_exact": true
+    }
+  },
+  "original_sha256": "6645e1f4fc8c93afee5cd02c79cbbb04a84cc26bafdadd31f483cabb5728c4ef",
+  "original_source": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w24_d1_c12_v1/S00/summary.json",
+  "schema": "tmd-redacted-evidence-v1",
+  "transformation": "Local paths normalized; coordination identifiers and commands omitted. Scientific numbers retained. Not byte-identical to original."
+}

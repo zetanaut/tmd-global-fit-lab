@@ -1,5 +1,11 @@
 # Experiment program and autonomous work queue
 
+Current results, changed scheduling strategy and promotion gates are maintained
+in [CURRENT_STUDY_PLAN.md](CURRENT_STUDY_PLAN.md). The first portable P1 round
+is terminal; the broader architecture study is active. Historical specifications
+remain immutable. New continuation budgets must explicitly account for prior
+steps and preserve verified optimizer state.
+
 This program supersedes machine-specific launch instructions, not the frozen
 scientific contract. Plans become executable only through a committed exact
 trial JSON and implementation tests. Hardware permits parallel independent
@@ -10,8 +16,8 @@ cells; it does not remove dependencies between scientific phases.
 | Task | Owner capability | Deliverable and completion gate |
 |---|---|---|
 | W00 portability | CPU and GPU agents | Six PORT whole-data replay trials. Each new backend/GPU/software family passes value, raw-gradient where saved, and two active-mu directional checks. Record timings/resources. |
-| W01 import closed current endpoints | CPU agent | Import the latest completed local P0 endpoints as immutable checkpoint artifacts with hashes, exact source lineage, accepted counts and raw receipts. Coordinate with the existing local owner; do not rerun its live targets. |
-| W02 checkpoint-overlay support | Coding/CPU agent | Add a content-addressed checkpoint registry for later run artifacts, verified parent hash/schema/q and source/metric/bundle binding. Keep the large operator bundle unchanged. Tests reject wrong-parent and stale-budget attempts. |
+| W01 import closed current endpoints | CPU agent | V7 w8/w24 exact finals imported with immutable scientific evidence and explicitly redacted receipt derivatives/original hashes; w16 unchanged. See `evidence/p0-v7-2026-09-13/index.json`. P0 complete/unconverged. |
+| W02 checkpoint-overlay support | Coding/CPU agent | V1 supports imported V7 endpoints with exact baseline parents, verified hashes/schema/q and source/metric/bundle binding. See `docs/CHECKPOINT_OVERLAYS.md`. New artifact formats/parent chains require reviewed adapters; no implicit execution clearance. |
 | W03 initialization factory | Coding/CPU agent | Port function-preserving width embedding and feasible seeded starts, with exact parameter inventories and before/after predictions. Preserve nonzero added features with initially zero output connections. All repair/model-call cost enters trial budget. |
 | W04 P1 convergence | GPU agents | Comparable final-barrier continuation rounds for the three selected starts after PORT/W01/W02. Use saved-array reviews to decide bounded next rounds. |
 | W05 original-family identity | Scientific/code agent | Identify the exact intended original implementation and revision; archive its computational source and prior contract. The inherited program did not pin this. If it cannot be resolved from supplied provenance, ask Dustin specifically rather than substituting a different network. |
@@ -19,7 +25,7 @@ cells; it does not remove dependencies between scientific phases.
 | W07 depth and conditioning factories | Coding/CPU agent | Depth 1/2/3 and input/every/last conditioning with clear function definitions, parameter matching, initial prediction comparisons and derivative/positivity tests. No duplicate depth-1 placements. |
 | W08 independent review | CPU agents | Validate all result archives and compare raw/adjusted residuals, nuisance penalties, stability and cost; publish decision records at each gate. |
 
-W02/W03/W05/W06/W07 are explicit unfinished implementation tasks. Existing runtime
+W03/W05/W06/W07 are explicit unfinished implementation tasks. Existing runtime
 supports registered same-schema Nested-FiLM continuations and PORT, not every
 future variant. An agent may implement these within scope and submit tested PRs;
 do not claim a declared experiment has run before its artifacts exist.
@@ -36,10 +42,15 @@ do not claim a declared experiment has run before its artifacts exist.
 | P4 | Conditioning placement | Input-only/every-block/last-block x3 paired seeds =9 cells at supported depth>=2 and approximately matched count. |
 | P5 | Targeted structural follow-up | One justified axis at a time; <=3 arms x3 paired seeds. Consider skip/residual, activation, boundary sharing or output-head prior. |
 
+Native P1 is separately assigned to the Manager and does not wait for PORT or
+this portable implementation. W04's PORT dependency applies to portable runners,
+not to the independently owned native program. No GPU PORT/UVA launch is granted
+by W01/W02 evidence integration.
+
 The historical P0 correction was w24 checkpoint064 +32 and w8 checkpoint083 +13,
 both mu=1e-6; w16 was reference-only. The release retains those pinned historical
-parents for replay. Their presence is not an instruction to duplicate the live
-local continuation. A new trial ID must explain whether it is a reproduction,
+parents for replay. V7 has now consumed that exact correction; their presence is
+not an instruction to repeat it. A new trial ID must explain whether it is a reproduction,
 an intended successor, or a diagnostic alternative branch.
 
 The intended “original” family may have a different output/monotonicity prior.

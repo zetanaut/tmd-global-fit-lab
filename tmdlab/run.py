@@ -7,7 +7,7 @@ import argparse
 import json
 import math
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import platform
 import signal
 import subprocess
@@ -18,17 +18,130 @@ import uuid
 import psutil
 from .io import read,write,sha,digest,utc
 from .contracts import validate_trial
+from .gpu_telemetry import NvmlDevice,canonical_uuid
+from .restart import elapsed_before,segment_allowance
+
+_gpu_local=threading.local()
 
 def git(*args):
     return subprocess.check_output(["git",*args],text=True).strip()
 
-def sample(pid,gpu):
+def cgroup_memory_headroom_bytes(pid, *, proc_root=Path("/proc")):
+    """Return this process's finite cgroup memory headroom, or fail closed.
+
+    Slurm's memory reservation is enforced by a task/job cgroup. Node-wide
+    ``psutil.virtual_memory`` cannot prove that the reservation has headroom.
+    Support the cgroup-v1 memory controller used on Rivanna and cgroup-v2 as a
+    guarded fallback for portable local tests.
+    """
+    entries=[]
+    for line in (proc_root/str(pid)/"cgroup").read_text().splitlines():
+        fields=line.split(":",2)
+        if len(fields)!=3: raise ValueError("malformed cgroup entry")
+        entries.append(tuple(fields))
+    mounts=[]
+    for line in (proc_root/"mounts").read_text().splitlines():
+        fields=line.split()
+        if len(fields)>=4: mounts.append((fields[1],fields[2],set(fields[3].split(","))))
+    def ancestors(path, root):
+        if not path.is_relative_to(root): raise ValueError("cgroup path escapes mount")
+        while True:
+            yield path
+            if path==root: return
+            path=path.parent
+
+    def finite_headroom(path, limit_name, usage_name):
+        values=[]
+        for candidate in ancestors(path, root):
+            limit_path=candidate/limit_name; usage_path=candidate/usage_name
+            if not limit_path.is_file() or not usage_path.is_file(): continue
+            limit=limit_path.read_text().strip(); usage=usage_path.read_text().strip()
+            if limit=="max": continue
+            try: ceiling,used=int(limit),int(usage)
+            except ValueError as exc: raise ValueError("noninteger cgroup memory accounting") from exc
+            if ceiling<=0 or used<0: raise ValueError("invalid cgroup memory accounting")
+            # cgroup v1 represents no limit with a value near INT64_MAX.
+            if ceiling>=2**60: continue
+            values.append(max(0,ceiling-used))
+        if not values: raise ValueError("finite cgroup limit unavailable")
+        # Every finite ancestor is a cap. The smallest remaining headroom is
+        # the only safe allocation-level answer for this process.
+        return min(values)
+
+    for _,controllers,relative in entries:
+        if "memory" not in controllers.split(","): continue
+        choices=[m for m in mounts if m[1]=="cgroup" and "memory" in m[2]]
+        if not choices: raise ValueError("memory cgroup mount unavailable")
+        root=Path(choices[0][0]); rel=PurePosixPath(relative)
+        if rel.is_absolute(): rel=PurePosixPath(*rel.parts[1:])
+        path=root.joinpath(*rel.parts)
+        return finite_headroom(path,"memory.limit_in_bytes","memory.usage_in_bytes")
+    for hierarchy,controllers,relative in entries:
+        if hierarchy!="0" or controllers: continue
+        choices=[m for m in mounts if m[1]=="cgroup2"]
+        if not choices: raise ValueError("cgroup-v2 mount unavailable")
+        root=Path(choices[0][0]); rel=PurePosixPath(relative)
+        if rel.is_absolute(): rel=PurePosixPath(*rel.parts[1:])
+        path=root.joinpath(*rel.parts)
+        return finite_headroom(path,"memory.max","memory.current")
+    raise ValueError("memory cgroup entry unavailable")
+
+def allocated_gpu_selector():
+    """Select logical GPU zero from the scheduler-visible device namespace.
+
+    ``SLURM_*_GPUS`` identifies a node's physical GPU (for example ``6``),
+    whereas a one-GPU ``srun`` plus ``apptainer --nv`` exposes that allocation
+    to CUDA and ``nvidia-smi`` as logical device zero.  The worker is pinned to
+    ``cuda:0``; telemetry must query the same namespace rather than accidentally
+    address a physical device which is deliberately hidden by the container.
+    """
+    visible=os.environ.get("CUDA_VISIBLE_DEVICES")
+    if visible is None: raise ValueError("scheduler CUDA visibility unavailable")
+    selected=[item.strip() for item in visible.split(",")]
+    if len(selected)!=1 or not selected[0]:
+        raise ValueError("ambiguous scheduler CUDA visibility")
+    return "0"
+
+def parse_gpu_row(text):
+    fields=[v.strip() for v in text.strip().split(",")]
+    if len(fields)!=9 or not fields[0] or not fields[1] or not fields[2]:
+        raise ValueError("malformed allocated-GPU telemetry")
+    try:
+        values=[float(v) for v in fields[3:]]
+    except ValueError as exc: raise ValueError("non-numeric allocated-GPU telemetry") from exc
+    if not all(math.isfinite(v) and v>=0 for v in values) or values[3]<=0:
+        raise ValueError("invalid allocated-GPU telemetry")
+    return dict(gpu_uuid=fields[0],gpu_name=fields[1],gpu_driver=fields[2],
+        gpu_utilization_percent=values[0],gpu_memory_utilization_percent=values[1],
+        gpu_device_memory_used_gib=values[2]/1024.,gpu_device_memory_total_gib=values[3]/1024.,
+        gpu_power_watts=values[4],gpu_temperature_celsius=values[5])
+
+def observed_accepted_updates(out):
+    if out is None: return 0
+    path=out/"counters.json"
+    if not path.is_file(): return 0
+    count=read(path).get("accepted_updates")
+    if type(count) is not int or count<0: raise ValueError("invalid observed accepted-update counter")
+    return count
+
+def sample(pid,gpu,*,out=None):
+    sample_started=time.monotonic()
     root=psutil.Process(pid)
     owned=[root,*root.children(recursive=True)]
     pids={p.pid for p in owned}
     rss=sum(p.memory_info().rss for p in owned if p.is_running())/2**30
-    info=dict(monotonic=time.monotonic(),rss_gib=rss,host_available_gib=psutil.virtual_memory().available/2**30,gpu_owned_gib=None)
+    info=dict(monotonic=time.monotonic(),rss_gib=rss,
+        host_available_gib=cgroup_memory_headroom_bytes(pid)/2**30,
+        accepted_updates=observed_accepted_updates(out),gpu_owned_gib=None)
     if gpu:
+        uuid=os.environ.get('TMD_GPU_UUID')
+        if uuid:
+            if not hasattr(_gpu_local,'device') or _gpu_local.device.uuid!=canonical_uuid(uuid):
+                _gpu_local.device=NvmlDevice(uuid,async_optional=True)
+            info.update(_gpu_local.device.sample(pids))
+            info['sample_duration_seconds']=time.monotonic()-sample_started
+            info['monotonic']=time.monotonic()
+            return info
         proc=subprocess.run(["nvidia-smi","--query-compute-apps=pid,used_memory","--format=csv,noheader,nounits"],text=True,capture_output=True,timeout=.75,check=True)
         memory=0.
         for row in proc.stdout.splitlines():
@@ -36,6 +149,13 @@ def sample(pid,gpu):
             process_id,value=row.split(",")
             if int(process_id.strip()) in pids: memory+=float(value.strip())/1024.
         info["gpu_owned_gib"]=memory
+        selected=allocated_gpu_selector()
+        device=subprocess.run(["nvidia-smi","--id",selected,
+            "--query-gpu=uuid,name,driver_version,utilization.gpu,utilization.memory,memory.used,memory.total,power.draw,temperature.gpu",
+            "--format=csv,noheader,nounits"],text=True,capture_output=True,timeout=.75,check=True)
+        info.update(parse_gpu_row(device.stdout))
+    info['sample_duration_seconds']=time.monotonic()-sample_started
+    info['monotonic']=time.monotonic()
     return info
 
 def stop_owned(process):
@@ -51,12 +171,21 @@ def stop_owned(process):
 def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
     """Separate telemetry thread; stale/failed telemetry fails closed."""
     stop=threading.Event(); latest={"sample":None,"error":None}; started=time.monotonic()
-    peak=dict(rss_gib=0.,gpu_owned_gib=None,host_available_min_gib=None,samples=0)
+    peak=dict(rss_gib=None,gpu_owned_gib=None,host_available_min_gib=None,samples=0)
+    if gpu:
+        peak.update(gpu_utilization_percent_max=None,gpu_memory_utilization_percent_max=None,
+            gpu_device_memory_used_gib_max=None,gpu_device_memory_total_gib=None,
+            gpu_power_watts_max=None,gpu_temperature_celsius_max=None)
     def telemetry():
         while not stop.is_set() and process.poll() is None:
             try:
-                s=sampler(process.pid,gpu)
-                for k in ("monotonic","rss_gib","host_available_gib",*( ["gpu_owned_gib"] if gpu else [])):
+                s=sample(process.pid,gpu,out=out) if sampler is sample else sampler(process.pid,gpu)
+                keys=("monotonic","rss_gib","host_available_gib","accepted_updates")
+                if gpu:
+                    keys+=("gpu_owned_gib","gpu_device_memory_used_gib","gpu_device_memory_total_gib")
+                    for key in ('gpu_utilization_percent','gpu_memory_utilization_percent','gpu_power_watts','gpu_temperature_celsius'):
+                        if s.get(key) is not None:keys+=(key,)
+                for k in keys:
                     if type(s.get(k)) not in (int,float) or not math.isfinite(s[k]) or s[k]<0:
                         raise ValueError("missing/nonfinite resource telemetry: "+k)
                 latest["sample"]=s
@@ -76,16 +205,22 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
                     if s["rss_gib"]>budget["rss_gib"] or s["host_available_gib"]<budget["host_available_gib"] or gpu and s["gpu_owned_gib"]>budget["gpu_gib"]: reason="resource_limit"
                     if s["monotonic"]!=seen:
                         seen=s["monotonic"]; peak["samples"]+=1
-                        peak["rss_gib"]=max(peak["rss_gib"],s["rss_gib"])
+                        peak["rss_gib"]=s["rss_gib"] if peak["rss_gib"] is None else max(peak["rss_gib"],s["rss_gib"])
                         peak["host_available_min_gib"]=s["host_available_gib"] if peak["host_available_min_gib"] is None else min(peak["host_available_min_gib"],s["host_available_gib"])
-                        if gpu: peak["gpu_owned_gib"]=max(peak["gpu_owned_gib"] or 0.,s["gpu_owned_gib"])
+                        if gpu:
+                            peak["gpu_owned_gib"]=max(peak["gpu_owned_gib"] or 0.,s["gpu_owned_gib"])
+                            for key in ("gpu_utilization_percent","gpu_memory_utilization_percent","gpu_device_memory_used_gib","gpu_power_watts","gpu_temperature_celsius"):
+                                if s.get(key) is not None:peak[key+"_max"]=max(peak[key+"_max"] or 0.,s[key])
+                            peak["gpu_device_memory_total_gib"]=s["gpu_device_memory_total_gib"]
                         f.write(json.dumps(s,allow_nan=False)+"\n"); f.flush()
                 if reason:
                     stop_owned(process); break
                 time.sleep(.1)
     finally:
         stop.set(); thread.join(timeout=1)
-    return dict(stop_reason=reason,peaks=peak,resource_peaks_are_sampled_not_continuous=True,telemetry_staleness_limit_seconds=1.,model_stop_escalation_seconds=2.,exit_code=process.wait())
+    if peak["samples"]==0 and reason is None:
+        reason="telemetry_failure: "+latest["error"] if latest["error"] else "telemetry_missing_no_samples"
+    return dict(stop_reason=reason,peaks=peak,resource_telemetry_status="sampled" if peak["samples"] else "unknown_no_samples",resource_peaks_are_sampled_not_continuous=True,telemetry_staleness_limit_seconds=1.,model_stop_escalation_seconds=2.,exit_code=process.wait())
 
 def main(args):
     trial=validate_trial(read(args.trial)); budget=trial["budget"]
@@ -102,13 +237,28 @@ def main(args):
     claim=read(args.claim)
     if claim["trial_id"]!=trial["trial_id"] or claim["trial_sha256"]!=sha(args.trial) or claim["code_commit"]!=commit:
         raise ValueError("claim/spec/code mismatch")
+    prior_seconds=0.; model_seconds=budget['segment_seconds']
+    if trial.get('execution_policy')=='p1-resume-v1':
+        manifest=read(root/'restarts'/(trial['start_checkpoint'][8:]+'.json'))
+        prior_seconds=elapsed_before(root,manifest)
+        model_seconds=segment_allowance(trial,prior_seconds)
     args.out.mkdir(parents=True,exist_ok=False)
     def terminate(*_): raise KeyboardInterrupt("supervisor termination requested")
     signal.signal(signal.SIGTERM,terminate)
     t0=time.monotonic(); epoch=time.time()
     env=os.environ.copy()
+    if trial.get('execution_policy')=='p1-resume-v1' and args.device.startswith('cuda'):
+        # Launch wrapper proves CUDA-0/NVML equality once, before accepting a
+        # trial. A numeric Slurm index is never substituted for this UUID.
+        canonical_uuid(env.get('TMD_GPU_UUID',''))
+        write(args.out/'gpu-identity.json',dict(uuid=env['TMD_GPU_UUID'],
+            logical_cuda_device=args.device,slurm_physical_devices=env.get('SLURM_STEP_GPUS') or env.get('SLURM_JOB_GPUS')))
     env.update(PYTHONDONTWRITEBYTECODE="1",PYTHONNOUSERSITE="1",OMP_NUM_THREADS="1",OPENBLAS_NUM_THREADS="1",MKL_NUM_THREADS="1",CUBLAS_WORKSPACE_CONFIG=":4096:8")
     launch=dict(schema="tmd-launch-v1",run_id=trial["trial_id"]+"-"+uuid.uuid4().hex[:12],trial_id=trial["trial_id"],trial_sha256=sha(args.trial),code_commit=commit,bundle_identity=trial["bundle_identity"],claim=claim,t0_utc=utc(),t0_epoch=epoch,t0_monotonic=t0,model_deadline_monotonic=t0+budget["segment_seconds"],final_deadline_monotonic=t0+budget["total_seconds"],budget=budget,device=args.device,platform=platform.platform(),python=sys.version,slurm={k:os.environ.get(k) for k in ("SLURM_JOB_ID","SLURM_ARRAY_JOB_ID","SLURM_ARRAY_TASK_ID","SLURM_CPUS_PER_TASK","SLURM_JOB_GPUS","CUDA_VISIBLE_DEVICES")})
+    if trial.get('execution_policy')=='p1-resume-v1':
+        launch.update(model_deadline_monotonic=t0+model_seconds,
+            model_seconds_before=prior_seconds,effective_segment_seconds=model_seconds,
+            trajectory_budget=trial['trajectory_budget'])
     write(args.out/"launch.json",launch)
     write(args.out/"trial.json",trial)
     command=[sys.executable,"-m","tmdlab.worker","--trial",str(args.trial.resolve()),"--bundle",str(args.bundle.resolve()),"--out",str(args.out.resolve()),"--device",args.device]

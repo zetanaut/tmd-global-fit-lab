@@ -1,0 +1,158 @@
+{
+  "content": {
+    "architecture": "film_w8_d1_c12_v1",
+    "completed": true,
+    "cumulative_ledger": {
+      "cumulative": {
+        "elapsed_qualification": [
+          "historical elapsed wall time unavailable"
+        ],
+        "elapsed_seconds": null,
+        "forwards": 741,
+        "full_calls": 125,
+        "infeasible_trials": 459,
+        "raw_call_count": 721,
+        "refinement_accepted_steps": 96,
+        "rejected_feasible_trials": 22,
+        "rejected_trials_total": 481,
+        "screening_accepted_steps": 64,
+        "unknown_interrupted_calls": 0
+      },
+      "historical": {
+        "accepted_steps": 83,
+        "checkpoint_forwards": 594,
+        "checkpoint_full_calls": 103,
+        "elapsed_seconds": null,
+        "infeasible_trials": 389,
+        "raw_call_count": 495,
+        "rejected_feasible_trials": 21,
+        "rejected_trials_total": 410,
+        "screening_accepted_steps": 64,
+        "terminal_forward_accounting": "600 terminal forward units; checkpoint origin is 594",
+        "terminal_forwards": 600,
+        "terminal_full_calls": 106,
+        "terminal_rejection_accounting": "389 infeasible entries and 21 feasible line-search rejections retained as separate raw components",
+        "unknown_elapsed_seconds": true,
+        "unknown_interrupted_calls": 0
+      },
+      "window": {
+        "accepted_steps": 13,
+        "elapsed_seconds": 400.0988690527156,
+        "feasible_full_evaluations": 15,
+        "forwards": 141,
+        "full_calls": 19,
+        "full_evaluation_attempts": 85,
+        "infeasible_trials": 70,
+        "line_search_failures": 0,
+        "line_search_rejections": 71,
+        "max_accepted_steps": 96,
+        "max_forwards": 600,
+        "max_full_calls": 240,
+        "raw_call_count": 226,
+        "rejected_trials": 70,
+        "setup_elapsed_seconds": 35.7387782195583,
+        "setup_elapsed_seconds_exact": true
+      }
+    },
+    "engine_identity": "65cf4d5a55af735953cec8920d6ee8039c400e69fe461f682c02a34b5b9f28b6",
+    "final": {
+      "barrier": -1.3284482413724792e-06,
+      "endpoint_gate": {
+        "dy_profile_closure_verified": true,
+        "full_dy_closure_verified": true,
+        "full_endpoint_gate_verified": true,
+        "missing_requirements": [],
+        "q_replay_verified": true
+      },
+      "min_T_over_sigma": 3.870023761106051e-06,
+      "min_s": 3.8600237611060515e-06,
+      "objective": 8.477856511250199,
+      "penalized_gradient_max_abs": 0.26855763912300673,
+      "q_per_measurement": 16.955715679396878,
+      "q_replay_abs_error": 3.552713678800501e-15,
+      "q_replay_status": "verified",
+      "raw_gradient_max_abs": 0.26872010730157947,
+      "theta_hash": "4f7049968076b7790cc97d42cafe561f5dbbe6ad8439942f67c90b9ea4f6b9b1"
+    },
+    "first_optimizer_pid": 1131506,
+    "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+    "no_physics_or_covariance_changes": true,
+    "optimizer_history_reset": true,
+    "optimizer_history_reset_reason": "no verifiable L-BFGS history in saved artifact",
+    "phases": [
+      {
+        "accepted_steps": 13,
+        "endpoint_objective": 8.477856511250199,
+        "endpoint_q_per_measurement": 16.95571567939688,
+        "mu": 1e-06,
+        "requested_steps": 13,
+        "stability": {
+          "eligible": false,
+          "passed": false,
+          "reason": "fewer_than_21_updates"
+        },
+        "stage": 1,
+        "stop_reason": "phase_schedule_complete"
+      }
+    ],
+    "prior": {
+      "accepted_steps": 83,
+      "checkpoint_elapsed_seconds": null,
+      "checkpoint_forwards": 594,
+      "checkpoint_full_calls": 103,
+      "historical_ledger": {
+        "accepted_steps": 83,
+        "checkpoint_forwards": 594,
+        "checkpoint_full_calls": 103,
+        "elapsed_seconds": null,
+        "infeasible_trials": 389,
+        "raw_call_count": 495,
+        "rejected_feasible_trials": 21,
+        "rejected_trials_total": 410,
+        "screening_accepted_steps": 64,
+        "terminal_forward_accounting": "600 terminal forward units; checkpoint origin is 594",
+        "terminal_forwards": 600,
+        "terminal_full_calls": 106,
+        "terminal_rejection_accounting": "389 infeasible entries and 21 feasible line-search rejections retained as separate raw components",
+        "unknown_elapsed_seconds": true,
+        "unknown_interrupted_calls": 0
+      },
+      "optimizer_history_reset": true,
+      "optimizer_history_reset_reason": "no verifiable L-BFGS history in saved artifact",
+      "stage": 1
+    },
+    "production_selected": false,
+    "recovery_class": "completed",
+    "schema": "gpu-film-comparable-cell-summary-v1",
+    "source_manifest_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+    "start": "S01",
+    "starting_artifact": "source://study/manager/gpu_film_refinement_2026_09_12_v1/film_w8_d1_c12_v1/S01/checkpoint_083.npz",
+    "starting_artifact_sha256": "d195ecee17317e5164872dfcf096040ba69542ef1b8852f6995d28232a0ed075",
+    "status": "completed",
+    "stop_reason": "phase_schedule_complete",
+    "terminal_no_resume": false,
+    "width": 8,
+    "window_budget": {
+      "accepted_steps": 13,
+      "elapsed_seconds": 400.09886229224503,
+      "feasible_full_evaluations": 15,
+      "forwards": 141,
+      "full_calls": 19,
+      "full_evaluation_attempts": 85,
+      "infeasible_trials": 70,
+      "line_search_failures": 0,
+      "line_search_rejections": 71,
+      "max_accepted_steps": 96,
+      "max_forwards": 600,
+      "max_full_calls": 240,
+      "raw_call_count": 226,
+      "rejected_trials": 70,
+      "setup_elapsed_seconds": 35.7387782195583,
+      "setup_elapsed_seconds_exact": true
+    }
+  },
+  "original_sha256": "229c501325aac6831466a40663b95a1fc3e1130ee581f20387538c96f7a39df1",
+  "original_source": "source://study/manager/gpu_film_comparable_continuation_2026_09_12_v7/attempt_001/film_w8_d1_c12_v1/S01/summary.json",
+  "schema": "tmd-redacted-evidence-v1",
+  "transformation": "Local paths normalized; coordination identifiers and commands omitted. Scientific numbers retained. Not byte-identical to original."
+}
