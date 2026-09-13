@@ -51,7 +51,7 @@ def stop_owned(process):
 def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
     """Separate telemetry thread; stale/failed telemetry fails closed."""
     stop=threading.Event(); latest={"sample":None,"error":None}; started=time.monotonic()
-    peak=dict(rss_gib=0.,gpu_owned_gib=None,host_available_min_gib=None,samples=0)
+    peak=dict(rss_gib=None,gpu_owned_gib=None,host_available_min_gib=None,samples=0)
     def telemetry():
         while not stop.is_set() and process.poll() is None:
             try:
@@ -76,7 +76,7 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
                     if s["rss_gib"]>budget["rss_gib"] or s["host_available_gib"]<budget["host_available_gib"] or gpu and s["gpu_owned_gib"]>budget["gpu_gib"]: reason="resource_limit"
                     if s["monotonic"]!=seen:
                         seen=s["monotonic"]; peak["samples"]+=1
-                        peak["rss_gib"]=max(peak["rss_gib"],s["rss_gib"])
+                        peak["rss_gib"]=s["rss_gib"] if peak["rss_gib"] is None else max(peak["rss_gib"],s["rss_gib"])
                         peak["host_available_min_gib"]=s["host_available_gib"] if peak["host_available_min_gib"] is None else min(peak["host_available_min_gib"],s["host_available_gib"])
                         if gpu: peak["gpu_owned_gib"]=max(peak["gpu_owned_gib"] or 0.,s["gpu_owned_gib"])
                         f.write(json.dumps(s,allow_nan=False)+"\n"); f.flush()
@@ -85,7 +85,9 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
                 time.sleep(.1)
     finally:
         stop.set(); thread.join(timeout=1)
-    return dict(stop_reason=reason,peaks=peak,resource_peaks_are_sampled_not_continuous=True,telemetry_staleness_limit_seconds=1.,model_stop_escalation_seconds=2.,exit_code=process.wait())
+    if peak["samples"]==0 and reason is None:
+        reason="telemetry_failure: "+latest["error"] if latest["error"] else "telemetry_missing_no_samples"
+    return dict(stop_reason=reason,peaks=peak,resource_telemetry_status="sampled" if peak["samples"] else "unknown_no_samples",resource_peaks_are_sampled_not_continuous=True,telemetry_staleness_limit_seconds=1.,model_stop_escalation_seconds=2.,exit_code=process.wait())
 
 def main(args):
     trial=validate_trial(read(args.trial)); budget=trial["budget"]

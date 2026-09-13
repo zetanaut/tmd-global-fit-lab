@@ -1,0 +1,24 @@
+{
+  "schema": "tmd-implementation-validation-v1",
+  "recorded_utc": "2026-09-13T02:11:30Z",
+  "scope": "Review/integration of separately authored portable D1/D2 repair, not duplicate implementation or native-runtime work",
+  "upstream_patch_sha256": "d405ac08259cdd1f9e9cd4cc01fa13f10326ff17ac9676ad1cfc2d743897c889",
+  "upstream_base_commit": "79cc433e359b56f93d79b940a6d1a12260aa1cc0",
+  "integration_parent_commit": "c2738117d9ebeb8522f9875fa628b145baea3220",
+  "source_review": "io.py/run.py originals match upstream pins. contracts.py differs only by the prior nonoverlapping W02 binding addition, retained during exact-hunk integration. New regression file was absent. No forced/fuzzy application.",
+  "integrated_sha256": {
+    "tmdlab/io.py": "a0c58fa7d9512345f1a0470db72d2edd1b04194574894748e60b55cfefd3b192",
+    "tmdlab/run.py": "871f772f0d557de3b7358d961ac9fc05075afdb4d5098a838389f26a25462131",
+    "tmdlab/contracts.py": "27ba97b391e08f08e0366f66ca5cb2eb6857313a597a1c04b7ca58cfdc30a8f2",
+    "tests/test_portable_runtime_repair.py": "170a2073a4914985dcad30eacb25c272702f48674902384c28a2360b194b18a0"
+  },
+  "local_tests": {"command": "python -B -m pytest -q tests/test_portable_runtime_repair.py tests/test_checkpoints.py", "passed": 131, "failed": 0, "expected_failures": 0, "skipped": 0, "pytest_seconds": 4.35, "process_wall_seconds": 4.45, "process_max_rss_kib": 49580},
+  "saved_overlay_verification_passed": true,
+  "repository_structural_validation_passed": true,
+  "D1": "Recursive finite-number validation rejects JSON overflow and nonfinite in-memory trial fields before dispatch.",
+  "D2": "Zero persisted resource samples yield null unknown peaks and a non-success telemetry reason; actual worker exit code and earlier stop reasons are preserved. Sampled numeric zero remains zero.",
+  "consumer_review": "run.main returns non-success for any supervisor stop reason; results validation/collection disallow completed status with a non-null supervisor stop reason and do not require peak-field arithmetic.",
+  "local_limits": {"cpu_affinity": [22,23], "numeric_threads": 1, "address_space_limit_gib": 8, "cpu_seconds_limit": 120, "model_calls": 0, "optimizer_calls": 0, "gpu_calls": 0},
+  "limitations": ["Local process/Git/signal test objects are mocked; no real worker launch", "No scientific evaluator or optimizer calls", "No native-runtime edits", "No CPU/GPU full-data PORT qualification", "No GPU or UVA submission", "Historical defects and original QA evidence are retained, not overwritten"],
+  "ci": "See private PR #4 for the new commit-specific full CPU engineering-suite result."
+}

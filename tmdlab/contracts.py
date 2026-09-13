@@ -1,8 +1,9 @@
 """Executable bounds; a schema change cannot silently grant extra work."""
 import re
-from .io import SOURCE_ID, METRIC_ID
+from .io import SOURCE_ID, METRIC_ID, require_finite_numbers
 
 def validate_trial(t, *, require_ready=True):
+    require_finite_numbers(t)
     if t.get("schema") != "tmd-trial-v1" or not re.fullmatch(r"[a-z0-9][a-z0-9-]{2,95}",t.get("trial_id","")):
         raise ValueError("invalid trial identity")
     if require_ready and t.get("status") != "ready":
