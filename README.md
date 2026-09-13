@@ -5,10 +5,13 @@ DY/SIDIS b-space architecture study. It is designed for autonomous Codex agents,
 local GPU workstations, and UVA Rivanna/Afton CPU/GPU allocations.
 
 **Status, 13 September 2026:** Six full-data CPU/A6000 PORT cells passed.
-Portable P1 widths 8/16/24 produced audited partial results after 18/38/28
-accepted updates. The architecture study remains active. The next work is
-restartable, adequately budgeted optimization followed by controlled paired
-architecture comparisons. Read the [current study plan](docs/CURRENT_STUDY_PLAN.md)
+The completed paired optimizer calibration retains unit backtracking: adaptive
+saved40.5% charged forwards but failed the frozen progress criteria. Both arms
+reached30 cumulative accepted steps without censoring; neither converged.
+The exact next width8/16/24 trials preserve30/38/28 updates and target a common96
+under longer resumable allocations, followed by controlled paired architecture
+comparisons. The architecture study remains active. Read the
+[current study plan](docs/CURRENT_STUDY_PLAN.md)
 and [published results](RESULTS.md) before claiming any further work.
 
 ## Scientific purpose

@@ -17,11 +17,15 @@ Published records, full archives, learning curves, residual/nuisance diagnostics
 and the executable decision accompany that outcome. Neither arm converged.
 
 Next: preserve unit width8 at30 steps and widths16/24 at38/28, then complete
-the common96-step milestone under reviewed longer, resumable allocations.
+the [preregistered common96-step milestone](../decisions/2026-09-13-p1-milestone96-plan.md)
+under reviewed longer, resumable allocations.
 These are three independent one-GPU jobs, not a distributed single-model fit.
 The [B200 width8 numerical result](../decisions/2026-09-13-b200-w8-a01-outcome.md)
-matched the references but had partial execution; the separately preregistered
-technical retry must clear execution before further B200 promotion.
+matched the references but had partial execution; the
+[A02 technical retry](../decisions/2026-09-13-b200-w8-a02-outcome.md) reproduced
+that numerical pass and shutdown-monitor failure. B200 promotion and automatic
+retries are paused. The exact A6000 width specs are reviewed; claims briefly
+await a robust allocation-lifecycle monitor review applicable to both GPU types.
 
 ## What has actually been tested
 
