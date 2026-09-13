@@ -53,13 +53,20 @@ def perturb_narrow(source, *, seed, radius):
     if not math.isfinite(norm) or norm == 0:
         raise ValueError("failed to construct paired-start direction")
     candidate_theta = theta + float(radius) * direction / norm
+    realized = float(np.linalg.norm(candidate_theta-theta))
+    # A positive requested radius can vanish when it is below the ULP of a
+    # large saved parameter. Conversely, rounding can materially exceed it.
+    # Neither outcome is a distinct, bounded paired start.
+    tolerance = max(1e-15, float(radius)*1e-10)
+    if not math.isfinite(realized) or realized == 0 or abs(realized-float(radius)) > tolerance:
+        raise ValueError("paired-start radius is not representable at this source scale")
     candidate = build(cfg, seed=seed)
     put(candidate, candidate_theta)
     receipt = dict(schema="tmd-paired-width-narrow-candidate-v1",
         seed=seed, radius=float(radius), source_model=asdict(cfg),
         source_parameter_sha256=_candidate_digest(theta),
         candidate_parameter_sha256=_candidate_digest(candidate_theta),
-        parameter_count=int(theta.size), perturbation_l2=float(np.linalg.norm(candidate_theta-theta)),
+        parameter_count=int(theta.size), perturbation_l2=realized,
         model_calls=0, feasibility_verified=False,
         full_observable_replay_required=True,
         note="Candidate only; bounded feasibility/repair and registered-start gates remain required.")

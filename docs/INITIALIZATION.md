@@ -23,6 +23,11 @@ and candidate parameter hashes, perturbation norm and zero model calls. The
 factory returns in-memory models only; it does not write checkpoints, register
 trials, assert feasibility or grant an optimizer budget.
 
+These candidates are bounded perturbations around one shared source, not proof
+of independent attraction basins or sufficient initialization diversity. The
+future all-observable feasibility protocol must measure and preregister that
+diversity before calling three starts paired scientific seeds.
+
 CPU tests use nonzero learned parameters and cover widths8/16/24 at unchanged
 depth1/2/3, boundary values and b derivatives, CS equality, parameter counts,
 source immutability and non-dead new output features. Floating-point transport
