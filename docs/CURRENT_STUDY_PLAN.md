@@ -47,31 +47,30 @@ any further attempt automatically.
 A03 subsequently completed every numerical, audit and execution gate; see its
 [outcome](../decisions/2026-09-13-b200-w8-a03-outcome.md) and immutable result.
 The temporary fourth-GPU exception has ended. A03 permits a separately
-preregistered B200 width16 replay only; width24 remains conditional on that
-new cell, and none of this migrates the active A6000 P1 continuations or
-constitutes an architecture comparison.
+preregistered B200 width16 replay only; width24 remained conditional on that
+new cell. The completed width16 result subsequently permitted the separately
+reviewed width24 check reported below; none of these steps migrates active
+A6000 P1 continuations or constitutes an architecture comparison.
 
 That separately scoped [B200 width16 A01 PORT plan](../decisions/2026-09-13-b200-w16-a01-plan.md)
 completed cleanly; its independently reviewed [outcome](../decisions/2026-09-13-b200-w16-a01-outcome.md)
 and immutable result preserve the claim, source, archive, numerical and monitor
 evidence. It is the first B200 width16 cell, eight forwards/three VJPs/zero
 updates, and establishes B200 execution for that fixed replay only. The
-temporary fourth-GPU exception ended at terminal state. A separately
-preregistered and reviewed B200 width24 PORT plan may now be prepared, but is
-not yet claimed or submitted; no B200 optimization or architecture conclusion
-is authorized. The three A6000 P1 continuations remain independent.
+temporary fourth-GPU exception ended at terminal state. Its separately
+preregistered and reviewed width24 successor is reported below. No B200
+optimization or architecture conclusion is authorized; the three A6000 P1
+continuations remain independent.
 
 That final [B200 width24 A01 PORT plan](../decisions/2026-09-13-b200-w24-a01-plan.md)
-passed independent review and exact-source CI, then was claimed and submitted
-once as job`19825150`. Its remote-readback claim is
-`958da82806c3c4b3e6743cdf61e01c0ae05f2f10`; immutable source is
-`397af101a7ac99b40d8708196c0f7a0742b5e09d`; trial SHA-256 is
-`6994c7015e22eb51c3dae5e9d11a0b23174b238df7b291f0ca4de44da11c5399`.
-The scheduler recorded `spinquest_standard`, one B200, two CPUs,16GiB,
-40 minutes and no requeue. The batch retains both hash-pinned CPU/A6000
-width24 endpoints and must pass its saved-only raw-gradient comparison within
-the original total bound. This is a submitted final PORT gate, not a result,
-optimizer, throughput or architecture claim.
+completed cleanly; its independently reviewed [outcome](../decisions/2026-09-13-b200-w24-a01-outcome.md)
+and immutable result preserve the archive, retained CPU/A6000 reference
+endpoints, saved-only raw-gradient comparison, numerical and monitor evidence.
+This completes the authorized B200 PORT sequence. It establishes only bounded
+execution portability for the fixed replay anchors; no B200 optimizer,
+throughput or architecture claim follows. The normal project cap is three and
+the independently queued A6000 P1 continuations remain the next scientific
+source of optimization evidence.
 
 ## What has actually been tested
 
@@ -168,11 +167,10 @@ That dependency does not hold up P1 convergence or initialization work.
 
 Use independent one-GPU cells, initially up to three qualified A6000 allocations
 under `spinquest_standard`. The separately scoped temporary fourth-GPU
-exceptions for completed B200 A03 and width16 A01 have both ended; the normal
-cap is three. Any future exception, including a separately reviewed width24
-PORT cell, requires a fresh UVA HPC specialist review. Afton or another
-accelerator family is useful only after an exact full-data PORT check and
-measured throughput benefit. Never mutate the
+exceptions for completed B200 A03, width16 A01 and width24 A01 have all ended;
+the normal cap is three and the B200 PORT sequence is closed. Any future
+resource exception requires a new scientific plan and UVA HPC specialist review.
+Never mutate the
 checkout mounted by an active job; each executable revision has an isolated
 pinned checkout. Credentials remain on the transfer host.
 
