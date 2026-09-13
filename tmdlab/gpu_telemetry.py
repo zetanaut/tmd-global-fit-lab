@@ -31,7 +31,10 @@ class NvmlDevice:
         self.lib=library if library is not None else C.CDLL('libnvidia-ml.so.1')
         self.check(self.lib.nvmlInit_v2())
         self.handle=C.c_void_p()
-        self.check(self.lib.nvmlDeviceGetHandleByUUID(uuid.encode('ascii'),C.byref(self.handle)))
+        # CUDA properties expose a bare UUID on some supported PyTorch builds;
+        # NVML requires the canonical uppercase GPU- prefix for handle lookup.
+        nvml_uuid='GPU-'+self.uuid[4:]
+        self.check(self.lib.nvmlDeviceGetHandleByUUID(nvml_uuid.encode('ascii'),C.byref(self.handle)))
         observed=self.string('nvmlDeviceGetUUID',self.handle)
         if canonical_uuid(observed)!=self.uuid: raise ValueError('NVML device UUID mismatch')
         self.name=self.string('nvmlDeviceGetName',self.handle)
