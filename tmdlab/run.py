@@ -83,13 +83,20 @@ def cgroup_memory_headroom_bytes(pid, *, proc_root=Path("/proc")):
     raise ValueError("memory cgroup entry unavailable")
 
 def allocated_gpu_selector():
-    """Return one Slurm-assigned physical GPU ID/UUID; reject ambiguous lists."""
-    value=os.environ.get("SLURM_STEP_GPUS") or os.environ.get("SLURM_JOB_GPUS")
-    if not value: raise ValueError("scheduler GPU assignment unavailable")
-    selected=value.strip().split(",")
-    if len(selected)!=1 or not selected[0] or not all(c.isalnum() or c in "_-" for c in selected[0]):
-        raise ValueError("ambiguous scheduler GPU assignment")
-    return selected[0]
+    """Select logical GPU zero from the scheduler-visible device namespace.
+
+    ``SLURM_*_GPUS`` identifies a node's physical GPU (for example ``6``),
+    whereas a one-GPU ``srun`` plus ``apptainer --nv`` exposes that allocation
+    to CUDA and ``nvidia-smi`` as logical device zero.  The worker is pinned to
+    ``cuda:0``; telemetry must query the same namespace rather than accidentally
+    address a physical device which is deliberately hidden by the container.
+    """
+    visible=os.environ.get("CUDA_VISIBLE_DEVICES")
+    if visible is None: raise ValueError("scheduler CUDA visibility unavailable")
+    selected=[item.strip() for item in visible.split(",")]
+    if len(selected)!=1 or not selected[0]:
+        raise ValueError("ambiguous scheduler CUDA visibility")
+    return "0"
 
 def parse_gpu_row(text):
     fields=[v.strip() for v in text.strip().split(",")]

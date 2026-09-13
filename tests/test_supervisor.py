@@ -2,7 +2,7 @@ import subprocess
 import sys
 import time
 import pytest
-from tmdlab.run import supervise,stop_owned,cgroup_memory_headroom_bytes,parse_gpu_row
+from tmdlab.run import supervise,stop_owned,cgroup_memory_headroom_bytes,allocated_gpu_selector,parse_gpu_row
 
 BUDGET=dict(rss_gib=48,gpu_gib=20,host_available_gib=8)
 
@@ -98,3 +98,13 @@ def test_allocated_gpu_telemetry_parser_rejects_malformed_rows():
     assert parsed['gpu_device_memory_total_gib']==pytest.approx(49140/1024)
     with pytest.raises(ValueError):
         parse_gpu_row('GPU-123, RTX A6000, 595.71.05, N/A, 61, 1, 2, 3, 4')
+
+def test_allocated_gpu_selector_uses_container_logical_zero_not_physical_slurm_id(monkeypatch):
+    # Slurm's physical ID can differ from the one-GPU namespace exposed by
+    # Apptainer.  The worker itself is always cuda:0, so telemetry must be too.
+    monkeypatch.setenv('CUDA_VISIBLE_DEVICES','0')
+    monkeypatch.setenv('SLURM_STEP_GPUS','6')
+    assert allocated_gpu_selector()=='0'
+    monkeypatch.setenv('CUDA_VISIBLE_DEVICES','0,1')
+    with pytest.raises(ValueError,match='ambiguous'):
+        allocated_gpu_selector()
