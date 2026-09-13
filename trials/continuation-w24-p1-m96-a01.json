@@ -1,0 +1,87 @@
+{
+  "schema": "tmd-trial-v1",
+  "status": "ready",
+  "phase": "P1",
+  "kind": "continuation",
+  "hypothesis": "Continue the existing fixed-physics width trajectory to96 cumulative portable P1 accepted updates or the unchanged convergence gate, using the uniformly selected unit policy and preserved optimizer state. Compare maturity and cost without claiming an architecture winner from unmatched starts.",
+  "model_family": "nested-film-v1",
+  "rows": 2290,
+  "dtype": "float64",
+  "execution_class": "gpu",
+  "claim_required": true,
+  "production_selection": false,
+  "phases": [
+    {
+      "mu": 0.000001,
+      "updates": 68
+    }
+  ],
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "budget": {
+    "accepted_updates": 68,
+    "cache_gib": 12,
+    "cpu_threads": 1,
+    "forwards": 3897,
+    "full_calls": 479,
+    "gpu_gib": 20,
+    "host_available_gib": 8,
+    "rss_gib": 12,
+    "segment_seconds": 13200,
+    "total_seconds": 13800,
+    "endpoint_reserve_seconds": 180
+  },
+  "resource_profile": {
+    "site": "UVA",
+    "account": "spinquest_standard",
+    "partition": "gpu",
+    "gpu_model": "NVIDIA RTX A6000",
+    "gres": "gpu:a6000:1",
+    "gpus": 1,
+    "cpus_per_task": 2,
+    "host_memory_gib": 16,
+    "wall_seconds": 14400,
+    "max_concurrent_cells": 3
+  },
+  "prerequisites": {
+    "portable_PORT_decision": "decisions/2026-09-13-rivanna-port-complete.md",
+    "portable_PORT_cells_passed": 6,
+    "container_sha256": "7feff211863de2df3ee524fa958a7da09c0de5acea327d18b39a2cdd50bb8264",
+    "verified_input_files": 4600,
+    "baseline_bundle_verified": true,
+    "independent_restart_reviewer": "p1-saved-evidence-review-20260913",
+    "runtime_qualification_commit": "e405bc8e7c47187030c40fffb6ef977d94f6bf73",
+    "runtime_qualification_job": "19809889",
+    "runtime_qualification_required": true,
+    "runtime_qualification_passed": true,
+    "optimizer_decision": "analysis/p1-calibration-20260913-a01/decision.json",
+    "optimizer_selected": "unit-backtracking",
+    "terminal_monitor_fix_commit": "2477b8afcb30a19dd7591da383c74f1e45993719"
+  },
+  "decision_record": "decisions/2026-09-13-p1-milestone96-plan.md",
+  "trial_id": "continuation-w24-p1-m96-a01",
+  "model": {
+    "depth": 1,
+    "width": 24
+  },
+  "seed": 2026091224,
+  "start_checkpoint": "restart:816df711a366dba3a344a173779f874971cc95244a521882710499b1a90cfd64",
+  "execution_policy": "p1-resume-v1",
+  "restart_binding": {
+    "parent_run_id": "continuation-w24-p1-a02-a5b18277ce5d",
+    "state_sha256": "9d489640db372ba81a90af5350978fcb86435298ba6cef5adbfd4d4bc07757d0",
+    "accepted_updates_before": 28,
+    "optimizer_history_reset": false
+  },
+  "trajectory_budget": {
+    "accepted_updates": 96,
+    "forwards": 4096,
+    "full_calls": 512,
+    "model_seconds": 21600
+  },
+  "study_role": "Optimization-maturity milestone on existing starts; not paired-seed architecture selection",
+  "optimizer": {
+    "line_search": "unit-backtracking"
+  }
+}
