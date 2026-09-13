@@ -8,6 +8,22 @@ Completing a job batch or publishing partial results does not complete the study
 
 ## Latest completed decision
 
+The three common96 A01 jobs have now ended with recoverable monitoring stops;
+see the [result review and recovery decision](../decisions/2026-09-13-p1-m96-interrupted-outcome.md).
+Width8 advanced from30 to81 cumulative updates (q/N16.699705871), width16 from38
+to46 (16.567795348), and width24 from28 to30 (16.779529341). All saved endpoint
+audits pass; all convergence tests fail. The common supervisor failure was a
+missing optional `counters.json` progress read. There is no remaining queue wait
+for these three completed attempts.
+
+The next executable step is a tested progress-monitor repair followed by
+state-preserving successors for the remaining15/50/66 updates to96, within the
+unchanged cumulative budgets. Three new immutable restart imports retain all
+interrupted-call costs. The complete archives, accepted-state CSV and saved
+diagnostics accompany the decision. Successor specifications/claims are not yet
+published. The chronology below records the earlier scheduling decisions;
+its references to queued A01 jobs are superseded by this terminal outcome.
+
 The [paired optimizer calibration](../decisions/2026-09-13-p1-calibration-outcome.md)
 completed both arms at30 cumulative accepted steps with valid endpoint/raw
 gradients and no execution censoring. Unit q/N=16.938637229 versus adaptive

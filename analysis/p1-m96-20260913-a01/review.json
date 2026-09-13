@@ -1,0 +1,401 @@
+{
+  "architecture_winner_established": false,
+  "convergence_established": false,
+  "decision": "repair progress-metadata monitoring; preserve unit-backtracking and verified optimizer states; complete remaining common96 allowances",
+  "endpoints": [
+    {
+      "additional_charges_after_restart": {
+        "accepted_updates": 0,
+        "forwards": 6,
+        "full_calls": 0,
+        "infeasible_trials": 5,
+        "line_search_rejections": 5
+      },
+      "artifact": {
+        "bytes": 3821896,
+        "sha256": "b96f7d2aa842d8b7a767795ae6ed6235b604c8a8bc1b19000147a50fbb7544b9",
+        "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-continuation-w8-p1-m96-a01-c4bba83de04a/continuation-w8-p1-m96-a01-c4bba83de04a.tar.gz"
+      },
+      "audit": {
+        "DY_adjusted_RMS_fixed_sigma": 2.164546381456632,
+        "DY_nuisances": {
+          "CDF_RUN_1:normalization": 2.512862473993517,
+          "CDF_RUN_2:efficiency": 1.5656444133182035,
+          "CDF_RUN_2:normalization": 0.6340548454555532,
+          "D0_RUN_1:normalization": 0.395308774029768,
+          "E288_200:normalization": 3.8791236717798094,
+          "E288_300:normalization": 4.934747808195002,
+          "E288_400:normalization": 4.895813001013147,
+          "E605:normalization": 6.537977362023971,
+          "E772:normalization": 7.507680009419558,
+          "LHCb_7:beam": 0.3577467193805236,
+          "LHCb_7:lumi": 0.4952996591317811
+        },
+        "DY_profile_closure_abs_error": 5.4569682106375694e-12,
+        "atomic_restart_recovery": false,
+        "endpoint_path": "last.npz",
+        "endpoint_sha256": "3a72d32f0949aedef190e493178bc6ed5b28a3704bb2075f828804852bf27fbc",
+        "experimental_nuisance_penalty": 172.17604772610667,
+        "finite": true,
+        "generated_utc": "2026-09-13T18:47:43Z",
+        "high_COMPASS": {
+          "mean": 7.733743651425604,
+          "rms": 7.9796935957550845,
+          "rows": 188,
+          "underpredicted": 188
+        },
+        "min_T_over_sigma": 1.0757657116776066e-05,
+        "model_calls": 0,
+        "negative": 0,
+        "numerical_nuisance_penalty": 7.658202164775479,
+        "passed": true,
+        "penalized_gradient_max": 0.1716021667956828,
+        "processes": {
+          "COMPASS": {
+            "mean": 3.0294658372128382,
+            "rms": 4.9649084925745175,
+            "rows": 1203,
+            "underpredicted": 821
+          },
+          "DY": {
+            "mean": 2.957569761704529,
+            "rms": 3.900868548036447,
+            "rows": 743,
+            "underpredicted": 701
+          },
+          "HERMES": {
+            "mean": 0.5514459673786943,
+            "rms": 2.294602986944459,
+            "rows": 344,
+            "underpredicted": 199
+          }
+        },
+        "q_per_measurement": 16.69970587088408,
+        "raw_gradient_max": null,
+        "raw_gradient_missing_reason": "model work stopped before raw-gradient endpoint evaluation",
+        "schema": "tmd-endpoint-audit-v1",
+        "status": "verified",
+        "zero": 0
+      },
+      "charged_counters": {
+        "accepted_updates": 81,
+        "forwards": 645,
+        "full_calls": 100,
+        "infeasible_trials": 405,
+        "line_search_rejections": 417
+      },
+      "committed_restart_counters": {
+        "accepted_updates": 81,
+        "forwards": 639,
+        "full_calls": 100,
+        "infeasible_trials": 400,
+        "line_search_rejections": 412
+      },
+      "endpoint_q_per_measurement": 16.69970587088408,
+      "initial_accepted_updates": 30,
+      "optimizer_history_preserved": true,
+      "parent_q_per_measurement": 16.938637228981964,
+      "plateau": {
+        "eligible": true,
+        "passed": false,
+        "windows": [
+          {
+            "gradient_max": 0.4241079775555312,
+            "passed": false,
+            "prediction_span_max": 3.3575731832229643,
+            "prediction_span_rms": 0.3984277645765685,
+            "q_range": 0.10846269927048624,
+            "same_mu": true
+          },
+          {
+            "gradient_max": 0.1716021667956828,
+            "passed": false,
+            "prediction_span_max": 0.822984377185751,
+            "prediction_span_rms": 0.17427194119080006,
+            "q_range": 0.024970499954314107,
+            "same_mu": true
+          }
+        ]
+      },
+      "q_improvement": 0.2389313580978829,
+      "remaining_budget": {
+        "forwards": 3451,
+        "full_calls": 412,
+        "model_seconds": 17104.400041381945
+      },
+      "remaining_to_96": 15,
+      "result_identity": "5f02fa296cb4130f2ec0830a866b14259b12d03ced5bcb08be161cf2a1647a08",
+      "run_id": "continuation-w8-p1-m96-a01-c4bba83de04a",
+      "segment_model_seconds": 2115.610220073024,
+      "status": "partial",
+      "stop_reason": "telemetry_failure: FileNotFoundError: [Errno 2] No such file or directory: '/scratch/dmk9m/hpc_runs/tmd-global-fit-lab/p1-m96-w8-20260913-a01/outputs/continuation-w8-p1-m96-a01/counters.json'",
+      "trajectory_model_seconds": 4495.599958618055,
+      "width": 8
+    },
+    {
+      "additional_charges_after_restart": {
+        "accepted_updates": 0,
+        "forwards": 6,
+        "full_calls": 0,
+        "infeasible_trials": 5,
+        "line_search_rejections": 5
+      },
+      "artifact": {
+        "bytes": 1877779,
+        "sha256": "c1a05231887e222320d7550044f185c9db89ae3bb24e4a8e910cb078d7b29662",
+        "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-continuation-w16-p1-m96-a01-a362528360f8/continuation-w16-p1-m96-a01-a362528360f8.tar.gz"
+      },
+      "audit": {
+        "DY_adjusted_RMS_fixed_sigma": 2.155066264800027,
+        "DY_nuisances": {
+          "CDF_RUN_1:normalization": 2.508707608063846,
+          "CDF_RUN_2:efficiency": 1.4852443811651042,
+          "CDF_RUN_2:normalization": 0.6434134680943357,
+          "D0_RUN_1:normalization": 0.3782004850176435,
+          "E288_200:normalization": 3.3358280968779765,
+          "E288_300:normalization": 4.857431695649742,
+          "E288_400:normalization": 4.86168742100989,
+          "E605:normalization": 6.619602129342926,
+          "E772:normalization": 7.625443607500464,
+          "LHCb_7:beam": 0.39647779723653165,
+          "LHCb_7:lumi": 0.5492585361059515
+        },
+        "DY_profile_closure_abs_error": 7.275957614183426e-12,
+        "atomic_restart_recovery": false,
+        "endpoint_path": "last.npz",
+        "endpoint_sha256": "c06119b797d33164d99747e7f5b7d46515a9f95af096665fed07579ed9c7bd54",
+        "experimental_nuisance_penalty": 169.84037972691965,
+        "finite": true,
+        "generated_utc": "2026-09-13T18:20:29Z",
+        "high_COMPASS": {
+          "mean": 7.733624474772321,
+          "rms": 7.979520326464326,
+          "rows": 188,
+          "underpredicted": 188
+        },
+        "min_T_over_sigma": 3.114233541633234e-05,
+        "model_calls": 0,
+        "negative": 0,
+        "numerical_nuisance_penalty": 8.790926980291253,
+        "passed": true,
+        "penalized_gradient_max": 0.38668245368794657,
+        "processes": {
+          "COMPASS": {
+            "mean": 3.0520378492864735,
+            "rms": 4.947013965154281,
+            "rows": 1203,
+            "underpredicted": 821
+          },
+          "DY": {
+            "mean": 2.9597859823454065,
+            "rms": 3.901213221136799,
+            "rows": 743,
+            "underpredicted": 701
+          },
+          "HERMES": {
+            "mean": 0.570203378363357,
+            "rms": 2.282059352979934,
+            "rows": 344,
+            "underpredicted": 209
+          }
+        },
+        "q_per_measurement": 16.56779534832199,
+        "raw_gradient_max": null,
+        "raw_gradient_missing_reason": "model work stopped before raw-gradient endpoint evaluation",
+        "schema": "tmd-endpoint-audit-v1",
+        "status": "verified",
+        "zero": 0
+      },
+      "charged_counters": {
+        "accepted_updates": 46,
+        "forwards": 295,
+        "full_calls": 60,
+        "infeasible_trials": 165,
+        "line_search_rejections": 175
+      },
+      "committed_restart_counters": {
+        "accepted_updates": 46,
+        "forwards": 289,
+        "full_calls": 60,
+        "infeasible_trials": 160,
+        "line_search_rejections": 170
+      },
+      "endpoint_q_per_measurement": 16.56779534832199,
+      "initial_accepted_updates": 38,
+      "optimizer_history_preserved": true,
+      "parent_q_per_measurement": 16.58500909743068,
+      "plateau": {
+        "eligible": true,
+        "passed": false,
+        "windows": [
+          {
+            "gradient_max": 0.10274005690489459,
+            "passed": false,
+            "prediction_span_max": 0.9646632733987204,
+            "prediction_span_rms": 0.10851860421705682,
+            "q_range": 0.014386352293080051,
+            "same_mu": true
+          },
+          {
+            "gradient_max": 0.38668245368794657,
+            "passed": false,
+            "prediction_span_max": 1.650106920418768,
+            "prediction_span_rms": 0.14632527916069146,
+            "q_range": 0.017506053540987665,
+            "same_mu": true
+          }
+        ]
+      },
+      "q_improvement": 0.017213749108691445,
+      "remaining_budget": {
+        "forwards": 3801,
+        "full_calls": 452,
+        "model_seconds": 19316.117295541917
+      },
+      "remaining_to_96": 50,
+      "result_identity": "8839c17c6f8e67608e1741f6d7e80c2e67872e5b4f0c5b8d7e0d189788f0f7c6",
+      "run_id": "continuation-w16-p1-m96-a01-a362528360f8",
+      "segment_model_seconds": 481.99850676208735,
+      "status": "partial",
+      "stop_reason": "telemetry_failure: FileNotFoundError: [Errno 2] No such file or directory: '/scratch/dmk9m/hpc_runs/tmd-global-fit-lab/p1-m96-w16-20260913-a01/outputs/continuation-w16-p1-m96-a01/counters.json'",
+      "trajectory_model_seconds": 2283.882704458083,
+      "width": 16
+    },
+    {
+      "additional_charges_after_restart": {
+        "accepted_updates": 0,
+        "forwards": 2,
+        "full_calls": 1,
+        "infeasible_trials": 0,
+        "line_search_rejections": 0
+      },
+      "artifact": {
+        "bytes": 1998241,
+        "sha256": "825bcfc1d296a0156df7f0686574ba0116b3290869997d290c600f100cf4d9e6",
+        "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-continuation-w24-p1-m96-a01-d8f9323cdf43/continuation-w24-p1-m96-a01-d8f9323cdf43.tar.gz"
+      },
+      "audit": {
+        "DY_adjusted_RMS_fixed_sigma": 2.1917928027592675,
+        "DY_nuisances": {
+          "CDF_RUN_1:normalization": 2.5094261718652855,
+          "CDF_RUN_2:efficiency": 1.737913149142466,
+          "CDF_RUN_2:normalization": 0.5983185230168815,
+          "D0_RUN_1:normalization": 0.3877184394341872,
+          "E288_200:normalization": 3.3143014541995455,
+          "E288_300:normalization": 4.556954635841855,
+          "E288_400:normalization": 4.600683127195655,
+          "E605:normalization": 6.184661239449969,
+          "E772:normalization": 7.288304146979665,
+          "LHCb_7:beam": 0.5020954346750314,
+          "LHCb_7:lumi": 0.6892978084803418
+        },
+        "DY_profile_closure_abs_error": 8.185452315956354e-12,
+        "atomic_restart_recovery": false,
+        "endpoint_path": "last.npz",
+        "endpoint_sha256": "2af3663a7078533adb9713d737a7cf319714a422e93d31a9e160d6d628f64b13",
+        "experimental_nuisance_penalty": 154.83923066849283,
+        "finite": true,
+        "generated_utc": "2026-09-13T18:26:44Z",
+        "high_COMPASS": {
+          "mean": 7.7336707576175945,
+          "rms": 7.97957782435269,
+          "rows": 188,
+          "underpredicted": 188
+        },
+        "min_T_over_sigma": 0.0016793062716061523,
+        "model_calls": 0,
+        "negative": 0,
+        "numerical_nuisance_penalty": 2.891112198398945,
+        "passed": true,
+        "penalized_gradient_max": 0.19716322063431913,
+        "processes": {
+          "COMPASS": {
+            "mean": 3.0455158849648254,
+            "rms": 4.953752832731176,
+            "rows": 1203,
+            "underpredicted": 815
+          },
+          "DY": {
+            "mean": 2.846853433179618,
+            "rms": 3.7859090074648045,
+            "rows": 743,
+            "underpredicted": 700
+          },
+          "HERMES": {
+            "mean": 0.5062359110548496,
+            "rms": 2.35490120996998,
+            "rows": 344,
+            "underpredicted": 207
+          }
+        },
+        "q_per_measurement": 16.779529341276714,
+        "raw_gradient_max": null,
+        "raw_gradient_missing_reason": "model work stopped before raw-gradient endpoint evaluation",
+        "schema": "tmd-endpoint-audit-v1",
+        "status": "verified",
+        "zero": 0
+      },
+      "charged_counters": {
+        "accepted_updates": 30,
+        "forwards": 232,
+        "full_calls": 40,
+        "infeasible_trials": 130,
+        "line_search_rejections": 134
+      },
+      "committed_restart_counters": {
+        "accepted_updates": 30,
+        "forwards": 230,
+        "full_calls": 39,
+        "infeasible_trials": 130,
+        "line_search_rejections": 134
+      },
+      "endpoint_q_per_measurement": 16.779529341276714,
+      "initial_accepted_updates": 28,
+      "optimizer_history_preserved": true,
+      "parent_q_per_measurement": 16.78395845162162,
+      "plateau": {
+        "eligible": true,
+        "passed": false,
+        "windows": [
+          {
+            "gradient_max": 0.10806264190978424,
+            "passed": false,
+            "prediction_span_max": 1.1434299014242768,
+            "prediction_span_rms": 0.1427997400057553,
+            "q_range": 0.01964354917915756,
+            "same_mu": true
+          },
+          {
+            "gradient_max": 0.19716322063431913,
+            "passed": false,
+            "prediction_span_max": 0.5666174082363291,
+            "prediction_span_rms": 0.0772898600219721,
+            "q_range": 0.006485053780572514,
+            "same_mu": true
+          }
+        ]
+      },
+      "q_improvement": 0.004429110344904785,
+      "remaining_budget": {
+        "forwards": 3864,
+        "full_calls": 472,
+        "model_seconds": 19397.54702022625
+      },
+      "remaining_to_96": 66,
+      "result_identity": "fc54db989611130c8f78d209a241c0115cdc9c476c8f654b5497ec8ca1e1e9b1",
+      "run_id": "continuation-w24-p1-m96-a01-d8f9323cdf43",
+      "segment_model_seconds": 400.5685492027551,
+      "status": "partial",
+      "stop_reason": "telemetry_failure: FileNotFoundError: [Errno 2] No such file or directory: '/scratch/dmk9m/hpc_runs/tmd-global-fit-lab/p1-m96-w24-20260913-a01/outputs/continuation-w24-p1-m96-a01/counters.json'",
+      "trajectory_model_seconds": 2202.4529797737487,
+      "width": 24
+    }
+  ],
+  "model_calls": 0,
+  "record_hashes": {
+    "results/continuation-w16-p1-m96-a01/continuation-w16-p1-m96-a01-a362528360f8.json": "d2d95c2154ab18d55e06dec8de7116a127dd8d990afd8e45836b08ae38a27c1a",
+    "results/continuation-w24-p1-m96-a01/continuation-w24-p1-m96-a01-d8f9323cdf43.json": "ec02ab5d6a84f4e59424fc55411d23e432a1f031d6dbf61fd60bfcd4b89ccb90",
+    "results/continuation-w8-p1-m96-a01/continuation-w8-p1-m96-a01-c4bba83de04a.json": "122a9178ba31a14ac0a20dafdb97ac951b994864be23fa9ae223cd2ef987f505"
+  },
+  "schema": "tmd-p1-milestone-review-v1"
+}

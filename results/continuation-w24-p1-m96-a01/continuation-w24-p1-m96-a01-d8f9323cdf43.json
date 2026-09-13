@@ -1,0 +1,372 @@
+{
+  "artifact": {
+    "bytes": 1998241,
+    "sha256": "825bcfc1d296a0156df7f0686574ba0116b3290869997d290c600f100cf4d9e6",
+    "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-continuation-w24-p1-m96-a01-d8f9323cdf43/continuation-w24-p1-m96-a01-d8f9323cdf43.tar.gz"
+  },
+  "audit": {
+    "DY_adjusted_RMS_fixed_sigma": 2.1917928027592675,
+    "DY_nuisances": {
+      "CDF_RUN_1:normalization": 2.5094261718652855,
+      "CDF_RUN_2:efficiency": 1.737913149142466,
+      "CDF_RUN_2:normalization": 0.5983185230168815,
+      "D0_RUN_1:normalization": 0.3877184394341872,
+      "E288_200:normalization": 3.3143014541995455,
+      "E288_300:normalization": 4.556954635841855,
+      "E288_400:normalization": 4.600683127195655,
+      "E605:normalization": 6.184661239449969,
+      "E772:normalization": 7.288304146979665,
+      "LHCb_7:beam": 0.5020954346750314,
+      "LHCb_7:lumi": 0.6892978084803418
+    },
+    "DY_profile_closure_abs_error": 8.185452315956354e-12,
+    "atomic_restart_recovery": false,
+    "endpoint_path": "last.npz",
+    "endpoint_sha256": "2af3663a7078533adb9713d737a7cf319714a422e93d31a9e160d6d628f64b13",
+    "experimental_nuisance_penalty": 154.83923066849283,
+    "finite": true,
+    "generated_utc": "2026-09-13T18:26:44Z",
+    "high_COMPASS": {
+      "mean": 7.7336707576175945,
+      "rms": 7.97957782435269,
+      "rows": 188,
+      "underpredicted": 188
+    },
+    "min_T_over_sigma": 0.0016793062716061523,
+    "model_calls": 0,
+    "negative": 0,
+    "numerical_nuisance_penalty": 2.891112198398945,
+    "passed": true,
+    "penalized_gradient_max": 0.19716322063431913,
+    "processes": {
+      "COMPASS": {
+        "mean": 3.0455158849648254,
+        "rms": 4.953752832731176,
+        "rows": 1203,
+        "underpredicted": 815
+      },
+      "DY": {
+        "mean": 2.846853433179618,
+        "rms": 3.7859090074648045,
+        "rows": 743,
+        "underpredicted": 700
+      },
+      "HERMES": {
+        "mean": 0.5062359110548496,
+        "rms": 2.35490120996998,
+        "rows": 344,
+        "underpredicted": 207
+      }
+    },
+    "q_per_measurement": 16.779529341276714,
+    "raw_gradient_max": null,
+    "raw_gradient_missing_reason": "model work stopped before raw-gradient endpoint evaluation",
+    "schema": "tmd-endpoint-audit-v1",
+    "status": "verified",
+    "zero": 0
+  },
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "claim": {
+    "claim_commit": "aea7a6acb0790f7a73e4b9900abfb11368aae64e",
+    "claimed_utc": "2026-09-13T14:47:43Z",
+    "code_commit": "21844e17c475ace4821f983118c74105a1f1e3c3",
+    "nonce": "8bf1d690d61d4697a833b4b0ec56f902",
+    "owner": "rivanna-a6000-p1-m96-a01",
+    "remote_ref": "refs/heads/claims/continuation-w24-p1-m96-a01",
+    "schema": "tmd-claim-v1",
+    "trial_id": "continuation-w24-p1-m96-a01",
+    "trial_sha256": "5b60fa1e82ea8ce0c143ac86574a79185c637e81c6021b74e0df9e7e88d7b0b9"
+  },
+  "code_commit": "21844e17c475ace4821f983118c74105a1f1e3c3",
+  "counters": {
+    "accepted_updates": 2,
+    "forwards": 33,
+    "full_calls": 7,
+    "infeasible_trials": 0,
+    "line_search_rejections": 2
+  },
+  "files": {
+    "accepted-001.json": {
+      "bytes": 1031,
+      "sha256": "e5515ec1af7db81474b75a5c34aee23965354027b3491de834bd6e0bcccd6806"
+    },
+    "accepted-002.json": {
+      "bytes": 1028,
+      "sha256": "b7bb14a9b1f8d33b808348a1f42a99374dfc622543eae05a57764efff0a07aec"
+    },
+    "audit.json": {
+      "bytes": 1919,
+      "sha256": "1ab9d0b650e5836ab93e0e48a4c52b1056b438b39ba5bc24097ff2d4b5ef68d8"
+    },
+    "audit.log": {
+      "bytes": 9,
+      "sha256": "672eb8316fec83f94119a4193f9fc552513d56a147502f8be4830e017d817831"
+    },
+    "checkpoint-001.npz": {
+      "bytes": 90460,
+      "sha256": "17577d894acab292ee53ed9393e1ae253822844ad17640feb458a779aab9d744"
+    },
+    "checkpoint-002.npz": {
+      "bytes": 90426,
+      "sha256": "2af3663a7078533adb9713d737a7cf319714a422e93d31a9e160d6d628f64b13"
+    },
+    "cleanup.json": {
+      "bytes": 188,
+      "sha256": "2a4895c4e8659cd1b61950aeb0ffa8d47699129e835d9b7c40d21a5818b711aa"
+    },
+    "counters.json": {
+      "bytes": 353,
+      "sha256": "916d1f6360bd6a59af3eea0400ce7d73f1dae26b76e5fbf96ca4fb024aa1c7cf"
+    },
+    "environment.json": {
+      "bytes": 295,
+      "sha256": "6d08f61af83ae3c69afaf796977bdc9138a6630aeedaac3cd58c9b42b6c5ea6d"
+    },
+    "gpu-identity.json": {
+      "bytes": 125,
+      "sha256": "e4c970db439cd234ff7904e2eba02c2c0470fe73ac922438a3c00f2bd493b118"
+    },
+    "initial.npz": {
+      "bytes": 126886,
+      "sha256": "f7c6799a842d5c3e00a4f14102622f24e410084d3b07a0c93dea9dd9ff31e89d"
+    },
+    "last.npz": {
+      "bytes": 90426,
+      "sha256": "2af3663a7078533adb9713d737a7cf319714a422e93d31a9e160d6d628f64b13"
+    },
+    "launch.json": {
+      "bytes": 1962,
+      "sha256": "86c92bf068670792f67f4a0326afd758e71dbac86515877403fdd4b9bb4bdace"
+    },
+    "owner.json": {
+      "bytes": 88,
+      "sha256": "bbf88faf8857c68ad91a94cc97cccf1b92301321ec344c330d9e2f569cebcc06"
+    },
+    "preflight.json": {
+      "bytes": 1379,
+      "sha256": "1528fe99133781875525480e25b0f172560f9cdf7fd29f60a31f301cc3b55d59"
+    },
+    "preparation.json": {
+      "bytes": 89,
+      "sha256": "d481d49fcece9e2050e5ce00ed30a3de1a868a637a080593a388970d14121060"
+    },
+    "resources.ndjson": {
+      "bytes": 1417890,
+      "sha256": "adccbafcc0a5014b27a81aa0c00468c5ec6a56d00df1adc20b9fa78dd35d3804"
+    },
+    "restart.npz": {
+      "bytes": 1420838,
+      "sha256": "2c60c3d47eb6e7a3cfbae4e648faee106d682d057c7bc744786895203dd3ca1c"
+    },
+    "scheduler-and-preflight/batch.err": {
+      "bytes": 94,
+      "sha256": "a1618228a8dd8362f18ec5f464ebcc75c7cf00bc87e2ae91770e10f3efd23f53"
+    },
+    "scheduler-and-preflight/batch.out": {
+      "bytes": 905,
+      "sha256": "2cd09330562c2e902c4a31844c2f30a8d147c720b163fb2e6532a31ff9292a5d"
+    },
+    "scheduler-and-preflight/diagnostics/audit.json": {
+      "bytes": 1919,
+      "sha256": "1ab9d0b650e5836ab93e0e48a4c52b1056b438b39ba5bc24097ff2d4b5ef68d8"
+    },
+    "scheduler-and-preflight/diagnostics/audit.log": {
+      "bytes": 9,
+      "sha256": "672eb8316fec83f94119a4193f9fc552513d56a147502f8be4830e017d817831"
+    },
+    "scheduler-and-preflight/diagnostics/cleanup.json": {
+      "bytes": 188,
+      "sha256": "2a4895c4e8659cd1b61950aeb0ffa8d47699129e835d9b7c40d21a5818b711aa"
+    },
+    "scheduler-and-preflight/diagnostics/counters.json": {
+      "bytes": 353,
+      "sha256": "916d1f6360bd6a59af3eea0400ce7d73f1dae26b76e5fbf96ca4fb024aa1c7cf"
+    },
+    "scheduler-and-preflight/diagnostics/gpu-identity.json": {
+      "bytes": 125,
+      "sha256": "e4c970db439cd234ff7904e2eba02c2c0470fe73ac922438a3c00f2bd493b118"
+    },
+    "scheduler-and-preflight/diagnostics/launch.json": {
+      "bytes": 1962,
+      "sha256": "86c92bf068670792f67f4a0326afd758e71dbac86515877403fdd4b9bb4bdace"
+    },
+    "scheduler-and-preflight/diagnostics/owner.json": {
+      "bytes": 88,
+      "sha256": "bbf88faf8857c68ad91a94cc97cccf1b92301321ec344c330d9e2f569cebcc06"
+    },
+    "scheduler-and-preflight/diagnostics/preflight.json": {
+      "bytes": 1379,
+      "sha256": "1528fe99133781875525480e25b0f172560f9cdf7fd29f60a31f301cc3b55d59"
+    },
+    "scheduler-and-preflight/diagnostics/preparation.json": {
+      "bytes": 89,
+      "sha256": "d481d49fcece9e2050e5ce00ed30a3de1a868a637a080593a388970d14121060"
+    },
+    "scheduler-and-preflight/diagnostics/resources.ndjson": {
+      "bytes": 1417890,
+      "sha256": "adccbafcc0a5014b27a81aa0c00468c5ec6a56d00df1adc20b9fa78dd35d3804"
+    },
+    "scheduler-and-preflight/diagnostics/supervisor.json": {
+      "bytes": 976,
+      "sha256": "8224fd1467a465d565c72afbf7232d85290169d59b9e35f6f577a8bf3f0977d6"
+    },
+    "scheduler-and-preflight/diagnostics/trial.json": {
+      "bytes": 3164,
+      "sha256": "4e3ca5f6747830e946b7ea00828bd91a71f689c4325e9f08dffa9f0f938dccec"
+    },
+    "scheduler-and-preflight/diagnostics/worker-summary.json": {
+      "bytes": 2721,
+      "sha256": "498c6c9b3a5a8bd2ff6a0aa936c96b59a7d5b3c9852616d16caa8a306f5b78a0"
+    },
+    "scheduler-and-preflight/diagnostics/worker.log": {
+      "bytes": 638,
+      "sha256": "7c88dceb7e56fe93b63328f42f2ebe80ebb702b0de100f4e6869fc86d1eeb056"
+    },
+    "scheduler-and-preflight/provenance/claim.json": {
+      "bytes": 477,
+      "sha256": "a860eff50b1eb0e9285c6ec97070e1d98e166d09150f38fb488d22d23cf30c6e"
+    },
+    "scheduler-and-preflight/provenance/identities.sha256": {
+      "bytes": 1340,
+      "sha256": "2eda01db6d09acb9d4771934863f8f0035144abd42eac1d4dbf232a34b623081"
+    },
+    "scheduler-and-preflight/provenance/p1-milestone96-common.sh": {
+      "bytes": 7245,
+      "sha256": "578aa33b6b7b9c5d0117bba43889bef7a99b3aa4ecdc6cff0d005ddb35a396a9"
+    },
+    "scheduler-and-preflight/provenance/scontrol-show-job.txt": {
+      "bytes": 1732,
+      "sha256": "b4e108c0c5c8b04c3dfd90ebaa5db90b7e83434aa5800edae03224043ecf0f41"
+    },
+    "scheduler-and-preflight/provenance/submit.sbatch": {
+      "bytes": 1456,
+      "sha256": "d67cb397306975d7b0b220d5b5ca30140a9c0d28e09ee527a3c180de5b8d2f5d"
+    },
+    "scheduler-and-preflight/runtime-exit-code.txt": {
+      "bytes": 2,
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    "scheduler-and-preflight/sacct-terminal.txt": {
+      "bytes": 1457,
+      "sha256": "43172c4c8efcead5250f86b45484eecd5c66785ce39a5f1e18a1058b2c6b4eee"
+    },
+    "scheduler-and-preflight/validation/bundle-and-checkpoint-preflight.log": {
+      "bytes": 471,
+      "sha256": "fca1d473d8a1db6b1700baa1fe327a7fa1cc20de6c2f11e0339b503fbfae2816"
+    },
+    "scheduler-and-preflight/validation/gpu-selector-preflight.json": {
+      "bytes": 290,
+      "sha256": "c397da31426df5b48dd1e70ab7a8373d265b6dfb2c6f9a8d3e153bf88c123abd"
+    },
+    "scheduler-and-preflight/validation/pytest.log": {
+      "bytes": 1326,
+      "sha256": "a4071ee7c1009cdc3cf718305c023b1605c66e943e760daf6d8cea0b9cec013c"
+    },
+    "supervisor.json": {
+      "bytes": 976,
+      "sha256": "8224fd1467a465d565c72afbf7232d85290169d59b9e35f6f577a8bf3f0977d6"
+    },
+    "trial.json": {
+      "bytes": 3164,
+      "sha256": "4e3ca5f6747830e946b7ea00828bd91a71f689c4325e9f08dffa9f0f938dccec"
+    },
+    "worker-summary.json": {
+      "bytes": 2721,
+      "sha256": "498c6c9b3a5a8bd2ff6a0aa936c96b59a7d5b3c9852616d16caa8a306f5b78a0"
+    },
+    "worker.log": {
+      "bytes": 638,
+      "sha256": "7c88dceb7e56fe93b63328f42f2ebe80ebb702b0de100f4e6869fc86d1eeb056"
+    }
+  },
+  "hardware": "cuda:0",
+  "identity": "fc54db989611130c8f78d209a241c0115cdc9c476c8f654b5497ec8ca1e1e9b1",
+  "kind": "continuation",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "model": {
+    "depth": 1,
+    "width": 24
+  },
+  "model_seconds_before": 1801.8844305709936,
+  "optimizer_history_reset": false,
+  "phase": "P1",
+  "plateau": {
+    "eligible": true,
+    "passed": false,
+    "windows": [
+      {
+        "gradient_max": 0.10806264190978424,
+        "passed": false,
+        "prediction_span_max": 1.1434299014242768,
+        "prediction_span_rms": 0.1427997400057553,
+        "q_range": 0.01964354917915756,
+        "same_mu": true
+      },
+      {
+        "gradient_max": 0.19716322063431913,
+        "passed": false,
+        "prediction_span_max": 0.5666174082363291,
+        "prediction_span_rms": 0.0772898600219721,
+        "q_range": 0.006485053780572514,
+        "same_mu": true
+      }
+    ]
+  },
+  "production_selected": false,
+  "recorded_utc": "2026-09-13T21:58:51Z",
+  "run_id": "continuation-w24-p1-m96-a01-d8f9323cdf43",
+  "schema": "tmd-result-v1",
+  "slurm": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "SLURM_ARRAY_JOB_ID": null,
+    "SLURM_ARRAY_TASK_ID": null,
+    "SLURM_CPUS_PER_TASK": "2",
+    "SLURM_JOB_GPUS": "2",
+    "SLURM_JOB_ID": "19818035"
+  },
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "start_checkpoint": "restart:816df711a366dba3a344a173779f874971cc95244a521882710499b1a90cfd64",
+  "status": "partial",
+  "stop_reason": "supervisor/model deadline or resource stop",
+  "supervisor": {
+    "elapsed_seconds": 400.5685492027551,
+    "end_utc": "2026-09-13T18:26:43Z",
+    "exit_code": 2,
+    "model_stop_escalation_seconds": 2.0,
+    "peaks": {
+      "gpu_device_memory_total_gib": 47.98828125,
+      "gpu_device_memory_used_gib_max": 11.28485107421875,
+      "gpu_memory_utilization_percent_max": 31.0,
+      "gpu_owned_gib": 10.69140625,
+      "gpu_power_watts_max": 193.443,
+      "gpu_temperature_celsius_max": 61.0,
+      "gpu_utilization_percent_max": 100.0,
+      "host_available_min_gib": 12.383037567138672,
+      "rss_gib": 1.3239173889160156,
+      "samples": 1792
+    },
+    "resource_peaks_are_sampled_not_continuous": true,
+    "resource_telemetry_status": "sampled",
+    "stop_reason": "telemetry_failure: FileNotFoundError: [Errno 2] No such file or directory: '/scratch/dmk9m/hpc_runs/tmd-global-fit-lab/p1-m96-w24-20260913-a01/outputs/continuation-w24-p1-m96-a01/counters.json'",
+    "telemetry_staleness_limit_seconds": 1.0,
+    "terminal_sample_unavailable_after_owned_exit": null
+  },
+  "trajectory_budget": {
+    "accepted_updates": 96,
+    "forwards": 4096,
+    "full_calls": 512,
+    "model_seconds": 21600
+  },
+  "trajectory_counters": {
+    "accepted_updates": 30,
+    "forwards": 232,
+    "full_calls": 40,
+    "infeasible_trials": 130,
+    "line_search_rejections": 134
+  },
+  "trajectory_model_seconds": 2202.4529797737487,
+  "trial_id": "continuation-w24-p1-m96-a01",
+  "trial_sha256": "5b60fa1e82ea8ce0c143ac86574a79185c637e81c6021b74e0df9e7e88d7b0b9",
+  "worker_status": "partial",
+  "worker_summary_missing": false
+}
