@@ -1,0 +1,55 @@
+{
+  "adaptive": {
+    "bundle": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+    "comparable": true,
+    "hardware_qualified": true,
+    "metric": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+    "model": {
+      "depth": 1,
+      "width": 8
+    },
+    "new_forwards": 72,
+    "objective": 8.474937609610251,
+    "policy": "previous-alpha-double",
+    "q": 16.949877882230293,
+    "result_identity": "8ce5f8c9e322e2e77f3cce7501a0c09d4392f0874f531e769920e677b80d9d94",
+    "run_id": "calibration-w8-p1-adaptive-a01-63c238cc1d3b",
+    "seed": 2026091208,
+    "source": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+    "start": "restart:22f93b2263cf2494d1fc5e40a70f15f82ffed173c0f0bec76e86e97735972dff"
+  },
+  "architecture_selected": false,
+  "control": {
+    "bundle": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+    "comparable": true,
+    "hardware_qualified": true,
+    "metric": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+    "model": {
+      "depth": 1,
+      "width": 8
+    },
+    "new_forwards": 121,
+    "objective": 8.469317279309521,
+    "policy": "unit-backtracking",
+    "q": 16.938637228981964,
+    "result_identity": "c7149b615a3b7af046a2412d9bfa58b937db74b65c4701bae3915fda4c21ba9e",
+    "run_id": "calibration-w8-p1-unit-a01-e2245d062b5d",
+    "seed": 2026091208,
+    "source": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+    "start": "restart:22f93b2263cf2494d1fc5e40a70f15f82ffed173c0f0bec76e86e97735972dff"
+  },
+  "production_selected": false,
+  "schema": "tmd-p1-optimizer-calibration-decision-v1",
+  "selected_policy": "unit-backtracking",
+  "status": "comparable",
+  "tests": {
+    "forward_saving": true,
+    "objective_noninferior": false,
+    "q_noninferior": false
+  },
+  "thresholds": {
+    "max_objective_disadvantage": 5e-05,
+    "max_q_disadvantage": 0.0001,
+    "min_forward_saving_fraction": 0.25
+  }
+}

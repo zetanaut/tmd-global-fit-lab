@@ -1,0 +1,347 @@
+{
+  "artifact": {
+    "bytes": 4967285,
+    "sha256": "c9336bf7db3277aa22694320c8a7449c2787a97515f49a9016a0ababf8f7e8f2",
+    "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-calibration-w8-p1-unit-a01-e2245d062b5d/p1-calibration-w8-unit-a01.tar.gz"
+  },
+  "audit": {
+    "DY_adjusted_RMS_fixed_sigma": 2.2285822151890664,
+    "DY_nuisances": {
+      "CDF_RUN_1:normalization": 2.4957771949017094,
+      "CDF_RUN_2:efficiency": 1.9582156465342693,
+      "CDF_RUN_2:normalization": 0.5547507086777208,
+      "D0_RUN_1:normalization": 0.36948662665809867,
+      "E288_200:normalization": 3.0095881515517897,
+      "E288_300:normalization": 4.025815658281981,
+      "E288_400:normalization": 4.017514140564595,
+      "E605:normalization": 5.654155668585862,
+      "E772:normalization": 6.922782206614124,
+      "LHCb_7:beam": 0.6782709280103544,
+      "LHCb_7:lumi": 0.9305324733244157
+    },
+    "DY_profile_closure_abs_error": 8.185452315956354e-12,
+    "atomic_restart_recovery": false,
+    "endpoint_path": "last.npz",
+    "endpoint_sha256": "67763245e1f02195d7de8e97ace5cc6aafccdd9ce8e61022f9ea526284ae92d5",
+    "experimental_nuisance_penalty": 133.1333454075565,
+    "finite": true,
+    "generated_utc": "2026-09-13T14:04:11Z",
+    "high_COMPASS": {
+      "mean": 7.733858045696438,
+      "rms": 7.979799300242284,
+      "rows": 188,
+      "underpredicted": 188
+    },
+    "min_T_over_sigma": 0.0004428058611227076,
+    "model_calls": 0,
+    "negative": 0,
+    "numerical_nuisance_penalty": 2.933633279521738,
+    "passed": true,
+    "penalized_gradient_max": 0.19061517693316318,
+    "processes": {
+      "COMPASS": {
+        "mean": 3.073897871239226,
+        "rms": 4.966761394917532,
+        "rows": 1203,
+        "underpredicted": 818
+      },
+      "DY": {
+        "mean": 2.682586347746735,
+        "rms": 3.6144407824928653,
+        "rows": 743,
+        "underpredicted": 692
+      },
+      "HERMES": {
+        "mean": 0.5373217750320431,
+        "rms": 2.385467201173858,
+        "rows": 344,
+        "underpredicted": 210
+      }
+    },
+    "q_per_measurement": 16.938637228981964,
+    "raw_gradient_max": 0.190614863107673,
+    "raw_gradient_missing_reason": null,
+    "schema": "tmd-endpoint-audit-v1",
+    "status": "verified",
+    "zero": 0
+  },
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "claim": {
+    "claim_commit": "0e77b7438b4b489e28b9c9b00ee4925010f449ed",
+    "claimed_utc": "2026-09-13T13:37:15Z",
+    "code_commit": "37eac1e7ab633b13699b2fa9502f6eaba1a39c06",
+    "nonce": "891d59b3943241609bdb0471e89040e8",
+    "owner": "rivanna-p1-calibration-unit-20260913",
+    "remote_ref": "refs/heads/claims/calibration-w8-p1-unit-a01",
+    "schema": "tmd-claim-v1",
+    "trial_id": "calibration-w8-p1-unit-a01",
+    "trial_sha256": "8a8b96716a674b6a8c2f5d83a40dbb7bdc053fda13a714452a034cd5db5467f3"
+  },
+  "code_commit": "37eac1e7ab633b13699b2fa9502f6eaba1a39c06",
+  "counters": {
+    "accepted_updates": 12,
+    "forwards": 121,
+    "full_calls": 19,
+    "infeasible_trials": 51,
+    "line_search_rejections": 55
+  },
+  "files": {
+    "accepted-001.json": {
+      "bytes": 549,
+      "sha256": "ccd8dfe394e2bce843ec5886956e3900644cd8dce05ed20167ab47062b44d408"
+    },
+    "accepted-002.json": {
+      "bytes": 1038,
+      "sha256": "8c6382305ae36954c6853fd5f6b060c3fdfdf0df3472da5188e09573fce527bc"
+    },
+    "accepted-003.json": {
+      "bytes": 1037,
+      "sha256": "e892ac7267572ce1cbc50e4fa361cd2fa360e642ee172265ff2203b2d6e8a6e4"
+    },
+    "accepted-004.json": {
+      "bytes": 1034,
+      "sha256": "357139ae66b7f33e0152ecd4c06797b1f98ea0aa61f97bc57996d77e75203f9f"
+    },
+    "accepted-005.json": {
+      "bytes": 1030,
+      "sha256": "84b19e56a0765b6fb700b2a503158b938690b071f937ee8b9a0039aa39295948"
+    },
+    "accepted-006.json": {
+      "bytes": 1041,
+      "sha256": "5b9f2001feb0b822adc0c54bb845cec46bd278c5c87894b7df77254e00927d66"
+    },
+    "accepted-007.json": {
+      "bytes": 1046,
+      "sha256": "70bcb03c2b7b0afe0160b897e06282b5f0631c84f7fd0d688ac115e0801f62e5"
+    },
+    "accepted-008.json": {
+      "bytes": 1047,
+      "sha256": "6d2e187d2ec3dfc2c3bb1166c4dee261518af795e8b1bf4bd3a649490b3e225f"
+    },
+    "accepted-009.json": {
+      "bytes": 1048,
+      "sha256": "0e4a05ccac2ee2c735c1a6d73ab4a599ab5240dd3884a758193d9304c3b7ba0a"
+    },
+    "accepted-010.json": {
+      "bytes": 1039,
+      "sha256": "81fddef77b594cf47646ab2d4a906ee86f4599ec8125746ae255bccd2c9cfc53"
+    },
+    "accepted-011.json": {
+      "bytes": 1036,
+      "sha256": "5180de49c4698d2cce2d3e580dac668e3549f4ad3c6d1a95b3050ba282293c46"
+    },
+    "accepted-012.json": {
+      "bytes": 1042,
+      "sha256": "6214bc1828c7054279ba16301e24429df9b805c4e99e3b32d6fe9eb27dbfeb25"
+    },
+    "audit.json": {
+      "bytes": 1877,
+      "sha256": "7f0589cbd475b88a06cf0dd5e0c027ad71bb7e4bba3bb7e06a3c7763526e13b2"
+    },
+    "audit.log": {
+      "bytes": 9,
+      "sha256": "672eb8316fec83f94119a4193f9fc552513d56a147502f8be4830e017d817831"
+    },
+    "checkpoint-001.npz": {
+      "bytes": 42260,
+      "sha256": "63d79540fe8eb6cb32f3b1a392330c27a8f48e775eaa262a7a2d77d643f63381"
+    },
+    "checkpoint-002.npz": {
+      "bytes": 42289,
+      "sha256": "ff0c000c6474637c2cc105c2438fe72a8a18f85c4cb3b2da2311ba3e8fb43535"
+    },
+    "checkpoint-003.npz": {
+      "bytes": 42266,
+      "sha256": "97315eae6392e2edcb4470c690c35135fc130227cf13df53ddf8f177216e5bad"
+    },
+    "checkpoint-004.npz": {
+      "bytes": 42263,
+      "sha256": "629ff769b5723b6c71db973dec70f9f25742fb6d9763cefc56e029fc18fcf26c"
+    },
+    "checkpoint-005.npz": {
+      "bytes": 42277,
+      "sha256": "948af2dc66106ce25fb49a4897b3da641fb5cdd5e86eb8671d76288756ff8b88"
+    },
+    "checkpoint-006.npz": {
+      "bytes": 42278,
+      "sha256": "11510d1a69fd14b9f95d06e38b5b234d0b9a5d408ad50885c360330495b8ffd4"
+    },
+    "checkpoint-007.npz": {
+      "bytes": 42275,
+      "sha256": "cfda7afb597deec4d79349c10a405ac34ff797f16ed3aab5e7ec46afc1a4b4b0"
+    },
+    "checkpoint-008.npz": {
+      "bytes": 42285,
+      "sha256": "bc2da6d745f7b5bdaff6486575a4382911ea7c05265f85efeb29b5fb9a02582c"
+    },
+    "checkpoint-009.npz": {
+      "bytes": 42270,
+      "sha256": "179fd2f09a9d091924c6c4370895e14ab9297cc2cea6f9852c34431cd7afd036"
+    },
+    "checkpoint-010.npz": {
+      "bytes": 42254,
+      "sha256": "87c2ee329d150e0ec45b8a581ddefb832e59bc49063b8c1f86920cb0df211467"
+    },
+    "checkpoint-011.npz": {
+      "bytes": 42254,
+      "sha256": "9ae74172fe38017616f1a0cf63f8d99230a6220f9f474e54d467e11e8daa8b1a"
+    },
+    "checkpoint-012.npz": {
+      "bytes": 42268,
+      "sha256": "f0f7ca58b2a33f71843de00f035b12d8233c1a420b13db2a415cc75a5c9d6809"
+    },
+    "cleanup.json": {
+      "bytes": 188,
+      "sha256": "f76b0d416a4dfbe2f4b486f9daa03ba5f3e8f96b11f72cac8c079216fe2f38fc"
+    },
+    "counters.json": {
+      "bytes": 401,
+      "sha256": "c0e94787796a721b6d15b4300d3c0ebe04afc4a9e1c128d3ff566235e799cc03"
+    },
+    "environment.json": {
+      "bytes": 295,
+      "sha256": "6d08f61af83ae3c69afaf796977bdc9138a6630aeedaac3cd58c9b42b6c5ea6d"
+    },
+    "gpu-identity.json": {
+      "bytes": 125,
+      "sha256": "bf3267080653ecc41a590dc829267923c203db0c07287bba1a06dc2b9d21277a"
+    },
+    "initial.npz": {
+      "bytes": 54541,
+      "sha256": "9f78798bff7af20b37570822af1c3d5361db2fac451a234ad8e7d5e3d47007c1"
+    },
+    "last.npz": {
+      "bytes": 54554,
+      "sha256": "67763245e1f02195d7de8e97ace5cc6aafccdd9ce8e61022f9ea526284ae92d5"
+    },
+    "launch.json": {
+      "bytes": 1960,
+      "sha256": "13562168b529e38c579c6c62ba3c5bbcc338c7837e1670886b1fbc4748275ab2"
+    },
+    "owner.json": {
+      "bytes": 88,
+      "sha256": "ed4f5b43cdd66d8c84f7019799932932b17b97f73211095e5df939dadf8e677c"
+    },
+    "preflight.json": {
+      "bytes": 2135,
+      "sha256": "53e33e8597055e7049d4a9bc57c20c520d0f063222202b91d7b131b6e95d5e68"
+    },
+    "preparation.json": {
+      "bytes": 89,
+      "sha256": "426ca61a9769f044614a924602aad12300a946a149ddff48774afe30b759d9cb"
+    },
+    "resources.ndjson": {
+      "bytes": 3565487,
+      "sha256": "539d33b7a6c2f90e3bf7f18e29f68b0fe572527493a0114bd993785f60630bce"
+    },
+    "restart.npz": {
+      "bytes": 704101,
+      "sha256": "6631359271b5fe63fce5ceb4160b70147d88dabba33baf0699f106f554732ff9"
+    },
+    "supervisor.json": {
+      "bytes": 726,
+      "sha256": "a1be967a03165e341ce3769678b85e64412bc28cf6730521e50672ad82b86402"
+    },
+    "trial.json": {
+      "bytes": 2946,
+      "sha256": "69b7009fd902c17586b13e07bd851c7e258a143781f491e216717c8a8f931991"
+    },
+    "worker-summary.json": {
+      "bytes": 4301,
+      "sha256": "a63cb39cfc9fba62dc3a0661944f45c7af10367068ab82b169bb33cd1ec292c8"
+    },
+    "worker.log": {
+      "bytes": 638,
+      "sha256": "7c88dceb7e56fe93b63328f42f2ebe80ebb702b0de100f4e6869fc86d1eeb056"
+    }
+  },
+  "hardware": "cuda:0",
+  "identity": "c7149b615a3b7af046a2412d9bfa58b937db74b65c4701bae3915fda4c21ba9e",
+  "kind": "continuation",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "model": {
+    "depth": 1,
+    "width": 8
+  },
+  "model_seconds_before": 1187.385132752941,
+  "optimizer_history_reset": false,
+  "phase": "P1",
+  "plateau": {
+    "eligible": true,
+    "passed": false,
+    "windows": [
+      {
+        "gradient_max": 0.23421130980829713,
+        "passed": false,
+        "prediction_span_max": 0.3375620329000242,
+        "prediction_span_rms": 0.04515532359988129,
+        "q_range": 0.0037530806104761893,
+        "same_mu": true
+      },
+      {
+        "gradient_max": 0.19061517693316318,
+        "passed": false,
+        "prediction_span_max": 1.2485406430317774,
+        "prediction_span_rms": 0.16728915834369296,
+        "q_range": 0.012257667334949929,
+        "same_mu": true
+      }
+    ]
+  },
+  "production_selected": false,
+  "recorded_utc": "2026-09-13T14:20:57Z",
+  "run_id": "calibration-w8-p1-unit-a01-e2245d062b5d",
+  "schema": "tmd-result-v1",
+  "slurm": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "SLURM_ARRAY_JOB_ID": null,
+    "SLURM_ARRAY_TASK_ID": null,
+    "SLURM_CPUS_PER_TASK": "2",
+    "SLURM_JOB_GPUS": "2",
+    "SLURM_JOB_ID": "19810938"
+  },
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "start_checkpoint": "restart:22f93b2263cf2494d1fc5e40a70f15f82ffed173c0f0bec76e86e97735972dff",
+  "status": "completed",
+  "stop_reason": "phase_schedule_complete",
+  "supervisor": {
+    "elapsed_seconds": 1192.6046057920903,
+    "end_utc": "2026-09-13T14:03:12Z",
+    "exit_code": 0,
+    "model_stop_escalation_seconds": 2.0,
+    "peaks": {
+      "gpu_device_memory_total_gib": 47.98828125,
+      "gpu_device_memory_used_gib_max": 9.65985107421875,
+      "gpu_memory_utilization_percent_max": 24.0,
+      "gpu_owned_gib": 9.06640625,
+      "gpu_power_watts_max": 177.413,
+      "gpu_temperature_celsius_max": 52.0,
+      "gpu_utilization_percent_max": 99.0,
+      "host_available_min_gib": 13.428516387939453,
+      "rss_gib": 1.287567138671875,
+      "samples": 5420
+    },
+    "resource_peaks_are_sampled_not_continuous": true,
+    "resource_telemetry_status": "sampled",
+    "stop_reason": null,
+    "telemetry_staleness_limit_seconds": 1.0
+  },
+  "trajectory_budget": {
+    "accepted_updates": 30,
+    "forwards": 713,
+    "full_calls": 149,
+    "model_seconds": 6000
+  },
+  "trajectory_counters": {
+    "accepted_updates": 30,
+    "forwards": 322,
+    "full_calls": 40,
+    "infeasible_trials": 206,
+    "line_search_rejections": 211
+  },
+  "trajectory_model_seconds": 2379.9897385450313,
+  "trial_id": "calibration-w8-p1-unit-a01",
+  "trial_sha256": "8a8b96716a674b6a8c2f5d83a40dbb7bdc053fda13a714452a034cd5db5467f3",
+  "worker_status": "completed",
+  "worker_summary_missing": false
+}
