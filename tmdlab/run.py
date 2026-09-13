@@ -26,14 +26,8 @@ _gpu_local=threading.local()
 def git(*args):
     return subprocess.check_output(["git",*args],text=True).strip()
 
-def cgroup_memory_headroom_bytes(pid, *, proc_root=Path("/proc")):
-    """Return this process's finite cgroup memory headroom, or fail closed.
-
-    Slurm's memory reservation is enforced by a task/job cgroup. Node-wide
-    ``psutil.virtual_memory`` cannot prove that the reservation has headroom.
-    Support the cgroup-v1 memory controller used on Rivanna and cgroup-v2 as a
-    guarded fallback for portable local tests.
-    """
+def _memory_cgroup_scope(pid, proc_root):
+    """Resolve the worker's memory controller, retaining its full ancestor scope."""
     entries=[]
     for line in (proc_root/str(pid)/"cgroup").read_text().splitlines():
         fields=line.split(":",2)
@@ -43,48 +37,97 @@ def cgroup_memory_headroom_bytes(pid, *, proc_root=Path("/proc")):
     for line in (proc_root/"mounts").read_text().splitlines():
         fields=line.split()
         if len(fields)>=4: mounts.append((fields[1],fields[2],set(fields[3].split(","))))
-    def ancestors(path, root):
-        if not path.is_relative_to(root): raise ValueError("cgroup path escapes mount")
-        while True:
-            yield path
-            if path==root: return
-            path=path.parent
-
-    def finite_headroom(path, limit_name, usage_name):
-        values=[]
-        for candidate in ancestors(path, root):
-            limit_path=candidate/limit_name; usage_path=candidate/usage_name
-            if not limit_path.is_file() or not usage_path.is_file(): continue
-            limit=limit_path.read_text().strip(); usage=usage_path.read_text().strip()
-            if limit=="max": continue
-            try: ceiling,used=int(limit),int(usage)
-            except ValueError as exc: raise ValueError("noninteger cgroup memory accounting") from exc
-            if ceiling<=0 or used<0: raise ValueError("invalid cgroup memory accounting")
-            # cgroup v1 represents no limit with a value near INT64_MAX.
-            if ceiling>=2**60: continue
-            values.append(max(0,ceiling-used))
-        if not values: raise ValueError("finite cgroup limit unavailable")
-        # Every finite ancestor is a cap. The smallest remaining headroom is
-        # the only safe allocation-level answer for this process.
-        return min(values)
-
     for _,controllers,relative in entries:
         if "memory" not in controllers.split(","): continue
         choices=[m for m in mounts if m[1]=="cgroup" and "memory" in m[2]]
         if not choices: raise ValueError("memory cgroup mount unavailable")
         root=Path(choices[0][0]); rel=PurePosixPath(relative)
+        if '..' in rel.parts: raise ValueError("cgroup path escapes mount")
         if rel.is_absolute(): rel=PurePosixPath(*rel.parts[1:])
         path=root.joinpath(*rel.parts)
-        return finite_headroom(path,"memory.limit_in_bytes","memory.usage_in_bytes")
+        return root,path,"memory.limit_in_bytes","memory.usage_in_bytes"
     for hierarchy,controllers,relative in entries:
         if hierarchy!="0" or controllers: continue
         choices=[m for m in mounts if m[1]=="cgroup2"]
         if not choices: raise ValueError("cgroup-v2 mount unavailable")
         root=Path(choices[0][0]); rel=PurePosixPath(relative)
+        if '..' in rel.parts: raise ValueError("cgroup path escapes mount")
         if rel.is_absolute(): rel=PurePosixPath(*rel.parts[1:])
         path=root.joinpath(*rel.parts)
-        return finite_headroom(path,"memory.max","memory.current")
+        return root,path,"memory.max","memory.current"
     raise ValueError("memory cgroup entry unavailable")
+
+def _finite_cgroup_headroom(scope, required=()):
+    root,path,limit_name,usage_name=scope
+    if not path.is_relative_to(root): raise ValueError("cgroup path escapes mount")
+    values={}
+    while True:
+        limit_path=path/limit_name; usage_path=path/usage_name
+        if limit_path.is_file() and usage_path.is_file():
+            limit=limit_path.read_text().strip(); usage=usage_path.read_text().strip()
+            if limit!="max":
+                try: ceiling,used=int(limit),int(usage)
+                except ValueError as exc: raise ValueError("noninteger cgroup memory accounting") from exc
+                if ceiling<=0 or used<0: raise ValueError("invalid cgroup memory accounting")
+                if ceiling<2**60: values[path]=max(0,ceiling-used)
+        if path==root: break
+        path=path.parent
+    if not values or any(path not in values for path in required):
+        raise ValueError("finite cgroup limit unavailable")
+    return min(values.values()),tuple(values)
+
+def cgroup_memory_headroom_bytes(pid, *, proc_root=Path("/proc")):
+    """One-shot finite headroom, including every finite worker ancestor cap."""
+    return _finite_cgroup_headroom(_memory_cgroup_scope(pid,proc_root))[0]
+
+def _process_cgroup_identity(pid, proc_root):
+    # /proc/PID/stat field 9 is flags, field 22 is process start time. comm
+    # can contain spaces and ')', so split after its final closing parenthesis.
+    text=(proc_root/str(pid)/"stat").read_text()
+    prefix,separator,suffix=text.rpartition(')')
+    fields=suffix.split()
+    if not separator or len(fields)<20 or prefix.split('(',1)[0].strip()!=str(pid):
+        raise ValueError("invalid owned process identity")
+    return int(fields[19]),int(fields[6])
+
+class CgroupMemoryBinding:
+    """Pin scope, never readings; tolerate only verified v1 PF_EXITING→root.
+
+    This retains stricter worker/ancestor limits rather than substituting the
+    supervisor's possibly broader cgroup. Live migration and scope replacement
+    fail closed. Every sample rereads the current limits and usage.
+    """
+    def __init__(self,pid,*,proc_root=Path('/proc')):
+        self.pid=pid; self.proc_root=proc_root
+        self.start,flags=_process_cgroup_identity(pid,proc_root)
+        self.scope=_memory_cgroup_scope(pid,proc_root)
+        if flags&4: raise ValueError('cannot bind an already exiting worker')
+        _,self.required=_finite_cgroup_headroom(self.scope)
+        paths=set(self.required)|{self.scope[1]}
+        self.identities={path:self._directory_identity(path) for path in paths}
+        self.exit_transition=False
+        self.read()  # Verify membership/identity stayed stable while binding.
+
+    @staticmethod
+    def _directory_identity(path):
+        stat=path.stat()
+        return stat.st_dev,stat.st_ino
+
+    def read(self):
+        scope=_memory_cgroup_scope(self.pid,self.proc_root)
+        start,flags=_process_cgroup_identity(self.pid,self.proc_root)
+        if start!=self.start: raise ValueError('owned process identity changed')
+        root,path,limit_name,usage_name=self.scope
+        changed=scope!=self.scope
+        exiting_root=(limit_name=='memory.limit_in_bytes' and path!=root
+            and scope==(root,root,limit_name,usage_name) and bool(flags&4))
+        if changed and not exiting_root: raise ValueError('worker memory cgroup migration')
+        for candidate,identity in self.identities.items():
+            if self._directory_identity(candidate)!=identity:
+                raise ValueError('bound memory cgroup replaced')
+        value,_=_finite_cgroup_headroom(self.scope,self.required)
+        self.exit_transition=exiting_root
+        return value
 
 def allocated_gpu_selector():
     """Select logical GPU zero from the scheduler-visible device namespace.
@@ -124,15 +167,19 @@ def observed_accepted_updates(out):
     if type(count) is not int or count<0: raise ValueError("invalid observed accepted-update counter")
     return count
 
-def sample(pid,gpu,*,out=None):
+def sample(pid,gpu,*,out=None,memory_binding=None):
     sample_started=time.monotonic()
     root=psutil.Process(pid)
     owned=[root,*root.children(recursive=True)]
     pids={p.pid for p in owned}
     rss=sum(p.memory_info().rss for p in owned if p.is_running())/2**30
     info=dict(monotonic=time.monotonic(),rss_gib=rss,
-        host_available_gib=cgroup_memory_headroom_bytes(pid)/2**30,
+        host_available_gib=(memory_binding.read() if memory_binding is not None
+            else cgroup_memory_headroom_bytes(pid))/2**30,
         accepted_updates=observed_accepted_updates(out),gpu_owned_gib=None)
+    if memory_binding is not None:
+        info.update(cgroup_memory_path=str(memory_binding.scope[1]),
+            cgroup_worker_exit_transition=memory_binding.exit_transition)
     if gpu:
         uuid=os.environ.get('TMD_GPU_UUID')
         if uuid:
@@ -177,9 +224,13 @@ def supervise(process,*,deadline,budget,gpu,out,sampler=sample):
             gpu_device_memory_used_gib_max=None,gpu_device_memory_total_gib=None,
             gpu_power_watts_max=None,gpu_temperature_celsius_max=None)
     def telemetry():
+        memory_binding=None
         while not stop.is_set() and process.poll() is None:
             try:
-                s=sample(process.pid,gpu,out=out) if sampler is sample else sampler(process.pid,gpu)
+                if sampler is sample:
+                    if memory_binding is None: memory_binding=CgroupMemoryBinding(process.pid)
+                    s=sample(process.pid,gpu,out=out,memory_binding=memory_binding)
+                else: s=sampler(process.pid,gpu)
                 keys=("monotonic","rss_gib","host_available_gib","accepted_updates")
                 if gpu:
                     keys+=("gpu_owned_gib","gpu_device_memory_used_gib","gpu_device_memory_total_gib")
