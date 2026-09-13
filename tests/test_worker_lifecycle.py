@@ -9,12 +9,25 @@ from tmdlab import worker
 from tmdlab.io import read,write,sha
 from tmdlab.models import build,flat,schema
 
-def execute(tmp_path,monkeypatch,*,forward_limit=600):
+def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None):
     t=read(Path(__file__).parents[1]/"trials/replay-w8-cpu-a01.json")
     t["budget"]["forwards"]=forward_limit
+    if steps:
+        t.update(kind='continuation',phase='P1',phases=[dict(mu=1e-6,updates=steps)],
+            continuation_binding=dict(start_checkpoint_sha256='0'*64,start_q_per_measurement=1.,
+                accepted_updates_before=160,optimizer_history_reset=True,allocation_id='p1-test-lifecycle',
+                budget_origin='new_allocation',prior_phase='P0'))
+    if resume_arrays is not None:
+        prior=int(resume_arrays['counters'][2])
+        t.update(execution_policy='p1-resume-v1',start_checkpoint='restart:'+'0'*64,
+            restart_binding=dict(parent_run_id='synthetic-parent',state_sha256='0'*64,
+                accepted_updates_before=prior,optimizer_history_reset=False),
+            trajectory_budget=dict(accepted_updates=prior+steps,forwards=1000,full_calls=300),
+            optimizer=dict(line_search='unit-backtracking'))
+        t['budget']['endpoint_reserve_seconds']=120
     path=tmp_path/"trial.json";write(path,t)
     now=time.monotonic()
-    write(tmp_path/"launch.json",dict(trial_sha256=sha(path),model_deadline_monotonic=now+30,t0_monotonic=now))
+    write(tmp_path/"launch.json",dict(trial_sha256=sha(path),model_deadline_monotonic=now+300,t0_monotonic=now))
     initial=flat(build())
     def values(theta):return np.full(2290,1.+.001*theta[0])
     class Bundle:
@@ -38,6 +51,11 @@ def execute(tmp_path,monkeypatch,*,forward_limit=600):
             return values(theta),g
         def close(self):Engine.closed=True
     monkeypatch.setattr(worker,"Bundle",Bundle);monkeypatch.setattr(worker,"Metric",Metric);monkeypatch.setattr(worker,"Engine",Engine)
+    if resume_arrays is not None:
+        def restart(*_):
+            return dict(model=t['model'],parameter_schema=schema(build()),
+                q_per_measurement=float(np.mean((2-resume_arrays['values'])**2))),resume_arrays
+        monkeypatch.setattr(worker,'load_restart',restart)
     old=signal.getsignal(signal.SIGTERM)
     try:code=worker.run(SimpleNamespace(trial=path,out=tmp_path,bundle=tmp_path,device="cpu"))
     finally:signal.signal(signal.SIGTERM,old)
@@ -59,3 +77,23 @@ def test_budget_stop_is_partial_not_converged(tmp_path,monkeypatch):
     assert summary["stop_reason"]=="call_budget"
     assert summary["counters"]["forwards"]==1
     assert not summary["preflight"].get("passed",False)
+
+def test_real_worker_split_resume_preserves_next_steps_and_charges_preflight(tmp_path,monkeypatch):
+    import numpy as np
+    whole=tmp_path/'whole'; first=tmp_path/'first'; second=tmp_path/'second'
+    for path in (whole,first,second):path.mkdir()
+    code,expected=execute(whole,monkeypatch,steps=6)
+    assert code==0
+    code,partial=execute(first,monkeypatch,steps=3)
+    assert code==0
+    with np.load(first/'restart.npz',allow_pickle=False) as z: saved={k:z[k].copy() for k in z.files}
+    code,resumed=execute(second,monkeypatch,steps=3,resume_arrays=saved)
+    assert code==0 and resumed['optimizer_history_reset'] is False
+    assert resumed['trajectory_counters']['accepted_updates']==6
+    assert resumed['trajectory_counters']['forwards']>expected['counters']['forwards']
+    with np.load(whole/'last.npz',allow_pickle=False) as w,np.load(second/'last.npz',allow_pickle=False) as s:
+        assert np.array_equal(w['theta'],s['theta'])
+        assert np.array_equal(w['penalized_gradient'],s['penalized_gradient'])
+    with np.load(whole/'restart.npz',allow_pickle=False) as w,np.load(second/'restart.npz',allow_pickle=False) as s:
+        assert np.array_equal(w['history_s'],s['history_s'])
+        assert np.array_equal(w['state_values'],s['state_values'])

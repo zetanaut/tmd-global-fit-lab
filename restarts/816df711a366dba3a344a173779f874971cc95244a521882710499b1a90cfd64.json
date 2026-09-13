@@ -1,0 +1,353 @@
+{
+  "algorithm": "lbfgs15-armijo32-sy1e-12-v1",
+  "artifact": {
+    "bytes": 2902792,
+    "sha256": "f2e4d3676667515d3484edee8d1785ec73b81f9c026e915f97db70edba056f38",
+    "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-continuation-w24-p1-a02-a5b18277ce5d/p1-w24-20260913-a02.tar.gz"
+  },
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "counters": {
+    "accepted_updates": 28,
+    "forwards": 199,
+    "full_calls": 33,
+    "infeasible_trials": 130,
+    "line_search_rejections": 132
+  },
+  "identity": "816df711a366dba3a344a173779f874971cc95244a521882710499b1a90cfd64",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "model": {
+    "depth": 1,
+    "width": 24
+  },
+  "mu": 1e-06,
+  "object": {
+    "bytes": 1419362,
+    "path": "checkpoint-objects/9d489640db372ba81a90af5350978fcb86435298ba6cef5adbfd4d4bc07757d0.npz",
+    "sha256": "9d489640db372ba81a90af5350978fcb86435298ba6cef5adbfd4d4bc07757d0"
+  },
+  "parameter_schema": [
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.raw_widths",
+      "shape": [
+        10
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.flavor.weight",
+      "shape": [
+        10,
+        4
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.condition.0.weight",
+      "shape": [
+        12,
+        7
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.condition.0.bias",
+      "shape": [
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.condition.2.weight",
+      "shape": [
+        12,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.condition.2.bias",
+      "shape": [
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.radial.weight",
+      "shape": [
+        24,
+        4
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.radial.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.linear1.weight",
+      "shape": [
+        24,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.linear1.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.linear2.weight",
+      "shape": [
+        24,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.linear2.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.modulation.weight",
+      "shape": [
+        48,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.blocks.0.modulation.bias",
+      "shape": [
+        48
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.delta_width_head.weight",
+      "shape": [
+        1,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.delta_width_head.bias",
+      "shape": [
+        1
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.shape_head.weight",
+      "shape": [
+        1,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "incoming.shape_head.bias",
+      "shape": [
+        1
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.raw_widths",
+      "shape": [
+        30
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.flavor.weight",
+      "shape": [
+        10,
+        4
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.hadron.weight",
+      "shape": [
+        3,
+        3
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.condition.0.weight",
+      "shape": [
+        12,
+        10
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.condition.0.bias",
+      "shape": [
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.condition.2.weight",
+      "shape": [
+        12,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.condition.2.bias",
+      "shape": [
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.radial.weight",
+      "shape": [
+        24,
+        4
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.radial.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.linear1.weight",
+      "shape": [
+        24,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.linear1.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.linear2.weight",
+      "shape": [
+        24,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.linear2.bias",
+      "shape": [
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.modulation.weight",
+      "shape": [
+        48,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.blocks.0.modulation.bias",
+      "shape": [
+        48
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.delta_width_head.weight",
+      "shape": [
+        1,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.delta_width_head.bias",
+      "shape": [
+        1
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.shape_head.weight",
+      "shape": [
+        1,
+        24
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "outgoing.shape_head.bias",
+      "shape": [
+        1
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "cs.network.0.weight",
+      "shape": [
+        12,
+        4
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "cs.network.0.bias",
+      "shape": [
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "cs.network.2.weight",
+      "shape": [
+        1,
+        12
+      ]
+    },
+    {
+      "dtype": "torch.float64",
+      "name": "cs.network.2.bias",
+      "shape": [
+        1
+      ]
+    }
+  ],
+  "parameters": 4706,
+  "parent_record": {
+    "path": "results/continuation-w24-p1-a02/continuation-w24-p1-a02-a5b18277ce5d.json",
+    "sha256": "cb42d10598d38f8f89bcf5005070d26c286f6998fa84053e60af11e9122a1e56"
+  },
+  "parent_run_id": "continuation-w24-p1-a02-a5b18277ce5d",
+  "q_per_measurement": 16.78395845162162,
+  "reconstruction": {
+    "accepted_transition_absolute_tolerance": 1e-12,
+    "continuation_scope": "accepted-state-boundary; unfinished line search is replayed with additional cost",
+    "interrupted_calls_remain_charged": true,
+    "method": "all-accepted-theta-and-penalized-gradient-chain"
+  },
+  "schema": "tmd-optimizer-restart-v1",
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41"
+}

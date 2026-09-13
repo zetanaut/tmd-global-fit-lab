@@ -18,10 +18,17 @@ def validate_trial(t, *, require_ready=True):
         raise ValueError("all2290 float64 required")
     b=t["budget"]
     limits={"segment_seconds":1800,"total_seconds":7200,"full_calls":240,"forwards":600,"accepted_updates":96,"cache_gib":12,"gpu_gib":20,"rss_gib":48,"cpu_threads":12}
+    resumable=t.get('execution_policy')=='p1-resume-v1'
+    if t.get('execution_policy') not in (None,'p1-resume-v1'):
+        raise ValueError('unregistered execution policy')
+    if resumable:
+        if t['kind']!='continuation' or t.get('phase')!='P1' or len(t['phases'])!=1 or t['phases'][0]['mu']!=1e-6:
+            raise ValueError('resumable policy requires fixed-mu P1')
+        limits.update(segment_seconds=13200,total_seconds=13800,full_calls=512,forwards=4096)
     for key,limit in limits.items():
         if type(b[key]) not in (int,float) or not 0 < b[key] <= limit:
             raise ValueError("invalid bounded resource: "+key)
-    if b["host_available_gib"] < 8 or b["total_seconds"]-b["segment_seconds"] < 1800:
+    if b["host_available_gib"] < 8 or b["total_seconds"]-b["segment_seconds"] < (600 if resumable else 1800):
         raise ValueError("host floor and reserved saved-QA interval required")
     for key in ("full_calls","forwards","accepted_updates","cpu_threads"):
         if type(b[key]) is not int:
@@ -32,6 +39,36 @@ def validate_trial(t, *, require_ready=True):
     if t["kind"] == "continuation" and (not phases or sum(p["updates"] for p in phases)>b["accepted_updates"]):
         raise ValueError("missing/excess continuation allocation")
     if t["kind"] == "continuation":
+        if resumable:
+            r=t.get('restart_binding',{}); ledger=t.get('trajectory_budget',{})
+            if (not re.fullmatch('restart:[0-9a-f]{64}',t.get('start_checkpoint',''))
+                or not re.fullmatch('[0-9a-f]{64}',r.get('state_sha256',''))
+                or not re.fullmatch('[a-z0-9-]+',r.get('parent_run_id',''))
+                or type(r.get('accepted_updates_before')) is not int
+                or r['accepted_updates_before']<0 or r.get('optimizer_history_reset') is not False):
+                raise ValueError('invalid verified restart binding')
+            for key in ('accepted_updates','forwards','full_calls'):
+                if type(ledger.get(key)) is not int or not 0<ledger[key]<=limits[key]:
+                    raise ValueError('invalid cumulative trajectory budget')
+            if (r['accepted_updates_before']+sum(p['updates'] for p in phases)!=ledger['accepted_updates']
+                or b.get('endpoint_reserve_seconds',0)<120
+                or b['endpoint_reserve_seconds']>=b['segment_seconds']
+                or t.get('optimizer',{}).get('line_search') not in ('unit-backtracking','previous-alpha-double')):
+                raise ValueError('restart remaining quota/reserve/optimizer mismatch')
+        else:
+            _validate_fresh_binding(t)
+    for phase in phases:
+        if type(phase["updates"]) is not int or phase["updates"]<1 or phase["mu"] not in (1e-2,1e-3,1e-4,1e-5,1e-6):
+            raise ValueError("invalid preregistered phase")
+    start=t.get("start_checkpoint", "")
+    if start.startswith("overlay:"):
+        if not re.fullmatch(r"overlay:[0-9a-f]{64}", start) or not isinstance(t.get("checkpoint_binding"),dict):
+            raise ValueError("exact overlay identity and lineage binding required")
+        if t["continuation_binding"]["start_checkpoint_sha256"]!=t["checkpoint_binding"].get("endpoint_sha256"):
+            raise ValueError("overlay continuation endpoint binding mismatch")
+    return t
+
+def _validate_fresh_binding(t):
         binding=t.get("continuation_binding")
         if not isinstance(binding,dict):
             raise ValueError("continuation needs an exact fresh-allocation binding")
@@ -48,13 +85,3 @@ def validate_trial(t, *, require_ready=True):
             type(binding.get("start_q_per_measurement")) not in (int,float) or
             binding["start_q_per_measurement"]<0):
             raise ValueError("invalid continuation lineage/allocation binding")
-    for phase in phases:
-        if type(phase["updates"]) is not int or phase["updates"]<1 or phase["mu"] not in (1e-2,1e-3,1e-4,1e-5,1e-6):
-            raise ValueError("invalid preregistered phase")
-    start=t.get("start_checkpoint", "")
-    if start.startswith("overlay:"):
-        if not re.fullmatch(r"overlay:[0-9a-f]{64}", start) or not isinstance(t.get("checkpoint_binding"),dict):
-            raise ValueError("exact overlay identity and lineage binding required")
-        if t["continuation_binding"]["start_checkpoint_sha256"]!=t["checkpoint_binding"].get("endpoint_sha256"):
-            raise ValueError("overlay continuation endpoint binding mismatch")
-    return t

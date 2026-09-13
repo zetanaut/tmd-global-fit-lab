@@ -18,6 +18,9 @@ import uuid
 import psutil
 from .io import read,write,sha,digest,utc
 from .contracts import validate_trial
+from .gpu_telemetry import NvmlDevice,canonical_uuid
+
+_gpu_local=threading.local()
 
 def git(*args):
     return subprocess.check_output(["git",*args],text=True).strip()
@@ -121,6 +124,7 @@ def observed_accepted_updates(out):
     return count
 
 def sample(pid,gpu,*,out=None):
+    sample_started=time.monotonic()
     root=psutil.Process(pid)
     owned=[root,*root.children(recursive=True)]
     pids={p.pid for p in owned}
@@ -129,6 +133,14 @@ def sample(pid,gpu,*,out=None):
         host_available_gib=cgroup_memory_headroom_bytes(pid)/2**30,
         accepted_updates=observed_accepted_updates(out),gpu_owned_gib=None)
     if gpu:
+        uuid=os.environ.get('TMD_GPU_UUID')
+        if uuid:
+            if not hasattr(_gpu_local,'device') or _gpu_local.device.uuid!=canonical_uuid(uuid):
+                _gpu_local.device=NvmlDevice(uuid)
+            info.update(_gpu_local.device.sample(pids))
+            info['sample_duration_seconds']=time.monotonic()-sample_started
+            info['monotonic']=time.monotonic()
+            return info
         proc=subprocess.run(["nvidia-smi","--query-compute-apps=pid,used_memory","--format=csv,noheader,nounits"],text=True,capture_output=True,timeout=.75,check=True)
         memory=0.
         for row in proc.stdout.splitlines():
@@ -141,6 +153,8 @@ def sample(pid,gpu,*,out=None):
             "--query-gpu=uuid,name,driver_version,utilization.gpu,utilization.memory,memory.used,memory.total,power.draw,temperature.gpu",
             "--format=csv,noheader,nounits"],text=True,capture_output=True,timeout=.75,check=True)
         info.update(parse_gpu_row(device.stdout))
+    info['sample_duration_seconds']=time.monotonic()-sample_started
+    info['monotonic']=time.monotonic()
     return info
 
 def stop_owned(process):
@@ -226,6 +240,12 @@ def main(args):
     signal.signal(signal.SIGTERM,terminate)
     t0=time.monotonic(); epoch=time.time()
     env=os.environ.copy()
+    if trial.get('execution_policy')=='p1-resume-v1' and args.device.startswith('cuda'):
+        # Launch wrapper proves CUDA-0/NVML equality once, before accepting a
+        # trial. A numeric Slurm index is never substituted for this UUID.
+        canonical_uuid(env.get('TMD_GPU_UUID',''))
+        write(args.out/'gpu-identity.json',dict(uuid=env['TMD_GPU_UUID'],
+            logical_cuda_device=args.device,slurm_physical_devices=env.get('SLURM_STEP_GPUS') or env.get('SLURM_JOB_GPUS')))
     env.update(PYTHONDONTWRITEBYTECODE="1",PYTHONNOUSERSITE="1",OMP_NUM_THREADS="1",OPENBLAS_NUM_THREADS="1",MKL_NUM_THREADS="1",CUBLAS_WORKSPACE_CONFIG=":4096:8")
     launch=dict(schema="tmd-launch-v1",run_id=trial["trial_id"]+"-"+uuid.uuid4().hex[:12],trial_id=trial["trial_id"],trial_sha256=sha(args.trial),code_commit=commit,bundle_identity=trial["bundle_identity"],claim=claim,t0_utc=utc(),t0_epoch=epoch,t0_monotonic=t0,model_deadline_monotonic=t0+budget["segment_seconds"],final_deadline_monotonic=t0+budget["total_seconds"],budget=budget,device=args.device,platform=platform.platform(),python=sys.version,slurm={k:os.environ.get(k) for k in ("SLURM_JOB_ID","SLURM_ARRAY_JOB_ID","SLURM_ARRAY_TASK_ID","SLURM_CPUS_PER_TASK","SLURM_JOB_GPUS","CUDA_VISIBLE_DEVICES")})
     write(args.out/"launch.json",launch)
