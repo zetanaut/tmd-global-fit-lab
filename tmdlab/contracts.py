@@ -31,6 +31,23 @@ def validate_trial(t, *, require_ready=True):
         raise ValueError("replay cannot contain optimizer phases")
     if t["kind"] == "continuation" and (not phases or sum(p["updates"] for p in phases)>b["accepted_updates"]):
         raise ValueError("missing/excess continuation allocation")
+    if t["kind"] == "continuation":
+        binding=t.get("continuation_binding")
+        if not isinstance(binding,dict):
+            raise ValueError("continuation needs an exact fresh-allocation binding")
+        allocation=binding.get("allocation_id","")
+        expected_prefix=t.get("phase","").lower()+"-"
+        if (not re.fullmatch(r"[a-z0-9][a-z0-9-]{2,95}",allocation) or
+            not allocation.startswith(expected_prefix) or
+            binding.get("budget_origin")!="new_allocation" or
+            binding.get("optimizer_history_reset") is not True or
+            binding.get("prior_phase")!="P0" or
+            type(binding.get("accepted_updates_before")) is not int or
+            binding["accepted_updates_before"]<1 or
+            not re.fullmatch(r"[0-9a-f]{64}",binding.get("start_checkpoint_sha256","") ) or
+            type(binding.get("start_q_per_measurement")) not in (int,float) or
+            binding["start_q_per_measurement"]<0):
+            raise ValueError("invalid continuation lineage/allocation binding")
     for phase in phases:
         if type(phase["updates"]) is not int or phase["updates"]<1 or phase["mu"] not in (1e-2,1e-3,1e-4,1e-5,1e-6):
             raise ValueError("invalid preregistered phase")
@@ -38,4 +55,6 @@ def validate_trial(t, *, require_ready=True):
     if start.startswith("overlay:"):
         if not re.fullmatch(r"overlay:[0-9a-f]{64}", start) or not isinstance(t.get("checkpoint_binding"),dict):
             raise ValueError("exact overlay identity and lineage binding required")
+        if t["continuation_binding"]["start_checkpoint_sha256"]!=t["checkpoint_binding"].get("endpoint_sha256"):
+            raise ValueError("overlay continuation endpoint binding mismatch")
     return t

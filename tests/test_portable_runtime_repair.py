@@ -254,7 +254,10 @@ def test_finite_json_and_in_memory_specs_are_preserved(tmp_path):
     assert math.copysign(1, loaded['finite'][3]) == -1
     assert require_finite_numbers(value) is value
     assert all(validate_trial(read(p))['status'] == 'ready' for p in (REPO / 'trials').glob('*.json'))
-    t = trial(); t['kind'] = 'continuation'; t['phases'] = [dict(mu=1e-6, updates=96)]
+    t = trial(); t['kind'] = 'continuation'; t['phase'] = 'P1'; t['phases'] = [dict(mu=1e-6, updates=96)]
+    t['continuation_binding'] = dict(start_checkpoint_sha256='0'*64, start_q_per_measurement=1.,
+        accepted_updates_before=160, optimizer_history_reset=True, allocation_id='p1-test-allocation',
+        budget_origin='new_allocation', prior_phase='P0')
     original = copy.deepcopy(t)
     assert validate_trial(t) is t and t == original
 
