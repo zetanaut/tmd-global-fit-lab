@@ -54,7 +54,8 @@ def review(root, run, record_path):
             cumulative_full_calls=step['trajectory_counters']['full_calls'],
             cumulative_model_seconds=record['model_seconds_before']+step['elapsed_seconds'],
             q_per_measurement=step['q_per_measurement'], alpha=step['alpha'],
-            new_infeasible_trials=step['infeasible_trials'], new_line_search_rejections=step['line_search_rejections'],
+            segment_cumulative_infeasible_trials=step['infeasible_trials'],
+            segment_cumulative_line_search_rejections=step['line_search_rejections'],
             plateau_passed=step['plateau']['passed']))
     return endpoint, rows
 

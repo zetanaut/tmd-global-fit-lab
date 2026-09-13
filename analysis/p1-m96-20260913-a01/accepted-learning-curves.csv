@@ -1,4 +1,4 @@
-width,run_id,cumulative_accepted_updates,cumulative_forwards,cumulative_full_calls,cumulative_model_seconds,q_per_measurement,alpha,new_infeasible_trials,new_line_search_rejections,plateau_passed
+width,run_id,cumulative_accepted_updates,cumulative_forwards,cumulative_full_calls,cumulative_model_seconds,q_per_measurement,alpha,segment_cumulative_infeasible_trials,segment_cumulative_line_search_rejections,plateau_passed
 8,continuation-w8-p1-m96-a01-c4bba83de04a,31,332,43,2506.519634994096,16.93569301286386,0.5,1,1,False
 8,continuation-w8-p1-m96-a01-c4bba83de04a,32,335,44,2529.010977346101,16.934993866663426,0.5,2,2,False
 8,continuation-w8-p1-m96-a01-c4bba83de04a,33,337,45,2546.4434882510686,16.932381612373227,1.0,2,2,False
