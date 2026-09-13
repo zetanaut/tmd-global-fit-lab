@@ -154,3 +154,42 @@ def test_bound_scope_does_not_bypass_supervisor_safety_gates(tmp_path,monkeypatc
         'stale':'telemetry_stale_over_1s','zero':'telemetry_missing_no_samples'}[mode]
     assert result['stop_reason'].startswith(reason)
     assert stopped==([] if mode=='zero' else [owned])
+
+@pytest.mark.parametrize('mode',['migration','missing','rss','gpu'])
+def test_builtin_sampler_enforces_live_scope_and_owned_resource_limits(tmp_path,monkeypatch,mode):
+    cg=Cgroups(tmp_path/'fixture'); original=run.CgroupMemoryBinding
+    monkeypatch.setattr(run,'CgroupMemoryBinding',lambda pid:original(pid,proc_root=cg.proc))
+    class Owned:
+        pid=cg.pid; code=None; calls=0
+        def poll(self): return self.code
+        def wait(self,timeout=None): return self.code
+    owned=Owned(); stopped=[]
+    class Process:
+        def __init__(self,pid): self.pid=pid
+        def children(self,recursive): return []
+        def is_running(self): return True
+        def memory_info(self):
+            owned.calls+=1
+            if owned.calls==2:
+                if mode=='migration': cg.membership('/slurm/job_7/step_0/stricter')
+                if mode=='missing': (cg.step/cg.limit).unlink()
+            return SimpleNamespace(rss=(5 if mode=='rss' and owned.calls>=2 else 1)*GIB)
+    class Nvml:
+        def __init__(self,uuid,**kwargs): self.uuid=uuid
+        def sample(self,pids):
+            assert pids=={owned.pid}
+            return dict(gpu_owned_gib=9 if mode=='gpu' and owned.calls>=2 else 1,
+                gpu_device_memory_used_gib=12,gpu_device_memory_total_gib=24)
+    monkeypatch.setattr(run.psutil,'Process',Process)
+    monkeypatch.setattr(run,'NvmlDevice',Nvml)
+    monkeypatch.setenv('TMD_GPU_UUID','gpu-11111111-2222-3333-4444-555555555555')
+    def stop(process): stopped.append(process); process.code=-15
+    monkeypatch.setattr(run,'stop_owned',stop)
+    result=run.supervise(owned,deadline=time.monotonic()+3,
+        budget=dict(rss_gib=4,gpu_gib=8,host_available_gib=8),gpu=True,out=tmp_path)
+    assert result['peaks']['samples']>=1
+    assert stopped==[owned]
+    if mode in ('migration','missing'):
+        assert result['stop_reason'].startswith('telemetry_failure')
+        assert ('migration' if mode=='migration' else 'finite cgroup') in result['stop_reason']
+    else: assert result['stop_reason']=='resource_limit'
