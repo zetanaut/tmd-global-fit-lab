@@ -135,6 +135,8 @@ def run(args):
             saved=resume_arrays
             point,history,states,prior=unpack_state(resume_arrays,metric)
             last_alpha=float(resume_arrays['last_alpha'])
+            write(args.out/'counters.json',dict(counts,time_utc=utc(),call_in_flight=False,
+                trajectory_counters=dict(prior)))
             commit_optimizer()
             if prior['forwards']>=trial['trajectory_budget']['forwards'] or prior['full_calls']>=trial['trajectory_budget']['full_calls']:
                 raise Stop('trajectory_call_budget')

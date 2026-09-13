@@ -9,7 +9,7 @@ from tmdlab import worker
 from tmdlab.io import read,write,sha
 from tmdlab.models import build,flat,schema
 
-def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None):
+def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None,fail_prepare=False):
     t=read(Path(__file__).parents[1]/"trials/replay-w8-cpu-a01.json")
     t["budget"]["forwards"]=forward_limit
     if steps:
@@ -44,7 +44,8 @@ def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None)
             return dict(values=v.copy(),q_per_measurement=q,objective=q/2+barrier,barrier=barrier,cotangent=raw-mu/(2290*s),raw_cotangent=raw,min_T_over_sigma=float(v.min()))
     class Engine:
         closed=False;cache_bytes=0;groups=[]
-        def __init__(self,*args,**kwargs):pass
+        def __init__(self,*args,**kwargs):
+            if fail_prepare:raise RuntimeError('synthetic preparation failure')
         def evaluate(self,theta,cot=None,**kwargs):
             g=None
             if cot is not None:g=np.zeros_like(theta);g[0]=.001*np.sum(cot)
@@ -59,7 +60,7 @@ def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None)
     old=signal.getsignal(signal.SIGTERM)
     try:code=worker.run(SimpleNamespace(trial=path,out=tmp_path,bundle=tmp_path,device="cpu"))
     finally:signal.signal(signal.SIGTERM,old)
-    assert Engine.closed
+    assert Engine.closed is not fail_prepare
     return code,read(tmp_path/"worker-summary.json")
 
 def test_replay_worker_complete_lifecycle(tmp_path,monkeypatch):
@@ -114,3 +115,15 @@ def test_sigterm_from_another_thread_is_deferred_until_commit():
                 completed.append('coherent snapshot')
         assert completed==['coherent snapshot']
     finally:signal.signal(signal.SIGTERM,old)
+
+def test_resume_preparation_failure_retains_parent_and_zero_new_dispatch_ledger(tmp_path,monkeypatch):
+    first=tmp_path/'first'; failed=tmp_path/'failed'; first.mkdir(); failed.mkdir()
+    execute(first,monkeypatch,steps=3)
+    with np.load(first/'restart.npz',allow_pickle=False) as z:saved={k:z[k].copy() for k in z.files}
+    code,summary=execute(failed,monkeypatch,steps=3,resume_arrays=saved,fail_prepare=True)
+    assert code==2 and summary['status']=='failed'
+    ledger=read(failed/'counters.json')
+    assert ledger['forwards']==0 and ledger['call_in_flight'] is False
+    assert ledger['trajectory_counters']['forwards']==saved['counters'][0]
+    with np.load(failed/'restart.npz',allow_pickle=False) as z:
+        assert all(np.array_equal(z[k],saved[k]) for k in z.files)
