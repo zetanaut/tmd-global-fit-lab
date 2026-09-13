@@ -4,15 +4,12 @@ A portable experiment and results repository for the fixed-physics, unpolarized
 DY/SIDIS b-space architecture study. It is designed for autonomous Codex agents,
 local GPU workstations, and UVA Rivanna/Afton CPU/GPU allocations.
 
-**Status:** [private GitHub repository](https://github.com/zetanaut/tmd-global-fit-lab)
-and [frozen input release](https://github.com/zetanaut/tmd-global-fit-lab/releases/tag/inputs-baseline-v1)
-published on 12 September 2026. A fresh clone/download passed all release-part,
-4,600 input-file and bundle identity checks; GitHub CPU CI passed all 30 tests.
-See the [publication receipt](validation/publication-2026-09-12.json).
-The baseline portable model and evaluator pass the recorded six-row CPU comparison against the original
-implementation at all three widths. Full 2,290-row CPU/GPU portability trials
-are preregistered, not yet reported as completed. Subsequent architecture phases
-have explicit dependencies and implementation tasks below.
+**Status, 13 September 2026:** Six full-data CPU/A6000 PORT cells passed.
+Portable P1 widths 8/16/24 produced audited partial results after 18/38/28
+accepted updates. The architecture study remains active. The next work is
+restartable, adequately budgeted optimization followed by controlled paired
+architecture comparisons. Read the [current study plan](docs/CURRENT_STUDY_PLAN.md)
+and [published results](RESULTS.md) before claiming any further work.
 
 ## Scientific purpose
 
@@ -41,7 +38,7 @@ python scripts/input_assets.py fetch
 python scripts/check_repository.py
 ```
 
-These commands require access to this private repository and GitHub CLI
+These commands require repository access and GitHub CLI
 authentication on the transfer workstation. See [publisher setup](docs/PUBLISHING.md)
 for access and the current private-repository branch-protection limitation.
 The input release is approximately 2.2 GB, split into sub-1-GiB tar assets with
@@ -89,7 +86,7 @@ The portable evaluator supports CPU and a single assigned CUDA device; multiple
 GPUs run independent cells. The computation was ported into a new version with
 relative paths, not copied with broken local absolute-path imports.
 
-Before portable training, complete the PORT gates. The exact closed V7 P0 w8/w24
+The initial PORT gates have passed. The exact closed V7 P0 w8/w24
 endpoints are now imported; w16 remains the released reference. P0 is complete
 but unconverged. See [checkpoint overlays](docs/CHECKPOINT_OVERLAYS.md) and
 [historical results](docs/BASELINE_RESULTS.md). The separately owned native P1

@@ -1,5 +1,11 @@
 # Experiment program and autonomous work queue
 
+Current results, changed scheduling strategy and promotion gates are maintained
+in [CURRENT_STUDY_PLAN.md](CURRENT_STUDY_PLAN.md). The first portable P1 round
+is terminal; the broader architecture study is active. Historical specifications
+remain immutable. New continuation budgets must explicitly account for prior
+steps and preserve verified optimizer state.
+
 This program supersedes machine-specific launch instructions, not the frozen
 scientific contract. Plans become executable only through a committed exact
 trial JSON and implementation tests. Hardware permits parallel independent
