@@ -1,0 +1,2217 @@
+{
+  "artifact": {
+    "bytes": 5058142,
+    "sha256": "95e9c9da27cf4d1d20c9fc145e4e442ef2f77df568f84e57caebd14e678b7744",
+    "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-continuation-w8-feasibility-2h-local-a01-09192af5f429/continuation-w8-feasibility-2h-local-a01-09192af5f429.tar.gz"
+  },
+  "audit": {
+    "DY_adjusted_RMS_fixed_sigma": 2.1150492894393955,
+    "DY_nuisances": {
+      "CDF_RUN_1:normalization": 2.531935472009212,
+      "CDF_RUN_2:efficiency": 1.1257176501086976,
+      "CDF_RUN_2:normalization": 0.7217757839064178,
+      "D0_RUN_1:normalization": 0.41517272470425953,
+      "E288_200:normalization": 4.077450424559576,
+      "E288_300:normalization": 5.3684671392899705,
+      "E288_400:normalization": 5.507313340445394,
+      "E605:normalization": 6.919212531631719,
+      "E772:normalization": 7.445928507827614,
+      "LHCb_7:beam": 0.2854015118060112,
+      "LHCb_7:lumi": 0.39832604434651486
+    },
+    "DY_profile_closure_abs_error": 8.185452315956354e-12,
+    "atomic_restart_recovery": false,
+    "endpoint_path": "last.npz",
+    "endpoint_sha256": "d98a576e789ba45ed9a789662598dc91f7868c7c5285a251697db08d788454ad",
+    "experimental_nuisance_penalty": 187.70527881809724,
+    "finite": true,
+    "generated_utc": "2026-09-14T17:20:59Z",
+    "high_COMPASS": {
+      "mean": 7.733401512261531,
+      "rms": 7.979221981773165,
+      "rows": 188,
+      "underpredicted": 188
+    },
+    "min_T_over_sigma": 5.000262800733636e-07,
+    "model_calls": 0,
+    "negative": 0,
+    "numerical_nuisance_penalty": 13.842274702778118,
+    "passed": true,
+    "penalized_gradient_max": 0.4090572535270205,
+    "processes": {
+      "COMPASS": {
+        "mean": 2.9608661136059906,
+        "rms": 4.93382998050462,
+        "rows": 1203,
+        "underpredicted": 809
+      },
+      "DY": {
+        "mean": 3.0560128495551475,
+        "rms": 3.999464250341522,
+        "rows": 743,
+        "underpredicted": 700
+      },
+      "HERMES": {
+        "mean": 0.5327618360665876,
+        "rms": 2.2440471224187104,
+        "rows": 344,
+        "underpredicted": 208
+      }
+    },
+    "q_per_measurement": 16.411446133424036,
+    "raw_gradient_max": null,
+    "raw_gradient_missing_reason": "model work stopped before raw-gradient endpoint evaluation",
+    "schema": "tmd-endpoint-audit-v1",
+    "status": "verified",
+    "zero": 0
+  },
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "claim": {
+    "claim_commit": "583bb23343019f90b64865008cdea115ce19c811",
+    "claimed_utc": "2026-09-14T16:43:26Z",
+    "code_commit": "59b834fcc21e3f6786563ac7600b0315a56c5de2",
+    "nonce": "51b5910c615a4ed1a1839c1289015a02",
+    "owner": "local-rtx4090-w8diag-20260914-a01",
+    "remote_ref": "refs/heads/claims/continuation-w8-feasibility-2h-local-a01",
+    "schema": "tmd-claim-v1",
+    "trial_id": "continuation-w8-feasibility-2h-local-a01",
+    "trial_sha256": "f1bab41846735de0cde0050f6b092845308aa820f720cfe982243b7cb6fad20d"
+  },
+  "code_commit": "59b834fcc21e3f6786563ac7600b0315a56c5de2",
+  "counters": {
+    "accepted_updates": 75,
+    "forwards": 911,
+    "full_calls": 78,
+    "infeasible_trials": 751,
+    "line_search_rejections": 752
+  },
+  "diagnostic_configuration": {
+    "record_all_violating_rows": true,
+    "review_interval_updates": 32,
+    "schema": "tmd-feasibility-diagnostics-v1"
+  },
+  "files": {
+    "accepted-001.json": {
+      "bytes": 1044,
+      "sha256": "f9b54947eb44489f521e25b8326897b84a396626f174c9c610f08f32b7ac5e5b"
+    },
+    "accepted-002.json": {
+      "bytes": 1048,
+      "sha256": "5d59b4a61402f86ca4366bb67968e01125707ab09260890b96f1cbb8ebde2264"
+    },
+    "accepted-003.json": {
+      "bytes": 1051,
+      "sha256": "443b7518396eb25d45178bc318c049860db7618c607a16c9bb8fc3e4b8aab829"
+    },
+    "accepted-004.json": {
+      "bytes": 1045,
+      "sha256": "7e01bca0bd5ce58de73bb135d72de168dce3928141667119e288406c372429a4"
+    },
+    "accepted-005.json": {
+      "bytes": 1044,
+      "sha256": "20399cf7b4b156aa5e8c33b34301f793e79974fca341ad20359da6da9f701be5"
+    },
+    "accepted-006.json": {
+      "bytes": 1040,
+      "sha256": "8790428d32f3d320a0e70d653aaa8643b4574dff0efcd74c55f75b7f3edaab67"
+    },
+    "accepted-007.json": {
+      "bytes": 1038,
+      "sha256": "bcfdb156d615835b6377e3f02aae5a70fa951c7410c2b623857e0638b57de579"
+    },
+    "accepted-008.json": {
+      "bytes": 1045,
+      "sha256": "3c463d15bcb938dda6c46786664c5fdd79270bb1a2bb7d80dd61625774d48906"
+    },
+    "accepted-009.json": {
+      "bytes": 1050,
+      "sha256": "07ccc8d086a255d4415c2c77f6f4812d9fe2b4bc87f794735cbc88ed68e7f187"
+    },
+    "accepted-010.json": {
+      "bytes": 1049,
+      "sha256": "373952aa1d6daa3a3595167bff7ab5c83ca841a2fa4d29242a87f6cb2e227e49"
+    },
+    "accepted-011.json": {
+      "bytes": 1054,
+      "sha256": "2c148442cd912f52e688b8050f44f089765a9e0428d0f2252ff9f59f3e1af027"
+    },
+    "accepted-012.json": {
+      "bytes": 1048,
+      "sha256": "f6add43b7b21523643de2e5c3f2f0c8ca845b033e59cf7b7fec7da58e03f5fa2"
+    },
+    "accepted-013.json": {
+      "bytes": 1050,
+      "sha256": "c2fe5251ed6f88d0bbcf686f4c7a021c8611a6f4d5f61510cfa981fc4af0976e"
+    },
+    "accepted-014.json": {
+      "bytes": 1054,
+      "sha256": "14e08c0e33798f37b87c0de0be5db938415b4c87fae4b2e8a0b6b1519c110d62"
+    },
+    "accepted-015.json": {
+      "bytes": 1055,
+      "sha256": "03176b0d60e0d0ebe25c949f006c2aaf2fba2e97cd22002868cdb154a61bd80b"
+    },
+    "accepted-016.json": {
+      "bytes": 1056,
+      "sha256": "36770e5429aa084c471aa8f2f83efdf3887ba58339245a690a8b8cf1e02b4cf5"
+    },
+    "accepted-017.json": {
+      "bytes": 1056,
+      "sha256": "4efe0416224727c25b84657d246d2b1074349e159185b8c98dea7e890498a26c"
+    },
+    "accepted-018.json": {
+      "bytes": 1053,
+      "sha256": "74a4ae3cf2d7998dfdc2c90420f51a33dc03b4b264adf65393c2b9205548e9ba"
+    },
+    "accepted-019.json": {
+      "bytes": 1055,
+      "sha256": "95a5373ca2729101f4b4e199c2297b4f47400bddde6dbf31c7ea3ac27f4ab6f3"
+    },
+    "accepted-020.json": {
+      "bytes": 1055,
+      "sha256": "23732e329b63e76f8ba4f7b31f1c1aa6f53232d908a0de70817eb76ab7d52f1b"
+    },
+    "accepted-021.json": {
+      "bytes": 1054,
+      "sha256": "6774e55d440d2eae60ab06b9fc716ee188f54028c87e07a7ab79bbf327c88ef7"
+    },
+    "accepted-022.json": {
+      "bytes": 1057,
+      "sha256": "ae90e4e4afb5e10770844f6369a2e4a6510a6f9e2b8d4adce41a3d7218691a4e"
+    },
+    "accepted-023.json": {
+      "bytes": 1054,
+      "sha256": "51cef0b06e9feddb15ff8e81e26cd1579bc2f81e9132ca80e102d1dead8dc303"
+    },
+    "accepted-024.json": {
+      "bytes": 1050,
+      "sha256": "ef0fd30a90b442f9daf3958bb1e0868f3058189dd7911dd14981aed19253544a"
+    },
+    "accepted-025.json": {
+      "bytes": 1053,
+      "sha256": "0a89a5a3fcbfd1fb017a047f5d1819d994a43bc2f58b269207bbfce20aed4d32"
+    },
+    "accepted-026.json": {
+      "bytes": 1059,
+      "sha256": "3186f4cc462c76b1586e31850d0838b7fe48edc2fbc5cd4a5c7563c4ef1bb3cb"
+    },
+    "accepted-027.json": {
+      "bytes": 1056,
+      "sha256": "124cfc8d5b9c9feba4a0a03b9ef232a64eb00d7efc6b588894a9545865184e59"
+    },
+    "accepted-028.json": {
+      "bytes": 1053,
+      "sha256": "e9d74ed9e966b756aec208a4ece38b2ba84b99e57b4350c7530fa832710722a5"
+    },
+    "accepted-029.json": {
+      "bytes": 1052,
+      "sha256": "927c792b22fd2f60b8c7a0aa03cfdbe524e85309b89c6e97f50d8a4c085119f1"
+    },
+    "accepted-030.json": {
+      "bytes": 1058,
+      "sha256": "fc98575205f176ec8c81baead961f154b00864e83fee7c9131550769645a144f"
+    },
+    "accepted-031.json": {
+      "bytes": 1056,
+      "sha256": "37c6d823f9d9b3a04335929b63b59d9f14448f435156bc0ecf016fdfa80300a7"
+    },
+    "accepted-032.json": {
+      "bytes": 1049,
+      "sha256": "5a4614075b019691fd455aa6770ebca2d1139877463c670e4fe89e033d757807"
+    },
+    "accepted-033.json": {
+      "bytes": 1051,
+      "sha256": "09646c54fad7cc5cd402371ecab9e31e25254e1004fbd91e15fb1b1e2ea0ae88"
+    },
+    "accepted-034.json": {
+      "bytes": 1045,
+      "sha256": "8df76710a3071e11bbfc32662e0e4f500488fc3c02ca29950483e06eefdc2016"
+    },
+    "accepted-035.json": {
+      "bytes": 1050,
+      "sha256": "0b871cc511251a4c94663640b705452851e8309a259f4b1160a095afed540d6d"
+    },
+    "accepted-036.json": {
+      "bytes": 1049,
+      "sha256": "846d2a08c228dea11220b0d3ca7697a5374643e2d3d245ccdd920f5e381897db"
+    },
+    "accepted-037.json": {
+      "bytes": 1056,
+      "sha256": "8ef6ca84db418751625f81df15b3accdd4bf63626bf616cb5921553879a51461"
+    },
+    "accepted-038.json": {
+      "bytes": 1056,
+      "sha256": "10179aae41df285cf1a218a023a504e38eb50b22096b1bee7d275dbfce0c0a4f"
+    },
+    "accepted-039.json": {
+      "bytes": 1051,
+      "sha256": "49028467c8259f03de06c15f225551a6619fd8e633ce6685c4d533eac9270524"
+    },
+    "accepted-040.json": {
+      "bytes": 1054,
+      "sha256": "d58f014eb995baceb52dca0ca01494242cc4fc6203ec98c099d92eac3c208b46"
+    },
+    "accepted-041.json": {
+      "bytes": 1057,
+      "sha256": "f77f1cda31394e78992f0cac9190206f3a1b5d34351fedccaf33635e4e90a2f2"
+    },
+    "accepted-042.json": {
+      "bytes": 1050,
+      "sha256": "ae06c74dc64013b173af866934ad9cf0028dbe05689f015f6a9056ad7727ff90"
+    },
+    "accepted-043.json": {
+      "bytes": 1053,
+      "sha256": "b717aa5c994ff0706d82e15469264fbcbeda8e038838c6b12ec9580649e952ed"
+    },
+    "accepted-044.json": {
+      "bytes": 1059,
+      "sha256": "8569e2440b63c6daa295f5c961c63ff03dc7ca593e533a3bc548b77700e8f69e"
+    },
+    "accepted-045.json": {
+      "bytes": 1057,
+      "sha256": "7b7c9a70088bd10c2c04846233ff44a413aa28d4a49e037bcc4e7b1e2820c602"
+    },
+    "accepted-046.json": {
+      "bytes": 1054,
+      "sha256": "8399a7c5180b2fbb7476801199ce9daba0b6e89ce386fb200c36ff0238c0e4ea"
+    },
+    "accepted-047.json": {
+      "bytes": 1059,
+      "sha256": "44f476bb5d8a92c74d14cff040c1636ba8e68ee335d80554d919c7f054ba11ea"
+    },
+    "accepted-048.json": {
+      "bytes": 1061,
+      "sha256": "b19c3469e9d002375bd5cd80c936b07d2ed72f865d62b0153c9f15b270e4a45a"
+    },
+    "accepted-049.json": {
+      "bytes": 1059,
+      "sha256": "f4f9559525c19eab8aaaa5e0426d42d769d98e010c8a7f95c92b3f5e8810a0a1"
+    },
+    "accepted-050.json": {
+      "bytes": 1059,
+      "sha256": "a73702d31d4fbd68da817c05567bc2f63ab80160a54c1e48ffaaf6de5439632f"
+    },
+    "accepted-051.json": {
+      "bytes": 1059,
+      "sha256": "bc0dcee581e1aceac88eab4f81886fb0edf3e2d8adcb159c55f2e00ecce77e8a"
+    },
+    "accepted-052.json": {
+      "bytes": 1060,
+      "sha256": "b05648af0772a3eaf1f6d0c3b68c518bc87e812ba655f465163160b4e4c9d6be"
+    },
+    "accepted-053.json": {
+      "bytes": 1062,
+      "sha256": "f6afbda33b3229a8f2267a3ea2ede38f6d16831fa4b746107683eb9b92fd5dd7"
+    },
+    "accepted-054.json": {
+      "bytes": 1061,
+      "sha256": "055cd70c1c61e30fc236aa23e5f61ff56d2bb057e079008cc7682ec8a84cfc5e"
+    },
+    "accepted-055.json": {
+      "bytes": 1060,
+      "sha256": "b690a70f2806f982edcdc19daf22fc24b994b454bc4a3657949a7cd11edea9be"
+    },
+    "accepted-056.json": {
+      "bytes": 1064,
+      "sha256": "a398dd8dd2cd8ecabf6a27c2285acd52611f7520620539bc1e4bf53f8607a60d"
+    },
+    "accepted-057.json": {
+      "bytes": 1060,
+      "sha256": "ee9312f1bb92e0bd50480623cb7888672ef8136562686f097a0fa5fcde754473"
+    },
+    "accepted-058.json": {
+      "bytes": 1062,
+      "sha256": "6c22ab2dded3f7728421b9aec306699d6ed0306a1473bff8acb01d270c68225b"
+    },
+    "accepted-059.json": {
+      "bytes": 1063,
+      "sha256": "48bc352f7febc8dc74dc73b88c28a6da32c398ab122a819fc32521aed4872503"
+    },
+    "accepted-060.json": {
+      "bytes": 1064,
+      "sha256": "6d7e584b17c21f8ff6b0a9b77334181085df24857986977bec6f117a5ee71aa5"
+    },
+    "accepted-061.json": {
+      "bytes": 1066,
+      "sha256": "574c0415eeb5700c1a53dc6329b8cd67d0ce1d2d170d1ac1cfb9903767ef05d4"
+    },
+    "accepted-062.json": {
+      "bytes": 1066,
+      "sha256": "e835980203890de961d18940575c55fd0816300a5bec46b660882696a0808229"
+    },
+    "accepted-063.json": {
+      "bytes": 1061,
+      "sha256": "cc2c43df53076785fe587babfe927f8e05c7f66a76a1462d21bfa9c64e9ca91b"
+    },
+    "accepted-064.json": {
+      "bytes": 1065,
+      "sha256": "5914043897478a1544d1fada073b99cb9b4c0bf4e0bc0eb40dcc2c38465b8191"
+    },
+    "accepted-065.json": {
+      "bytes": 1067,
+      "sha256": "bbe892e29bf4eefb2c07a1fe38fd06deff35e1604ef9437ea2be948d328e80dc"
+    },
+    "accepted-066.json": {
+      "bytes": 1063,
+      "sha256": "85893efa56d5bbdcb8dab85f62174e6902b6179922689d30f6cbf4c0656291fb"
+    },
+    "accepted-067.json": {
+      "bytes": 1062,
+      "sha256": "d41c1366818ed0d87ffa0a677467e8e8941a31eea43eb6df43f3f931f84910fb"
+    },
+    "accepted-068.json": {
+      "bytes": 1066,
+      "sha256": "ede348e4c58a8a2c1f8c56d90383ae84b3966fd4125ba8824c9cd0f34ca24b90"
+    },
+    "accepted-069.json": {
+      "bytes": 1051,
+      "sha256": "2d2c10af87390a4dff860fee52be483f495a7fe1fa52b809da4678f5e1793f59"
+    },
+    "accepted-070.json": {
+      "bytes": 1060,
+      "sha256": "f7ec58cfed0e10edf3e84a4a696ef8af39c6593f395a891952adb9fc7f6928fc"
+    },
+    "accepted-071.json": {
+      "bytes": 1061,
+      "sha256": "12c8e57e082089b7a4f5633fa62342858d6fe654e7c4117fce05b4812099ca22"
+    },
+    "accepted-072.json": {
+      "bytes": 1062,
+      "sha256": "0b0f7971a6895060e52e329f0208c74f90574450a1b91ab69749f778be25d965"
+    },
+    "accepted-073.json": {
+      "bytes": 1051,
+      "sha256": "8df1942fb20387f6ace4a0bb6532d158edbdccf7f491e16bf849c9db2910411e"
+    },
+    "accepted-074.json": {
+      "bytes": 1064,
+      "sha256": "4bbdf387f61a3f3966b26ef22cfe8607df4784b395afed8a150a79f642544358"
+    },
+    "accepted-075.json": {
+      "bytes": 1063,
+      "sha256": "727dd951dbed82ef1b61bc1da2d4d2b1af987354d551646ab9a62f882c6b1d3a"
+    },
+    "audit.json": {
+      "bytes": 1922,
+      "sha256": "41fadab2a0a3d30e7e897199bb0b4709aacde9efaa19827dae14a35c84ec911d"
+    },
+    "audit.log": {
+      "bytes": 9,
+      "sha256": "672eb8316fec83f94119a4193f9fc552513d56a147502f8be4830e017d817831"
+    },
+    "checkpoint-001.npz": {
+      "bytes": 42247,
+      "sha256": "0dedb6eac227c27d0c6a0fdb9d481ff1e745e51ee1d7c5f92ff3900b884add8e"
+    },
+    "checkpoint-002.npz": {
+      "bytes": 42262,
+      "sha256": "dc38ea922e3baa96ad9a65f2d18e691eb8ce18a5103835569aba82051eda2f9f"
+    },
+    "checkpoint-003.npz": {
+      "bytes": 42243,
+      "sha256": "71a0723618e8703ebe145e9af898a341e0398ae96c278d676975929b32d2de5a"
+    },
+    "checkpoint-004.npz": {
+      "bytes": 42249,
+      "sha256": "e84f5a69755e2f2e54886485a415fa676aa46f014aaee38b91090de7f9719602"
+    },
+    "checkpoint-005.npz": {
+      "bytes": 42232,
+      "sha256": "021168871181d63137de46bd0e87d32473ce85cafd7a3c0a63b934c9ed019b30"
+    },
+    "checkpoint-006.npz": {
+      "bytes": 42279,
+      "sha256": "3dc6160fbb42d2533a6dfd0ea78a8c4f16296738f82a971c5fe2d483cb9ebad5"
+    },
+    "checkpoint-007.npz": {
+      "bytes": 42266,
+      "sha256": "db35c0fdc813c43a832e4ebf40ca119f6b67e8ee755d71bda28ef1e7a2564e94"
+    },
+    "checkpoint-008.npz": {
+      "bytes": 42251,
+      "sha256": "7cf89f311cfdd757df683b31211e98ebc1f72ed9a4542d3ca814a209c3d52192"
+    },
+    "checkpoint-009.npz": {
+      "bytes": 42252,
+      "sha256": "7ea9976be309222f68d074b062e4dcf6b470c50d6db1e5a929227c467fc9ce2f"
+    },
+    "checkpoint-010.npz": {
+      "bytes": 42252,
+      "sha256": "6e2524d8ea4535d51164613afc7061082d366c4893f0a4c1462af3a7f6527f60"
+    },
+    "checkpoint-011.npz": {
+      "bytes": 42260,
+      "sha256": "5d3393b30967024ccd085a447998ecb36f4ef5fe10a5949b163b9f98b3ecb296"
+    },
+    "checkpoint-012.npz": {
+      "bytes": 42258,
+      "sha256": "20ee2c31df707dc030e802beff1daac19d78b0a4b423f739c1d07b185caec0ca"
+    },
+    "checkpoint-013.npz": {
+      "bytes": 42267,
+      "sha256": "a078969e2c66d09be87ef02de20f8e8e34e3a28a105a27836cbb904259c4c1a2"
+    },
+    "checkpoint-014.npz": {
+      "bytes": 42260,
+      "sha256": "4aec1895cf1a214a75181f54f08a9cd05a8531dc17870724a594ba43fa00c20c"
+    },
+    "checkpoint-015.npz": {
+      "bytes": 42240,
+      "sha256": "3929c8135b4484a4a5fdf54ec4c9c38cce49b6910af1f8201a40b775b99d87f1"
+    },
+    "checkpoint-016.npz": {
+      "bytes": 42264,
+      "sha256": "ef78bae077cbc157b6e95bb4980a8ecfc216c927b7dd42f23a6656c88035d439"
+    },
+    "checkpoint-017.npz": {
+      "bytes": 42260,
+      "sha256": "bd36bda63d0c87aeb4beb9b3005ac3681b98f6d6d6a8d204691576b9f591dad8"
+    },
+    "checkpoint-018.npz": {
+      "bytes": 42237,
+      "sha256": "a6d9266e0aaff5586dc188b1479e7ba533c9969f546d1837281658d6160ce037"
+    },
+    "checkpoint-019.npz": {
+      "bytes": 42253,
+      "sha256": "1742d914e4e041ad82cdd67395c570b571ae87faf27bc4f1af4cdee11f92ea87"
+    },
+    "checkpoint-020.npz": {
+      "bytes": 42272,
+      "sha256": "632cb0e0f34b49d8adede9adb063e530e3b8a192375fe1e99b908f780ac7010e"
+    },
+    "checkpoint-021.npz": {
+      "bytes": 42251,
+      "sha256": "6f4f1c89680e360820556682f3ddc8be0af28e43c05a44b7bdc7341e91ad1f0a"
+    },
+    "checkpoint-022.npz": {
+      "bytes": 42268,
+      "sha256": "8dcd27970b3b8653e29bae50f73ffe5a771e67b553fff56c3580e9c2feb3ffeb"
+    },
+    "checkpoint-023.npz": {
+      "bytes": 42242,
+      "sha256": "dc6d93746090305d55f3fe69a034989b99c9133e614fe4697ff406e37616042c"
+    },
+    "checkpoint-024.npz": {
+      "bytes": 42268,
+      "sha256": "2a2061cd3a3d7ed7dcf69a1b1662808ec2db33e8812ad8856129751282d3d6d8"
+    },
+    "checkpoint-025.npz": {
+      "bytes": 42261,
+      "sha256": "1e7c37f757d2fd8199434508784a906d6a41f86fa8e3acf33925d9854e57183e"
+    },
+    "checkpoint-026.npz": {
+      "bytes": 42264,
+      "sha256": "3c99e582aa3ed00f641ff03b3bcb5603cfd4678f52e42d4b90e1e0ad4c3592e0"
+    },
+    "checkpoint-027.npz": {
+      "bytes": 42266,
+      "sha256": "59e53d547cc2e2f08e8dc8515db8b2a129ebe1bffd474c894455fee5dc08ff57"
+    },
+    "checkpoint-028.npz": {
+      "bytes": 42243,
+      "sha256": "5edb9d7cbae1439432ab74f859cef857a4d964cfd86e4be1ab0bbc0a80000ee4"
+    },
+    "checkpoint-029.npz": {
+      "bytes": 42257,
+      "sha256": "4161dd3da252b4eb8097b5095aee4de99b1e578e4462645389087574eba02ad1"
+    },
+    "checkpoint-030.npz": {
+      "bytes": 42246,
+      "sha256": "3ded8b96db06f31047e56ff7b00cb2db266f7eacb1c6efde9b38ab643ff3a552"
+    },
+    "checkpoint-031.npz": {
+      "bytes": 42265,
+      "sha256": "04bee05892250f4fb2dc5868060b5973108307d406237bc4ec2ffd82e90b0ff2"
+    },
+    "checkpoint-032.npz": {
+      "bytes": 42228,
+      "sha256": "2b090080619dff6dd24fbeb140830f2e8e253dd193b773022bb2b630cb1782bf"
+    },
+    "checkpoint-033.npz": {
+      "bytes": 42248,
+      "sha256": "d605a42c9f6e8f3f698bc4cb554971fbad7283b3c5631f174807e799852cec5a"
+    },
+    "checkpoint-034.npz": {
+      "bytes": 42253,
+      "sha256": "1c202a5fc478aada10203d669256ae8dc85f7878232d2bd30dd6e3a79b5543de"
+    },
+    "checkpoint-035.npz": {
+      "bytes": 42268,
+      "sha256": "2057a27be5c396d38e68615e48d3677a41d3a27d2b5f18027238526f7ef5aef1"
+    },
+    "checkpoint-036.npz": {
+      "bytes": 42267,
+      "sha256": "f9e2a67ce59b3ecc5907b88e77167d85b4a097355153821efc0b14305f3d79b9"
+    },
+    "checkpoint-037.npz": {
+      "bytes": 42267,
+      "sha256": "0f43f9550e5244cb0fdd9b5ae2a3cc58b736b9c4ff2e994f7e6c2d1ef2104a6e"
+    },
+    "checkpoint-038.npz": {
+      "bytes": 42277,
+      "sha256": "8eb6cac489602f408f09f14d76f2eed101f72b207a5a7730bd2c1aaa76b7861a"
+    },
+    "checkpoint-039.npz": {
+      "bytes": 42270,
+      "sha256": "28c27e4a0336f3a8c58f927de9ca08f9a2a41d956a86d9bfb8d4a07ce9b46b2c"
+    },
+    "checkpoint-040.npz": {
+      "bytes": 42253,
+      "sha256": "57b0cf6a7ca62761ec24007c5f3fc78044c76740340855d9991c35a9bcdb6758"
+    },
+    "checkpoint-041.npz": {
+      "bytes": 42241,
+      "sha256": "0509b4b416d46a078829a16ca7c6e6ad2a0bbf80a23503b9b4716c3d95c5e3bb"
+    },
+    "checkpoint-042.npz": {
+      "bytes": 42251,
+      "sha256": "6b7b9a28615dc03fbb70f5dde88b5492c3d1cf7a2169f37837f89eb4356b6360"
+    },
+    "checkpoint-043.npz": {
+      "bytes": 42234,
+      "sha256": "da2d003fd7bfe639cd1963af36fc297717517e27aa197e8b1ef61c8987fe4fc9"
+    },
+    "checkpoint-044.npz": {
+      "bytes": 42260,
+      "sha256": "ff7035445126ecdd1533f3c60bcb3d5dac63b57ebaa812b1bb2cc17fdacd1090"
+    },
+    "checkpoint-045.npz": {
+      "bytes": 42268,
+      "sha256": "61219cbf8020d4dc47642d17ec47a2ea55113005ca71a53de36427b1feaa21f6"
+    },
+    "checkpoint-046.npz": {
+      "bytes": 42259,
+      "sha256": "22536f0062d7fd88c0e6e96432dc8a643c102e4322bc5e5065887be5a79a14c2"
+    },
+    "checkpoint-047.npz": {
+      "bytes": 42265,
+      "sha256": "96be96f9c858898abc9db78fbc1182d9ac30b36d2aab52fa3539520c870945a5"
+    },
+    "checkpoint-048.npz": {
+      "bytes": 42233,
+      "sha256": "cb99ab2fabcc7b67fba657643fdb89b89170cebfff18090b271dde3b3cce5d56"
+    },
+    "checkpoint-049.npz": {
+      "bytes": 42246,
+      "sha256": "c1487485cbdbb0a1c843096c1356c7fbfb6eead65d127df8befe79aee15c6632"
+    },
+    "checkpoint-050.npz": {
+      "bytes": 42270,
+      "sha256": "9770676ca22046207b4e6a604190324547314bd1242aa0ad1726d3d0248b959b"
+    },
+    "checkpoint-051.npz": {
+      "bytes": 42259,
+      "sha256": "d89523e1de109dfafb9ce370c348cb5dcb89f109e3fa9ffc2540ef6a5bb8a923"
+    },
+    "checkpoint-052.npz": {
+      "bytes": 42262,
+      "sha256": "a2e738efbb16b32581eaa4cc6812452714afca190324e1a5b502c7206e9258cb"
+    },
+    "checkpoint-053.npz": {
+      "bytes": 42247,
+      "sha256": "66dbb5fcd0d31c432f9e566e4e72ec63547566c5a5c1511b66f6b36a19e7ba85"
+    },
+    "checkpoint-054.npz": {
+      "bytes": 42265,
+      "sha256": "f8f7733c8b86c489124b39f579bed292cd06806a85af848040709a30e495ae70"
+    },
+    "checkpoint-055.npz": {
+      "bytes": 42240,
+      "sha256": "456de39134c0bb90db6482637e863f0a9438404f83c986f8b9609d6eeba1c90a"
+    },
+    "checkpoint-056.npz": {
+      "bytes": 42257,
+      "sha256": "ed5ecb2575a2a3dbc3d51b8cb5edd60663150d0d7a58e3a5d2bd0b2f28be5afc"
+    },
+    "checkpoint-057.npz": {
+      "bytes": 42261,
+      "sha256": "89492848a5fdb81e62189b7f0c1bd8b00c124b40816cfe116a80ee6c38e84ecb"
+    },
+    "checkpoint-058.npz": {
+      "bytes": 42296,
+      "sha256": "cc5ef02047d12a51ed91e9e950d26deeb48fdbfab01d0f73806e7f99b84d55f1"
+    },
+    "checkpoint-059.npz": {
+      "bytes": 42252,
+      "sha256": "7fd4c9685e49e493977e396f549a1d057ede4a249e9fd57f95055dba5874ed6d"
+    },
+    "checkpoint-060.npz": {
+      "bytes": 42281,
+      "sha256": "f9810ff9d4c81adeadd850c1887dae2c39fee02015a655537dc54935d8323f81"
+    },
+    "checkpoint-061.npz": {
+      "bytes": 42426,
+      "sha256": "590d71f5e950334fc2e7efb6446de9f5c4348e2be2f5d05f6c3c8d15a79bc4ab"
+    },
+    "checkpoint-062.npz": {
+      "bytes": 42426,
+      "sha256": "04521188b4205ff0fa6422bff898cd78c53b8606f163398000b3969caa758324"
+    },
+    "checkpoint-063.npz": {
+      "bytes": 42282,
+      "sha256": "10b418c9e1e30f611682d4b2a6557b44a97d1cf8549b75a0fd9468fe9e900dc6"
+    },
+    "checkpoint-064.npz": {
+      "bytes": 42332,
+      "sha256": "8f0844472b1d4258a6aacafeadb60bbe2ad48dc449780654c43e66dc31851199"
+    },
+    "checkpoint-065.npz": {
+      "bytes": 42353,
+      "sha256": "e883e78dbac0fe17ca926be7d224b2e48a6ae19be823a1c5d34b485955cb98ca"
+    },
+    "checkpoint-066.npz": {
+      "bytes": 42393,
+      "sha256": "23a4027245209510b488b0fba1d530f8781fcb8c76dbed531de63b73f5d9b06e"
+    },
+    "checkpoint-067.npz": {
+      "bytes": 42416,
+      "sha256": "87cfb57a0fd91517389062fbadc5647cab5bb6659b3222e2d54d8f3e08f7ede8"
+    },
+    "checkpoint-068.npz": {
+      "bytes": 42403,
+      "sha256": "49f975ae84dee346cf05977be360267142dd1c2a1a51f6983fe90e27f68c197b"
+    },
+    "checkpoint-069.npz": {
+      "bytes": 42249,
+      "sha256": "bcd5eb70689aae8860e0681eafac34d66cc02871c661b7b5fd62452d06c06391"
+    },
+    "checkpoint-070.npz": {
+      "bytes": 42252,
+      "sha256": "213f6c09894fd4ebe41db5ce0e8deb1d759ac75f46c2a42822f1d87737233acc"
+    },
+    "checkpoint-071.npz": {
+      "bytes": 42259,
+      "sha256": "a2ab1a7b539f3625cfae70d8e19acdcfb5a8de5b365d227fc8f58c8634ac9470"
+    },
+    "checkpoint-072.npz": {
+      "bytes": 42241,
+      "sha256": "855f871ef049a50527ab05136eaeeb0d3cece587faca696687c0f08d675bd78f"
+    },
+    "checkpoint-073.npz": {
+      "bytes": 42231,
+      "sha256": "4452dc2545573f4012f19faf766cf79567a199c36dcafb47420322748641d7ed"
+    },
+    "checkpoint-074.npz": {
+      "bytes": 42268,
+      "sha256": "85e7482afc08832fb9ee67da51096b1e76c024e1616acffce1a475b7d78ea62b"
+    },
+    "checkpoint-075.npz": {
+      "bytes": 42265,
+      "sha256": "d98a576e789ba45ed9a789662598dc91f7868c7c5285a251697db08d788454ad"
+    },
+    "cleanup.json": {
+      "bytes": 188,
+      "sha256": "aa47140950ce12d16d14964b3b99dcc919aa2a2985b81e7d98f8f3b31ecec6ac"
+    },
+    "counters.json": {
+      "bytes": 365,
+      "sha256": "5bc6a4373693c805d19b5879c3f5c314394e37b5b9f25b4f6dce306638f30e6d"
+    },
+    "diagnostic-initial.json": {
+      "bytes": 7602,
+      "sha256": "3f7ab52fc5c46329cff53ed3c3554a6ddf81358307095c2a0b7e0d067cf06abe"
+    },
+    "diagnostic-review-0032.json": {
+      "bytes": 13199,
+      "sha256": "e19843e0df1fb706b32b11618b0d1329276b68da282a280ad0a11423071a6ac2"
+    },
+    "diagnostic-review-0064.json": {
+      "bytes": 33322,
+      "sha256": "191549a4a5b0287f811450ceae8e7fb46f079b5e4a1b3f59d50a12ef3f6511b7"
+    },
+    "diagnostic-rows.json": {
+      "bytes": 178445,
+      "sha256": "2928b3bff241036dc9167752c9dec31d72ac5ad3e342e8cf639ab86a9b53b570"
+    },
+    "diagnostic-summary.json": {
+      "bytes": 54976,
+      "sha256": "dab09f61262615d0c7c63f29b33082059879c3be0d9e9852a6c488892710db8c"
+    },
+    "environment.json": {
+      "bytes": 288,
+      "sha256": "4d4f94345ead015c2f306a8a7b619020e9d67a30083f924b76818637eb3e952d"
+    },
+    "failure.json": {
+      "bytes": 1304,
+      "sha256": "ebd1c0bdfae561ac3cc5a1fe4051decf4b9bd0c43b709980d80a0438349852d0"
+    },
+    "gpu-identity.json": {
+      "bytes": 126,
+      "sha256": "b3acaecf4309d220325f9864a057810383a3ec6543aace0b3853dfd03b62968d"
+    },
+    "initial.npz": {
+      "bytes": 54525,
+      "sha256": "ee2cb5099231b1fa264134ab7158d404a0e80b9ef4dff072878d76ff750482e9"
+    },
+    "last.npz": {
+      "bytes": 42265,
+      "sha256": "d98a576e789ba45ed9a789662598dc91f7868c7c5285a251697db08d788454ad"
+    },
+    "launch.json": {
+      "bytes": 2038,
+      "sha256": "3634afeded94b6943477457de8fef757084a776a814c9057287750ed0fa07ef4"
+    },
+    "line-search.ndjson": {
+      "bytes": 984593,
+      "sha256": "426593c4ca4e3a714d28b432d9c5e4a91702399a2fd5ed7b709f34bb881b0058"
+    },
+    "optimization-accepted.ndjson": {
+      "bytes": 420163,
+      "sha256": "0bf3d90dabf44feb1da97da096529ea87856ad4e66d3b31e647415971eebdbb6"
+    },
+    "optimization-steps.ndjson": {
+      "bytes": 116852,
+      "sha256": "cabf8d17038e97ee7719bd79de475a0e36700c7cd8f9a931d3d11f4f87eaf41e"
+    },
+    "owner.json": {
+      "bytes": 91,
+      "sha256": "a6405785ff48e2b88e17a71727d15024c9452aa0414462185a15677aad0892fc"
+    },
+    "preflight.json": {
+      "bytes": 528,
+      "sha256": "4dd4585fd4ead2b30435201571b8a9b2228462bf545fdae081ccde610a1cda60"
+    },
+    "preparation.json": {
+      "bytes": 89,
+      "sha256": "9942e2fd8d8603afe272db49f3d17b49b5d38eeb04d344c03b81813f236486f7"
+    },
+    "resources.ndjson": {
+      "bytes": 11213457,
+      "sha256": "a51a9b3ab4a9915842aa037f9ccaa9a011b6fb780db7e2ec3112d4ec24e4285e"
+    },
+    "restart.npz": {
+      "bytes": 692032,
+      "sha256": "e0699173af22f761d29f51224bd6316cb799429b74bf9b52d6e2d81735064bde"
+    },
+    "supervisor.json": {
+      "bytes": 783,
+      "sha256": "6bac70e2efe83b963894dd44404c42a82d6448c6e3b10e3d1fb567d7c1cf2a66"
+    },
+    "trial.json": {
+      "bytes": 3303,
+      "sha256": "dc684c544b393ee988b3a8cf604dd2ba6f8119f2bec91a3e134fd5dc6488ded5"
+    },
+    "worker-summary.json": {
+      "bytes": 1861,
+      "sha256": "d473a313a660448b459c2cf39d33d13df1dab48c36dabbe05f70dc2b606de102"
+    },
+    "worker.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "hardware": "cuda:0",
+  "identity": "1a42f320309d3a1c237357c9c9cbd7da0fa8119c2f8c39148f061d0a9b57b338",
+  "kind": "continuation",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "model": {
+    "depth": 1,
+    "width": 8
+  },
+  "model_seconds_before": 6556.645055287401,
+  "optimization_budget_stop": null,
+  "optimization_diagnostics": {
+    "candidate_verdicts": {
+      "armijo_passed": 75,
+      "armijo_rejected": 1,
+      "infeasible": 751
+    },
+    "diagnostic_scope": "existing forwards, gradients and saved arrays only",
+    "elapsed_seconds": 2205.3513164874166,
+    "endpoint_diagnostics": {
+      "DY_adjusted_RMS_fixed_sigma": 2.1150492894393955,
+      "DY_nuisances": {
+        "CDF_RUN_1:normalization": 2.531935472009212,
+        "CDF_RUN_2:efficiency": 1.1257176501086976,
+        "CDF_RUN_2:normalization": 0.7217757839064178,
+        "D0_RUN_1:normalization": 0.41517272470425953,
+        "E288_200:normalization": 4.077450424559576,
+        "E288_300:normalization": 5.3684671392899705,
+        "E288_400:normalization": 5.507313340445394,
+        "E605:normalization": 6.919212531631719,
+        "E772:normalization": 7.445928507827614,
+        "LHCb_7:beam": 0.2854015118060112,
+        "LHCb_7:lumi": 0.39832604434651486
+      },
+      "DY_profile_closure_abs_error": 8.185452315956354e-12,
+      "experimental_nuisance_penalty": 187.70527881809724,
+      "finite": true,
+      "high_COMPASS": {
+        "mean": 7.733401512261531,
+        "rms": 7.979221981773165,
+        "rows": 188,
+        "underpredicted": 188
+      },
+      "min_T_over_sigma": 5.000262800733636e-07,
+      "negative": 0,
+      "numerical_nuisance_penalty": 13.842274702778118,
+      "processes": {
+        "COMPASS": {
+          "mean": 2.9608661136059906,
+          "rms": 4.93382998050462,
+          "rows": 1203,
+          "underpredicted": 809
+        },
+        "DY": {
+          "mean": 3.0560128495551475,
+          "rms": 3.999464250341522,
+          "rows": 743,
+          "underpredicted": 700
+        },
+        "HERMES": {
+          "mean": 0.5327618360665876,
+          "rms": 2.2440471224187104,
+          "rows": 344,
+          "underpredicted": 208
+        }
+      },
+      "q_per_measurement": 16.411446133424036,
+      "zero": 0
+    },
+    "interval_counters": {
+      "accepted_updates": 11,
+      "forwards": 147,
+      "full_calls": 12,
+      "infeasible_trials": 122,
+      "line_search_rejections": 123
+    },
+    "interval_elapsed_seconds": 348.76872219890356,
+    "interval_q_improvement": 0.007094478287509531,
+    "interval_q_improvement_per_100_forwards": 0.004826175705788797,
+    "last_accepted_diagnostics": {
+      "accepted_updates": 75,
+      "alpha": 1.52587890625e-05,
+      "cumulative_accepted_updates": 252,
+      "curvature_cosine": 0.0676158346498492,
+      "curvature_pair_retained": true,
+      "elapsed_seconds": 2205.301852583885,
+      "gradient_blocks": {
+        "cs.network.0.bias": {
+          "l2": 0.09648202864777491,
+          "maximum": 0.06202844913258177,
+          "parameters": 12
+        },
+        "cs.network.0.weight": {
+          "l2": 0.17263872998736352,
+          "maximum": 0.09108779518251764,
+          "parameters": 48
+        },
+        "cs.network.2.bias": {
+          "l2": 0.13562967191999623,
+          "maximum": 0.13562967191999623,
+          "parameters": 1
+        },
+        "cs.network.2.weight": {
+          "l2": 0.3251946994925875,
+          "maximum": 0.14783774600619037,
+          "parameters": 12
+        },
+        "incoming.blocks.0.linear1.bias": {
+          "l2": 0.0784914861767085,
+          "maximum": 0.04195516164626947,
+          "parameters": 8
+        },
+        "incoming.blocks.0.linear1.weight": {
+          "l2": 0.04280599160178822,
+          "maximum": 0.01594459923316134,
+          "parameters": 64
+        },
+        "incoming.blocks.0.linear2.bias": {
+          "l2": 0.10330883924996505,
+          "maximum": 0.05841380568640493,
+          "parameters": 8
+        },
+        "incoming.blocks.0.linear2.weight": {
+          "l2": 0.12098423242899195,
+          "maximum": 0.03896312264390285,
+          "parameters": 64
+        },
+        "incoming.blocks.0.modulation.bias": {
+          "l2": 0.1684007389165659,
+          "maximum": 0.14594970647213104,
+          "parameters": 16
+        },
+        "incoming.blocks.0.modulation.weight": {
+          "l2": 0.46528827877672974,
+          "maximum": 0.16680256879046282,
+          "parameters": 192
+        },
+        "incoming.condition.0.bias": {
+          "l2": 0.14514836378327842,
+          "maximum": 0.10226138521614259,
+          "parameters": 12
+        },
+        "incoming.condition.0.weight": {
+          "l2": 0.4761610983562325,
+          "maximum": 0.3032135152715078,
+          "parameters": 84
+        },
+        "incoming.condition.2.bias": {
+          "l2": 0.2041839405062131,
+          "maximum": 0.16842157188795412,
+          "parameters": 12
+        },
+        "incoming.condition.2.weight": {
+          "l2": 0.6723495401884979,
+          "maximum": 0.23994461124385627,
+          "parameters": 144
+        },
+        "incoming.delta_width_head.bias": {
+          "l2": 0.045216084149591364,
+          "maximum": 0.045216084149591364,
+          "parameters": 1
+        },
+        "incoming.delta_width_head.weight": {
+          "l2": 0.188623456778167,
+          "maximum": 0.10823270159858293,
+          "parameters": 12
+        },
+        "incoming.flavor.weight": {
+          "l2": 0.1270977218034252,
+          "maximum": 0.08347874588949601,
+          "parameters": 40
+        },
+        "incoming.radial.bias": {
+          "l2": 0.1709965149662748,
+          "maximum": 0.10553760569379647,
+          "parameters": 8
+        },
+        "incoming.radial.weight": {
+          "l2": 0.12720937685654463,
+          "maximum": 0.05614008970077976,
+          "parameters": 32
+        },
+        "incoming.raw_widths": {
+          "l2": 0.04158279265779364,
+          "maximum": 0.03538834470982712,
+          "parameters": 10
+        },
+        "incoming.shape_head.bias": {
+          "l2": 0.059376933633076286,
+          "maximum": 0.059376933633076286,
+          "parameters": 1
+        },
+        "incoming.shape_head.weight": {
+          "l2": 0.0748340023960292,
+          "maximum": 0.041035943055932805,
+          "parameters": 8
+        },
+        "outgoing.blocks.0.linear1.bias": {
+          "l2": 0.4400844453756079,
+          "maximum": 0.4090572535270205,
+          "parameters": 8
+        },
+        "outgoing.blocks.0.linear1.weight": {
+          "l2": 0.6464668516361792,
+          "maximum": 0.3044648409242821,
+          "parameters": 64
+        },
+        "outgoing.blocks.0.linear2.bias": {
+          "l2": 0.1734046243179181,
+          "maximum": 0.08611511164463959,
+          "parameters": 8
+        },
+        "outgoing.blocks.0.linear2.weight": {
+          "l2": 0.26762847789406224,
+          "maximum": 0.08729442390757157,
+          "parameters": 64
+        },
+        "outgoing.blocks.0.modulation.bias": {
+          "l2": 0.17820734442160704,
+          "maximum": 0.09959170504282412,
+          "parameters": 16
+        },
+        "outgoing.blocks.0.modulation.weight": {
+          "l2": 0.29022378024706075,
+          "maximum": 0.09072777989460734,
+          "parameters": 192
+        },
+        "outgoing.condition.0.bias": {
+          "l2": 0.15182072406455374,
+          "maximum": 0.09375677260298636,
+          "parameters": 12
+        },
+        "outgoing.condition.0.weight": {
+          "l2": 0.3360329764707212,
+          "maximum": 0.15007265269343306,
+          "parameters": 120
+        },
+        "outgoing.condition.2.bias": {
+          "l2": 0.1828927960772267,
+          "maximum": 0.09127432750708342,
+          "parameters": 12
+        },
+        "outgoing.condition.2.weight": {
+          "l2": 0.27787992406063455,
+          "maximum": 0.06571774148531387,
+          "parameters": 144
+        },
+        "outgoing.delta_width_head.bias": {
+          "l2": 0.08886607924187766,
+          "maximum": 0.08886607924187766,
+          "parameters": 1
+        },
+        "outgoing.delta_width_head.weight": {
+          "l2": 0.16446065905955704,
+          "maximum": 0.08341196313930402,
+          "parameters": 12
+        },
+        "outgoing.flavor.weight": {
+          "l2": 0.05804581096452299,
+          "maximum": 0.035755557557170956,
+          "parameters": 40
+        },
+        "outgoing.hadron.weight": {
+          "l2": 0.07189464601465842,
+          "maximum": 0.06267929886862399,
+          "parameters": 9
+        },
+        "outgoing.radial.bias": {
+          "l2": 0.45699333346991317,
+          "maximum": 0.2760250350359036,
+          "parameters": 8
+        },
+        "outgoing.radial.weight": {
+          "l2": 0.5530100224504625,
+          "maximum": 0.2923373127598447,
+          "parameters": 32
+        },
+        "outgoing.raw_widths": {
+          "l2": 0.06336978606045585,
+          "maximum": 0.05693027273499655,
+          "parameters": 30
+        },
+        "outgoing.shape_head.bias": {
+          "l2": 0.1171165085923001,
+          "maximum": 0.1171165085923001,
+          "parameters": 1
+        },
+        "outgoing.shape_head.weight": {
+          "l2": 0.1724364788430143,
+          "maximum": 0.08182868117573468,
+          "parameters": 8
+        }
+      },
+      "min_T_over_sigma": 5.000262800733636e-07,
+      "objective": 8.205721785516767,
+      "objective_improvement": 9.827701626541341e-05,
+      "parameter_step_l2": 0.0007781276405428768,
+      "penalized_gradient_l2": 1.7246836866018396,
+      "penalized_gradient_max": 0.4090572535270205,
+      "plateau": {
+        "eligible": true,
+        "passed": false,
+        "windows": [
+          {
+            "gradient_max": 11.723124894132344,
+            "passed": false,
+            "prediction_span_max": 0.0031606641559491777,
+            "prediction_span_rms": 0.00038045204286760875,
+            "q_range": 0.00013870938690629941,
+            "same_mu": true
+          },
+          {
+            "gradient_max": 0.4090572535270205,
+            "passed": false,
+            "prediction_span_max": 0.5355344311915928,
+            "prediction_span_rms": 0.04630258749915097,
+            "q_range": 0.0070927786656938,
+            "same_mu": true
+          }
+        ]
+      },
+      "predicted_linear_improvement": 9.873583210700055e-05,
+      "q_improvement": 0.0001965546558650999,
+      "q_per_measurement": 16.411446133424036,
+      "sTy": 9.176950888096924e-07,
+      "schema": "tmd-optimization-accepted-v1"
+    },
+    "model_calls": 0,
+    "penalized_gradient_l2": 1.7246836866018396,
+    "plateau": {
+      "eligible": true,
+      "passed": false,
+      "windows": [
+        {
+          "gradient_max": 11.723124894132344,
+          "passed": false,
+          "prediction_span_max": 0.0031606641559491777,
+          "prediction_span_rms": 0.00038045204286760875,
+          "q_range": 0.00013870938690629941,
+          "same_mu": true
+        },
+        {
+          "gradient_max": 0.4090572535270205,
+          "passed": false,
+          "prediction_span_max": 0.5355344311915928,
+          "prediction_span_rms": 0.04630258749915097,
+          "q_range": 0.0070927786656938,
+          "same_mu": true
+        }
+      ]
+    },
+    "review_files": [
+      "diagnostic-review-0032.json",
+      "diagnostic-review-0064.json"
+    ],
+    "schema": "tmd-optimization-review-v1",
+    "segment_counters": {
+      "accepted_updates": 75,
+      "forwards": 911,
+      "full_calls": 78,
+      "infeasible_trials": 751,
+      "line_search_rejections": 752
+    },
+    "stop_reason": "ValueError: nonfinite boundary or zero damping; no clipping",
+    "trajectory_counters": {
+      "accepted_updates": 252,
+      "forwards": 2349,
+      "full_calls": 283,
+      "infeasible_trials": 1735,
+      "line_search_rejections": 1754
+    },
+    "violating_row_counts": {
+      "obs:CDF_RUN_1:0": 3,
+      "obs:CDF_RUN_1:1": 6,
+      "obs:CDF_RUN_1:10": 12,
+      "obs:CDF_RUN_1:11": 11,
+      "obs:CDF_RUN_1:12": 11,
+      "obs:CDF_RUN_1:13": 13,
+      "obs:CDF_RUN_1:14": 13,
+      "obs:CDF_RUN_1:15": 12,
+      "obs:CDF_RUN_1:16": 12,
+      "obs:CDF_RUN_1:17": 13,
+      "obs:CDF_RUN_1:18": 13,
+      "obs:CDF_RUN_1:19": 5,
+      "obs:CDF_RUN_1:2": 4,
+      "obs:CDF_RUN_1:20": 2,
+      "obs:CDF_RUN_1:21": 4,
+      "obs:CDF_RUN_1:22": 3,
+      "obs:CDF_RUN_1:23": 4,
+      "obs:CDF_RUN_1:24": 14,
+      "obs:CDF_RUN_1:25": 4,
+      "obs:CDF_RUN_1:26": 4,
+      "obs:CDF_RUN_1:27": 15,
+      "obs:CDF_RUN_1:28": 6,
+      "obs:CDF_RUN_1:29": 4,
+      "obs:CDF_RUN_1:3": 3,
+      "obs:CDF_RUN_1:31": 7,
+      "obs:CDF_RUN_1:32": 4,
+      "obs:CDF_RUN_1:33": 3,
+      "obs:CDF_RUN_1:34": 13,
+      "obs:CDF_RUN_1:35": 10,
+      "obs:CDF_RUN_1:36": 5,
+      "obs:CDF_RUN_1:4": 1,
+      "obs:CDF_RUN_1:5": 1,
+      "obs:CDF_RUN_1:6": 3,
+      "obs:CDF_RUN_1:7": 1,
+      "obs:CDF_RUN_1:8": 9,
+      "obs:CDF_RUN_1:9": 12,
+      "obs:CDF_RUN_2:0": 7,
+      "obs:CDF_RUN_2:1": 8,
+      "obs:CDF_RUN_2:10": 11,
+      "obs:CDF_RUN_2:11": 10,
+      "obs:CDF_RUN_2:12": 9,
+      "obs:CDF_RUN_2:13": 9,
+      "obs:CDF_RUN_2:14": 10,
+      "obs:CDF_RUN_2:15": 10,
+      "obs:CDF_RUN_2:16": 10,
+      "obs:CDF_RUN_2:17": 11,
+      "obs:CDF_RUN_2:18": 12,
+      "obs:CDF_RUN_2:19": 5,
+      "obs:CDF_RUN_2:2": 5,
+      "obs:CDF_RUN_2:20": 3,
+      "obs:CDF_RUN_2:21": 4,
+      "obs:CDF_RUN_2:22": 6,
+      "obs:CDF_RUN_2:23": 9,
+      "obs:CDF_RUN_2:25": 14,
+      "obs:CDF_RUN_2:26": 6,
+      "obs:CDF_RUN_2:27": 9,
+      "obs:CDF_RUN_2:28": 8,
+      "obs:CDF_RUN_2:29": 7,
+      "obs:CDF_RUN_2:3": 4,
+      "obs:CDF_RUN_2:30": 12,
+      "obs:CDF_RUN_2:32": 11,
+      "obs:CDF_RUN_2:33": 9,
+      "obs:CDF_RUN_2:34": 11,
+      "obs:CDF_RUN_2:35": 9,
+      "obs:CDF_RUN_2:36": 9,
+      "obs:CDF_RUN_2:37": 10,
+      "obs:CDF_RUN_2:38": 7,
+      "obs:CDF_RUN_2:39": 9,
+      "obs:CDF_RUN_2:4": 3,
+      "obs:CDF_RUN_2:40": 9,
+      "obs:CDF_RUN_2:41": 12,
+      "obs:CDF_RUN_2:42": 6,
+      "obs:CDF_RUN_2:43": 13,
+      "obs:CDF_RUN_2:44": 2,
+      "obs:CDF_RUN_2:45": 8,
+      "obs:CDF_RUN_2:46": 9,
+      "obs:CDF_RUN_2:47": 9,
+      "obs:CDF_RUN_2:48": 6,
+      "obs:CDF_RUN_2:49": 14,
+      "obs:CDF_RUN_2:5": 4,
+      "obs:CDF_RUN_2:51": 10,
+      "obs:CDF_RUN_2:52": 4,
+      "obs:CDF_RUN_2:53": 7,
+      "obs:CDF_RUN_2:54": 6,
+      "obs:CDF_RUN_2:55": 1,
+      "obs:CDF_RUN_2:6": 3,
+      "obs:CDF_RUN_2:7": 6,
+      "obs:CDF_RUN_2:8": 7,
+      "obs:CDF_RUN_2:9": 11,
+      "obs:D0_RUN_1:0": 10,
+      "obs:D0_RUN_1:1": 4,
+      "obs:D0_RUN_1:10": 7,
+      "obs:D0_RUN_1:11": 4,
+      "obs:D0_RUN_1:13": 15,
+      "obs:D0_RUN_1:14": 6,
+      "obs:D0_RUN_1:15": 14,
+      "obs:D0_RUN_1:16": 1,
+      "obs:D0_RUN_1:2": 2,
+      "obs:D0_RUN_1:3": 4,
+      "obs:D0_RUN_1:4": 9,
+      "obs:D0_RUN_1:5": 11,
+      "obs:D0_RUN_1:6": 7,
+      "obs:D0_RUN_1:7": 10,
+      "obs:D0_RUN_1:8": 10,
+      "obs:D0_RUN_1:9": 11,
+      "obs:E288_200:0": 3,
+      "obs:E288_200:1": 7,
+      "obs:E288_200:15": 8,
+      "obs:E288_200:16": 11,
+      "obs:E288_200:17": 4,
+      "obs:E288_200:18": 17,
+      "obs:E288_200:19": 19,
+      "obs:E288_200:2": 10,
+      "obs:E288_200:20": 14,
+      "obs:E288_200:21": 17,
+      "obs:E288_200:22": 2,
+      "obs:E288_200:3": 7,
+      "obs:E288_200:31": 8,
+      "obs:E288_200:32": 12,
+      "obs:E288_200:33": 5,
+      "obs:E288_200:34": 17,
+      "obs:E288_200:35": 17,
+      "obs:E288_200:36": 14,
+      "obs:E288_200:37": 22,
+      "obs:E288_200:38": 10,
+      "obs:E288_200:39": 8,
+      "obs:E288_200:4": 18,
+      "obs:E288_200:45": 9,
+      "obs:E288_200:46": 12,
+      "obs:E288_200:47": 5,
+      "obs:E288_200:48": 17,
+      "obs:E288_200:49": 14,
+      "obs:E288_200:5": 19,
+      "obs:E288_200:50": 10,
+      "obs:E288_200:51": 20,
+      "obs:E288_200:52": 11,
+      "obs:E288_200:53": 14,
+      "obs:E288_200:54": 11,
+      "obs:E288_200:58": 9,
+      "obs:E288_200:59": 13,
+      "obs:E288_200:6": 5,
+      "obs:E288_200:60": 7,
+      "obs:E288_200:61": 16,
+      "obs:E288_200:62": 12,
+      "obs:E288_200:63": 6,
+      "obs:E288_200:64": 18,
+      "obs:E288_200:65": 4,
+      "obs:E288_200:66": 11,
+      "obs:E288_200:67": 14,
+      "obs:E288_200:69": 8,
+      "obs:E288_200:70": 9,
+      "obs:E288_200:71": 9,
+      "obs:E288_200:72": 5,
+      "obs:E288_200:73": 10,
+      "obs:E288_200:74": 5,
+      "obs:E288_200:75": 5,
+      "obs:E288_200:76": 9,
+      "obs:E288_200:77": 8,
+      "obs:E288_200:78": 10,
+      "obs:E288_200:79": 8,
+      "obs:E288_200:80": 81,
+      "obs:E288_200:81": 21,
+      "obs:E288_200:82": 13,
+      "obs:E288_200:83": 6,
+      "obs:E288_200:84": 7,
+      "obs:E288_200:85": 5,
+      "obs:E288_200:86": 6,
+      "obs:E288_200:87": 6,
+      "obs:E288_200:88": 8,
+      "obs:E288_300:0": 3,
+      "obs:E288_300:1": 7,
+      "obs:E288_300:100": 18,
+      "obs:E288_300:101": 8,
+      "obs:E288_300:102": 22,
+      "obs:E288_300:103": 10,
+      "obs:E288_300:104": 18,
+      "obs:E288_300:105": 20,
+      "obs:E288_300:106": 1,
+      "obs:E288_300:107": 1,
+      "obs:E288_300:109": 10,
+      "obs:E288_300:110": 14,
+      "obs:E288_300:111": 5,
+      "obs:E288_300:112": 16,
+      "obs:E288_300:113": 15,
+      "obs:E288_300:114": 6,
+      "obs:E288_300:115": 21,
+      "obs:E288_300:116": 5,
+      "obs:E288_300:117": 3,
+      "obs:E288_300:15": 2,
+      "obs:E288_300:16": 8,
+      "obs:E288_300:17": 11,
+      "obs:E288_300:18": 6,
+      "obs:E288_300:19": 14,
+      "obs:E288_300:2": 10,
+      "obs:E288_300:20": 19,
+      "obs:E288_300:21": 10,
+      "obs:E288_300:22": 14,
+      "obs:E288_300:23": 1,
+      "obs:E288_300:3": 4,
+      "obs:E288_300:33": 9,
+      "obs:E288_300:34": 14,
+      "obs:E288_300:35": 6,
+      "obs:E288_300:36": 20,
+      "obs:E288_300:37": 21,
+      "obs:E288_300:38": 13,
+      "obs:E288_300:39": 22,
+      "obs:E288_300:4": 15,
+      "obs:E288_300:40": 7,
+      "obs:E288_300:41": 7,
+      "obs:E288_300:5": 14,
+      "obs:E288_300:51": 10,
+      "obs:E288_300:52": 12,
+      "obs:E288_300:53": 6,
+      "obs:E288_300:54": 20,
+      "obs:E288_300:55": 20,
+      "obs:E288_300:56": 15,
+      "obs:E288_300:57": 24,
+      "obs:E288_300:58": 14,
+      "obs:E288_300:59": 18,
+      "obs:E288_300:6": 3,
+      "obs:E288_300:60": 11,
+      "obs:E288_300:68": 10,
+      "obs:E288_300:69": 15,
+      "obs:E288_300:70": 3,
+      "obs:E288_300:71": 21,
+      "obs:E288_300:72": 18,
+      "obs:E288_300:73": 14,
+      "obs:E288_300:74": 26,
+      "obs:E288_300:75": 15,
+      "obs:E288_300:76": 24,
+      "obs:E288_300:77": 24,
+      "obs:E288_300:78": 5,
+      "obs:E288_300:79": 14,
+      "obs:E288_300:82": 11,
+      "obs:E288_300:83": 15,
+      "obs:E288_300:84": 2,
+      "obs:E288_300:85": 21,
+      "obs:E288_300:86": 18,
+      "obs:E288_300:87": 10,
+      "obs:E288_300:88": 25,
+      "obs:E288_300:89": 13,
+      "obs:E288_300:90": 22,
+      "obs:E288_300:91": 26,
+      "obs:E288_300:92": 11,
+      "obs:E288_300:93": 18,
+      "obs:E288_300:96": 11,
+      "obs:E288_300:97": 14,
+      "obs:E288_300:98": 2,
+      "obs:E288_300:99": 20,
+      "obs:E288_400:0": 3,
+      "obs:E288_400:1": 5,
+      "obs:E288_400:101": 1,
+      "obs:E288_400:111": 11,
+      "obs:E288_400:112": 15,
+      "obs:E288_400:113": 8,
+      "obs:E288_400:114": 24,
+      "obs:E288_400:115": 21,
+      "obs:E288_400:116": 16,
+      "obs:E288_400:117": 28,
+      "obs:E288_400:118": 16,
+      "obs:E288_400:119": 27,
+      "obs:E288_400:120": 33,
+      "obs:E288_400:121": 20,
+      "obs:E288_400:122": 26,
+      "obs:E288_400:123": 3,
+      "obs:E288_400:124": 1,
+      "obs:E288_400:125": 12,
+      "obs:E288_400:133": 11,
+      "obs:E288_400:134": 15,
+      "obs:E288_400:135": 7,
+      "obs:E288_400:136": 22,
+      "obs:E288_400:137": 22,
+      "obs:E288_400:138": 15,
+      "obs:E288_400:139": 30,
+      "obs:E288_400:140": 18,
+      "obs:E288_400:141": 33,
+      "obs:E288_400:142": 54,
+      "obs:E288_400:143": 115,
+      "obs:E288_400:144": 649,
+      "obs:E288_400:145": 11,
+      "obs:E288_400:146": 3,
+      "obs:E288_400:147": 14,
+      "obs:E288_400:149": 11,
+      "obs:E288_400:150": 1,
+      "obs:E288_400:151": 10,
+      "obs:E288_400:152": 14,
+      "obs:E288_400:153": 6,
+      "obs:E288_400:154": 21,
+      "obs:E288_400:155": 19,
+      "obs:E288_400:156": 18,
+      "obs:E288_400:157": 27,
+      "obs:E288_400:158": 19,
+      "obs:E288_400:159": 27,
+      "obs:E288_400:160": 39,
+      "obs:E288_400:161": 311,
+      "obs:E288_400:162": 113,
+      "obs:E288_400:163": 7,
+      "obs:E288_400:164": 11,
+      "obs:E288_400:165": 3,
+      "obs:E288_400:166": 10,
+      "obs:E288_400:167": 13,
+      "obs:E288_400:168": 6,
+      "obs:E288_400:169": 18,
+      "obs:E288_400:170": 18,
+      "obs:E288_400:171": 16,
+      "obs:E288_400:172": 25,
+      "obs:E288_400:173": 15,
+      "obs:E288_400:174": 22,
+      "obs:E288_400:175": 14,
+      "obs:E288_400:176": 21,
+      "obs:E288_400:19": 3,
+      "obs:E288_400:2": 9,
+      "obs:E288_400:20": 7,
+      "obs:E288_400:21": 10,
+      "obs:E288_400:22": 5,
+      "obs:E288_400:23": 15,
+      "obs:E288_400:24": 17,
+      "obs:E288_400:25": 10,
+      "obs:E288_400:26": 18,
+      "obs:E288_400:27": 5,
+      "obs:E288_400:28": 6,
+      "obs:E288_400:3": 5,
+      "obs:E288_400:4": 13,
+      "obs:E288_400:43": 2,
+      "obs:E288_400:44": 9,
+      "obs:E288_400:45": 13,
+      "obs:E288_400:46": 6,
+      "obs:E288_400:47": 20,
+      "obs:E288_400:48": 21,
+      "obs:E288_400:49": 12,
+      "obs:E288_400:5": 15,
+      "obs:E288_400:50": 21,
+      "obs:E288_400:51": 7,
+      "obs:E288_400:52": 13,
+      "obs:E288_400:53": 12,
+      "obs:E288_400:6": 6,
+      "obs:E288_400:68": 11,
+      "obs:E288_400:69": 15,
+      "obs:E288_400:7": 11,
+      "obs:E288_400:70": 6,
+      "obs:E288_400:71": 23,
+      "obs:E288_400:72": 21,
+      "obs:E288_400:73": 12,
+      "obs:E288_400:74": 24,
+      "obs:E288_400:75": 10,
+      "obs:E288_400:76": 16,
+      "obs:E288_400:77": 20,
+      "obs:E288_400:78": 1,
+      "obs:E288_400:79": 14,
+      "obs:E288_400:8": 1,
+      "obs:E288_400:88": 11,
+      "obs:E288_400:89": 15,
+      "obs:E288_400:90": 6,
+      "obs:E288_400:91": 24,
+      "obs:E288_400:92": 21,
+      "obs:E288_400:93": 14,
+      "obs:E288_400:94": 28,
+      "obs:E288_400:95": 13,
+      "obs:E288_400:96": 22,
+      "obs:E288_400:97": 26,
+      "obs:E288_400:98": 8,
+      "obs:E288_400:99": 18,
+      "obs:E605:0": 3,
+      "obs:E605:1": 7,
+      "obs:E605:10": 10,
+      "obs:E605:11": 3,
+      "obs:E605:12": 8,
+      "obs:E605:13": 10,
+      "obs:E605:14": 7,
+      "obs:E605:15": 16,
+      "obs:E605:16": 17,
+      "obs:E605:17": 11,
+      "obs:E605:18": 20,
+      "obs:E605:19": 11,
+      "obs:E605:2": 10,
+      "obs:E605:20": 13,
+      "obs:E605:21": 13,
+      "obs:E605:22": 1,
+      "obs:E605:23": 10,
+      "obs:E605:25": 2,
+      "obs:E605:26": 9,
+      "obs:E605:27": 13,
+      "obs:E605:28": 9,
+      "obs:E605:29": 21,
+      "obs:E605:3": 6,
+      "obs:E605:30": 19,
+      "obs:E605:31": 11,
+      "obs:E605:32": 22,
+      "obs:E605:33": 10,
+      "obs:E605:34": 18,
+      "obs:E605:35": 20,
+      "obs:E605:36": 10,
+      "obs:E605:37": 18,
+      "obs:E605:38": 5,
+      "obs:E605:39": 1,
+      "obs:E605:4": 16,
+      "obs:E605:40": 12,
+      "obs:E605:41": 2,
+      "obs:E605:42": 10,
+      "obs:E605:43": 15,
+      "obs:E605:44": 11,
+      "obs:E605:45": 23,
+      "obs:E605:46": 19,
+      "obs:E605:47": 10,
+      "obs:E605:48": 24,
+      "obs:E605:49": 10,
+      "obs:E605:5": 18,
+      "obs:E605:50": 18,
+      "obs:E605:51": 24,
+      "obs:E605:52": 12,
+      "obs:E605:53": 20,
+      "obs:E605:54": 7,
+      "obs:E605:55": 5,
+      "obs:E605:56": 16,
+      "obs:E605:58": 15,
+      "obs:E605:6": 11,
+      "obs:E605:60": 11,
+      "obs:E605:61": 15,
+      "obs:E605:62": 6,
+      "obs:E605:63": 23,
+      "obs:E605:64": 18,
+      "obs:E605:65": 7,
+      "obs:E605:66": 24,
+      "obs:E605:67": 9,
+      "obs:E605:68": 18,
+      "obs:E605:69": 24,
+      "obs:E605:7": 19,
+      "obs:E605:70": 10,
+      "obs:E605:71": 24,
+      "obs:E605:72": 7,
+      "obs:E605:73": 6,
+      "obs:E605:74": 2,
+      "obs:E605:75": 10,
+      "obs:E605:76": 14,
+      "obs:E605:77": 6,
+      "obs:E605:78": 16,
+      "obs:E605:79": 16,
+      "obs:E605:8": 9,
+      "obs:E605:80": 10,
+      "obs:E605:81": 19,
+      "obs:E605:82": 7,
+      "obs:E605:83": 15,
+      "obs:E605:84": 15,
+      "obs:E605:85": 2,
+      "obs:E605:86": 12,
+      "obs:E605:87": 1,
+      "obs:E605:88": 1,
+      "obs:E605:89": 9,
+      "obs:E605:9": 9,
+      "obs:E772:0": 3,
+      "obs:E772:1": 9,
+      "obs:E772:12": 3,
+      "obs:E772:13": 10,
+      "obs:E772:14": 6,
+      "obs:E772:15": 12,
+      "obs:E772:16": 10,
+      "obs:E772:17": 16,
+      "obs:E772:18": 14,
+      "obs:E772:2": 6,
+      "obs:E772:28": 3,
+      "obs:E772:29": 10,
+      "obs:E772:3": 12,
+      "obs:E772:30": 8,
+      "obs:E772:31": 12,
+      "obs:E772:32": 10,
+      "obs:E772:33": 16,
+      "obs:E772:34": 18,
+      "obs:E772:35": 4,
+      "obs:E772:36": 11,
+      "obs:E772:4": 9,
+      "obs:E772:42": 3,
+      "obs:E772:43": 10,
+      "obs:E772:44": 8,
+      "obs:E772:45": 12,
+      "obs:E772:46": 10,
+      "obs:E772:47": 16,
+      "obs:E772:48": 19,
+      "obs:E772:49": 10,
+      "obs:E772:5": 10,
+      "obs:E772:50": 13,
+      "obs:E772:51": 1,
+      "obs:E772:52": 9,
+      "obs:E772:57": 11,
+      "obs:E772:58": 8,
+      "obs:E772:59": 17,
+      "obs:E772:6": 8,
+      "obs:E772:60": 8,
+      "obs:E772:61": 17,
+      "obs:E772:62": 20,
+      "obs:E772:63": 12,
+      "obs:E772:64": 20,
+      "obs:E772:65": 8,
+      "obs:E772:66": 17,
+      "obs:E772:68": 12,
+      "obs:E772:69": 6,
+      "obs:E772:70": 17,
+      "obs:E772:71": 8,
+      "obs:E772:72": 17,
+      "obs:E772:73": 19,
+      "obs:E772:74": 11,
+      "obs:E772:75": 18,
+      "obs:E772:76": 7,
+      "obs:E772:77": 17,
+      "obs:E772:79": 14,
+      "obs:E772:80": 6,
+      "obs:E772:81": 17,
+      "obs:E772:82": 10,
+      "obs:E772:83": 18,
+      "obs:E772:84": 19,
+      "obs:E772:86": 14,
+      "obs:E772:87": 16,
+      "obs:E772:88": 10,
+      "obs:E772:89": 18,
+      "obs:E772:90": 19,
+      "obs:E772:91": 3,
+      "obs:E772:92": 11,
+      "obs:E772:93": 7,
+      "obs:E772:94": 10,
+      "obs:E772:95": 20,
+      "obs:E772:96": 12,
+      "obs:E772:97": 22,
+      "obs:E772:98": 7,
+      "obs:E772:99": 12,
+      "obs:LHCb_7:0": 9,
+      "obs:LHCb_7:1": 3,
+      "obs:LHCb_7:2": 10,
+      "obs:LHCb_7:3": 10,
+      "obs:LHCb_7:4": 3,
+      "obs:LHCb_7:5": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:10": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:9": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:15": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:16": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:10": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:9": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:13": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:14": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:15": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:16": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:17": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:16": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:17": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:18": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:19": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:20": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.244.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.244.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.244.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.244.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.345.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.245.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.245.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.245.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.245.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.245.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:10": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:11": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:2": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:3": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:4": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:6": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:9": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:15": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:16": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:19": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:20": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:10": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:2": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:3": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:4": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:6": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:9": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:15": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:16": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:17": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:9": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.25_0.3.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.375_0.475.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.375_0.475.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.375_0.475.yaml:2": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.3_0.375.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.475_0.6.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.475_0.6.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.475_0.6.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.475_0.6.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.6_0.8.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.6_0.8.yaml:1": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.6_0.8.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.6_0.8.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.375_0.475.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.375_0.475.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.375_0.475.yaml:2": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.3_0.375.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.475_0.6.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.475_0.6.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.475_0.6.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.475_0.6.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.25_0.3.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.2_0.25.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.375_0.475.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.375_0.475.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.3_0.375.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.3_0.375.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.475_0.6.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.475_0.6.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.6_0.8.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.6_0.8.yaml:1": 6,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.6_0.8.yaml:2": 7,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.6_0.8.yaml:3": 8,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.25_0.3.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.2_0.25.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.375_0.475.yaml:0": 7,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.375_0.475.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.375_0.475.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.3_0.375.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.475_0.6.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.475_0.6.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.25_0.3.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.2_0.25.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.375_0.475.yaml:0": 7,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.375_0.475.yaml:1": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.375_0.475.yaml:2": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.3_0.375.yaml:0": 6,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.3_0.375.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.475_0.6.yaml:0": 7,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.475_0.6.yaml:1": 8,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.475_0.6.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.475_0.6.yaml:3": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.25_0.3.yaml:0": 7,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.2_0.25.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.375_0.475.yaml:0": 9,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.375_0.475.yaml:1": 8,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.375_0.475.yaml:2": 9,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.3_0.375.yaml:0": 8,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.3_0.375.yaml:1": 6,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.475_0.6.yaml:0": 9,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.475_0.6.yaml:1": 10,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.475_0.6.yaml:2": 8,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.475_0.6.yaml:3": 8,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.6_0.8.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.6_0.8.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.6_0.8.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.6_0.8.yaml:3": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.375_0.475.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.375_0.475.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.375_0.475.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.3_0.375.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.475_0.6.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.475_0.6.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.2_0.25.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.375_0.475.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.375_0.475.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.375_0.475.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.3_0.375.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.475_0.6.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.475_0.6.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.475_0.6.yaml:3": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.25_0.3.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.2_0.25.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.375_0.475.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.375_0.475.yaml:2": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.3_0.375.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.3_0.375.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.475_0.6.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.475_0.6.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.475_0.6.yaml:3": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.6_0.8.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.6_0.8.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.6_0.8.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.6_0.8.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.25_0.3.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.2_0.25.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.375_0.475.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.375_0.475.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.3_0.375.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.475_0.6.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.475_0.6.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.25_0.3.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.2_0.25.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.375_0.475.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.375_0.475.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.3_0.375.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.475_0.6.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.25_0.3.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.2_0.25.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.375_0.475.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.375_0.475.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.3_0.375.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.475_0.6.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.475_0.6.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.475_0.6.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.475_0.6.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.25_0.3.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.2_0.25.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.375_0.475.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.375_0.475.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.3_0.375.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.475_0.6.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.475_0.6.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.475_0.6.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.475_0.6.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.6_0.8.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.6_0.8.yaml:1": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.6_0.8.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.6_0.8.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.25_0.3.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.2_0.25.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.375_0.475.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.375_0.475.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.3_0.375.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.3_0.375.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.475_0.6.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.475_0.6.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.475_0.6.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.475_0.6.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.25_0.3.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.2_0.25.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.375_0.475.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.375_0.475.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.3_0.375.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.3_0.375.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.475_0.6.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.25_0.3.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.2_0.25.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.375_0.475.yaml:0": 9,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.375_0.475.yaml:1": 7,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.375_0.475.yaml:2": 6,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.3_0.375.yaml:0": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.3_0.375.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.475_0.6.yaml:0": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.475_0.6.yaml:1": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.475_0.6.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.475_0.6.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.6_0.8.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.6_0.8.yaml:1": 6,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.6_0.8.yaml:2": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.6_0.8.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.25_0.3.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.2_0.25.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.375_0.475.yaml:0": 10,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.375_0.475.yaml:1": 7,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.375_0.475.yaml:2": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.3_0.375.yaml:0": 9,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.3_0.375.yaml:1": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.475_0.6.yaml:0": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.475_0.6.yaml:1": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.475_0.6.yaml:2": 7,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.475_0.6.yaml:3": 7,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.6_0.8.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.6_0.8.yaml:1": 6,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.6_0.8.yaml:2": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.6_0.8.yaml:3": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.25_0.3.yaml:0": 6,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.2_0.25.yaml:0": 6,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.375_0.475.yaml:0": 9,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.375_0.475.yaml:1": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.375_0.475.yaml:2": 9,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.3_0.375.yaml:0": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.3_0.375.yaml:1": 6,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.475_0.6.yaml:0": 9,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.475_0.6.yaml:1": 10,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.475_0.6.yaml:2": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.475_0.6.yaml:3": 8,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.6_0.8.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.6_0.8.yaml:1": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.6_0.8.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.6_0.8.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.375_0.475.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.375_0.475.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.375_0.475.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.3_0.375.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.475_0.6.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.475_0.6.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.25_0.3.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.2_0.25.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.375_0.475.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.375_0.475.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.3_0.375.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.475_0.6.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.475_0.6.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.475_0.6.yaml:3": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.25_0.3.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.2_0.25.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.375_0.475.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.375_0.475.yaml:2": 6,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.3_0.375.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.3_0.375.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.475_0.6.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.475_0.6.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.475_0.6.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.6_0.8.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.6_0.8.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.6_0.8.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.6_0.8.yaml:3": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.25_0.3.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.2_0.25.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.375_0.475.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.375_0.475.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.3_0.375.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.475_0.6.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.6_0.8.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.12_0.2_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.25_0.3.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.2_0.25.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.375_0.475.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.375_0.475.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.3_0.375.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.475_0.6.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.2_0.35_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.25_0.3.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.2_0.25.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.375_0.475.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.375_0.475.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.375_0.475.yaml:2": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.3_0.375.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.475_0.6.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.475_0.6.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.475_0.6.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.475_0.6.yaml:3": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.6_0.8.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.6_0.8.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.6_0.8.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.6_0.8.yaml:3": 3
+    },
+    "worker_status": "failed"
+  },
+  "optimizer_history_reset": false,
+  "phase": "P1",
+  "plateau": {
+    "eligible": true,
+    "passed": false,
+    "windows": [
+      {
+        "gradient_max": 11.723124894132344,
+        "passed": false,
+        "prediction_span_max": 0.0031606641559491777,
+        "prediction_span_rms": 0.00038045204286760875,
+        "q_range": 0.00013870938690629941,
+        "same_mu": true
+      },
+      {
+        "gradient_max": 0.4090572535270205,
+        "passed": false,
+        "prediction_span_max": 0.5355344311915928,
+        "prediction_span_rms": 0.04630258749915097,
+        "q_range": 0.0070927786656938,
+        "same_mu": true
+      }
+    ]
+  },
+  "production_selected": false,
+  "recorded_utc": "2026-09-14T18:25:27Z",
+  "run_id": "continuation-w8-feasibility-2h-local-a01-09192af5f429",
+  "schema": "tmd-result-v1",
+  "slurm": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "SLURM_ARRAY_JOB_ID": null,
+    "SLURM_ARRAY_TASK_ID": null,
+    "SLURM_CPUS_PER_TASK": null,
+    "SLURM_JOB_GPUS": null,
+    "SLURM_JOB_ID": null
+  },
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "start_checkpoint": "restart:97d880cdeedcb180e4015fffb8f3827355cf300f10e50bbc6adf18e6e03f4245",
+  "status": "failed",
+  "stop_reason": "ValueError: nonfinite boundary or zero damping; no clipping",
+  "supervisor": {
+    "elapsed_seconds": 2206.107684707269,
+    "end_utc": "2026-09-14T17:20:59Z",
+    "exit_code": 2,
+    "model_stop_escalation_seconds": 2.0,
+    "peaks": {
+      "gpu_device_memory_total_gib": 23.98828125,
+      "gpu_device_memory_used_gib_max": 10.1353759765625,
+      "gpu_memory_utilization_percent_max": 21.0,
+      "gpu_owned_gib": 9.15234375,
+      "gpu_power_watts_max": 156.419,
+      "gpu_temperature_celsius_max": 46.0,
+      "gpu_utilization_percent_max": 99.0,
+      "host_available_min_gib": 14.922504425048828,
+      "rss_gib": 1.4393081665039062,
+      "samples": 10568
+    },
+    "resource_peaks_are_sampled_not_continuous": true,
+    "resource_telemetry_status": "sampled",
+    "stop_reason": null,
+    "telemetry_staleness_limit_seconds": 1.0,
+    "terminal_sample_unavailable_after_owned_exit": null
+  },
+  "trajectory_budget": {
+    "accepted_updates": 4273,
+    "forwards": 17822,
+    "full_calls": 8397,
+    "model_seconds": 13757
+  },
+  "trajectory_counters": {
+    "accepted_updates": 252,
+    "forwards": 2349,
+    "full_calls": 283,
+    "infeasible_trials": 1735,
+    "line_search_rejections": 1754
+  },
+  "trajectory_model_seconds": 8762.75273999467,
+  "trial_id": "continuation-w8-feasibility-2h-local-a01",
+  "trial_sha256": "f1bab41846735de0cde0050f6b092845308aa820f720cfe982243b7cb6fad20d",
+  "worker_status": "failed",
+  "worker_summary_missing": false
+}

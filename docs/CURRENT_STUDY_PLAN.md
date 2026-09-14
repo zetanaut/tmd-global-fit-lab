@@ -6,7 +6,18 @@ historical trial specifications and results. The study remains active until
 adequate optimization and controlled architecture comparisons support a choice.
 Completing a job batch or publishing partial results does not complete the study.
 
-## Latest completed result: local width-8 P1B
+## Latest local outcome: width-8 candidate-domain failure
+
+The local two-hour instrumented attempt is now terminal: 75 new accepted
+updates, 252 cumulative, q/N 16.411446133424036, and an audited positive endpoint
+without convergence. It consumed 2206.108 model-window seconds, then a full-size
+candidate underflowed the boundary damping and the exception aborted the run.
+See the [failure outcome and repair scope](../decisions/2026-09-14-local-w8-domain-failure-outcome.md).
+The owner requested a tested numerical-domain rejection remedy; any successor
+must preserve the original attempt and charge only the remaining opportunity.
+No local successor has been launched by this outcome record.
+
+## Prior local result and complementary UVA work
 
 The complementary UVA action is a
 [seven-hour instrumented width-16 continuation](../decisions/2026-09-14-uva-w16-long-training-plan.md)
