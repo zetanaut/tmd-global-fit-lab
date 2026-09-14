@@ -19,6 +19,17 @@ def test_extended_policy_preserves_legacy_ceilings():
     t=resumed(); t.pop('execution_policy')
     with pytest.raises(ValueError):validate_trial(t)
 
+def test_p1b_policy_allows_one_new_96_update_segment_but_caps_its_trajectory():
+    t=resumed()
+    t['execution_policy']='p1-resume-v2'
+    t['restart_binding']['accepted_updates_before']=81
+    t['phases'][0]['updates']=96
+    t['budget']['accepted_updates']=96
+    t['trajectory_budget']=dict(accepted_updates=177,forwards=4741,full_calls=612,model_seconds=17696)
+    assert validate_trial(t)
+    t['trajectory_budget']['accepted_updates']=193
+    with pytest.raises(ValueError):validate_trial(t)
+
 @pytest.mark.parametrize('damage',['reset','remaining','counter','reserve','phase','algorithm','elapsed'])
 def test_resume_invalid_bindings_and_grants_fail_before_model(damage):
     t=resumed()

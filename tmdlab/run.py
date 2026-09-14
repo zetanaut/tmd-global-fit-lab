@@ -388,7 +388,7 @@ def main(args):
     if claim["trial_id"]!=trial["trial_id"] or claim["trial_sha256"]!=sha(args.trial) or claim["code_commit"]!=commit:
         raise ValueError("claim/spec/code mismatch")
     prior_seconds=0.; model_seconds=budget['segment_seconds']
-    if trial.get('execution_policy')=='p1-resume-v1':
+    if trial.get('execution_policy') in ('p1-resume-v1','p1-resume-v2'):
         manifest=read(root/'restarts'/(trial['start_checkpoint'][8:]+'.json'))
         prior_seconds=elapsed_before(root,manifest)
         model_seconds=segment_allowance(trial,prior_seconds)
@@ -398,7 +398,7 @@ def main(args):
     signal.signal(signal.SIGTERM,terminate)
     t0=time.monotonic(); epoch=time.time()
     env=os.environ.copy()
-    if trial.get('execution_policy')=='p1-resume-v1' and args.device.startswith('cuda'):
+    if trial.get('execution_policy') in ('p1-resume-v1','p1-resume-v2') and args.device.startswith('cuda'):
         # Launch wrapper proves CUDA-0/NVML equality once, before accepting a
         # trial. A numeric Slurm index is never substituted for this UUID.
         canonical_uuid(env.get('TMD_GPU_UUID',''))
@@ -406,7 +406,7 @@ def main(args):
             logical_cuda_device=args.device,slurm_physical_devices=env.get('SLURM_STEP_GPUS') or env.get('SLURM_JOB_GPUS')))
     env.update(PYTHONDONTWRITEBYTECODE="1",PYTHONNOUSERSITE="1",OMP_NUM_THREADS="1",OPENBLAS_NUM_THREADS="1",MKL_NUM_THREADS="1",CUBLAS_WORKSPACE_CONFIG=":4096:8")
     launch=dict(schema="tmd-launch-v1",run_id=trial["trial_id"]+"-"+uuid.uuid4().hex[:12],trial_id=trial["trial_id"],trial_sha256=sha(args.trial),code_commit=commit,bundle_identity=trial["bundle_identity"],claim=claim,t0_utc=utc(),t0_epoch=epoch,t0_monotonic=t0,model_deadline_monotonic=t0+budget["segment_seconds"],final_deadline_monotonic=t0+budget["total_seconds"],budget=budget,device=args.device,platform=platform.platform(),python=sys.version,slurm={k:os.environ.get(k) for k in ("SLURM_JOB_ID","SLURM_ARRAY_JOB_ID","SLURM_ARRAY_TASK_ID","SLURM_CPUS_PER_TASK","SLURM_JOB_GPUS","CUDA_VISIBLE_DEVICES")})
-    if trial.get('execution_policy')=='p1-resume-v1':
+    if trial.get('execution_policy') in ('p1-resume-v1','p1-resume-v2'):
         launch.update(model_deadline_monotonic=t0+model_seconds,
             model_seconds_before=prior_seconds,effective_segment_seconds=model_seconds,
             trajectory_budget=trial['trajectory_budget'])

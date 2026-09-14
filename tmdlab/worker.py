@@ -66,7 +66,7 @@ def run(args):
     launch=read(args.out/"launch.json")
     if launch["trial_sha256"]!=sha(args.trial): raise ValueError("trial changed after acceptance")
     deadline=float(launch["model_deadline_monotonic"])
-    resumed=trial.get('execution_policy')=='p1-resume-v1'
+    resumed=trial.get('execution_policy') in ('p1-resume-v1','p1-resume-v2')
     if resumed and args.device.startswith('cuda'):
         if canonical_uuid(torch.cuda.get_device_properties(0).uuid)!=canonical_uuid(os.environ.get('TMD_GPU_UUID','')):
             raise ValueError('CUDA worker and supervisor GPU UUID mismatch')

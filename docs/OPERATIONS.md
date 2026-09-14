@@ -76,6 +76,13 @@ Exact trial limits may be smaller. Ancestor result receipts determine spent
 model-window time; a segment cannot exceed the remaining cumulative allowance
 (at most21,600s in this policy). All dispatched calls remain charged.
 
+`p1-resume-v2` is a separately named, bounded second P1 opportunity after a
+recorded decision. It retains the same restart format, fixed mu, optimizer and
+per-segment limits, but permits a trajectory ledger up to192 accepted updates,
+8,192 forwards,1,024 full calls and43,200 model seconds. It never alters a V1
+record or grants an unrecorded continuation: the exact new trial must bind its
+ancestor state, all already-spent counters and its own total ceiling.
+
 The atomic `restart.npz` is authoritative if a hard kill leaves `last.npz`
 behind. Saved-only audit records which file it evaluated; import requires exact
 agreement with that audited endpoint and a hash-bound terminal dispatch ledger.
