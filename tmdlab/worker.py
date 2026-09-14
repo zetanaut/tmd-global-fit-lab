@@ -22,6 +22,7 @@ from .checkpoints import load_overlay
 from .lbfgs import two_loop
 from .restart import load_restart, unpack_state, pack_state, validate_arrays, update_history, COUNTERS
 from .gpu_telemetry import canonical_uuid
+from .domain import NumericalDomainError, CANDIDATE_DOMAIN_POLICY
 
 class Stop(RuntimeError):
     pass
@@ -117,15 +118,37 @@ def run(args):
         write(args.out/"counters.json",dict(counts,time_utc=utc(),call_in_flight=True,
             trajectory_counters={k:prior[k]+counts[k] for k in COUNTERS}))
         call_start=time.monotonic()
-        result=engine.evaluate(theta,cot,deadline=deadline)
+        try:
+            result=engine.evaluate(theta,cot,deadline=deadline)
+        except NumericalDomainError as exc:
+            # The dispatch is charged and has returned with a known domain
+            # failure. Do not leave it mislabeled as still in flight.
+            max_call_seconds=max(max_call_seconds,time.monotonic()-call_start)
+            write(args.out/"counters.json",dict(counts,time_utc=utc(),call_in_flight=False,
+                trajectory_counters={k:prior[k]+counts[k] for k in COUNTERS},
+                max_call_seconds=max_call_seconds,call_outcome='numerical_domain_error',
+                domain_error_code=exc.code))
+            guard()
+            raise
         max_call_seconds=max(max_call_seconds,time.monotonic()-call_start)
         write(args.out/"counters.json",dict(counts,time_utc=utc(),call_in_flight=False,
             trajectory_counters={k:prior[k]+counts[k] for k in COUNTERS},max_call_seconds=max_call_seconds))
         guard()
         return result
     def full(theta,mu,diagnostic_candidate=None):
-        values,_=call(theta)
-        p=metric.score(values,mu)
+        values=None
+        try:
+            values,_=call(theta)
+            p=metric.score(values,mu)
+        except NumericalDomainError as exc:
+            if (diagnostic_candidate is None
+                or trial.get('optimizer',{}).get('candidate_errors') != CANDIDATE_DOMAIN_POLICY):
+                raise
+            # Catch only the candidate forward. In particular, the VJP below,
+            # preflight, and endpoint evaluations must still fail closed.
+            diagnostics.domain_rejection(**diagnostic_candidate, error=exc, values=values,
+                counts=counts, prior=prior, elapsed=time.monotonic()-launch['t0_monotonic'])
+            return None
         if diagnostics is not None and diagnostic_candidate is not None:
             diagnostics.candidate(**diagnostic_candidate, values=values, score=p,
                 counts=counts, prior=prior, elapsed=time.monotonic()-launch['t0_monotonic'])
@@ -240,10 +263,19 @@ def run(args):
                     counts["line_search_rejections"]+=1; alpha*=.5
                 if stopped_for_reserve: break
                 if accepted is None: raise Stop("line_search_exhausted_32_trials")
+                # Certify the proposed snapshot before mutating live accepted
+                # state. A genuine curvature-validation failure must not leave
+                # counters/point ahead of the last atomic checkpoint.
+                next_history=update_history(list(history),point['theta'],point['gradient'],accepted['theta'],accepted['gradient'])
+                next_states=(states+[dict(accepted)])[-21:]
+                next_counts=dict(counts,accepted_updates=counts['accepted_updates']+1)
+                prospective=pack_state(accepted,next_history,next_states,
+                    {k:prior[k]+next_counts[k] for k in COUNTERS},mu=accepted['mu'],last_alpha=alpha)
+                validate_arrays(prospective,accepted['theta'].size)
                 with termination.transaction():
-                    history=update_history(history,point['theta'],point['gradient'],accepted['theta'],accepted['gradient'])
+                    history=next_history
                     point=accepted; counts['accepted_updates']+=1; phase_steps+=1; last_alpha=alpha
-                    states.append(dict(point)); states=states[-21:]; step=counts['accepted_updates']
+                    states=next_states; step=counts['accepted_updates']
                     commit_optimizer()
                     save_npz(args.out/f'checkpoint-{step:03d}.npz',theta=point['theta'],values=point['values'],penalized_gradient=point['gradient'])
                     save_npz(args.out/'last.npz',theta=point['theta'],values=point['values'],penalized_gradient=point['gradient'])

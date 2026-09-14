@@ -1,0 +1,216 @@
+{
+  "baseline_code_commit": "59b834fcc21e3f6786563ac7600b0315a56c5de2",
+  "baseline_file_sha256": {
+    "engine": "a2992e1755cfe842dfc400aba3313e10494b4855148b0af1aa934ebb16b32178",
+    "metric": "5f33ef93e32abcfdf0b5b6bd34df34b1d536b1e28d781af86e8045b2edaec6dc",
+    "models": "26a0b07c45d5c447f01338aac830fd7bc920c2c4d47fe7005a53b27913103ea4"
+  },
+  "boundary_check_calls": 5,
+  "boundary_condition_probe_calls": 5,
+  "boundary_probe_nodes": 13424,
+  "boundary_probe_observation": "obs:E288_200:0",
+  "boundary_probes": [
+    {
+      "alpha": 0.0,
+      "finite_logits": true,
+      "max_logit": 2.668721875814816,
+      "min_logit": -3.6929549718682964,
+      "verdict": "boundary_valid",
+      "zero_damping_nodes": 0
+    },
+    {
+      "alpha": 1.0,
+      "finite_logits": true,
+      "max_logit": 3391.775623936569,
+      "min_logit": -2647.268649420182,
+      "verdict": "boundary_zero_damping",
+      "zero_damping_nodes": 6400
+    },
+    {
+      "alpha": 0.5,
+      "finite_logits": true,
+      "max_logit": 1697.1239188817262,
+      "min_logit": -1382.488646508826,
+      "verdict": "boundary_zero_damping",
+      "zero_damping_nodes": 3008
+    },
+    {
+      "alpha": 0.25,
+      "finite_logits": true,
+      "max_logit": 849.7980663543044,
+      "min_logit": -663.4194750617264,
+      "verdict": "boundary_valid",
+      "zero_damping_nodes": 0
+    },
+    {
+      "alpha": 0.125,
+      "finite_logits": true,
+      "max_logit": 426.13514008996344,
+      "min_logit": -332.7779460019841,
+      "verdict": "boundary_valid",
+      "zero_damping_nodes": 0
+    }
+  ],
+  "current_file_sha256": {
+    "contracts": "02b5920e2f1801bcd6e7b86c1e3d3794fdb145575daac74809cf54830495f407",
+    "diagnostics": "678f8789e00b122e7f0392555d823459183c0c41e33d9429bfd4a4e924891bf9",
+    "domain": "d055d58762b00401dc2f7983a3f9eee9e44ced3f29ed6b78f3ebc7a09948ec92",
+    "engine": "a06d0d227fd6079ffbeab74cc57760a0c38fdea27e5f0e591809552eca1e28fd",
+    "metric": "34d00ff434aaaa2a6849ceb32a941644caa036eb1dcd5036faf9ab403435ebd2",
+    "models": "8c0e57c6a40af7935ae73257d67071f7984033d23079214e121b06c78cc2c496",
+    "restart": "fac0829b1baad177e64e72c1f23feb56596e8ef97ef50a05d1b3e5e6c4a7d51d",
+    "worker": "16b36f556ad7df04d3fe76ade2429ad22f065e9481d383ef5c19f064737ecb47"
+  },
+  "curvature_certificates": [
+    {
+      "absolute_difference": 3.737202007514579e-21,
+      "absolute_error_bound": 2.6747889575243912e-15,
+      "reference_dot": 1.091384802781095e-08,
+      "saved_dot": 1.0913848027814686e-08,
+      "sum_absolute_products": 0.0076532265263020705
+    },
+    {
+      "absolute_difference": 2.884792386278684e-21,
+      "absolute_error_bound": 3.751391453767363e-17,
+      "reference_dot": 6.918434741454679e-10,
+      "saved_dot": 6.918434741425831e-10,
+      "sum_absolute_products": 0.00010733650033865694
+    },
+    {
+      "absolute_difference": 3.411292846168686e-19,
+      "absolute_error_bound": 7.618854797607231e-15,
+      "reference_dot": 6.184961038782897e-08,
+      "saved_dot": 6.18496103881701e-08,
+      "sum_absolute_products": 0.02179941018264793
+    },
+    {
+      "absolute_difference": 9.907142196547612e-21,
+      "absolute_error_bound": 2.4995282766461977e-16,
+      "reference_dot": 5.781650175517292e-09,
+      "saved_dot": 5.781650175527199e-09,
+      "sum_absolute_products": 0.0007151762779735619
+    },
+    {
+      "absolute_difference": 2.146533689575107e-22,
+      "absolute_error_bound": 2.339316052711279e-18,
+      "reference_dot": 1.6177940579292858e-09,
+      "saved_dot": 1.6177940579290712e-09,
+      "sum_absolute_products": 6.693356355330682e-06
+    },
+    {
+      "absolute_difference": 5.936468461139941e-21,
+      "absolute_error_bound": 5.564675940089384e-17,
+      "reference_dot": 3.842793466096689e-10,
+      "saved_dot": 3.8427934661560535e-10,
+      "sum_absolute_products": 0.00015921901200901986
+    },
+    {
+      "absolute_difference": 3.6687114527951883e-20,
+      "absolute_error_bound": 2.9568601542979776e-16,
+      "reference_dot": 1.628625061698653e-07,
+      "saved_dot": 1.6286250616982863e-07,
+      "sum_absolute_products": 0.0008460301327243144
+    },
+    {
+      "absolute_difference": 3.4728350837426314e-20,
+      "absolute_error_bound": 1.7996222420120365e-15,
+      "reference_dot": 8.651467552912633e-07,
+      "saved_dot": 8.651467552912285e-07,
+      "sum_absolute_products": 0.005149160138838402
+    },
+    {
+      "absolute_difference": 2.1358782797964437e-17,
+      "absolute_error_bound": 3.7315271893551775e-13,
+      "reference_dot": 0.0006665133692950978,
+      "saved_dot": 0.0006665133692950765,
+      "sum_absolute_products": 1.0676813506670846
+    },
+    {
+      "absolute_difference": 8.271806125530277e-23,
+      "absolute_error_bound": 1.14947009108507e-18,
+      "reference_dot": 1.7558904691381962e-08,
+      "saved_dot": 1.7558904691382045e-08,
+      "sum_absolute_products": 3.2889155488458357e-06
+    },
+    {
+      "absolute_difference": 1.137373342260413e-22,
+      "absolute_error_bound": 2.2234257739605932e-18,
+      "reference_dot": 1.1069320862330092e-09,
+      "saved_dot": 1.106932086233123e-09,
+      "sum_absolute_products": 6.361765874900338e-06
+    },
+    {
+      "absolute_difference": 9.279932497079279e-23,
+      "absolute_error_bound": 1.1579648840061626e-18,
+      "reference_dot": 4.104088509521843e-10,
+      "saved_dot": 4.104088509520915e-10,
+      "sum_absolute_products": 3.3132212326031517e-06
+    },
+    {
+      "absolute_difference": 1.0842021724855044e-19,
+      "absolute_error_bound": 3.1696186829082295e-15,
+      "reference_dot": 0.0007753797728967201,
+      "saved_dot": 0.00077537977289672,
+      "sum_absolute_products": 0.009069055603081046
+    },
+    {
+      "absolute_difference": 0.0,
+      "absolute_error_bound": 4.2168553843753655e-16,
+      "reference_dot": 0.0001202016207702984,
+      "saved_dot": 0.0001202016207702984,
+      "sum_absolute_products": 0.0012065456377220358
+    },
+    {
+      "absolute_difference": 1.0587911840678754e-22,
+      "absolute_error_bound": 2.8391538672752967e-18,
+      "reference_dot": 9.176950888096925e-07,
+      "saved_dot": 9.176950888096924e-07,
+      "sum_absolute_products": 8.123514802227631e-06
+    }
+  ],
+  "direction_l2": 12572.15954712584,
+  "effective_model_seconds": 4993,
+  "failed_final_dispatch_retained": true,
+  "finite_equivalence": [
+    {
+      "all_metric_fields_bit_identical": true,
+      "checkpoint": "initial.npz",
+      "sha256": "ee2cb5099231b1fa264134ab7158d404a0e80b9ef4dff072878d76ff750482e9",
+      "synthetic_predictions_and_vjp_bit_identical": true
+    },
+    {
+      "all_metric_fields_bit_identical": true,
+      "checkpoint": "checkpoint-073.npz",
+      "sha256": "4452dc2545573f4012f19faf766cf79567a199c36dcafb47420322748641d7ed",
+      "synthetic_predictions_and_vjp_bit_identical": true
+    },
+    {
+      "all_metric_fields_bit_identical": true,
+      "checkpoint": "checkpoint-075.npz",
+      "sha256": "d98a576e789ba45ed9a789662598dc91f7868c7c5285a251697db08d788454ad",
+      "synthetic_predictions_and_vjp_bit_identical": true
+    }
+  ],
+  "full_data_forward_vjp_calls": 0,
+  "full_observable_feasibility_at_smaller_alpha": "not_established_by_this_engineering_probe",
+  "g_dot_direction": -833.7636807056105,
+  "generated_utc": "2026-09-14T18:49:06Z",
+  "input_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "model_seconds_before": 8762.75273999467,
+  "optimizer_arrays_bit_identical": true,
+  "optimizer_updates": 0,
+  "passed": true,
+  "restart_identity": "f286d60f6e62ae825ef007b4a6638deed379313da1a80b0ed03a369a9550b978",
+  "restored_counters": {
+    "accepted_updates": 252,
+    "forwards": 2349,
+    "full_calls": 283,
+    "infeasible_trials": 1735,
+    "line_search_rejections": 1754
+  },
+  "schema": "tmd-domain-repair-engineering-v1",
+  "synthetic_engine_evaluations": 6,
+  "synthetic_rows_per_evaluation": 2,
+  "trial_sha256": "91c88002f2f99728370d90090f7f160291bb7a439a750af2e9d9b2a921a21840",
+  "verified_input_files": 4600
+}

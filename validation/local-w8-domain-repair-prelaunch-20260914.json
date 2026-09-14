@@ -1,0 +1,108 @@
+{
+  "baseline_code_commit": "59b834fcc21e3f6786563ac7600b0315a56c5de2",
+  "baseline_file_sha256": {
+    "engine": "a2992e1755cfe842dfc400aba3313e10494b4855148b0af1aa934ebb16b32178",
+    "metric": "5f33ef93e32abcfdf0b5b6bd34df34b1d536b1e28d781af86e8045b2edaec6dc",
+    "models": "26a0b07c45d5c447f01338aac830fd7bc920c2c4d47fe7005a53b27913103ea4"
+  },
+  "boundary_check_calls": 5,
+  "boundary_condition_probe_calls": 5,
+  "boundary_probe_nodes": 13424,
+  "boundary_probe_observation": "obs:E288_200:0",
+  "boundary_probes": [
+    {
+      "alpha": 0.0,
+      "finite_logits": true,
+      "max_logit": 2.668721875814816,
+      "min_logit": -3.6929549718682964,
+      "verdict": "boundary_valid",
+      "zero_damping_nodes": 0
+    },
+    {
+      "alpha": 1.0,
+      "finite_logits": true,
+      "max_logit": 3391.775623936569,
+      "min_logit": -2647.268649420182,
+      "verdict": "boundary_zero_damping",
+      "zero_damping_nodes": 6400
+    },
+    {
+      "alpha": 0.5,
+      "finite_logits": true,
+      "max_logit": 1697.1239188817262,
+      "min_logit": -1382.488646508826,
+      "verdict": "boundary_zero_damping",
+      "zero_damping_nodes": 3008
+    },
+    {
+      "alpha": 0.25,
+      "finite_logits": true,
+      "max_logit": 849.7980663543044,
+      "min_logit": -663.4194750617264,
+      "verdict": "boundary_valid",
+      "zero_damping_nodes": 0
+    },
+    {
+      "alpha": 0.125,
+      "finite_logits": true,
+      "max_logit": 426.13514008996344,
+      "min_logit": -332.7779460019841,
+      "verdict": "boundary_valid",
+      "zero_damping_nodes": 0
+    }
+  ],
+  "current_file_sha256": {
+    "contracts": "02b5920e2f1801bcd6e7b86c1e3d3794fdb145575daac74809cf54830495f407",
+    "diagnostics": "678f8789e00b122e7f0392555d823459183c0c41e33d9429bfd4a4e924891bf9",
+    "domain": "d055d58762b00401dc2f7983a3f9eee9e44ced3f29ed6b78f3ebc7a09948ec92",
+    "engine": "a06d0d227fd6079ffbeab74cc57760a0c38fdea27e5f0e591809552eca1e28fd",
+    "metric": "34d00ff434aaaa2a6849ceb32a941644caa036eb1dcd5036faf9ab403435ebd2",
+    "models": "8c0e57c6a40af7935ae73257d67071f7984033d23079214e121b06c78cc2c496",
+    "worker": "44f16224b6aaea6a6e601809a5407f57ef4fa60944f0f874c6bebd1078662d3b"
+  },
+  "direction_l2": 12572.15954712584,
+  "effective_model_seconds": 4993,
+  "failed_final_dispatch_retained": true,
+  "finite_equivalence": [
+    {
+      "all_metric_fields_bit_identical": true,
+      "checkpoint": "initial.npz",
+      "sha256": "ee2cb5099231b1fa264134ab7158d404a0e80b9ef4dff072878d76ff750482e9",
+      "synthetic_predictions_and_vjp_bit_identical": true
+    },
+    {
+      "all_metric_fields_bit_identical": true,
+      "checkpoint": "checkpoint-073.npz",
+      "sha256": "4452dc2545573f4012f19faf766cf79567a199c36dcafb47420322748641d7ed",
+      "synthetic_predictions_and_vjp_bit_identical": true
+    },
+    {
+      "all_metric_fields_bit_identical": true,
+      "checkpoint": "checkpoint-075.npz",
+      "sha256": "d98a576e789ba45ed9a789662598dc91f7868c7c5285a251697db08d788454ad",
+      "synthetic_predictions_and_vjp_bit_identical": true
+    }
+  ],
+  "full_data_forward_vjp_calls": 0,
+  "full_observable_feasibility_at_smaller_alpha": "not_established_by_this_engineering_probe",
+  "g_dot_direction": -833.7636807056105,
+  "generated_utc": "2026-09-14T18:39:29Z",
+  "input_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "model_seconds_before": 8762.75273999467,
+  "optimizer_arrays_bit_identical": true,
+  "optimizer_updates": 0,
+  "passed": true,
+  "restart_identity": "f286d60f6e62ae825ef007b4a6638deed379313da1a80b0ed03a369a9550b978",
+  "restored_counters": {
+    "accepted_updates": 252,
+    "forwards": 2349,
+    "full_calls": 283,
+    "infeasible_trials": 1735,
+    "line_search_rejections": 1754
+  },
+  "schema": "tmd-domain-repair-engineering-v1",
+  "synthetic_engine_evaluations": 6,
+  "synthetic_rows_per_evaluation": 2,
+  "trial_sha256": "a655c7bab70e46fd60519de2df7f1356c7c4b17b5ea8c25ff57026a54372e2c4",
+  "verified_input_files": 4600
+}

@@ -1,0 +1,109 @@
+{
+  "schema": "tmd-trial-v1",
+  "trial_id": "continuation-w8-feasibility-2h-local-a03",
+  "status": "ready",
+  "phase": "P1",
+  "kind": "continuation",
+  "hypothesis": "Typed rejection of invalid forward candidates lets unit backtracking recover from the exact update-253 damping-underflow failure and use the remaining original two-hour opportunity, without changing accepted-state algebra, physics or convergence criteria.",
+  "model_family": "nested-film-v1",
+  "model": {
+    "depth": 1,
+    "width": 8
+  },
+  "seed": 2026091208,
+  "start_checkpoint": "restart:f286d60f6e62ae825ef007b4a6638deed379313da1a80b0ed03a369a9550b978",
+  "rows": 2290,
+  "dtype": "float64",
+  "execution_class": "gpu",
+  "claim_required": true,
+  "production_selection": false,
+  "phases": [
+    {
+      "mu": 0.000001,
+      "updates": 4021
+    }
+  ],
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "budget": {
+    "accepted_updates": 4021,
+    "forwards": 15473,
+    "full_calls": 8114,
+    "cache_gib": 12,
+    "cpu_threads": 1,
+    "gpu_gib": 20,
+    "host_available_gib": 8,
+    "rss_gib": 12,
+    "segment_seconds": 4993,
+    "total_seconds": 5593,
+    "endpoint_reserve_seconds": 180
+  },
+  "resource_profile": {
+    "site": "local GPU workstation",
+    "gpu_model": "NVIDIA GeForce RTX 4090",
+    "local_cuda_visible_devices": "0",
+    "local_cuda_uuid": "8a52c480-835f-a522-42bd-cc144e59e44e",
+    "gpus": 1,
+    "cpus_per_task": 2,
+    "host_memory_gib": 16,
+    "cgroup_memory_max_bytes": 17179869184,
+    "wall_seconds": 5893,
+    "systemd_unit": "tmd-w8-feasibility-2h-a03",
+    "single_gpu_lock": "/run/user/1000/tmdlab-gpu-8a52c480-835f-a522-42bd-cc144e59e44e.lock"
+  },
+  "prerequisites": {
+    "verified_input_files": 4600,
+    "restart_review": "decisions/2026-09-14-local-w8-domain-failure-outcome.md",
+    "qualified_local_port_run": "replay-w8-rtx4090-a04-92f6b778b6b5",
+    "parent_run": "continuation-w8-feasibility-2h-local-a01-09192af5f429",
+    "parent_replay_and_two_directional_checks_before_optimization": true,
+    "typed_domain_rejection_and_fail_closed_regression_tests": true,
+    "roundoff_aware_curvature_certificate_tests": true
+  },
+  "technical_retry": {
+    "parent_trial_id": "continuation-w8-feasibility-2h-local-a01",
+    "parent_run_id": "continuation-w8-feasibility-2h-local-a01-09192af5f429",
+    "parent_failure": "incoming boundary damping underflow on first forward candidate for cumulative update 253",
+    "original_opportunity_model_seconds": 7200,
+    "parent_spent_model_seconds": 2206.107684707269,
+    "remaining_seconds_rounded_down": 4993,
+    "new_compute_grant": false
+  },
+  "decision_record": "decisions/2026-09-14-local-w8-domain-repair-a03-plan.md",
+  "execution_policy": "p1-time-window-v1",
+  "restart_binding": {
+    "parent_run_id": "continuation-w8-feasibility-2h-local-a01-09192af5f429",
+    "state_sha256": "fe93b70d67541a02b3236f8cd2bc1b3869d516717a9c76e7627aa20dbcd2e284",
+    "accepted_updates_before": 252,
+    "optimizer_history_reset": false
+  },
+  "trajectory_budget": {
+    "accepted_updates": 4273,
+    "forwards": 17822,
+    "full_calls": 8397,
+    "model_seconds": 13757
+  },
+  "diagnostics": {
+    "schema": "tmd-feasibility-diagnostics-v1",
+    "review_interval_updates": 32,
+    "record_all_violating_rows": true
+  },
+  "study_role": "Technical recovery of the sole local width-8 instrumented continuation",
+  "optimizer": {
+    "line_search": "unit-backtracking",
+    "candidate_errors": "reject-forward-domain-errors-v1"
+  },
+  "stopping_rule": "Preserve the exact parent history and charged costs. Reject only typed numerical-domain failures in proposed forward values/fixed-metric scoring; retain strict positivity, Armijo and 32-attempt limit. Stop on unchanged convergence, endpoint time/call reserve, explicit resource/count bound, exhaustion, or any other fatal error. Reviews do not stop training. No automatic successor.",
+  "supersedes_unlaunched_trial": {
+    "trial_id": "continuation-w8-feasibility-2h-local-a02",
+    "claim_commit": "aa679f728b453de5e4b3d1e4a3e71d57b00373f4",
+    "code_commit": "7b0109e6c0b384b1736b081016d70ba919bcdc0a",
+    "reason": "Cross-BLAS curvature receipt validation failed in CI before worker launch; all A02 model/optimizer counters and model-window time are zero.",
+    "worker_launches": 0,
+    "forwards": 0,
+    "full_calls": 0,
+    "accepted_updates": 0,
+    "model_seconds": 0
+  }
+}

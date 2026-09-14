@@ -10,6 +10,7 @@ import numpy as np
 import torch
 from torch import nn
 from torch.nn import functional as F
+from .domain import NumericalDomainError
 
 @dataclass(frozen=True)
 class Config:
@@ -80,8 +81,10 @@ class Boundary(nn.Module):
         for block in self.blocks:
             h = block(h, c)
         result = -damping*b.square()+u*self.shape_head(h).squeeze(-1)
-        if not torch.isfinite(result).all() or not (damping > 0).all():
-            raise ValueError("nonfinite boundary or zero damping; no clipping")
+        if not torch.isfinite(result).all():
+            raise NumericalDomainError('boundary_nonfinite', "nonfinite boundary or zero damping; no clipping")
+        if not (damping > 0).all():
+            raise NumericalDomainError('boundary_zero_damping', "nonfinite boundary or zero damping; no clipping")
         return result
 
 class CollinsKernel(nn.Module):
@@ -96,7 +99,7 @@ class CollinsKernel(nn.Module):
         u, features = radial(b, self.cfg)
         result = u*self.network(features).squeeze(-1)
         if not torch.isfinite(result).all():
-            raise ValueError("nonfinite shared CS kernel")
+            raise NumericalDomainError('kernel_nonfinite', "nonfinite shared CS kernel")
         return result
 
 class Model(nn.Module):

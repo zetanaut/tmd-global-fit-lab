@@ -93,6 +93,16 @@ the worker; endpoint time and call reserves, convergence and failure gates do.
 The larger count ceilings allow a full time opportunity without modifying the
 historical V1/V2 schedules. Diagnostics use existing predictions/gradients only.
 
+The opt-in `optimizer.candidate_errors=reject-forward-domain-errors-v1` policy
+rejects typed numerical-domain failures in proposed forward candidates or their
+fixed-metric scoring, then continues the same bounded unit backtracking.
+It never clips values or changes the positivity floor. Missing candidate values
+have unavailable row diagnostics, not invented zeros. Domain rejections count
+in charged forwards and line-search rejections, separately from completed
+observable-positivity failures. Preflight, probe, VJP, endpoint, input, hardware
+and other unexpected errors remain fatal; historical specs do not opt in.
+See the [local repair plan](../decisions/2026-09-14-local-w8-domain-repair-plan.md).
+
 The atomic `restart.npz` is authoritative if a hard kill leaves `last.npz`
 behind. Saved-only audit records which file it evaluated; import requires exact
 agreement with that audited endpoint and a hash-bound terminal dispatch ledger.
