@@ -1,0 +1,3021 @@
+{
+  "artifact": {
+    "bytes": 20793431,
+    "sha256": "e80631fc27831534e18f5f013f0fdf9b2b5b7bbbe9d6e7bc33c41354857e3b3c",
+    "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-continuation-w16-feasibility-7h-uva-a02-69f3be55d0f8/continuation-w16-feasibility-7h-uva-a02-69f3be55d0f8.tar.gz"
+  },
+  "audit": {
+    "DY_adjusted_RMS_fixed_sigma": 2.1155932731913043,
+    "DY_nuisances": {
+      "CDF_RUN_1:normalization": 2.541225425338638,
+      "CDF_RUN_2:efficiency": 1.1411222994269747,
+      "CDF_RUN_2:normalization": 0.7325476303890459,
+      "D0_RUN_1:normalization": 0.4471415483505981,
+      "E288_200:normalization": 3.6790105979312724,
+      "E288_300:normalization": 5.707363425651924,
+      "E288_400:normalization": 5.672406966640904,
+      "E605:normalization": 7.0024823317336535,
+      "E772:normalization": 7.70304680545278,
+      "LHCb_7:beam": 0.9021768550261159,
+      "LHCb_7:lumi": 1.242288324311811
+    },
+    "DY_profile_closure_abs_error": 4.547473508864641e-12,
+    "atomic_restart_recovery": false,
+    "endpoint_path": "last.npz",
+    "endpoint_sha256": "cd5f7b847171819ae3e6c9dd1392f7e014149ed30ed2e8752dd09fcdc7ac2c54",
+    "experimental_nuisance_penalty": 197.5107576587477,
+    "finite": true,
+    "generated_utc": "2026-09-14T19:47:59Z",
+    "high_COMPASS": {
+      "mean": 7.733332329276052,
+      "rms": 7.979179945743357,
+      "rows": 188,
+      "underpredicted": 188
+    },
+    "min_T_over_sigma": 4.351463134481926e-05,
+    "model_calls": 0,
+    "negative": 0,
+    "numerical_nuisance_penalty": 5.128123444780794,
+    "passed": true,
+    "penalized_gradient_max": 0.2034840350198679,
+    "processes": {
+      "COMPASS": {
+        "mean": 2.9681296948375455,
+        "rms": 4.926816940695729,
+        "rows": 1203,
+        "underpredicted": 815
+      },
+      "DY": {
+        "mean": 3.1065862143052843,
+        "rms": 4.065953502099257,
+        "rows": 743,
+        "underpredicted": 702
+      },
+      "HERMES": {
+        "mean": 0.4731372850116327,
+        "rms": 2.221371326046406,
+        "rows": 344,
+        "underpredicted": 198
+      }
+    },
+    "q_per_measurement": 16.364263303504803,
+    "raw_gradient_max": null,
+    "raw_gradient_missing_reason": "model work stopped before raw-gradient endpoint evaluation",
+    "schema": "tmd-endpoint-audit-v1",
+    "status": "verified",
+    "zero": 0
+  },
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "claim": {
+    "claim_commit": "ad25578f9efe87aef1c8464b87a89b5b26435573",
+    "claimed_utc": "2026-09-14T17:13:56Z",
+    "code_commit": "f79b01080176eecd8dfa083e9c6c20ff0de46b59",
+    "nonce": "530978c188684e6998346709b8f253f1",
+    "owner": "uva-w16-long-training-20260914-a02",
+    "remote_ref": "refs/heads/claims/continuation-w16-feasibility-7h-uva-a02",
+    "schema": "tmd-claim-v1",
+    "trial_id": "continuation-w16-feasibility-7h-uva-a02",
+    "trial_sha256": "06d2d1899f3e946ebcbf8659ff2e34b8a1a52b1c043928f56d63d028f95b5a79"
+  },
+  "code_commit": "f79b01080176eecd8dfa083e9c6c20ff0de46b59",
+  "counters": {
+    "accepted_updates": 137,
+    "forwards": 1288,
+    "full_calls": 145,
+    "infeasible_trials": 994,
+    "line_search_rejections": 1000
+  },
+  "diagnostic_configuration": {
+    "record_all_violating_rows": true,
+    "review_interval_updates": 32,
+    "schema": "tmd-feasibility-diagnostics-v1"
+  },
+  "files": {
+    "accepted-001.json": {
+      "bytes": 1043,
+      "sha256": "e009c5e5c3674318c71dfd1ccdde5370622e36ab38d22c6dc4008460d0f5e52d"
+    },
+    "accepted-002.json": {
+      "bytes": 1043,
+      "sha256": "a6984ce8620b8187d4fbffe6829cb67c9b6b09c66bb8716adfca8e781a81e57a"
+    },
+    "accepted-003.json": {
+      "bytes": 1034,
+      "sha256": "732a01665e104d4a9aa307c5a8555896d559473087bbc3644f7f43d223568663"
+    },
+    "accepted-004.json": {
+      "bytes": 1034,
+      "sha256": "17ffab0133cc81ff89051122b5a957c573f693e0feb455df283d4c7b7b72d4ee"
+    },
+    "accepted-005.json": {
+      "bytes": 1036,
+      "sha256": "1655c867587fec1b631bc52c010dc35ab775c4ae70c3336c2e8e900a8cb39e31"
+    },
+    "accepted-006.json": {
+      "bytes": 1041,
+      "sha256": "56ea2189d59b9e30b3886503727d7ce3a3a9a64f6f6791e25b55a697d62c2907"
+    },
+    "accepted-007.json": {
+      "bytes": 1039,
+      "sha256": "533c6c3ca9088d83da53612a355eb0fdafb4590b54cd6d7cb246f5cee5641ac5"
+    },
+    "accepted-008.json": {
+      "bytes": 1041,
+      "sha256": "757c496931b107c8cc01ccf809983b9957992a64afbc6c46e65907631d41811a"
+    },
+    "accepted-009.json": {
+      "bytes": 1044,
+      "sha256": "d338eacfc0d9055c279216fac9ef93ecdb749d0cca24617a4d8140befe6c04ce"
+    },
+    "accepted-010.json": {
+      "bytes": 1043,
+      "sha256": "bfaa92c708665c449b0a3f06c95d570eceba33ca2ccaa2fbf228715b3d80db8d"
+    },
+    "accepted-011.json": {
+      "bytes": 1042,
+      "sha256": "a3a6a75e0a5fe3649b09f0a00db19e4b23248b4c7fcfe8e84b2274a3d0488d14"
+    },
+    "accepted-012.json": {
+      "bytes": 1032,
+      "sha256": "211d9b9ca44b6fd76c2f007f87eb1b23c21c612aa940a455639fd65cc577f9f6"
+    },
+    "accepted-013.json": {
+      "bytes": 1033,
+      "sha256": "2db48c06f722dee1dfa65c5171da0cb232398e842c671920fe8bed47e8e8dc82"
+    },
+    "accepted-014.json": {
+      "bytes": 1038,
+      "sha256": "653df485c36a1c6a0e13359bf1281cb2b1f7dfc150cfd737d778ff195e4a31f8"
+    },
+    "accepted-015.json": {
+      "bytes": 1044,
+      "sha256": "a003f14ac086af8207187b5e76d8ff2a2e0c2585421076c6b3c9e64778f3fac3"
+    },
+    "accepted-016.json": {
+      "bytes": 1038,
+      "sha256": "8e13dad2bb2849843a0988b05ef08e478fd79dd14e6a9039a7c51495f098f5ad"
+    },
+    "accepted-017.json": {
+      "bytes": 1046,
+      "sha256": "bfa5fe93a9bd19f22dfdc8ce34a596127141520bad6bddfb06ad7691a66ee77f"
+    },
+    "accepted-018.json": {
+      "bytes": 1048,
+      "sha256": "9e55f2c36206de44825795560c984470b9bfd3402b3865ae955117589466fd51"
+    },
+    "accepted-019.json": {
+      "bytes": 1048,
+      "sha256": "a8662902947e4bf18b493fd13189dec57460ac2d83e58da2ba1fb17b5f6fbe4e"
+    },
+    "accepted-020.json": {
+      "bytes": 1053,
+      "sha256": "fda7d8b99ee32860e7828543fd25e7cf354041d154c3153955be65fe017129b3"
+    },
+    "accepted-021.json": {
+      "bytes": 1049,
+      "sha256": "42851c116d0db3eddfc5d701591b8af4946b23274227f0506a9ae2df59003996"
+    },
+    "accepted-022.json": {
+      "bytes": 1052,
+      "sha256": "9a616dac20023cc5b33f1b06520d62e47c84a1bc64218c0bc88269c90b14b5c2"
+    },
+    "accepted-023.json": {
+      "bytes": 1051,
+      "sha256": "414428831c0b61f2f43e77dabe4486df37e588fb1aa7912513a4d47b0749a858"
+    },
+    "accepted-024.json": {
+      "bytes": 1037,
+      "sha256": "ace06c383bfd4477d2cc46cf361e25fe6f4cd15af4e09a0177a983c2d120f294"
+    },
+    "accepted-025.json": {
+      "bytes": 1035,
+      "sha256": "df94151fed8450483344fcf54947d264f53b43a2e7b668ab1d4b8205b9342257"
+    },
+    "accepted-026.json": {
+      "bytes": 1038,
+      "sha256": "3a943e171c36857e0b3560afd2c1d4195054a19b39aaa8ab0a8a25576c0e1184"
+    },
+    "accepted-027.json": {
+      "bytes": 1041,
+      "sha256": "d4da52d4620c9bb57d016c97129f74530346505dfd26efec41235432cf21b2fe"
+    },
+    "accepted-028.json": {
+      "bytes": 1047,
+      "sha256": "8aaf8862e36236333f6dab9f59bb1830b3bbb3dda143abc41ecdc20ae633ed17"
+    },
+    "accepted-029.json": {
+      "bytes": 1049,
+      "sha256": "df439fa44d0beb21fa5a9da24927b243ae605032f8acf11c449c79af71270ae8"
+    },
+    "accepted-030.json": {
+      "bytes": 1037,
+      "sha256": "b550d6460654757a02a5aceb24aed6e82e38cc99a09cb96a49a2695e22a3f22c"
+    },
+    "accepted-031.json": {
+      "bytes": 1043,
+      "sha256": "111d36d9e196d3225698e0691b212de5e1c4e4ad0c5c484b8112577d36a69343"
+    },
+    "accepted-032.json": {
+      "bytes": 1046,
+      "sha256": "1464f2ccad83bfd37c153cfb9f1ef42dfa2fddf0784f676cd733c2c66abe2eac"
+    },
+    "accepted-033.json": {
+      "bytes": 1048,
+      "sha256": "ea99eacc3f791fba6393bd87ff8d67dcaf7b74f5937dd2ce22534cdf37a70b7e"
+    },
+    "accepted-034.json": {
+      "bytes": 1046,
+      "sha256": "d76b21aff01dfbc0afbb0b625c8958ffdfe420a9b09bbcf74e7c8102fd1fde28"
+    },
+    "accepted-035.json": {
+      "bytes": 1046,
+      "sha256": "98d729d53b0749d485d2a213fe4135e69b1c1167af52768cde0ee3394f240622"
+    },
+    "accepted-036.json": {
+      "bytes": 1033,
+      "sha256": "0cb28d34e91b56cc32a2be1c3a662f8538ab3accfdc3c6dfdf77a9187d3186dd"
+    },
+    "accepted-037.json": {
+      "bytes": 1039,
+      "sha256": "1e532d365da37a0c16e80426ba360bc0b0b8c9a8065e70a086f30ec778e09d5e"
+    },
+    "accepted-038.json": {
+      "bytes": 1037,
+      "sha256": "92ef86baffb9a82493f31afb6e8416c948a2914125776b73e014c8f70f0c211f"
+    },
+    "accepted-039.json": {
+      "bytes": 1035,
+      "sha256": "efed62d464e222c09bd3ce25fb35329f443810869bf230172c777ef12fa2f449"
+    },
+    "accepted-040.json": {
+      "bytes": 1035,
+      "sha256": "e441675e51e082c90dfefeb19a0e9488238a9c2789f0099f615d96953021cc45"
+    },
+    "accepted-041.json": {
+      "bytes": 1035,
+      "sha256": "a2c89863503cb7101d2d68921db653265fa18a34180e18cab4e7d75f59abe64f"
+    },
+    "accepted-042.json": {
+      "bytes": 1032,
+      "sha256": "4c3bf6934a9686ff2f8e4d6881c0f7bccce956fd7b12091baff0a9cf4a24968b"
+    },
+    "accepted-043.json": {
+      "bytes": 1034,
+      "sha256": "499892dd8a68700550e4f31eb0c30381920bf86a3926a90ca86eec25dfd18485"
+    },
+    "accepted-044.json": {
+      "bytes": 1034,
+      "sha256": "e841ab5d0cdd357d0435a9a8b417a27ff6703bb4f9c68547f1b9ec704f4f07e4"
+    },
+    "accepted-045.json": {
+      "bytes": 1038,
+      "sha256": "9b2ad80df30a8fd06bf508c48da92e5684fef8ee250e4d3474065ce1011bccda"
+    },
+    "accepted-046.json": {
+      "bytes": 1037,
+      "sha256": "5421f0097dfa66d3d9a914f8167bd403a3b9f60e51b8ffe5080471d0f9529b2a"
+    },
+    "accepted-047.json": {
+      "bytes": 1037,
+      "sha256": "7cfa61f1ca4c13f52aa44b926940b5af103b9033220f50d00e173090f3996452"
+    },
+    "accepted-048.json": {
+      "bytes": 1035,
+      "sha256": "8cdfeea90fc8d14905572da67fefc8e31f5849e3b220a19ce4cd029aa92f3904"
+    },
+    "accepted-049.json": {
+      "bytes": 1037,
+      "sha256": "f562a240b4bdce82d754b64c65a473225842fc75f00cc21c1a4e8c899471865f"
+    },
+    "accepted-050.json": {
+      "bytes": 1034,
+      "sha256": "ab4ea936d76942637477a467bc38a3712614077e7e7ea235ab5053b1e24d701f"
+    },
+    "accepted-051.json": {
+      "bytes": 1031,
+      "sha256": "06155ec6d3c69ced29f4494d71f04ff900276a3fd2ba684b7249706f95ad0cf1"
+    },
+    "accepted-052.json": {
+      "bytes": 1039,
+      "sha256": "d701cee09059145d1ec0890ebddd35fa069d5063351e995585c458e874f4e5c8"
+    },
+    "accepted-053.json": {
+      "bytes": 1041,
+      "sha256": "e92d1591f9da3f8b12d92e8c73205e83e62809c428658b3ef77607468ad10488"
+    },
+    "accepted-054.json": {
+      "bytes": 1046,
+      "sha256": "a5b8847fd4150dfceb4cf22ebc641abc76a85fea35d0162e2fdf17ccc4283261"
+    },
+    "accepted-055.json": {
+      "bytes": 1047,
+      "sha256": "8f1437669c24786e98e90edbbf473f514525d9976a7c930a8e5ce3042b592eab"
+    },
+    "accepted-056.json": {
+      "bytes": 1050,
+      "sha256": "c4632fc83ed913a5d6f7f9f75c64939970b50654cca5f952c5cc6fe2fd807726"
+    },
+    "accepted-057.json": {
+      "bytes": 1049,
+      "sha256": "63774309451beb69d9cffeda2822368fc9c5278ead65f414dea0bbf1af85609d"
+    },
+    "accepted-058.json": {
+      "bytes": 1049,
+      "sha256": "8fa9dcdb46e4440512dac78c2701ff31943ebc7760d3fe273fbe7c8a131ea0bd"
+    },
+    "accepted-059.json": {
+      "bytes": 1050,
+      "sha256": "733f7a1a1913fb458ccc9e2ad60ca70da480ede83e4ed93df9290517e04c440e"
+    },
+    "accepted-060.json": {
+      "bytes": 1037,
+      "sha256": "33359e9be67cc44c80acdb7e3f836eb5a901c5b5fe191f74106d39151ec74cd3"
+    },
+    "accepted-061.json": {
+      "bytes": 1036,
+      "sha256": "68dc8b627c1d9ed6704e23d7cc0d7a75a1adf9cdd8a96d427c5f41a67912de5b"
+    },
+    "accepted-062.json": {
+      "bytes": 1036,
+      "sha256": "2a46ce97712fb1965eca6ca599457d58d46176bd7e6375406bc79b70762f4866"
+    },
+    "accepted-063.json": {
+      "bytes": 1040,
+      "sha256": "5aa0753858afd03d99473d6146d04b487d64d3274de64990b7fdea789f4a9fcb"
+    },
+    "accepted-064.json": {
+      "bytes": 1043,
+      "sha256": "51e19e69d0959641f6839309b7ee19ff74cbaf8a0220f6f0165674f885a6a36d"
+    },
+    "accepted-065.json": {
+      "bytes": 1043,
+      "sha256": "aa60556d1c756238811adb69b0b6e3701753523764a6fc9577cd96cfe1cbf3cc"
+    },
+    "accepted-066.json": {
+      "bytes": 1045,
+      "sha256": "d5e9bdc9efaf929ea662b9c3b2510aa4c0fc569b629174ed102eabc4bcf950a3"
+    },
+    "accepted-067.json": {
+      "bytes": 1047,
+      "sha256": "7742361410c63493059d9fc5495cc972cb0da332e85f07cd59a83c64a5e64312"
+    },
+    "accepted-068.json": {
+      "bytes": 1047,
+      "sha256": "cb4b735a07891fc82fa828327edf7fb698230a564c3eddf754db9cdec04e7985"
+    },
+    "accepted-069.json": {
+      "bytes": 1054,
+      "sha256": "b384a75d5e5fb67e9f75699ce511427c90f6a575adbd84f2e78a9102c89ab795"
+    },
+    "accepted-070.json": {
+      "bytes": 1051,
+      "sha256": "d5cc7d9d1838ee5445606fca1a897c3b7b3473d805e73fd9674204edf08c315e"
+    },
+    "accepted-071.json": {
+      "bytes": 1040,
+      "sha256": "f5f828fb6da3e45aecf83d1d8031709ce66e799b64116a6efd9b54fbb8abdba9"
+    },
+    "accepted-072.json": {
+      "bytes": 1043,
+      "sha256": "3ad8a3323a176480acd2195275ac841cd32a7857e7cf851ed9b9f9692eff1cbd"
+    },
+    "accepted-073.json": {
+      "bytes": 1042,
+      "sha256": "cea4c75e734c9993ec1fba6ffdd64584eef5f9cffe3b428d43d652db0bb552cb"
+    },
+    "accepted-074.json": {
+      "bytes": 1046,
+      "sha256": "4fc9e54d2adc2ba970ec7b76335bfdd5c98b692997c63feac7dda37fc3554ed9"
+    },
+    "accepted-075.json": {
+      "bytes": 1050,
+      "sha256": "3f2b49e3a8c31639a0c7cd23cb216463ef2a4538848c26660e61aa9a4c5cfc84"
+    },
+    "accepted-076.json": {
+      "bytes": 1052,
+      "sha256": "494387153f5e1d2279d81aa23cc6a8371ee30c326ec69c64334d943ee52b0e8f"
+    },
+    "accepted-077.json": {
+      "bytes": 1052,
+      "sha256": "acc172d4c74ad989216667455edf4d1530c3cd4a014272af3c0e8ae89e25cb93"
+    },
+    "accepted-078.json": {
+      "bytes": 1046,
+      "sha256": "1dfabcda587989187437399f6a3e5b7df664c05f65b7010af1435e63023b61ce"
+    },
+    "accepted-079.json": {
+      "bytes": 1049,
+      "sha256": "a763c81555a876037109af3f71c1169286460cd64a74c927e73a3b7a54f6222d"
+    },
+    "accepted-080.json": {
+      "bytes": 1050,
+      "sha256": "746044718e9b7e91dce7590405eeb52d2444848d6a7789bdaa65603a0fc70a12"
+    },
+    "accepted-081.json": {
+      "bytes": 1053,
+      "sha256": "13a86a1730b5469201b7c601207aedcb772027368e36b670b1a033b2072b5b1f"
+    },
+    "accepted-082.json": {
+      "bytes": 1056,
+      "sha256": "560245dd65beeae84bcfc82d1a52fa5663b0bb60941c59d80095f848fd63a9e9"
+    },
+    "accepted-083.json": {
+      "bytes": 1052,
+      "sha256": "c788d73830647cd09d850dd327d463d8f9f4e8ecaadc44669b894f49e8a7b401"
+    },
+    "accepted-084.json": {
+      "bytes": 1041,
+      "sha256": "7768f72760bcdc10d0e2430c9cd6b7687b7cc71a1a9ce2c64276ca24d71d6d06"
+    },
+    "accepted-085.json": {
+      "bytes": 1043,
+      "sha256": "7b81a0da3f96de20bc792d465eff84948bc10800b075562bd2038b4a3464309a"
+    },
+    "accepted-086.json": {
+      "bytes": 1047,
+      "sha256": "848e10452f08dc29d3f3e261088e84af510c827d159773ffd03cd757270e5e5d"
+    },
+    "accepted-087.json": {
+      "bytes": 1049,
+      "sha256": "9733cf172fa6401c345a1f21fcf09c81c61de8d6102b2b3e3d5ea882fa2c4646"
+    },
+    "accepted-088.json": {
+      "bytes": 1052,
+      "sha256": "2b3215551c0632c10a313bcbdfbb3a9e13c223c0c2b99d18db3487b316dcd397"
+    },
+    "accepted-089.json": {
+      "bytes": 1052,
+      "sha256": "9cd07eb3479f11bc8a8eb97c3250b640ba149ccafe89178ff300c86bd83e5a34"
+    },
+    "accepted-090.json": {
+      "bytes": 1049,
+      "sha256": "e5de488c28c0ef75b0930a0ed97752e2e8299aee197d4d4eeeb8be1b5f863aed"
+    },
+    "accepted-091.json": {
+      "bytes": 1050,
+      "sha256": "e579a714472965237dc8c6d9ec174610cd891569193225257ddbec33fd0d064a"
+    },
+    "accepted-092.json": {
+      "bytes": 1058,
+      "sha256": "5ffd5b72c426b94f32dad7ce1b225d839b29d862c66f66ffbabd33726e423abc"
+    },
+    "accepted-093.json": {
+      "bytes": 1043,
+      "sha256": "7dbee6cbb74e90567716ae8613bed5ee5861e9cec8a1f8a55e826c700a969a96"
+    },
+    "accepted-094.json": {
+      "bytes": 1044,
+      "sha256": "8ac4a4e05e9496d5bc785b44e45a81743408165c9e1a44ab532097fb5780583e"
+    },
+    "accepted-095.json": {
+      "bytes": 1051,
+      "sha256": "ae5fb014c44bfa6109698bb605315370cb5fa082e646a1f49f7d587c007fa4ae"
+    },
+    "accepted-096.json": {
+      "bytes": 1053,
+      "sha256": "87b378b380b0c74526b3b66ea70fc994272dc491e23a9ba4baac2601090328fe"
+    },
+    "accepted-097.json": {
+      "bytes": 1054,
+      "sha256": "cb6f110adad6d09846c9ba94648c70b7d6ece03cdd739fe3346321de549f1103"
+    },
+    "accepted-098.json": {
+      "bytes": 1042,
+      "sha256": "10a5aed76f50f8b193bd30b4dbee830f6e2bfc366e326eb88c60ce0eca522f56"
+    },
+    "accepted-099.json": {
+      "bytes": 1042,
+      "sha256": "acd618872526d11d7204a833551639d5f86ecd395c59b6fce29e0ed51af33bcb"
+    },
+    "accepted-100.json": {
+      "bytes": 1048,
+      "sha256": "4ac99f90dcc6d356e4e6f861245af4bc179e9be950c0cf9fd6836dc1ed5dfc29"
+    },
+    "accepted-101.json": {
+      "bytes": 1052,
+      "sha256": "aa68a2ebe6b3207084f7aa43b43d70ded588721041c8ee799bfafb724ad4a76a"
+    },
+    "accepted-102.json": {
+      "bytes": 1049,
+      "sha256": "a8193e3b27c76776906a437e47726b61b3ac35545835c027bd983d37bf5dc240"
+    },
+    "accepted-103.json": {
+      "bytes": 1050,
+      "sha256": "fe5c12afc27501e181d17a4693e2dbd4fcf82d9422b0913bce4dd3859426f3af"
+    },
+    "accepted-104.json": {
+      "bytes": 1055,
+      "sha256": "2ef003a712a5b17733baad1d575d9ff6c9e74d49bc18805143a34e1b28abaa8c"
+    },
+    "accepted-105.json": {
+      "bytes": 1051,
+      "sha256": "b2cf1d9b855df9f6ed221662a3d4de6a52a382a1271c03270fcf17e003baae56"
+    },
+    "accepted-106.json": {
+      "bytes": 1051,
+      "sha256": "d837eb291f0a56641efb17b2ead85dc3d9012723d36295e577c9e865d2816369"
+    },
+    "accepted-107.json": {
+      "bytes": 1054,
+      "sha256": "41e6c928b4436a84bb98dfb36eacfe339350256998456bbdf581a8e4e4e21283"
+    },
+    "accepted-108.json": {
+      "bytes": 1054,
+      "sha256": "83737412252f96c4d25fc0c73dd52d3767363e71bf8a06eac3e927e8e5e96668"
+    },
+    "accepted-109.json": {
+      "bytes": 1049,
+      "sha256": "80f9e80c65b953623fa78a8955917cd8804f1448e4f7b1c2086ccf2d28841c98"
+    },
+    "accepted-110.json": {
+      "bytes": 1047,
+      "sha256": "6c7f850b19e06e6f309d57f2d1ec159a0ace3a10828c6148bf745d3f8c6bf3ee"
+    },
+    "accepted-111.json": {
+      "bytes": 1053,
+      "sha256": "f75a1485613add8bf29d9d43c8fd2a8c263ee9a023e65d175a0206dafe76ffb0"
+    },
+    "accepted-112.json": {
+      "bytes": 1057,
+      "sha256": "8bafab99ba8111d1cb12904b0500cb9114603d9cb7d8b75ef5e255358a425de3"
+    },
+    "accepted-113.json": {
+      "bytes": 1057,
+      "sha256": "6239193125b8687d3f48737e57ffb80ea7f732af8e7073af6a2939fb1988b9f9"
+    },
+    "accepted-114.json": {
+      "bytes": 1060,
+      "sha256": "7be1dcc616de0f435aacfd2e706c461e9ceb56c3d24ce0f8ed4ae6945fca4eca"
+    },
+    "accepted-115.json": {
+      "bytes": 1062,
+      "sha256": "6eac164fd84293181605410befaed359ce6886e8f68033853f0293a6022e6129"
+    },
+    "accepted-116.json": {
+      "bytes": 1058,
+      "sha256": "34e5e4d87db7c1235d04fbe0348e6f5b76b4d07f91d6e1196fcd302ded310923"
+    },
+    "accepted-117.json": {
+      "bytes": 1064,
+      "sha256": "9500417e821f6ad48ac4300684b9fc6d55dba5df599716a36451c424c5cad351"
+    },
+    "accepted-118.json": {
+      "bytes": 1060,
+      "sha256": "be05b0c86772dc57719c703b1bfd5c08db3f142170d02c25809ebb1e50e72838"
+    },
+    "accepted-119.json": {
+      "bytes": 1064,
+      "sha256": "32876072f54132e7d9b29103c7afbf998124a5c81c4e7cacb2ac561cfcbfa3e2"
+    },
+    "accepted-120.json": {
+      "bytes": 1061,
+      "sha256": "1815e47ab2f3fd7dc9536cfaa652d182514a5a2fd2afc00fade2db21aa9ac310"
+    },
+    "accepted-121.json": {
+      "bytes": 1064,
+      "sha256": "84601b13c258eb922b3308576cc480d0b0dc3350bd16531a29a2d298bfc24750"
+    },
+    "accepted-122.json": {
+      "bytes": 1060,
+      "sha256": "6d8cf2b1f5d171a824c03c11548afc0cdaa992091d92aa531eb926276abf6e0b"
+    },
+    "accepted-123.json": {
+      "bytes": 1066,
+      "sha256": "8adb0c7bbc9cfa3200954537cd94a32cf795454d47ae43cda6a5de670f098b4d"
+    },
+    "accepted-124.json": {
+      "bytes": 1064,
+      "sha256": "a8c589fac629ca0720f5704c81059f55a63e3e1d4e616b4f0da057be79bbe5e3"
+    },
+    "accepted-125.json": {
+      "bytes": 1048,
+      "sha256": "4fa66565bc9db966054b201b4bd431df9526c11c888f09c4f7a63da62eca15f6"
+    },
+    "accepted-126.json": {
+      "bytes": 1048,
+      "sha256": "ac83c3c79df41786ac498179c0395d9d2db3098651a49efab79557920c22f1cb"
+    },
+    "accepted-127.json": {
+      "bytes": 1058,
+      "sha256": "3c5d91ee6f57e30144b84da3efa0337a0916c491191ca53c02d57c82c939af83"
+    },
+    "accepted-128.json": {
+      "bytes": 1048,
+      "sha256": "eff13afee9bc900502e81e1190cf8642a92872a2aa2a03f2c2876dca06734b83"
+    },
+    "accepted-129.json": {
+      "bytes": 1052,
+      "sha256": "1b25b287e0f152a24aec2e53bce5332fc6085e884e505dc946f0815fa8d978f3"
+    },
+    "accepted-130.json": {
+      "bytes": 1055,
+      "sha256": "3c4984ce57a047c5e56cc4170b5281ec23fc148182923939b8a6a120964e6ccb"
+    },
+    "accepted-131.json": {
+      "bytes": 1052,
+      "sha256": "cbfc1c594f7468646927cc7a99c7be4ec25e1e10c7c5d7ac0432b70d7d170fcc"
+    },
+    "accepted-132.json": {
+      "bytes": 1060,
+      "sha256": "b4108ac838a489b52e1da2300dad961b44eb2101fb5b80506de1698257e5b658"
+    },
+    "accepted-133.json": {
+      "bytes": 1059,
+      "sha256": "818ff33bfc7b627bebc3c73bbde3bac4117b270026644ca8826c49006ae58058"
+    },
+    "accepted-134.json": {
+      "bytes": 1060,
+      "sha256": "fc2922cf8a6b508d941060a83a71357184543f00bcd9d8b60abf8a332868e135"
+    },
+    "accepted-135.json": {
+      "bytes": 1057,
+      "sha256": "59935a9674663f157173c3aa8feb4a627e78db87229c6a081f991b43be9a8040"
+    },
+    "accepted-136.json": {
+      "bytes": 1058,
+      "sha256": "37f7299dccfbd05860402fd631d0a15587c0050e0a56a715f3461e0b3220072a"
+    },
+    "accepted-137.json": {
+      "bytes": 1058,
+      "sha256": "5b21859f063085df4bd6d2a2a65a1fa769da89c9e1718af500f5df51e64a6f05"
+    },
+    "audit.json": {
+      "bytes": 1917,
+      "sha256": "1f50cc36568c7fa88db0627752201f7249e286af71e81986ffca37bedb14e6fc"
+    },
+    "audit.log": {
+      "bytes": 9,
+      "sha256": "672eb8316fec83f94119a4193f9fc552513d56a147502f8be4830e017d817831"
+    },
+    "checkpoint-001.npz": {
+      "bytes": 62417,
+      "sha256": "749e606d8f74b3e04707b9a7315748cfb4114210eff3c83a408233e41e32b112"
+    },
+    "checkpoint-002.npz": {
+      "bytes": 62411,
+      "sha256": "69357a80a96ce2d083d4cc002f7f019c635fd6e04bbad124721fe8af8f4c818c"
+    },
+    "checkpoint-003.npz": {
+      "bytes": 62426,
+      "sha256": "e1356698b669dcefbc2dc63c63926d7510516d601052ebab10ba13d3bc9ae60f"
+    },
+    "checkpoint-004.npz": {
+      "bytes": 62433,
+      "sha256": "f2569e6986da44995c08783644e1ba8d3cd25d0230a412512b4be3afa340c4f9"
+    },
+    "checkpoint-005.npz": {
+      "bytes": 62394,
+      "sha256": "f7ddd2cb107e88d051b83b8d0f3b4510f5dd7b4cb333efb14db6d8f4946c8726"
+    },
+    "checkpoint-006.npz": {
+      "bytes": 62451,
+      "sha256": "ddf9053fc02ac19a3d5a2609abe4589d411c83ee99305f2e1976c5f402574695"
+    },
+    "checkpoint-007.npz": {
+      "bytes": 62432,
+      "sha256": "0dd55a8c6b2f8d81121f0a3f0afe1d907dd9491de20e43704b25eb447db4afc2"
+    },
+    "checkpoint-008.npz": {
+      "bytes": 62423,
+      "sha256": "aa3d89842fb493d4a1983c59bd93961ec9972fe0f27fea754b5464f56baa2741"
+    },
+    "checkpoint-009.npz": {
+      "bytes": 62426,
+      "sha256": "c646aedcdc9d929a995215e93f260e37627669353798ec831f1bd1f0142e53e9"
+    },
+    "checkpoint-010.npz": {
+      "bytes": 62440,
+      "sha256": "1ea1f356b1833f230539e3f6b7a0acd264c469f53c3af99f4a27ffcf346a48b7"
+    },
+    "checkpoint-011.npz": {
+      "bytes": 62433,
+      "sha256": "b1bc4ab86158024ccd06f4e4e227c4d56b6c88edf83c7ab36f35de4b63e32fc0"
+    },
+    "checkpoint-012.npz": {
+      "bytes": 62440,
+      "sha256": "9f85f566eef32c84b6c3a1692e5755dcd120bd1d26ae882073285886e948b516"
+    },
+    "checkpoint-013.npz": {
+      "bytes": 62423,
+      "sha256": "20746302f94f8ffc9d1c3deca7052e75b0f6ee82c771ea3703b136fecc03bf6f"
+    },
+    "checkpoint-014.npz": {
+      "bytes": 62416,
+      "sha256": "00ebab786fe45e539ba6bb1c8a56bee63e3241023392d0f89236608cefd5f064"
+    },
+    "checkpoint-015.npz": {
+      "bytes": 62440,
+      "sha256": "c4541f2366d7923fb9d7e281c89cc6db5b3df5bf012c31bb2eb1501ffaeb686b"
+    },
+    "checkpoint-016.npz": {
+      "bytes": 62412,
+      "sha256": "2a0d418429558b99074af976bc3a25fff99585d69c0e9ad2f7685e60e5bcebfc"
+    },
+    "checkpoint-017.npz": {
+      "bytes": 62417,
+      "sha256": "a71c6597538a0271a378290980a931287a86907ede8d4a339b3ec72e1ae3c4db"
+    },
+    "checkpoint-018.npz": {
+      "bytes": 62406,
+      "sha256": "c22d1547d80d6e7176f2096f88efa8bc61e6551a8ba3cdbd955373b8b2d92a0b"
+    },
+    "checkpoint-019.npz": {
+      "bytes": 62436,
+      "sha256": "48c8f75edbdb3e834c5528f7f0505b17c2977a77ffb9de5c4cbf3c8b67af5e08"
+    },
+    "checkpoint-020.npz": {
+      "bytes": 62426,
+      "sha256": "4fd55351c0e1e63d9e6bda37bfe421a98347718ad2dd3465cfb673947f4d5ea4"
+    },
+    "checkpoint-021.npz": {
+      "bytes": 62417,
+      "sha256": "6efa4e7e1b39a8ef5e80dca64f11b1d336ef87eac00686b7d181e75d666e27d7"
+    },
+    "checkpoint-022.npz": {
+      "bytes": 62408,
+      "sha256": "59ba22745c313a115336dc88d0388924ba49abb3f848dd57e288fc00ec1a0279"
+    },
+    "checkpoint-023.npz": {
+      "bytes": 62408,
+      "sha256": "a27445df027a1f9b559f8b9f64887b25a8d0a5c16d3f34e8d599868b4d859da8"
+    },
+    "checkpoint-024.npz": {
+      "bytes": 62418,
+      "sha256": "d1cd498e8ddffaf9decffb350b03e0822200f23125fbcfb984500f579a7d1ed0"
+    },
+    "checkpoint-025.npz": {
+      "bytes": 62435,
+      "sha256": "795cb23d0c0d980ecbb2693960af976f8d24a5b755e6047bfecc745c98a2e991"
+    },
+    "checkpoint-026.npz": {
+      "bytes": 62410,
+      "sha256": "b8bba234233671c7b3c090cac3b046a3e94c2cf82c634ef065d48f19298c9fc4"
+    },
+    "checkpoint-027.npz": {
+      "bytes": 62415,
+      "sha256": "e9b674f333770aaadbb9da99b7d3e816029ce070f53ea20c418fd71c552c2f3a"
+    },
+    "checkpoint-028.npz": {
+      "bytes": 62400,
+      "sha256": "1af0b7faa493a763fba27f2451eaafba4535687e6689fba75c1155c7feb9b7f0"
+    },
+    "checkpoint-029.npz": {
+      "bytes": 62415,
+      "sha256": "da50e303de2178ca74e504c5dfb892034a2323632f6dc11bb2ff582323550f62"
+    },
+    "checkpoint-030.npz": {
+      "bytes": 62427,
+      "sha256": "ff36e591099857d22674eb16e0b6de075fbe7831b4bc61b8d1d3bacc9cef746c"
+    },
+    "checkpoint-031.npz": {
+      "bytes": 62387,
+      "sha256": "693a141f09819414765bb3c647d28efca90258c1f479796e99ab35929fe7be66"
+    },
+    "checkpoint-032.npz": {
+      "bytes": 62400,
+      "sha256": "4755001cfb3dba55e4ae880b630b4087244307d76bfa50d57f347ba9030ca7b9"
+    },
+    "checkpoint-033.npz": {
+      "bytes": 62436,
+      "sha256": "ddeee825b4c85ebe90ac23251205aea921a1b6c0cf3b2159d49494d03b488a57"
+    },
+    "checkpoint-034.npz": {
+      "bytes": 62417,
+      "sha256": "207c6d8e3a87bdac4f7693b0b9511503761f139ce48188a08550d8933cd48207"
+    },
+    "checkpoint-035.npz": {
+      "bytes": 62444,
+      "sha256": "6172ea5f4b005c4dde65a10878c120c9c5a23001c53297f33c457b0ef45859b0"
+    },
+    "checkpoint-036.npz": {
+      "bytes": 62405,
+      "sha256": "007d5e3c363a0b68ec8f3a9f6a0ab2922687a78be48b5fafcb225c19fe3388b9"
+    },
+    "checkpoint-037.npz": {
+      "bytes": 62434,
+      "sha256": "125db11800e6ca75564ee4b34a5350c8ffecbb5d665bef55be797d25e931ebc1"
+    },
+    "checkpoint-038.npz": {
+      "bytes": 62400,
+      "sha256": "e587b631da8887ea322c1d1385fa980c4c539172eb6784d620ae10bf84381e0b"
+    },
+    "checkpoint-039.npz": {
+      "bytes": 62451,
+      "sha256": "b491cc72dec5291425a7ad76d78f88a3e1498de527c4b06f1724f70af4baf07e"
+    },
+    "checkpoint-040.npz": {
+      "bytes": 62434,
+      "sha256": "8378f57228eb798db917a298aac0d3b2a5dd8b1dc290291330dab1f31f27aeee"
+    },
+    "checkpoint-041.npz": {
+      "bytes": 62407,
+      "sha256": "7684ab41783b0039d1f8ce1a4fce51e88733206cae40062b69334f7c2631acb0"
+    },
+    "checkpoint-042.npz": {
+      "bytes": 62399,
+      "sha256": "f89e00269f73163952820cba6f38317ba20946d5388252d2b571db99f71e6738"
+    },
+    "checkpoint-043.npz": {
+      "bytes": 62397,
+      "sha256": "1eba2c27403d7faccbab660d5c7204643142619d0240c0ee48851b982c80a957"
+    },
+    "checkpoint-044.npz": {
+      "bytes": 62409,
+      "sha256": "f98fc966a20e69115852176b81daa8ed42f5345ab333b5842b6bb962150a5f2d"
+    },
+    "checkpoint-045.npz": {
+      "bytes": 62387,
+      "sha256": "33e95f39b11a7a6e469354aa5ab84ad1d87ae4a2ca053288834b4af89cd5f01f"
+    },
+    "checkpoint-046.npz": {
+      "bytes": 62423,
+      "sha256": "de57880b4cd85de37ef0730cb68432fcdb39701855f89265aaf65990f80b5042"
+    },
+    "checkpoint-047.npz": {
+      "bytes": 62421,
+      "sha256": "b3addc9caa8f8663110187dce00e74bc2391932f9c73c006f77a2f572de9c827"
+    },
+    "checkpoint-048.npz": {
+      "bytes": 62404,
+      "sha256": "d44b76d2c95f2051b11c1d7c2d919e4a39ce59022f8adf94798fa473be745723"
+    },
+    "checkpoint-049.npz": {
+      "bytes": 62409,
+      "sha256": "08ed3563e2ad406cbe82b1349b9171cb9169c72c41d84614e9162451704bfc76"
+    },
+    "checkpoint-050.npz": {
+      "bytes": 62416,
+      "sha256": "6e2ad1e7c4e559e721537892ad32ce23e374553d7ec5b526979b04a1f85d80fc"
+    },
+    "checkpoint-051.npz": {
+      "bytes": 62443,
+      "sha256": "cfdb7e0760e74288c4f71479f7dcc02ae3599f32e1b9774d0e50c8792d5a1770"
+    },
+    "checkpoint-052.npz": {
+      "bytes": 62423,
+      "sha256": "6ddcd4d5e718eede207747925cf26ecd29672d7ae79ab1352f7edffed1b17c02"
+    },
+    "checkpoint-053.npz": {
+      "bytes": 62421,
+      "sha256": "99684366b83159a3b0b9fdceb6c38f48f3af6a6eeef37007fb84de470ca73747"
+    },
+    "checkpoint-054.npz": {
+      "bytes": 62403,
+      "sha256": "522f37aea269ad45e4775147820eff993f804cba05e7545751857d4bcb2a09c0"
+    },
+    "checkpoint-055.npz": {
+      "bytes": 62402,
+      "sha256": "8eb8d478f7f998bbdc0874d4f23161dc71de1aa86942e1ce17a3b3384384c804"
+    },
+    "checkpoint-056.npz": {
+      "bytes": 62410,
+      "sha256": "8c781b1aa0d1132279693add8629930e9df341b5e7638255a6618dfe3ac1be7f"
+    },
+    "checkpoint-057.npz": {
+      "bytes": 62424,
+      "sha256": "a82075733a723f6501a856181dbcd25f4c636cc89dc315dd8fd6fb66fa947ec2"
+    },
+    "checkpoint-058.npz": {
+      "bytes": 62417,
+      "sha256": "e046683fb4e77395fc0879e39bc73fe6fdadbd0aedee153f72d08f2efe9dca75"
+    },
+    "checkpoint-059.npz": {
+      "bytes": 62438,
+      "sha256": "ff539405db1447a8c2dd166ddfc0064b373c3e3fbe338e6135966bfb7ee23243"
+    },
+    "checkpoint-060.npz": {
+      "bytes": 62399,
+      "sha256": "3df4dbef66deb6772305e9fa15297dc77add0e7fb652363b565c097d754fa3eb"
+    },
+    "checkpoint-061.npz": {
+      "bytes": 62369,
+      "sha256": "248779483d7b24d75c4dcce31f72afa332e2ce6e131481089984a137e3403ce8"
+    },
+    "checkpoint-062.npz": {
+      "bytes": 62401,
+      "sha256": "5e9867293a682eed037228af39a0adba30c28508a472aa35c84f73f987f0a138"
+    },
+    "checkpoint-063.npz": {
+      "bytes": 62389,
+      "sha256": "1444b216afb7d2c0601cb0736e751276148aff1b6e1938a559f652bcdaf6e632"
+    },
+    "checkpoint-064.npz": {
+      "bytes": 62410,
+      "sha256": "5a17027011db1310ec331359c50181ab517a143ba6fc4723bb31c48a76463abb"
+    },
+    "checkpoint-065.npz": {
+      "bytes": 62414,
+      "sha256": "675d96cea507504f9ecda4bfdcc15f01cd5f6fa6e41b14e48eb4f73ffc357f08"
+    },
+    "checkpoint-066.npz": {
+      "bytes": 62419,
+      "sha256": "dc409ebbaeb6726290169213256f9b9de47870660f662d539c5f1383445851fa"
+    },
+    "checkpoint-067.npz": {
+      "bytes": 62405,
+      "sha256": "4f8036e497ce2accc81e6f45d7c30d4e3db9bbd8d1eb08cb7ddd8c00816b9fb6"
+    },
+    "checkpoint-068.npz": {
+      "bytes": 62396,
+      "sha256": "a7bb879f06ccc50c9b2d2316fe6cbfd3de95245d4cc0117c11b517bad61410e8"
+    },
+    "checkpoint-069.npz": {
+      "bytes": 62417,
+      "sha256": "cfbd8422f3355b19a0e7aee9eb80f22c1317a7f522c4153a9c02cb44c27ad5e6"
+    },
+    "checkpoint-070.npz": {
+      "bytes": 62419,
+      "sha256": "0c21e3c0feb4fe65cf65d0a1c45ff1f6b6ac0786d844e89a8b2b000c50e0c393"
+    },
+    "checkpoint-071.npz": {
+      "bytes": 62431,
+      "sha256": "e8d7249ce4ff385e0a6053025fae3e0f4b427696c99fa990f2a7b6a763954b13"
+    },
+    "checkpoint-072.npz": {
+      "bytes": 62421,
+      "sha256": "a9b3f3696d7c948ab4dd0add066db7ec064032ba0048799c97912dfc0854c484"
+    },
+    "checkpoint-073.npz": {
+      "bytes": 62414,
+      "sha256": "2e0e45af7980d9bc5c0330e4e22636b3ef8a6fbf885b720e8d40845656873536"
+    },
+    "checkpoint-074.npz": {
+      "bytes": 62432,
+      "sha256": "24b735067cc59e09c38f6585a3638a1a1ce8f480295428478cbaaf5ee72690df"
+    },
+    "checkpoint-075.npz": {
+      "bytes": 62412,
+      "sha256": "188e244a25de6d9c28cfeee93da0bd16fa3ffaa9c1a5436c91f978b4b7cae67d"
+    },
+    "checkpoint-076.npz": {
+      "bytes": 62438,
+      "sha256": "f36b9d989c3526037fe72b47d7ec8dd1f9ece66cd7408b534e45396f750ebdd5"
+    },
+    "checkpoint-077.npz": {
+      "bytes": 62438,
+      "sha256": "eaf8388a0e60ed0144baf4e55b9be4a042cdb68fa9b62fa071e0ac0bd14f8e33"
+    },
+    "checkpoint-078.npz": {
+      "bytes": 62425,
+      "sha256": "c07c9714cf26964ff8d8cab33f4312c41589ad66109d96247d56fdf6904b772e"
+    },
+    "checkpoint-079.npz": {
+      "bytes": 62406,
+      "sha256": "005446bee12e429d6e274d55c0e7caa101c44fd8f28b4719b2d568c5d0a524bc"
+    },
+    "checkpoint-080.npz": {
+      "bytes": 62423,
+      "sha256": "c90e9fbaa82c4e2937a58a1f7deb4e3c13a103e55c4f920ef13fdf0c14894a88"
+    },
+    "checkpoint-081.npz": {
+      "bytes": 62425,
+      "sha256": "52f8a60bfef64eaa86198c93b562077c3827efc32f2140731a9abda2d1636035"
+    },
+    "checkpoint-082.npz": {
+      "bytes": 62420,
+      "sha256": "0bffa81c657557edcc9b9e2f49ada1f2987dbcce02a6cc0fb5649f38cccf3489"
+    },
+    "checkpoint-083.npz": {
+      "bytes": 62419,
+      "sha256": "008bbcd47b03a5fd65663c1bb216704b0e70f9c0a2b24dca3f703612f4d13261"
+    },
+    "checkpoint-084.npz": {
+      "bytes": 62388,
+      "sha256": "ad54b573c2bbdbbed40c4f46bec6593b05fda039358d0d7baaeff6f4121a6a18"
+    },
+    "checkpoint-085.npz": {
+      "bytes": 62398,
+      "sha256": "8eb83fc2e7cddffea77d919d3a9cdcfa15dafcd9af6fb23264675d1a64c24020"
+    },
+    "checkpoint-086.npz": {
+      "bytes": 62417,
+      "sha256": "a480fd2488ccbc88d310a703c35575486796b599f84160a6b7bb887332958da1"
+    },
+    "checkpoint-087.npz": {
+      "bytes": 62424,
+      "sha256": "663f9d52e9c10b1a7dd7e23e482b3bd2e45293404bcdb8568a2c4ce5517e21f3"
+    },
+    "checkpoint-088.npz": {
+      "bytes": 62412,
+      "sha256": "5f39564902e6e959d7ce195381c4f0c49c19031e8d0d08b59fd6e98d8a7917cf"
+    },
+    "checkpoint-089.npz": {
+      "bytes": 62439,
+      "sha256": "608bd2fb5f5a78ac38309520d9b130030b3bec9dbd2ebfc86bfb48e4c7e937b9"
+    },
+    "checkpoint-090.npz": {
+      "bytes": 62428,
+      "sha256": "31d3ff88d0bea93c7ca1ca20bac7a2e24f5135953f065364215271142f0ed176"
+    },
+    "checkpoint-091.npz": {
+      "bytes": 62413,
+      "sha256": "9f29e7dc90c30ff82b9912d6c9bbf5fc0610ae7e010a12574df7413e46bc2ce6"
+    },
+    "checkpoint-092.npz": {
+      "bytes": 62402,
+      "sha256": "e335192fd15d1cbaf2b97f57b7abac79b7464d00e041fcb4a98a0e8873c5bce1"
+    },
+    "checkpoint-093.npz": {
+      "bytes": 62414,
+      "sha256": "808cd825f8cd4c1ddb2941eeb87001972a6f4d3021f9a67cb8ae5890929fed78"
+    },
+    "checkpoint-094.npz": {
+      "bytes": 62407,
+      "sha256": "e2a86207be8c7321827683048bd65e10e86b022bde034987a6163fbc2c79518d"
+    },
+    "checkpoint-095.npz": {
+      "bytes": 62403,
+      "sha256": "2ddd7ee03d45c1e721ebbf216e63955423010324ac7ca6ce4d54a9b8cff507b4"
+    },
+    "checkpoint-096.npz": {
+      "bytes": 62387,
+      "sha256": "464746a5496e7d9550203f8477a55738f88d0050e2f2d35013b57cdd0d73d678"
+    },
+    "checkpoint-097.npz": {
+      "bytes": 62409,
+      "sha256": "57a2d590843c79bb25af5730a664bb5d7098fa1d23c88744c405d97ff4267cf0"
+    },
+    "checkpoint-098.npz": {
+      "bytes": 62409,
+      "sha256": "697f8c987b6ae9bd68f2bed71d22e368898dd443ecd50a3b4692dae382c08b8d"
+    },
+    "checkpoint-099.npz": {
+      "bytes": 62424,
+      "sha256": "d0aff2d120af0a97ad35dd5bc2172f5dec786ecdc40448dd0f7bb550666e3a43"
+    },
+    "checkpoint-100.npz": {
+      "bytes": 62410,
+      "sha256": "12c631b73b246838a0dd996d2adb27809e57e281e9aa189e30ccff95837e912b"
+    },
+    "checkpoint-101.npz": {
+      "bytes": 62408,
+      "sha256": "c6930ab6946c5340b0b12e31cfd680d0add29321c3d1201db03c863085b680a5"
+    },
+    "checkpoint-102.npz": {
+      "bytes": 62408,
+      "sha256": "bd61f109f0b39f72eb57f50eb3486303f821eac5114ce5c8475f853a68f7914b"
+    },
+    "checkpoint-103.npz": {
+      "bytes": 62429,
+      "sha256": "0ee563014d1877d01101295bd880e26a745ea5a9b3831663f63752710d7e15b5"
+    },
+    "checkpoint-104.npz": {
+      "bytes": 62403,
+      "sha256": "e4b14f32019544cfbddc3e56a0850462dae5dd4222d4ddbcf062e553fb706002"
+    },
+    "checkpoint-105.npz": {
+      "bytes": 62412,
+      "sha256": "7a786ce7577e0f286781df935b8bdb88baf6c5c730ae19e8f79a7f04d1f97b8c"
+    },
+    "checkpoint-106.npz": {
+      "bytes": 62391,
+      "sha256": "73f03cbf98085b0344f907fe36a774ec9f680650892b8c2861360c5bcbe7552f"
+    },
+    "checkpoint-107.npz": {
+      "bytes": 62410,
+      "sha256": "42b6dc4c3603a76fbeeec7bc38221b0d860853bf4e5be0114d2452cc464d2122"
+    },
+    "checkpoint-108.npz": {
+      "bytes": 62401,
+      "sha256": "3f76ce886d0b3956e9e2049ed9a93f00a735bc8850c8b296b76c390557344192"
+    },
+    "checkpoint-109.npz": {
+      "bytes": 62399,
+      "sha256": "dda1427128845f7e7514f237e00926fcecb5fdb2e1270e0eb3f52fa34d0cca15"
+    },
+    "checkpoint-110.npz": {
+      "bytes": 62395,
+      "sha256": "66f97ae4c03287c5ada33302fa3777608f8c200bd2ea7f74d7714f9f2be7c014"
+    },
+    "checkpoint-111.npz": {
+      "bytes": 62397,
+      "sha256": "e034a8b141cea00d9cbcc63c893fefc667dd65ec3d9045437a51f293f417687d"
+    },
+    "checkpoint-112.npz": {
+      "bytes": 62395,
+      "sha256": "3a1548af158ecb43a6c103f34b4120b467c2c5dd6dc4365532f5d355fa64a59b"
+    },
+    "checkpoint-113.npz": {
+      "bytes": 62414,
+      "sha256": "734c5a22ed2a942e0befe9f865d6d073ab4bff4a55cd73a67f2bd1fadd4ff393"
+    },
+    "checkpoint-114.npz": {
+      "bytes": 62406,
+      "sha256": "3fbb5ddb09e6fd1686f2ca8c66d0c297cf455083c29f38aa5a5a20d469d7b7cd"
+    },
+    "checkpoint-115.npz": {
+      "bytes": 62407,
+      "sha256": "96a8c622e930f63ef18e830e67e95151a38000db6e175776ff04dae171e72005"
+    },
+    "checkpoint-116.npz": {
+      "bytes": 62418,
+      "sha256": "5c6f95f21c9fee125be1505cea33b8221cbadf7864bbe37d122413809943fc8e"
+    },
+    "checkpoint-117.npz": {
+      "bytes": 62413,
+      "sha256": "3f3e01500f4faeaf3f63e4f471e3af1a6d62f203c1358ba381c24e1dd120a9c0"
+    },
+    "checkpoint-118.npz": {
+      "bytes": 62633,
+      "sha256": "12b83e62f7b42b8878e6c2bc4e559eb2b2190af6b1c1774e984f76a97ac2e7fd"
+    },
+    "checkpoint-119.npz": {
+      "bytes": 62620,
+      "sha256": "997def83695b6f8c558da45c0c6a3def75fce9c95b9808d4f9f40cb225f065c4"
+    },
+    "checkpoint-120.npz": {
+      "bytes": 62582,
+      "sha256": "7b22a1e1724ed0028a14db84cadcc772542af85a0797d8bff0ec517ae9a03f20"
+    },
+    "checkpoint-121.npz": {
+      "bytes": 62622,
+      "sha256": "a1b87985a56b7555150caefdc1cdad24574ec7df59731abe99c2a444a5e66090"
+    },
+    "checkpoint-122.npz": {
+      "bytes": 62632,
+      "sha256": "c5771a03e972019ab983c95d962e1447bf192bf59ae79d601128feabbfe5b6f4"
+    },
+    "checkpoint-123.npz": {
+      "bytes": 62619,
+      "sha256": "a6c0aaa40e05693458f18069c114f85c3aaa80380c9b4956fefa73b3e053a569"
+    },
+    "checkpoint-124.npz": {
+      "bytes": 62600,
+      "sha256": "06dad1724df4efb50f9cd4093ad22a2104cfdce789a044b999030bfad1537423"
+    },
+    "checkpoint-125.npz": {
+      "bytes": 62430,
+      "sha256": "eb64547cfa6fcf0555e3570a3d8070fa3baa717d412c6193a760622547826483"
+    },
+    "checkpoint-126.npz": {
+      "bytes": 62408,
+      "sha256": "e6dd18cbf79734b5a5bbaea82322be731da3eef8d7c325dcbfe0f71327f74ed8"
+    },
+    "checkpoint-127.npz": {
+      "bytes": 62397,
+      "sha256": "f840d5271aa31de0577169bc118b6a8b02450cf221d0c06417d9fdd73f7cce2c"
+    },
+    "checkpoint-128.npz": {
+      "bytes": 62375,
+      "sha256": "bcd00fe47ef57f99b3d28f14262a1a53a0c3e3fd7c8bc0761da704bc52f8ccde"
+    },
+    "checkpoint-129.npz": {
+      "bytes": 62389,
+      "sha256": "f07ed17c516551f2cda04fc7baa637a9d715e22ee99458d83ab0493757b95714"
+    },
+    "checkpoint-130.npz": {
+      "bytes": 62416,
+      "sha256": "f8cb97766b3007826cdfb486e3b6f2d21c842843fb7bed5f0c0d1c01ad63ec53"
+    },
+    "checkpoint-131.npz": {
+      "bytes": 62393,
+      "sha256": "276212c9d5d566843cb429f0eb63afafe88750f2bdb59f36c8d3307de1e5d4a4"
+    },
+    "checkpoint-132.npz": {
+      "bytes": 62409,
+      "sha256": "007f6639c9c3adb39e65376f7ead19bbe94baa1436e62e877c5cd141cecc592e"
+    },
+    "checkpoint-133.npz": {
+      "bytes": 62424,
+      "sha256": "b94ad564451f3404508c0f9e3bd95c2df57bfb30608e15fbf9aa7200752f0968"
+    },
+    "checkpoint-134.npz": {
+      "bytes": 62414,
+      "sha256": "c73ce91e34c4113adb36aea06adc13431c0fa3eaff6119b5634937816f21f500"
+    },
+    "checkpoint-135.npz": {
+      "bytes": 62396,
+      "sha256": "51e39c73386fa79bbc5e048ee1b3f8e295e175e448f9a5a11e63f2375154bffd"
+    },
+    "checkpoint-136.npz": {
+      "bytes": 62351,
+      "sha256": "6f573d3bbc19e39a59eecc67418460aa84f5314c7306f13b02e812b3ddb7ae1f"
+    },
+    "checkpoint-137.npz": {
+      "bytes": 62405,
+      "sha256": "cd5f7b847171819ae3e6c9dd1392f7e014149ed30ed2e8752dd09fcdc7ac2c54"
+    },
+    "cleanup.json": {
+      "bytes": 186,
+      "sha256": "ef2e68b28864b10b800f768dca5c32b9e217d968740f62c76893c2ef3c82a39c"
+    },
+    "counters.json": {
+      "bytes": 369,
+      "sha256": "a724a6cb453ee625f21766465ef70fc95c65102a55db83cc5ee83cfeada7c8de"
+    },
+    "diagnostic-initial.json": {
+      "bytes": 7606,
+      "sha256": "48e4a4dd0f65799e3d1b630258f3502ec5afb2330bf014790625bf135c8c900e"
+    },
+    "diagnostic-review-0032.json": {
+      "bytes": 10809,
+      "sha256": "bb5837564d5c43b736e1ea2353882c9147e842ae68b597a7ed765e1485571e1a"
+    },
+    "diagnostic-review-0064.json": {
+      "bytes": 11070,
+      "sha256": "e3a9af6bf6abeae249e8e2868eeb44c7bd336963b0e52c5f90fecc115cd82063"
+    },
+    "diagnostic-review-0096.json": {
+      "bytes": 11173,
+      "sha256": "62580e11230b3e6bc57c8a340e08ec8aa2613b8a24488e43ef2ab8331bc12140"
+    },
+    "diagnostic-review-0128.json": {
+      "bytes": 15079,
+      "sha256": "d6ae09cc5343ae6779f0a648ee2b5908c52c06d8e2cca7b5290e0bf4687bfe95"
+    },
+    "diagnostic-rows.json": {
+      "bytes": 178445,
+      "sha256": "2928b3bff241036dc9167752c9dec31d72ac5ad3e342e8cf639ab86a9b53b570"
+    },
+    "diagnostic-summary.json": {
+      "bytes": 76126,
+      "sha256": "ed5e5148706098dca3efc49b222c1c3dbd97b8d43d0f8f13168c3d10f771e118"
+    },
+    "environment.json": {
+      "bytes": 295,
+      "sha256": "6d08f61af83ae3c69afaf796977bdc9138a6630aeedaac3cd58c9b42b6c5ea6d"
+    },
+    "failure.json": {
+      "bytes": 1549,
+      "sha256": "6e9822c2376297e5b24ddb62cd843b1ac85e6db7e7768a54853534be19abdf93"
+    },
+    "gpu-identity.json": {
+      "bytes": 125,
+      "sha256": "275031d38f7e681ac0e33ec31c2cc0630034fd892f63bbdc439dc8fcecbe4437"
+    },
+    "initial.npz": {
+      "bytes": 84787,
+      "sha256": "fc5d514d3437970a47b35e0565d6a531bfe1a78ff576e076e5cb0041ed1ce4e2"
+    },
+    "last.npz": {
+      "bytes": 62405,
+      "sha256": "cd5f7b847171819ae3e6c9dd1392f7e014149ed30ed2e8752dd09fcdc7ac2c54"
+    },
+    "launch.json": {
+      "bytes": 2024,
+      "sha256": "457fc36d5075a710aa7ad3cdbd21a0de23f6b28f6d9bb537cd6650e5dd6c5cdf"
+    },
+    "line-search.ndjson": {
+      "bytes": 1065383,
+      "sha256": "d95a3d5ac71ce665068b25e88bc01c09f538b6783271a28f67e30bcf560131ed"
+    },
+    "optimization-accepted.ndjson": {
+      "bytes": 768223,
+      "sha256": "c8690e48d4becb52023b6f4918f676b144a3aea65cd1d8edbcd1ab19286b16b7"
+    },
+    "optimization-steps.ndjson": {
+      "bytes": 209983,
+      "sha256": "ea5e1fc322e0aa0d9626ed686b063ce87885dcd9db6765f02e12000b9cd0e514"
+    },
+    "owner.json": {
+      "bytes": 85,
+      "sha256": "127b820a1993e5f1ac4b394868950a7e5fff781b9aa853ab7f60881bdfcc0855"
+    },
+    "preflight.json": {
+      "bytes": 530,
+      "sha256": "7f7ae8096e68708d9542c8ff422725331ac45493141d7424ce672c0faa456d78"
+    },
+    "preparation.json": {
+      "bytes": 89,
+      "sha256": "508ccfd893ceafce8131fd795f4bc103972d45f4523f0f9fb8f82cd675a4f58e"
+    },
+    "resources.ndjson": {
+      "bytes": 41407424,
+      "sha256": "b3e06c964ef63d7be6d511fbbe33e6db72ab49105a83d8e759bb2e8028d318b2"
+    },
+    "restart.npz": {
+      "bytes": 996338,
+      "sha256": "9e50ca33dee1daa2cec3ea5765fd1239f8bf2561323f149cfd6346737c274021"
+    },
+    "supervisor.json": {
+      "bytes": 784,
+      "sha256": "83b13e202767b8607949e471a3d79059913da7da5da6cbaae7960817b6d300fb"
+    },
+    "trial.json": {
+      "bytes": 4215,
+      "sha256": "20ce4e55ae69a8b7fee66da2b984121fe686818960c11b40db41e66a825d6de0"
+    },
+    "worker-summary.json": {
+      "bytes": 1861,
+      "sha256": "cccc77c82c7eba2f1be7eb233e92e7d62f3e12c12fca42edf4171a1c7edec8b8"
+    },
+    "worker.log": {
+      "bytes": 844,
+      "sha256": "50d877f42ad537856b29a7e7d770711f3c1d8227a5c5cdaedd8cccd035afe437"
+    }
+  },
+  "hardware": "cuda:0",
+  "identity": "226eac23d0fbed7f644e9a8f22fa4e9b0f1c5093c2e1db531c55167efab09b3b",
+  "kind": "continuation",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "model": {
+    "depth": 1,
+    "width": 16
+  },
+  "model_seconds_before": 2283.882704458083,
+  "optimization_budget_stop": null,
+  "optimization_diagnostics": {
+    "candidate_verdicts": {
+      "armijo_passed": 137,
+      "armijo_rejected": 6,
+      "infeasible": 994
+    },
+    "diagnostic_scope": "existing forwards, gradients and saved arrays only",
+    "elapsed_seconds": 8928.281287758029,
+    "endpoint_diagnostics": {
+      "DY_adjusted_RMS_fixed_sigma": 2.1155932731913043,
+      "DY_nuisances": {
+        "CDF_RUN_1:normalization": 2.541225425338638,
+        "CDF_RUN_2:efficiency": 1.1411222994269747,
+        "CDF_RUN_2:normalization": 0.7325476303890459,
+        "D0_RUN_1:normalization": 0.4471415483505981,
+        "E288_200:normalization": 3.6790105979312724,
+        "E288_300:normalization": 5.707363425651924,
+        "E288_400:normalization": 5.672406966640904,
+        "E605:normalization": 7.0024823317336535,
+        "E772:normalization": 7.70304680545278,
+        "LHCb_7:beam": 0.9021768550261159,
+        "LHCb_7:lumi": 1.242288324311811
+      },
+      "DY_profile_closure_abs_error": 4.547473508864641e-12,
+      "experimental_nuisance_penalty": 197.5107576587477,
+      "finite": true,
+      "high_COMPASS": {
+        "mean": 7.733332329276052,
+        "rms": 7.979179945743357,
+        "rows": 188,
+        "underpredicted": 188
+      },
+      "min_T_over_sigma": 4.351463134481926e-05,
+      "negative": 0,
+      "numerical_nuisance_penalty": 5.128123444780794,
+      "processes": {
+        "COMPASS": {
+          "mean": 2.9681296948375455,
+          "rms": 4.926816940695729,
+          "rows": 1203,
+          "underpredicted": 815
+        },
+        "DY": {
+          "mean": 3.1065862143052843,
+          "rms": 4.065953502099257,
+          "rows": 743,
+          "underpredicted": 702
+        },
+        "HERMES": {
+          "mean": 0.4731372850116327,
+          "rms": 2.221371326046406,
+          "rows": 344,
+          "underpredicted": 198
+        }
+      },
+      "q_per_measurement": 16.364263303504803,
+      "zero": 0
+    },
+    "interval_counters": {
+      "accepted_updates": 9,
+      "forwards": 113,
+      "full_calls": 10,
+      "infeasible_trials": 92,
+      "line_search_rejections": 93
+    },
+    "interval_elapsed_seconds": 751.8400182730402,
+    "interval_q_improvement": 0.008041740528373253,
+    "interval_q_improvement_per_100_forwards": 0.00711658453838341,
+    "last_accepted_diagnostics": {
+      "accepted_updates": 137,
+      "alpha": 9.5367431640625e-07,
+      "cumulative_accepted_updates": 183,
+      "curvature_cosine": 0.24122531431145153,
+      "curvature_pair_retained": true,
+      "elapsed_seconds": 8927.568072086025,
+      "gradient_blocks": {
+        "cs.network.0.bias": {
+          "l2": 0.15319595727690613,
+          "maximum": 0.09233590349702875,
+          "parameters": 12
+        },
+        "cs.network.0.weight": {
+          "l2": 0.1961859505792279,
+          "maximum": 0.10094547222269971,
+          "parameters": 48
+        },
+        "cs.network.2.bias": {
+          "l2": 0.1858324190336059,
+          "maximum": 0.1858324190336059,
+          "parameters": 1
+        },
+        "cs.network.2.weight": {
+          "l2": 0.3156579491306091,
+          "maximum": 0.15445059435150488,
+          "parameters": 12
+        },
+        "incoming.blocks.0.linear1.bias": {
+          "l2": 0.07523870197509988,
+          "maximum": 0.053002863363351846,
+          "parameters": 16
+        },
+        "incoming.blocks.0.linear1.weight": {
+          "l2": 0.153553740986953,
+          "maximum": 0.048171728248683356,
+          "parameters": 256
+        },
+        "incoming.blocks.0.linear2.bias": {
+          "l2": 0.045651743530267686,
+          "maximum": 0.036858038154358355,
+          "parameters": 16
+        },
+        "incoming.blocks.0.linear2.weight": {
+          "l2": 0.2164535029847622,
+          "maximum": 0.0709199835219422,
+          "parameters": 256
+        },
+        "incoming.blocks.0.modulation.bias": {
+          "l2": 0.061032033540347225,
+          "maximum": 0.027645672332895384,
+          "parameters": 32
+        },
+        "incoming.blocks.0.modulation.weight": {
+          "l2": 0.3713015138403667,
+          "maximum": 0.13816507166178923,
+          "parameters": 384
+        },
+        "incoming.condition.0.bias": {
+          "l2": 0.12035485535704896,
+          "maximum": 0.08049938506443924,
+          "parameters": 12
+        },
+        "incoming.condition.0.weight": {
+          "l2": 0.36156077715977664,
+          "maximum": 0.2034840350198679,
+          "parameters": 84
+        },
+        "incoming.condition.2.bias": {
+          "l2": 0.09054655623650516,
+          "maximum": 0.057196943217334185,
+          "parameters": 12
+        },
+        "incoming.condition.2.weight": {
+          "l2": 0.46689512931451277,
+          "maximum": 0.19249257656585783,
+          "parameters": 144
+        },
+        "incoming.delta_width_head.bias": {
+          "l2": 0.027271693467299234,
+          "maximum": 0.027271693467299234,
+          "parameters": 1
+        },
+        "incoming.delta_width_head.weight": {
+          "l2": 0.18280202009581342,
+          "maximum": 0.09612803531387693,
+          "parameters": 12
+        },
+        "incoming.flavor.weight": {
+          "l2": 0.07349932684906312,
+          "maximum": 0.03907910986052278,
+          "parameters": 40
+        },
+        "incoming.radial.bias": {
+          "l2": 0.045569638981186114,
+          "maximum": 0.022086646886839176,
+          "parameters": 16
+        },
+        "incoming.radial.weight": {
+          "l2": 0.08819058376515523,
+          "maximum": 0.03423847948908052,
+          "parameters": 64
+        },
+        "incoming.raw_widths": {
+          "l2": 0.02150260059565856,
+          "maximum": 0.01924548657166785,
+          "parameters": 10
+        },
+        "incoming.shape_head.bias": {
+          "l2": 0.02361072395027801,
+          "maximum": 0.02361072395027801,
+          "parameters": 1
+        },
+        "incoming.shape_head.weight": {
+          "l2": 0.11493745540575884,
+          "maximum": 0.05909946631519361,
+          "parameters": 16
+        },
+        "outgoing.blocks.0.linear1.bias": {
+          "l2": 0.16475587758689997,
+          "maximum": 0.13091204292264488,
+          "parameters": 16
+        },
+        "outgoing.blocks.0.linear1.weight": {
+          "l2": 0.24294915585686347,
+          "maximum": 0.08920267860542277,
+          "parameters": 256
+        },
+        "outgoing.blocks.0.linear2.bias": {
+          "l2": 0.08408630752199994,
+          "maximum": 0.05099916514057546,
+          "parameters": 16
+        },
+        "outgoing.blocks.0.linear2.weight": {
+          "l2": 0.1691541897853983,
+          "maximum": 0.076741462029233,
+          "parameters": 256
+        },
+        "outgoing.blocks.0.modulation.bias": {
+          "l2": 0.08866957326505391,
+          "maximum": 0.042474053887427136,
+          "parameters": 32
+        },
+        "outgoing.blocks.0.modulation.weight": {
+          "l2": 0.16017921873820715,
+          "maximum": 0.0372977676642059,
+          "parameters": 384
+        },
+        "outgoing.condition.0.bias": {
+          "l2": 0.15835122428258872,
+          "maximum": 0.1064938685150622,
+          "parameters": 12
+        },
+        "outgoing.condition.0.weight": {
+          "l2": 0.35948956937068965,
+          "maximum": 0.12337870118445898,
+          "parameters": 120
+        },
+        "outgoing.condition.2.bias": {
+          "l2": 0.12683156443302218,
+          "maximum": 0.06468604090797199,
+          "parameters": 12
+        },
+        "outgoing.condition.2.weight": {
+          "l2": 0.19157243760039466,
+          "maximum": 0.04929824354439555,
+          "parameters": 144
+        },
+        "outgoing.delta_width_head.bias": {
+          "l2": 0.06839199821852256,
+          "maximum": 0.06839199821852256,
+          "parameters": 1
+        },
+        "outgoing.delta_width_head.weight": {
+          "l2": 0.09997239107386985,
+          "maximum": 0.05319897421339942,
+          "parameters": 12
+        },
+        "outgoing.flavor.weight": {
+          "l2": 0.03834979093030818,
+          "maximum": 0.023263015891900454,
+          "parameters": 40
+        },
+        "outgoing.hadron.weight": {
+          "l2": 0.06308473265828977,
+          "maximum": 0.05356327873763468,
+          "parameters": 9
+        },
+        "outgoing.radial.bias": {
+          "l2": 0.21290869260188833,
+          "maximum": 0.09490922657855654,
+          "parameters": 16
+        },
+        "outgoing.radial.weight": {
+          "l2": 0.18851791988768368,
+          "maximum": 0.06195236817758858,
+          "parameters": 64
+        },
+        "outgoing.raw_widths": {
+          "l2": 0.029343996730453258,
+          "maximum": 0.01953844202690255,
+          "parameters": 30
+        },
+        "outgoing.shape_head.bias": {
+          "l2": 0.05803797593622928,
+          "maximum": 0.05803797593622928,
+          "parameters": 1
+        },
+        "outgoing.shape_head.weight": {
+          "l2": 0.1099604863517875,
+          "maximum": 0.0488586491513935,
+          "parameters": 16
+        }
+      },
+      "min_T_over_sigma": 4.351463134481926e-05,
+      "objective": 8.182130371553018,
+      "objective_improvement": 3.295504681410932e-05,
+      "parameter_step_l2": 0.00020271245960134992,
+      "penalized_gradient_l2": 1.1535700548562047,
+      "penalized_gradient_max": 0.2034840350198679,
+      "plateau": {
+        "eligible": true,
+        "passed": false,
+        "windows": [
+          {
+            "gradient_max": 0.2779525639666581,
+            "passed": false,
+            "prediction_span_max": 0.5893377081243045,
+            "prediction_span_rms": 0.07714049620982959,
+            "q_range": 0.005180475819585695,
+            "same_mu": true
+          },
+          {
+            "gradient_max": 0.2034840350198679,
+            "passed": false,
+            "prediction_span_max": 0.6799609224704248,
+            "prediction_span_rms": 0.08554970109821541,
+            "q_range": 0.008057130763873488,
+            "same_mu": true
+          }
+        ]
+      },
+      "predicted_linear_improvement": 3.3071769350569846e-05,
+      "q_improvement": 6.591096733998825e-05,
+      "q_per_measurement": 16.364263303504803,
+      "sTy": 2.3362596094916709e-07,
+      "schema": "tmd-optimization-accepted-v1"
+    },
+    "model_calls": 0,
+    "penalized_gradient_l2": 1.1535700548562047,
+    "plateau": {
+      "eligible": true,
+      "passed": false,
+      "windows": [
+        {
+          "gradient_max": 0.2779525639666581,
+          "passed": false,
+          "prediction_span_max": 0.5893377081243045,
+          "prediction_span_rms": 0.07714049620982959,
+          "q_range": 0.005180475819585695,
+          "same_mu": true
+        },
+        {
+          "gradient_max": 0.2034840350198679,
+          "passed": false,
+          "prediction_span_max": 0.6799609224704248,
+          "prediction_span_rms": 0.08554970109821541,
+          "q_range": 0.008057130763873488,
+          "same_mu": true
+        }
+      ]
+    },
+    "review_files": [
+      "diagnostic-review-0032.json",
+      "diagnostic-review-0064.json",
+      "diagnostic-review-0096.json",
+      "diagnostic-review-0128.json"
+    ],
+    "schema": "tmd-optimization-review-v1",
+    "segment_counters": {
+      "accepted_updates": 137,
+      "forwards": 1288,
+      "full_calls": 145,
+      "infeasible_trials": 994,
+      "line_search_rejections": 1000
+    },
+    "stop_reason": "ValueError: nonfinite boundary or zero damping; no clipping",
+    "trajectory_counters": {
+      "accepted_updates": 183,
+      "forwards": 1583,
+      "full_calls": 205,
+      "infeasible_trials": 1159,
+      "line_search_rejections": 1175
+    },
+    "violating_row_counts": {
+      "obs:CDF_RUN_1:0": 3,
+      "obs:CDF_RUN_1:1": 2,
+      "obs:CDF_RUN_1:10": 8,
+      "obs:CDF_RUN_1:11": 9,
+      "obs:CDF_RUN_1:12": 10,
+      "obs:CDF_RUN_1:13": 9,
+      "obs:CDF_RUN_1:14": 8,
+      "obs:CDF_RUN_1:15": 6,
+      "obs:CDF_RUN_1:16": 6,
+      "obs:CDF_RUN_1:17": 6,
+      "obs:CDF_RUN_1:18": 8,
+      "obs:CDF_RUN_1:19": 9,
+      "obs:CDF_RUN_1:2": 1,
+      "obs:CDF_RUN_1:20": 6,
+      "obs:CDF_RUN_1:21": 5,
+      "obs:CDF_RUN_1:22": 5,
+      "obs:CDF_RUN_1:23": 4,
+      "obs:CDF_RUN_1:24": 7,
+      "obs:CDF_RUN_1:25": 4,
+      "obs:CDF_RUN_1:26": 8,
+      "obs:CDF_RUN_1:27": 7,
+      "obs:CDF_RUN_1:28": 5,
+      "obs:CDF_RUN_1:29": 5,
+      "obs:CDF_RUN_1:3": 4,
+      "obs:CDF_RUN_1:30": 5,
+      "obs:CDF_RUN_1:31": 8,
+      "obs:CDF_RUN_1:32": 3,
+      "obs:CDF_RUN_1:33": 4,
+      "obs:CDF_RUN_1:34": 7,
+      "obs:CDF_RUN_1:35": 6,
+      "obs:CDF_RUN_1:36": 7,
+      "obs:CDF_RUN_1:4": 5,
+      "obs:CDF_RUN_1:5": 7,
+      "obs:CDF_RUN_1:6": 6,
+      "obs:CDF_RUN_1:7": 6,
+      "obs:CDF_RUN_1:8": 8,
+      "obs:CDF_RUN_1:9": 8,
+      "obs:CDF_RUN_2:0": 3,
+      "obs:CDF_RUN_2:1": 2,
+      "obs:CDF_RUN_2:10": 8,
+      "obs:CDF_RUN_2:11": 9,
+      "obs:CDF_RUN_2:12": 10,
+      "obs:CDF_RUN_2:13": 9,
+      "obs:CDF_RUN_2:14": 7,
+      "obs:CDF_RUN_2:15": 6,
+      "obs:CDF_RUN_2:16": 7,
+      "obs:CDF_RUN_2:17": 6,
+      "obs:CDF_RUN_2:18": 9,
+      "obs:CDF_RUN_2:19": 10,
+      "obs:CDF_RUN_2:2": 1,
+      "obs:CDF_RUN_2:20": 6,
+      "obs:CDF_RUN_2:21": 5,
+      "obs:CDF_RUN_2:22": 4,
+      "obs:CDF_RUN_2:23": 3,
+      "obs:CDF_RUN_2:24": 2,
+      "obs:CDF_RUN_2:25": 8,
+      "obs:CDF_RUN_2:26": 5,
+      "obs:CDF_RUN_2:27": 7,
+      "obs:CDF_RUN_2:28": 9,
+      "obs:CDF_RUN_2:29": 6,
+      "obs:CDF_RUN_2:3": 4,
+      "obs:CDF_RUN_2:30": 5,
+      "obs:CDF_RUN_2:31": 2,
+      "obs:CDF_RUN_2:32": 5,
+      "obs:CDF_RUN_2:33": 6,
+      "obs:CDF_RUN_2:34": 8,
+      "obs:CDF_RUN_2:35": 8,
+      "obs:CDF_RUN_2:36": 9,
+      "obs:CDF_RUN_2:37": 9,
+      "obs:CDF_RUN_2:38": 6,
+      "obs:CDF_RUN_2:39": 6,
+      "obs:CDF_RUN_2:4": 5,
+      "obs:CDF_RUN_2:40": 6,
+      "obs:CDF_RUN_2:41": 5,
+      "obs:CDF_RUN_2:42": 6,
+      "obs:CDF_RUN_2:43": 8,
+      "obs:CDF_RUN_2:44": 6,
+      "obs:CDF_RUN_2:45": 8,
+      "obs:CDF_RUN_2:46": 7,
+      "obs:CDF_RUN_2:47": 9,
+      "obs:CDF_RUN_2:48": 8,
+      "obs:CDF_RUN_2:49": 7,
+      "obs:CDF_RUN_2:5": 7,
+      "obs:CDF_RUN_2:50": 4,
+      "obs:CDF_RUN_2:51": 6,
+      "obs:CDF_RUN_2:52": 3,
+      "obs:CDF_RUN_2:53": 6,
+      "obs:CDF_RUN_2:54": 8,
+      "obs:CDF_RUN_2:55": 6,
+      "obs:CDF_RUN_2:6": 6,
+      "obs:CDF_RUN_2:7": 6,
+      "obs:CDF_RUN_2:8": 10,
+      "obs:CDF_RUN_2:9": 7,
+      "obs:D0_RUN_1:0": 5,
+      "obs:D0_RUN_1:1": 1,
+      "obs:D0_RUN_1:10": 5,
+      "obs:D0_RUN_1:11": 4,
+      "obs:D0_RUN_1:12": 4,
+      "obs:D0_RUN_1:13": 8,
+      "obs:D0_RUN_1:14": 6,
+      "obs:D0_RUN_1:15": 6,
+      "obs:D0_RUN_1:16": 2,
+      "obs:D0_RUN_1:2": 7,
+      "obs:D0_RUN_1:3": 7,
+      "obs:D0_RUN_1:4": 10,
+      "obs:D0_RUN_1:5": 7,
+      "obs:D0_RUN_1:6": 9,
+      "obs:D0_RUN_1:7": 7,
+      "obs:D0_RUN_1:8": 6,
+      "obs:D0_RUN_1:9": 9,
+      "obs:E288_200:0": 8,
+      "obs:E288_200:15": 1,
+      "obs:E288_200:16": 3,
+      "obs:E288_200:17": 2,
+      "obs:E288_200:18": 7,
+      "obs:E288_200:19": 8,
+      "obs:E288_200:2": 2,
+      "obs:E288_200:20": 8,
+      "obs:E288_200:21": 5,
+      "obs:E288_200:22": 2,
+      "obs:E288_200:3": 3,
+      "obs:E288_200:31": 1,
+      "obs:E288_200:32": 3,
+      "obs:E288_200:33": 3,
+      "obs:E288_200:34": 8,
+      "obs:E288_200:35": 7,
+      "obs:E288_200:36": 10,
+      "obs:E288_200:37": 11,
+      "obs:E288_200:38": 6,
+      "obs:E288_200:39": 3,
+      "obs:E288_200:4": 5,
+      "obs:E288_200:45": 2,
+      "obs:E288_200:46": 4,
+      "obs:E288_200:47": 3,
+      "obs:E288_200:48": 9,
+      "obs:E288_200:49": 8,
+      "obs:E288_200:5": 4,
+      "obs:E288_200:50": 9,
+      "obs:E288_200:51": 11,
+      "obs:E288_200:52": 11,
+      "obs:E288_200:53": 7,
+      "obs:E288_200:54": 3,
+      "obs:E288_200:57": 1,
+      "obs:E288_200:58": 2,
+      "obs:E288_200:59": 4,
+      "obs:E288_200:6": 4,
+      "obs:E288_200:60": 3,
+      "obs:E288_200:61": 6,
+      "obs:E288_200:62": 6,
+      "obs:E288_200:63": 7,
+      "obs:E288_200:64": 10,
+      "obs:E288_200:65": 8,
+      "obs:E288_200:66": 26,
+      "obs:E288_200:67": 11,
+      "obs:E288_200:69": 2,
+      "obs:E288_200:70": 2,
+      "obs:E288_200:71": 4,
+      "obs:E288_200:72": 4,
+      "obs:E288_200:73": 5,
+      "obs:E288_200:74": 5,
+      "obs:E288_200:75": 6,
+      "obs:E288_200:76": 7,
+      "obs:E288_200:77": 7,
+      "obs:E288_200:78": 111,
+      "obs:E288_200:79": 2,
+      "obs:E288_200:80": 176,
+      "obs:E288_200:81": 19,
+      "obs:E288_200:82": 5,
+      "obs:E288_200:83": 3,
+      "obs:E288_200:84": 4,
+      "obs:E288_200:85": 4,
+      "obs:E288_200:86": 3,
+      "obs:E288_200:87": 4,
+      "obs:E288_200:88": 6,
+      "obs:E288_300:0": 11,
+      "obs:E288_300:100": 8,
+      "obs:E288_300:101": 6,
+      "obs:E288_300:102": 9,
+      "obs:E288_300:103": 7,
+      "obs:E288_300:104": 8,
+      "obs:E288_300:105": 8,
+      "obs:E288_300:106": 3,
+      "obs:E288_300:107": 3,
+      "obs:E288_300:109": 2,
+      "obs:E288_300:110": 5,
+      "obs:E288_300:111": 3,
+      "obs:E288_300:112": 8,
+      "obs:E288_300:113": 7,
+      "obs:E288_300:114": 6,
+      "obs:E288_300:115": 9,
+      "obs:E288_300:116": 6,
+      "obs:E288_300:117": 5,
+      "obs:E288_300:15": 9,
+      "obs:E288_300:17": 1,
+      "obs:E288_300:18": 1,
+      "obs:E288_300:19": 2,
+      "obs:E288_300:2": 2,
+      "obs:E288_300:20": 4,
+      "obs:E288_300:21": 4,
+      "obs:E288_300:22": 3,
+      "obs:E288_300:23": 2,
+      "obs:E288_300:3": 2,
+      "obs:E288_300:34": 1,
+      "obs:E288_300:35": 2,
+      "obs:E288_300:36": 4,
+      "obs:E288_300:37": 6,
+      "obs:E288_300:38": 5,
+      "obs:E288_300:39": 4,
+      "obs:E288_300:4": 2,
+      "obs:E288_300:40": 4,
+      "obs:E288_300:41": 4,
+      "obs:E288_300:5": 2,
+      "obs:E288_300:52": 2,
+      "obs:E288_300:53": 3,
+      "obs:E288_300:54": 6,
+      "obs:E288_300:55": 6,
+      "obs:E288_300:56": 7,
+      "obs:E288_300:57": 6,
+      "obs:E288_300:58": 6,
+      "obs:E288_300:59": 6,
+      "obs:E288_300:6": 2,
+      "obs:E288_300:60": 4,
+      "obs:E288_300:61": 3,
+      "obs:E288_300:68": 1,
+      "obs:E288_300:69": 3,
+      "obs:E288_300:70": 2,
+      "obs:E288_300:71": 6,
+      "obs:E288_300:72": 6,
+      "obs:E288_300:73": 6,
+      "obs:E288_300:74": 8,
+      "obs:E288_300:75": 7,
+      "obs:E288_300:76": 6,
+      "obs:E288_300:77": 6,
+      "obs:E288_300:78": 4,
+      "obs:E288_300:79": 5,
+      "obs:E288_300:82": 1,
+      "obs:E288_300:83": 4,
+      "obs:E288_300:84": 3,
+      "obs:E288_300:85": 6,
+      "obs:E288_300:86": 8,
+      "obs:E288_300:87": 7,
+      "obs:E288_300:88": 9,
+      "obs:E288_300:89": 9,
+      "obs:E288_300:90": 10,
+      "obs:E288_300:91": 9,
+      "obs:E288_300:92": 8,
+      "obs:E288_300:93": 6,
+      "obs:E288_300:96": 1,
+      "obs:E288_300:97": 4,
+      "obs:E288_300:98": 3,
+      "obs:E288_300:99": 7,
+      "obs:E288_400:0": 11,
+      "obs:E288_400:100": 4,
+      "obs:E288_400:101": 3,
+      "obs:E288_400:112": 2,
+      "obs:E288_400:113": 3,
+      "obs:E288_400:114": 6,
+      "obs:E288_400:115": 6,
+      "obs:E288_400:116": 7,
+      "obs:E288_400:117": 6,
+      "obs:E288_400:118": 8,
+      "obs:E288_400:119": 9,
+      "obs:E288_400:120": 12,
+      "obs:E288_400:121": 11,
+      "obs:E288_400:122": 7,
+      "obs:E288_400:123": 4,
+      "obs:E288_400:124": 5,
+      "obs:E288_400:125": 5,
+      "obs:E288_400:134": 3,
+      "obs:E288_400:135": 3,
+      "obs:E288_400:136": 5,
+      "obs:E288_400:137": 5,
+      "obs:E288_400:138": 7,
+      "obs:E288_400:139": 7,
+      "obs:E288_400:140": 9,
+      "obs:E288_400:141": 13,
+      "obs:E288_400:142": 19,
+      "obs:E288_400:143": 20,
+      "obs:E288_400:144": 18,
+      "obs:E288_400:145": 10,
+      "obs:E288_400:146": 7,
+      "obs:E288_400:147": 7,
+      "obs:E288_400:148": 5,
+      "obs:E288_400:149": 3,
+      "obs:E288_400:151": 1,
+      "obs:E288_400:152": 4,
+      "obs:E288_400:153": 3,
+      "obs:E288_400:154": 6,
+      "obs:E288_400:155": 7,
+      "obs:E288_400:156": 6,
+      "obs:E288_400:157": 7,
+      "obs:E288_400:158": 9,
+      "obs:E288_400:159": 15,
+      "obs:E288_400:160": 37,
+      "obs:E288_400:161": 100,
+      "obs:E288_400:162": 163,
+      "obs:E288_400:163": 11,
+      "obs:E288_400:164": 7,
+      "obs:E288_400:165": 6,
+      "obs:E288_400:166": 1,
+      "obs:E288_400:167": 4,
+      "obs:E288_400:168": 4,
+      "obs:E288_400:169": 7,
+      "obs:E288_400:170": 8,
+      "obs:E288_400:171": 7,
+      "obs:E288_400:172": 9,
+      "obs:E288_400:173": 11,
+      "obs:E288_400:174": 15,
+      "obs:E288_400:175": 272,
+      "obs:E288_400:176": 493,
+      "obs:E288_400:19": 8,
+      "obs:E288_400:2": 1,
+      "obs:E288_400:21": 1,
+      "obs:E288_400:23": 1,
+      "obs:E288_400:24": 5,
+      "obs:E288_400:25": 5,
+      "obs:E288_400:26": 5,
+      "obs:E288_400:27": 4,
+      "obs:E288_400:28": 4,
+      "obs:E288_400:3": 1,
+      "obs:E288_400:4": 2,
+      "obs:E288_400:43": 3,
+      "obs:E288_400:45": 1,
+      "obs:E288_400:47": 1,
+      "obs:E288_400:48": 4,
+      "obs:E288_400:49": 4,
+      "obs:E288_400:5": 3,
+      "obs:E288_400:50": 4,
+      "obs:E288_400:51": 5,
+      "obs:E288_400:52": 5,
+      "obs:E288_400:53": 3,
+      "obs:E288_400:54": 2,
+      "obs:E288_400:6": 3,
+      "obs:E288_400:69": 1,
+      "obs:E288_400:7": 4,
+      "obs:E288_400:71": 2,
+      "obs:E288_400:72": 5,
+      "obs:E288_400:73": 5,
+      "obs:E288_400:74": 5,
+      "obs:E288_400:75": 5,
+      "obs:E288_400:76": 5,
+      "obs:E288_400:77": 6,
+      "obs:E288_400:78": 4,
+      "obs:E288_400:79": 2,
+      "obs:E288_400:8": 3,
+      "obs:E288_400:89": 1,
+      "obs:E288_400:90": 2,
+      "obs:E288_400:91": 4,
+      "obs:E288_400:92": 6,
+      "obs:E288_400:93": 6,
+      "obs:E288_400:94": 7,
+      "obs:E288_400:95": 4,
+      "obs:E288_400:96": 7,
+      "obs:E288_400:97": 10,
+      "obs:E288_400:98": 6,
+      "obs:E288_400:99": 5,
+      "obs:E605:0": 11,
+      "obs:E605:10": 3,
+      "obs:E605:11": 8,
+      "obs:E605:13": 1,
+      "obs:E605:14": 1,
+      "obs:E605:15": 2,
+      "obs:E605:16": 5,
+      "obs:E605:17": 4,
+      "obs:E605:18": 4,
+      "obs:E605:19": 6,
+      "obs:E605:2": 1,
+      "obs:E605:20": 6,
+      "obs:E605:21": 7,
+      "obs:E605:22": 3,
+      "obs:E605:23": 2,
+      "obs:E605:25": 4,
+      "obs:E605:27": 1,
+      "obs:E605:28": 1,
+      "obs:E605:29": 2,
+      "obs:E605:3": 1,
+      "obs:E605:30": 5,
+      "obs:E605:31": 6,
+      "obs:E605:32": 5,
+      "obs:E605:33": 6,
+      "obs:E605:34": 8,
+      "obs:E605:35": 9,
+      "obs:E605:36": 8,
+      "obs:E605:37": 5,
+      "obs:E605:38": 5,
+      "obs:E605:39": 5,
+      "obs:E605:4": 2,
+      "obs:E605:40": 5,
+      "obs:E605:41": 2,
+      "obs:E605:43": 1,
+      "obs:E605:44": 3,
+      "obs:E605:45": 5,
+      "obs:E605:46": 5,
+      "obs:E605:47": 5,
+      "obs:E605:48": 5,
+      "obs:E605:49": 5,
+      "obs:E605:5": 5,
+      "obs:E605:50": 8,
+      "obs:E605:51": 10,
+      "obs:E605:52": 10,
+      "obs:E605:53": 6,
+      "obs:E605:54": 6,
+      "obs:E605:55": 5,
+      "obs:E605:56": 6,
+      "obs:E605:57": 6,
+      "obs:E605:58": 6,
+      "obs:E605:6": 4,
+      "obs:E605:60": 1,
+      "obs:E605:61": 3,
+      "obs:E605:62": 2,
+      "obs:E605:63": 6,
+      "obs:E605:64": 6,
+      "obs:E605:65": 7,
+      "obs:E605:66": 8,
+      "obs:E605:67": 7,
+      "obs:E605:68": 8,
+      "obs:E605:69": 10,
+      "obs:E605:7": 5,
+      "obs:E605:70": 9,
+      "obs:E605:71": 10,
+      "obs:E605:72": 7,
+      "obs:E605:73": 7,
+      "obs:E605:74": 6,
+      "obs:E605:76": 1,
+      "obs:E605:77": 1,
+      "obs:E605:78": 2,
+      "obs:E605:79": 4,
+      "obs:E605:8": 5,
+      "obs:E605:80": 3,
+      "obs:E605:81": 3,
+      "obs:E605:82": 5,
+      "obs:E605:83": 4,
+      "obs:E605:84": 7,
+      "obs:E605:85": 5,
+      "obs:E605:86": 4,
+      "obs:E605:87": 3,
+      "obs:E605:88": 5,
+      "obs:E605:89": 2,
+      "obs:E605:9": 5,
+      "obs:E772:0": 13,
+      "obs:E772:12": 9,
+      "obs:E772:14": 3,
+      "obs:E772:15": 5,
+      "obs:E772:16": 6,
+      "obs:E772:17": 4,
+      "obs:E772:18": 4,
+      "obs:E772:19": 2,
+      "obs:E772:2": 2,
+      "obs:E772:28": 7,
+      "obs:E772:3": 4,
+      "obs:E772:30": 3,
+      "obs:E772:31": 4,
+      "obs:E772:32": 5,
+      "obs:E772:33": 5,
+      "obs:E772:34": 4,
+      "obs:E772:35": 5,
+      "obs:E772:36": 3,
+      "obs:E772:37": 3,
+      "obs:E772:4": 5,
+      "obs:E772:42": 6,
+      "obs:E772:44": 3,
+      "obs:E772:45": 4,
+      "obs:E772:46": 5,
+      "obs:E772:47": 4,
+      "obs:E772:48": 4,
+      "obs:E772:49": 6,
+      "obs:E772:5": 3,
+      "obs:E772:50": 5,
+      "obs:E772:51": 3,
+      "obs:E772:52": 2,
+      "obs:E772:57": 1,
+      "obs:E772:58": 3,
+      "obs:E772:59": 6,
+      "obs:E772:6": 3,
+      "obs:E772:60": 5,
+      "obs:E772:61": 7,
+      "obs:E772:62": 4,
+      "obs:E772:63": 3,
+      "obs:E772:64": 6,
+      "obs:E772:65": 6,
+      "obs:E772:66": 7,
+      "obs:E772:68": 1,
+      "obs:E772:69": 3,
+      "obs:E772:70": 7,
+      "obs:E772:71": 5,
+      "obs:E772:72": 7,
+      "obs:E772:73": 4,
+      "obs:E772:74": 3,
+      "obs:E772:75": 7,
+      "obs:E772:76": 7,
+      "obs:E772:77": 7,
+      "obs:E772:79": 1,
+      "obs:E772:80": 2,
+      "obs:E772:81": 7,
+      "obs:E772:82": 6,
+      "obs:E772:83": 7,
+      "obs:E772:84": 5,
+      "obs:E772:86": 1,
+      "obs:E772:87": 7,
+      "obs:E772:88": 6,
+      "obs:E772:89": 7,
+      "obs:E772:90": 6,
+      "obs:E772:91": 2,
+      "obs:E772:92": 4,
+      "obs:E772:93": 3,
+      "obs:E772:94": 4,
+      "obs:E772:95": 6,
+      "obs:E772:96": 3,
+      "obs:E772:97": 5,
+      "obs:E772:98": 4,
+      "obs:E772:99": 5,
+      "obs:LHCb_7:0": 2,
+      "obs:LHCb_7:1": 8,
+      "obs:LHCb_7:2": 5,
+      "obs:LHCb_7:3": 7,
+      "obs:LHCb_7:4": 6,
+      "obs:LHCb_7:5": 6,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0106_z_0.345.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0106_z_0.481.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0161_z_0.344.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0161_z_0.481.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0170_z_0.480.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0254_z_0.481.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.479.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:15": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:16": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0455_z_0.678.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.479.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.479.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.479.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.479.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.479.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.479.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.479.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.479.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.679.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.679.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.679.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.679.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.679.yaml:15": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.679.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.679.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.679.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.679.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.0771_z_0.679.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.478.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.478.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.478.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.478.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.478.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.478.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.478.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.679.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.679.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.679.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.679.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.679.yaml:15": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.679.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.679.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.679.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.679.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1488_z_0.679.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:10": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:3": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:4": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:5": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:6": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:7": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:8": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.243.yaml:9": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:10": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:11": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:12": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:13": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:14": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:15": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:16": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.344.yaml:9": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:15": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:16": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:17": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:18": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:19": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:20": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.1570_z_0.477.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2544_z_0.680.yaml:15": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2544_z_0.680.yaml:16": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:0": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:1": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:10": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:2": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:3": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:4": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:5": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:6": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:7": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:8": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.243.yaml:9": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:10": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:11": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:12": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:13": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:14": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:15": 6,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:16": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:17": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:4": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:5": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:6": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:7": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:8": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.343.yaml:9": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:10": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:11": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:15": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:16": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:17": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:18": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:19": 6,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:20": 8,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pm_Km_x_0.2909_z_0.479.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0106_z_0.482.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0161_z_0.482.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0161_z_0.684.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0161_z_0.684.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0161_z_0.684.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0161_z_0.684.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.482.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.482.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.482.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.482.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.684.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.684.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.684.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.684.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.684.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.684.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0170_z_0.684.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0254_z_0.482.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0254_z_0.685.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0254_z_0.685.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0254_z_0.685.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0254_z_0.685.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.345.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.345.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.345.yaml:2": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.345.yaml:3": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.345.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.345.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.345.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.480.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.480.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.480.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.480.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.480.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.480.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.480.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.683.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.683.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.683.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.683.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.683.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0260_z_0.683.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0423_z_0.482.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0423_z_0.684.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0423_z_0.684.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0423_z_0.684.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0423_z_0.684.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.345.yaml:0": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.345.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.345.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.345.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.345.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.481.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.481.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.481.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.481.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.481.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.481.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.481.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.682.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.682.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.682.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.682.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.682.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0427_z_0.682.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.244.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.244.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.244.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.244.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.244.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:2": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.344.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:13": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:15": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:16": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:6": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.480.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.679.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.679.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.679.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.679.yaml:15": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.679.yaml:16": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.679.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.679.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.679.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0455_z_0.679.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0678_z_0.483.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0678_z_0.685.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0678_z_0.685.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0678_z_0.685.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0678_z_0.685.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0678_z_0.685.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.345.yaml:0": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.345.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.345.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.345.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.345.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.482.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.482.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.482.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.482.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.482.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.482.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.482.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.683.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.683.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.683.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.683.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.683.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.683.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0752_z_0.683.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.244.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.244.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.244.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.345.yaml:0": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.345.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.345.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.345.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.345.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.345.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.345.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.345.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.345.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.345.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:15": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:16": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:6": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.481.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.681.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.681.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.681.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.681.yaml:15": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.681.yaml:16": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.681.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.681.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.681.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.0771_z_0.681.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.345.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.345.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.345.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.345.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.482.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.482.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.482.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.482.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.482.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.482.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.482.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.482.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.482.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.482.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.682.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.682.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.682.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1326_z_0.682.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.245.yaml:0": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.245.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.245.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.245.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:10": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:6": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.345.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:10": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:13": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:14": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:15": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:16": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.482.yaml:9": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.681.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.681.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.681.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.681.yaml:13": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.681.yaml:14": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.681.yaml:15": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.681.yaml:16": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.681.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.681.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1488_z_0.681.yaml:9": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:10": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:11": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:4": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:5": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.244.yaml:9": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:0": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:10": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:11": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:13": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:14": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:15": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:16": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:4": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.345.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:10": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:11": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:12": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:13": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:14": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:15": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:16": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:17": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:18": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:19": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:20": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:4": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.1570_z_0.480.yaml:9": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:10": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:11": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:12": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:2": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:3": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:4": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:6": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.346.yaml:9": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:10": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:11": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:12": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:13": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:14": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:15": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:16": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:3": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:4": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:6": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:7": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.482.yaml:9": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:10": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:11": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:12": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:13": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:14": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:15": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:16": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:6": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:7": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:8": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2544_z_0.681.yaml:9": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:0": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:10": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:2": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:3": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:4": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:5": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:6": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:7": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:8": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.245.yaml:9": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:0": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:1": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:10": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:11": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:12": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:13": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:14": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:15": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:16": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:17": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:2": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:3": 4,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:4": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:5": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:6": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:7": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:8": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.345.yaml:9": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:1": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:10": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:11": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:12": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:13": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:14": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:15": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:16": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:17": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:18": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:19": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:2": 1,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:20": 5,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:3": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:4": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:5": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:6": 2,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:7": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:8": 3,
+      "obs:SIDIS:COMPASS:COMPASS_Deu_Pp_Kp_x_0.2909_z_0.482.yaml:9": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.25_0.3.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.2_0.25.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.375_0.475.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.375_0.475.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.3_0.375.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.3_0.375.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.475_0.6.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.6_0.8.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.6_0.8.yaml:1": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.6_0.8.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.12_0.2_z_0.6_0.8.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.25_0.3.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.2_0.25.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.375_0.475.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.375_0.475.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.3_0.375.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.3_0.375.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.475_0.6.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.475_0.6.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.475_0.6.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.2_0.35_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.25_0.3.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.2_0.25.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.375_0.475.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.375_0.475.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.375_0.475.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.3_0.375.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.3_0.375.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.475_0.6.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.475_0.6.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.475_0.6.yaml:3": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.6_0.8.yaml:0": 11,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.6_0.8.yaml:1": 15,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.6_0.8.yaml:2": 16,
+      "obs:SIDIS:HERMES:HERMES_Deu_Km_x_0.35_0.6_z_0.6_0.8.yaml:3": 18,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.25_0.3.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.2_0.25.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.375_0.475.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.375_0.475.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.3_0.375.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.475_0.6.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.475_0.6.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.6_0.8.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.6_0.8.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.12_0.2_z_0.6_0.8.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.25_0.3.yaml:0": 6,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.2_0.25.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.375_0.475.yaml:0": 8,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.375_0.475.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.3_0.375.yaml:0": 8,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.475_0.6.yaml:0": 7,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.475_0.6.yaml:1": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.475_0.6.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.475_0.6.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.6_0.8.yaml:0": 6,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.6_0.8.yaml:1": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.6_0.8.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.2_0.35_z_0.6_0.8.yaml:3": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.25_0.3.yaml:0": 8,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.2_0.25.yaml:0": 7,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.375_0.475.yaml:0": 9,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.375_0.475.yaml:1": 6,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.3_0.375.yaml:0": 8,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.3_0.375.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.475_0.6.yaml:0": 9,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.475_0.6.yaml:1": 6,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.475_0.6.yaml:2": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.6_0.8.yaml:0": 6,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.6_0.8.yaml:1": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.6_0.8.yaml:2": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Kp_x_0.35_0.6_z_0.6_0.8.yaml:3": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.375_0.475.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.6_0.8.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.6_0.8.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.12_0.2_z_0.6_0.8.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.375_0.475.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.6_0.8.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.6_0.8.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.2_0.35_z_0.6_0.8.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.375_0.475.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.475_0.6.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.475_0.6.yaml:3": 5,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.6_0.8.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.6_0.8.yaml:2": 4,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pim_x_0.35_0.6_z_0.6_0.8.yaml:3": 3,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.475_0.6.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.6_0.8.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.12_0.2_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.475_0.6.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.475_0.6.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.2_0.35_z_0.6_0.8.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.375_0.475.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.475_0.6.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Deu_Pip_x_0.35_0.6_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.25_0.3.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.2_0.25.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.375_0.475.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.375_0.475.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.375_0.475.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.3_0.375.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.475_0.6.yaml:0": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.475_0.6.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.475_0.6.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.6_0.8.yaml:0": 6,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.6_0.8.yaml:1": 16,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.12_0.2_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.25_0.3.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.2_0.25.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.375_0.475.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.375_0.475.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.375_0.475.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.3_0.375.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.475_0.6.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.2_0.35_z_0.475_0.6.yaml:3": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.25_0.3.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.2_0.25.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.375_0.475.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.375_0.475.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.3_0.375.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.3_0.375.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.475_0.6.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.475_0.6.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Km_x_0.35_0.6_z_0.475_0.6.yaml:3": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.25_0.3.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.2_0.25.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.375_0.475.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.375_0.475.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.375_0.475.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.3_0.375.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.475_0.6.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.475_0.6.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.6_0.8.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.12_0.2_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.25_0.3.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.2_0.25.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.375_0.475.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.375_0.475.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.375_0.475.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.3_0.375.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.475_0.6.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.475_0.6.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.6_0.8.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.6_0.8.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.2_0.35_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.25_0.3.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.2_0.25.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.375_0.475.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.375_0.475.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.375_0.475.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.3_0.375.yaml:0": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.3_0.375.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.475_0.6.yaml:0": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.475_0.6.yaml:1": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.475_0.6.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.475_0.6.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.6_0.8.yaml:0": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.6_0.8.yaml:1": 4,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.6_0.8.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Kp_x_0.35_0.6_z_0.6_0.8.yaml:3": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.375_0.475.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.12_0.2_z_0.475_0.6.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.375_0.475.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.475_0.6.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.475_0.6.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.2_0.35_z_0.6_0.8.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.375_0.475.yaml:2": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.475_0.6.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.475_0.6.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.475_0.6.yaml:2": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.475_0.6.yaml:3": 5,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.6_0.8.yaml:0": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.6_0.8.yaml:1": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.6_0.8.yaml:2": 2,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pim_x_0.35_0.6_z_0.6_0.8.yaml:3": 3,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.375_0.475.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.3_0.375.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.475_0.6.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.475_0.6.yaml:3": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.6_0.8.yaml:1": 1,
+      "obs:SIDIS:HERMES:HERMES_Pro_Pip_x_0.35_0.6_z_0.6_0.8.yaml:2": 1
+    },
+    "worker_status": "failed"
+  },
+  "optimizer_history_reset": false,
+  "phase": "P1",
+  "plateau": {
+    "eligible": true,
+    "passed": false,
+    "windows": [
+      {
+        "gradient_max": 0.2779525639666581,
+        "passed": false,
+        "prediction_span_max": 0.5893377081243045,
+        "prediction_span_rms": 0.07714049620982959,
+        "q_range": 0.005180475819585695,
+        "same_mu": true
+      },
+      {
+        "gradient_max": 0.2034840350198679,
+        "passed": false,
+        "prediction_span_max": 0.6799609224704248,
+        "prediction_span_rms": 0.08554970109821541,
+        "q_range": 0.008057130763873488,
+        "same_mu": true
+      }
+    ]
+  },
+  "production_selected": false,
+  "recorded_utc": "2026-09-14T20:26:22Z",
+  "run_id": "continuation-w16-feasibility-7h-uva-a02-69f3be55d0f8",
+  "schema": "tmd-result-v1",
+  "slurm": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "SLURM_ARRAY_JOB_ID": null,
+    "SLURM_ARRAY_TASK_ID": null,
+    "SLURM_CPUS_PER_TASK": "2",
+    "SLURM_JOB_GPUS": "5",
+    "SLURM_JOB_ID": "19946083"
+  },
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "start_checkpoint": "restart:9398025d32f8ffe89707faa0f7b0642b14d4ec1daceb4bcfb5013836a812954c",
+  "status": "failed",
+  "stop_reason": "ValueError: nonfinite boundary or zero damping; no clipping",
+  "supervisor": {
+    "elapsed_seconds": 8930.176312024996,
+    "end_utc": "2026-09-14T19:47:58Z",
+    "exit_code": 2,
+    "model_stop_escalation_seconds": 2.0,
+    "peaks": {
+      "gpu_device_memory_total_gib": 47.98828125,
+      "gpu_device_memory_used_gib_max": 10.3944091796875,
+      "gpu_memory_utilization_percent_max": 29.0,
+      "gpu_owned_gib": 9.783203125,
+      "gpu_power_watts_max": 203.557,
+      "gpu_temperature_celsius_max": 54.0,
+      "gpu_utilization_percent_max": 100.0,
+      "host_available_min_gib": 11.93960952758789,
+      "rss_gib": 1.4852676391601562,
+      "samples": 40898
+    },
+    "resource_peaks_are_sampled_not_continuous": true,
+    "resource_telemetry_status": "sampled",
+    "stop_reason": null,
+    "telemetry_staleness_limit_seconds": 1.0,
+    "terminal_sample_unavailable_after_owned_exit": null
+  },
+  "trajectory_budget": {
+    "accepted_updates": 4142,
+    "forwards": 16679,
+    "full_calls": 8252,
+    "model_seconds": 27484
+  },
+  "trajectory_counters": {
+    "accepted_updates": 183,
+    "forwards": 1583,
+    "full_calls": 205,
+    "infeasible_trials": 1159,
+    "line_search_rejections": 1175
+  },
+  "trajectory_model_seconds": 11214.05901648308,
+  "trial_id": "continuation-w16-feasibility-7h-uva-a02",
+  "trial_sha256": "06d2d1899f3e946ebcbf8659ff2e34b8a1a52b1c043928f56d63d028f95b5a79",
+  "worker_status": "failed",
+  "worker_summary_missing": false
+}
