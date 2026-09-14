@@ -1,0 +1,103 @@
+{
+  "schema": "tmd-trial-v1",
+  "trial_id": "continuation-w16-feasibility-7h-uva-a02",
+  "status": "ready",
+  "phase": "P1",
+  "kind": "continuation",
+  "hypothesis": "A seven-hour state-preserving width16 continuation tests sustained A6000 optimization toward the unchanged convergence gate, while recording which positivity constraints restrict the calibrated unit-backtracking optimizer.",
+  "model_family": "nested-film-v1",
+  "model": {
+    "depth": 1,
+    "width": 16
+  },
+  "seed": 2026091216,
+  "start_checkpoint": "restart:9398025d32f8ffe89707faa0f7b0642b14d4ec1daceb4bcfb5013836a812954c",
+  "rows": 2290,
+  "dtype": "float64",
+  "execution_class": "gpu",
+  "claim_required": true,
+  "production_selection": false,
+  "phases": [
+    {
+      "mu": 1e-06,
+      "updates": 4096
+    }
+  ],
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "budget": {
+    "accepted_updates": 4096,
+    "forwards": 16384,
+    "full_calls": 8192,
+    "cache_gib": 12,
+    "cpu_threads": 1,
+    "gpu_gib": 20,
+    "host_available_gib": 8,
+    "rss_gib": 12,
+    "segment_seconds": 25200,
+    "total_seconds": 26400,
+    "endpoint_reserve_seconds": 300
+  },
+  "resource_profile": {
+    "site": "UVA Rivanna/Afton",
+    "account": "spinquest_standard",
+    "partition": "gpu",
+    "gres": "gpu:a6000:1",
+    "gpu_model": "NVIDIA RTX A6000",
+    "gpus": 1,
+    "nodes": 1,
+    "tasks": 1,
+    "cpus_per_task": 2,
+    "host_memory_gib": 16,
+    "wall_seconds": 28800,
+    "export": "NIL",
+    "requeue": false
+  },
+  "prerequisites": {
+    "verified_input_files": 4600,
+    "restart_review": "decisions/2026-09-13-p1-m96-interrupted-outcome.md",
+    "qualified_gpu_port_trial": "replay-w16-gpu-a02",
+    "parent_run": "continuation-w16-p1-m96-a01-a362528360f8",
+    "parent_replay_and_two_directional_checks_before_optimization": true,
+    "mandatory_resource_sampling_and_optional_progress_separated": true,
+    "resource_review": "uva_hpc_gpu:2026-09-14:one-A6000-2CPU-16GiB-8h",
+    "launcher_static_validation_before_submission": true
+  },
+  "decision_record": "decisions/2026-09-14-uva-w16-long-training-a02-plan.md",
+  "execution_policy": "p1-time-window-v2",
+  "restart_binding": {
+    "parent_run_id": "continuation-w16-p1-m96-a01-a362528360f8",
+    "state_sha256": "9ab2925f528cac463d5a15929f57e7fedb5a5b883349417e4f3e14a959bad3ea",
+    "accepted_updates_before": 46,
+    "optimizer_history_reset": false
+  },
+  "trajectory_budget": {
+    "accepted_updates": 4142,
+    "forwards": 16679,
+    "full_calls": 8252,
+    "model_seconds": 27484
+  },
+  "diagnostics": {
+    "schema": "tmd-feasibility-diagnostics-v1",
+    "review_interval_updates": 32,
+    "record_all_violating_rows": true
+  },
+  "study_role": "Independent width16 convergence and feasibility investigation on UVA, complementary to the locally owned width8 continuation; unequal starts and hardware do not constitute a controlled width comparison.",
+  "optimizer": {
+    "line_search": "unit-backtracking"
+  },
+  "stopping_rule": "Stop on the unchanged convergence gate, reserved endpoint time, an explicit count/resource bound, or a genuine numerical/line-search failure. Reviews every32 new accepted updates are observational. The4096-update cap is a guardrail, not a target or convergence claim. Preserve all work and require a reviewed successor specification before another segment; no automatic retry or optimizer switch.",
+  "technical_retry": {
+    "prior_trial_id": "continuation-w16-feasibility-7h-uva-a01",
+    "prior_slurm_job_id": "19945517",
+    "prior_claim_commit": "ba0162aa1105941787aa8072357eca2036718cf0",
+    "failure_stage": "batch bootstrap before scientific launch acceptance",
+    "scientific_run_id": null,
+    "prior_new_model_calls": 0,
+    "prior_new_model_seconds": 0,
+    "prior_new_accepted_updates": 0,
+    "prior_allocation_elapsed_seconds": 2,
+    "change": "Replace a superseded unmerged launcher ancestry guard with verified merged ancestry; execute shared static launcher checks before submission."
+  }
+}
