@@ -27,12 +27,15 @@ def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None,
             trajectory_budget=dict(accepted_updates=prior+steps,forwards=1000,full_calls=300,model_seconds=21600),
             optimizer=dict(line_search='unit-backtracking'))
         t['budget']['endpoint_reserve_seconds']=120
-        if policy=='p1-time-window-v1':
+        if policy in ('p1-time-window-v1','p1-time-window-v2'):
             t['budget'].update(segment_seconds=7200,total_seconds=7800,
                 accepted_updates=max(t['budget']['accepted_updates'],steps),
                 forwards=16384,full_calls=8192)
             t['trajectory_budget'].update(forwards=32768,full_calls=16384)
             t['decision_record']='decisions/synthetic-time-window-test.md'
+            if policy=='p1-time-window-v2':
+                t['budget'].update(segment_seconds=25200,total_seconds=26400,
+                    endpoint_reserve_seconds=300)
     if diagnostics:t['diagnostics']=dict(FEASIBILITY_DIAGNOSTICS)
     path=tmp_path/"trial.json";write(path,t)
     now=time.monotonic()
@@ -140,7 +143,8 @@ def test_resume_preparation_failure_retains_parent_and_zero_new_dispatch_ledger(
     with np.load(failed/'restart.npz',allow_pickle=False) as z:
         assert all(np.array_equal(z[k],saved[k]) for k in z.files)
 
-def test_passive_diagnostics_preserve_trajectory_and_all_model_call_counts(tmp_path,monkeypatch):
+@pytest.mark.parametrize('policy',['p1-time-window-v1','p1-time-window-v2'])
+def test_passive_diagnostics_preserve_trajectory_and_all_model_call_counts(tmp_path,monkeypatch,policy):
     import json
     parent=tmp_path/'parent';control=tmp_path/'control';observed=tmp_path/'observed'
     for path in (parent,control,observed):path.mkdir()
@@ -148,7 +152,7 @@ def test_passive_diagnostics_preserve_trajectory_and_all_model_call_counts(tmp_p
     with np.load(parent/'restart.npz',allow_pickle=False) as z:saved={k:z[k].copy() for k in z.files}
     _,baseline=execute(control,monkeypatch,steps=6,resume_arrays=saved)
     code,recorded=execute(observed,monkeypatch,steps=6,resume_arrays=saved,
-        policy='p1-time-window-v1',diagnostics=True)
+        policy=policy,diagnostics=True,deadline_seconds=600)
     assert code==0 and recorded['counters']==baseline['counters']
     assert recorded['trajectory_counters']==baseline['trajectory_counters']
     for name in ('last.npz','restart.npz'):
@@ -161,7 +165,8 @@ def test_passive_diagnostics_preserve_trajectory_and_all_model_call_counts(tmp_p
     assert report['model_calls']==0 and report['segment_counters']==recorded['counters']
     assert report['trajectory_counters']==recorded['trajectory_counters']
 
-def test_32_update_review_does_not_end_the_time_window(tmp_path,monkeypatch):
+@pytest.mark.parametrize('policy',['p1-time-window-v1','p1-time-window-v2'])
+def test_32_update_review_does_not_end_the_time_window(tmp_path,monkeypatch,policy):
     parent=tmp_path/'parent';observed=tmp_path/'observed';parent.mkdir();observed.mkdir()
     execute(parent,monkeypatch,steps=3)
     with np.load(parent/'restart.npz',allow_pickle=False) as z:saved={k:z[k].copy() for k in z.files}
@@ -169,7 +174,7 @@ def test_32_update_review_does_not_end_the_time_window(tmp_path,monkeypatch):
     # isolates the checkpoint cadence from convergence-based early stopping.
     monkeypatch.setattr(worker,'plateau',lambda *args:dict(eligible=True,passed=False))
     code,summary=execute(observed,monkeypatch,steps=97,resume_arrays=saved,
-        policy='p1-time-window-v1',diagnostics=True)
+        policy=policy,diagnostics=True,deadline_seconds=600)
     assert code==0 and summary['counters']['accepted_updates']==97
     report=read(observed/'diagnostic-review-0032.json')
     assert report['segment_counters']['accepted_updates']==32
@@ -177,12 +182,13 @@ def test_32_update_review_does_not_end_the_time_window(tmp_path,monkeypatch):
     assert read(observed/'diagnostic-summary.json')['review_files']==[
         'diagnostic-review-0032.json','diagnostic-review-0064.json','diagnostic-review-0096.json']
 
-def test_time_reserve_ends_optimization_and_keeps_raw_endpoint_gradient(tmp_path,monkeypatch):
+@pytest.mark.parametrize('policy',['p1-time-window-v1','p1-time-window-v2'])
+def test_time_reserve_ends_optimization_and_keeps_raw_endpoint_gradient(tmp_path,monkeypatch,policy):
     parent=tmp_path/'parent';observed=tmp_path/'observed';parent.mkdir();observed.mkdir()
     execute(parent,monkeypatch,steps=3)
     with np.load(parent/'restart.npz',allow_pickle=False) as z:saved={k:z[k].copy() for k in z.files}
     code,summary=execute(observed,monkeypatch,steps=33,resume_arrays=saved,
-        policy='p1-time-window-v1',diagnostics=True,deadline_seconds=120)
+        policy=policy,diagnostics=True,deadline_seconds=120)
     assert code==2 and summary['status']=='partial'
     assert summary['optimization_budget_stop']=='endpoint_time_reserve'
     assert summary['counters']['accepted_updates']==0

@@ -8,6 +8,15 @@ Completing a job batch or publishing partial results does not complete the study
 
 ## Latest completed result: local width-8 P1B
 
+The complementary UVA action is a
+[seven-hour instrumented width-16 continuation](../decisions/2026-09-14-uva-w16-long-training-plan.md)
+from its verified 46-update state on one A6000. It reuses the local diagnostic
+implementation and unit optimizer, preserves all prior costs and state, and
+provides a long time-based opportunity with unchanged convergence tests. Its
+versioned policy retains historical limits. The local agent owns width 8;
+this separate trial supersedes the unclaimed width-16 common96 A02 draft.
+Exact claims and scheduler receipts establish whether it has been submitted.
+
 The next owner-authorized local action is one
 [two-hour instrumented width-8 continuation](../decisions/2026-09-14-local-w8-feasibility-2h-plan.md)
 from the 177-update endpoint on the single RTX 4090. It preserves unit
