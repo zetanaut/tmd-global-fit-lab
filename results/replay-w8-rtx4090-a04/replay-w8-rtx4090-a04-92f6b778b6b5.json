@@ -1,0 +1,212 @@
+{
+  "artifact": {
+    "bytes": 131472,
+    "sha256": "ea23223a1af7ad1166afa3e9e658a6e7164841ad3270321935bad2742357172f",
+    "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-replay-w8-rtx4090-a04-92f6b778b6b5/replay-w8-rtx4090-a04-92f6b778b6b5.tar.gz"
+  },
+  "audit": {
+    "DY_adjusted_RMS_fixed_sigma": 2.4800434635290314,
+    "DY_nuisances": {
+      "CDF_RUN_1:normalization": 2.4419616612408506,
+      "CDF_RUN_2:efficiency": 1.7630893102763976,
+      "CDF_RUN_2:normalization": 0.5627223834006088,
+      "D0_RUN_1:normalization": 0.2715657986111274,
+      "E288_200:normalization": 0.1917104254056317,
+      "E288_300:normalization": -0.027786218053222338,
+      "E288_400:normalization": -0.5220387724744785,
+      "E605:normalization": 1.2188338421888036,
+      "E772:normalization": 2.5669177449947727,
+      "LHCb_7:beam": 0.6509284941920856,
+      "LHCb_7:lumi": 0.8923963255346504
+    },
+    "DY_profile_closure_abs_error": 9.094947017729282e-12,
+    "atomic_restart_recovery": false,
+    "endpoint_path": "last.npz",
+    "endpoint_sha256": "4eb9629404900f6e0a829f1178fe828b261cd931beffaf7871c1a4bcb0d1535d",
+    "experimental_nuisance_penalty": 19.066816326638705,
+    "finite": true,
+    "generated_utc": "2026-09-14T01:46:46Z",
+    "high_COMPASS": {
+      "mean": 7.734623682742744,
+      "rms": 7.980718938700295,
+      "rows": 188,
+      "underpredicted": 188
+    },
+    "min_T_over_sigma": 0.00968456656148073,
+    "model_calls": 0,
+    "negative": 0,
+    "numerical_nuisance_penalty": 2.7338629451482768,
+    "passed": true,
+    "penalized_gradient_max": 0.11112459227186679,
+    "processes": {
+      "COMPASS": {
+        "mean": 3.185125640124214,
+        "rms": 5.062567182532449,
+        "rows": 1203,
+        "underpredicted": 852
+      },
+      "DY": {
+        "mean": 1.2575538923582537,
+        "rms": 2.5900726298177847,
+        "rows": 743,
+        "underpredicted": 538
+      },
+      "HERMES": {
+        "mean": 0.7720237877792779,
+        "rms": 2.5637495552115657,
+        "rows": 344,
+        "underpredicted": 236
+      }
+    },
+    "q_per_measurement": 18.12940651899238,
+    "raw_gradient_max": 0.1111246119400613,
+    "raw_gradient_missing_reason": null,
+    "schema": "tmd-endpoint-audit-v1",
+    "status": "verified",
+    "zero": 0
+  },
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "claim": {
+    "claim_commit": "523420a34f0eaaa6df82fd3ed19df5c5327689c2",
+    "claimed_utc": "2026-09-14T01:45:43Z",
+    "code_commit": "3dfd12917186ecd98ae5217f1baad058d69c90b4",
+    "nonce": "53c4569196f44cd89a413cc1952103b7",
+    "owner": "local-rtx4090-codex-20260913-04",
+    "remote_ref": "refs/heads/claims/replay-w8-rtx4090-a04",
+    "schema": "tmd-claim-v1",
+    "trial_id": "replay-w8-rtx4090-a04",
+    "trial_sha256": "2e264ecb8d20ee6c5a86badae9a4b686c4612a053c226db899bda964e5958640"
+  },
+  "code_commit": "3dfd12917186ecd98ae5217f1baad058d69c90b4",
+  "counters": {
+    "accepted_updates": 0,
+    "forwards": 8,
+    "full_calls": 3,
+    "infeasible_trials": 0,
+    "line_search_rejections": 0
+  },
+  "files": {
+    "audit.json": {
+      "bytes": 1886,
+      "sha256": "353b44f5a21df59888142daa7c692e444e9cb2da1a82634fcc4f380c7bbc6472"
+    },
+    "audit.log": {
+      "bytes": 9,
+      "sha256": "672eb8316fec83f94119a4193f9fc552513d56a147502f8be4830e017d817831"
+    },
+    "cleanup.json": {
+      "bytes": 188,
+      "sha256": "7cbd6a7cb1f023e470296432d79d2e3e9416720699ee865865e52b974eec00b5"
+    },
+    "counters.json": {
+      "bytes": 386,
+      "sha256": "b68845f4ab315d582985776e3e90a1d3c74f0482d617d558543a37facee63f45"
+    },
+    "environment.json": {
+      "bytes": 288,
+      "sha256": "4d4f94345ead015c2f306a8a7b619020e9d67a30083f924b76818637eb3e952d"
+    },
+    "initial.npz": {
+      "bytes": 54556,
+      "sha256": "4eb9629404900f6e0a829f1178fe828b261cd931beffaf7871c1a4bcb0d1535d"
+    },
+    "last.npz": {
+      "bytes": 54556,
+      "sha256": "4eb9629404900f6e0a829f1178fe828b261cd931beffaf7871c1a4bcb0d1535d"
+    },
+    "launch.json": {
+      "bytes": 1702,
+      "sha256": "d33bac6a54aa6e7271c4f83f1b8d9e6188925c6f922f00a395933b82cd5656ae"
+    },
+    "owner.json": {
+      "bytes": 91,
+      "sha256": "d77175d6831093218ba18ef203cc503be08dbe322fe8a9b17554243d2ff90b4d"
+    },
+    "preflight.json": {
+      "bytes": 531,
+      "sha256": "0be2f57fe802b0d15836f03ea4849d4dbbbb21b10373991f5535bd92a4577012"
+    },
+    "preparation.json": {
+      "bytes": 90,
+      "sha256": "758a89c21941614808f52defd965afdd192003597457f75d93101961abf80128"
+    },
+    "resources.ndjson": {
+      "bytes": 219041,
+      "sha256": "16fb65b3be828171fb11c8e4a4cc432b0fa2e5c24bdca0d7789d1f17c1ac8287"
+    },
+    "supervisor.json": {
+      "bytes": 773,
+      "sha256": "3bc44c8488819650b63f9f2304e3a19046212425986d1d14ac5a27ef7a1a0c8a"
+    },
+    "trial.json": {
+      "bytes": 3070,
+      "sha256": "f26bb3c90836efe4fae876c97eece91f86079207bcc2c7d22ca90ad9e8ef6aec"
+    },
+    "worker-summary.json": {
+      "bytes": 1264,
+      "sha256": "62ef2ca4588e84603a49a511d2360f606512199d3fea7e81a4a244f6b2dd8d3b"
+    },
+    "worker.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "hardware": "cuda:0",
+  "identity": "e7901f35cc577187fbab91b7a38f8e09a316b6a7eed262e634cac5a8d8a27302",
+  "kind": "replay",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "model": {
+    "depth": 1,
+    "width": 8
+  },
+  "optimizer_history_reset": true,
+  "phase": "PORT",
+  "plateau": {
+    "eligible": false,
+    "passed": false,
+    "reason": "fewer_than_21_states"
+  },
+  "production_selected": false,
+  "recorded_utc": "2026-09-14T01:48:26Z",
+  "run_id": "replay-w8-rtx4090-a04-92f6b778b6b5",
+  "schema": "tmd-result-v1",
+  "slurm": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "SLURM_ARRAY_JOB_ID": null,
+    "SLURM_ARRAY_TASK_ID": null,
+    "SLURM_CPUS_PER_TASK": null,
+    "SLURM_JOB_GPUS": null,
+    "SLURM_JOB_ID": null
+  },
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "start_checkpoint": "anchor-w8",
+  "status": "completed",
+  "stop_reason": "replay_passed",
+  "supervisor": {
+    "elapsed_seconds": 54.77640690281987,
+    "end_utc": "2026-09-14T01:46:46Z",
+    "exit_code": 0,
+    "model_stop_escalation_seconds": 2.0,
+    "peaks": {
+      "gpu_device_memory_total_gib": 23.98828125,
+      "gpu_device_memory_used_gib_max": 9.7109375,
+      "gpu_memory_utilization_percent_max": 21.0,
+      "gpu_owned_gib": 9.15234375,
+      "gpu_power_watts_max": 156.88,
+      "gpu_temperature_celsius_max": 47.0,
+      "gpu_utilization_percent_max": 99.0,
+      "host_available_min_gib": 14.947181701660156,
+      "rss_gib": 1.4428520202636719,
+      "samples": 234
+    },
+    "resource_peaks_are_sampled_not_continuous": true,
+    "resource_telemetry_status": "sampled",
+    "stop_reason": null,
+    "telemetry_staleness_limit_seconds": 1.0,
+    "terminal_sample_unavailable_after_owned_exit": null
+  },
+  "trial_id": "replay-w8-rtx4090-a04",
+  "trial_sha256": "2e264ecb8d20ee6c5a86badae9a4b686c4612a053c226db899bda964e5958640",
+  "worker_status": "completed",
+  "worker_summary_missing": false
+}
