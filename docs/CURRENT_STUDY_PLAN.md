@@ -6,7 +6,23 @@ historical trial specifications and results. The study remains active until
 adequate optimization and controlled architecture comparisons support a choice.
 Completing a job batch or publishing partial results does not complete the study.
 
-## Latest local outcome: width-8 candidate-domain failure
+## Latest local outcome: width-8 repaired continuation reaches 423
+
+The [A03 outcome and saved-only review](../decisions/2026-09-14-local-w8-a03-outcome.md)
+records 171 new / 423 cumulative accepted updates, q/N 16.11080233178303 and an
+audited finite, positive endpoint. The segment ended for its endpoint time
+reserve; there was no new crash and neither convergence window passed. Late
+progress per evaluation improved. The original A01 plus repaired A03 used
+7013.4294 seconds of the 7200-second opportunity, including setup/replay.
+
+The immutable archive has been downloaded and verified. Saved high-COMPASS
+decomposition shows small current trainable contributions alongside persistent
+residuals, not an irreducible floor or a derivative measurement. Dustin approved
+one further two-hour continuation from 423 with unchanged optimizer/history,
+plus this targeted saved-only analysis. A new exact trial, claim and launch
+receipt are required; this decision does not itself establish a running job.
+
+## Earlier local candidate-domain failure and repair
 
 The local two-hour instrumented attempt is now terminal: 75 new accepted
 updates, 252 cumulative, q/N 16.411446133424036, and an audited positive endpoint
