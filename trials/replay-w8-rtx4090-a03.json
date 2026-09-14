@@ -1,0 +1,69 @@
+{
+  "schema": "tmd-trial-v1",
+  "trial_id": "replay-w8-rtx4090-a03",
+  "status": "ready",
+  "phase": "PORT",
+  "kind": "replay",
+  "hypothesis": "The portable evaluator and repaired supervisor preserve the fixed full-data width-8 replay on this RTX 4090 CUDA environment when launched in a finite-memory service with its pinned checkout as working directory.",
+  "model_family": "nested-film-v1",
+  "model": {
+    "depth": 1,
+    "width": 8
+  },
+  "seed": 2026091318,
+  "start_checkpoint": "anchor-w8",
+  "rows": 2290,
+  "dtype": "float64",
+  "execution_class": "gpu",
+  "claim_required": true,
+  "production_selection": false,
+  "phases": [],
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "budget": {
+    "accepted_updates": 96,
+    "cache_gib": 12,
+    "cpu_threads": 2,
+    "forwards": 600,
+    "full_calls": 240,
+    "gpu_gib": 20,
+    "host_available_gib": 8,
+    "rss_gib": 12,
+    "segment_seconds": 1800,
+    "total_seconds": 3600
+  },
+  "parent_attempt": "replay-w8-rtx4090-a02",
+  "attempt_reason": "Final technical local-launch retry after A02 reached a finite cgroup but failed before tmdlab.run because the transient service lacked a working-directory binding. A03 explicitly uses the pinned checkout as WorkingDirectory and the verified 16 GiB MemoryMax service; it remains a zero-update PORT replay.",
+  "prior_attempt_costs": {
+    "a01_run_id": "replay-w8-rtx4090-a01-5a38186ff8bf",
+    "a01_forwards": 0,
+    "a01_full_calls": 0,
+    "a01_accepted_updates": 0,
+    "a02_forwards": 0,
+    "a02_full_calls": 0,
+    "a02_accepted_updates": 0,
+    "a02_stop_reason": "launcher FileNotFoundError before tmdlab.run"
+  },
+  "resource_profile": {
+    "site": "local GPU workstation",
+    "gpu_model": "NVIDIA GeForce RTX 4090",
+    "gpus": 1,
+    "cpus_per_task": 2,
+    "host_memory_gib": 16,
+    "cgroup_memory_max_bytes": 17179869184,
+    "launcher": "systemd-run --user --wait --collect --pipe --property=MemoryMax=16G --property=WorkingDirectory=/home/dustin/Documents/Codex/tmd-global-fit-lab-rtx4090",
+    "wall_seconds": 3900
+  },
+  "prerequisites": {
+    "cpu_tests_passed": 258,
+    "verified_input_files": 4600,
+    "verified_bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+    "cuda_runtime": "12.6",
+    "gpu_memory_mib_reported": 24564,
+    "repaired_progress_supervisor_commit": "bfca654",
+    "systemd_service_memory_max_bytes_observed": 17179869184,
+    "systemd_service_working_directory_observed": "/home/dustin/Documents/Codex/tmd-global-fit-lab-rtx4090"
+  },
+  "decision_record": "decisions/2026-09-13-local-rtx4090-port-plan.md"
+}

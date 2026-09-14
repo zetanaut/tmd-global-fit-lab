@@ -46,3 +46,11 @@ trial therefore runs within that 16 GiB service cgroup. This changes only the
 launcher/resource binding; it keeps the code, evaluator, all-row replay,
 checkpoint, numerical gates, and zero-update scope unchanged. A02 is a fresh
 claim and retains A01's zero-call terminal evidence.
+
+A02's service reached that finite cgroup but started with its default working
+directory, so its Python process could not resolve the relative trial path. It
+did not enter `tmdlab.run`, create a run directory, sample telemetry, or make a
+model call. A disposable service probe then verified both the intended checkout
+as `WorkingDirectory` and `memory.max=17179869184`. A03 is the single final
+launcher correction: it binds that working directory explicitly. It retains
+both prior zero-call attempts and does not authorize an unbounded retry series.
