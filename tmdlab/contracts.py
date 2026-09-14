@@ -2,6 +2,15 @@
 import re
 from .io import SOURCE_ID, METRIC_ID, require_finite_numbers
 
+RESUME_TRAJECTORY_LIMITS={
+    'p1-resume-v1':dict(accepted_updates=96,forwards=4096,full_calls=512,model_seconds=21600),
+    'p1-resume-v2':dict(accepted_updates=192,forwards=8192,full_calls=1024,model_seconds=43200),
+    'p1-time-window-v1':dict(accepted_updates=8192,forwards=32768,full_calls=16384,model_seconds=21600),
+}
+
+FEASIBILITY_DIAGNOSTICS = dict(schema='tmd-feasibility-diagnostics-v1',
+    review_interval_updates=32, record_all_violating_rows=True)
+
 def validate_trial(t, *, require_ready=True):
     require_finite_numbers(t)
     if t.get("schema") != "tmd-trial-v1" or not re.fullmatch(r"[a-z0-9][a-z0-9-]{2,95}",t.get("trial_id","")):
@@ -18,8 +27,9 @@ def validate_trial(t, *, require_ready=True):
         raise ValueError("all2290 float64 required")
     b=t["budget"]
     limits={"segment_seconds":1800,"total_seconds":7200,"full_calls":240,"forwards":600,"accepted_updates":96,"cache_gib":12,"gpu_gib":20,"rss_gib":48,"cpu_threads":12}
-    resumable=t.get('execution_policy')=='p1-resume-v1'
-    if t.get('execution_policy') not in (None,'p1-resume-v1','paired-feasibility-v1'):
+    policy=t.get('execution_policy')
+    resumable=policy in RESUME_TRAJECTORY_LIMITS
+    if policy not in (None,*RESUME_TRAJECTORY_LIMITS,'paired-feasibility-v1'):
         raise ValueError('unregistered execution policy')
     paired=t.get('execution_policy')=='paired-feasibility-v1'
     if paired:
@@ -41,6 +51,15 @@ def validate_trial(t, *, require_ready=True):
         if t['kind']!='continuation' or t.get('phase')!='P1' or len(t['phases'])!=1 or t['phases'][0]['mu']!=1e-6:
             raise ValueError('resumable policy requires fixed-mu P1')
         limits.update(segment_seconds=13200,total_seconds=13800,full_calls=512,forwards=4096)
+    if policy == 'p1-time-window-v1':
+        limits.update(segment_seconds=7200,total_seconds=7800,accepted_updates=4096,
+                      forwards=16384,full_calls=8192)
+        if (t.get('diagnostics') != FEASIBILITY_DIAGNOSTICS
+            or t.get('optimizer',{}).get('line_search') != 'unit-backtracking'
+            or not t.get('decision_record')):
+            raise ValueError('time-window policy needs diagnostics, unit policy and recorded decision')
+    if 'diagnostics' in t and (not resumable or t['diagnostics'] != FEASIBILITY_DIAGNOSTICS):
+        raise ValueError('unregistered optimization diagnostics')
     for key,limit in limits.items():
         zero_update = key=='accepted_updates' and t.get('execution_policy')=='paired-feasibility-v1' and b[key]==0
         if type(b[key]) not in (int,float) or not (zero_update or 0 < b[key] <= limit):
@@ -58,6 +77,7 @@ def validate_trial(t, *, require_ready=True):
     if t["kind"] == "continuation":
         if resumable:
             r=t.get('restart_binding',{}); ledger=t.get('trajectory_budget',{})
+            trajectory_limits=RESUME_TRAJECTORY_LIMITS[policy]
             if (not re.fullmatch('restart:[0-9a-f]{64}',t.get('start_checkpoint',''))
                 or not re.fullmatch('[0-9a-f]{64}',r.get('state_sha256',''))
                 or not re.fullmatch('[a-z0-9-]+',r.get('parent_run_id',''))
@@ -65,9 +85,9 @@ def validate_trial(t, *, require_ready=True):
                 or r['accepted_updates_before']<0 or r.get('optimizer_history_reset') is not False):
                 raise ValueError('invalid verified restart binding')
             for key in ('accepted_updates','forwards','full_calls'):
-                if type(ledger.get(key)) is not int or not 0<ledger[key]<=limits[key]:
+                if type(ledger.get(key)) is not int or not 0<ledger[key]<=trajectory_limits[key]:
                     raise ValueError('invalid cumulative trajectory budget')
-            if type(ledger.get('model_seconds')) is not int or not 0<ledger['model_seconds']<=21600:
+            if type(ledger.get('model_seconds')) is not int or not 0<ledger['model_seconds']<=trajectory_limits['model_seconds']:
                 raise ValueError('invalid cumulative elapsed budget')
             if (r['accepted_updates_before']+sum(p['updates'] for p in phases)!=ledger['accepted_updates']
                 or b.get('endpoint_reserve_seconds',0)<120

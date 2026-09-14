@@ -8,8 +8,10 @@ import pytest
 from tmdlab import worker
 from tmdlab.io import read,write,sha
 from tmdlab.models import build,flat,schema
+from tmdlab.contracts import FEASIBILITY_DIAGNOSTICS
 
-def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None,fail_prepare=False):
+def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None,fail_prepare=False,
+            diagnostics=False,policy='p1-resume-v1',deadline_seconds=300):
     t=read(Path(__file__).parents[1]/"trials/replay-w8-cpu-a01.json")
     t["budget"]["forwards"]=forward_limit
     if steps:
@@ -19,15 +21,22 @@ def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None,
                 budget_origin='new_allocation',prior_phase='P0'))
     if resume_arrays is not None:
         prior=int(resume_arrays['counters'][2])
-        t.update(execution_policy='p1-resume-v1',start_checkpoint='restart:'+'0'*64,
+        t.update(execution_policy=policy,start_checkpoint='restart:'+'0'*64,
             restart_binding=dict(parent_run_id='synthetic-parent',state_sha256='0'*64,
                 accepted_updates_before=prior,optimizer_history_reset=False),
             trajectory_budget=dict(accepted_updates=prior+steps,forwards=1000,full_calls=300,model_seconds=21600),
             optimizer=dict(line_search='unit-backtracking'))
         t['budget']['endpoint_reserve_seconds']=120
+        if policy=='p1-time-window-v1':
+            t['budget'].update(segment_seconds=7200,total_seconds=7800,
+                accepted_updates=max(t['budget']['accepted_updates'],steps),
+                forwards=16384,full_calls=8192)
+            t['trajectory_budget'].update(forwards=32768,full_calls=16384)
+            t['decision_record']='decisions/synthetic-time-window-test.md'
+    if diagnostics:t['diagnostics']=dict(FEASIBILITY_DIAGNOSTICS)
     path=tmp_path/"trial.json";write(path,t)
     now=time.monotonic()
-    write(tmp_path/"launch.json",dict(trial_sha256=sha(path),model_deadline_monotonic=now+300,t0_monotonic=now))
+    write(tmp_path/"launch.json",dict(trial_sha256=sha(path),model_deadline_monotonic=now+deadline_seconds,t0_monotonic=now))
     initial=flat(build())
     def values(theta):return np.full(2290,1.+.001*theta[0])
     class Bundle:
@@ -35,7 +44,10 @@ def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None,
         def checkpoint(self,name):
             return dict(model=t["model"],parameter_schema=schema(build()),q_per_measurement=float(np.mean((2-values(initial))**2))),dict(theta=initial,values=values(initial))
     class Metric:
-        def __init__(self,b):self.sigma=np.ones(2290)
+        def __init__(self,b):
+            self.sigma=np.ones(2290);self.info=dict(ids=[f'synthetic-{i}' for i in range(2290)])
+        def describe(self,v):
+            return dict(q_per_measurement=float(np.mean((2-v)**2)),min_T_over_sigma=float(v.min()))
         def score(self,v,mu):
             s=v-1e-8
             if not (s>0).all():return None
@@ -127,3 +139,52 @@ def test_resume_preparation_failure_retains_parent_and_zero_new_dispatch_ledger(
     assert ledger['trajectory_counters']['forwards']==saved['counters'][0]
     with np.load(failed/'restart.npz',allow_pickle=False) as z:
         assert all(np.array_equal(z[k],saved[k]) for k in z.files)
+
+def test_passive_diagnostics_preserve_trajectory_and_all_model_call_counts(tmp_path,monkeypatch):
+    import json
+    parent=tmp_path/'parent';control=tmp_path/'control';observed=tmp_path/'observed'
+    for path in (parent,control,observed):path.mkdir()
+    execute(parent,monkeypatch,steps=3)
+    with np.load(parent/'restart.npz',allow_pickle=False) as z:saved={k:z[k].copy() for k in z.files}
+    _,baseline=execute(control,monkeypatch,steps=6,resume_arrays=saved)
+    code,recorded=execute(observed,monkeypatch,steps=6,resume_arrays=saved,
+        policy='p1-time-window-v1',diagnostics=True)
+    assert code==0 and recorded['counters']==baseline['counters']
+    assert recorded['trajectory_counters']==baseline['trajectory_counters']
+    for name in ('last.npz','restart.npz'):
+        with np.load(control/name,allow_pickle=False) as a,np.load(observed/name,allow_pickle=False) as b:
+            assert a.files==b.files
+            assert all(np.array_equal(a[k],b[k]) for k in a.files)
+    events=[json.loads(line) for line in (observed/'line-search.ndjson').read_text().splitlines()]
+    assert sum(e['verdict']=='armijo_passed' for e in events)==6
+    report=read(observed/'diagnostic-summary.json')
+    assert report['model_calls']==0 and report['segment_counters']==recorded['counters']
+    assert report['trajectory_counters']==recorded['trajectory_counters']
+
+def test_32_update_review_does_not_end_the_time_window(tmp_path,monkeypatch):
+    parent=tmp_path/'parent';observed=tmp_path/'observed';parent.mkdir();observed.mkdir()
+    execute(parent,monkeypatch,steps=3)
+    with np.load(parent/'restart.npz',allow_pickle=False) as z:saved={k:z[k].copy() for k in z.files}
+    # Keep this synthetic trajectory outside the convergence gate so the test
+    # isolates the checkpoint cadence from convergence-based early stopping.
+    monkeypatch.setattr(worker,'plateau',lambda *args:dict(eligible=True,passed=False))
+    code,summary=execute(observed,monkeypatch,steps=97,resume_arrays=saved,
+        policy='p1-time-window-v1',diagnostics=True)
+    assert code==0 and summary['counters']['accepted_updates']==97
+    report=read(observed/'diagnostic-review-0032.json')
+    assert report['segment_counters']['accepted_updates']==32
+    assert report['trajectory_counters']['accepted_updates']==35
+    assert read(observed/'diagnostic-summary.json')['review_files']==[
+        'diagnostic-review-0032.json','diagnostic-review-0064.json','diagnostic-review-0096.json']
+
+def test_time_reserve_ends_optimization_and_keeps_raw_endpoint_gradient(tmp_path,monkeypatch):
+    parent=tmp_path/'parent';observed=tmp_path/'observed';parent.mkdir();observed.mkdir()
+    execute(parent,monkeypatch,steps=3)
+    with np.load(parent/'restart.npz',allow_pickle=False) as z:saved={k:z[k].copy() for k in z.files}
+    code,summary=execute(observed,monkeypatch,steps=33,resume_arrays=saved,
+        policy='p1-time-window-v1',diagnostics=True,deadline_seconds=120)
+    assert code==2 and summary['status']=='partial'
+    assert summary['optimization_budget_stop']=='endpoint_time_reserve'
+    assert summary['counters']['accepted_updates']==0
+    assert not summary['plateau']['passed']
+    with np.load(observed/'last.npz',allow_pickle=False) as z:assert 'raw_gradient' in z.files

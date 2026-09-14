@@ -16,7 +16,8 @@ from .bundle import Bundle
 from .metric import Metric
 from .models import build,Config,schema
 from .engine import Engine
-from .contracts import validate_trial
+from .contracts import validate_trial,RESUME_TRAJECTORY_LIMITS
+from .diagnostics import OptimizationDiagnostics
 from .checkpoints import load_overlay
 from .lbfgs import two_loop
 from .restart import load_restart, unpack_state, pack_state, validate_arrays, update_history, COUNTERS
@@ -66,7 +67,7 @@ def run(args):
     launch=read(args.out/"launch.json")
     if launch["trial_sha256"]!=sha(args.trial): raise ValueError("trial changed after acceptance")
     deadline=float(launch["model_deadline_monotonic"])
-    resumed=trial.get('execution_policy')=='p1-resume-v1'
+    resumed=trial.get('execution_policy') in RESUME_TRAJECTORY_LIMITS
     if resumed and args.device.startswith('cuda'):
         if canonical_uuid(torch.cuda.get_device_properties(0).uuid)!=canonical_uuid(os.environ.get('TMD_GPU_UUID','')):
             raise ValueError('CUDA worker and supervisor GPU UUID mismatch')
@@ -79,6 +80,7 @@ def run(args):
     termination=DeferredTermination()
     signal.signal(signal.SIGTERM,termination.handle)
     engine=None; point=None; states=[]; history=[]; last_alpha=1.; resume_arrays=None; restart_snapshot=None
+    diagnostics=None; optimization_budget_stop=None
     counts=dict(forwards=0,full_calls=0,accepted_updates=0,infeasible_trials=0,line_search_rejections=0)
     prior={k:0 for k in COUNTERS}; max_call_seconds=0.
     status="failed"; reason=None; phase_records=[]; preflight={}
@@ -92,12 +94,16 @@ def run(args):
     def guard():
         if time.monotonic()>=deadline: raise Stop("segment_time_cap")
     def endpoint_reserve_needed():
-        if time.monotonic()+max(2*max_call_seconds,1.)>=optimization_deadline:return True
+        nonlocal optimization_budget_stop
+        if time.monotonic()+max(2*max_call_seconds,1.)>=optimization_deadline:
+            optimization_budget_stop='endpoint_time_reserve'; return True
         total=trial['trajectory_budget']
         # A candidate needs up to two forwards/one VJP; leave one of each for
         # the endpoint raw gradient even when the call ceiling binds first.
-        return (min(budget['forwards']-counts['forwards'],total['forwards']-prior['forwards']-counts['forwards'])<3
+        needed=(min(budget['forwards']-counts['forwards'],total['forwards']-prior['forwards']-counts['forwards'])<3
             or min(budget['full_calls']-counts['full_calls'],total['full_calls']-prior['full_calls']-counts['full_calls'])<2)
+        if needed: optimization_budget_stop='endpoint_call_reserve'
+        return needed
     def call(theta,cot=None):
         nonlocal max_call_seconds
         guard()
@@ -117,9 +123,12 @@ def run(args):
             trajectory_counters={k:prior[k]+counts[k] for k in COUNTERS},max_call_seconds=max_call_seconds))
         guard()
         return result
-    def full(theta,mu):
+    def full(theta,mu,diagnostic_candidate=None):
         values,_=call(theta)
         p=metric.score(values,mu)
+        if diagnostics is not None and diagnostic_candidate is not None:
+            diagnostics.candidate(**diagnostic_candidate, values=values, score=p,
+                counts=counts, prior=prior, elapsed=time.monotonic()-launch['t0_monotonic'])
         if p is None:
             counts["infeasible_trials"]+=1
             return None
@@ -190,6 +199,10 @@ def run(args):
             # replay roundoff must not perturb the restored curvature trajectory.
             point,history,states,_=unpack_state(resume_arrays,metric)
             commit_optimizer()
+        if trial.get('diagnostics'):
+            diagnostics=OptimizationDiagnostics(args.out,metric,schema(model),
+                trial['diagnostics']['review_interval_updates'])
+            diagnostics.begin(point,counts,prior,time.monotonic()-launch['t0_monotonic'])
         stopped_for_reserve=False; converged=False
         for phase_index,phase in enumerate(trial["phases"]):
             if phase_index:
@@ -206,15 +219,22 @@ def run(args):
                     stopped_for_reserve=True; break
                 direction=-two_loop(point["gradient"],history)
                 gdot=float(point["gradient"]@direction)
+                fallback=False
                 if not np.isfinite(direction).all() or gdot>=0:
+                    fallback=True
                     direction=-point["gradient"]; gdot=float(point["gradient"]@direction)
                 if gdot>=0: raise Stop("non_descent_direction")
+                before=point
+                context=None if diagnostics is None else diagnostics.step(point,direction,history,gdot,
+                    fallback,counts,prior,time.monotonic()-launch['t0_monotonic'])
                 accepted=None
                 alpha=min(1.,2*last_alpha) if trial.get('optimizer',{}).get('line_search')=='previous-alpha-double' else 1.
                 for attempt in range(32):
                     if resumed and endpoint_reserve_needed():
                         stopped_for_reserve=True; break
-                    candidate=full(point["theta"]+alpha*direction,phase["mu"])
+                    diagnostic_candidate=None if diagnostics is None else dict(context=context,
+                        alpha=alpha,attempt=attempt+1,armijo_bound=point['objective']+1e-4*alpha*gdot)
+                    candidate=full(point["theta"]+alpha*direction,phase["mu"],diagnostic_candidate)
                     if candidate is not None and candidate["objective"]<=point["objective"]+1e-4*alpha*gdot:
                         accepted=candidate; break
                     counts["line_search_rejections"]+=1; alpha*=.5
@@ -228,6 +248,9 @@ def run(args):
                     save_npz(args.out/f'checkpoint-{step:03d}.npz',theta=point['theta'],values=point['values'],penalized_gradient=point['gradient'])
                     save_npz(args.out/'last.npz',theta=point['theta'],values=point['values'],penalized_gradient=point['gradient'])
                     write(args.out/f'accepted-{step:03d}.json',dict(counts,mu=phase['mu'],q_per_measurement=point['q_per_measurement'],objective=point['objective'],alpha=alpha,plateau=plateau(states,metric.sigma),elapsed_seconds=time.monotonic()-launch['t0_monotonic'],trajectory_counters={k:prior[k]+counts[k] for k in COUNTERS}))
+                if diagnostics is not None:
+                    diagnostics.accepted(before,point,alpha,gdot,counts,prior,
+                        time.monotonic()-launch['t0_monotonic'],plateau(states,metric.sigma))
             phase_records.append(dict(mu=phase["mu"],accepted=phase_steps,requested=phase["updates"],plateau=plateau(states,metric.sigma)))
         _,raw=call(point["theta"],point["raw_cotangent"])
         save_npz(args.out/"last.npz",theta=point["theta"],values=point["values"],raw_gradient=raw,penalized_gradient=point["gradient"])
@@ -245,6 +268,17 @@ def run(args):
             validate_arrays(restart_snapshot,restart_snapshot['theta'].size)
             save_npz(args.out/'restart.npz',**restart_snapshot)
         write(args.out/"worker-summary.json",dict(schema="tmd-worker-v1",status=status,stop_reason=reason,counters=counts,trajectory_counters={k:prior[k]+counts[k] for k in COUNTERS},phases=phase_records,preflight=preflight,optimizer_history_reset=not resumed,uninterrupted_trajectory=False,optimizer_state_restored=resumed,plateau=plateau(states,metric.sigma) if "metric" in locals() else None,end_utc=utc()))
+        if diagnostics is not None:
+            # Preserve authoritative worker/restart receipts even if optional
+            # final diagnostics cannot be written during shutdown.
+            summary=read(args.out/'worker-summary.json')
+            summary['optimization_budget_stop']=optimization_budget_stop
+            write(args.out/'worker-summary.json',summary)
+            try:
+                diagnostics.finish(point,counts,prior,time.monotonic()-launch['t0_monotonic'],
+                    plateau(states,metric.sigma),status,reason)
+            except Exception as exc:
+                write(args.out/'diagnostic-finalization-error.json',dict(error=type(exc).__name__+': '+str(exc)))
         if engine is not None: engine.close()
     return 0 if status=="completed" else 2
 

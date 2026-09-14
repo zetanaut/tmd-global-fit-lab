@@ -49,14 +49,15 @@ def test_restart_rejects_curvature_corruption_and_wrong_endpoint():
 def test_nonpositive_curvature_is_not_restored_or_appended():
     assert update_history([],np.zeros(3),np.ones(3),np.ones(3),np.zeros(3))==[]
 
-def test_kill_between_atomic_restart_and_last_audits_new_state_and_charges_dispatch(tmp_path):
+@pytest.mark.parametrize('policy',['p1-resume-v1','p1-resume-v2','p1-time-window-v1'])
+def test_kill_between_atomic_restart_and_last_audits_new_state_and_charges_dispatch(tmp_path,policy):
     from tmdlab.audit import endpoint_arrays
     from tmdlab.restart import recover_native
     from tmdlab.io import write,sha
     old=state(np.array([1.,2.,3.])); new,h,s=advance(old,[],[old],1)
     counts=dict.fromkeys(COUNTERS,0); counts.update(accepted_updates=1,forwards=9,full_calls=3)
     a=pack_state(new,h,s,counts,mu=1e-6)
-    write(tmp_path/'trial.json',dict(execution_policy='p1-resume-v1'))
+    write(tmp_path/'trial.json',dict(execution_policy=policy))
     np.savez_compressed(tmp_path/'last.npz',theta=old['theta'],values=old['values'],penalized_gradient=old['gradient'])
     np.savez_compressed(tmp_path/'restart.npz',**a)
     path,endpoint=endpoint_arrays(tmp_path)

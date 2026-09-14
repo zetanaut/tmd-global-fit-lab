@@ -1,0 +1,59 @@
+{
+  "schema": "tmd-trial-v1",
+  "trial_id": "continuation-w8-feasibility-2h-local-a01",
+  "status": "ready",
+  "phase": "P1",
+  "kind": "continuation",
+  "hypothesis": "From the audited 177-update endpoint, a two-hour instrumented continuation measures further convergence progress and the exact positivity constraints rejecting the existing unit-backtracking L-BFGS steps.",
+  "model_family": "nested-film-v1",
+  "model": {"depth": 1, "width": 8},
+  "seed": 2026091208,
+  "start_checkpoint": "restart:97d880cdeedcb180e4015fffb8f3827355cf300f10e50bbc6adf18e6e03f4245",
+  "rows": 2290,
+  "dtype": "float64",
+  "execution_class": "gpu",
+  "claim_required": true,
+  "production_selection": false,
+  "phases": [{"mu": 0.000001, "updates": 4096}],
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "budget": {
+    "accepted_updates": 4096, "forwards": 16384, "full_calls": 8192,
+    "cache_gib": 12, "cpu_threads": 1, "gpu_gib": 20,
+    "host_available_gib": 8, "rss_gib": 12,
+    "segment_seconds": 7200, "total_seconds": 7800, "endpoint_reserve_seconds": 180
+  },
+  "resource_profile": {
+    "site": "local GPU workstation", "gpu_model": "NVIDIA GeForce RTX 4090",
+    "local_cuda_visible_devices": "0", "local_cuda_uuid": "8a52c480-835f-a522-42bd-cc144e59e44e",
+    "gpus": 1, "cpus_per_task": 2, "host_memory_gib": 16,
+    "cgroup_memory_max_bytes": 17179869184, "wall_seconds": 8100,
+    "systemd_unit": "tmd-w8-feasibility-2h-a01",
+    "single_gpu_lock": "/run/user/1000/tmdlab-gpu-8a52c480-835f-a522-42bd-cc144e59e44e.lock"
+  },
+  "prerequisites": {
+    "verified_input_files": 4600,
+    "restart_review": "decisions/2026-09-14-local-w8-p1b-outcome.md",
+    "qualified_local_port_run": "replay-w8-rtx4090-a04-92f6b778b6b5",
+    "parent_run": "continuation-w8-p1b-local-a01-20d406220a8a",
+    "parent_replay_and_two_directional_checks_before_optimization": true
+  },
+  "decision_record": "decisions/2026-09-14-local-w8-feasibility-2h-plan.md",
+  "execution_policy": "p1-time-window-v1",
+  "restart_binding": {
+    "parent_run_id": "continuation-w8-p1b-local-a01-20d406220a8a",
+    "state_sha256": "cf412dbcf9be489e1c4b015bdbff35a98ee01b1127249328ee8b932800bb6533",
+    "accepted_updates_before": 177, "optimizer_history_reset": false
+  },
+  "trajectory_budget": {
+    "accepted_updates": 4273, "forwards": 17822, "full_calls": 8397, "model_seconds": 13757
+  },
+  "diagnostics": {
+    "schema": "tmd-feasibility-diagnostics-v1",
+    "review_interval_updates": 32, "record_all_violating_rows": true
+  },
+  "study_role": "One width-8 convergence and feasibility investigation on the sole local GPU",
+  "optimizer": {"line_search": "unit-backtracking"},
+  "stopping_rule": "Stop on the unchanged convergence gate, reserved endpoint time, an explicit count/resource bound, or a genuine numerical/line-search failure. Every 32-update review is observational and does not end the run; 4096 updates is a guardrail, not an expected milestone. No automatic successor or restart."
+}

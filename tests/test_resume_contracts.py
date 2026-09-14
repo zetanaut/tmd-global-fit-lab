@@ -1,7 +1,7 @@
 from pathlib import Path
 import pytest
 from tmdlab.io import read
-from tmdlab.contracts import validate_trial
+from tmdlab.contracts import validate_trial,FEASIBILITY_DIAGNOSTICS
 
 def resumed():
     t=read(Path(__file__).parents[1]/'trials/continuation-w16-p1-a01.json')
@@ -17,6 +17,48 @@ def resumed():
 def test_extended_policy_preserves_legacy_ceilings():
     assert validate_trial(resumed())
     t=resumed(); t.pop('execution_policy')
+    with pytest.raises(ValueError):validate_trial(t)
+
+def test_p1b_policy_allows_one_new_96_update_segment_but_caps_its_trajectory():
+    t=resumed()
+    t['execution_policy']='p1-resume-v2'
+    t['restart_binding']['accepted_updates_before']=81
+    t['phases'][0]['updates']=96
+    t['budget']['accepted_updates']=96
+    t['trajectory_budget']=dict(accepted_updates=177,forwards=4741,full_calls=612,model_seconds=17696)
+    assert validate_trial(t)
+    t['trajectory_budget']['accepted_updates']=193
+    with pytest.raises(ValueError):validate_trial(t)
+
+def time_window():
+    t=resumed();t['execution_policy']='p1-time-window-v1'
+    t['restart_binding']['accepted_updates_before']=177
+    t['phases'][0]['updates']=4096
+    t['budget'].update(accepted_updates=4096,forwards=16384,full_calls=8192,
+        segment_seconds=7200,total_seconds=7800,endpoint_reserve_seconds=180)
+    t['trajectory_budget']=dict(accepted_updates=4273,forwards=17822,full_calls=8397,model_seconds=13757)
+    t['diagnostics']=dict(FEASIBILITY_DIAGNOSTICS)
+    t['decision_record']='decisions/synthetic-time-window.md'
+    return t
+
+def test_time_window_allows_longer_counts_without_changing_old_policies():
+    t=time_window(); assert validate_trial(t)
+    for policy in ('p1-resume-v1','p1-resume-v2'):
+        t=time_window();t['execution_policy']=policy
+        with pytest.raises(ValueError):validate_trial(t)
+
+@pytest.mark.parametrize('damage',['time','updates','forwards','full_calls','diagnostics','cadence','decision','optimizer','trajectory'])
+def test_time_window_bounds_and_instrumentation_are_required(damage):
+    t=time_window()
+    if damage=='time':t['budget']['segment_seconds']=7201
+    elif damage in ('updates','forwards','full_calls'):
+        key='accepted_updates' if damage=='updates' else damage
+        t['budget'][key]+=1
+    elif damage=='diagnostics':t.pop('diagnostics')
+    elif damage=='cadence':t['diagnostics']['review_interval_updates']=96
+    elif damage=='decision':t.pop('decision_record')
+    elif damage=='optimizer':t['optimizer']['line_search']='previous-alpha-double'
+    elif damage=='trajectory':t['trajectory_budget']['accepted_updates']+=1
     with pytest.raises(ValueError):validate_trial(t)
 
 @pytest.mark.parametrize('damage',['reset','remaining','counter','reserve','phase','algorithm','elapsed'])

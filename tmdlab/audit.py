@@ -7,6 +7,7 @@ from .bundle import Bundle
 from .metric import Metric
 from .io import read,write,sha,utc
 from .restart import validate_arrays
+from .contracts import RESUME_TRAJECTORY_LIMITS
 
 def endpoint_arrays(out):
     """Choose the atomic restart if KILL left a legacy last-file behind."""
@@ -14,7 +15,7 @@ def endpoint_arrays(out):
     if path.is_file():
         with np.load(path,allow_pickle=False) as z:arrays={k:z[k].copy() for k in z.files}
     trial_path=out/'trial.json'
-    native=trial_path.is_file() and read(trial_path).get('execution_policy')=='p1-resume-v1'
+    native=trial_path.is_file() and read(trial_path).get('execution_policy') in RESUME_TRAJECTORY_LIMITS
     restart=out/'restart.npz'
     if native and restart.is_file():
         with np.load(restart,allow_pickle=False) as z:saved={k:z[k].copy() for k in z.files}
