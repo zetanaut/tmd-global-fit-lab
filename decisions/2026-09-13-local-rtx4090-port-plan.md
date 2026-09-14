@@ -30,3 +30,19 @@ directional, resource, and saved-array checks qualifies this exact local
 environment for a separately preregistered state-preserving width-8 P1
 successor. A passing PORT result establishes neither convergence nor an
 architecture result.
+
+## A01 outcome and A02 technical retry
+
+Claimed attempt `replay-w8-rtx4090-a01` ended before its first telemetry sample
+or model dispatch. Its supervisor recorded `telemetry_failure: ValueError:
+finite cgroup limit unavailable`; the endpoint audit is `no_endpoint`, and all
+scientific counters are zero. The confined output archive is
+`replay-w8-rtx4090-a01-5a38186ff8bf.tar.gz` with SHA-256
+`643ed46d247416d2c7634f1041d86a4de2a71d4614eb5d31a7a71c6f37be6c96`.
+
+The host's interactive session lacks a finite cgroup limit, but a disposable
+`systemd-run --user` service verified `memory.max=17179869184`. A new A02
+trial therefore runs within that 16 GiB service cgroup. This changes only the
+launcher/resource binding; it keeps the code, evaluator, all-row replay,
+checkpoint, numerical gates, and zero-update scope unchanged. A02 is a fresh
+claim and retains A01's zero-call terminal evidence.
