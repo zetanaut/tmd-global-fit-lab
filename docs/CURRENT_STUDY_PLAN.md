@@ -24,7 +24,23 @@ A02 was held before any worker launch when CI exposed a cross-BLAS curvature
 validation issue. Its spec and claim remain; A03 adds a roundoff certificate
 without changing the saved optimizer state or remaining compute allowance.
 
-## Prior local result and complementary UVA work
+## Latest UVA outcome and bounded width-16 recovery
+
+The [width-16 A02 result](../decisions/2026-09-14-uva-w16-domain-failure-outcome.md)
+records 137 new / 183 cumulative updates, q/N 16.364263303504803 and a valid
+unconverged endpoint. Its first candidate for update 184 failed at the incoming
+boundary guard after 8930.176 model seconds; this was a numerical exception,
+not exhaustion of the seven-hour opportunity. The immutable archive and exact
+restart retain the final failed forward and all optimizer history.
+
+The [A03 recovery plan](../decisions/2026-09-14-uva-w16-domain-recovery-plan.md)
+applies the independently reviewed shared candidate-domain repair and curvature
+certificate on UVA. It uses only 16269 remaining model seconds, on one A6000
+with five-hour walltime, and requires actual typed candidate diagnostics and an
+accepted update beyond 183 before claiming recovery. Claim and scheduler
+receipts establish execution state; neither repair nor recovery proves convergence.
+
+## Earlier local result and complementary UVA plan
 
 The complementary UVA action is a
 [seven-hour instrumented width-16 continuation](../decisions/2026-09-14-uva-w16-long-training-plan.md)
@@ -58,8 +74,9 @@ retained in the verified archive and immutable result record.
 This completes the one opportunity specified in the
 [local P1B plan](../decisions/2026-09-13-local-w8-p1b-plan.md). Its next action is
 the planned review of progress, feasibility and conditioning before any new
-allocation. Widths 16/24 still have only the earlier interrupted endpoints;
-their unequal optimization opportunities do not support an architecture ranking.
+allocation. Width 24 still has its earlier interrupted endpoint; the latest
+width-16 outcome is recorded above. Unequal optimization opportunities do not
+support an architecture ranking.
 
 The common96 chronology below is retained as historical context. Its width-8
 15-update recovery instruction predates this completed local extension and must

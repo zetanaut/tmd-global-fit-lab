@@ -1,0 +1,112 @@
+{
+  "budget": {
+    "accepted_updates": 3959,
+    "cache_gib": 12,
+    "cpu_threads": 1,
+    "endpoint_reserve_seconds": 300,
+    "forwards": 15096,
+    "full_calls": 8047,
+    "gpu_gib": 20,
+    "host_available_gib": 8,
+    "rss_gib": 12,
+    "segment_seconds": 16269,
+    "total_seconds": 17469
+  },
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "claim_required": true,
+  "decision_record": "decisions/2026-09-14-uva-w16-domain-recovery-plan.md",
+  "diagnostics": {
+    "record_all_violating_rows": true,
+    "review_interval_updates": 32,
+    "schema": "tmd-feasibility-diagnostics-v1"
+  },
+  "dtype": "float64",
+  "execution_class": "gpu",
+  "execution_policy": "p1-time-window-v2",
+  "hypothesis": "Typed rejection of invalid forward candidates tests recovery of the actual width16 update-184 boundary-domain failure, preserving its saved optimizer state and using only the remaining original seven-hour opportunity.",
+  "kind": "continuation",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "model": {
+    "depth": 1,
+    "width": 16
+  },
+  "model_family": "nested-film-v1",
+  "optimizer": {
+    "candidate_errors": "reject-forward-domain-errors-v1",
+    "line_search": "unit-backtracking"
+  },
+  "phase": "P1",
+  "phases": [
+    {
+      "mu": 1e-06,
+      "updates": 3959
+    }
+  ],
+  "prerequisites": {
+    "launcher_static_validation_before_submission": true,
+    "mandatory_resource_sampling_and_optional_progress_separated": true,
+    "parent_replay_and_two_directional_checks_before_optimization": true,
+    "parent_run": "continuation-w16-feasibility-7h-uva-a02-69f3be55d0f8",
+    "qualified_gpu_port_trial": "replay-w16-gpu-a02",
+    "resource_review": "uva_hpc_gpu:2026-09-14:one-A6000-2CPU-16GiB-5h",
+    "restart_review": "decisions/2026-09-14-uva-w16-domain-failure-outcome.md",
+    "roundoff_aware_curvature_certificate_tests": true,
+    "typed_domain_rejection_and_fail_closed_regression_tests": true,
+    "verified_input_files": 4600
+  },
+  "production_selection": false,
+  "recovery_validation": {
+    "accepted_updates_must_exceed": 183,
+    "all_full_observable_validation_and_candidate_calls_charged_to_remaining_window": true,
+    "first_candidate_cumulative_update": 184,
+    "initial_alpha": 1.0,
+    "require_typed_domain_classification": true
+  },
+  "resource_profile": {
+    "account": "spinquest_standard",
+    "cpus_per_task": 2,
+    "export": "NIL",
+    "gpu_model": "NVIDIA RTX A6000",
+    "gpus": 1,
+    "gres": "gpu:a6000:1",
+    "host_memory_gib": 16,
+    "nodes": 1,
+    "partition": "gpu",
+    "requeue": false,
+    "site": "UVA Rivanna/Afton",
+    "tasks": 1,
+    "wall_seconds": 18000
+  },
+  "restart_binding": {
+    "accepted_updates_before": 183,
+    "optimizer_history_reset": false,
+    "parent_run_id": "continuation-w16-feasibility-7h-uva-a02-69f3be55d0f8",
+    "state_sha256": "0d5a6794442b8deb54232b0d27482096128351562d6e7d8364d38145e66f71b2"
+  },
+  "rows": 2290,
+  "schema": "tmd-trial-v1",
+  "seed": 2026091216,
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "start_checkpoint": "restart:7597e89266238b98e0c3006a628977dbd272debed9a302e9a2c5dd4504e42543",
+  "status": "ready",
+  "stopping_rule": "Preserve parent optimizer arrays, charged costs and cumulative caps. Reject only typed numerical-domain failures in candidate forward values/fixed-metric scoring; preserve strict positivity, Armijo and32attempts. Require full restart replay/directional gates and inspect typed classification of update184 before claiming recovery. Stop on unchanged convergence, endpoint time/call reserve, explicit resource/count bound, exhaustion or any other fatal error. Reviews every32updates are observational. No automatic successor.",
+  "study_role": "Independent width16 convergence and feasibility investigation on UVA, complementary to the locally owned width8 continuation; unequal starts and hardware do not constitute a controlled width comparison.",
+  "technical_retry": {
+    "new_compute_grant": false,
+    "original_opportunity_model_seconds": 25200,
+    "parent_failure": "incoming boundary domain guard during first candidate forward for cumulative update184; distinguish both original guard predicates with typed diagnostics",
+    "parent_run_id": "continuation-w16-feasibility-7h-uva-a02-69f3be55d0f8",
+    "parent_slurm_job_id": "19946083",
+    "parent_spent_model_seconds": 8930.176312024996,
+    "parent_trial_id": "continuation-w16-feasibility-7h-uva-a02",
+    "post_checkpoint_failed_forwards_reconciled": 1,
+    "remaining_seconds_rounded_down": 16269
+  },
+  "trajectory_budget": {
+    "accepted_updates": 4142,
+    "forwards": 16679,
+    "full_calls": 8252,
+    "model_seconds": 27484
+  },
+  "trial_id": "continuation-w16-feasibility-7h-uva-a03"
+}
