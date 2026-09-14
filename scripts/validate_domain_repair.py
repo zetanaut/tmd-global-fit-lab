@@ -25,7 +25,7 @@ from tmdlab.io import read, write, sha, utc
 from tmdlab.lbfgs import two_loop
 from tmdlab.metric import Metric
 from tmdlab.models import build, put
-from tmdlab.restart import load_restart, elapsed_before, segment_allowance
+from tmdlab.restart import load_restart, elapsed_before, segment_allowance, curvature_certificate
 
 
 def old_module(commit, name):
@@ -101,7 +101,7 @@ def main(args):
     assert [p['verdict'] for p in probes]==['boundary_valid','boundary_zero_damping','boundary_zero_damping','boundary_valid','boundary_valid']
     record=dict(schema='tmd-domain-repair-engineering-v1',generated_utc=utc(),passed=True,
         baseline_code_commit=args.baseline,baseline_file_sha256=dict(models=models_sha,engine=engine_sha,metric=metric_sha),
-        current_file_sha256={name:sha(root/'tmdlab'/f'{name}.py') for name in ('models','engine','metric','worker','domain','diagnostics','contracts')},
+        current_file_sha256={name:sha(root/'tmdlab'/f'{name}.py') for name in ('models','engine','metric','worker','domain','diagnostics','contracts','restart')},
         trial_sha256=sha(args.trial),restart_identity=manifest['identity'],input_identity=bundle.index['identity'],
         verified_input_files=len(bundle.index['files']),model_seconds_before=before,effective_model_seconds=4993,
         restored_counters=manifest['counters'],optimizer_arrays_bit_identical=True,failed_final_dispatch_retained=True,
@@ -109,6 +109,7 @@ def main(args):
         full_data_forward_vjp_calls=0,optimizer_updates=0,boundary_check_calls=5,boundary_condition_probe_calls=5,
         boundary_probe_observation=metadata['row']['observation_id'],boundary_probe_nodes=len(keys),
         direction_l2=float(np.linalg.norm(direction)),g_dot_direction=float(state['penalized_gradient']@direction),
+        curvature_certificates=[curvature_certificate(s,y,rho) for s,y,rho in zip(state['history_s'],state['history_y'],state['history_rho'])],
         boundary_probes=probes,full_observable_feasibility_at_smaller_alpha='not_established_by_this_engineering_probe')
     write(args.out,record);print(args.out)
 

@@ -44,9 +44,10 @@ def test_domain_rejection_requires_exact_opt_in():
         with pytest.raises(ValueError,match='candidate-domain'):validate_trial(trial)
 
 
-def test_local_successor_preserves_original_cumulative_allowance_and_spent_costs():
+@pytest.mark.parametrize('attempt',['a02','a03'])
+def test_local_successor_preserves_original_cumulative_allowance_and_spent_costs(attempt):
     root=Path(__file__).parents[1]
-    trial=validate_trial(read(root/'trials/continuation-w8-feasibility-2h-local-a02.json'))
+    trial=validate_trial(read(root/f'trials/continuation-w8-feasibility-2h-local-{attempt}.json'))
     parent_trial=read(root/'trials/continuation-w8-feasibility-2h-local-a01.json')
     restart=read(root/'restarts'/f"{trial['start_checkpoint'][8:]}.json")
     record=read(root/restart['parent_record']['path'])
@@ -110,6 +111,25 @@ def test_old_policy_does_not_silently_change(tmp_path,monkeypatch):
     ledger=read(out/'counters.json')
     assert ledger['call_in_flight'] is False and ledger['forwards']==8
     assert ledger['domain_error_code']=='boundary_zero_damping'
+
+
+def test_failed_curvature_certificate_preserves_last_committed_point_and_counts(tmp_path,monkeypatch):
+    saved=parent(tmp_path,monkeypatch)
+    original=worker.validate_arrays
+    def validate(arrays,parameters):
+        if arrays['counters'][2]>saved['counters'][2]:
+            raise ValueError('synthetic uncertified curvature')
+        return original(arrays,parameters)
+    monkeypatch.setattr(worker,'validate_arrays',validate)
+    out=tmp_path/'uncertified';code,result=resumed(out,monkeypatch,saved)
+    assert code==2 and result['status']=='failed'
+    assert result['counters']['accepted_updates']==0
+    assert result['trajectory_counters']['accepted_updates']==saved['counters'][2]
+    with np.load(out/'restart.npz',allow_pickle=False) as z:
+        for key in ('theta','penalized_gradient','history_s','history_y','state_values'):
+            assert np.array_equal(z[key],saved[key])
+    with np.load(out/'last.npz',allow_pickle=False) as z:
+        assert np.array_equal(z['theta'],saved['theta'])
 
 
 @pytest.mark.parametrize('call_index',[1,2,3,4,9,10])

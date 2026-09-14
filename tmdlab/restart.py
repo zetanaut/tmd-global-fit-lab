@@ -8,6 +8,37 @@ from .io import read, write, sha, digest, within
 COUNTERS = ('forwards', 'full_calls', 'accepted_updates', 'infeasible_trials', 'line_search_rejections')
 ALGORITHM = 'lbfgs15-armijo32-sy1e-12-v1'
 
+def curvature_certificate(x,y,rho):
+    """Validate a saved reciprocal without assuming identical BLAS reductions.
+
+    A relative tolerance on a heavily cancelling dot product is not portable.
+    Compare against accurately summed binary64 products using a conservative
+    two-reduction gamma_(n+4) absolute error bound, including reciprocals and
+    subnormal rounding. This validates only: saved s/y/rho and optimizer
+    arithmetic are NEVER rewritten. Ambiguous curvature fails closed.
+    """
+    with np.errstate(over='ignore',invalid='ignore'):
+        products=x*y
+    if not np.isfinite(products).all() or not math.isfinite(float(rho)) or rho<=0:
+        raise ValueError('invalid restart curvature pair')
+    try:
+        reference=math.fsum(map(float,products))
+        magnitude=math.fsum(map(float,np.abs(products)))
+        saved=1/float(rho)
+    except (OverflowError,ZeroDivisionError):
+        raise ValueError('invalid restart curvature pair') from None
+    unit=np.finfo(np.float64).eps/2
+    operations=len(x)+4
+    if operations*unit>=1:raise ValueError('unbounded restart curvature validation')
+    gamma=operations*unit/(1-operations*unit)
+    bound=float(np.nextafter(2*gamma*magnitude+operations*np.finfo(np.float64).smallest_subnormal,np.inf))
+    if (not math.isfinite(saved) or not math.isfinite(bound)
+        or saved<=1e-12 or reference-bound<=1e-12
+        or abs(saved-reference)>bound):
+        raise ValueError('invalid restart curvature pair')
+    return dict(saved_dot=saved,reference_dot=reference,absolute_difference=abs(saved-reference),
+        absolute_error_bound=bound,sum_absolute_products=magnitude)
+
 def update_history(history, old_theta, old_gradient, theta, gradient):
     s = theta-old_theta; y = gradient-old_gradient; sy = float(s@y)
     if sy > 1e-12 and np.isfinite(sy):
@@ -44,9 +75,7 @@ def validate_arrays(a, parameters):
     if not np.array_equal(a['values'], a['state_values'][-1]) or not (a['state_mu'] == a['mu']).all():
         raise ValueError('restart endpoint/window phase mismatch')
     for x,y,rho in zip(a['history_s'],a['history_y'],a['history_rho']):
-        sy = float(x@y)
-        if sy <= 1e-12 or not np.isclose(rho,1/sy,rtol=1e-13,atol=0):
-            raise ValueError('invalid restart curvature pair')
+        curvature_certificate(x,y,rho)
     if a['state_gradient_max'][-1] != np.max(np.abs(a['penalized_gradient'])):
         raise ValueError('restart endpoint gradient mismatch')
     return a

@@ -1,7 +1,7 @@
 """Restart must preserve optimization state, history filtering and counted work."""
 import numpy as np
 import pytest
-from tmdlab.restart import pack_state,validate_arrays,unpack_state,update_history,COUNTERS
+from tmdlab.restart import pack_state,validate_arrays,unpack_state,update_history,COUNTERS,curvature_certificate
 from tmdlab.lbfgs import two_loop
 
 class QuadraticMetric:
@@ -48,6 +48,41 @@ def test_restart_rejects_curvature_corruption_and_wrong_endpoint():
 
 def test_nonpositive_curvature_is_not_restored_or_appended():
     assert update_history([],np.zeros(3),np.ones(3),np.ones(3),np.zeros(3))==[]
+
+
+def test_cancelling_curvature_uses_an_absolute_roundoff_certificate():
+    x=np.array([.01,1e-8,-.01]);y=np.ones(3)
+    sequential=float(sum(x*y));accurate=1e-8
+    assert abs(sequential-accurate)/accurate>1e-13
+    for dot in (sequential,accurate):
+        proof=curvature_certificate(x,y,1/dot)
+        assert proof['absolute_difference']<=proof['absolute_error_bound']
+    with pytest.raises(ValueError,match='curvature'):curvature_certificate(x,y,1/(accurate*1.001))
+
+
+@pytest.mark.parametrize('dot',[0.,-1.,1e-13,1e-12])
+def test_uncertified_or_below_threshold_curvature_stays_rejected(dot):
+    with pytest.raises(ValueError,match='curvature'):
+        curvature_certificate(np.array([dot]),np.ones(1),1/dot if dot else 1.)
+
+
+def test_curvature_with_roundoff_larger_than_signal_fails_closed():
+    with pytest.raises(ValueError,match='curvature'):
+        curvature_certificate(np.array([1e16,1.,-1e16]),np.ones(3),1.)
+
+
+def test_archived_cancelling_pairs_and_corrupt_reciprocals():
+    from pathlib import Path
+    path=Path(__file__).parents[1]/'checkpoint-objects/fe93b70d67541a02b3236f8cd2bc1b3869d516717a9c76e7627aa20dbcd2e284.npz'
+    with np.load(path,allow_pickle=False) as z:
+        a={key:z[key].copy() for key in z.files}
+    validate_arrays(a,1570)
+    original={key:value.copy() for key,value in a.items()}
+    for x,y,rho in zip(a['history_s'],a['history_y'],a['history_rho']):
+        proof=curvature_certificate(x,y,rho)
+        assert proof['absolute_difference']<=proof['absolute_error_bound']
+        with pytest.raises(ValueError,match='curvature'):curvature_certificate(x,y,rho*1.001)
+    assert all(np.array_equal(a[key],original[key]) for key in a)
 
 @pytest.mark.parametrize('policy',['p1-resume-v1','p1-resume-v2','p1-time-window-v1'])
 def test_kill_between_atomic_restart_and_last_audits_new_state_and_charges_dispatch(tmp_path,policy):

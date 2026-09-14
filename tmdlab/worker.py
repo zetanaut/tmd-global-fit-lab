@@ -263,10 +263,19 @@ def run(args):
                     counts["line_search_rejections"]+=1; alpha*=.5
                 if stopped_for_reserve: break
                 if accepted is None: raise Stop("line_search_exhausted_32_trials")
+                # Certify the proposed snapshot before mutating live accepted
+                # state. A genuine curvature-validation failure must not leave
+                # counters/point ahead of the last atomic checkpoint.
+                next_history=update_history(list(history),point['theta'],point['gradient'],accepted['theta'],accepted['gradient'])
+                next_states=(states+[dict(accepted)])[-21:]
+                next_counts=dict(counts,accepted_updates=counts['accepted_updates']+1)
+                prospective=pack_state(accepted,next_history,next_states,
+                    {k:prior[k]+next_counts[k] for k in COUNTERS},mu=accepted['mu'],last_alpha=alpha)
+                validate_arrays(prospective,accepted['theta'].size)
                 with termination.transaction():
-                    history=update_history(history,point['theta'],point['gradient'],accepted['theta'],accepted['gradient'])
+                    history=next_history
                     point=accepted; counts['accepted_updates']+=1; phase_steps+=1; last_alpha=alpha
-                    states.append(dict(point)); states=states[-21:]; step=counts['accepted_updates']
+                    states=next_states; step=counts['accepted_updates']
                     commit_optimizer()
                     save_npz(args.out/f'checkpoint-{step:03d}.npz',theta=point['theta'],values=point['values'],penalized_gradient=point['gradient'])
                     save_npz(args.out/'last.npz',theta=point['theta'],values=point['values'],penalized_gradient=point['gradient'])
