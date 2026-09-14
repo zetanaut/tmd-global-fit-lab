@@ -54,3 +54,13 @@ model call. A disposable service probe then verified both the intended checkout
 as `WorkingDirectory` and `memory.max=17179869184`. A03 is the single final
 launcher correction: it binds that working directory explicitly. It retains
 both prior zero-call attempts and does not authorize an unbounded retry series.
+
+A03 entered the correct checkout and finite cgroup, but its supervisor failed
+closed before dispatch because this non-Slurm workstation had no
+`CUDA_VISIBLE_DEVICES` value. The user explicitly confirmed that this is a
+local single-GPU host, not a Slurm allocation. A disposable bounded-service
+probe then verified that setting `CUDA_VISIBLE_DEVICES=0` exposes exactly one
+RTX 4090 to CUDA (UUID `8a52c480-835f-a522-42bd-cc144e59e44e`) while retaining
+the 16 GiB `memory.max`. A04 is therefore an owner-directed local-device
+binding attempt, not a scheduler override: no `SLURM_*` variable is present.
+It is the final zero-update PORT attempt in this sequence.
