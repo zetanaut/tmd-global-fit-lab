@@ -83,6 +83,16 @@ per-segment limits, but permits a trajectory ledger up to192 accepted updates,
 record or grants an unrecorded continuation: the exact new trial must bind its
 ancestor state, all already-spent counters and its own total ceiling.
 
+`p1-time-window-v1` supports the explicitly authorized local two-hour
+[instrumented continuation](../decisions/2026-09-14-local-w8-feasibility-2h-plan.md).
+Its segment caps are 7,200 model seconds plus 600 saved-QA seconds, 4,096 accepted
+updates, 16,384 forwards and 8,192 VJPs. It preserves unit backtracking and
+requires row-level feasibility diagnostics and reports every 32 accepted updates.
+The actual trial's cumulative limits remain authoritative. Reports do not stop
+the worker; endpoint time and call reserves, convergence and failure gates do.
+The larger count ceilings allow a full time opportunity without modifying the
+historical V1/V2 schedules. Diagnostics use existing predictions/gradients only.
+
 The atomic `restart.npz` is authoritative if a hard kill leaves `last.npz`
 behind. Saved-only audit records which file it evaluated; import requires exact
 agreement with that audited endpoint and a hash-bound terminal dispatch ledger.

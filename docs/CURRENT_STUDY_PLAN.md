@@ -8,6 +8,14 @@ Completing a job batch or publishing partial results does not complete the study
 
 ## Latest completed result: local width-8 P1B
 
+The next owner-authorized local action is one
+[two-hour instrumented width-8 continuation](../decisions/2026-09-14-local-w8-feasibility-2h-plan.md)
+from the 177-update endpoint on the single RTX 4090. It preserves unit
+backtracking and records failed rows, step/gradient/curvature diagnostics, and
+progress every 32 accepted updates. Its immutable trial defines the bounded
+time opportunity; the reports themselves do not stop optimization. Claim and
+launch receipts, rather than this plan, establish execution state.
+
 The [local P1B outcome](../decisions/2026-09-14-local-w8-p1b-outcome.md) is now
 recorded: 96 additional accepted updates from the verified 81-update restart,
 reaching 177 cumulative portable P1 updates. q/N improved from 16.699705871 to

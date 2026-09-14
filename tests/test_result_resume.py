@@ -11,6 +11,7 @@ from tmdlab.results import collect, validate_record
 
 @pytest.mark.parametrize('policy,summary_missing', [
     ('p1-resume-v1', False), ('p1-resume-v2', False), ('p1-resume-v2', True),
+    ('p1-time-window-v1', False), ('p1-time-window-v1', True),
 ])
 def test_resumed_result_reconciles_final_calls_and_preserves_prior_costs(
         tmp_path, policy, summary_missing):
