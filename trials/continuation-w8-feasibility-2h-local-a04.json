@@ -1,0 +1,91 @@
+{
+  "schema": "tmd-trial-v1",
+  "trial_id": "continuation-w8-feasibility-2h-local-a04",
+  "status": "ready",
+  "phase": "P1",
+  "kind": "continuation",
+  "hypothesis": "A further bounded opportunity from the audited 423-update endpoint will test whether the late improvement in progress per evaluation persists under the unchanged repaired optimizer; saved residual review separately tracks the nearly static high-COMPASS block.",
+  "model_family": "nested-film-v1",
+  "model": {"depth": 1, "width": 8},
+  "seed": 2026091208,
+  "start_checkpoint": "restart:35bc1bfc9c7a1c31189c292bba718495e33c53f60422f3c3d27ad3ee290a1819",
+  "rows": 2290,
+  "dtype": "float64",
+  "execution_class": "gpu",
+  "claim_required": true,
+  "production_selection": false,
+  "phases": [{"mu": 0.000001, "updates": 4096}],
+  "source_identity": "885ca45b75faa092d5e9116faeed2c2df9a7aaad089204522647a443e2bcfb41",
+  "metric_identity": "3681ca11258da031fe473ea335f7df20f1a386b12d5cf49dc6dd7100cca6531c",
+  "bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "budget": {
+    "accepted_updates": 4096,
+    "forwards": 16384,
+    "full_calls": 8192,
+    "cache_gib": 12,
+    "cpu_threads": 1,
+    "gpu_gib": 20,
+    "host_available_gib": 8,
+    "rss_gib": 12,
+    "segment_seconds": 7200,
+    "total_seconds": 7800,
+    "endpoint_reserve_seconds": 180
+  },
+  "resource_profile": {
+    "site": "local GPU workstation",
+    "gpu_model": "NVIDIA GeForce RTX 4090",
+    "local_cuda_visible_devices": "0",
+    "local_cuda_uuid": "8a52c480-835f-a522-42bd-cc144e59e44e",
+    "gpus": 1,
+    "cpus_per_task": 2,
+    "host_memory_gib": 16,
+    "cgroup_memory_max_bytes": 17179869184,
+    "wall_seconds": 8100,
+    "systemd_unit": "tmd-w8-feasibility-2h-a04",
+    "single_gpu_lock": "/run/user/1000/tmdlab-gpu-8a52c480-835f-a522-42bd-cc144e59e44e.lock"
+  },
+  "prerequisites": {
+    "verified_input_files": 4600,
+    "restart_review": "decisions/2026-09-14-local-w8-a03-outcome.md",
+    "qualified_local_port_run": "replay-w8-rtx4090-a04-92f6b778b6b5",
+    "parent_run": "continuation-w8-feasibility-2h-local-a03-52265fbd3eb9",
+    "parent_archive_download_and_all_file_hash_verification": true,
+    "parent_replay_and_two_directional_checks_before_optimization": true,
+    "typed_domain_rejection_and_fail_closed_regression_tests": true,
+    "roundoff_aware_curvature_certificate_tests": true
+  },
+  "additional_opportunity": {
+    "new_compute_grant": true,
+    "authorized_date": "2026-09-14",
+    "model_seconds": 7200,
+    "saved_only_qa_seconds": 600,
+    "prior_model_seconds": 13570.07446063764,
+    "prior_original_two_hour_opportunity_spent_seconds": 7013.429405350238,
+    "automatic_successor": false
+  },
+  "decision_record": "decisions/2026-09-14-local-w8-second-window-plan.md",
+  "execution_policy": "p1-time-window-v1",
+  "restart_binding": {
+    "parent_run_id": "continuation-w8-feasibility-2h-local-a03-52265fbd3eb9",
+    "state_sha256": "7b2b2d6a7341bf35a1f8c07844dda5307c47c7c4542b077ec1d054cd15c4df37",
+    "accepted_updates_before": 423,
+    "optimizer_history_reset": false
+  },
+  "trajectory_budget": {
+    "accepted_updates": 4519,
+    "forwards": 20699,
+    "full_calls": 8677,
+    "model_seconds": 20771
+  },
+  "diagnostics": {
+    "schema": "tmd-feasibility-diagnostics-v1",
+    "review_interval_updates": 32,
+    "record_all_violating_rows": true
+  },
+  "study_role": "Second owner-authorized two-hour local width-8 opportunity, preserving the audited 423-update state",
+  "optimizer": {
+    "line_search": "unit-backtracking",
+    "candidate_errors": "reject-forward-domain-errors-v1"
+  },
+  "stopping_rule": "Preserve exact history, fixed mu, scientific inputs and charged costs. Stop on unchanged convergence, endpoint time/call reserve, explicit resource/count bound, line-search exhaustion or fatal error. Every 32-update review is observational and does not stop training. No optimizer switch, sensitivity-model dispatch or automatic successor."
+}

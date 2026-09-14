@@ -19,8 +19,12 @@ The immutable archive has been downloaded and verified. Saved high-COMPASS
 decomposition shows small current trainable contributions alongside persistent
 residuals, not an irreducible floor or a derivative measurement. Dustin approved
 one further two-hour continuation from 423 with unchanged optimizer/history,
-plus this targeted saved-only analysis. A new exact trial, claim and launch
-receipt are required; this decision does not itself establish a running job.
+plus this targeted saved-only analysis. The
+[second-window A04 plan](../decisions/2026-09-14-local-w8-second-window-plan.md)
+registers a fresh 7200-second opportunity, preserving all earlier charged work.
+Its generous count ceilings permit 4096 new updates rather than inheriting the
+historical 192-update cap. Exact claims and launch receipts, not the ready trial
+specification, establish whether it is running. No automatic successor is granted.
 
 ## Earlier local candidate-domain failure and repair
 

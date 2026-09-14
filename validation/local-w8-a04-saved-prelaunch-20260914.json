@@ -1,0 +1,44 @@
+{
+  "schema": "tmd-w8-a04-saved-prelaunch-v1",
+  "passed": true,
+  "trial_sha256": "c5158fa6fc9b70df27377ed32e600aaadd7b7c59271e03e0fd102bb69239a9fa",
+  "restart_identity": "35bc1bfc9c7a1c31189c292bba718495e33c53f60422f3c3d27ad3ee290a1819",
+  "state_sha256": "7b2b2d6a7341bf35a1f8c07844dda5307c47c7c4542b077ec1d054cd15c4df37",
+  "parent_archive_sha256": "bcb743246008be76e3bef8cfc8c6e4b9618ed0c25152122ca303154bae33f75e",
+  "verified_input_files": 4600,
+  "model_calls": 0,
+  "optimizer_arrays_bit_identical": true,
+  "parent_endpoint_arrays_bit_identical": true,
+  "terminal_calls_reconciled": true,
+  "restored_history_pairs": 15,
+  "restored_window_states": 21,
+  "restored_counters": {
+    "forwards": 4315,
+    "full_calls": 485,
+    "accepted_updates": 423,
+    "infeasible_trials": 3253,
+    "line_search_rejections": 3316
+  },
+  "q_per_measurement": 16.11080233178303,
+  "model_seconds_before": 13570.07446063764,
+  "effective_model_seconds": 7200,
+  "trajectory_budget": {
+    "accepted_updates": 4519,
+    "forwards": 20699,
+    "full_calls": 8677,
+    "model_seconds": 20771
+  },
+  "cpu_tests": {"passed": 332, "elapsed_seconds": 17.92},
+  "structural_validation": {"default_blas": "passed", "nehalem_blas": "passed", "trial_specs": 38},
+  "runtime_comparison_commit": "0dd91545de6d53acf0777b9eceabd2d768d8cf5d",
+  "unchanged_runtime_files": [
+    "tmdlab/__init__.py", "tmdlab/audit.py", "tmdlab/bundle.py",
+    "tmdlab/calibration.py", "tmdlab/checkpoints.py", "tmdlab/claim.py",
+    "tmdlab/contracts.py", "tmdlab/diagnostics.py", "tmdlab/domain.py",
+    "tmdlab/engine.py", "tmdlab/gpu_telemetry.py", "tmdlab/initialization.py",
+    "tmdlab/io.py", "tmdlab/lbfgs.py", "tmdlab/metric.py", "tmdlab/models.py",
+    "tmdlab/paired_feasibility.py", "tmdlab/paired_starts.py", "tmdlab/restart.py",
+    "tmdlab/results.py", "tmdlab/run.py", "tmdlab/worker.py"
+  ],
+  "not_execution_clearance_alone": "Require clean exact source, green CI, atomic claim/readback, physical-GPU ownership check and bounded supervisor. Full-data replay and two directional checks occur inside the registered window before optimization."
+}
