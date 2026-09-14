@@ -9,13 +9,14 @@ from tmdlab.io import read,write,sha,digest
 from tmdlab.bundle import Bundle
 from tmdlab.restart import reconstruct_v1,recover_native,elapsed_before,ALGORITHM,COUNTERS
 from tmdlab.results import validate_record
+from tmdlab.contracts import RESUME_TRAJECTORY_LIMITS
 
 def main(args):
     root=Path.cwd().resolve(); run=Path(args.run).resolve(); record_path=Path(args.record).resolve()
     record=validate_record(read(record_path)); trial=read(run/'trial.json')
     if sha(args.archive)!=record['artifact']['sha256']:
         raise ValueError('published archive digest mismatch')
-    native=trial.get('execution_policy')=='p1-resume-v1'
+    native=trial.get('execution_policy') in RESUME_TRAJECTORY_LIMITS
     a=recover_native(run,record) if native else reconstruct_v1(run,record)
     bundle=Bundle(args.bundle)
     if native:

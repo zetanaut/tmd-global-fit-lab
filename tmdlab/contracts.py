@@ -5,7 +5,11 @@ from .io import SOURCE_ID, METRIC_ID, require_finite_numbers
 RESUME_TRAJECTORY_LIMITS={
     'p1-resume-v1':dict(accepted_updates=96,forwards=4096,full_calls=512,model_seconds=21600),
     'p1-resume-v2':dict(accepted_updates=192,forwards=8192,full_calls=1024,model_seconds=43200),
+    'p1-time-window-v1':dict(accepted_updates=8192,forwards=32768,full_calls=16384,model_seconds=21600),
 }
+
+FEASIBILITY_DIAGNOSTICS = dict(schema='tmd-feasibility-diagnostics-v1',
+    review_interval_updates=32, record_all_violating_rows=True)
 
 def validate_trial(t, *, require_ready=True):
     require_finite_numbers(t)
@@ -47,6 +51,15 @@ def validate_trial(t, *, require_ready=True):
         if t['kind']!='continuation' or t.get('phase')!='P1' or len(t['phases'])!=1 or t['phases'][0]['mu']!=1e-6:
             raise ValueError('resumable policy requires fixed-mu P1')
         limits.update(segment_seconds=13200,total_seconds=13800,full_calls=512,forwards=4096)
+    if policy == 'p1-time-window-v1':
+        limits.update(segment_seconds=7200,total_seconds=7800,accepted_updates=4096,
+                      forwards=16384,full_calls=8192)
+        if (t.get('diagnostics') != FEASIBILITY_DIAGNOSTICS
+            or t.get('optimizer',{}).get('line_search') != 'unit-backtracking'
+            or not t.get('decision_record')):
+            raise ValueError('time-window policy needs diagnostics, unit policy and recorded decision')
+    if 'diagnostics' in t and (not resumable or t['diagnostics'] != FEASIBILITY_DIAGNOSTICS):
+        raise ValueError('unregistered optimization diagnostics')
     for key,limit in limits.items():
         zero_update = key=='accepted_updates' and t.get('execution_policy')=='paired-feasibility-v1' and b[key]==0
         if type(b[key]) not in (int,float) or not (zero_update or 0 < b[key] <= limit):
