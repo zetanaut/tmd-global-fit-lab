@@ -8,6 +8,7 @@ import numpy as np
 import torch
 from .io import read, digest
 from .models import put
+from .domain import NumericalDomainError
 
 KEYS = ("coordinates", "point_index", "species1", "species2")
 
@@ -86,7 +87,7 @@ class Engine:
                 logs = left[g["i1"]]+other[g["i2"]]+(2*kernel*torch.log(g["cp"][:,1]/self.model.Qref))[g["ip"]]
                 p = torch.exp(logs)
                 if not torch.isfinite(logs).all() or not torch.isfinite(p).all():
-                    raise ValueError("nonfinite products; no clipping")
+                    raise NumericalDomainError('products_nonfinite', "nonfinite products; no clipping")
                 with torch.no_grad():
                     values[dest] = ((g["weights"]@p.detach())+g["fixed"])/g["denominator"]/g["volume"]
                 if cotangent is not None:
@@ -97,7 +98,9 @@ class Engine:
                         if grad is not None:
                             gradient[offset:offset+parameter.numel()].add_(grad.detach().ravel())
                         offset += parameter.numel()
-        if not torch.isfinite(values).all() or gradient is not None and not torch.isfinite(gradient).all():
+        if not torch.isfinite(values).all():
+            raise NumericalDomainError('observable_nonfinite', "nonfinite observable/VJP")
+        if gradient is not None and not torch.isfinite(gradient).all():
             raise ValueError("nonfinite observable/VJP")
         return values.cpu().numpy().copy(), None if gradient is None else gradient.cpu().numpy().copy()
 

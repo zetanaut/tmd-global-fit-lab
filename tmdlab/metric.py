@@ -1,6 +1,7 @@
 """Fixed full covariance algebra and saved-array scientific diagnostics."""
 import numpy as np
 from scipy.linalg import cho_factor, cho_solve
+from .domain import NumericalDomainError
 
 class Metric:
     def __init__(self, bundle):
@@ -21,14 +22,22 @@ class Metric:
         values = np.asarray(values, dtype=np.float64)
         if values.shape != self.data.shape or not np.isfinite(values).all():
             raise ValueError("invalid predictions")
-        residual = self.data-values
+        with np.errstate(over='ignore', invalid='ignore'):
+            residual = self.data-values
+        if not np.isfinite(residual).all():
+            raise NumericalDomainError('metric_residual_nonfinite', 'nonfinite residual; no clipping')
         precision = cho_solve(self.chol, residual)
-        q = float(residual @ precision)
-        margin = values/self.sigma-1e-8
+        with np.errstate(over='ignore', invalid='ignore'):
+            q = float(residual @ precision)
+            margin = values/self.sigma-1e-8
+        if not np.isfinite(q) or not np.isfinite(margin).all():
+            raise NumericalDomainError('metric_score_nonfinite', 'nonfinite fixed metric; no clipping')
         if not np.all(margin > 0):
             return None
         barrier = float(-mu*np.mean(np.log(margin)))
         cot = -precision/self.n-mu/(self.n*self.sigma*margin)
+        if not np.isfinite(barrier) or not np.isfinite(cot).all():
+            raise NumericalDomainError('metric_cotangent_nonfinite', 'nonfinite barrier/cotangent; no clipping')
         return dict(values=values.copy(), q_per_measurement=q/self.n, objective=q/(2*self.n)+barrier, barrier=barrier, cotangent=cot, raw_cotangent=-precision/self.n, min_T_over_sigma=float(np.min(values/self.sigma)))
 
     def describe(self, values):

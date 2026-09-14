@@ -137,6 +137,38 @@ class OptimizationDiagnostics:
             self.reviews.append(name)
             self.previous_review = dict(q=point['q_per_measurement'], counts=dict(counts), elapsed=elapsed)
 
+    def domain_rejection(self, context, error, alpha, attempt, armijo_bound, counts, prior, elapsed,
+                         values=None):
+        verdict = 'numerical_domain_rejected'
+        self.verdicts[verdict] += 1
+        row_info=dict(minimum_row_index=None, minimum_observation_id=None,
+            minimum_T_over_sigma=None, minimum_margin=None,
+            violating_row_count=None, violating_row_indices=None,
+            violating_T_over_sigma=None, violating_margins=None)
+        if values is not None:
+            with np.errstate(over='ignore', invalid='ignore'):
+                ratios=values/self.metric.sigma
+            invalid=np.flatnonzero(ratios<=1e-8); minimum=int(np.argmin(ratios))
+            self.violations.update(map(int,invalid))
+            row_info.update(minimum_row_index=minimum, minimum_observation_id=self.ids[minimum],
+                minimum_T_over_sigma=number(ratios[minimum]), minimum_margin=number(ratios[minimum]-1e-8),
+                violating_row_count=len(invalid), violating_row_indices=invalid.tolist(),
+                violating_T_over_sigma=[number(ratios[i]) for i in invalid],
+                violating_margins=[number(ratios[i]-1e-8) for i in invalid])
+        self.append('line-search.ndjson', dict(schema='tmd-line-search-candidate-v1',
+            next_segment_update=context['next_segment_update'],
+            next_cumulative_update=context['next_cumulative_update'],
+            attempt=attempt, alpha=alpha, verdict=verdict, elapsed_seconds=elapsed,
+            forwards=counts['forwards'], full_calls=counts['full_calls'],
+            cumulative_forwards=prior['forwards']+counts['forwards'],
+            cumulative_full_calls=prior['full_calls']+counts['full_calls'],
+            counters_sampled_after_candidate_forward=True,
+            armijo_bound=number(armijo_bound),
+            domain_error_code=error.code, domain_error_message=str(error),
+            candidate_values_available=values is not None,
+            q_per_measurement=None, objective=None,
+            **row_info))
+
     def review(self, point, counts, prior, elapsed, plateau):
         previous = self.previous_review
         delta = {key:counts[key]-previous['counts'][key] for key in counts}

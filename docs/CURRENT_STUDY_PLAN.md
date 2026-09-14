@@ -15,7 +15,11 @@ candidate underflowed the boundary damping and the exception aborted the run.
 See the [failure outcome and repair scope](../decisions/2026-09-14-local-w8-domain-failure-outcome.md).
 The owner requested a tested numerical-domain rejection remedy; any successor
 must preserve the original attempt and charge only the remaining opportunity.
-No local successor has been launched by this outcome record.
+The [A02 technical recovery](../decisions/2026-09-14-local-w8-domain-repair-plan.md)
+preregisters typed candidate-domain rejection and the remaining 4993-second
+model window from the exact 252-update restart. It changes neither the original
+cumulative grant nor the physics/optimizer/convergence equations. Claim and
+launch receipts, not this preregistration, establish execution state.
 
 ## Prior local result and complementary UVA work
 

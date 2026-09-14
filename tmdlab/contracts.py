@@ -1,6 +1,7 @@
 """Executable bounds; a schema change cannot silently grant extra work."""
 import re
 from .io import SOURCE_ID, METRIC_ID, require_finite_numbers
+from .domain import CANDIDATE_DOMAIN_POLICY
 
 RESUME_TRAJECTORY_LIMITS={
     'p1-resume-v1':dict(accepted_updates=96,forwards=4096,full_calls=512,model_seconds=21600),
@@ -66,6 +67,13 @@ def validate_trial(t, *, require_ready=True):
                 raise ValueError('long time-window requires endpoint and saved-QA reserves')
     if 'diagnostics' in t and (not resumable or t['diagnostics'] != FEASIBILITY_DIAGNOSTICS):
         raise ValueError('unregistered optimization diagnostics')
+    if 'candidate_errors' in t.get('optimizer',{}):
+        if (t['optimizer']['candidate_errors'] != CANDIDATE_DOMAIN_POLICY
+            or policy not in ('p1-time-window-v1','p1-time-window-v2')
+            or t.get('diagnostics') != FEASIBILITY_DIAGNOSTICS
+            or t['optimizer'].get('line_search') != 'unit-backtracking'
+            or not t.get('decision_record')):
+            raise ValueError('unregistered candidate-domain rejection policy')
     for key,limit in limits.items():
         zero_update = key=='accepted_updates' and t.get('execution_policy')=='paired-feasibility-v1' and b[key]==0
         if type(b[key]) not in (int,float) or not (zero_update or 0 < b[key] <= limit):

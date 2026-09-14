@@ -11,7 +11,8 @@ from tmdlab.models import build,flat,schema
 from tmdlab.contracts import FEASIBILITY_DIAGNOSTICS
 
 def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None,fail_prepare=False,
-            diagnostics=False,policy='p1-resume-v1',deadline_seconds=300):
+            diagnostics=False,policy='p1-resume-v1',deadline_seconds=300,
+            candidate_errors=None,evaluation_hook=None):
     t=read(Path(__file__).parents[1]/"trials/replay-w8-cpu-a01.json")
     t["budget"]["forwards"]=forward_limit
     if steps:
@@ -37,6 +38,7 @@ def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None,
                 t['budget'].update(segment_seconds=25200,total_seconds=26400,
                     endpoint_reserve_seconds=300)
     if diagnostics:t['diagnostics']=dict(FEASIBILITY_DIAGNOSTICS)
+    if candidate_errors is not None:t['optimizer']['candidate_errors']=candidate_errors
     path=tmp_path/"trial.json";write(path,t)
     now=time.monotonic()
     write(tmp_path/"launch.json",dict(trial_sha256=sha(path),model_deadline_monotonic=now+deadline_seconds,t0_monotonic=now))
@@ -58,10 +60,12 @@ def execute(tmp_path,monkeypatch,*,forward_limit=600,steps=0,resume_arrays=None,
             raw=-(2-v)/2290
             return dict(values=v.copy(),q_per_measurement=q,objective=q/2+barrier,barrier=barrier,cotangent=raw-mu/(2290*s),raw_cotangent=raw,min_T_over_sigma=float(v.min()))
     class Engine:
-        closed=False;cache_bytes=0;groups=[]
+        closed=False;cache_bytes=0;groups=[];calls=0
         def __init__(self,*args,**kwargs):
             if fail_prepare:raise RuntimeError('synthetic preparation failure')
         def evaluate(self,theta,cot=None,**kwargs):
+            Engine.calls+=1
+            if evaluation_hook is not None:evaluation_hook(Engine.calls,theta,cot)
             g=None
             if cot is not None:g=np.zeros_like(theta);g[0]=.001*np.sum(cot)
             return values(theta),g
