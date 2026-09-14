@@ -16,6 +16,10 @@ provides a long time-based opportunity with unchanged convergence tests. Its
 versioned policy retains historical limits. The local agent owns width 8;
 this separate trial supersedes the unclaimed width-16 common96 A02 draft.
 Exact claims and scheduler receipts establish whether it has been submitted.
+Its first launch stopped before any model work because of an inherited launcher
+provenance guard. The [A02 launch correction](../decisions/2026-09-14-uva-w16-long-training-a02-plan.md)
+preserves that failed attempt and the identical scientific opportunity under a
+new trial and claim; it adds shared static validation before submission.
 
 The next owner-authorized local action is one
 [two-hour instrumented width-8 continuation](../decisions/2026-09-14-local-w8-feasibility-2h-plan.md)
