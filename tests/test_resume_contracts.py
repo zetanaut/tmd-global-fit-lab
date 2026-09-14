@@ -61,6 +61,47 @@ def test_time_window_bounds_and_instrumentation_are_required(damage):
     elif damage=='trajectory':t['trajectory_budget']['accepted_updates']+=1
     with pytest.raises(ValueError):validate_trial(t)
 
+def long_window():
+    t=time_window();t['execution_policy']='p1-time-window-v2'
+    t['budget'].update(segment_seconds=25200,total_seconds=26400,endpoint_reserve_seconds=300)
+    t['trajectory_budget']['model_seconds']=43200
+    return t
+
+def test_long_window_is_explicit_and_leaves_historical_policies_unchanged():
+    assert validate_trial(long_window())
+    for policy in ('p1-resume-v1','p1-resume-v2','p1-time-window-v1'):
+        t=long_window();t['execution_policy']=policy
+        with pytest.raises(ValueError):validate_trial(t)
+
+@pytest.mark.parametrize('damage',['model_time','total_time','endpoint','saved_qa','elapsed',
+    'diagnostics','optimizer','updates','forwards','full_calls'])
+def test_long_window_enforces_reserves_and_explicit_limits(damage):
+    t=long_window()
+    if damage=='model_time':t['budget']['segment_seconds']+=1
+    elif damage=='total_time':t['budget']['total_seconds']+=1
+    elif damage=='endpoint':t['budget']['endpoint_reserve_seconds']=299
+    elif damage=='saved_qa':t['budget']['total_seconds']-=1
+    elif damage=='elapsed':t['trajectory_budget']['model_seconds']+=1
+    elif damage=='diagnostics':t.pop('diagnostics')
+    elif damage=='optimizer':t['optimizer']['line_search']='previous-alpha-double'
+    else:t['budget']['accepted_updates' if damage=='updates' else damage]+=1
+    with pytest.raises(ValueError):validate_trial(t)
+
+def test_uva_long_trial_preserves_exact_parent_cost_and_full_segment_allowance():
+    from types import SimpleNamespace
+    from tmdlab.restart import load_restart,elapsed_before,segment_allowance
+    root=Path(__file__).parents[1]
+    t=validate_trial(read(root/'trials/continuation-w16-feasibility-7h-uva-a01.json'))
+    m,_=load_restart(root,t['start_checkpoint'][8:],t,
+        SimpleNamespace(index={'identity':t['bundle_identity']}))
+    assert m['counters']['accepted_updates']==46
+    for key in ('accepted_updates','forwards','full_calls'):
+        assert t['trajectory_budget'][key]==m['counters'][key]+t['budget'][key]
+    prior=elapsed_before(root,m)
+    assert prior==pytest.approx(2283.882704458083)
+    assert segment_allowance(t,prior)==25200
+    assert 0<=t['trajectory_budget']['model_seconds']-prior-25200<1
+
 @pytest.mark.parametrize('damage',['reset','remaining','counter','reserve','phase','algorithm','elapsed'])
 def test_resume_invalid_bindings_and_grants_fail_before_model(damage):
     t=resumed()
