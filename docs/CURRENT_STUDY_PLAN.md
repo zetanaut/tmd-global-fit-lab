@@ -1,4 +1,4 @@
-# Current study plan — 13 September 2026
+# Current study plan — 14 September 2026
 
 This is the public coordination entry point for the fixed-physics architecture
 study. It supersedes the short-window scheduling strategy, while retaining all
@@ -6,7 +6,27 @@ historical trial specifications and results. The study remains active until
 adequate optimization and controlled architecture comparisons support a choice.
 Completing a job batch or publishing partial results does not complete the study.
 
-## Latest completed decision
+## Latest completed result: local width-8 P1B
+
+The [local P1B outcome](../decisions/2026-09-14-local-w8-p1b-outcome.md) is now
+recorded: 96 additional accepted updates from the verified 81-update restart,
+reaching 177 cumulative portable P1 updates. q/N improved from 16.699705871 to
+16.448895619. Execution completed normally after 2,061.045 seconds; the saved
+endpoint audit passes and both unchanged convergence windows fail. Raw endpoint
+gradients, all accepted checkpoints and the cumulative call/time ledger are
+retained in the verified archive and immutable result record.
+
+This completes the one opportunity specified in the
+[local P1B plan](../decisions/2026-09-13-local-w8-p1b-plan.md). Its next action is
+the planned review of progress, feasibility and conditioning before any new
+allocation. Widths 16/24 still have only the earlier interrupted endpoints;
+their unequal optimization opportunities do not support an architecture ranking.
+
+The common96 chronology below is retained as historical context. Its width-8
+15-update recovery instruction predates this completed local extension and must
+not be treated as a request to duplicate the old trajectory.
+
+## Earlier common96 outcome and recovery decision
 
 The three common96 A01 jobs have now ended with recoverable monitoring stops;
 see the [result review and recovery decision](../decisions/2026-09-13-p1-m96-interrupted-outcome.md).

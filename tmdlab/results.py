@@ -42,7 +42,7 @@ def collect(args):
     if supervisor["stop_reason"] is not None or not audit or not audit.get("passed"):
         status="partial" if audit and audit.get("passed") else "failed"
     record=dict(schema="tmd-result-v1",run_id=launch["run_id"],trial_id=launch["trial_id"],trial_sha256=launch["trial_sha256"],code_commit=launch["code_commit"],bundle_identity=launch["bundle_identity"],source_identity=trial["source_identity"],metric_identity=trial["metric_identity"],kind=trial["kind"],phase=trial["phase"],model=trial["model"],start_checkpoint=trial["start_checkpoint"],status=status,worker_status=worker["status"],stop_reason=worker.get("stop_reason"),counters=worker.get("counters"),plateau=worker.get("plateau"),optimizer_history_reset=worker.get("optimizer_history_reset"),worker_summary_missing=summary_missing,audit=audit,supervisor=supervisor,hardware=launch["device"],slurm=launch["slurm"],claim=launch["claim"],artifact={"url":args.artifact_url,"sha256":sha(args.artifact),"bytes":Path(args.artifact).stat().st_size},files={str(p.relative_to(run)):{"sha256":sha(p),"bytes":p.stat().st_size} for p in sorted(run.rglob("*")) if p.is_file()},recorded_utc=utc(),production_selected=False)
-    if trial.get('execution_policy')=='p1-resume-v1':
+    if trial.get('execution_policy') in ('p1-resume-v1','p1-resume-v2'):
         from .restart import recover_native,COUNTERS
         reconciled=recover_native(run,record) if (run/'restart.npz').is_file() and audit and audit.get('passed') else None
         ledger=read(run/'counters.json') if (run/'counters.json').is_file() else {}

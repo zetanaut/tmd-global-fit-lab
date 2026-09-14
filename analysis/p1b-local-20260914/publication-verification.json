@@ -1,0 +1,93 @@
+{
+  "schema": "tmd-p1b-publication-verification-v1",
+  "run_id": "continuation-w8-p1b-local-a01-20d406220a8a",
+  "reviewer_owner": "local-p1b-housekeeping-20260914",
+  "model_calls": 0,
+  "saved_audit_reproduced": true,
+  "audit_absolute_tolerance": 1e-10,
+  "audit_absolute_differences": {
+    "q_per_measurement": 3.552713678800501e-15,
+    "DY_profile_closure_abs_error": 2.7284841053187847e-12
+  },
+  "accepted_checkpoints_verified": 96,
+  "max_accepted_score_error": 0,
+  "input_bundle_identity": "09af3277101858478ed6ab6303c532bae4b865ba94770f3c9743c91ccb52073c",
+  "claim_commit": "f92a1ea3f1086b48ebd15ed202a987254bfa0977",
+  "source_commit": "c1f4dc33e86cba9f335c4ce3c634bab4d87bae08",
+  "trial_sha256": "dadb5c609cfb976cf1f4c4f87d0a04b626149d46810d541646c8c882f4d11b73",
+  "parent_restart_identity": "5669d2e34230e0a532becec9e57de1e5193789be75a260777ec69d99a5fd5779",
+  "parent_state_sha256": "b6404ea3c9ec4f00b38699f83ebbf7c8b0e10ce712d9a0decb0c581efed39f5d",
+  "initial_theta_matches_parent": true,
+  "initial_prediction_error_fixed_sigma": 2.443605527857231e-14,
+  "initial_penalized_gradient_error": 1.4703516182379417e-14,
+  "initial_q_error": 0,
+  "optimizer_state_validated": true,
+  "convergence_windows_reproduced": true,
+  "parent_q_per_measurement": 16.69970587088408,
+  "q_per_measurement": 16.448895619388466,
+  "q_improvement": 0.250810251495615,
+  "segment_counters": {
+    "accepted_updates": 96,
+    "forwards": 793,
+    "full_calls": 105,
+    "infeasible_trials": 579,
+    "line_search_rejections": 585
+  },
+  "trajectory_counters": {
+    "forwards": 1438,
+    "full_calls": 205,
+    "accepted_updates": 177,
+    "infeasible_trials": 984,
+    "line_search_rejections": 1002
+  },
+  "model_seconds_before": 4495.599958618055,
+  "segment_elapsed_seconds": 2061.045096669346,
+  "trajectory_model_seconds": 6556.645055287401,
+  "endpoint_sha256": "ee2cb5099231b1fa264134ab7158d404a0e80b9ef4dff072878d76ff750482e9",
+  "run_file_count": 210,
+  "run_inventory_identity": "3d435e93b57b15b5a91190835da13dbf64bbfd5109456fc22a014623b258aa25",
+  "clean_exit_verified": true,
+  "plateau": {
+    "eligible": true,
+    "passed": false,
+    "windows": [
+      {
+        "gradient_max": 0.3231692580896163,
+        "passed": false,
+        "prediction_span_max": 0.7414107206667664,
+        "prediction_span_rms": 0.09523510177383324,
+        "q_range": 0.012277074329425375,
+        "same_mu": true
+      },
+      {
+        "gradient_max": 0.2206201820676685,
+        "passed": false,
+        "prediction_span_max": 0.11987727625538724,
+        "prediction_span_rms": 0.01877409534905285,
+        "q_range": 0.003086578420610664,
+        "same_mu": true
+      }
+    ]
+  },
+  "result_path": "results/continuation-w8-p1b-local-a01/continuation-w8-p1b-local-a01-20d406220a8a.json",
+  "result_identity": "57ad5ce68d459775cd6cde52199d1f25b1f55aeb47dc5f38dbad5aff64fdaf24",
+  "artifact": {
+    "url": "https://github.com/zetanaut/tmd-global-fit-lab/releases/download/run-continuation-w8-p1b-local-a01-20d406220a8a/continuation-w8-p1b-local-a01-20d406220a8a.tar.gz",
+    "sha256": "9f52ec6080a858590461560fb9350fb229c0ed887e9c2a745e6d6a8535f503b5",
+    "bytes": 5557918,
+    "download_sha256": "9f52ec6080a858590461560fb9350fb229c0ed887e9c2a745e6d6a8535f503b5",
+    "separately_downloaded": true,
+    "download_matches_uploaded_bytes": true,
+    "all_archive_members_match_original_run": true,
+    "symlinks_present": false
+  },
+  "publication_checks": {
+    "credential_and_unrelated_data_review": "passed",
+    "prior_run_files_modified": false,
+    "new_model_calls": 0
+  },
+  "local_cpu_tests": {
+    "passed": 262
+  },
+  "verified_utc": "2026-09-14 15:06:43 UTC"
+}
