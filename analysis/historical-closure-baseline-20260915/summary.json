@@ -1,0 +1,107 @@
+{
+  "audit_date": "2026-09-15",
+  "decision": {
+    "historical_closure_required_before_likelihood_v2_gpu_fit": true,
+    "gpu_authorized_by_this_record": false,
+    "preferred_benchmark": "PV17",
+    "preferred_benchmark_status": "provisional_pending_exact_run_identity",
+    "fallback_benchmark": "MAPTMD22"
+  },
+  "pv17": {
+    "paper": {
+      "arxiv": "1703.10157",
+      "url": "https://arxiv.org/abs/1703.10157",
+      "arxiv_source_sha256_observed_2026_09_15": "1343dc940bbce30d6d5ec443f91f1f8d2181e4e6e4512006c28ea51a0efb2497",
+      "points": {
+        "HERMES_SIDIS": 1514,
+        "COMPASS_SIDIS": 6252,
+        "fixed_target_DY": 203,
+        "Tevatron_Z": 90,
+        "total": 8059
+      },
+      "free_parameters": 11,
+      "nominal_degrees_of_freedom": 8048,
+      "reported_chi2_mean": 12629,
+      "reported_chi2_spread": 363,
+      "derived_chi2_over_N_from_rounded_total": 1.5670678744261075,
+      "derived_chi2_over_N_spread_from_rounded_total": 0.04504280928154858,
+      "reported_chi2_over_dof": 1.55,
+      "reported_chi2_over_dof_spread": 0.05,
+      "derived_chi2_over_dof_from_rounded_total": 1.5692097415506958,
+      "reported_replica_105_chi2_over_dof": 1.51,
+      "replicas": 200,
+      "accuracy": "NLL_with_LO_hard_contribution_and_no_high_recoil_matching",
+      "covariance_summary": "diagonal experimental errors plus the study FF uncertainty; no inter-bin covariance"
+    },
+    "public_artifact_audit": {
+      "repository": "https://github.com/MapCollaboration/NangaParbat-Legacy",
+      "fortran_source_add_commit": "7df66f4801151ce2384ca211422bdbfc70058832",
+      "fortran_source_add_date": "2019-04-02T15:47:13+02:00",
+      "fortran_paths": 152,
+      "fortran_data_paths": 48,
+      "first_inspected_release_tag": "v1.0.0",
+      "first_inspected_release_commit": "5db6367beee33060d063cca3a7f77bec57540f7f",
+      "first_inspected_release_date": "2019-07-17T09:35:09+02:00",
+      "key_file_sha256": {
+        "resources/fortran_fitcode/input_choices.h": "95879001e8ff7d1191a180d3fa48b79c19a693b028aa849373e1dce0d8b674c5",
+        "resources/fortran_fitcode/fit.input": "a95396ad3f6346588538f879621725de68ecb8a94268af33588c95dbc53d5072",
+        "resources/fortran_fitcode/ref.txt": "a721bbe7c83eb4e903abded0b68410a22158399312f63f0df3895f49b8530492"
+      },
+      "row_counts_visible": true,
+      "historical_source_and_data_visible": true,
+      "exact_final_run_manifest_visible": false,
+      "full_8059_prediction_receipt_identified": false,
+      "blocking_findings": [
+        "The public Fortran material was added approximately two years after the paper.",
+        "The checked-in input_choices.h selects MMHT2014 and Z-only execution rather than the published GJR08 global fit.",
+        "The checked-in ref.txt reaches the published row counts but reports chi2/dof 477.97623960906037.",
+        "The later PV17 report inspected in the public history evaluates 353 DY/Z rows rather than all 8059 rows."
+      ]
+    }
+  },
+  "maptmd22_fallback": {
+    "paper_arxiv": "2206.07598",
+    "results_repository": "https://github.com/MapCollaboration/TMDMAP22-results",
+    "results_commit": "58d83af7ecbbec2c15995f39dcf8bf0699e2295d",
+    "results_commit_date": "2022-06-01T13:20:59+02:00",
+    "report_sha256": "47e09bf58e537411d15c0dc204c09e196acadd015e2c38cc0035e3e813269f3b",
+    "reported_points": 2031,
+    "reported_central_replica_chi2_over_N": 1.1051,
+    "reported_retained_replicas": 260,
+    "nangaparbat_first_result_upload_commit": "a893180e80bdd3ca858f1245630923599a90812d",
+    "nangaparbat_first_result_upload_date": "2022-11-25T18:27:17+01:00",
+    "status": "fallback_pending_exact_code_data_table_report_binding"
+  },
+  "gates": [
+    {
+      "id": "H0",
+      "name": "provenance_and_row_closure",
+      "requires_gpu": false,
+      "status": "not_passed"
+    },
+    {
+      "id": "H1",
+      "name": "historical_model_replay",
+      "requires_gpu": false,
+      "status": "blocked_by_H0"
+    },
+    {
+      "id": "H2",
+      "name": "DNN_representation_closure",
+      "requires_gpu": true,
+      "status": "blocked_by_H1"
+    },
+    {
+      "id": "H3",
+      "name": "same_data_paired_DNN_fit",
+      "requires_gpu": true,
+      "status": "blocked_by_H2"
+    },
+    {
+      "id": "H4",
+      "name": "TMD_and_grouped_predictive_comparison",
+      "requires_gpu": true,
+      "status": "blocked_by_H3"
+    }
+  ]
+}

@@ -24,6 +24,7 @@ cells; it does not remove dependencies between scientific phases.
 | W06 family adapters | Coding/CPU agent | Implement the pinned original interface and verify mathematical/source equivalence. No silent changes to the observable contraction. Add source-bound family dispatch and tests before P2. |
 | W07 depth and conditioning factories | Coding/CPU agent | Depth 1/2/3 and input/every/last conditioning with clear function definitions, parameter matching, initial prediction comparisons and derivative/positivity tests. No duplicate depth-1 placements. |
 | W08 independent review | CPU agents | Validate all result archives and compare raw/adjusted residuals, nuisance penalties, stability and cost; publish decision records at each gate. |
+| W09 historical closure baseline | Scientific/code agent, then one GPU | Recover the exact PV17 8,059-row final-run identity; replay its 11-parameter result; distill its TMDs into the DNN; then run same-data paired fits and grouped holdouts. MAPTMD22 is fallback only after exact artifact binding. No GPU work before H0/H1. |
 
 The same-depth [width-transport helper](INITIALIZATION.md) and a candidate-only
 distinct narrow-seed factory are implemented and CPU-tested. W03 still needs

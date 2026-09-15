@@ -6,6 +6,29 @@ historical trial specifications and results. The study remains active until
 adequate optimization and controlled architecture comparisons support a choice.
 Completing a job batch or publishing partial results does not complete the study.
 
+## Required historical exact-data closure baseline
+
+The [historical closure plan](../decisions/2026-09-15-historical-closure-baseline-plan.md)
+adds an independent data-and-fit sanity gate before a likelihood-v2 production
+fit.  PV17 (`arXiv:1703.10157`) is the preferred target because it used 8,059
+points and directly addresses the present data-coverage concern.  The controlled
+sequence first reproduces the historical 11-parameter model on its exact rows,
+then distills those functions into the DNN without looking at data residuals,
+and only then fits the DNN with every historical data/theory/likelihood choice
+held fixed.  Paired grouped holdouts and a preregistered TMD-grid comparison are
+required because a lower in-sample score from a much more flexible model does
+not by itself establish a better extraction.
+
+The [artifact audit](../analysis/historical-closure-baseline-20260915/README.md)
+finds that public PV17 source, data, grids and official replica parameters are
+available, but not yet as a self-identifying exact final-run bundle.  The
+checked-in public input/output are inconsistent with the published global run.
+Therefore provenance/row closure and historical-model replay are CPU gates; no
+historical DNN GPU fit is currently authorized.  MAPTMD22 is the fallback only
+if an exact PV17 identity cannot be recovered and only after its own artifact
+binding closes.  Neither historical prescription changes the frozen 2,290-row
+study or preselects the likelihood-v2 theory/error model.
+
 ## Data-scope and theory-validity diagnostic
 
 The [full COMPASS source reevaluation](../analysis/full-dataset-reevaluation-20260915/README.md)
