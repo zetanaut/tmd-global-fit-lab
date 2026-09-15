@@ -1,0 +1,213 @@
+{
+  "counts": {
+    "COMPASS_fixed_denominator_constraints": 224,
+    "COMPASS_normalization_spectra_by_hadron": {
+      "piminus": 112,
+      "piplus": 112
+    },
+    "candidate_numeric_rows": 21951,
+    "nominal_degrees_of_freedom_after_parameters": 8048,
+    "nominal_free_parameters": 11,
+    "published_effective_points": 8059,
+    "published_effective_points_by_experiment": {
+      "CDF_RunI": 31,
+      "CDF_RunII": 37,
+      "COMPASS": 6252,
+      "D0_RunI": 14,
+      "D0_RunII": 8,
+      "E288_200": 45,
+      "E288_300": 45,
+      "E288_400": 78,
+      "E605": 35,
+      "HERMES": 1514
+    },
+    "published_effective_points_by_process": {
+      "DY": 203,
+      "SIDIS": 7766,
+      "Z": 90
+    },
+    "selected_raw_rows_before_COMPASS_fixed_constraints": 8283,
+    "selected_raw_rows_by_process": {
+      "DY": 203,
+      "SIDIS": 7990,
+      "Z": 90
+    }
+  },
+  "generated_from": {
+    "legacy_commit": "7df66f4801151ce2384ca211422bdbfc70058832",
+    "legacy_local_path_recorded": false,
+    "legacy_repository": "https://github.com/MapCollaboration/NangaParbat-Legacy",
+    "paper": "arXiv:1703.10157",
+    "paper_source_sha256": "1343dc940bbce30d6d5ec443f91f1f8d2181e4e6e4512006c28ea51a0efb2497"
+  },
+  "interpretation": {
+    "8059_is_not_the_selected_raw_table_row_count": true,
+    "COMPASS_equation": "6476 selected raw COMPASS rows - 224 spectra = 6252 points",
+    "SIDIS_equation": "7990 selected raw SIDIS rows - 224 COMPASS fixed denominators = 7766 points",
+    "accounting_equation": "8283 selected raw rows - 224 COMPASS fixed denominators = 8059 points"
+  },
+  "invariants": {
+    "COMPASS_fixed_denominators_equal_224": true,
+    "published_effective_points_equal_8059": true,
+    "published_experiment_counts_close": true,
+    "published_process_counts_close": true,
+    "selected_SIDIS_rows_equal_7990": true,
+    "selected_raw_rows_equal_8283": true
+  },
+  "local_manifest": {
+    "contains_third_party_measurements": true,
+    "redistribute_or_commit": false,
+    "rows": 21951,
+    "schema": "canonical JSONL, one candidate numeric source row per line",
+    "sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4"
+  },
+  "next_gate": "Recover and bind the paper-matching final compile card and a full-data prediction/score receipt; do not start DNN optimization yet.",
+  "public_configuration_evidence": {
+    "full_8059_prediction_receipt_identified": false,
+    "key_file_receipts": [
+      {
+        "bytes": 2899,
+        "path": "resources/fortran_fitcode/input_choices.h",
+        "sha256": "95879001e8ff7d1191a180d3fa48b79c19a693b028aa849373e1dce0d8b674c5"
+      },
+      {
+        "bytes": 19358,
+        "path": "resources/fortran_fitcode/reading.f",
+        "sha256": "c02b307db5636b99a422850dc66f23bfdca2072d8bd455f1ff53c0bdb4ffaa6d"
+      },
+      {
+        "bytes": 10558,
+        "path": "resources/fortran_fitcode/ref.txt",
+        "sha256": "a721bbe7c83eb4e903abded0b68410a22158399312f63f0df3895f49b8530492"
+      }
+    ],
+    "known_mismatches": [
+      "checked-in input_choices.h selects MMHT2014 rather than published GJR08FFnloE",
+      "checked-in input_choices.h disables SIDIS and DY and enables Z only",
+      "checked-in reading.f selects later Compass17 tables rather than PV17 Compass_Multiplicities tables",
+      "checked-in ref.txt has the correct effective count but chi2/dof 477.97623960906037"
+    ],
+    "paper_matching_final_card_identified": false
+  },
+  "schema_version": "pv17-row-closure-v1",
+  "source_data_receipts": {
+    "files": [
+      {
+        "bytes": 35337,
+        "candidate_numeric_rows": 336,
+        "path": "resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list",
+        "sha256": "3a77ec8e52fd26ee22a30d8e551fed58027ea8080cd342e3543f2887a548f711"
+      },
+      {
+        "bytes": 35338,
+        "candidate_numeric_rows": 336,
+        "path": "resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_piminus.list",
+        "sha256": "c76a9a0f1ed5835c0698f3e2e03566f2a6b6efa23faaa06eba5dcd6f5da4fdc8"
+      },
+      {
+        "bytes": 35338,
+        "candidate_numeric_rows": 336,
+        "path": "resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_piplus.list",
+        "sha256": "c74354d92556cac1a6e998bd82aae3f355028aa5ef533e60654c2687b49a0992"
+      },
+      {
+        "bytes": 35337,
+        "candidate_numeric_rows": 336,
+        "path": "resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kplus.list",
+        "sha256": "bff8489a5f6c4a3d6428efb87ffece4fde4f4ec3629c335ecca4257c678b69bb"
+      },
+      {
+        "bytes": 35337,
+        "candidate_numeric_rows": 336,
+        "path": "resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list",
+        "sha256": "101421174eb00eaefddea5ef8d2347c7e7e3042ee9ea38c9367364702598c3f5"
+      },
+      {
+        "bytes": 35338,
+        "candidate_numeric_rows": 336,
+        "path": "resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_piminus.list",
+        "sha256": "e619936defc980abf30c1b36afc96e779d2ccde5aaecb697abbd12caef5f714e"
+      },
+      {
+        "bytes": 959499,
+        "candidate_numeric_rows": 9311,
+        "path": "resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat",
+        "sha256": "db2afb8f288be3ac00776026f73a80a3015047c78f2ea17652f27742cdcd23bc"
+      },
+      {
+        "bytes": 35338,
+        "candidate_numeric_rows": 336,
+        "path": "resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_piplus.list",
+        "sha256": "7244a94d1df4322bfcb1efcbff243721318c43a75219a701d5fc351ca33b109d"
+      },
+      {
+        "bytes": 959705,
+        "candidate_numeric_rows": 9313,
+        "path": "resources/fortran_fitcode/data/Compass_Multiplicities_piplus.dat",
+        "sha256": "d49bd6cda509b0395c2c6fa929ca30424cacf58a7de74e38b125d71604bbc7e3"
+      },
+      {
+        "bytes": 35337,
+        "candidate_numeric_rows": 336,
+        "path": "resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kplus.list",
+        "sha256": "68b94cefa6a61ef0931fadc090ced9e93194c31fae9ea301745f27a936f6bbf8"
+      },
+      {
+        "bytes": 11677,
+        "candidate_numeric_rows": 177,
+        "path": "resources/fortran_fitcode/data/DY.E288_400.list",
+        "sha256": "3c16f9772e233921a0606e1afebdcbb09f2be783be1759ccf5390c1337a86c39"
+      },
+      {
+        "bytes": 7892,
+        "candidate_numeric_rows": 118,
+        "path": "resources/fortran_fitcode/data/DY.E288_300.list",
+        "sha256": "bff28915c55051f6c4af4c2374c11a89586ca564a2925c30351624531b3e5945"
+      },
+      {
+        "bytes": 6087,
+        "candidate_numeric_rows": 89,
+        "path": "resources/fortran_fitcode/data/DY.E288_200.list",
+        "sha256": "a904a58fd75d6692478888e2592f5374442011717e0fbd02ba67943755884c32"
+      },
+      {
+        "bytes": 5125,
+        "candidate_numeric_rows": 74,
+        "path": "resources/fortran_fitcode/data/DY.E605.list",
+        "sha256": "9a146c6759dc42407eb92b2041d94693fcff7891615fc998ecf56c5baf0181be"
+      },
+      {
+        "bytes": 3321,
+        "candidate_numeric_rows": 50,
+        "path": "resources/fortran_fitcode/data/DY.CDF_RunI.list",
+        "sha256": "2c50dae6652161bfae4b90cc2035da851eebe4b1a7d7e90f934e05d9813385c8"
+      },
+      {
+        "bytes": 1923,
+        "candidate_numeric_rows": 26,
+        "path": "resources/fortran_fitcode/data/DY.D0_RunI.list",
+        "sha256": "39d4348cb1eed223b6ac39681432c60bb413ec2d46b455ffa498fb3576a52abc"
+      },
+      {
+        "bytes": 5290,
+        "candidate_numeric_rows": 82,
+        "path": "resources/fortran_fitcode/data/DY.CDF_RunII.list",
+        "sha256": "afa5e67afbf9de3bf1bb7e4cce73b8ec54a541e62c32c58f407a57a79d82fcb6"
+      },
+      {
+        "bytes": 1710,
+        "candidate_numeric_rows": 23,
+        "path": "resources/fortran_fitcode/data/DY.D0_RunII.list",
+        "sha256": "7cfde1c4b5c89f161af8d8cd217c18fe9214fe953995fa59df369aee136f46d9"
+      }
+    ],
+    "ordered_file_count": 18,
+    "ordered_path_and_content_digest_sha256": "8d2c70d4dd9c9ed152a16ea2d3f00b77631092e6c60460083c7a248cd7a99542"
+  },
+  "verdict": {
+    "H1_historical_model_replay": "blocked",
+    "full_H0_provenance_and_final_run_identity": "not_passed",
+    "reason": "The 8059-point accounting now closes exactly, but the public commit does not bind one final paper-matching compile card, parameter receipt, and full prediction receipt.",
+    "row_population_and_COMPASS_normalization_closure": "passed"
+  }
+}

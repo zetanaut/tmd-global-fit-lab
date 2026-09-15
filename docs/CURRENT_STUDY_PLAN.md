@@ -21,10 +21,14 @@ not by itself establish a better extraction.
 
 The [artifact audit](../analysis/historical-closure-baseline-20260915/README.md)
 finds that public PV17 source, data, grids and official replica parameters are
-available, but not yet as a self-identifying exact final-run bundle.  The
-checked-in public input/output are inconsistent with the published global run.
-Therefore provenance/row closure and historical-model replay are CPU gates; no
-historical DNN GPU fit is currently authorized.  MAPTMD22 is the fallback only
+available, but not yet as a self-identifying exact final-run bundle.  Its
+executable row subgate now closes 21,951 candidate rows to 8,283 cut-selected
+rows and then to the published 8,059 effective points after excluding 224 fixed
+COMPASS normalization denominators.  The checked-in public input/output remain
+inconsistent with the published global run, so the final card and full-data
+prediction receipt are still required before historical-model replay.  No
+historical DNN fit is currently authorized; H1 itself may use the GPU if the
+theory replay benefits.  MAPTMD22 is the fallback only
 if an exact PV17 identity cannot be recovered and only after its own artifact
 binding closes.  Neither historical prescription changes the frozen 2,290-row
 study or preselects the likelihood-v2 theory/error model.

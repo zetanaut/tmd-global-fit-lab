@@ -11,17 +11,18 @@ is trusted on a new data/theory construction.
 The preferred target is the 2017 Pavia global fit (PV17),
 [`arXiv:1703.10157`](https://arxiv.org/abs/1703.10157), because it is the
 historical study that motivated the 8,059-versus-2,290 point-count concern.  It
-is not yet an executable exact baseline.  The public legacy repository contains
-the relevant Fortran source and data, but those files were deposited in 2019
-and the checked-in input and output do not identify one self-consistent final
-PV17 run.  Reconstructing the row manifest and final run identity is therefore
-the first gate, not an implementation detail to infer silently.
+is not yet an executable exact baseline, but its row population now closes.
+The public legacy repository contains the relevant Fortran source and data, but
+those files were deposited in 2019 and the checked-in input and output do not
+identify one self-consistent final PV17 run.  Recovering the final run identity
+remains a gate, not an implementation detail to infer silently.
 
-No GPU fit is authorized by this audit.  The row, observable, nuisance,
-collinear-input, and numerical identities must close on CPU before constructing
-a new signed operator or spending the single local GPU.
+No long DNN fit is authorized by this audit yet.  H0 row/provenance bookkeeping
+is CPU-suitable and must close before constructing a new operator.  H1 may use
+the local GPU if the historical theory replay benefits from it; the gate is
+validation order, not a prohibition on hardware.
 
-## Published PV17 targets
+## Published PV17 targets and row accounting
 
 The paper reports the following flavor-independent NLL fit:
 
@@ -32,6 +33,22 @@ The paper reports the following flavor-independent NLL fit:
 | Fixed-target Drell--Yan | 203 |
 | Tevatron Z production | 90 |
 | Total | 8,059 |
+
+The `8,059` is not the number of source-table rows that survive the kinematic
+cuts.  Executable reconstruction of the pinned public tables gives 7,990 raw
+SIDIS rows, 203 DY rows and 90 Z rows, or 8,283 selected raw rows.  The 6,476
+selected COMPASS rows comprise 224 `(x,z,Q2)` spectra.  PV17 divides each
+spectrum by its lowest-`PhT` row and treats that denominator as a fixed
+constraint, so those 224 rows are excluded from the point/d.o.f. count:
+
+```text
+8,283 selected raw rows - 224 COMPASS fixed denominators = 8,059 points
+```
+
+This reproduces 1,514 HERMES points, 6,252 COMPASS points, 203 fixed-target DY
+points and 90 Tevatron Z points exactly.  The distinction is essential for the
+likelihood replay: treating 8,059 as an ordinary independent-row manifest would
+reproduce the headline total for the wrong statistical reason.
 
 There are 11 free parameters and therefore 8,048 nominal degrees of freedom.
 The ensemble summary is `chi2 = 12,629 +/- 363` and
@@ -86,25 +103,44 @@ PV17 prediction receipt.  Thus the public material is valuable and may be
 sufficient for a careful reconstruction, but its exact final configuration must
 be demonstrated rather than assumed.
 
-The machine-readable [summary](summary.json) pins the audited commits and
-content hashes.  No upstream raw data are redistributed here.
+The executable [row-closure receipt](row-closure.json) pins all 18 source data
+files, reconstructs every cut and COMPASS normalization group, and records the
+hash of a local 21,951-candidate JSONL manifest.  The manifest is generated only
+under the ignored `run-output/` tree because it contains third-party
+measurements; it is not committed or redistributed.  The broader
+machine-readable [summary](summary.json) pins the audited commits and content
+hashes.
+
+Reproduce the receipt from a local clone containing the pinned commit:
+
+```bash
+python scripts/audit_pv17_row_closure.py \
+  --legacy-repo /ABS/NangaParbat-Legacy \
+  --summary-out analysis/historical-closure-baseline-20260915/row-closure.json \
+  --manifest-out run-output/historical-closure-baseline-20260915/pv17-row-manifest.jsonl
+```
+
+The current manifest SHA-256 is
+`3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4`.
 
 ## Required experiment sequence
 
-### H0 — provenance and row closure
+### H0 — provenance and row closure (row subgate passed; run identity open)
 
 1. Freeze the arXiv source version and a single upstream source/data commit.
-2. Build an ordered manifest containing every retained row ID, observable,
-   transformation, cut decision, central value, uncertainty term, and
-   normalization group.
-3. Reproduce exactly `1514 + 6252 + 203 + 90 = 8059` after all transformations.
+2. Build an ordered candidate manifest containing source row IDs, observables,
+   transformations, cut decisions, central values, uncertainty terms, and
+   normalization groups.  **Passed:** 21,951 candidate numeric rows are bound by
+   content hashes; 8,283 survive cuts.
+3. Reproduce exactly `1514 + 6252 + 203 + 90 = 8059` after excluding the 224
+   fixed COMPASS normalization denominators.  **Passed.**
 4. Recover the exact final compile-time choices, 11-parameter definitions,
    collinear-grid versions, electroweak constants, quadrature settings, replica
-   seeds, and MINUIT controls.  Search public history and archived releases
-   before requesting missing material from the authors.
+   seeds, and MINUIT controls.  **Open:** search public history and archived
+   releases before requesting missing material from the authors.
 5. Locate a full-data prediction or score receipt for replica 105 or another
-   explicitly identified published replica.  Rounded paper tables alone do not
-   pass this gate.
+   explicitly identified published replica.  **Open:** rounded paper tables and
+   the later 353-row NangaParbat report do not pass this gate.
 
 Any unresolved row-count, normalization-denominator, covariance, or final-card
 ambiguity keeps PV17 at `provisional`, not `exact`.

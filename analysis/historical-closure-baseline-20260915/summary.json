@@ -5,7 +5,8 @@
     "gpu_authorized_by_this_record": false,
     "preferred_benchmark": "PV17",
     "preferred_benchmark_status": "provisional_pending_exact_run_identity",
-    "fallback_benchmark": "MAPTMD22"
+    "fallback_benchmark": "MAPTMD22",
+    "pv17_row_population_closure_passed": true
   },
   "pv17": {
     "paper": {
@@ -57,6 +58,24 @@
         "The checked-in ref.txt reaches the published row counts but reports chi2/dof 477.97623960906037.",
         "The later PV17 report inspected in the public history evaluates 353 DY/Z rows rather than all 8059 rows."
       ]
+    },
+    "row_closure": {
+      "schema": "pv17-row-closure-v1",
+      "receipt": "analysis/historical-closure-baseline-20260915/row-closure.json",
+      "source_data_files": 18,
+      "source_data_ordered_digest_sha256": "8d2c70d4dd9c9ed152a16ea2d3f00b77631092e6c60460083c7a248cd7a99542",
+      "candidate_numeric_rows": 21951,
+      "selected_raw_rows": 8283,
+      "selected_raw_SIDIS_rows": 7990,
+      "selected_raw_DY_rows": 203,
+      "selected_raw_Z_rows": 90,
+      "COMPASS_normalization_spectra": 224,
+      "COMPASS_fixed_denominator_constraints": 224,
+      "published_effective_points": 8059,
+      "nominal_degrees_of_freedom_after_11_parameters": 8048,
+      "local_manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4",
+      "local_manifest_committed": false,
+      "status": "passed_row_population_and_normalization_accounting"
     }
   },
   "maptmd22_fallback": {
@@ -77,7 +96,7 @@
       "id": "H0",
       "name": "provenance_and_row_closure",
       "requires_gpu": false,
-      "status": "not_passed"
+      "status": "partial_row_closure_passed_final_run_identity_open"
     },
     {
       "id": "H1",

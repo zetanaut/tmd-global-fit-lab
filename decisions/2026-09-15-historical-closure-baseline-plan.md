@@ -28,18 +28,29 @@ prediction receipt.  In particular, the initial public input card is configured
 for a different PDF and Z-only execution while its saved output has the right
 8,059-row accounting but a non-published score.
 
-Therefore the next action is CPU-only provenance and row closure (H0), followed
-by historical-model replay (H1).  No DNN optimization or GPU allocation is
-authorized until both pass.  If public history cannot close the final run,
-request the exact card/predictions from the authors; if those remain unavailable,
-promote MAPTMD22 only after its own exact artifact binding passes.
+The H0 row subgate now passes.  The executable receipt reconstructs 21,951
+candidate numeric source rows, 8,283 rows after cuts, and 224 COMPASS
+normalization spectra.  Excluding each spectrum's fixed lowest-`PhT`
+denominator gives exactly 8,059 effective points and every published
+experiment count.  The local value-bearing manifest is ignored rather than
+redistributed and is bound by SHA-256
+`3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4`.
+
+Therefore the next action is the remaining H0 final-card/full-prediction-receipt
+search, followed by historical-model replay (H1).  No DNN optimization is
+authorized until both pass.  H1 may use the local GPU if its theory replay
+benefits; the validation dependency, not CPU hardware, is authoritative.  If
+public history cannot close the final run, request the exact card/predictions
+from the authors; if those remain unavailable, promote MAPTMD22 only after its
+own exact artifact binding passes.
 
 ## Fixed gates
 
 The executable sequence and numerical tolerances are fixed in the
 [audit record](../analysis/historical-closure-baseline-20260915/README.md):
 
-- H0: exact ordered 8,059-row manifest and complete final-run identity;
+- H0: exact ordered 21,951-candidate/8,283-selected manifest, 224 COMPASS fixed
+  constraints, 8,059 effective points, and complete final-run identity;
 - H1: historical 11-parameter replay with prediction and per-block score
   closure;
 - H2: data-blind distillation of the PV17 functions into the DNN and exact-row
