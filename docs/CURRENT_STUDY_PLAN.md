@@ -6,7 +6,23 @@ historical trial specifications and results. The study remains active until
 adequate optimization and controlled architecture comparisons support a choice.
 Completing a job batch or publishing partial results does not complete the study.
 
-## Latest local outcome: width-8 repaired continuation reaches 423
+## Latest local outcome: width-8 second window stops at 658
+
+The [A04 outcome](../decisions/2026-09-15-local-w8-a04-outcome.md) records 235
+new / 658 cumulative accepted updates, q/N 15.91920723937984 and a valid
+finite-positive endpoint. The second two-hour opportunity stopped at a genuine
+32-trial line-search exhaustion while proposing update 659; it did not crash or
+hit a resource limit. Both convergence criteria remain unmet, and the terminal
+raw gradient is explicitly missing because line-search exhaustion preceded the
+reserved raw-gradient call.
+
+The unchanged trajectory was informative but its gain rate deteriorated and its
+last accepted step was below 1e-9. The next default action is a preregistered
+equal-budget optimizer/feasibility comparison from update 658, retaining this
+unit-backtracking state as control. No unchanged automatic continuation is
+authorized.
+
+## Previous local outcome: width-8 repaired continuation reaches 423
 
 The [A03 outcome and saved-only review](../decisions/2026-09-14-local-w8-a03-outcome.md)
 records 171 new / 423 cumulative accepted updates, q/N 16.11080233178303 and an
@@ -19,8 +35,12 @@ The immutable archive has been downloaded and verified. Saved high-COMPASS
 decomposition shows small current trainable contributions alongside persistent
 residuals, not an irreducible floor or a derivative measurement. Dustin approved
 one further two-hour continuation from 423 with unchanged optimizer/history,
-plus this targeted saved-only analysis. A new exact trial, claim and launch
-receipt are required; this decision does not itself establish a running job.
+plus this targeted saved-only analysis. The
+[second-window A04 plan](../decisions/2026-09-14-local-w8-second-window-plan.md)
+registers a fresh 7200-second opportunity, preserving all earlier charged work.
+Its generous count ceilings permit 4096 new updates rather than inheriting the
+historical 192-update cap. Exact claims and launch receipts, not the ready trial
+specification, establish whether it is running. No automatic successor is granted.
 
 ## Earlier local candidate-domain failure and repair
 

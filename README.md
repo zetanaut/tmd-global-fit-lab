@@ -4,14 +4,16 @@ A portable experiment and results repository for the fixed-physics, unpolarized
 DY/SIDIS b-space architecture study. It is designed for autonomous Codex agents,
 local GPU workstations, and UVA Rivanna/Afton CPU/GPU allocations.
 
-**Status, 14 September 2026:** The local RTX 4090 width-8 P1B continuation
-completed 96 additional accepted updates, reaching 177 cumulative portable P1
-updates and q/N = 16.448895619. Its saved endpoint audit and clean execution
-pass; both convergence windows fail. The
-[P1B result review](decisions/2026-09-14-local-w8-p1b-outcome.md) records the
-verified archive, preserved optimizer history and full cost ledger. Widths 16/24
-remain at the earlier interrupted 46/30-update endpoints. The architecture
-study remains active. Read the
+**Status, 15 September 2026:** The local RTX 4090 width-8 continuation now has
+658 cumulative accepted updates and q/N = 15.919207239. The second bounded
+window stopped at a reproducible 32-trial line-search exhaustion while proposing
+update 659; its saved endpoint audit passes, but convergence remains unestablished
+and the terminal raw gradient was not available. The
+[A04 result review](decisions/2026-09-15-local-w8-a04-outcome.md) records the
+verified archive, counters, residual diagnostics and next controlled decision.
+The next default action is an equal-budget optimizer/feasibility comparison from
+update 658, with unit backtracking retained as control. Widths 16/24 remain at
+unequal optimization maturities, so the architecture study remains active. Read the
 [current study plan](docs/CURRENT_STUDY_PLAN.md)
 and [published results](RESULTS.md) before claiming any further work.
 
