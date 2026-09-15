@@ -6,6 +6,26 @@ historical trial specifications and results. The study remains active until
 adequate optimization and controlled architecture comparisons support a choice.
 Completing a job batch or publishing partial results does not complete the study.
 
+## Data-scope and theory-validity diagnostic
+
+The [full COMPASS source reevaluation](../analysis/full-dataset-reevaluation-20260915/README.md)
+audits all 4,664 primary rows in the official 162-table release and saved-only
+rescoring of the width-8 update-658 endpoint.  Under conservative rectangular
+support bounds, the current 1,203-row likelihood already contains every public
+COMPASS bin wholly at or below `qT/Q=0.30`; the 3,461 additions comprise 171
+mixed-support and 3,290 wholly fixed-order-role rows, with no pure-core rows.
+
+The fixed endpoint's COMPASS quadratic form is dominated by its 278
+fixed-order-role rows.  A direct transfer of the factorization-error law in
+arXiv:2608.27907 collapses COMPASS's independent variance weight rather than
+validating the central theory, and correlated versus diagonal constructions
+give materially different results.  Therefore the proposed scientific next
+step is a separately versioned likelihood study with exact constrained support
+and preregistered theory-response covariance, not an automatic continuation or
+a blind 4,664-row expansion.  This diagnostic changes no frozen input, metric,
+trial, result, or production selection; likelihood-v2 remains unapproved until
+its source, operator, covariance, and decision contracts are reviewed.
+
 ## Latest local outcome: width-8 second window stops at 658
 
 The [A04 outcome](../decisions/2026-09-15-local-w8-a04-outcome.md) records 235
