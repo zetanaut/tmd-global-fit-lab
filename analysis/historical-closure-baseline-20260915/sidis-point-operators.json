@@ -1,0 +1,95 @@
+{
+  "campaign_plan_identity": "52987fa8d6b673068dee9892057bebd4e83b3c9421a4776a334116621c397f3c",
+  "counts": {
+    "COMPASS_fixed_denominators": 224,
+    "array_bytes": 110740272,
+    "by_experiment": {
+      "COMPASS": 6476,
+      "HERMES": 1514
+    },
+    "by_hadron": {
+      "kminus": 376,
+      "kplus": 378,
+      "piminus": 3619,
+      "piplus": 3617
+    },
+    "by_matching_role": {
+      "FO_only": 7049,
+      "full_additive": 277,
+      "transition": 664
+    },
+    "by_target": {
+      "deuteron": 7234,
+      "proton": 756
+    },
+    "coordinates": 225840,
+    "negative_weights": 496902,
+    "raw_fixed_order_only_rows": 7049,
+    "raw_rows_with_DNN_W_operator": 941,
+    "scored_SIDIS_observations": 7766,
+    "scored_observations_DNN_coupled_directly_or_through_COMPASS_denominator": 6364,
+    "selected_SIDIS_raw_rows": 7990,
+    "shards": 232,
+    "signed_weights": 3030240
+  },
+  "diagnostics": {
+    "Gaussian_control_maximum": 17.171023833007336,
+    "Gaussian_control_minimum": -1.94357147241738,
+    "Gaussian_control_nonpositive_rows": 16,
+    "current_DNN_Gaussian_maximum_absolute_replay_error": 1.2434497875801753e-14,
+    "direct_Gaussian_maximum_absolute_recovery_error": 5.329070518200751e-15,
+    "maximum_ASY_abs": 1.018057486890096e-07,
+    "maximum_FO_fraction_abs": 0.0008271934059378566,
+    "maximum_W_b_rule_refinement_abs": 1.9513847674723123e-07
+  },
+  "identity": "cf5c897d7ce1bdd205709452e452a81d5583a7e19663305efd2870255541e867",
+  "invariants": {
+    "all_predictions_finite": true,
+    "current_DNN_Gaussian_replay_below_2e_minus_12": true,
+    "direct_Gaussian_recovery_below_2e_minus_8": true,
+    "exact_224_COMPASS_denominators": true,
+    "exact_7990_raw_rows": true,
+    "exact_experiment_counts": true,
+    "foundation_build_inventory_unchanged": true
+  },
+  "next_gate": "Construct the 8 missing D0 Run-II operators and the ordered 8059-row ratio/metric adapter, then run stratified independent prediction, covariance, gradient, and CPU/GPU checks.",
+  "schema": "pv17-current-regional-sidis-point-campaign-v1",
+  "scope": {
+    "GPU_used": false,
+    "Gaussian_control_is_not_a_fit": true,
+    "heavy_threshold_complete": false,
+    "observable": "legacy PV17 dM/dPhT at published average x,z,Q2,PhT",
+    "optimizer_run": false,
+    "production_authorized": false,
+    "theory": "current regional unprimed N3LL W plus NLO recoil and NLO DIS denominator"
+  },
+  "shard_binding": {
+    "identities_ordered_sha256": "b4d98d702a4a5c80696f01d85b5a94021332d2bf6bb2f8bd8de2b2436ef5d194",
+    "npz_hashes_ordered_sha256": "3fe0ee390cb04a6e0ce8fcea06e5e47d3b418736841f912743ab5da4f00c805b"
+  },
+  "source_receipts": {
+    "current_theory_python_sources": {
+      "src/bttmd_foundation/sidis_common_matching.py": "1a008128cbde159b187eab0dac445956547eef1054d266ac2589ca8090e43df1",
+      "src/bttmd_foundation/sidis_common_w.py": "f53e60c396d0fe8d28544f8ffb02bce73a7f803223c7c6fa40a66c0c5f86b9d0",
+      "src/bttmd_foundation/sidis_uv_subtraction.py": "10dd17781fcfe8d2564d8ffbbf9abb46e59ecb4f5a6fb8002625bf7b3de90755",
+      "work/conditional_delivered_sidis_pilot/pilot.py": "8aa79748c1d6ced0788b4b061104a50d20777f04d6acf5602f4a2d97c7d15368",
+      "work/direct_fit_launch_sidis/flavors.py": "10733658191194dd31dd23b9613fb8419d90cc1ca37e2c7c1e0bb6cd8384255f",
+      "work/regional_matching/coupling.py": "e90f3b00836926a31ccec8cbb391090365833140390914b55fdc3ba1788b8d5d",
+      "work/regional_matching/panel.py": "f74a0c17d4209c3402778ec751894bdd8f53f7c781e26c1ce18c66371a6aa2e5",
+      "work/regional_matching/pilot.py": "7b71ccc4dfaf9f46e0430bd45b214d213e9783f3bf32aaaf3f16360581f24a0e",
+      "work/regional_matching/service.py": "9d6ae0c6c4e00ba2475b8f03999865d41d3ad0eeab01747e5a1f74fdac501a0f",
+      "work/regional_matching/w.py": "31f9b4d01ca07d573073dbcf5398261176199222e02fd08dcf9be2ec7b5465df"
+    },
+    "foundation_build_inventory_sha256": "ad66f08c97a20dd91d9b0280f465222066d1e3c2b1977587a68e1bc63a9d9a30",
+    "prebuilt_binary_sha256": "44a146fa6a436501ecbe6dcb1b04242a2dd93dca20d06a368fe2cd25b8d6e6d7",
+    "prebuilt_provenance_receipt_sha256": "ef0eae67e063925d541249b45e68de068819449f5c669e475a76079a04897c42",
+    "producer_sources": {
+      "scripts/build_pv17_sidis_point_operators.py": "e508d026d99ae9cb7a0bfdf3b0dbccd5c9b8d216cb20fb1982390c4c9c6542c6",
+      "scripts/run_pv17_sidis_point_pilot.py": "04d2a47e07bae14a626e873ee0eef57952bf931aaadd666fadf4a40cb7f0875b",
+      "tmdlab/models.py": "8c0e57c6a40af7935ae73257d67071f7984033d23079214e121b06c78cc2c496",
+      "tmdlab/pv17.py": "cf779ade8d439000d5b116dd1424d3c274a0b34a8d21cb0b0e0c1f0b9602db21"
+    },
+    "pv17_manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4"
+  },
+  "status": "all_7990_SIDIS_point_operators_built_and_CPU_replayed"
+}

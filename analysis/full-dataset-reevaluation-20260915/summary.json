@@ -1,0 +1,886 @@
+{
+  "additional_public_COMPASS": {
+    "charge_counts": {
+      "h+": 1730,
+      "h-": 1731
+    },
+    "paper_envelope_at_representative_value": {
+      "delta_quantiles": {
+        "max": 1828.8869824075418,
+        "median": 76.00018830458527,
+        "min": 2.2539806664618602,
+        "p10": 18.877092300645167,
+        "p25": 33.97890882286504,
+        "p75": 184.89744919208832,
+        "p90": 412.6862617591082,
+        "p95": 628.3747758227909,
+        "p99": 1174.285939360136
+      },
+      "rows_above_declared_delta_3_limit": 3451,
+      "rows_at_or_below_declared_delta_3_limit": 10,
+      "sum_independent_variance_weight": 0.09749660143512759,
+      "variance_weight_quantiles": {
+        "max": 0.0019716001576129834,
+        "median": 2.4157764575167213e-06,
+        "min": 5.324175792368042e-09,
+        "p10": 9.589904029044417e-08,
+        "p25": 4.2911221003601e-07,
+        "p75": 1.2434563985527073e-05,
+        "p90": 5.315988205660784e-05,
+        "p95": 0.00012338605579009654,
+        "p99": 0.00037731988024079875
+      }
+    },
+    "paper_envelope_at_support_maximum": {
+      "delta_quantiles": {
+        "max": 3749.9999999999986,
+        "median": 150.00000000000003,
+        "min": 5.555555555555556,
+        "p10": 37.49999999999999,
+        "p25": 67.85714285714282,
+        "p75": 368.05555555555554,
+        "p90": 828.125,
+        "p95": 1250.0,
+        "p99": 2312.499999999999
+      },
+      "rows_above_declared_delta_3_limit": 3461,
+      "rows_at_or_below_declared_delta_3_limit": 0,
+      "sum_independent_variance_weight": 0.024228662864359464,
+      "variance_weight_quantiles": {
+        "max": 0.00036188376946896334,
+        "median": 5.903996514280458e-07,
+        "min": 1.2518378476242494e-09,
+        "p10": 2.6117512487936105e-08,
+        "p25": 1.0484218038868591e-07,
+        "p75": 3.184692730658748e-06,
+        "p90": 1.28331642498494e-05,
+        "p95": 3.5733027557628087e-05,
+        "p99": 0.00010306882916264876
+      }
+    },
+    "r_center_quantiles": {
+      "max": 6.047953343747853,
+      "median": 1.2328843279447206,
+      "min": 0.21231960184881002,
+      "p10": 0.6144443392309049,
+      "p25": 0.8243653173546912,
+      "p75": 1.9230051959996797,
+      "p90": 2.8729297302896506,
+      "p95": 3.5450663627717636,
+      "p99": 4.846193314614716
+    },
+    "r_support_max_quantiles": {
+      "max": 8.660254037844386,
+      "median": 1.7320508075688776,
+      "min": 0.33333333333333337,
+      "p10": 0.8660254037844386,
+      "p25": 1.1649647450214349,
+      "p75": 2.7131367660166177,
+      "p90": 4.0697051490249265,
+      "p95": 5.0,
+      "p99": 6.800735254367721
+    },
+    "r_support_min_quantiles": {
+      "max": 4.161761818978652,
+      "median": 0.8164965809277259,
+      "min": 0.1355815361366601,
+      "p10": 0.3778186252426512,
+      "p25": 0.5261042808091513,
+      "p75": 1.308802109932194,
+      "p90": 1.963203164898291,
+      "p95": 2.4852506087385415,
+      "p99": 3.313667478318056
+    },
+    "relative_experimental_sigma_quantiles": {
+      "max": 0.8027729719194864,
+      "median": 0.10975648163443913,
+      "min": 0.06998344065616764,
+      "p10": 0.07924888856900207,
+      "p25": 0.08777389744871474,
+      "p75": 0.15713484026367724,
+      "p90": 0.23570226039551587,
+      "p95": 0.29411764705882354,
+      "p99": 0.43389565111345657
+    },
+    "rows": 3461,
+    "support_domain_counts": {
+      "matched_transition_or_mixed": 171,
+      "pure_fixed_order_validation": 3290
+    },
+    "tables": 162,
+    "threshold_counts": {
+      "0.10": {
+        "full_support_at_or_below": 0,
+        "representative_value_at_or_below": 0
+      },
+      "0.15": {
+        "full_support_at_or_below": 0,
+        "representative_value_at_or_below": 0
+      },
+      "0.20": {
+        "full_support_at_or_below": 0,
+        "representative_value_at_or_below": 0
+      },
+      "0.25": {
+        "full_support_at_or_below": 0,
+        "representative_value_at_or_below": 10
+      },
+      "0.30": {
+        "full_support_at_or_below": 0,
+        "representative_value_at_or_below": 22
+      },
+      "0.34": {
+        "full_support_at_or_below": 10,
+        "representative_value_at_or_below": 42
+      }
+    }
+  },
+  "created_date": "2026-09-15",
+  "current_selection_coverage": {
+    "0.10": {
+      "additional_rows_with_full_support_at_or_below": 0,
+      "all_rows_with_full_support_at_or_below": 0,
+      "selected_rows_with_full_support_at_or_below": 0
+    },
+    "0.15": {
+      "additional_rows_with_full_support_at_or_below": 0,
+      "all_rows_with_full_support_at_or_below": 12,
+      "selected_rows_with_full_support_at_or_below": 12
+    },
+    "0.20": {
+      "additional_rows_with_full_support_at_or_below": 0,
+      "all_rows_with_full_support_at_or_below": 68,
+      "selected_rows_with_full_support_at_or_below": 68
+    },
+    "0.25": {
+      "additional_rows_with_full_support_at_or_below": 0,
+      "all_rows_with_full_support_at_or_below": 118,
+      "selected_rows_with_full_support_at_or_below": 118
+    },
+    "0.30": {
+      "additional_rows_with_full_support_at_or_below": 0,
+      "all_rows_with_full_support_at_or_below": 202,
+      "selected_rows_with_full_support_at_or_below": 202
+    },
+    "0.34": {
+      "additional_rows_with_full_support_at_or_below": 10,
+      "all_rows_with_full_support_at_or_below": 282,
+      "selected_rows_with_full_support_at_or_below": 272
+    }
+  },
+  "currently_selected_COMPASS": {
+    "charge_counts": {
+      "h+": 602,
+      "h-": 601
+    },
+    "paper_envelope_at_representative_value": {
+      "delta_quantiles": {
+        "max": 26.02494473950051,
+        "median": 6.0796440972222205,
+        "min": 0.0,
+        "p10": 1.4226911816158343,
+        "p25": 2.98293503924715,
+        "p75": 11.150921498481592,
+        "p90": 16.45443815211044,
+        "p95": 19.758668515539878,
+        "p99": 23.724281526533524
+      },
+      "rows_above_declared_delta_3_limit": 900,
+      "rows_at_or_below_declared_delta_3_limit": 303,
+      "sum_independent_variance_weight": 33.358162283829174,
+      "variance_weight_quantiles": {
+        "max": 1.0,
+        "median": 0.0002918666127333031,
+        "min": 9.374612648986462e-06,
+        "p10": 3.0955778219884074e-05,
+        "p25": 7.73385189348258e-05,
+        "p75": 0.001294113506497119,
+        "p90": 0.0062120924711331306,
+        "p95": 0.03184956967646157,
+        "p99": 1.0
+      }
+    },
+    "paper_envelope_at_support_maximum": {
+      "delta_quantiles": {
+        "max": 49.632352941176464,
+        "median": 12.5,
+        "min": 0.3906249999999999,
+        "p10": 3.267973856209151,
+        "p25": 6.249999999999999,
+        "p75": 22.222222222222225,
+        "p90": 32.67973856209151,
+        "p95": 41.07142857142855,
+        "p99": 48.214285714285715
+      },
+      "rows_above_declared_delta_3_limit": 1085,
+      "rows_at_or_below_declared_delta_3_limit": 118,
+      "sum_independent_variance_weight": 1.9316963360166248,
+      "variance_weight_quantiles": {
+        "max": 0.21771182955825985,
+        "median": 6.885169049935447e-05,
+        "min": 2.4846392433248393e-06,
+        "p10": 6.680338671597682e-06,
+        "p25": 1.8800330950957783e-05,
+        "p75": 0.0003140505935454962,
+        "p90": 0.001505604444339003,
+        "p95": 0.003531858688569491,
+        "p99": 0.04389218775484907
+      }
+    },
+    "r_center_quantiles": {
+      "max": 0.721456093459616,
+      "median": 0.34870170912177134,
+      "min": 0.07592812588854371,
+      "p10": 0.1686825802364292,
+      "p25": 0.24425126327461583,
+      "p75": 0.47224817144838654,
+      "p90": 0.5736625061717203,
+      "p95": 0.6286268721783991,
+      "p99": 0.6888291646810102
+    },
+    "r_support_max_quantiles": {
+      "max": 0.9963167462326071,
+      "median": 0.5,
+      "min": 0.125,
+      "p10": 0.25565499628245686,
+      "p25": 0.35355339059327373,
+      "p75": 0.6666666666666667,
+      "p90": 0.8084520834544433,
+      "p95": 0.9063269671749656,
+      "p99": 0.9819805060619657
+    },
+    "r_support_min_quantiles": {
+      "max": 0.5,
+      "median": 0.2041241452319315,
+      "min": 0.026189140043946207,
+      "p10": 0.0890870806374748,
+      "p25": 0.13363062095621217,
+      "p75": 0.2975595178559521,
+      "p90": 0.36975498644372595,
+      "p95": 0.39965262694272663,
+      "p99": 0.4614791034954487
+    },
+    "relative_experimental_sigma_quantiles": {
+      "max": 0.2672680193727767,
+      "median": 0.09802175504861109,
+      "min": 0.0743805139930266,
+      "p10": 0.08095422241551405,
+      "p25": 0.08557718097436802,
+      "p75": 0.11688901569797916,
+      "p90": 0.14308900299446714,
+      "p95": 0.16415457934513716,
+      "p99": 0.2029381379468774
+    },
+    "rows": 1203,
+    "support_domain_counts": {
+      "matched_transition_or_mixed": 913,
+      "pure_fixed_order_validation": 278,
+      "pure_tmd_core": 12
+    },
+    "tables": 102,
+    "threshold_counts": {
+      "0.10": {
+        "full_support_at_or_below": 0,
+        "representative_value_at_or_below": 16
+      },
+      "0.15": {
+        "full_support_at_or_below": 12,
+        "representative_value_at_or_below": 80
+      },
+      "0.20": {
+        "full_support_at_or_below": 68,
+        "representative_value_at_or_below": 182
+      },
+      "0.25": {
+        "full_support_at_or_below": 118,
+        "representative_value_at_or_below": 320
+      },
+      "0.30": {
+        "full_support_at_or_below": 202,
+        "representative_value_at_or_below": 455
+      },
+      "0.34": {
+        "full_support_at_or_below": 272,
+        "representative_value_at_or_below": 571
+      }
+    }
+  },
+  "decision_limits": [
+    "The 3,461 additional public rows cannot enter a numerical fit until exact operators exist.",
+    "Published one-dimensional bin edges do not determine the joint event-level support; the rectangular extrema used here are conservative bounds.",
+    "The direct paper envelope is not a validated SIDIS theory covariance.",
+    "Rows outside a TMD core need not be discarded, but their central theory must contain the applicable leading contribution; an uncertainty cannot replace a missing leading fixed-order/Y term.",
+    "Correlation structure changes the endpoint conclusion materially and must be preregistered before fitting."
+  ],
+  "full_COMPASS": {
+    "charge_counts": {
+      "h+": 2332,
+      "h-": 2332
+    },
+    "paper_envelope_at_representative_value": {
+      "delta_quantiles": {
+        "max": 1828.8869824075418,
+        "median": 43.93051860949892,
+        "min": 0.0,
+        "p10": 4.313702904810081,
+        "p25": 13.165107263757875,
+        "p75": 132.13685633825287,
+        "p90": 324.4356527166121,
+        "p95": 524.4305966138135,
+        "p99": 1036.2513962243588
+      },
+      "rows_above_declared_delta_3_limit": 4351,
+      "rows_at_or_below_declared_delta_3_limit": 313,
+      "sum_independent_variance_weight": 33.4556588852643,
+      "variance_weight_quantiles": {
+        "max": 1.0,
+        "median": 7.3443962185026175e-06,
+        "min": 5.324175792368042e-09,
+        "p10": 1.458240919567015e-07,
+        "p25": 8.311087697261976e-07,
+        "p75": 7.768861976921686e-05,
+        "p90": 0.0006068759921411365,
+        "p95": 0.002056156674256604,
+        "p99": 0.07464343080485697
+      }
+    },
+    "paper_envelope_at_support_maximum": {
+      "delta_quantiles": {
+        "max": 3749.9999999999986,
+        "median": 85.94907407407405,
+        "min": 0.3906249999999999,
+        "p10": 9.126984126984125,
+        "p25": 26.1437908496732,
+        "p75": 256.9444444444444,
+        "p90": 639.7058823529408,
+        "p95": 1014.7058823529411,
+        "p99": 2205.882352941175
+      },
+      "rows_above_declared_delta_3_limit": 4546,
+      "rows_at_or_below_declared_delta_3_limit": 118,
+      "sum_independent_variance_weight": 1.9559249988809846,
+      "variance_weight_quantiles": {
+        "max": 0.21771182955825985,
+        "median": 1.8536092881355754e-06,
+        "min": 1.2518378476242494e-09,
+        "p10": 3.8725110953171965e-08,
+        "p25": 2.1456678580720973e-07,
+        "p75": 1.9400337073790643e-05,
+        "p90": 0.00013952808821447415,
+        "p95": 0.00048121909475507305,
+        "p99": 0.004876634394813017
+      }
+    },
+    "r_center_quantiles": {
+      "max": 6.047953343747853,
+      "median": 0.9373421621051585,
+      "min": 0.07592812588854371,
+      "p10": 0.29372444762692396,
+      "p25": 0.5131297526548885,
+      "p75": 1.6256497401804861,
+      "p90": 2.547295108651976,
+      "p95": 3.23861265470306,
+      "p99": 4.552474916966524
+    },
+    "r_support_max_quantiles": {
+      "max": 8.660254037844386,
+      "median": 1.3110973317942818,
+      "min": 0.125,
+      "p10": 0.4272466296411038,
+      "p25": 0.7231015260621872,
+      "p75": 2.266911751455907,
+      "p90": 3.576886585713729,
+      "p95": 4.50489929377548,
+      "p99": 6.642111641550714
+    },
+    "r_support_min_quantiles": {
+      "max": 4.161761818978652,
+      "median": 0.6063390625908324,
+      "min": 0.026189140043946207,
+      "p10": 0.17272924172386694,
+      "p25": 0.31311214554257477,
+      "p75": 1.1100193048514324,
+      "p90": 1.7386419461733529,
+      "p95": 2.25244964688774,
+      "p99": 3.1519264780251173
+    },
+    "relative_experimental_sigma_quantiles": {
+      "max": 0.8027729719194864,
+      "median": 0.10515553995307467,
+      "min": 0.06998344065616764,
+      "p10": 0.07971971635374964,
+      "p25": 0.08696402733867163,
+      "p75": 0.1437861458156651,
+      "p90": 0.20655589569836358,
+      "p95": 0.2666403635401678,
+      "p99": 0.41124731713836216
+    },
+    "rows": 4664,
+    "support_domain_counts": {
+      "matched_transition_or_mixed": 1084,
+      "pure_fixed_order_validation": 3568,
+      "pure_tmd_core": 12
+    },
+    "tables": 162,
+    "threshold_counts": {
+      "0.10": {
+        "full_support_at_or_below": 0,
+        "representative_value_at_or_below": 16
+      },
+      "0.15": {
+        "full_support_at_or_below": 12,
+        "representative_value_at_or_below": 80
+      },
+      "0.20": {
+        "full_support_at_or_below": 68,
+        "representative_value_at_or_below": 182
+      },
+      "0.25": {
+        "full_support_at_or_below": 118,
+        "representative_value_at_or_below": 330
+      },
+      "0.30": {
+        "full_support_at_or_below": 202,
+        "representative_value_at_or_below": 477
+      },
+      "0.34": {
+        "full_support_at_or_below": 282,
+        "representative_value_at_or_below": 613
+      }
+    }
+  },
+  "inputs": {
+    "endpoint": {
+      "bytes": 42264,
+      "filename": "last.npz",
+      "sha256": "619687b78a2aa214ef8d9af36d1d09a940fda9a75d3759d93bffaaddcf010869"
+    },
+    "hepdata_archive": {
+      "bytes": 89931,
+      "filename": "ins1624692-v1.zip",
+      "sha256": "14c576ab849ed34bc7b66edd8c322de64872362cdfbd9fbd11311b3a2c76f2ee"
+    },
+    "hepdata_ordered_table_digest": "edfcc8eddb337970d5a0494efeb803491cc71db27e3037862b679bde8705ac93",
+    "hepdata_record_json": {
+      "bytes": 117580,
+      "filename": "tmd-hepdata-1624692.json",
+      "sha256": "ca945136b9c21f2eb76892d7cd966ec69c95fbd94bad6aa94fb0d45e50398474"
+    },
+    "hepdata_table_file_count": 162,
+    "metric": {
+      "bytes": 862023,
+      "filename": "metric.npz",
+      "sha256": "331abe38d88eb83bb5050cfd4c1a7dcea8b6b3712fbeb08b3240615b861361d8"
+    },
+    "metric_info": {
+      "bytes": 160911,
+      "filename": "metric.json",
+      "sha256": "0acde35dfc2d7a84e7e6f82994eedd2997ce341913ffafcaf3d2733a93b187e3"
+    },
+    "selected_compass_rows": {
+      "bytes": 7861718,
+      "filename": "rows.jsonl",
+      "sha256": "22baaa0c6a1696ddd058a039b7cb99509cad1b249f8f67445ab4bd1bcac8af91"
+    },
+    "source_manifest": {
+      "bytes": 4689922,
+      "filename": "source-manifest.json",
+      "sha256": "8b481e07787cfd5439c3463948e3450ce4a59a271d2e04ca15f3399a9160ae6e"
+    }
+  },
+  "paper_envelope_sensitivity": {
+    "formula": "sigma_fact=abs(data)*delta; delta=0.50*S((r-0.10)/0.05)*(r/0.10)^2",
+    "paper_declared_exclusion_trigger": "delta > 3; the paper's qT/Q <= 0.25 stage crossed it",
+    "paper_scope": "leading-power DY W-term stability study through representative qT/Q <= 0.20",
+    "smoothstep": "S=0 below 0, 3z^2-2z^3 on (0,1), 1 above 1",
+    "source": "arXiv:2608.27907 equations (52)-(56)",
+    "transfer_status": "illustrative direct transfer only; not calibrated for bin-integrated SIDIS or for this matched W+Y/fixed-order prescription"
+  },
+  "saved_endpoint_rescoring": {
+    "baseline_experimental_covariance": {
+      "COMPASS_support_domains": {
+        "matched_transition_or_mixed": {
+          "rows": 913,
+          "signed_contribution_per_row": 12.563331518786105,
+          "signed_quadratic_contribution": 11470.321676651714
+        },
+        "pure_fixed_order_validation": {
+          "rows": 278,
+          "signed_contribution_per_row": 62.61961659468578,
+          "signed_quadratic_contribution": 17408.253413322647
+        },
+        "pure_tmd_core": {
+          "rows": 12,
+          "signed_contribution_per_row": 2.9463053351970654,
+          "signed_quadratic_contribution": 35.355664022364785
+        }
+      },
+      "blocks": {
+        "COMPASS": {
+          "rows": 1203,
+          "signed_contribution_per_row": 24.03485515710451,
+          "signed_quadratic_contribution": 28913.930753996727
+        },
+        "DY": {
+          "rows": 743,
+          "signed_contribution_per_row": 8.004341719095724,
+          "signed_quadratic_contribution": 5947.225897288123
+        },
+        "HERMES": {
+          "rows": 344,
+          "signed_contribution_per_row": 4.633220717718022,
+          "signed_quadratic_contribution": 1593.8279268949996
+        },
+        "high_COMPASS": {
+          "rows": 188,
+          "signed_contribution_per_row": 63.65942091484508,
+          "signed_quadratic_contribution": 11967.971131990875
+        }
+      },
+      "log_determinant": -13226.198753027638,
+      "log_determinant_change_from_experimental_covariance": 0.0,
+      "q": 36454.98457817985,
+      "q_per_measurement": 15.919207239379848,
+      "reproduces_saved_q_per_measurement": true
+    },
+    "factorization_covariance_sensitivities": [
+      {
+        "COMPASS_support_domains": {
+          "matched_transition_or_mixed": {
+            "rows": 913,
+            "signed_contribution_per_row": 0.061840699148947534,
+            "signed_quadratic_contribution": 56.4605583229891
+          },
+          "pure_fixed_order_validation": {
+            "rows": 278,
+            "signed_contribution_per_row": 0.00252739271971808,
+            "signed_quadratic_contribution": 0.7026151760816263
+          },
+          "pure_tmd_core": {
+            "rows": 12,
+            "signed_contribution_per_row": 2.9463053351970654,
+            "signed_quadratic_contribution": 35.355664022364785
+          }
+        },
+        "blocks": {
+          "COMPASS": {
+            "rows": 1203,
+            "signed_contribution_per_row": 0.0769067643569705,
+            "signed_quadratic_contribution": 92.51883752143551
+          },
+          "DY": {
+            "rows": 743,
+            "signed_contribution_per_row": 8.004341719095724,
+            "signed_quadratic_contribution": 5947.225897288123
+          },
+          "HERMES": {
+            "rows": 344,
+            "signed_contribution_per_row": 4.633220717718022,
+            "signed_quadratic_contribution": 1593.8279268949996
+          },
+          "high_COMPASS": {
+            "rows": 188,
+            "signed_contribution_per_row": 0.001960737522704941,
+            "signed_quadratic_contribution": 0.3686186542685289
+          }
+        },
+        "change_in_minus2logL_including_logdet": -19437.81641139008,
+        "covariance_definition": "C_exp + (1-rho) diag(sigma_fact^2) + rho sum_table sigma_fact(table) sigma_fact(table)^T",
+        "delta_above_3_rows": 900,
+        "delta_at_or_below_3_rows": 303,
+        "factorization_ratio_location": "representative_value",
+        "log_determinant": -3842.6032479424266,
+        "log_determinant_change_from_experimental_covariance": 9383.595505085212,
+        "q": 7633.5726617045575,
+        "q_per_measurement": 3.333437843539108,
+        "sum_independent_variance_weight": 33.358162283829174,
+        "within_table_correlation_fraction_rho": 0.0
+      },
+      {
+        "COMPASS_support_domains": {
+          "matched_transition_or_mixed": {
+            "rows": 913,
+            "signed_contribution_per_row": 0.07168914154296394,
+            "signed_quadratic_contribution": 65.45218622872608
+          },
+          "pure_fixed_order_validation": {
+            "rows": 278,
+            "signed_contribution_per_row": 0.001977937028076256,
+            "signed_quadratic_contribution": 0.5498664938051993
+          },
+          "pure_tmd_core": {
+            "rows": 12,
+            "signed_contribution_per_row": 2.9463053351970654,
+            "signed_quadratic_contribution": 35.355664022364785
+          }
+        },
+        "blocks": {
+          "COMPASS": {
+            "rows": 1203,
+            "signed_contribution_per_row": 0.08425412863249881,
+            "signed_quadratic_contribution": 101.35771674489608
+          },
+          "DY": {
+            "rows": 743,
+            "signed_contribution_per_row": 8.004341719095724,
+            "signed_quadratic_contribution": 5947.225897288123
+          },
+          "HERMES": {
+            "rows": 344,
+            "signed_contribution_per_row": 4.633220717718022,
+            "signed_quadratic_contribution": 1593.8279268949996
+          },
+          "high_COMPASS": {
+            "rows": 188,
+            "signed_contribution_per_row": 0.0013267664307463772,
+            "signed_quadratic_contribution": 0.24943208898031893
+          }
+        },
+        "change_in_minus2logL_including_logdet": -19987.607245817686,
+        "covariance_definition": "C_exp + (1-rho) diag(sigma_fact^2) + rho sum_table sigma_fact(table) sigma_fact(table)^T",
+        "delta_above_3_rows": 900,
+        "delta_at_or_below_3_rows": 303,
+        "factorization_ratio_location": "representative_value",
+        "log_determinant": -4401.232961593495,
+        "log_determinant_change_from_experimental_covariance": 8824.965791434144,
+        "q": 7642.411540928018,
+        "q_per_measurement": 3.337297616125772,
+        "sum_independent_variance_weight": 33.358162283829174,
+        "within_table_correlation_fraction_rho": 0.5
+      },
+      {
+        "COMPASS_support_domains": {
+          "matched_transition_or_mixed": {
+            "rows": 913,
+            "signed_contribution_per_row": 3.8444969063960674,
+            "signed_quadratic_contribution": 3510.0256755396094
+          },
+          "pure_fixed_order_validation": {
+            "rows": 278,
+            "signed_contribution_per_row": 0.8977278116060007,
+            "signed_quadratic_contribution": 249.5683316264682
+          },
+          "pure_tmd_core": {
+            "rows": 12,
+            "signed_contribution_per_row": 2.9463053351970654,
+            "signed_quadratic_contribution": 35.355664022364785
+          }
+        },
+        "blocks": {
+          "COMPASS": {
+            "rows": 1203,
+            "signed_contribution_per_row": 3.154571630248082,
+            "signed_quadratic_contribution": 3794.9496711884426
+          },
+          "DY": {
+            "rows": 743,
+            "signed_contribution_per_row": 8.004341719095724,
+            "signed_quadratic_contribution": 5947.225897288123
+          },
+          "HERMES": {
+            "rows": 344,
+            "signed_contribution_per_row": 4.633220717718022,
+            "signed_quadratic_contribution": 1593.8279268949996
+          },
+          "high_COMPASS": {
+            "rows": 188,
+            "signed_contribution_per_row": -2.625895174716334,
+            "signed_quadratic_contribution": -493.6682928466708
+          }
+        },
+        "change_in_minus2logL_including_logdet": -23956.084366643656,
+        "covariance_definition": "C_exp + (1-rho) diag(sigma_fact^2) + rho sum_table sigma_fact(table) sigma_fact(table)^T",
+        "delta_above_3_rows": 900,
+        "delta_at_or_below_3_rows": 303,
+        "factorization_ratio_location": "representative_value",
+        "log_determinant": -12063.30203686301,
+        "log_determinant_change_from_experimental_covariance": 1162.8967161646287,
+        "q": 11336.003495371564,
+        "q_per_measurement": 4.950219866974482,
+        "sum_independent_variance_weight": 33.358162283829174,
+        "within_table_correlation_fraction_rho": 1.0
+      },
+      {
+        "COMPASS_support_domains": {
+          "matched_transition_or_mixed": {
+            "rows": 913,
+            "signed_contribution_per_row": 0.0020042846436802075,
+            "signed_quadratic_contribution": 1.8299118796800293
+          },
+          "pure_fixed_order_validation": {
+            "rows": 278,
+            "signed_contribution_per_row": 0.0005800180425373759,
+            "signed_quadratic_contribution": 0.1612450158253905
+          },
+          "pure_tmd_core": {
+            "rows": 12,
+            "signed_contribution_per_row": 0.23104159010340686,
+            "signed_quadratic_contribution": 2.7724990812408823
+          }
+        },
+        "blocks": {
+          "COMPASS": {
+            "rows": 1203,
+            "signed_contribution_per_row": 0.003959813779506485,
+            "signed_quadratic_contribution": 4.763655976746302
+          },
+          "DY": {
+            "rows": 743,
+            "signed_contribution_per_row": 8.004341719095724,
+            "signed_quadratic_contribution": 5947.225897288123
+          },
+          "HERMES": {
+            "rows": 344,
+            "signed_contribution_per_row": 4.633220717718022,
+            "signed_quadratic_contribution": 1593.8279268949996
+          },
+          "high_COMPASS": {
+            "rows": 188,
+            "signed_contribution_per_row": 0.0004586243004733455,
+            "signed_quadratic_contribution": 0.08622136848898895
+          }
+        },
+        "change_in_minus2logL_including_logdet": -17660.656478062094,
+        "covariance_definition": "C_exp + (1-rho) diag(sigma_fact^2) + rho sum_table sigma_fact(table) sigma_fact(table)^T",
+        "delta_above_3_rows": 1085,
+        "delta_at_or_below_3_rows": 118,
+        "factorization_ratio_location": "support_maximum",
+        "log_determinant": -1977.6881330697506,
+        "log_determinant_change_from_experimental_covariance": 11248.510619957888,
+        "q": 7545.817480159869,
+        "q_per_measurement": 3.2951168035632614,
+        "sum_independent_variance_weight": 1.9316963360166248,
+        "within_table_correlation_fraction_rho": 0.0
+      },
+      {
+        "COMPASS_support_domains": {
+          "matched_transition_or_mixed": {
+            "rows": 913,
+            "signed_contribution_per_row": 0.0030139252523017825,
+            "signed_quadratic_contribution": 2.7517137553515276
+          },
+          "pure_fixed_order_validation": {
+            "rows": 278,
+            "signed_contribution_per_row": 0.0004925392713013973,
+            "signed_quadratic_contribution": 0.13692591742178845
+          },
+          "pure_tmd_core": {
+            "rows": 12,
+            "signed_contribution_per_row": 0.3833897673861241,
+            "signed_quadratic_contribution": 4.600677208633489
+          }
+        },
+        "blocks": {
+          "COMPASS": {
+            "rows": 1203,
+            "signed_contribution_per_row": 0.006225533567254202,
+            "signed_quadratic_contribution": 7.489316881406805
+          },
+          "DY": {
+            "rows": 743,
+            "signed_contribution_per_row": 8.004341719095724,
+            "signed_quadratic_contribution": 5947.225897288123
+          },
+          "HERMES": {
+            "rows": 344,
+            "signed_contribution_per_row": 4.633220717718022,
+            "signed_quadratic_contribution": 1593.8279268949996
+          },
+          "high_COMPASS": {
+            "rows": 188,
+            "signed_contribution_per_row": 0.000328623740761539,
+            "signed_quadratic_contribution": 0.061781263263169336
+          }
+        },
+        "change_in_minus2logL_including_logdet": -18237.457135019467,
+        "covariance_definition": "C_exp + (1-rho) diag(sigma_fact^2) + rho sum_table sigma_fact(table) sigma_fact(table)^T",
+        "delta_above_3_rows": 1085,
+        "delta_at_or_below_3_rows": 118,
+        "factorization_ratio_location": "support_maximum",
+        "log_determinant": -2557.214450931785,
+        "log_determinant_change_from_experimental_covariance": 10668.984302095854,
+        "q": 7548.543141064529,
+        "q_per_measurement": 3.296307048499794,
+        "sum_independent_variance_weight": 1.9316963360166248,
+        "within_table_correlation_fraction_rho": 0.5
+      },
+      {
+        "COMPASS_support_domains": {
+          "matched_transition_or_mixed": {
+            "rows": 913,
+            "signed_contribution_per_row": 3.8493196297109398,
+            "signed_quadratic_contribution": 3514.428821926088
+          },
+          "pure_fixed_order_validation": {
+            "rows": 278,
+            "signed_contribution_per_row": 1.3297279964896376,
+            "signed_quadratic_contribution": 369.6643830241193
+          },
+          "pure_tmd_core": {
+            "rows": 12,
+            "signed_contribution_per_row": 2.9360289907289427,
+            "signed_quadratic_contribution": 35.23234788874731
+          }
+        },
+        "blocks": {
+          "COMPASS": {
+            "rows": 1203,
+            "signed_contribution_per_row": 3.2579597280456816,
+            "signed_quadratic_contribution": 3919.325552838955
+          },
+          "DY": {
+            "rows": 743,
+            "signed_contribution_per_row": 8.004341719095724,
+            "signed_quadratic_contribution": 5947.225897288123
+          },
+          "HERMES": {
+            "rows": 344,
+            "signed_contribution_per_row": 4.633220717718022,
+            "signed_quadratic_contribution": 1593.8279268949996
+          },
+          "high_COMPASS": {
+            "rows": 188,
+            "signed_contribution_per_row": -2.207842328781844,
+            "signed_quadratic_contribution": -415.0743578109866
+          }
+        },
+        "change_in_minus2logL_including_logdet": -23687.374850578504,
+        "covariance_definition": "C_exp + (1-rho) diag(sigma_fact^2) + rho sum_table sigma_fact(table) sigma_fact(table)^T",
+        "delta_above_3_rows": 1085,
+        "delta_at_or_below_3_rows": 118,
+        "factorization_ratio_location": "support_maximum",
+        "log_determinant": -11918.968402448369,
+        "log_determinant_change_from_experimental_covariance": 1307.2303505792697,
+        "q": 11460.379377022076,
+        "q_per_measurement": 5.004532479048942,
+        "sum_independent_variance_weight": 1.9316963360166248,
+        "within_table_correlation_fraction_rho": 1.0
+      }
+    ],
+    "interpretation_guard": "q/N values from different covariance definitions are not comparable fit-quality statistics by themselves; the log-determinant changes and the uncalibrated theory model must also be considered. Subset contributions are signed residual-times-precision-residual sums and can be negative when theory covariance correlates a subset with other rows",
+    "metric_compass_covariance": "diagonal stat^2+sys^2 with zero cross-process covariance",
+    "scope": "Saved-only score sensitivity on the existing 2,290-row endpoint; theory error is added to the 1,203 selected COMPASS rows only"
+  },
+  "schema": "tmd-full-compass-reevaluation-v1",
+  "scope": {
+    "census": "all 4,664 primary multiplicity rows in 162 tables",
+    "endpoint_rescoring": "existing 2,290-row width-8 update-658 saved endpoint",
+    "frozen_likelihood_modified": false,
+    "new_row_predictions_computed": false,
+    "public_source": "HEPData ins1624692 version 1, DOI 10.17182/hepdata.83542.v1"
+  },
+  "selected_adapter_plan_validation": {
+    "maximum_absolute_qT_over_Q_bound_difference": 2.220446049250313e-16,
+    "rows": 1203,
+    "source_id_set_equal": true,
+    "support_domain_mismatches": 0
+  },
+  "status": "diagnostic_not_fit_authorized",
+  "support_policy": {
+    "bin_treatment": "conservative Cartesian bounding-box extrema from published PhT2, z, and Q2 edges; not an event-level constrained-support reconstruction",
+    "matched_transition_or_mixed": "not pure TMD and support minimum < 0.30",
+    "pure_fixed_order_validation": "support minimum >= 0.30",
+    "pure_tmd_core": "support maximum <= 0.15",
+    "ratio": "qT/Q = sqrt(PhT2)/(z sqrt(Q2))"
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "beam_conventions": {
+    "COMPASS": {
+      "S_lN_GeV2": 300.45400138879995,
+      "W_min_GeV": 5.0,
+      "beam_energy_GeV": 160.0,
+      "target_mass_GeV": 0.93891875434,
+      "target_mass_semantics": "current free-proton/neutron arithmetic mean per nucleon",
+      "y_range": [
+        0.1,
+        0.9
+      ]
+    },
+    "HERMES": {
+      "S_lN_GeV2": 51.792619266432,
+      "W_min_GeV": 3.1622776601683795,
+      "beam_energy_GeV": 27.6,
+      "target_mass_GeV": 0.93827208816,
+      "target_mass_semantics": "current per-nucleon proton-mass convention",
+      "y_range": [
+        0.1,
+        0.85
+      ]
+    }
+  },
+  "by_experiment": {
+    "COMPASS": {
+      "matching_roles": {
+        "FO_only": 5966,
+        "full_additive": 120,
+        "transition": 390
+      },
+      "older_fixed_nf_domain": {
+        "exclusive_failure_combinations": {
+          "Q_below_min": 1319,
+          "inside": 4539,
+          "x_below_min+Q_below_min": 618
+        },
+        "individual_violation_counts": {
+          "Q_below_min": 1937,
+          "x_below_min": 618
+        },
+        "inside": 4539,
+        "outside": 1937,
+        "rows": 6476
+      },
+      "raw_rows": 6476,
+      "regional_domain": {
+        "exclusive_failure_combinations": {
+          "inside": 6476
+        },
+        "individual_violation_counts": {},
+        "inside": 6476,
+        "outside": 0,
+        "rows": 6476
+      },
+      "scored_rows": 6252
+    },
+    "HERMES": {
+      "matching_roles": {
+        "FO_only": 1083,
+        "full_additive": 157,
+        "transition": 274
+      },
+      "older_fixed_nf_domain": {
+        "exclusive_failure_combinations": {
+          "Q_below_min": 568,
+          "inside": 946
+        },
+        "individual_violation_counts": {
+          "Q_below_min": 568
+        },
+        "inside": 946,
+        "outside": 568,
+        "rows": 1514
+      },
+      "raw_rows": 1514,
+      "regional_domain": {
+        "exclusive_failure_combinations": {
+          "inside": 1514
+        },
+        "individual_violation_counts": {},
+        "inside": 1514,
+        "outside": 0,
+        "rows": 1514
+      },
+      "scored_rows": 1514
+    }
+  },
+  "counts": {
+    "COMPASS_fixed_denominators": 224,
+    "by_experiment": {
+      "COMPASS": 6476,
+      "HERMES": 1514
+    },
+    "by_hadron": {
+      "kminus": 376,
+      "kplus": 378,
+      "piminus": 3619,
+      "piplus": 3617
+    },
+    "by_target": {
+      "deuteron": 7234,
+      "proton": 756
+    },
+    "scored_SIDIS_observations": 7766,
+    "selected_SIDIS_raw_rows": 7990
+  },
+  "current_regional_domain": {
+    "contract": {
+      "Q_max_GeV": 10.0,
+      "Q_min_GeV": 1.05,
+      "x_min": 0.003,
+      "z_min": 0.2
+    },
+    "exclusive_failure_combinations": {
+      "inside": 7990
+    },
+    "individual_violation_counts": {},
+    "inside": 7990,
+    "outside": 0,
+    "rows": 7990
+  },
+  "identity": "7b6112d42c97677752ce8551958be3e388741d278318b0876d38a7564bc19a39",
+  "interpretation": {
+    "domain_result": "All 7990 selected raw SIDIS points are inside the declared current regional fraction, scale, experiment-y/W, and finite-recoil support.",
+    "forbidden_shortcut": "Do not use the older fixed-nf common service: it would reject 2505 rows and cannot cross the low-Q flavor thresholds.",
+    "point_operator": "Existing primitives expose positive-qT ASY density and the PhT2 Jacobian, but the present campaign builder integrates source bins.  A dedicated average-point operator and bin-shrinkage/reintegration validation remain required.",
+    "theory_scope": "The reusable current path is an unprimed N3LL massless W with NLO SIDIS positive recoil and an NLO inclusive-DIS denominator.  It is explicitly heavy-threshold-incomplete and production_authorized=false; do not label the combined SIDIS observable uniformly N3LL+NNLO."
+  },
+  "invariants": {
+    "COMPASS_denominators_equal_224": true,
+    "DNN_coupling_classes_sum_to_scored_SIDIS": true,
+    "all_average_points_inside_current_experiment_y_and_W_contract": true,
+    "all_rows_inside_current_regional_fraction_and_scale_domain": true,
+    "all_rows_inside_positive_recoil_partonic_support": true,
+    "matching_roles_sum_to_raw_rows": true,
+    "older_fixed_nf_shortcut_rejects_2505_rows": true,
+    "scored_SIDIS_rows_equal_7766": true,
+    "selected_SIDIS_raw_rows_equal_7990": true
+  },
+  "kinematic_extrema": {
+    "PhT_GeV": [
+      0.0826161,
+      1.054383
+    ],
+    "Q_GeV": [
+      1.2165525060596438,
+      3.03616023951306
+    ],
+    "W_GeV": [
+      3.7568901360759748,
+      14.519991041864413
+    ],
+    "qT_over_Q": [
+      0.04204183767467643,
+      2.484519882071331
+    ],
+    "x": [
+      0.007,
+      0.410544
+    ],
+    "y": [
+      0.14370497174670058,
+      0.703696973417818
+    ],
+    "z": [
+      0.2139999,
+      0.7027035
+    ]
+  },
+  "matching_roles_raw_rows": {
+    "FO_only": 7049,
+    "full_additive": 277,
+    "transition": 664
+  },
+  "next_gate": "Implement and validate one current-regional average-point operator for HERMES and one complete COMPASS numerator/denominator spectrum before bulk construction.",
+  "older_fixed_nf_shortcut": {
+    "contract": {
+      "Q_max_GeV": 4.5,
+      "Q_min_GeV": 1.55,
+      "x_min": 0.01,
+      "z_min": 0.2
+    },
+    "exclusive_failure_combinations": {
+      "Q_below_min": 1887,
+      "inside": 5485,
+      "x_below_min+Q_below_min": 618
+    },
+    "individual_violation_counts": {
+      "Q_below_min": 2505,
+      "x_below_min": 618
+    },
+    "inside": 5485,
+    "outside": 2505,
+    "rows": 7990
+  },
+  "schema": "pv17-current-regional-sidis-domain-v1",
+  "scored_SIDIS_DNN_coupling_after_COMPASS_ratio_map": {
+    "DNN_coupled": 6364,
+    "FO_only": 1402
+  },
+  "source_receipts": {
+    "current_regional_theory": {
+      "files": {
+        "src/bttmd_foundation/sidis_distribution_action.py": "6b37046421f0f20598de231cbdea0a57b0466097e8578052464b3c22a231146f",
+        "src/bttmd_foundation/sidis_uv_subtraction.py": "10dd17781fcfe8d2564d8ffbbf9abb46e59ecb4f5a6fb8002625bf7b3de90755",
+        "work/full_sample_sidis/builder.py": "daa2450d27382cdde89cd15a4f8ceec5f9aa79262117180e45607c8384f37081",
+        "work/regional_matching/coupling.py": "e90f3b00836926a31ccec8cbb391090365833140390914b55fdc3ba1788b8d5d",
+        "work/regional_matching/panel.py": "f74a0c17d4209c3402778ec751894bdd8f53f7c781e26c1ce18c66371a6aa2e5",
+        "work/regional_matching/pilot.py": "7b71ccc4dfaf9f46e0430bd45b214d213e9783f3bf32aaaf3f16360581f24a0e",
+        "work/regional_matching/service.py": "9d6ae0c6c4e00ba2475b8f03999865d41d3ad0eeab01747e5a1f74fdac501a0f",
+        "work/regional_matching/w.py": "31f9b4d01ca07d573073dbcf5398261176199222e02fd08dcf9be2ec7b5465df"
+      },
+      "native_service_imported": false,
+      "operator_or_prediction_evaluated": false,
+      "required_fragments_verified": true
+    },
+    "pv17_manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4"
+  },
+  "status": "domain_closed_point_operator_pilot_open"
+}

@@ -1,0 +1,205 @@
+{
+  "audit_date": "2026-09-15",
+  "decision": {
+    "pv17_exact_data_baseline_required_before_likelihood_v2_gpu_fit": true,
+    "gpu_authorized_by_this_record": false,
+    "baseline_dataset": "PV17",
+    "baseline_method": "current_project_N3LL_matched_theory_likelihood_and_DNN",
+    "reproduce_historical_PV17_NLL_fit": false,
+    "require_historical_final_run_configuration": false,
+    "require_historical_prediction_receipt": false,
+    "pv17_row_population_closure_passed": true,
+    "pv17_SIDIS_operator_construction_passed": true,
+    "pv17_full_fit_authorized": false,
+    "blocking_reasons": [
+      "16 nonpositive HERMES K- predictions at the transferred width-8 endpoint",
+      "D0 Run-II normalized 40<Q<200 fiducial numerator/denominator contract is not implemented"
+    ],
+    "scope_correction": "decisions/2026-09-15-pv17-data-baseline-scope-correction.md"
+  },
+  "pv17": {
+    "paper": {
+      "arxiv": "1703.10157",
+      "url": "https://arxiv.org/abs/1703.10157",
+      "arxiv_source_sha256_observed_2026_09_15": "1343dc940bbce30d6d5ec443f91f1f8d2181e4e6e4512006c28ea51a0efb2497",
+      "points": {
+        "HERMES_SIDIS": 1514,
+        "COMPASS_SIDIS": 6252,
+        "fixed_target_DY": 203,
+        "Tevatron_Z": 90,
+        "total": 8059
+      },
+      "free_parameters": 11,
+      "nominal_degrees_of_freedom": 8048,
+      "reported_chi2_mean": 12629,
+      "reported_chi2_spread": 363,
+      "derived_chi2_over_N_from_rounded_total": 1.5670678744261075,
+      "derived_chi2_over_N_spread_from_rounded_total": 0.04504280928154858,
+      "reported_chi2_over_dof": 1.55,
+      "reported_chi2_over_dof_spread": 0.05,
+      "derived_chi2_over_dof_from_rounded_total": 1.5692097415506958,
+      "reported_replica_105_chi2_over_dof": 1.51,
+      "replicas": 200,
+      "accuracy": "NLL_with_LO_hard_contribution_and_no_high_recoil_matching",
+      "covariance_summary": "diagonal experimental errors plus the study FF uncertainty; no inter-bin covariance"
+    },
+    "public_artifact_audit": {
+      "repository": "https://github.com/MapCollaboration/NangaParbat-Legacy",
+      "fortran_source_add_commit": "7df66f4801151ce2384ca211422bdbfc70058832",
+      "fortran_source_add_date": "2019-04-02T15:47:13+02:00",
+      "fortran_paths": 152,
+      "fortran_data_paths": 48,
+      "first_inspected_release_tag": "v1.0.0",
+      "first_inspected_release_commit": "5db6367beee33060d063cca3a7f77bec57540f7f",
+      "first_inspected_release_date": "2019-07-17T09:35:09+02:00",
+      "key_file_sha256": {
+        "resources/fortran_fitcode/input_choices.h": "95879001e8ff7d1191a180d3fa48b79c19a693b028aa849373e1dce0d8b674c5",
+        "resources/fortran_fitcode/fit.input": "a95396ad3f6346588538f879621725de68ecb8a94268af33588c95dbc53d5072",
+        "resources/fortran_fitcode/ref.txt": "a721bbe7c83eb4e903abded0b68410a22158399312f63f0df3895f49b8530492"
+      },
+      "row_counts_visible": true,
+      "historical_source_and_data_visible": true,
+      "exact_final_run_manifest_visible": false,
+      "full_8059_prediction_receipt_identified": false,
+      "historical_reproduction_findings_not_data_baseline_blockers": [
+        "The public Fortran material was added approximately two years after the paper.",
+        "The checked-in input_choices.h selects MMHT2014 and Z-only execution rather than the published GJR08 global fit.",
+        "The checked-in ref.txt reaches the published row counts but reports chi2/dof 477.97623960906037.",
+        "The later PV17 report inspected in the public history evaluates 353 DY/Z rows rather than all 8059 rows."
+      ]
+    },
+    "row_closure": {
+      "schema": "pv17-row-closure-v1",
+      "receipt": "analysis/historical-closure-baseline-20260915/row-closure.json",
+      "source_data_files": 18,
+      "source_data_ordered_digest_sha256": "8d2c70d4dd9c9ed152a16ea2d3f00b77631092e6c60460083c7a248cd7a99542",
+      "candidate_numeric_rows": 21951,
+      "selected_raw_rows": 8283,
+      "selected_raw_SIDIS_rows": 7990,
+      "selected_raw_DY_rows": 203,
+      "selected_raw_Z_rows": 90,
+      "COMPASS_normalization_spectra": 224,
+      "COMPASS_fixed_denominator_constraints": 224,
+      "published_effective_points": 8059,
+      "historical_PV17_nominal_degrees_of_freedom_after_11_parameters": 8048,
+      "local_manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4",
+      "local_manifest_committed": false,
+      "status": "passed_row_population_and_normalization_accounting"
+    },
+    "current_method_preparation": {
+      "metric_contract": {
+        "receipt": "analysis/historical-closure-baseline-20260915/metric-contract-v2.json",
+        "identity": "bb9ae9487a6e7d7e1b89549919b23f8470403ae6a30092ca16eec4d21df96659",
+        "scored_observations": 8059,
+        "COMPASS_denominator_responses": 224,
+        "DY_Z_t0_normalization_patterns": 7,
+        "D0_RunII_policy": "published normalized shape; exclude PV17 theory-derived 255.8 pb conversion",
+        "status": "static_metric_built_D0II_normalized_denominator_and_t0_pending"
+      },
+      "operator_coverage": {
+        "receipt": "analysis/historical-closure-baseline-20260915/operator-coverage-v2.json",
+        "identity": "7cffe79d4c0a32192359fad08ffa2b3afdb670b053b8dfbe1afa2696596d5e5a",
+        "reusable_DY_Z_operators": 285,
+        "new_SIDIS_point_operators": 7990,
+        "blocked_D0_RunII_rows": 8,
+        "D0_RunII_blocker": "normalized numerator/full 40<Q<200 fiducial denominator required; inherited 70<Q<110 card is the wrong support"
+      },
+      "SIDIS_domain": {
+        "receipt": "analysis/historical-closure-baseline-20260915/sidis-domain.json",
+        "identity": "7b6112d42c97677752ce8551958be3e388741d278318b0876d38a7564bc19a39",
+        "inside_current_regional_domain": 7990,
+        "rejected_by_forbidden_older_fixed_nf_shortcut": 2505,
+        "theory": "conditional unprimed N3LL W plus NLO recoil and NLO inclusive-DIS denominator",
+        "production_authorized": false,
+        "heavy_threshold_complete": false
+      },
+      "SIDIS_point_pilot": {
+        "receipt": "analysis/historical-closure-baseline-20260915/sidis-point-pilot-v2.json",
+        "identity": "6400a3b5439d580c032ac37b5f57f252bd540205cdd369df21299b30dc892624",
+        "rows": 23,
+        "Gaussian_replay_max_abs": 5.551115123125783e-17,
+        "fixed_only_COMPASS_ratio_gradient_l2": 0.32679533248291937,
+        "directional_AD_FD_abs_error": 1.853817837085825e-11,
+        "status": "passed"
+      },
+      "SIDIS_campaign": {
+        "receipt": "analysis/historical-closure-baseline-20260915/sidis-point-operators.json",
+        "identity": "cf5c897d7ce1bdd205709452e452a81d5583a7e19663305efd2870255541e867",
+        "shards": 232,
+        "raw_rows": 7990,
+        "scored_rows": 7766,
+        "fixed_COMPASS_denominators": 224,
+        "raw_W_active_rows": 941,
+        "raw_FO_only_rows": 7049,
+        "scored_DNN_coupled_directly_or_by_denominator": 6364,
+        "direct_Gaussian_recovery_max_abs": 5.329070518200751e-15,
+        "PyTorch_Gaussian_replay_max_abs": 1.2434497875801753e-14,
+        "status": "all_7990_SIDIS_point_operators_built_and_CPU_replayed"
+      },
+      "transferred_endpoint_feasibility": {
+        "receipt": "analysis/historical-closure-baseline-20260915/sidis-endpoint-feasibility.json",
+        "identity": "ca62c07742f8c06e0c33fdeebfb01de14f0fb782478c49ff43a450b8d9ad8bff",
+        "endpoint_result_identity": "ac23bd78b68a84f8fa4e867980211ae1bdb201081179c54077b96dd4f0264a6a",
+        "endpoint_sha256": "619687b78a2aa214ef8d9af36d1d09a940fda9a75d3759d93bffaaddcf010869",
+        "endpoint_source_likelihood_observations": 2290,
+        "endpoint_is_a_PV17_fit": false,
+        "trajectory_accepted_updates": 658,
+        "Gaussian_nonpositive_rows": 16,
+        "endpoint_nonpositive_rows": 16,
+        "endpoint_minimum": -0.8069826550313439,
+        "nonpositive_channel": "HERMES K- only",
+        "nonpositive_matching_roles": {
+          "full_additive": 7,
+          "transition": 9
+        },
+        "Gaussian_endpoint_overlap": 15,
+        "status": "blocked_nonpositive_HERMES_Kminus_predictions"
+      }
+    }
+  },
+  "maptmd22_historical_context_not_required_fallback": {
+    "paper_arxiv": "2206.07598",
+    "results_repository": "https://github.com/MapCollaboration/TMDMAP22-results",
+    "results_commit": "58d83af7ecbbec2c15995f39dcf8bf0699e2295d",
+    "results_commit_date": "2022-06-01T13:20:59+02:00",
+    "report_sha256": "47e09bf58e537411d15c0dc204c09e196acadd015e2c38cc0035e3e813269f3b",
+    "reported_points": 2031,
+    "reported_central_replica_chi2_over_N": 1.1051,
+    "reported_retained_replicas": 260,
+    "nangaparbat_first_result_upload_commit": "a893180e80bdd3ca858f1245630923599a90812d",
+    "nangaparbat_first_result_upload_date": "2022-11-25T18:27:17+01:00",
+    "status": "out_of_scope_for_PV17_data_baseline"
+  },
+  "gates": [
+    {
+      "id": "B0",
+      "name": "exact_data_population_and_modern_covariance_contract",
+      "requires_gpu": false,
+      "status": "row_population_and_static_metric_passed_t0_and_D0_denominator_open"
+    },
+    {
+      "id": "B1",
+      "name": "current_N3LL_matched_operator_construction",
+      "requires_gpu": false,
+      "status": "7990_SIDIS_built_285_DY_Z_reusable_8_D0_normalized_rows_blocked"
+    },
+    {
+      "id": "B2",
+      "name": "operator_metric_gradient_and_CPU_GPU_validation",
+      "requires_gpu": true,
+      "status": "blocked_by_16_nonpositive_HERMES_Kminus_predictions_and_D0_contract"
+    },
+    {
+      "id": "B3",
+      "name": "current_DNN_baseline_fit",
+      "requires_gpu": true,
+      "status": "blocked_by_B2"
+    },
+    {
+      "id": "B4",
+      "name": "baseline_assessment_grouped_holdouts_and_TMD_stability",
+      "requires_gpu": true,
+      "status": "blocked_by_B3"
+    }
+  ]
+}
