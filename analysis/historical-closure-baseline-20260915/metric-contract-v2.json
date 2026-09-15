@@ -1,0 +1,164 @@
+{
+  "arrays": {
+    "COMPASS_denominator_responses": {
+      "bytes_sha256": "b357b9507e7a4e0fd7bddaef3b959b31138b7a279425763003c1d65eab3b3cce",
+      "dtype": "<f8",
+      "identity": "1b2ec83826ffd8adbadeec974340206feb3a0c61d84fd3e90a897496b3bf582a",
+      "shape": [
+        8059,
+        224
+      ]
+    },
+    "data": {
+      "bytes_sha256": "0303772038c63390f971a233da9e1a2d8d1b2640ddf7b42a58a6c687a3b72fc9",
+      "dtype": "<f8",
+      "identity": "dcce040da37bd210993f6b129c3dbd424977c385d22b5a6a2f312db8c5f56b89",
+      "shape": [
+        8059
+      ]
+    },
+    "diagonal_variance": {
+      "bytes_sha256": "9e15aaa193c90f9764b7978686d02a68db7dbdb1a9e38a28c5b093a2a9b6f1e5",
+      "dtype": "<f8",
+      "identity": "5cae949dca75c6bb549ea1d19a4eef7acc72acd8b70eac24c0490715c49f12fa",
+      "shape": [
+        8059
+      ]
+    },
+    "historical_diagonal_variance": {
+      "bytes_sha256": "ab0560679bf966c9adfdf0787c4dd6f66f4babeb9cc8852dd7b3055ac94f25e0",
+      "dtype": "<f8",
+      "identity": "9b7d4b918b22e58b98c44d4d207bc1a7fd5d606ff49a61077940ba3a84959d84",
+      "shape": [
+        8059
+      ]
+    },
+    "normalization_fraction_patterns": {
+      "bytes_sha256": "15a780c9310d2faca48153ee1ae070c8d8703dd5bdae91628599d8817f0b780f",
+      "dtype": "<f8",
+      "identity": "db584b4e11ed86c95a7e75192360edaae09db99fa2ba06d4515a1aee8113edde",
+      "shape": [
+        8059,
+        7
+      ]
+    },
+    "process_codes": {
+      "bytes_sha256": "3ebdfe4a7f00d9b987f2f13bf62cc6f39ca7437221caf8e5a9fdbee01a2ada1e",
+      "dtype": "|i1",
+      "identity": "34849e0ddeca2ce7c2ceba6f13f0ab96c7681ece54cb2cfcc04f0bfd2cf45951",
+      "shape": [
+        8059
+      ]
+    },
+    "selected_raw_indices": {
+      "bytes_sha256": "d529c4ff4323362d3966b5991b94a696e442ad4ac6c9b5a0b575d85dd01e806b",
+      "dtype": "<i8",
+      "identity": "5ce81588283dae3f28e75aeedf059fcd0968b0f52cc99030e7793a4a21e7765d",
+      "shape": [
+        8059
+      ]
+    }
+  },
+  "counts": {
+    "COMPASS_denominator_constraints": 224,
+    "by_experiment": {
+      "CDF_RunI": 31,
+      "CDF_RunII": 37,
+      "COMPASS": 6252,
+      "D0_RunI": 14,
+      "D0_RunII": 8,
+      "E288_200": 45,
+      "E288_300": 45,
+      "E288_400": 78,
+      "E605": 35,
+      "HERMES": 1514
+    },
+    "scored_observations": 8059,
+    "selected_raw_rows": 8283
+  },
+  "covariance": {
+    "COMPASS": "first-order Jacobian propagation from independent published raw stat/sys variances; shared lowest-PhT denominator retained as a within-spectrum response",
+    "DY_Z": "published point errors on diagonal; absolute-spectrum normalization/luminosity as correlated t0 responses; normalized D0 Run-II is excluded from those responses",
+    "HERMES": "published stat and sys combined on the diagonal; no unavailable correlations invented",
+    "formula": "C_eff(t0)=diag(D)+U_COMPASS*U_COMPASS^T+(F_norm*t0[:,None])*(F_norm*t0[:,None])^T",
+    "t0_policy": "a named current-theory prediction is fixed within a fit and may be updated only between versioned fits; measured data are not the production t0 reference",
+    "theory_and_numerical_responses": "separate B1/B2 additions, never relabeled experimental covariance"
+  },
+  "diagnostics": {
+    "COMPASS_static_response_rank": 224,
+    "COMPASS_woodbury_gram_condition": 2.2346155631091387,
+    "COMPASS_woodbury_gram_eigenvalue_max": 30.337294872742348,
+    "COMPASS_woodbury_gram_eigenvalue_min": 13.57606891027487,
+    "D0_RunII_normalized_shape_rows": 8,
+    "max_COMPASS_marginal_variance_closure_abs": 2.7755575615628914e-17,
+    "max_DY_Z_data_reference_variance_closure_abs": 4.440892098500626e-16,
+    "normalization_response_rank_after_t0": 7
+  },
+  "identity": "bb9ae9487a6e7d7e1b89549919b23f8470403ae6a30092ca16eec4d21df96659",
+  "input_manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4",
+  "invariants": {
+    "COMPASS_groups_equal_224": true,
+    "COMPASS_marginals_reproduce_published_propagation": true,
+    "D0_RunII_uses_raw_normalized_shape_without_PV17_theory_factor": true,
+    "DY_Z_marginals_at_t0_equal_data_reproduce_legacy_diagonal": true,
+    "all_arrays_finite": true,
+    "data_strictly_positive": true,
+    "diagonal_variance_strictly_positive": true,
+    "experiment_counts_close": true,
+    "one_COMPASS_response_per_COMPASS_row": true,
+    "one_normalization_pattern_per_absolute_DY_Z_row": true,
+    "scored_observations_equal_8059": true,
+    "selected_raw_rows_equal_8283": true
+  },
+  "local_arrays": {
+    "committed": false,
+    "contains_third_party_measurements": true,
+    "npz_sha256": "e6e6f696b6af3d97c9d81173915c306c8dc4b04d36a71bc11afc471921dbefc5"
+  },
+  "next_gate": "Complete the source-corrected D0 Run-II normalized numerator/denominator contract, bind a feasible current-theory prediction as t0, then validate transformed predictions, covariance actions, and gradients.",
+  "normalization_groups": [
+    {
+      "id": "E288_200",
+      "relative_fraction": 0.25,
+      "response_rule": "relative_fraction_times_named_current_theory_t0"
+    },
+    {
+      "id": "E288_300",
+      "relative_fraction": 0.25,
+      "response_rule": "relative_fraction_times_named_current_theory_t0"
+    },
+    {
+      "id": "E288_400",
+      "relative_fraction": 0.25,
+      "response_rule": "relative_fraction_times_named_current_theory_t0"
+    },
+    {
+      "id": "E605",
+      "relative_fraction": 0.15,
+      "response_rule": "relative_fraction_times_named_current_theory_t0"
+    },
+    {
+      "id": "CDF_RunI",
+      "relative_fraction": 0.039,
+      "response_rule": "relative_fraction_times_named_current_theory_t0"
+    },
+    {
+      "id": "D0_RunI",
+      "relative_fraction": 0.044,
+      "response_rule": "relative_fraction_times_named_current_theory_t0"
+    },
+    {
+      "id": "CDF_RunII",
+      "relative_fraction": 0.058,
+      "response_rule": "relative_fraction_times_named_current_theory_t0"
+    }
+  ],
+  "observable_policy": {
+    "COMPASS": "score numerator/lowest-PhT-theory ratios; denominator rows constrain the map but are not scored",
+    "D0_RunII": "score the experiment's raw normalized shape against a current-theory numerator/normalization-denominator quotient; exclude PV17's theory-derived sigma_Z=255.8 pb conversion",
+    "PV17_fixed_Z_theory_normalization_factors": "excluded_from_current_theory_primary_fit",
+    "reason": "the factors 1.114/0.992/1.049/1.048 were corrections to PV17 theory and are not experimental data"
+  },
+  "schema": "pv17-current-method-metric-contract-v2",
+  "status": "static_metric_built_D0II_normalized_denominator_and_t0_pending"
+}

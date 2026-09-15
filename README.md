@@ -17,6 +17,13 @@ unequal optimization maturities, so the architecture study remains active. Read 
 [current study plan](docs/CURRENT_STUDY_PLAN.md)
 and [published results](RESULTS.md) before claiming any further work.
 
+The separate W09 PV17 current-method baseline has closed the 8,059-point row
+accounting, static metric and all 7,990 SIDIS point operators.  Its GPU fit is
+held: the transferred width-8 endpoint gives 16 nonpositive HERMES `K-`
+predictions, and eight normalized D0 Run-II rows still require the corrected
+fiducial numerator/denominator contract.  See the
+[B0/B1 outcome](decisions/2026-09-15-pv17-b0-b1-preparation-outcome.md).
+
 ## Scientific purpose
 
 Extract incoming TMDPDF boundaries, outgoing TMDFF boundaries, and a universal

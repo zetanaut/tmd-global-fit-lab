@@ -17,13 +17,27 @@ uses this project's present N3LL matched theory, covariance machinery and DNN.
 The [data audit](../analysis/historical-closure-baseline-20260915/README.md)
 closes 21,951 candidate rows to 8,283 cut-selected rows and then to the published
 8,059 effective observations after excluding 224 fixed COMPASS normalization
-denominators.  The next gate freezes the modern covariance/ratio contract and
-constructs a new operator for those observations.  It then requires independent
-operator, metric, gradient, positivity and CPU/GPU replay checks before a
-sequential RTX 4090 fit with no inherited 192-update cap.  Grouped holdouts and
-a supported-grid comparison with the current 2,290-point result evaluate the
-baseline; PV17's score and TMDs are descriptive context only.  The historical
-final-run configuration and MAPTMD22 fallback are not required for this question.
+denominators.  The static metric now retains the 224 shared-denominator
+responses and seven DY/Z `t0` normalization patterns.  All 7,990 raw SIDIS
+point operators are built and CPU-replayed in 232 hash-bound shards, and 285
+current DY/Z operators are reusable.
+
+That construction does **not** authorize the GPU fit.  The transferred
+width-8 update-658 endpoint produces 16 nonpositive HERMES `K-` predictions
+(seven full-additive and nine transition rows), while the eight normalized D0
+Run-II rows still require a source-corrected numerator/full-fiducial-denominator
+contract on `40 < Q < 200 GeV` support.  The old PV17 `255.8 pb` theory
+conversion and the inherited `70 < Q < 110 GeV` card are both excluded.
+
+The immediate work is therefore a theory-only decomposition and flavor/FF/
+matching audit of the implicated HERMES `K-` rows, in parallel with the D0
+normalized-observable implementation.  Only after both pass do we assemble the
+ordered 8,059-row prediction, bind a feasible `t0`, and run independent metric,
+gradient, positivity and CPU/GPU replay gates.  A later sequential RTX 4090 fit
+will have no inherited 192-update cap.  Grouped holdouts and a supported-grid
+comparison with the current 2,290-point result evaluate that baseline; PV17's
+score and TMDs remain descriptive context only.  The historical final-run
+configuration and MAPTMD22 fallback are not required for this question.
 
 ## Data-scope and theory-validity diagnostic
 

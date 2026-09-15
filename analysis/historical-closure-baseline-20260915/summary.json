@@ -9,6 +9,12 @@
     "require_historical_final_run_configuration": false,
     "require_historical_prediction_receipt": false,
     "pv17_row_population_closure_passed": true,
+    "pv17_SIDIS_operator_construction_passed": true,
+    "pv17_full_fit_authorized": false,
+    "blocking_reasons": [
+      "16 nonpositive HERMES K- predictions at the transferred width-8 endpoint",
+      "D0 Run-II normalized 40<Q<200 fiducial numerator/denominator contract is not implemented"
+    ],
     "scope_correction": "decisions/2026-09-15-pv17-data-baseline-scope-correction.md"
   },
   "pv17": {
@@ -79,6 +85,76 @@
       "local_manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4",
       "local_manifest_committed": false,
       "status": "passed_row_population_and_normalization_accounting"
+    },
+    "current_method_preparation": {
+      "metric_contract": {
+        "receipt": "analysis/historical-closure-baseline-20260915/metric-contract-v2.json",
+        "identity": "bb9ae9487a6e7d7e1b89549919b23f8470403ae6a30092ca16eec4d21df96659",
+        "scored_observations": 8059,
+        "COMPASS_denominator_responses": 224,
+        "DY_Z_t0_normalization_patterns": 7,
+        "D0_RunII_policy": "published normalized shape; exclude PV17 theory-derived 255.8 pb conversion",
+        "status": "static_metric_built_D0II_normalized_denominator_and_t0_pending"
+      },
+      "operator_coverage": {
+        "receipt": "analysis/historical-closure-baseline-20260915/operator-coverage-v2.json",
+        "identity": "7cffe79d4c0a32192359fad08ffa2b3afdb670b053b8dfbe1afa2696596d5e5a",
+        "reusable_DY_Z_operators": 285,
+        "new_SIDIS_point_operators": 7990,
+        "blocked_D0_RunII_rows": 8,
+        "D0_RunII_blocker": "normalized numerator/full 40<Q<200 fiducial denominator required; inherited 70<Q<110 card is the wrong support"
+      },
+      "SIDIS_domain": {
+        "receipt": "analysis/historical-closure-baseline-20260915/sidis-domain.json",
+        "identity": "7b6112d42c97677752ce8551958be3e388741d278318b0876d38a7564bc19a39",
+        "inside_current_regional_domain": 7990,
+        "rejected_by_forbidden_older_fixed_nf_shortcut": 2505,
+        "theory": "conditional unprimed N3LL W plus NLO recoil and NLO inclusive-DIS denominator",
+        "production_authorized": false,
+        "heavy_threshold_complete": false
+      },
+      "SIDIS_point_pilot": {
+        "receipt": "analysis/historical-closure-baseline-20260915/sidis-point-pilot-v2.json",
+        "identity": "6400a3b5439d580c032ac37b5f57f252bd540205cdd369df21299b30dc892624",
+        "rows": 23,
+        "Gaussian_replay_max_abs": 5.551115123125783e-17,
+        "fixed_only_COMPASS_ratio_gradient_l2": 0.32679533248291937,
+        "directional_AD_FD_abs_error": 1.853817837085825e-11,
+        "status": "passed"
+      },
+      "SIDIS_campaign": {
+        "receipt": "analysis/historical-closure-baseline-20260915/sidis-point-operators.json",
+        "identity": "cf5c897d7ce1bdd205709452e452a81d5583a7e19663305efd2870255541e867",
+        "shards": 232,
+        "raw_rows": 7990,
+        "scored_rows": 7766,
+        "fixed_COMPASS_denominators": 224,
+        "raw_W_active_rows": 941,
+        "raw_FO_only_rows": 7049,
+        "scored_DNN_coupled_directly_or_by_denominator": 6364,
+        "direct_Gaussian_recovery_max_abs": 5.329070518200751e-15,
+        "PyTorch_Gaussian_replay_max_abs": 1.2434497875801753e-14,
+        "status": "all_7990_SIDIS_point_operators_built_and_CPU_replayed"
+      },
+      "transferred_endpoint_feasibility": {
+        "receipt": "analysis/historical-closure-baseline-20260915/sidis-endpoint-feasibility.json",
+        "identity": "ca62c07742f8c06e0c33fdeebfb01de14f0fb782478c49ff43a450b8d9ad8bff",
+        "endpoint_result_identity": "ac23bd78b68a84f8fa4e867980211ae1bdb201081179c54077b96dd4f0264a6a",
+        "endpoint_sha256": "619687b78a2aa214ef8d9af36d1d09a940fda9a75d3759d93bffaaddcf010869",
+        "endpoint_source_likelihood_observations": 2290,
+        "endpoint_is_a_PV17_fit": false,
+        "trajectory_accepted_updates": 658,
+        "Gaussian_nonpositive_rows": 16,
+        "endpoint_nonpositive_rows": 16,
+        "endpoint_minimum": -0.8069826550313439,
+        "nonpositive_channel": "HERMES K- only",
+        "nonpositive_matching_roles": {
+          "full_additive": 7,
+          "transition": 9
+        },
+        "Gaussian_endpoint_overlap": 15,
+        "status": "blocked_nonpositive_HERMES_Kminus_predictions"
+      }
     }
   },
   "maptmd22_historical_context_not_required_fallback": {
@@ -99,19 +175,19 @@
       "id": "B0",
       "name": "exact_data_population_and_modern_covariance_contract",
       "requires_gpu": false,
-      "status": "row_population_passed_covariance_contract_open"
+      "status": "row_population_and_static_metric_passed_t0_and_D0_denominator_open"
     },
     {
       "id": "B1",
       "name": "current_N3LL_matched_operator_construction",
       "requires_gpu": false,
-      "status": "blocked_by_B0_covariance_contract"
+      "status": "7990_SIDIS_built_285_DY_Z_reusable_8_D0_normalized_rows_blocked"
     },
     {
       "id": "B2",
       "name": "operator_metric_gradient_and_CPU_GPU_validation",
       "requires_gpu": true,
-      "status": "blocked_by_B1"
+      "status": "blocked_by_16_nonpositive_HERMES_Kminus_predictions_and_D0_contract"
     },
     {
       "id": "B3",

@@ -1,0 +1,314 @@
+{
+  "campaign": {
+    "identity": "cf5c897d7ce1bdd205709452e452a81d5583a7e19663305efd2870255541e867",
+    "plan_identity": "52987fa8d6b673068dee9892057bebd4e83b3c9421a4776a334116621c397f3c",
+    "receipt": "analysis/historical-closure-baseline-20260915/sidis-point-operators.json",
+    "shards": 232
+  },
+  "identity": "ca62c07742f8c06e0c33fdeebfb01de14f0fb782478c49ff43a450b8d9ad8bff",
+  "invariants": {
+    "all_endpoint_predictions_finite": true,
+    "all_nonpositive_endpoint_rows_are_HERMES_Kminus": true,
+    "complete_COMPASS_raw_positivity": true,
+    "endpoint_is_bound_to_public_result": true,
+    "exact_7990_raw_rows": true,
+    "observed_16_nonpositive_endpoint_rows": true
+  },
+  "matching_role_counts": {
+    "full_additive": 7,
+    "transition": 9
+  },
+  "next_gate": "Resolve the HERMES K- current-theory sign failure and independently close the D0 Run-II normalized 40<Q<200 numerator/denominator contract before assembling or optimizing the ordered 8,059-observation likelihood.",
+  "nonpositive": {
+    "Gaussian_control_selected_indices": [
+      84,
+      108,
+      114,
+      121,
+      149,
+      155,
+      156,
+      162,
+      163,
+      864,
+      870,
+      877,
+      905,
+      912,
+      918,
+      919
+    ],
+    "endpoint_rows": [
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "transition",
+        "prediction": -0.09876122410698183,
+        "qT_over_Q": 0.1777479710908399,
+        "selected_index": 84,
+        "target": "proton"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "transition",
+        "prediction": -0.6906818595440134,
+        "qT_over_Q": 0.20222515583179806,
+        "selected_index": 108,
+        "target": "proton"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "transition",
+        "prediction": -0.5448388981847453,
+        "qT_over_Q": 0.16475429138958575,
+        "selected_index": 114,
+        "target": "proton"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "full_additive",
+        "prediction": -0.16817780973491228,
+        "qT_over_Q": 0.13136044554604576,
+        "selected_index": 121,
+        "target": "proton"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "full_additive",
+        "prediction": -0.7613677057935219,
+        "qT_over_Q": 0.12421273053244267,
+        "selected_index": 149,
+        "target": "proton"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "full_additive",
+        "prediction": -0.3739122648808584,
+        "qT_over_Q": 0.11684204984499812,
+        "selected_index": 155,
+        "target": "proton"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "full_additive",
+        "prediction": -0.07868776085358453,
+        "qT_over_Q": 0.09735354926866778,
+        "selected_index": 162,
+        "target": "proton"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "transition",
+        "prediction": -0.06661681449574734,
+        "qT_over_Q": 0.19252450699432144,
+        "selected_index": 163,
+        "target": "proton"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "transition",
+        "prediction": -0.0066496924742411,
+        "qT_over_Q": 0.17780820458598326,
+        "selected_index": 840,
+        "target": "deuteron"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "transition",
+        "prediction": -0.4894311358202347,
+        "qT_over_Q": 0.20622497822040847,
+        "selected_index": 864,
+        "target": "deuteron"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "transition",
+        "prediction": -0.4902345461005567,
+        "qT_over_Q": 0.16449366645040045,
+        "selected_index": 870,
+        "target": "deuteron"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "full_additive",
+        "prediction": -0.10677698130808022,
+        "qT_over_Q": 0.13363456555036313,
+        "selected_index": 877,
+        "target": "deuteron"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "full_additive",
+        "prediction": -0.8069826550313439,
+        "qT_over_Q": 0.1219725280505292,
+        "selected_index": 905,
+        "target": "deuteron"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "transition",
+        "prediction": -0.480346104257813,
+        "qT_over_Q": 0.1596480603541549,
+        "selected_index": 912,
+        "target": "deuteron"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "full_additive",
+        "prediction": -0.08517486939072351,
+        "qT_over_Q": 0.09665530719635267,
+        "selected_index": 918,
+        "target": "deuteron"
+      },
+      {
+        "experiment": "HERMES",
+        "hadron": "kminus",
+        "matching_role": "transition",
+        "prediction": -0.043553817083441464,
+        "qT_over_Q": 0.1954296430054636,
+        "selected_index": 919,
+        "target": "deuteron"
+      }
+    ],
+    "endpoint_selected_indices": [
+      84,
+      108,
+      114,
+      121,
+      149,
+      155,
+      162,
+      163,
+      840,
+      864,
+      870,
+      877,
+      905,
+      912,
+      918,
+      919
+    ],
+    "new_relative_to_Gaussian_control": [
+      840
+    ],
+    "overlap": 15,
+    "recovered_from_Gaussian_control": [
+      156
+    ]
+  },
+  "predictions": {
+    "Gaussian_control": {
+      "maximum": 17.171023833007336,
+      "minimum": -1.9435714724173796,
+      "nonpositive": 16,
+      "rows": 7990
+    },
+    "endpoint": {
+      "maximum": 17.171023833007336,
+      "minimum": -0.8069826550313439,
+      "nonpositive": 16,
+      "rows": 7990
+    },
+    "endpoint_by_experiment": {
+      "COMPASS": {
+        "maximum": 15.270323841550836,
+        "minimum": 0.001833985164625618,
+        "nonpositive": 0,
+        "rows": 6476
+      },
+      "HERMES": {
+        "maximum": 17.171023833007336,
+        "minimum": -0.8069826550313439,
+        "nonpositive": 16,
+        "rows": 1514
+      }
+    },
+    "endpoint_by_hadron": {
+      "kminus": {
+        "maximum": 3.6688221144452737,
+        "minimum": -0.8069826550313439,
+        "nonpositive": 16,
+        "rows": 376
+      },
+      "kplus": {
+        "maximum": 10.730445829450566,
+        "minimum": 2.418123448386599e-05,
+        "nonpositive": 0,
+        "rows": 378
+      },
+      "piminus": {
+        "maximum": 14.410561120006944,
+        "minimum": 3.723212490460086e-05,
+        "nonpositive": 0,
+        "rows": 3619
+      },
+      "piplus": {
+        "maximum": 17.171023833007336,
+        "minimum": 9.470478315368915e-05,
+        "nonpositive": 0,
+        "rows": 3617
+      }
+    },
+    "endpoint_by_target": {
+      "deuteron": {
+        "maximum": 16.20252248006845,
+        "minimum": -0.8069826550313439,
+        "nonpositive": 8,
+        "rows": 7234
+      },
+      "proton": {
+        "maximum": 17.171023833007336,
+        "minimum": -0.7613677057935219,
+        "nonpositive": 8,
+        "rows": 756
+      }
+    },
+    "fixed_contribution": {
+      "maximum": 17.171023833007336,
+      "minimum": -0.7206626932532676,
+      "nonpositive": 17,
+      "rows": 7990
+    }
+  },
+  "schema": "pv17-current-regional-sidis-endpoint-feasibility-v1",
+  "scope": {
+    "device": "CPU",
+    "optimizer_run": false,
+    "production_authorized": false,
+    "third_party_measurements_committed": false
+  },
+  "source_receipts": {
+    "scripts/audit_pv17_sidis_endpoint.py": "73696779ca2f40b2915a695e8331caec04f4f7b4fddf0de2063d7166adb75c6f",
+    "tmdlab/models.py": "8c0e57c6a40af7935ae73257d67071f7984033d23079214e121b06c78cc2c496",
+    "tmdlab/pv17.py": "cf779ade8d439000d5b116dd1424d3c274a0b34a8d21cb0b0e0c1f0b9602db21"
+  },
+  "status": "blocked_nonpositive_HERMES_Kminus_predictions",
+  "supersedes_campaign_next_gate": true,
+  "transferred_endpoint": {
+    "depth": 1,
+    "endpoint_sha256": "619687b78a2aa214ef8d9af36d1d09a940fda9a75d3759d93bffaaddcf010869",
+    "is_a_PV17_fit": false,
+    "result_identity": "ac23bd78b68a84f8fa4e867980211ae1bdb201081179c54077b96dd4f0264a6a",
+    "result_receipt_sha256": "473b6facd02fad81cfd89379e3737b9723b4612dbaf0936a0e801592c2848856",
+    "source_likelihood_q_per_measurement": 15.91920723937984,
+    "theta_bytes_sha256": "a987bca7b7f967797105d8747e59355301ab62413c4e60e9ce072dbdc566451d",
+    "trained_likelihood_observations": 2290,
+    "trajectory_accepted_updates": 658,
+    "trial_id": "continuation-w8-feasibility-2h-local-a04",
+    "width": 8
+  }
+}

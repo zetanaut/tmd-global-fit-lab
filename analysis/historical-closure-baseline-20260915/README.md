@@ -17,10 +17,14 @@ configuration does not identify one self-consistent final PV17 run, but that is
 no longer a blocker because the old fit implementation and perturbative setup
 are deliberately not being rerun.
 
-No DNN fit starts from the row audit alone.  The next gate is to freeze and
-validate a new operator for these exact observations using the project's current
-theory and covariance contracts.  CPU or GPU may be used according to the work;
-the dependency is scientific validation, not hardware policy.
+The operator-preparation phase is now substantially complete, but it exposes
+two real feasibility blockers rather than authorizing a DNN fit.  All 7,990 raw
+SIDIS point operators have been constructed and CPU-replayed, and 285 of the
+293 DY/Z rows reuse current operators with explicit unit adapters.  The eight
+D0 Run-II rows require a normalized fiducial numerator/denominator calculation
+on corrected source support.  Separately, the transferred width-8 endpoint
+predicts 16 nonpositive HERMES `K-` multiplicities.  The next action is a
+targeted theory diagnostic, not GPU optimization.
 
 ## Published PV17 targets and row accounting
 
@@ -125,9 +129,67 @@ python scripts/audit_pv17_row_closure.py \
 The current manifest SHA-256 is
 `3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4`.
 
+## Current-method preparation outcome
+
+The [metric-v2 receipt](metric-contract-v2.json) builds the ordered 8,059-row
+static data/error layer and closes all row, marginal-variance and Woodbury
+checks.  It retains 224 COMPASS shared-denominator responses and seven
+absolute-spectrum DY/Z normalization patterns.  Its production covariance is
+
+```text
+C_eff(t0) = diag(D) + U_COMPASS U_COMPASS^T
+            + (F_norm t0) (F_norm t0)^T .
+```
+
+The named current-theory `t0` and theory/numerical responses remain B2 inputs.
+D0 Run-II is deliberately kept in its published normalized form: PV17's
+theory-derived `255.8 pb` conversion is excluded.
+
+The [coverage receipt](operator-coverage-v2.json) identifies 285 reusable
+current DY/Z operators, 7,990 new SIDIS point operators and eight D0 Run-II
+rows with a distinct blocked contract.  Those eight are not ordinary missing
+absolute operators.  The inherited current card covers `70 < Q < 110 GeV`,
+whereas the published normalized observable requires a fiducial numerator and
+normalization denominator on `40 < Q < 200 GeV` support with inclusive
+rapidity.  Reusing either the narrow card or the PV17 normalization factor
+would silently change the observable.
+
+All selected SIDIS averages are within the declared current regional domain;
+see the [domain receipt](sidis-domain.json).  The older fixed-`n_f` shortcut
+would reject 2,505 rows and is not used.  The
+[point pilot](sidis-point-pilot-v2.json) then closes a HERMES point and a
+complete 22-row COMPASS spectrum, including a nonzero DNN gradient for a
+fixed-order-only numerator through its trainable COMPASS denominator.
+
+The completed [SIDIS campaign receipt](sidis-point-operators.json) binds 232
+resumable shards containing all 7,990 raw SIDIS rows (7,766 scored rows plus
+224 COMPASS denominators).  Direct Gaussian recovery closes to `5.33e-15`;
+PyTorch operator replay closes to `1.25e-14`.  Of the raw rows, 7,049 are
+fixed-order-only and 941 have an active W-term operator.  After the COMPASS
+ratio map, 6,364 scored observations are DNN-coupled either directly or through
+a denominator.  These are operator checks, not a fit.
+
+The complete-population feasibility result is negative.  The Gaussian control
+has 16 nonpositive rows, all HERMES `K-`.  Replaying the independently trained
+width-8 update-658 endpoint over the new operators also gives exactly 16
+nonpositive HERMES `K-` rows: 15 are shared, Gaussian-failing row 156 becomes
+positive, and previously positive row 840 becomes negative.  The endpoint
+minimum improves from `-1.94357` to `-0.806983`, but positivity is still
+violated.  The failures split into seven full-additive and nine transition
+rows, evenly between proton and deuteron targets.  COMPASS and the other three
+hadron channels remain positive.  See the hash-bound
+[endpoint-feasibility receipt](sidis-endpoint-feasibility.json).
+
+This local executable SIDIS path is the conditional regional implementation:
+unprimed N3LL W plus NLO positive recoil and an NLO inclusive-DIS denominator.
+It is marked heavy-threshold-incomplete and `production_authorized=false`; the
+combined observable must not be advertised as uniformly N3LL+NNLO.  The sign
+failure is therefore a theory/feasibility diagnostic, not evidence against the
+PV17 measurements and not something an added covariance term can repair.
+
 ## Required experiment sequence
 
-### B0 — exact data population and QA (row accounting passed)
+### B0 — exact data population and QA (static contract passed; t0/D0 open)
 
 1. Freeze the arXiv source version and one upstream data commit.
 2. Bind every source row, cut decision, observable, experimental uncertainty,
@@ -136,14 +198,15 @@ The current manifest SHA-256 is
    finite and positive.
 3. Reproduce `1514 + 6252 + 203 + 90 = 8059` after excluding 224 fixed COMPASS
    denominators.  **Passed.**
-4. Before operator production, freeze the ratio-covariance construction for
-   each COMPASS spectrum and the correlated normalization treatment for DY/Z.
-   The primary proposal is Jacobian propagation of the shared denominator,
-   with the historical diagonal approximation retained only as a sensitivity.
+4. Freeze the ratio-covariance construction for each COMPASS spectrum and the
+   correlated normalization treatment for DY/Z.  **Static layer passed:**
+   Jacobian propagation of each shared COMPASS denominator and seven DY/Z `t0`
+   patterns are built.  A feasible current-theory `t0` and the D0 normalized
+   prediction contract remain open.
 
 The historical final fit configuration and replica predictions are not required.
 
-### B1 — current-theory operator construction
+### B1 — current-theory operator construction (SIDIS complete; D0 blocked)
 
 Generate a new operator on the exact B0 population using the project's present
 unprimed N3LL evolution/W, DY NNLO fixed order, implemented SIDIS positive-recoil
@@ -155,7 +218,12 @@ COMPASS predictions and data must undergo the same within-spectrum ratio map.
 The 224 denominators define the transformation and covariance but are not
 additional scored observations.
 
-### B2 — operator and metric validation
+**Current result:** all 7,990 SIDIS operators are built and replayed; 285 DY/Z
+operators are reusable.  The eight D0 Run-II observations cannot be completed
+until the source-corrected normalized numerator/denominator implementation is
+reviewed.  No fabricated absolute D0 operator is permitted.
+
+### B2 — operator and metric validation (blocked before GPU replay)
 
 Independently recompute a stratified set of DY, Z, HERMES, and COMPASS
 predictions; close transformed observables, covariance solves, nuisance
@@ -163,6 +231,10 @@ decompositions, and gradients to preregistered tolerances.  Check row order,
 finite values, covariance positive definiteness/conditioning, complete
 observable positivity, and fixed-sigma prediction replay on CPU and the RTX
 4090 before optimization.
+
+**Current result:** CPU replay finds 16 nonpositive HERMES `K-` predictions at
+the transferred width-8 endpoint.  Positivity therefore fails before an ordered
+8,059-row score, gradient, or GPU replay would be meaningful.
 
 ### B3 — baseline DNN fit
 
@@ -176,6 +248,9 @@ Report `q/N`, every experiment/process contribution, raw and adjusted
 residuals, normalization pulls, positivity, convergence, calls, elapsed time,
 and the complete endpoint audit.  PV17's reported `chi2/d.o.f.` is context, not
 a pass threshold, because the theory and metric intentionally differ.
+
+**Not authorized:** more optimizer time cannot cure an unreviewed central-theory
+sign failure or define the missing D0 normalized observable.
 
 ### B4 — baseline assessment
 
@@ -193,3 +268,25 @@ provides the intended historical data population.  Reproducing either paper's
 old fit would be a separate optional software-reproduction study.  This baseline
 does not modify the existing frozen 2,290-row likelihood; its new operator and
 metric require their own versioned contracts before fitting.
+
+## Scientifically sound next move
+
+1. For the 18 HERMES `K-` rows implicated by either the fixed matched
+   contribution or a control/endpoint sign change, expose `FO_T`, `FO_L`,
+   switched `ASY`, and W contributions row by row.  Independently check the
+   charged-kaon FF/flavor map, charge conjugation, proton/deuteron isospin,
+   active-flavor thresholds, and point-versus-narrow-bin replay.
+2. Determine whether the sign problem is an implementation defect, an invalid
+   regional-theory use, or a genuine limitation of this additive
+   matching/collinear-input combination.  Require positivity for controlled
+   Gaussian and trained-boundary probes; do not tune the DNN against the data
+   until this theory-only test passes.
+3. In parallel, implement and independently review the D0 Run-II normalized
+   numerator and full fiducial denominator on `40 < Q < 200 GeV` support.  Only
+   then bind a feasible `t0`, assemble the ordered 8,059-observation operator,
+   and run the preregistered CPU/GPU metric and gradient gates.
+
+An out-of-domain/theory-error response may still be added as a labeled
+covariance component where justified.  It does not make a negative central
+multiplicity physical and does not substitute for the D0 normalization
+denominator.
