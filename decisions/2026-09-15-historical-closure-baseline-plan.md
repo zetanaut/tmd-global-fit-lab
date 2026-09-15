@@ -1,5 +1,12 @@
 # Historical exact-data closure baseline plan
 
+> **Superseded in scope:** Dustin clarified that PV17 is to supply the exact
+> historical data population for a new fit with the project's current N3LL
+> matched theory and DNN, not an exact reproduction of the PV17 NLL fit.  The
+> [scope-correction decision](2026-09-15-pv17-data-baseline-scope-correction.md)
+> replaces the H1--H4 reproduction gates below.  The row audit and accounting
+> remain valid.
+
 ## Decision and question
 
 Dustin requested an additional baseline using a historical study's exact data

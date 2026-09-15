@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Reconstruct the PV17 data population from a pinned legacy Git commit.
+"""Reconstruct the PV17 baseline data population from a pinned legacy Git commit.
 
 The historical data remain in their upstream repository.  This script reads
 blobs with ``git show`` and can write a local, ignored JSONL manifest containing
 the third-party row values.  Its public summary contains only counts, hashes,
 and closure diagnostics.
+
+This is a data audit, not an attempt to reproduce the PV17 NLL fit.  The
+project's current matched theory and DNN will be used to fit the audited data.
 
 The distinction between selected raw rows and the paper's point count matters:
 PV17 divides every selected COMPASS spectrum by its lowest-PhT datum and excludes
@@ -522,6 +525,26 @@ def summarize(
     constraints = sum(
         row.get("normalization", {}).get("is_fixed_denominator", False) for row in selected
     )
+    observation_keys = []
+    for row in selected:
+        raw = row["raw"]
+        if row["process"] == "SIDIS":
+            key = (
+                row["experiment"], row["target"], row["detected_hadron"],
+                raw["Q2_GeV2"], raw["x"], raw["z"], raw["PhT_GeV"],
+            )
+        else:
+            key = (row["process"], row["experiment"], raw["Q_GeV"], raw["qT_GeV"])
+        observation_keys.append(key)
+    main_errors = [
+        row["raw"].get(
+            "statistical_error", row["raw"].get("statistical_or_published_combined_error")
+        )
+        for row in selected
+    ]
+    compass_group_sizes = Counter(
+        row["normalization"]["group"] for row in selected if row["experiment"] == "COMPASS"
+    )
     invariants = {
         "selected_raw_rows_equal_8283": len(selected) == 8283,
         "selected_SIDIS_rows_equal_7990": selected_process == {"SIDIS": 7990, "DY": 203, "Z": 90},
@@ -532,6 +555,13 @@ def summarize(
         == {"HERMES": 1514, "COMPASS": 6252, "E288_400": 78, "E288_300": 45,
             "E288_200": 45, "E605": 35, "CDF_RunI": 31, "D0_RunI": 14,
             "CDF_RunII": 37, "D0_RunII": 8},
+        "selected_source_ids_unique": len({row["source_id"] for row in selected}) == len(selected),
+        "selected_observation_keys_unique": len(set(observation_keys)) == len(observation_keys),
+        "selected_central_values_positive": all(row["raw"]["value"] > 0.0 for row in selected),
+        "selected_primary_errors_positive": all(error is not None and error > 0.0 for error in main_errors),
+        "COMPASS_group_sizes_between_19_and_44": (
+            min(compass_group_sizes.values()) == 19 and max(compass_group_sizes.values()) == 44
+        ),
     }
     if not all(invariants.values()):
         raise ValueError(f"PV17 row-closure invariant failed: {invariants}")
@@ -556,12 +586,12 @@ def summarize(
             "legacy_commit": commit,
         },
         "verdict": {
-            "row_population_and_COMPASS_normalization_closure": "passed",
-            "full_H0_provenance_and_final_run_identity": "not_passed",
-            "H1_historical_model_replay": "blocked",
+            "data_population_and_COMPASS_normalization_closure": "passed",
+            "historical_PV17_fit_reproduction": "out_of_scope",
+            "current_matched_theory_operator": "not_built",
             "reason": (
-                "The 8059-point accounting now closes exactly, but the public commit does not bind "
-                "one final paper-matching compile card, parameter receipt, and full prediction receipt."
+                "The exact PV17 data population is the baseline input. The project will fit it with "
+                "its current N3LL matched theory, likelihood, and DNN rather than reproduce PV17 NLL."
             ),
         },
         "counts": {
@@ -573,8 +603,10 @@ def summarize(
             "published_effective_points": len(scored),
             "published_effective_points_by_process": dict(sorted(scored_process.items())),
             "published_effective_points_by_experiment": dict(sorted(scored_experiment.items())),
-            "nominal_free_parameters": 11,
-            "nominal_degrees_of_freedom_after_parameters": len(scored) - 11,
+            "historical_PV17_free_parameters": 11,
+            "historical_PV17_nominal_degrees_of_freedom": len(scored) - 11,
+            "COMPASS_normalization_group_size_min": min(compass_group_sizes.values()),
+            "COMPASS_normalization_group_size_max": max(compass_group_sizes.values()),
         },
         "interpretation": {
             "8059_is_not_the_selected_raw_table_row_count": True,
@@ -595,10 +627,11 @@ def summarize(
             "contains_third_party_measurements": True,
             "redistribute_or_commit": False,
         },
-        "public_configuration_evidence": {
+        "historical_fit_configuration_context_not_a_gate": {
             "key_file_receipts": key_receipts,
-            "paper_matching_final_card_identified": False,
-            "full_8059_prediction_receipt_identified": False,
+            "paper_matching_final_configuration_identified": False,
+            "full_8059_historical_prediction_receipt_identified": False,
+            "required_for_current_data_baseline": False,
             "known_mismatches": [
                 "checked-in input_choices.h selects MMHT2014 rather than published GJR08FFnloE",
                 "checked-in input_choices.h disables SIDIS and DY and enables Z only",
@@ -607,8 +640,8 @@ def summarize(
             ],
         },
         "next_gate": (
-            "Recover and bind the paper-matching final compile card and a full-data prediction/score receipt; "
-            "do not start DNN optimization yet."
+            "Freeze the current N3LL matched-theory, collinear-input, covariance, and COMPASS-ratio "
+            "contracts for these rows; then construct and independently validate the new operator."
         ),
     }
 

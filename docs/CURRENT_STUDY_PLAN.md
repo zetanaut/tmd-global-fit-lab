@@ -6,32 +6,24 @@ historical trial specifications and results. The study remains active until
 adequate optimization and controlled architecture comparisons support a choice.
 Completing a job batch or publishing partial results does not complete the study.
 
-## Required historical exact-data closure baseline
+## Required PV17 exact-data baseline
 
-The [historical closure plan](../decisions/2026-09-15-historical-closure-baseline-plan.md)
-adds an independent data-and-fit sanity gate before a likelihood-v2 production
-fit.  PV17 (`arXiv:1703.10157`) is the preferred target because it used 8,059
-points and directly addresses the present data-coverage concern.  The controlled
-sequence first reproduces the historical 11-parameter model on its exact rows,
-then distills those functions into the DNN without looking at data residuals,
-and only then fits the DNN with every historical data/theory/likelihood choice
-held fixed.  Paired grouped holdouts and a preregistered TMD-grid comparison are
-required because a lower in-sample score from a much more flexible model does
-not by itself establish a better extraction.
+The [scope-correction decision](../decisions/2026-09-15-pv17-data-baseline-scope-correction.md)
+defines an independent data-and-current-method sanity baseline before a
+likelihood-v2 production fit.  PV17 (`arXiv:1703.10157`) supplies the exact
+historical data population; its NLL fit is not being reproduced.  The new fit
+uses this project's present N3LL matched theory, covariance machinery and DNN.
 
-The [artifact audit](../analysis/historical-closure-baseline-20260915/README.md)
-finds that public PV17 source, data, grids and official replica parameters are
-available, but not yet as a self-identifying exact final-run bundle.  Its
-executable row subgate now closes 21,951 candidate rows to 8,283 cut-selected
-rows and then to the published 8,059 effective points after excluding 224 fixed
-COMPASS normalization denominators.  The checked-in public input/output remain
-inconsistent with the published global run, so the final card and full-data
-prediction receipt are still required before historical-model replay.  No
-historical DNN fit is currently authorized; H1 itself may use the GPU if the
-theory replay benefits.  MAPTMD22 is the fallback only
-if an exact PV17 identity cannot be recovered and only after its own artifact
-binding closes.  Neither historical prescription changes the frozen 2,290-row
-study or preselects the likelihood-v2 theory/error model.
+The [data audit](../analysis/historical-closure-baseline-20260915/README.md)
+closes 21,951 candidate rows to 8,283 cut-selected rows and then to the published
+8,059 effective observations after excluding 224 fixed COMPASS normalization
+denominators.  The next gate freezes the modern covariance/ratio contract and
+constructs a new operator for those observations.  It then requires independent
+operator, metric, gradient, positivity and CPU/GPU replay checks before a
+sequential RTX 4090 fit with no inherited 192-update cap.  Grouped holdouts and
+a supported-grid comparison with the current 2,290-point result evaluate the
+baseline; PV17's score and TMDs are descriptive context only.  The historical
+final-run configuration and MAPTMD22 fallback are not required for this question.
 
 ## Data-scope and theory-validity diagnostic
 

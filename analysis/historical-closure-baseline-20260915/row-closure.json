@@ -1,13 +1,15 @@
 {
   "counts": {
     "COMPASS_fixed_denominator_constraints": 224,
+    "COMPASS_normalization_group_size_max": 44,
+    "COMPASS_normalization_group_size_min": 19,
     "COMPASS_normalization_spectra_by_hadron": {
       "piminus": 112,
       "piplus": 112
     },
     "candidate_numeric_rows": 21951,
-    "nominal_degrees_of_freedom_after_parameters": 8048,
-    "nominal_free_parameters": 11,
+    "historical_PV17_free_parameters": 11,
+    "historical_PV17_nominal_degrees_of_freedom": 8048,
     "published_effective_points": 8059,
     "published_effective_points_by_experiment": {
       "CDF_RunI": 31,
@@ -40,30 +42,8 @@
     "paper": "arXiv:1703.10157",
     "paper_source_sha256": "1343dc940bbce30d6d5ec443f91f1f8d2181e4e6e4512006c28ea51a0efb2497"
   },
-  "interpretation": {
-    "8059_is_not_the_selected_raw_table_row_count": true,
-    "COMPASS_equation": "6476 selected raw COMPASS rows - 224 spectra = 6252 points",
-    "SIDIS_equation": "7990 selected raw SIDIS rows - 224 COMPASS fixed denominators = 7766 points",
-    "accounting_equation": "8283 selected raw rows - 224 COMPASS fixed denominators = 8059 points"
-  },
-  "invariants": {
-    "COMPASS_fixed_denominators_equal_224": true,
-    "published_effective_points_equal_8059": true,
-    "published_experiment_counts_close": true,
-    "published_process_counts_close": true,
-    "selected_SIDIS_rows_equal_7990": true,
-    "selected_raw_rows_equal_8283": true
-  },
-  "local_manifest": {
-    "contains_third_party_measurements": true,
-    "redistribute_or_commit": false,
-    "rows": 21951,
-    "schema": "canonical JSONL, one candidate numeric source row per line",
-    "sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4"
-  },
-  "next_gate": "Recover and bind the paper-matching final compile card and a full-data prediction/score receipt; do not start DNN optimization yet.",
-  "public_configuration_evidence": {
-    "full_8059_prediction_receipt_identified": false,
+  "historical_fit_configuration_context_not_a_gate": {
+    "full_8059_historical_prediction_receipt_identified": false,
     "key_file_receipts": [
       {
         "bytes": 2899,
@@ -87,8 +67,36 @@
       "checked-in reading.f selects later Compass17 tables rather than PV17 Compass_Multiplicities tables",
       "checked-in ref.txt has the correct effective count but chi2/dof 477.97623960906037"
     ],
-    "paper_matching_final_card_identified": false
+    "paper_matching_final_configuration_identified": false,
+    "required_for_current_data_baseline": false
   },
+  "interpretation": {
+    "8059_is_not_the_selected_raw_table_row_count": true,
+    "COMPASS_equation": "6476 selected raw COMPASS rows - 224 spectra = 6252 points",
+    "SIDIS_equation": "7990 selected raw SIDIS rows - 224 COMPASS fixed denominators = 7766 points",
+    "accounting_equation": "8283 selected raw rows - 224 COMPASS fixed denominators = 8059 points"
+  },
+  "invariants": {
+    "COMPASS_fixed_denominators_equal_224": true,
+    "COMPASS_group_sizes_between_19_and_44": true,
+    "published_effective_points_equal_8059": true,
+    "published_experiment_counts_close": true,
+    "published_process_counts_close": true,
+    "selected_SIDIS_rows_equal_7990": true,
+    "selected_central_values_positive": true,
+    "selected_observation_keys_unique": true,
+    "selected_primary_errors_positive": true,
+    "selected_raw_rows_equal_8283": true,
+    "selected_source_ids_unique": true
+  },
+  "local_manifest": {
+    "contains_third_party_measurements": true,
+    "redistribute_or_commit": false,
+    "rows": 21951,
+    "schema": "canonical JSONL, one candidate numeric source row per line",
+    "sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4"
+  },
+  "next_gate": "Freeze the current N3LL matched-theory, collinear-input, covariance, and COMPASS-ratio contracts for these rows; then construct and independently validate the new operator.",
   "schema_version": "pv17-row-closure-v1",
   "source_data_receipts": {
     "files": [
@@ -205,9 +213,9 @@
     "ordered_path_and_content_digest_sha256": "8d2c70d4dd9c9ed152a16ea2d3f00b77631092e6c60460083c7a248cd7a99542"
   },
   "verdict": {
-    "H1_historical_model_replay": "blocked",
-    "full_H0_provenance_and_final_run_identity": "not_passed",
-    "reason": "The 8059-point accounting now closes exactly, but the public commit does not bind one final paper-matching compile card, parameter receipt, and full prediction receipt.",
-    "row_population_and_COMPASS_normalization_closure": "passed"
+    "current_matched_theory_operator": "not_built",
+    "data_population_and_COMPASS_normalization_closure": "passed",
+    "historical_PV17_fit_reproduction": "out_of_scope",
+    "reason": "The exact PV17 data population is the baseline input. The project will fit it with its current N3LL matched theory, likelihood, and DNN rather than reproduce PV17 NLL."
   }
 }

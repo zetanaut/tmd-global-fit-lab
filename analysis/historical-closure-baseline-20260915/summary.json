@@ -1,12 +1,15 @@
 {
   "audit_date": "2026-09-15",
   "decision": {
-    "historical_closure_required_before_likelihood_v2_gpu_fit": true,
+    "pv17_exact_data_baseline_required_before_likelihood_v2_gpu_fit": true,
     "gpu_authorized_by_this_record": false,
-    "preferred_benchmark": "PV17",
-    "preferred_benchmark_status": "provisional_pending_exact_run_identity",
-    "fallback_benchmark": "MAPTMD22",
-    "pv17_row_population_closure_passed": true
+    "baseline_dataset": "PV17",
+    "baseline_method": "current_project_N3LL_matched_theory_likelihood_and_DNN",
+    "reproduce_historical_PV17_NLL_fit": false,
+    "require_historical_final_run_configuration": false,
+    "require_historical_prediction_receipt": false,
+    "pv17_row_population_closure_passed": true,
+    "scope_correction": "decisions/2026-09-15-pv17-data-baseline-scope-correction.md"
   },
   "pv17": {
     "paper": {
@@ -52,7 +55,7 @@
       "historical_source_and_data_visible": true,
       "exact_final_run_manifest_visible": false,
       "full_8059_prediction_receipt_identified": false,
-      "blocking_findings": [
+      "historical_reproduction_findings_not_data_baseline_blockers": [
         "The public Fortran material was added approximately two years after the paper.",
         "The checked-in input_choices.h selects MMHT2014 and Z-only execution rather than the published GJR08 global fit.",
         "The checked-in ref.txt reaches the published row counts but reports chi2/dof 477.97623960906037.",
@@ -72,13 +75,13 @@
       "COMPASS_normalization_spectra": 224,
       "COMPASS_fixed_denominator_constraints": 224,
       "published_effective_points": 8059,
-      "nominal_degrees_of_freedom_after_11_parameters": 8048,
+      "historical_PV17_nominal_degrees_of_freedom_after_11_parameters": 8048,
       "local_manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4",
       "local_manifest_committed": false,
       "status": "passed_row_population_and_normalization_accounting"
     }
   },
-  "maptmd22_fallback": {
+  "maptmd22_historical_context_not_required_fallback": {
     "paper_arxiv": "2206.07598",
     "results_repository": "https://github.com/MapCollaboration/TMDMAP22-results",
     "results_commit": "58d83af7ecbbec2c15995f39dcf8bf0699e2295d",
@@ -89,38 +92,38 @@
     "reported_retained_replicas": 260,
     "nangaparbat_first_result_upload_commit": "a893180e80bdd3ca858f1245630923599a90812d",
     "nangaparbat_first_result_upload_date": "2022-11-25T18:27:17+01:00",
-    "status": "fallback_pending_exact_code_data_table_report_binding"
+    "status": "out_of_scope_for_PV17_data_baseline"
   },
   "gates": [
     {
-      "id": "H0",
-      "name": "provenance_and_row_closure",
+      "id": "B0",
+      "name": "exact_data_population_and_modern_covariance_contract",
       "requires_gpu": false,
-      "status": "partial_row_closure_passed_final_run_identity_open"
+      "status": "row_population_passed_covariance_contract_open"
     },
     {
-      "id": "H1",
-      "name": "historical_model_replay",
+      "id": "B1",
+      "name": "current_N3LL_matched_operator_construction",
       "requires_gpu": false,
-      "status": "blocked_by_H0"
+      "status": "blocked_by_B0_covariance_contract"
     },
     {
-      "id": "H2",
-      "name": "DNN_representation_closure",
+      "id": "B2",
+      "name": "operator_metric_gradient_and_CPU_GPU_validation",
       "requires_gpu": true,
-      "status": "blocked_by_H1"
+      "status": "blocked_by_B1"
     },
     {
-      "id": "H3",
-      "name": "same_data_paired_DNN_fit",
+      "id": "B3",
+      "name": "current_DNN_baseline_fit",
       "requires_gpu": true,
-      "status": "blocked_by_H2"
+      "status": "blocked_by_B2"
     },
     {
-      "id": "H4",
-      "name": "TMD_and_grouped_predictive_comparison",
+      "id": "B4",
+      "name": "baseline_assessment_grouped_holdouts_and_TMD_stability",
       "requires_gpu": true,
-      "status": "blocked_by_H3"
+      "status": "blocked_by_B3"
     }
   ]
 }
