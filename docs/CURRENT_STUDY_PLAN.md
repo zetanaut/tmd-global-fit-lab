@@ -6,7 +6,23 @@ historical trial specifications and results. The study remains active until
 adequate optimization and controlled architecture comparisons support a choice.
 Completing a job batch or publishing partial results does not complete the study.
 
-## Latest local outcome: width-8 repaired continuation reaches 423
+## Latest local outcome: width-8 second window stops at 658
+
+The [A04 outcome](../decisions/2026-09-15-local-w8-a04-outcome.md) records 235
+new / 658 cumulative accepted updates, q/N 15.91920723937984 and a valid
+finite-positive endpoint. The second two-hour opportunity stopped at a genuine
+32-trial line-search exhaustion while proposing update 659; it did not crash or
+hit a resource limit. Both convergence criteria remain unmet, and the terminal
+raw gradient is explicitly missing because line-search exhaustion preceded the
+reserved raw-gradient call.
+
+The unchanged trajectory was informative but its gain rate deteriorated and its
+last accepted step was below 1e-9. The next default action is a preregistered
+equal-budget optimizer/feasibility comparison from update 658, retaining this
+unit-backtracking state as control. No unchanged automatic continuation is
+authorized.
+
+## Previous local outcome: width-8 repaired continuation reaches 423
 
 The [A03 outcome and saved-only review](../decisions/2026-09-14-local-w8-a03-outcome.md)
 records 171 new / 423 cumulative accepted updates, q/N 16.11080233178303 and an

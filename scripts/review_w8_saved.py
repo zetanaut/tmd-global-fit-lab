@@ -64,7 +64,8 @@ def review(args):
         initial = z['values'].copy()
     with np.load(run/'last.npz', allow_pickle=False) as z:
         final = z['values'].copy()
-        raw, penalized = z['raw_gradient'].copy(), z['penalized_gradient'].copy()
+        raw = z['raw_gradient'].copy() if 'raw_gradient' in z.files else None
+        penalized = z['penalized_gradient'].copy()
     audit = metric.describe(final)
     if abs(audit['q_per_measurement']-record['audit']['q_per_measurement']) > 1e-10:
         raise ValueError('saved audit q mismatch')
@@ -121,9 +122,10 @@ def review(args):
         artifact_sha256=sha(args.archive), verified_archive_files=len(record['files']),
         verified_input_files=len(bundle.index['files']), bundle_identity=bundle.index['identity'],
         snapshots=snapshots, endpoint_audit=audit,
-        terminal_gradients=dict(raw_max=float(np.abs(raw).max()),
+        terminal_gradients=dict(raw_max=None if raw is None else float(np.abs(raw).max()),
             penalized_max=float(np.abs(penalized).max()),
-            barrier_difference_max=float(np.abs(penalized-raw).max())),
+            barrier_difference_max=None if raw is None else float(np.abs(penalized-raw).max()),
+        ),
         complete_32_update_intervals=[{k:d[k] for k in ('interval_counters',
             'interval_elapsed_seconds','interval_q_improvement',
             'interval_q_improvement_per_100_forwards')} for d in reviews],
