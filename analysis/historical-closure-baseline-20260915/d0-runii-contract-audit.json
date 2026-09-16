@@ -1,0 +1,263 @@
+{
+  "closure": {
+    "classification": "not_an_eight_point_operator_coding_gap; physical evaluation and the exact likelihood remain blocked by provider, registry, QED, and covariance inputs",
+    "closed": [
+      "all 23 PV17 source rows match the corrected compile plan",
+      "the eight retained PV17 rows map to source bins 0 through 7",
+      "exact bin numerator and full-support denominator actions are specified",
+      "selected low-qT rows are never renormalized"
+    ],
+    "open": [
+      {
+        "blocker_id": "D0_RUN_2.full_normalized_covariance",
+        "kind": "covariance",
+        "required": "source covariance or validated source-level response representation respecting normalization"
+      },
+      {
+        "blocker_id": "D0_RUN_2.normalized_denominator_provider",
+        "kind": "theory_denominator",
+        "required": "NNLO denominator with identical support QED and provider variations"
+      },
+      {
+        "blocker_id": "D0_RUN_2.qed_conformance",
+        "kind": "qed_particle_level",
+        "required": "dataset-specific publication-to-provider particle-level closure"
+      },
+      {
+        "blocker_id": "D0_RUN_2.provider_and_numerics",
+        "kind": "evaluation",
+        "required": "hash-pinned N3LL+NNLO numerator/denominator providers and converged numerics"
+      },
+      {
+        "blocker_id": "D0_RUN_2.stage0_mass_support_conflict",
+        "kind": "support",
+        "required": "replace 70-110 candidate metadata with primary 40-200 generated support through governed registry update"
+      },
+      {
+        "blocker_id": "D0_RUN_2.unfolding_covariance",
+        "kind": "covariance",
+        "required": "numerical regularized-unfolding covariance including approximately 30-percent adjacent correlations"
+      }
+    ]
+  },
+  "counts": {
+    "PV17_selected_rows": 8,
+    "normalization_dependent_rows_per_numerator": 23,
+    "open_blockers": 6,
+    "source_rows": 23
+  },
+  "dependency_status": {
+    "COV-TEVATRON": {
+      "affects": [
+        "DY:CDF_RUN_1:50",
+        "DY:CDF_RUN_2:82",
+        "DY:D0_RUN_1:26",
+        "DY:D0_RUN_2:23",
+        "DY:D0_RUN_2N:13"
+      ],
+      "exit_criterion": "Each retained spectrum has an approved exact or approximation likelihood with no duplicated nuisance mode.",
+      "fallback": "Use source-identified luminosity/efficiency vectors plus diagonal residual errors only as explicit approximation likelihoods; never label them publication likelihoods.",
+      "id": "COV-TEVATRON",
+      "owner_type": "external_source_recovery_plus_human_policy",
+      "priority": 3,
+      "request": "Recover numerical unfolding/bin-to-bin covariance and reusable particle-level QED conventions for the Tevatron spectra.",
+      "status": "open_high"
+    },
+    "DATA-D0-RUN2-REGISTRY-CONFLICT": {
+      "affects": [
+        "DY:D0_RUN_2:23"
+      ],
+      "exit_criterion": "The corrected registry and normalized numerator/denominator plan rebuild byte-identically and pass a source-level audit.",
+      "fallback": "Keep D0 Run II blocked.",
+      "id": "DATA-D0-RUN2-REGISTRY-CONFLICT",
+      "owner_type": "internal_registry_revision",
+      "priority": 2,
+      "request": "Create a new immutable registry revision replacing the Stage-0 70<Q<110 GeV candidate metadata with the source final-observable 40<Q<200 GeV inclusive-rapidity support; preserve the note-row exclusion and historical value provenance.",
+      "status": "actionable"
+    }
+  },
+  "identity": "f99f2c9dd5ef48423a448f2bb58880b1856566d9f122c10038a8734069479520",
+  "invariants": {
+    "all_23_representative_qT_values_match": true,
+    "all_23_source_central_values_match": true,
+    "all_23_source_error_components_match": true,
+    "all_row_hashes_valid": true,
+    "compile_plan_has_exactly_23_ordered_rows": true,
+    "corrected_source_support_is_40_to_200_GeV": true,
+    "denominator_uses_full_physical_recoil": true,
+    "legacy_stage0_support_is_70_to_110_GeV": true,
+    "normalization_block_hash_valid": true,
+    "pair_rapidity_is_inclusive": true,
+    "plan_hash_valid": true,
+    "plan_manifest_file_hash_matches": true,
+    "plan_manifest_hash_valid": true,
+    "plan_manifest_identity_matches": true,
+    "plan_remains_compile_only": true,
+    "plan_source_manifest_hash_valid": true,
+    "ratio_of_integrals_actions_are_complete": true,
+    "readiness_still_blocks_source_and_covariance": true,
+    "registry_conflict_is_actionable": true,
+    "required_blockers_are_explicit": true,
+    "row_order_hash_valid": true,
+    "selected_rows_are_first_8_source_bins": true,
+    "selected_subset_is_not_renormalized": true,
+    "tevatron_covariance_is_open_high": true
+  },
+  "next_gate": "Revise the immutable D0 Run-II registry to 40<Q<200 GeV inclusive-rapidity support, bind and converge same-family numerator and inclusive NNLO denominator providers with resolved QED conventions, and recover or explicitly approve an approximation to the normalized unfolding covariance before evaluation.",
+  "normalization_contract": {
+    "block_id": "normalization_block:D0_RUN_2",
+    "mass_support_GeV": {
+      "high": 200.0,
+      "low": 40.0
+    },
+    "pair_rapidity": "all_kinematically_allowed",
+    "published_qT_bins_GeV": {
+      "high": 260.0,
+      "low": 0.0
+    },
+    "qT_support": "all_physical_recoil_not_only_published_or_selected_rows",
+    "recompute_for_every_theory_member": true,
+    "renormalize_to_selected_rows": false,
+    "same_provider_family_as_numerators": true,
+    "source_status": "partial_denominator_definition_not_numerically_released"
+  },
+  "readiness_dimensions": {
+    "collinear_inputs": {
+      "reason": "No hash-pinned central NNLO PDF/provider bundle is selected.",
+      "status": "open"
+    },
+    "covariance": {
+      "reason": "Unfolding and normalized-shape correlations are unavailable or unreconciled.",
+      "status": "blocked"
+    },
+    "normalization": {
+      "reason": "Numerator and full-support denominator actions are explicit and selected subsets are never renormalized; the induced covariance constraint remains unclosed.",
+      "status": "candidate"
+    },
+    "observable_adapter": {
+      "reason": "Both normalized spectra compile with exact N_i/(Delta qT D), full-support denominators, and note-row exclusion; D0 Run-2 execution is blocked pending the registry revision.",
+      "status": "candidate"
+    },
+    "perturbative_accuracy": {
+      "reason": "The frozen DY backbone is applicable only after the normalized observable is defined exactly.",
+      "status": "candidate"
+    },
+    "source_identity": {
+      "reason": "The 23-row D0 Run-2 source support is 40<Q<200 GeV and conflicts with the immutable Stage-0 70<Q<110 metadata; D0 Run-2N source identity is candidate but cannot promote the aggregate family.",
+      "status": "blocked"
+    },
+    "theory_responses": {
+      "reason": "Every variation must recompute the numerator and normalization denominator coherently.",
+      "status": "blocked"
+    }
+  },
+  "schema": "pv17-d0-runii-normalized-contract-audit-v1",
+  "scope": {
+    "current_theory_accuracy": "N3LL_unprimed_plus_Born_relative_NNLO_DY",
+    "dataset": "DY:D0_RUN_2",
+    "measurements_written_to_receipt": false,
+    "pair_rapidity": "inclusive_all_rapidity",
+    "prediction_formula": "N_i/(Delta_qT_i*D)",
+    "published_observable": "(1/sigma)*d_sigma/d_qT",
+    "source_mass_support_GeV": {
+      "high": 200.0,
+      "low": 40.0
+    },
+    "stage0_conflicting_mass_support_GeV": {
+      "high": 110.0,
+      "low": 70.0
+    }
+  },
+  "selected_crosswalk": [
+    {
+      "candidate_observation_id": "obs:D0_RUN_2:0",
+      "qT_bin_GeV": {
+        "high_GeV": 2.5,
+        "low_GeV": 0.0
+      },
+      "representative_qT_GeV": 1.1,
+      "selected_index": 8276,
+      "source_row_index": 0
+    },
+    {
+      "candidate_observation_id": "obs:D0_RUN_2:1",
+      "qT_bin_GeV": {
+        "high_GeV": 5.0,
+        "low_GeV": 2.5
+      },
+      "representative_qT_GeV": 4.0,
+      "selected_index": 8277,
+      "source_row_index": 1
+    },
+    {
+      "candidate_observation_id": "obs:D0_RUN_2:2",
+      "qT_bin_GeV": {
+        "high_GeV": 7.5,
+        "low_GeV": 5.0
+      },
+      "representative_qT_GeV": 6.2,
+      "selected_index": 8278,
+      "source_row_index": 2
+    },
+    {
+      "candidate_observation_id": "obs:D0_RUN_2:3",
+      "qT_bin_GeV": {
+        "high_GeV": 10.0,
+        "low_GeV": 7.5
+      },
+      "representative_qT_GeV": 8.7,
+      "selected_index": 8279,
+      "source_row_index": 3
+    },
+    {
+      "candidate_observation_id": "obs:D0_RUN_2:4",
+      "qT_bin_GeV": {
+        "high_GeV": 12.5,
+        "low_GeV": 10.0
+      },
+      "representative_qT_GeV": 11.3,
+      "selected_index": 8280,
+      "source_row_index": 4
+    },
+    {
+      "candidate_observation_id": "obs:D0_RUN_2:5",
+      "qT_bin_GeV": {
+        "high_GeV": 15.0,
+        "low_GeV": 12.5
+      },
+      "representative_qT_GeV": 13.7,
+      "selected_index": 8281,
+      "source_row_index": 5
+    },
+    {
+      "candidate_observation_id": "obs:D0_RUN_2:6",
+      "qT_bin_GeV": {
+        "high_GeV": 17.5,
+        "low_GeV": 15.0
+      },
+      "representative_qT_GeV": 16.2,
+      "selected_index": 8282,
+      "source_row_index": 6
+    },
+    {
+      "candidate_observation_id": "obs:D0_RUN_2:7",
+      "qT_bin_GeV": {
+        "high_GeV": 20.0,
+        "low_GeV": 17.5
+      },
+      "representative_qT_GeV": 18.7,
+      "selected_index": 8283,
+      "source_row_index": 7
+    }
+  ],
+  "source_receipts": {
+    "compile_plan_identity": "00afc7c9036a78dc67b9aaa2a4c50cf5352ba0bdf5a2cbe642711339b1091763",
+    "compile_plan_manifest_sha256": "155f79cae9a2789df5530b15dd4ceb2fdb387b1da5c1600c9e915c6944dfbb8e",
+    "compile_plan_sha256": "719d092ef927c9c8fa3999fc4e1f2547ce7b8062c054c554bc7990925d4e32c9",
+    "dependency_ledger_sha256": "4ad34d460dde386633aa786884de7a7a9b8f9d48b025e5beb46fd8ca3b58aab7",
+    "producer_sha256": "d75b197232cee193d80229bb441209d98ae5cf96807e9fa734550acd7ec0712e",
+    "pv17_manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4",
+    "readiness_contract_sha256": "9d77c93133ec99099c00abc974d2d36e8953872e076e092ba7f754e310940999"
+  },
+  "status": "source_crosswalk_and_compile_actions_closed_physical_evaluation_blocked"
+}

@@ -21,10 +21,13 @@ The operator-preparation phase is now substantially complete, but it exposes
 two real feasibility blockers rather than authorizing a DNN fit.  All 7,990 raw
 SIDIS point operators have been constructed and CPU-replayed, and 285 of the
 293 DY/Z rows reuse current operators with explicit unit adapters.  The eight
-D0 Run-II rows require a normalized fiducial numerator/denominator calculation
-on corrected source support.  Separately, the transferred width-8 endpoint
-predicts 16 nonpositive HERMES `K-` multiplicities.  The next action is a
-targeted theory diagnostic, not GPU optimization.
+D0 Run-II rows map exactly to the first eight bins of a corrected 23-row
+normalized-observable compile plan, but its physical full-support denominator,
+provider binding and covariance remain open.  Separately, the transferred
+width-8 endpoint predicts 16 nonpositive HERMES `K-` multiplicities.  A
+completed component audit reproduces that sign failure under refined
+quadrature and a narrow-bin limit.  The next action is theory/provider closure,
+not GPU optimization.
 
 ## Published PV17 targets and row accounting
 
@@ -180,6 +183,31 @@ rows, evenly between proton and deuteron targets.  COMPASS and the other three
 hadron channels remain positive.  See the hash-bound
 [endpoint-feasibility receipt](sidis-endpoint-feasibility.json).
 
+The follow-up [K-minus sign diagnostic](hermes-kminus-sign-diagnostic.json)
+finds 19 rows in the union implicated by the fixed contribution, Gaussian
+control or transferred endpoint.  In 17 rows, the switched `ASY` contribution
+is larger than `FO_T + FO_L`, so the matched fixed contribution is negative.
+The direct component sum reproduces the stored operators to `4.45e-16`; all
+signs survive doubled quadrature order, a wider Fourier range and a shrunk-bin
+limit whose largest prediction shift is `5.46e-5` relative.  All 53,760 signed
+channels obey the implemented `K-` charge-conjugation and proton/deuteron
+isospin maps, although that algebraic check does not validate the physical FF
+choice.  The implicated union contains eight full-additive and 11 transition
+rows, with ten proton and nine deuteron targets.  This rules out serialization,
+coarse quadrature and a simple flavor-map coding error; it localizes the open
+question to the point-observable regional matching and kaon collinear-input
+validity in this corner.
+
+The [D0 Run-II contract audit](d0-runii-contract-audit.json) independently
+matches all 23 PV17 source rows to the corrected compile plan and maps the eight
+retained rows to bins 0--7.  Each numerator is an exact bin integral and uses
+the same 23-row dependency set for the published `N_i/(Delta qT_i D)`
+observable; the low-`qT` fit subset is never renormalized.  This is therefore
+not an eight-point quotient-coding gap.  Evaluation remains blocked by the
+governed `40 < Q < 200 GeV` registry revision, a hash-bound numerator/inclusive
+NNLO-denominator provider with settled QED conventions, and the unreleased or
+explicitly approximated normalized unfolding covariance.
+
 This local executable SIDIS path is the conditional regional implementation:
 unprimed N3LL W plus NLO positive recoil and an NLO inclusive-DIS denominator.
 It is marked heavy-threshold-incomplete and `production_authorized=false`; the
@@ -219,9 +247,10 @@ The 224 denominators define the transformation and covariance but are not
 additional scored observations.
 
 **Current result:** all 7,990 SIDIS operators are built and replayed; 285 DY/Z
-operators are reusable.  The eight D0 Run-II observations cannot be completed
-until the source-corrected normalized numerator/denominator implementation is
-reviewed.  No fabricated absolute D0 operator is permitted.
+operators are reusable.  The D0 source crosswalk and ratio-of-integrals compile
+actions close, but the eight retained observations cannot be evaluated until
+the registry, physical provider/QED and covariance gates close.  No fabricated
+absolute or display-point D0 operator is permitted.
 
 ### B2 — operator and metric validation (blocked before GPU replay)
 
@@ -271,20 +300,19 @@ metric require their own versioned contracts before fitting.
 
 ## Scientifically sound next move
 
-1. For the 18 HERMES `K-` rows implicated by either the fixed matched
-   contribution or a control/endpoint sign change, expose `FO_T`, `FO_L`,
-   switched `ASY`, and W contributions row by row.  Independently check the
-   charged-kaon FF/flavor map, charge conjugation, proton/deuteron isospin,
-   active-flavor thresholds, and point-versus-narrow-bin replay.
-2. Determine whether the sign problem is an implementation defect, an invalid
-   regional-theory use, or a genuine limitation of this additive
-   matching/collinear-input combination.  Require positivity for controlled
-   Gaussian and trained-boundary probes; do not tune the DNN against the data
-   until this theory-only test passes.
-3. In parallel, implement and independently review the D0 Run-II normalized
-   numerator and full fiducial denominator on `40 < Q < 200 GeV` support.  Only
-   then bind a feasible `t0`, assemble the ordered 8,059-observation operator,
-   and run the preregistered CPU/GPU metric and gradient gates.
+1. Review the HERMES `K-` point-observable theory in the 19-row implicated
+   corner: compare the present average-point additive match with a qualified
+   exact-bin implementation and challenge the kaon collinear input.  Require a
+   source-backed positive central prediction; do not tune the DNN to compensate
+   for the `ASY > FO_T + FO_L` cancellation.
+2. Complete the governed D0 registry revision to `40 < Q < 200 GeV`, then bind
+   and converge the same-family N3LL+NNLO numerator and inclusive NNLO
+   denominator with explicit QED conventions.  Recover the normalized
+   unfolding covariance or approve a clearly labeled approximation likelihood;
+   diagonal published errors are not the exact likelihood.
+3. Only after both central-theory gates close, bind a feasible `t0`, assemble
+   the ordered 8,059-observation operator, and run the preregistered CPU/GPU
+   metric, gradient and positivity checks before optimization.
 
 An out-of-domain/theory-error response may still be added as a labeled
 covariance component where justified.  It does not make a negative central

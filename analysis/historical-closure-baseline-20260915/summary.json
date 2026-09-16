@@ -1,5 +1,6 @@
 {
   "audit_date": "2026-09-15",
+  "last_updated": "2026-09-16",
   "decision": {
     "pv17_exact_data_baseline_required_before_likelihood_v2_gpu_fit": true,
     "gpu_authorized_by_this_record": false,
@@ -12,8 +13,8 @@
     "pv17_SIDIS_operator_construction_passed": true,
     "pv17_full_fit_authorized": false,
     "blocking_reasons": [
-      "16 nonpositive HERMES K- predictions at the transferred width-8 endpoint",
-      "D0 Run-II normalized 40<Q<200 fiducial numerator/denominator contract is not implemented"
+      "16 nonpositive HERMES K- predictions at the transferred width-8 endpoint; the 19-row diagnostic localizes a numerically stable central matching cancellation",
+      "D0 Run-II source crosswalk and compile actions close, but the 40<Q<200 physical denominator/provider, QED convention and normalized covariance remain unbound"
     ],
     "scope_correction": "decisions/2026-09-15-pv17-data-baseline-scope-correction.md"
   },
@@ -154,6 +155,31 @@
         },
         "Gaussian_endpoint_overlap": 15,
         "status": "blocked_nonpositive_HERMES_Kminus_predictions"
+      },
+      "HERMES_Kminus_sign_diagnostic": {
+        "receipt": "analysis/historical-closure-baseline-20260915/hermes-kminus-sign-diagnostic.json",
+        "identity": "2fdbb4e8f427d65820666c9b3ec7810840ac175365a35586faedd044cca98d2f",
+        "implicated_union_rows": 19,
+        "fixed_nonpositive_rows": 17,
+        "Gaussian_nonpositive_rows": 16,
+        "endpoint_nonpositive_rows": 16,
+        "ASY_exceeds_FO_T_plus_FO_L_rows": 17,
+        "signed_channels_checked": 53760,
+        "max_refined_total_change_abs": 1.301518059992901e-06,
+        "max_narrow_bin_relative_difference": 5.458952801939063e-05,
+        "classification": "not_operator_serialization_or_coarse_quadrature",
+        "status": "central_theory_matching_sign_failure_numerically_reproduced"
+      },
+      "D0_RunII_contract_audit": {
+        "receipt": "analysis/historical-closure-baseline-20260915/d0-runii-contract-audit.json",
+        "identity": "f99f2c9dd5ef48423a448f2bb58880b1856566d9f122c10038a8734069479520",
+        "source_rows": 23,
+        "PV17_selected_rows": 8,
+        "selected_source_bins": "0--7",
+        "prediction_formula": "N_i/(Delta_qT_i*D)",
+        "source_mass_support_GeV": [40, 200],
+        "open_blockers": 6,
+        "status": "source_crosswalk_and_compile_actions_closed_physical_evaluation_blocked"
       }
     }
   },
@@ -187,7 +213,7 @@
       "id": "B2",
       "name": "operator_metric_gradient_and_CPU_GPU_validation",
       "requires_gpu": true,
-      "status": "blocked_by_16_nonpositive_HERMES_Kminus_predictions_and_D0_contract"
+      "status": "blocked_by_reproduced_HERMES_Kminus_central_matching_failure_and_unbound_D0_physical_evaluation"
     },
     {
       "id": "B3",

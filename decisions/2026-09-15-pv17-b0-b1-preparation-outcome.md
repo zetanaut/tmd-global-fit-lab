@@ -1,17 +1,21 @@
 # PV17 current-method B0/B1 preparation outcome
 
 Date: 15 September 2026
+Updated: 16 September 2026
 
 ## Decision
 
 Do not launch the 8,059-observation GPU fit yet.  The exact-data population,
 static metric layer and complete SIDIS point-operator construction now exist,
 but current-theory feasibility fails in one localized channel and the D0
-Run-II normalized observable is not yet defined by a source-correct operator.
+Run-II normalized observable cannot yet be physically evaluated with a
+source-correct operator and exact likelihood.
 
-The next work is a targeted HERMES `K-` theory diagnostic plus an independent
-D0 normalized numerator/denominator implementation.  More optimization of the
-existing DNN is not a substitute for either requirement.
+The targeted HERMES `K-` diagnostic and independent D0 contract audit are now
+complete.  They localize, rather than remove, both blockers: the kaon failure is
+a stable central matching cancellation, while D0 has exact compile actions but
+no bound physical denominator/provider or normalized covariance.  More
+optimization of the existing DNN is not a substitute for either requirement.
 
 ## What closed
 
@@ -35,7 +39,9 @@ The primary machine-readable records are the
 [domain](../analysis/historical-closure-baseline-20260915/sidis-domain.json),
 [pilot](../analysis/historical-closure-baseline-20260915/sidis-point-pilot-v2.json),
 [SIDIS campaign](../analysis/historical-closure-baseline-20260915/sidis-point-operators.json),
-and [endpoint feasibility](../analysis/historical-closure-baseline-20260915/sidis-endpoint-feasibility.json)
+and [endpoint feasibility](../analysis/historical-closure-baseline-20260915/sidis-endpoint-feasibility.json),
+[K-minus sign diagnostic](../analysis/historical-closure-baseline-20260915/hermes-kminus-sign-diagnostic.json),
+and [D0 contract audit](../analysis/historical-closure-baseline-20260915/d0-runii-contract-audit.json)
 receipts.
 
 ## Blocker 1: HERMES negative-kaon feasibility
@@ -53,8 +59,17 @@ operator replay agree at machine precision, and the failure persists under a
 trained boundary.  Seventeen HERMES `K-` rows already have a nonpositive stored
 matched fixed contribution (`FO - switched ASY`, including the longitudinal
 piece); the W term can rescue some but not all and can change which marginal
-row fails.  That pattern makes a component/flavor/matching audit mandatory
-before data fitting.
+row fails.
+
+The completed component audit covers the 19-row union implicated by the fixed,
+Gaussian or endpoint results.  In 17, switched `ASY` exceeds `FO_T + FO_L`.
+Direct component reconstruction closes to `4.45e-16`, the sign pattern is
+unchanged under refined quadrature and a narrow-bin limit, and all 53,760 signed
+channels follow the encoded charged-kaon/isospin map.  The union is eight
+full-additive plus 11 transition rows and ten proton plus nine deuteron rows.
+This excludes serialization, coarse integration and a simple map coding error;
+the open review is the scientific validity of this point-observable matching
+and kaon collinear input in the affected corner.
 
 The transferred endpoint was trained on the existing 2,290-observation
 likelihood.  Its replay is a feasibility probe, not a PV17 fit or a statement
@@ -70,18 +85,22 @@ shape with a theory-derived `255.8 pb` factor.  Neither is the required current
 observable.  Metric v2 therefore keeps the raw normalized data and deliberately
 leaves these rows blocked rather than manufacturing absolute operators.
 
+The completed contract audit matches all 23 source rows and maps the retained
+eight to bins 0--7.  The exact-bin numerator actions, full-support denominator
+dependency and no-subset-renormalization rule are already specified.  The gap
+is physical execution and likelihood closure: the governed registry revision,
+hash-bound numerator/inclusive-NNLO-denominator provider, QED convention and
+normalized unfolding covariance are still missing.
+
 ## Required next gates
 
-1. On every implicated HERMES `K-` point, expose `FO_T`, `FO_L`, switched
-   `ASY`, Gaussian W and trained-endpoint W separately.  Independently check
-   charged-kaon FF/flavor mapping, charge conjugation, target isospin,
-   threshold selection and point-versus-shrunk-bin agreement.
-2. Classify the sign failure as an implementation defect, an invalid use of the
-   regional theory, or a limitation of the additive matching/collinear inputs.
-   Require finite positive predictions under controlled theory-only probes.
-3. Implement and review the D0 normalized numerator and fiducial denominator,
-   then bind a feasible current-theory `t0`.
-4. Only after 1--3 pass, assemble the ordered 8,059-row prediction and run
+1. Compare the implicated HERMES `K-` corner with a qualified exact-bin
+   implementation and challenge the kaon collinear input; require a
+   source-backed positive central observable before fitting.
+2. Revise the D0 registry to the source `40 < Q < 200 GeV` support, bind and
+   converge the numerator/denominator provider with explicit QED conventions,
+   and recover or approve an approximation to the normalized covariance.
+3. Only after 1--2 pass, assemble the ordered 8,059-row prediction and run
    transformed-observable, covariance-action, gradient, positivity and CPU/GPU
    replay checks.  A sequential single-RTX-4090 fit may then be preregistered
    with a time/convergence-controlled update policy, not the obsolete 192 cap.
