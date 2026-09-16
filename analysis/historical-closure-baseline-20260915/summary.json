@@ -170,6 +170,19 @@
         "classification": "not_operator_serialization_or_coarse_quadrature",
         "status": "central_theory_matching_sign_failure_numerically_reproduced"
       },
+      "alternative_kaon_ff_benchmark": {
+        "foundation_status": "bounded conditional comparison complete; physics audit before next pilot",
+        "families": ["NNFF10_nnlo", "HAPS_KaFF10_nnlo"],
+        "tested_source_rows": [188, 203, 204, 225, 210],
+        "tested_problematic_Kminus_rows_positive_with_HAPS": 3,
+        "matching_branches": 2,
+        "NP_controls": 2,
+        "global_chi2_recomputed": false,
+        "production_selected": false,
+        "interpretation": "localized sign obstruction is input-dependent and potentially resolvable; extend to all 19 PV17-implicated rows",
+        "foundation_report": "reports/ALTERNATIVE_KAON_FF_BENCHMARK_2026-09-10.md",
+        "foundation_status_file": "config/alternative_kaon_ff_status_v1.json"
+      },
       "D0_RunII_contract_audit": {
         "receipt": "analysis/historical-closure-baseline-20260915/d0-runii-contract-audit.json",
         "identity": "f99f2c9dd5ef48423a448f2bb58880b1856566d9f122c10038a8734069479520",

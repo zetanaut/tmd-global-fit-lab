@@ -198,6 +198,19 @@ coarse quadrature and a simple flavor-map coding error; it localizes the open
 question to the point-observable regional matching and kaon collinear-input
 validity in this corner.
 
+There is a promising conditional resolution already in the read-only
+foundation.  Its independent NNLO central-input benchmark replaced NNFF10 by
+HAPS-KaFF10 consistently in W, ASY and FO.  In three predeclared problematic
+K⁻ bins (foundation source rows 188, 203 and 204), both declared matching
+branches and both Gaussian/frozen-NP controls became positive; the PDF, DIS
+denominator, geometry and DNN state were unchanged.  This proves the sign is
+input-dependent and therefore potentially resolvable.  It does not select HAPS:
+the benchmark covered only five source rows, did not refit the model, did not
+recompute a global score, and HAPS is SIDIS-informed, so its independence from
+our HERMES data is not established.  See the foundation's
+`reports/ALTERNATIVE_KAON_FF_BENCHMARK_2026-09-10.md` and
+`config/alternative_kaon_ff_status_v1.json`.
+
 The [D0 Run-II contract audit](d0-runii-contract-audit.json) independently
 matches all 23 PV17 source rows to the corrected compile plan and maps the eight
 retained rows to bins 0--7.  Each numerator is an exact bin integral and uses
@@ -300,11 +313,11 @@ metric require their own versioned contracts before fitting.
 
 ## Scientifically sound next move
 
-1. Review the HERMES `K-` point-observable theory in the 19-row implicated
-   corner: compare the present average-point additive match with a qualified
-   exact-bin implementation and challenge the kaon collinear input.  Require a
-   source-backed positive central prediction; do not tune the DNN to compensate
-   for the `ASY > FO_T + FO_L` cancellation.
+1. Extend the demonstrated HAPS-vs-NNFF comparison coherently to all 19
+   implicated PV17 K⁻ rows, retaining NNFF10 as a sensitivity reference.  If
+   positivity closes, compare the average-point result with a qualified
+   exact-bin implementation.  Do not tune the DNN to compensate for the
+   `ASY > FO_T + FO_L` cancellation.
 2. Complete the governed D0 registry revision to `40 < Q < 200 GeV`, then bind
    and converge the same-family N3LL+NNLO numerator and inclusive NNLO
    denominator with explicit QED conventions.  Recover the normalized

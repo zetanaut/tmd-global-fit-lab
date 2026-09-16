@@ -27,6 +27,12 @@ bins of the corrected 23-row contract, but physical evaluation still lacks the
 bound full-support denominator/provider and normalized covariance.  See the
 [B0/B1 outcome](decisions/2026-09-15-pv17-b0-b1-preparation-outcome.md).
 
+The underlying foundation also contains a bounded NNLO kaon-FF comparison:
+central HAPS-KaFF10 makes the full matched prediction positive in three tested
+K⁻ bins where central NNFF10 is negative.  This is evidence for an
+input-dependent, potentially resolvable obstruction—not yet a selection of HAPS
+or a 19-row PV17 result.
+
 ## Scientific purpose
 
 Extract incoming TMDPDF boundaries, outgoing TMDFF boundaries, and a universal

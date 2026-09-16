@@ -44,6 +44,13 @@ and [endpoint feasibility](../analysis/historical-closure-baseline-20260915/sidi
 and [D0 contract audit](../analysis/historical-closure-baseline-20260915/d0-runii-contract-audit.json)
 receipts.
 
+An earlier read-only foundation benchmark provides a plausible resolution path:
+central HAPS-KaFF10, substituted coherently in W/ASY/FO, gives positive full
+matched predictions in the three tested problematic K⁻ bins (under both
+matching branches and both NP controls), while NNFF10 remains negative.  This
+is a conditional input-sensitivity result, not a production FF choice or a
+global-fit result; it must be extended to the 19 PV17-implied rows.
+
 ## Blocker 1: HERMES negative-kaon feasibility
 
 The Gaussian control produces 16 nonpositive HERMES `K-` multiplicities.  The
@@ -94,9 +101,10 @@ normalized unfolding covariance are still missing.
 
 ## Required next gates
 
-1. Compare the implicated HERMES `K-` corner with a qualified exact-bin
-   implementation and challenge the kaon collinear input; require a
-   source-backed positive central observable before fitting.
+1. Extend the HAPS-vs-NNFF comparison coherently to all 19 implicated HERMES
+   `K-` rows, retaining NNFF10 as a sensitivity reference.  Require a
+   source-backed positive central observable before fitting, then perform the
+   qualified exact-bin comparison.
 2. Revise the D0 registry to the source `40 < Q < 200 GeV` support, bind and
    converge the numerator/denominator provider with explicit QED conventions,
    and recover or approve an approximation to the normalized covariance.
