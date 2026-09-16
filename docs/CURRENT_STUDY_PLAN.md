@@ -6,6 +6,59 @@ historical trial specifications and results. The study remains active until
 adequate optimization and controlled architecture comparisons support a choice.
 Completing a job batch or publishing partial results does not complete the study.
 
+## Required PV17 exact-data baseline
+
+The [scope-correction decision](../decisions/2026-09-15-pv17-data-baseline-scope-correction.md)
+defines an independent data-and-current-method sanity baseline before a
+likelihood-v2 production fit.  PV17 (`arXiv:1703.10157`) supplies the exact
+historical data population; its NLL fit is not being reproduced.  The new fit
+uses this project's present N3LL matched theory, covariance machinery and DNN.
+
+The [data audit](../analysis/historical-closure-baseline-20260915/README.md)
+closes 21,951 candidate rows to 8,283 cut-selected rows and then to the published
+8,059 effective observations after excluding 224 fixed COMPASS normalization
+denominators.  The static metric now retains the 224 shared-denominator
+responses and seven DY/Z `t0` normalization patterns.  All 7,990 raw SIDIS
+point operators are built and CPU-replayed in 232 hash-bound shards, and 285
+current DY/Z operators are reusable.
+
+That construction does **not** authorize the GPU fit.  The transferred
+width-8 update-658 endpoint produces 16 nonpositive HERMES `K-` predictions
+(seven full-additive and nine transition rows), while the eight normalized D0
+Run-II rows still require a source-corrected numerator/full-fiducial-denominator
+contract on `40 < Q < 200 GeV` support.  The old PV17 `255.8 pb` theory
+conversion and the inherited `70 < Q < 110 GeV` card are both excluded.
+
+The immediate work is therefore a theory-only decomposition and flavor/FF/
+matching audit of the implicated HERMES `K-` rows, in parallel with the D0
+normalized-observable implementation.  Only after both pass do we assemble the
+ordered 8,059-row prediction, bind a feasible `t0`, and run independent metric,
+gradient, positivity and CPU/GPU replay gates.  A later sequential RTX 4090 fit
+will have no inherited 192-update cap.  Grouped holdouts and a supported-grid
+comparison with the current 2,290-point result evaluate that baseline; PV17's
+score and TMDs remain descriptive context only.  The historical final-run
+configuration and MAPTMD22 fallback are not required for this question.
+
+## Data-scope and theory-validity diagnostic
+
+The [full COMPASS source reevaluation](../analysis/full-dataset-reevaluation-20260915/README.md)
+audits all 4,664 primary rows in the official 162-table release and saved-only
+rescoring of the width-8 update-658 endpoint.  Under conservative rectangular
+support bounds, the current 1,203-row likelihood already contains every public
+COMPASS bin wholly at or below `qT/Q=0.30`; the 3,461 additions comprise 171
+mixed-support and 3,290 wholly fixed-order-role rows, with no pure-core rows.
+
+The fixed endpoint's COMPASS quadratic form is dominated by its 278
+fixed-order-role rows.  A direct transfer of the factorization-error law in
+arXiv:2608.27907 collapses COMPASS's independent variance weight rather than
+validating the central theory, and correlated versus diagonal constructions
+give materially different results.  Therefore the proposed scientific next
+step is a separately versioned likelihood study with exact constrained support
+and preregistered theory-response covariance, not an automatic continuation or
+a blind 4,664-row expansion.  This diagnostic changes no frozen input, metric,
+trial, result, or production selection; likelihood-v2 remains unapproved until
+its source, operator, covariance, and decision contracts are reviewed.
+
 ## Latest local outcome: width-8 second window stops at 658
 
 The [A04 outcome](../decisions/2026-09-15-local-w8-a04-outcome.md) records 235

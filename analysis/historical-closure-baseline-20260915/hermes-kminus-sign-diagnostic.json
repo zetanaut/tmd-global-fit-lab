@@ -1,0 +1,1294 @@
+{
+  "counts": {
+    "ASY_exceeds_FO_T_plus_FO_L": 17,
+    "Gaussian_endpoint_overlap": 15,
+    "Gaussian_nonpositive": 16,
+    "HERMES_Kminus_population": 376,
+    "by_matching_role": {
+      "full_additive": 8,
+      "transition": 11
+    },
+    "by_target": {
+      "deuteron": 9,
+      "proton": 10
+    },
+    "endpoint_nonpositive": 16,
+    "fixed_nonpositive": 17,
+    "implicated_union": 19,
+    "signed_channels_checked": 53760
+  },
+  "flavor_map": {
+    "Kminus_rule": "outgoing K+ reference with charge-conjugated struck PID",
+    "deuteron_rule": "equal proton/neutron components; u<->d on incoming proton reference",
+    "identity": "a99968ce48e14aa9c42b0850f269df5d3b762ebcdfd57960c5d428c6f354bfee",
+    "interpretation": "exact implementation map passes; this does not validate the physical FF choice"
+  },
+  "identity": "2fdbb4e8f427d65820666c9b3ec7810840ac175365a35586faedd044cca98d2f",
+  "interpretation": {
+    "classification": "not_operator_serialization_or_coarse_quadrature",
+    "finding": "The switched ASY term exceeds FO_T+FO_L in 17 rows. The signed Fourier-Bessel W term changes which marginal rows are rescued, but the transferred endpoint leaves 16 nonpositive predictions.",
+    "legacy_kaon_pilot_scope": "The earlier integrated fixed-nf4 kaon pilot verifies charge conjugation and target maps but explicitly has full_numerical_qualification=false and is not closure for these average-point regional predictions.",
+    "production_authorized": false
+  },
+  "invariants": {
+    "all_implicated_rows_nf4": true,
+    "all_implicated_rows_transition_or_full_additive": true,
+    "all_signed_channels_follow_Kminus_charge_conjugation_and_target_map": true,
+    "all_signs_stable_under_refinement_and_narrow_bin_limit": true,
+    "direct_components_recover_stored_controls": true,
+    "exact_15_Gaussian_endpoint_overlap": true,
+    "exact_16_Gaussian_nonpositive": true,
+    "exact_16_endpoint_nonpositive": true,
+    "exact_17_ASY_over_FO_cancellations": true,
+    "exact_17_fixed_nonpositive": true,
+    "exact_19_implicated_rows": true,
+    "foundation_build_inventory_unchanged": true
+  },
+  "next_gate": "Review whether the point-observable additive matching and current kaon collinear input are scientifically valid in this high-x low-PhT corner. Do not fit or hide the failure with covariance inflation.",
+  "numerical_maxima": {
+    "baseline_W_rule_refinement_abs_per_dqT2": 5.4934807258710805e-09,
+    "direct_component_to_stored_Gaussian_abs": 4.440892098500626e-16,
+    "direct_component_to_stored_fixed_abs": 2.220446049250313e-16,
+    "narrow_bin_component_relative_difference": 9.607496360616632e-07,
+    "narrow_bin_relative_difference": 5.458952801939063e-05,
+    "refined_total_change_abs": 1.301518059992901e-06
+  },
+  "records": [
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.003027699115087159,
+        "-2": 0.06136681087077947,
+        "-3": -0.0009841558053354557,
+        "-4": -0.00021978644519559157,
+        "1": -0.011251456463558287,
+        "2": -0.07762149074664457,
+        "3": 0.011250628412520194,
+        "4": -0.00021811472493124792
+      },
+      "Gaussian_total_from_components": -0.10975423009204051,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 2.4983773444559225e-10,
+      "fixed_from_components": -0.0890489660745879,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 9.607496360616632e-07,
+      "narrow_bin_relative_difference": 1.1340047712700823e-05,
+      "narrow_bin_total": -0.10975547471024633,
+      "observable_components": {
+        "FO_L": 0.05961299010603993,
+        "FO_T": 1.1958691450521253,
+        "W": -0.02070526401745261,
+        "minus_switched_ASY": -1.3445311012327532
+      },
+      "qT_over_Q": 0.1777479710908399,
+      "refined_components": {
+        "FO_L": 0.05961296825876341,
+        "FO_T": 1.1958678653761663,
+        "W": -0.020705264012277014,
+        "minus_switched_ASY": -1.3445311012327532
+      },
+      "refined_minus_baseline": -1.301518059992901e-06,
+      "refined_total": -0.1097555316101004,
+      "selected_index": 84,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.10975423009204043,
+      "stored_fixed": -0.08904896607458782,
+      "target": "proton",
+      "transferred_endpoint": -0.09876122410698183,
+      "transferred_endpoint_W": -0.00971225803239402,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -0.0001504867357291988,
+        "-2": 0.034461796130504305,
+        "-3": -7.839260111300238e-05,
+        "-4": -1.1936482981089995e-05,
+        "1": -0.03164181800031866,
+        "2": -0.07439363843499068,
+        "3": 0.06280824118842854,
+        "4": -0.0007060230961941565
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.013533130641452073,
+        "-2": 0.15237751384794299,
+        "-3": -0.003528674709828284,
+        "-4": -0.0007095254582194693,
+        "1": -0.1080360442787748,
+        "2": -0.9048321391290202,
+        "3": 0.029505100488855417,
+        "4": -0.0007040228817426923
+      },
+      "Gaussian_total_from_components": -1.3461688115854629,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 3.0350044706006256e-10,
+      "fixed_from_components": -0.49670788882322325,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 6.134119535392268e-07,
+      "narrow_bin_relative_difference": 3.820151336181662e-07,
+      "narrow_bin_total": -1.3461693258423213,
+      "observable_components": {
+        "FO_L": 0.04336049289410046,
+        "FO_T": 0.8365238532092265,
+        "W": -0.8494609227622397,
+        "minus_switched_ASY": -1.3765922349265503
+      },
+      "qT_over_Q": 0.20222515583179806,
+      "refined_components": {
+        "FO_L": 0.04336049192409087,
+        "FO_T": 0.8365233055277697,
+        "W": -0.8494609215246735,
+        "minus_switched_ASY": -1.3765922349265503
+      },
+      "refined_minus_baseline": -5.474139004313372e-07,
+      "refined_total": -1.3461693589993633,
+      "selected_index": 108,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -1.3461688115854624,
+      "stored_fixed": -0.49670788882322325,
+      "target": "proton",
+      "transferred_endpoint": -0.6906818595440134,
+      "transferred_endpoint_W": -0.19397397072079015,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -0.0005627606805912184,
+        "-2": 0.012525491583542075,
+        "-3": -0.0001854941770410709,
+        "-4": -9.473153329897302e-06,
+        "1": -0.08319003938346083,
+        "2": -0.21540241762046206,
+        "3": 0.09448549427309891,
+        "4": -0.0016347715625461019
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.005965584887806095,
+        "-2": 0.08935115249017496,
+        "-3": -0.0015582699989362733,
+        "-4": -0.00029701955189048496,
+        "1": -0.047514250467142236,
+        "2": -0.39767065414711067,
+        "3": 0.017308798582492232,
+        "4": -0.0002947733134448353
+      },
+      "Gaussian_total_from_components": -0.7207193935857115,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 8.450908666975949e-10,
+      "fixed_from_components": -0.374078792292048,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 5.086913907156776e-07,
+      "narrow_bin_relative_difference": 5.515993325707205e-07,
+      "narrow_bin_total": -0.7207197911340479,
+      "observable_components": {
+        "FO_L": 0.028631535203439997,
+        "FO_T": 0.771706706717368,
+        "W": -0.3466406012936635,
+        "minus_switched_ASY": -1.174417034212856
+      },
+      "qT_over_Q": 0.16475429138958575,
+      "refined_components": {
+        "FO_L": 0.028631531248206058,
+        "FO_T": 0.7717062551572369,
+        "W": -0.3466406004255144,
+        "minus_switched_ASY": -1.174417034212856
+      },
+      "refined_minus_baseline": -4.546472158750703e-07,
+      "refined_total": -0.7207198482329273,
+      "selected_index": 114,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.7207193935857115,
+      "stored_fixed": -0.374078792292048,
+      "target": "proton",
+      "transferred_endpoint": -0.5448388981847453,
+      "transferred_endpoint_W": -0.1707601058926973,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -0.0002128765645047303,
+        "-2": 0.009659669292956134,
+        "-3": -7.595208724841595e-05,
+        "-4": -2.475675292568407e-06,
+        "1": -0.06692534615632673,
+        "2": -0.1835617693073246,
+        "3": 0.07137807902375419,
+        "4": -0.0010194344187106528
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.0014038310872748407,
+        "-2": 0.03765492895749346,
+        "-3": -0.0003720015795189461,
+        "-4": -9.080526035943122e-05,
+        "1": -0.01107626253681514,
+        "2": -0.09251468022757402,
+        "3": 0.0072964563744635546,
+        "4": -9.018057178267952e-05
+      },
+      "Gaussian_total_from_components": -0.20588191543343237,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 1.8973405208067007e-09,
+      "fixed_from_components": -0.14528553950206435,
+      "matching_role": "full_additive",
+      "narrow_bin_component_max_relative_difference": 3.0230553108044817e-07,
+      "narrow_bin_relative_difference": 1.8348896375911096e-06,
+      "narrow_bin_total": -0.2058822932040254,
+      "observable_components": {
+        "FO_L": 0.022447918484416487,
+        "FO_T": 0.9057631356819353,
+        "W": -0.06059637593136801,
+        "minus_switched_ASY": -1.0734965936684162
+      },
+      "qT_over_Q": 0.13136044554604576,
+      "refined_components": {
+        "FO_L": 0.022447914887202273,
+        "FO_T": 0.9057627664318963,
+        "W": -0.060596375741872,
+        "minus_switched_ASY": -1.0734965936684162
+      },
+      "refined_minus_baseline": -3.7265775729156125e-07,
+      "refined_total": -0.2058822880911895,
+      "selected_index": 121,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.20588191543343226,
+      "stored_fixed": -0.14528553950206427,
+      "target": "proton",
+      "transferred_endpoint": -0.16817780973491228,
+      "transferred_endpoint_W": -0.02289227023284801,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -3.324466684189581e-05,
+        "-2": 0.0044757813930970565,
+        "-3": -1.3453906562721055e-05,
+        "-4": 9.472335978811161e-07,
+        "1": -0.018298202855707133,
+        "2": -0.043934963645906065,
+        "3": 0.035282697987835225,
+        "4": -0.0003718317723604432
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.002269670610620307,
+        "-2": 0.0635331712519402,
+        "-3": 0.0005017024469439533,
+        "-4": -0.0004327455211629291,
+        "1": -0.10640839472486606,
+        "2": -1.1834305578397386,
+        "3": 0.009603659943132037,
+        "4": -0.0004308791669681192
+      },
+      "Gaussian_total_from_components": -1.916714741495777,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 5.4934807258710805e-09,
+      "fixed_from_components": -0.6973810272744374,
+      "matching_role": "full_additive",
+      "narrow_bin_component_max_relative_difference": 3.6588189998939335e-07,
+      "narrow_bin_relative_difference": 1.8324617630948556e-07,
+      "narrow_bin_total": -1.9167150927264245,
+      "observable_components": {
+        "FO_L": 0.011601660999863855,
+        "FO_T": 0.6244505843807174,
+        "W": -1.2193337142213396,
+        "minus_switched_ASY": -1.3334332726550187
+      },
+      "qT_over_Q": 0.12421273053244267,
+      "refined_components": {
+        "FO_L": 0.01160166078420757,
+        "FO_T": 0.6244503487644607,
+        "W": -1.2193337202715167,
+        "minus_switched_ASY": -1.3334332726550187
+      },
+      "refined_minus_baseline": -2.4188209013509265e-07,
+      "refined_total": -1.9167149833778672,
+      "selected_index": 149,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -1.916714741495777,
+      "stored_fixed": -0.6973810272744374,
+      "target": "proton",
+      "transferred_endpoint": -0.7613677057935219,
+      "transferred_endpoint_W": -0.06398667851908446,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -6.0440385660454896e-05,
+        "-2": 0.003923027220123587,
+        "-3": 4.873005520160278e-06,
+        "-4": 9.978194278296851e-06,
+        "1": -0.01931741932452049,
+        "2": -0.10588590204516572,
+        "3": 0.05866840640980841,
+        "4": -0.0013292015934681727
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.0009104249264334182,
+        "-2": 0.03324732615999652,
+        "-3": 0.00019784336419599913,
+        "-4": -0.00016472104664868296,
+        "1": -0.0425034110522686,
+        "2": -0.4723740120733005,
+        "3": 0.005029019509548102,
+        "4": -0.0001640358993409164
+      },
+      "Gaussian_total_from_components": -0.8041376998527947,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 2.470902926710039e-10,
+      "fixed_from_components": -0.32649528388854265,
+      "matching_role": "full_additive",
+      "narrow_bin_component_max_relative_difference": 1.1888967751143494e-07,
+      "narrow_bin_relative_difference": 1.9234029960879804e-07,
+      "narrow_bin_total": -0.8041378545208808,
+      "observable_components": {
+        "FO_L": 0.010426924417653582,
+        "FO_T": 0.6058446856529727,
+        "W": -0.4776424159642521,
+        "minus_switched_ASY": -0.9427668939591689
+      },
+      "qT_over_Q": 0.11684204984499812,
+      "refined_components": {
+        "FO_L": 0.010426924673017153,
+        "FO_T": 0.6058445704929877,
+        "W": -0.47764241916269395,
+        "minus_switched_ASY": -0.9427668939591689
+      },
+      "refined_minus_baseline": -1.1810306321802244e-07,
+      "refined_total": -0.8041378179558579,
+      "selected_index": 155,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.8041376998527945,
+      "stored_fixed": -0.32649528388854265,
+      "target": "proton",
+      "transferred_endpoint": -0.3739122648808584,
+      "transferred_endpoint_W": -0.04741698099231573,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -2.0625973750162053e-05,
+        "-2": 0.0025263593291163355,
+        "-3": 1.6268116405799257e-06,
+        "-4": 5.634748957593361e-06,
+        "1": -0.024255614030878375,
+        "2": -0.08495199698740363,
+        "3": 0.06003546371776556,
+        "4": -0.000757828607763636
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.00039465845106756924,
+        "-2": 0.015103008467675176,
+        "-3": 7.921582469471847e-05,
+        "-4": -6.21082154374091e-05,
+        "1": -0.0182757759997465,
+        "2": -0.20362444787080689,
+        "3": 0.0023059733346312136,
+        "4": -6.186385286644904e-05
+      },
+      "Gaussian_total_from_components": -0.1542540130368488,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 1.4263711243317975e-10,
+      "fixed_from_components": 0.05067664372607503,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 6.363021486959893e-07,
+      "narrow_bin_relative_difference": 1.8333179751763527e-06,
+      "narrow_bin_total": -0.15425429583350364,
+      "observable_components": {
+        "FO_L": 0.013072225098984074,
+        "FO_T": 0.24687310475472318,
+        "W": -0.20493065676292382,
+        "minus_switched_ASY": -0.20926868612763225
+      },
+      "qT_over_Q": 0.2381531759141987,
+      "refined_components": {
+        "FO_L": 0.01307222395622324,
+        "FO_T": 0.24687303424280133,
+        "W": -0.2049306589955415,
+        "minus_switched_ASY": -0.20926868612763225
+      },
+      "refined_minus_baseline": -7.38873003891527e-08,
+      "refined_total": -0.1542540869241492,
+      "selected_index": 156,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": false,
+        "fixed_nonpositive": false
+      },
+      "stored_Gaussian": -0.15425401303684874,
+      "stored_fixed": 0.050676643726075006,
+      "target": "proton",
+      "transferred_endpoint": 0.016227925301843152,
+      "transferred_endpoint_W": -0.034448718424231854,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -1.3979052466207976e-05,
+        "-2": 0.0016479226999901292,
+        "-3": 1.0890623167043335e-06,
+        "-4": 3.847193858214708e-06,
+        "1": -0.015111538950515169,
+        "2": -0.05616749888961944,
+        "3": 0.03558362511975066,
+        "4": -0.0003921856075467707
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.00015181258578341196,
+        "-2": 0.012422599507129992,
+        "-3": 2.7914527081469363e-05,
+        "-4": -3.957535601881577e-05,
+        "1": -0.006836029542526403,
+        "2": -0.07562004337203601,
+        "3": 0.0018793408520053115,
+        "4": -3.9442930054191715e-05
+      },
+      "Gaussian_total_from_components": -0.16582177346569976,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 1.825437676017394e-09,
+      "fixed_from_components": -0.0974647245654977,
+      "matching_role": "full_additive",
+      "narrow_bin_component_max_relative_difference": 9.511679892788076e-08,
+      "narrow_bin_relative_difference": 6.293128887926283e-07,
+      "narrow_bin_total": -0.16582187781947894,
+      "observable_components": {
+        "FO_L": 0.008727952748982876,
+        "FO_T": 0.6701711195864781,
+        "W": -0.06835704890020204,
+        "minus_switched_ASY": -0.7763637969009587
+      },
+      "qT_over_Q": 0.09735354926866778,
+      "refined_components": {
+        "FO_L": 0.008727952209739893,
+        "FO_T": 0.6701710151967851,
+        "W": -0.06835705023924687,
+        "minus_switched_ASY": -0.7763637969009587
+      },
+      "refined_minus_baseline": -1.0626798088719802e-07,
+      "refined_total": -0.16582187973368054,
+      "selected_index": 162,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.16582177346569968,
+      "stored_fixed": -0.09746472456549764,
+      "target": "proton",
+      "transferred_endpoint": -0.07868776085358453,
+      "transferred_endpoint_W": 0.018776963711913106,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -1.6819356496989795e-07,
+        "-2": 0.0010182264763617024,
+        "-3": -8.495558763701369e-08,
+        "-4": 3.084466893950126e-06,
+        "1": -0.008708864101855446,
+        "2": -0.01173846803581278,
+        "3": 0.0384431144985663,
+        "4": -0.00023987644308797566
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.00025924310677503514,
+        "-2": 0.018135075438247685,
+        "-3": 4.852265459725076e-05,
+        "-4": -5.465562139035492e-05,
+        "1": -0.011770399273635214,
+        "2": -0.13055645207293778,
+        "3": 0.002758183596519638,
+        "4": -5.448342170737787e-05
+      },
+      "Gaussian_total_from_components": -0.20053008328943794,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 1.0174209129390613e-09,
+      "fixed_from_components": -0.07877663148235675,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 9.302727244194787e-08,
+      "narrow_bin_relative_difference": 1.2759319816175865e-07,
+      "narrow_bin_total": -0.20053010887571257,
+      "observable_components": {
+        "FO_L": 0.00951246264430819,
+        "FO_T": 0.2314949318682238,
+        "W": -0.12175345180708118,
+        "minus_switched_ASY": -0.31978402599488875
+      },
+      "qT_over_Q": 0.19252450699432144,
+      "refined_components": {
+        "FO_L": 0.009512461792686519,
+        "FO_T": 0.23149490001880807,
+        "W": -0.1217534542097995,
+        "minus_switched_ASY": -0.31978402599488875
+      },
+      "refined_minus_baseline": -3.510375573556601e-08,
+      "refined_total": -0.20053011839319365,
+      "selected_index": 163,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.2005300832894379,
+      "stored_fixed": -0.07877663148235672,
+      "target": "proton",
+      "transferred_endpoint": -0.06661681449574734,
+      "transferred_endpoint_W": 0.012159816986609381,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -2.6534502855975056e-06,
+        "-2": 0.001847418361576515,
+        "-3": 5.600352144081429e-08,
+        "-4": 5.4941515899265425e-06,
+        "1": -0.018140835586741937,
+        "2": -0.03315710993752903,
+        "3": 0.06200855901833307,
+        "4": -0.0004011115738550724
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": 6.700011556499655e-05,
+        "-2": 0.008568484076278166,
+        "-3": -2.233795767966474e-05,
+        "-4": -1.3162054826974527e-05,
+        "1": 0.003521966383260796,
+        "2": 0.039721563544509765,
+        "3": 0.0013017628105590653,
+        "4": -1.3157491822762281e-05
+      },
+      "Gaussian_total_from_components": 0.050439217706429236,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 2.6173371151384846e-09,
+      "fixed_from_components": -0.0026929017194141924,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 7.37492587007304e-08,
+      "narrow_bin_relative_difference": 2.4518636807030403e-08,
+      "narrow_bin_total": 0.05043921894313009,
+      "observable_components": {
+        "FO_L": 0.006282250816006899,
+        "FO_T": 0.18060485223198627,
+        "W": 0.05313211942584343,
+        "minus_switched_ASY": -0.18958000476740736
+      },
+      "qT_over_Q": 0.16980209985533157,
+      "refined_components": {
+        "FO_L": 0.006282250117384139,
+        "FO_T": 0.18060483292903604,
+        "W": 0.05313211823129999,
+        "minus_switched_ASY": -0.18958000476740736
+      },
+      "refined_minus_baseline": -2.119611642453778e-08,
+      "refined_total": 0.050439196510312805,
+      "selected_index": 170,
+      "sign_flags": {
+        "Gaussian_nonpositive": false,
+        "endpoint_nonpositive": false,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": 0.05043921770642923,
+      "stored_fixed": -0.0026929017194141885,
+      "target": "proton",
+      "transferred_endpoint": 0.09539543676875226,
+      "transferred_endpoint_W": 0.09808833848816645,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": 6.761258067886891e-06,
+        "-2": 0.0008645086806353483,
+        "-3": -7.238136567153407e-07,
+        "-4": 3.409711827652766e-06,
+        "1": 0.013015083080084443,
+        "2": 0.042087189687591404,
+        "3": 0.042228161280633475,
+        "4": -0.00011605139701729398
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.0028132730488295483,
+        "-2": 0.09078702684102372,
+        "-3": -0.001128863733964706,
+        "-4": -0.0002491372742742445,
+        "1": -0.017560070863558406,
+        "2": -0.070248241121937,
+        "3": 0.01267271800633107,
+        "4": -0.00024723958907690743
+      },
+      "Gaussian_total_from_components": 0.022856475257753812,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 7.648641723457828e-10,
+      "fixed_from_components": 0.011643556042039815,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 8.770146588820381e-07,
+      "narrow_bin_relative_difference": 5.458952801939063e-05,
+      "narrow_bin_total": 0.022855227533557607,
+      "observable_components": {
+        "FO_L": 0.06494075951750786,
+        "FO_T": 1.2863921135142815,
+        "W": 0.011212919215713997,
+        "minus_switched_ASY": -1.3396893169897495
+      },
+      "qT_over_Q": 0.17780820458598326,
+      "refined_components": {
+        "FO_L": 0.0649407373982928,
+        "FO_T": 1.2863908347166297,
+        "W": 0.01121291911364622,
+        "minus_switched_ASY": -1.3396893169897495
+      },
+      "refined_minus_baseline": -1.3010189347552326e-06,
+      "refined_total": 0.02285517423881936,
+      "selected_index": 840,
+      "sign_flags": {
+        "Gaussian_nonpositive": false,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": false
+      },
+      "stored_Gaussian": 0.022856475257754007,
+      "stored_fixed": 0.011643556042040027,
+      "target": "deuteron",
+      "transferred_endpoint": -0.0066496924742411,
+      "transferred_endpoint_W": -0.018293248516281127,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -0.0034661177355854336,
+        "-2": 0.02243383378762865,
+        "-3": -8.974135946036351e-05,
+        "-4": -1.35164818061952e-05,
+        "1": -0.041505573216446046,
+        "2": -0.0651111877350514,
+        "3": 0.07025305647211404,
+        "4": -0.0007940022476743123
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.012569004707632433,
+        "-2": 0.20364471279071425,
+        "-3": -0.0038690525921202114,
+        "-4": -0.000763443424796646,
+        "1": -0.18080652630066904,
+        "2": -0.723406027322941,
+        "3": 0.03257499955096753,
+        "4": -0.0007575251882087577
+      },
+      "Gaussian_total_from_components": -0.9795666781235164,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 1.736634685523317e-10,
+      "fixed_from_components": -0.2936148109288307,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 5.502372189253759e-07,
+      "narrow_bin_relative_difference": 5.728381943299203e-07,
+      "narrow_bin_total": -0.9795672392567233,
+      "observable_components": {
+        "FO_L": 0.049376950519989964,
+        "FO_T": 0.889912543571859,
+        "W": -0.6859518671946857,
+        "minus_switched_ASY": -1.2329043050206796
+      },
+      "qT_over_Q": 0.20622497822040847,
+      "refined_components": {
+        "FO_L": 0.04937694830843567,
+        "FO_T": 0.8899119988076589,
+        "W": -0.6859518660828092,
+        "minus_switched_ASY": -1.2329043050206796
+      },
+      "refined_minus_baseline": -5.458638779876068e-07,
+      "refined_total": -0.9795672239873942,
+      "selected_index": 864,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.9795666781235162,
+      "stored_fixed": -0.2936148109288305,
+      "target": "deuteron",
+      "transferred_endpoint": -0.4894311358202347,
+      "transferred_endpoint_W": -0.19581632489140416,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -0.0012376675557709735,
+        "-2": 0.012457884748709814,
+        "-3": -0.0002060279503572802,
+        "-4": -1.0295134528721681e-05,
+        "1": -0.14113311911114623,
+        "2": -0.17087255844752444,
+        "3": 0.1069603516025488,
+        "4": -0.0017748930433356125
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.006386250356327251,
+        "-2": 0.13404859032569327,
+        "-3": -0.0019687045608775965,
+        "-4": -0.0003690308919845491,
+        "1": -0.09166253794123976,
+        "2": -0.3667144499366041,
+        "3": 0.02144201214867524,
+        "4": -0.0003662389417089514
+      },
+      "Gaussian_total_from_components": -0.6334593005791619,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 9.544927987598215e-10,
+      "fixed_from_components": -0.32148269042478805,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 4.698064502687771e-07,
+      "narrow_bin_relative_difference": 7.327611907247167e-07,
+      "narrow_bin_total": -0.6334597647535534,
+      "observable_components": {
+        "FO_L": 0.032073353752199975,
+        "FO_T": 0.832113695505031,
+        "W": -0.31197661015437383,
+        "minus_switched_ASY": -1.185669739682019
+      },
+      "qT_over_Q": 0.16449366645040045,
+      "refined_components": {
+        "FO_L": 0.03207335007733869,
+        "FO_T": 0.832113234696224,
+        "W": -0.31197660916494585,
+        "minus_switched_ASY": -1.185669739682019
+      },
+      "refined_minus_baseline": -4.6349424032143816e-07,
+      "refined_total": -0.6334597640734023,
+      "selected_index": 870,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.633459300579162,
+      "stored_fixed": -0.32148269042478816,
+      "target": "deuteron",
+      "transferred_endpoint": -0.4902345461005567,
+      "transferred_endpoint_W": -0.16875185567576856,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -0.0010654104629071546,
+        "-2": 0.00948195521022727,
+        "-3": -9.654440854112978e-05,
+        "-4": -3.1599913123875e-06,
+        "1": -0.10206807030845413,
+        "2": -0.16089731887546263,
+        "3": 0.0871077956372419,
+        "4": -0.0012111024765607437
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.0012448443305271943,
+        "-2": 0.05196912217431091,
+        "-3": -0.00039061749250106354,
+        "-4": -9.900361064398526e-05,
+        "1": -0.017636492556989423,
+        "2": -0.07055467822160952,
+        "3": 0.008314074182333337,
+        "4": -9.833061951436814e-05
+      },
+      "Gaussian_total_from_components": -0.12752714528980688,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 1.527818409979842e-09,
+      "fixed_from_components": -0.09778637481466557,
+      "matching_role": "full_additive",
+      "narrow_bin_component_max_relative_difference": 2.561296919207588e-07,
+      "narrow_bin_relative_difference": 2.5403896402827773e-06,
+      "narrow_bin_total": -0.12752746925844544,
+      "observable_components": {
+        "FO_L": 0.023283586258241562,
+        "FO_T": 0.8889430295296423,
+        "W": -0.029740770475141322,
+        "minus_switched_ASY": -1.0100129906025495
+      },
+      "qT_over_Q": 0.13363456555036313,
+      "refined_components": {
+        "FO_L": 0.02328358348715808,
+        "FO_T": 0.8889427027476977,
+        "W": -0.029740770335216157,
+        "minus_switched_ASY": -1.0100129906025495
+      },
+      "refined_minus_baseline": -3.294131030728842e-07,
+      "refined_total": -0.12752747470290976,
+      "selected_index": 877,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.12752714528980674,
+      "stored_fixed": -0.09778637481466543,
+      "target": "deuteron",
+      "transferred_endpoint": -0.10677698130808022,
+      "transferred_endpoint_W": -0.008990606493414793,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -0.0003599437063546332,
+        "-2": 0.003942041729908864,
+        "-3": -1.3462067498938096e-05,
+        "-4": 1.266505541008757e-06,
+        "1": -0.01964379523527106,
+        "2": -0.03338707035391613,
+        "3": 0.04087035045274516,
+        "4": -0.00039999381856901397
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.004038299674478672,
+        "-2": 0.06425083937864419,
+        "-3": 0.0006389950763594333,
+        "-4": -0.0005624129713586937,
+        "1": -0.25894501230879935,
+        "2": -1.0360401627900597,
+        "3": 0.012347241336423238,
+        "4": -0.0005599672108423368
+      },
+      "Gaussian_total_from_components": -1.94357147241738,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 4.994752944575964e-09,
+      "fixed_from_components": -0.7206626932532678,
+      "matching_role": "full_additive",
+      "narrow_bin_component_max_relative_difference": 1.6464330674705468e-07,
+      "narrow_bin_relative_difference": 1.1224162888443223e-07,
+      "narrow_bin_total": -1.943571690567008,
+      "observable_components": {
+        "FO_L": 0.012811047876706868,
+        "FO_T": 0.6552435228434362,
+        "W": -1.2229087791641122,
+        "minus_switched_ASY": -1.3887172639734109
+      },
+      "qT_over_Q": 0.1219725280505292,
+      "refined_components": {
+        "FO_L": 0.012811050373378385,
+        "FO_T": 0.6552434172714912,
+        "W": -1.2229087854180203,
+        "minus_switched_ASY": -1.3887172639734109
+      },
+      "refined_minus_baseline": -1.093291812637176e-07,
+      "refined_total": -1.9435715817465613,
+      "selected_index": 905,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -1.9435714724173796,
+      "stored_fixed": -0.7206626932532676,
+      "target": "deuteron",
+      "transferred_endpoint": -0.8069826550313439,
+      "transferred_endpoint_W": -0.08631996177807633,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -0.00027630842275846984,
+        "-2": 0.0033359008757560277,
+        "-3": 6.07098810469698e-06,
+        "-4": 1.2540528710555598e-05,
+        "1": -0.0763073826365212,
+        "2": -0.08304960380156597,
+        "3": 0.07164946787483797,
+        "4": -0.0016906471846398663
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.00221634938148071,
+        "-2": 0.04534622648911521,
+        "-3": 0.00034126882600510577,
+        "-4": -0.0002752289503741258,
+        "1": -0.1417163988033287,
+        "2": -0.5669716639946797,
+        "3": 0.008732419296774815,
+        "4": -0.0002740967974667834
+      },
+      "Gaussian_total_from_components": -1.0565282208013098,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 7.247792997402559e-10,
+      "fixed_from_components": -0.39949439748587545,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 2.1040995875269198e-07,
+      "narrow_bin_relative_difference": 1.3986479469097796e-07,
+      "narrow_bin_total": -1.0565283685724123,
+      "observable_components": {
+        "FO_L": 0.013552471069019795,
+        "FO_T": 0.452940030103161,
+        "W": -0.6570338233154343,
+        "minus_switched_ASY": -0.8659868986580562
+      },
+      "qT_over_Q": 0.1596480603541549,
+      "refined_components": {
+        "FO_L": 0.013552470227394524,
+        "FO_T": 0.4529398970509315,
+        "W": -0.6570338285129055,
+        "minus_switched_ASY": -0.8659868986580562
+      },
+      "refined_minus_baseline": -1.3909132601241936e-07,
+      "refined_total": -1.0565283598926356,
+      "selected_index": 912,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -1.0565282208013098,
+      "stored_fixed": -0.39949439748587545,
+      "target": "deuteron",
+      "transferred_endpoint": -0.480346104257813,
+      "transferred_endpoint_W": -0.08085170677193754,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -0.00026846435181386455,
+        "-2": 0.0030595092101702573,
+        "-3": 3.2807483063739315e-06,
+        "-4": 1.1016205835773735e-05,
+        "1": -0.08648418504789535,
+        "2": -0.09570335965725131,
+        "3": 0.09983213395907048,
+        "4": -0.0013016378383597467
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.00029413283403689533,
+        "-2": 0.01296201743545218,
+        "-3": 3.964789203179212e-05,
+        "-4": -5.363409493212227e-05,
+        "1": -0.01825737745424596,
+        "2": -0.0730387103937764,
+        "3": 0.0024882625820065217,
+        "4": -5.344966917390995e-05
+      },
+      "Gaussian_total_from_components": -0.18341748581610512,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 1.28745777233652e-09,
+      "fixed_from_components": -0.10721010927943031,
+      "matching_role": "full_additive",
+      "narrow_bin_component_max_relative_difference": 9.45457136683884e-08,
+      "narrow_bin_relative_difference": 5.013510690411915e-07,
+      "narrow_bin_total": -0.18341757777265774,
+      "observable_components": {
+        "FO_L": 0.00896194824963988,
+        "FO_T": 0.6800052026533044,
+        "W": -0.0762073765366748,
+        "minus_switched_ASY": -0.7961772601823747
+      },
+      "qT_over_Q": 0.09665530719635267,
+      "refined_components": {
+        "FO_L": 0.008961947971526826,
+        "FO_T": 0.6800051112051746,
+        "W": -0.07620737789753285,
+        "minus_switched_ASY": -0.7961772601823747
+      },
+      "refined_minus_baseline": -9.308710097188921e-08,
+      "refined_total": -0.18341757890320612,
+      "selected_index": 918,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.18341748581610512,
+      "stored_fixed": -0.10721010927943031,
+      "target": "deuteron",
+      "transferred_endpoint": -0.08517486939072351,
+      "transferred_endpoint_W": 0.0220352398887068,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -5.7142829663087244e-05,
+        "-2": 0.0008471187919398908,
+        "-3": -6.474163974670066e-08,
+        "-4": 3.9706101550029225e-06,
+        "1": -0.014606691509102269,
+        "2": -0.012070723263354448,
+        "3": 0.048240038758378706,
+        "4": -0.0003212659280072339
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": -0.00041002684348825545,
+        "-2": 0.01741182501654658,
+        "-3": 5.461663731653629e-05,
+        "-4": -6.412242798871937e-05,
+        "1": -0.025588197277582568,
+        "2": -0.102366065917623,
+        "3": 0.0033610978785999536,
+        "4": -6.392504250460076e-05
+      },
+      "Gaussian_total_from_components": -0.1757659901168378,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 8.121413778745817e-10,
+      "fixed_from_components": -0.06810119214011379,
+      "matching_role": "transition",
+      "narrow_bin_component_max_relative_difference": 1.0506976599907361e-07,
+      "narrow_bin_relative_difference": 2.2137485189582088e-07,
+      "narrow_bin_total": -0.17576602902700783,
+      "observable_components": {
+        "FO_L": 0.009420999894682069,
+        "FO_T": 0.21735187072738807,
+        "W": -0.10766479797672401,
+        "minus_switched_ASY": -0.2948740627621839
+      },
+      "qT_over_Q": 0.1954296430054636,
+      "refined_components": {
+        "FO_L": 0.009420999231756764,
+        "FO_T": 0.21735182935202482,
+        "W": -0.10766480029373268,
+        "minus_switched_ASY": -0.2948740627621839
+      },
+      "refined_minus_baseline": -4.435529724067244e-08,
+      "refined_total": -0.17576603447213504,
+      "selected_index": 919,
+      "sign_flags": {
+        "Gaussian_nonpositive": true,
+        "endpoint_nonpositive": true,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": -0.1757659901168378,
+      "stored_fixed": -0.06810119214011379,
+      "target": "deuteron",
+      "transferred_endpoint": -0.043553817083441464,
+      "transferred_endpoint_W": 0.024547375056672323,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": -0.00010031405042274733,
+        "-2": 0.0014460796805539214,
+        "-3": 5.227762938388073e-09,
+        "-4": 6.821912543420349e-06,
+        "1": -0.02728532506897877,
+        "2": -0.024316148382181407,
+        "3": 0.07527666104816241,
+        "4": -0.000480405310767394
+      }
+    },
+    {
+      "Gaussian_W_by_struck_pid": {
+        "-1": 8.926108036875512e-05,
+        "-2": 0.0045376241543727625,
+        "-3": -2.0150237731457043e-05,
+        "-4": -9.77500913263889e-06,
+        "1": 0.006187863257525967,
+        "2": 0.024752432965300275,
+        "3": 0.0008717432405232763,
+        "4": -9.764062766951989e-06
+      },
+      "Gaussian_total_from_components": 0.03227418852078553,
+      "active_nf_OPE": [
+        4
+      ],
+      "active_nf_hard_and_recoil": 4,
+      "baseline_W_rule_refinement_abs_per_dqT2": 2.3412501347352954e-09,
+      "fixed_from_components": -0.004125046867674453,
+      "matching_role": "full_additive",
+      "narrow_bin_component_max_relative_difference": 1.2044793471951377e-07,
+      "narrow_bin_relative_difference": 3.3399857745221455e-06,
+      "narrow_bin_total": 0.032274080725455,
+      "observable_components": {
+        "FO_L": 0.006228455863282517,
+        "FO_T": 0.6879583556851783,
+        "W": 0.03639923538845998,
+        "minus_switched_ASY": -0.6983118584161352
+      },
+      "qT_over_Q": 0.07864743427335683,
+      "refined_components": {
+        "FO_L": 0.006228455008218401,
+        "FO_T": 0.6879582402905432,
+        "W": 0.03639923487889984,
+        "minus_switched_ASY": -0.6983118584161352
+      },
+      "refined_minus_baseline": -1.1675925917775665e-07,
+      "refined_total": 0.032274071761526364,
+      "selected_index": 925,
+      "sign_flags": {
+        "Gaussian_nonpositive": false,
+        "endpoint_nonpositive": false,
+        "fixed_nonpositive": true
+      },
+      "stored_Gaussian": 0.032274188520785584,
+      "stored_fixed": -0.0041250468676744005,
+      "target": "deuteron",
+      "transferred_endpoint": 0.05314383563278079,
+      "transferred_endpoint_W": 0.05726888250045519,
+      "transferred_endpoint_W_by_struck_pid": {
+        "-1": 4.304526794658375e-05,
+        "-2": 0.0003024786733427391,
+        "-3": -4.492678917353718e-07,
+        "-4": 1.9416334124900757e-06,
+        "1": 0.013318675334814985,
+        "2": 0.01830084741108498,
+        "3": 0.025367094954684626,
+        "4": -6.475150693944048e-05
+      }
+    }
+  ],
+  "schema": "pv17-hermes-kminus-sign-diagnostic-v1",
+  "scope": {
+    "CPU_only": true,
+    "measurements_written": false,
+    "optimizer_run": false,
+    "physics_changed": false
+  },
+  "sets": {
+    "Gaussian_nonpositive_selected_indices": [
+      84,
+      108,
+      114,
+      121,
+      149,
+      155,
+      156,
+      162,
+      163,
+      864,
+      870,
+      877,
+      905,
+      912,
+      918,
+      919
+    ],
+    "endpoint_nonpositive_selected_indices": [
+      84,
+      108,
+      114,
+      121,
+      149,
+      155,
+      162,
+      163,
+      840,
+      864,
+      870,
+      877,
+      905,
+      912,
+      918,
+      919
+    ],
+    "fixed_nonpositive_selected_indices": [
+      84,
+      108,
+      114,
+      121,
+      149,
+      155,
+      162,
+      163,
+      170,
+      864,
+      870,
+      877,
+      905,
+      912,
+      918,
+      919,
+      925
+    ],
+    "implicated_selected_indices": [
+      84,
+      108,
+      114,
+      121,
+      149,
+      155,
+      156,
+      162,
+      163,
+      170,
+      840,
+      864,
+      870,
+      877,
+      905,
+      912,
+      918,
+      919,
+      925
+    ]
+  },
+  "source_receipts": {
+    "Kminus_shard_identities": [
+      "0dd07a4179cfde79f4b5cc379d8b8aa1f13aec5d7a7f9e37e53ff9c34c3c26db",
+      "2f4f1a8f54b99b6f22b3c98032a7a9d11826b70c3b113837acaf304ade466102"
+    ],
+    "campaign_identity": "cf5c897d7ce1bdd205709452e452a81d5583a7e19663305efd2870255541e867",
+    "endpoint_feasibility_identity": "ca62c07742f8c06e0c33fdeebfb01de14f0fb782478c49ff43a450b8d9ad8bff",
+    "endpoint_result_identity": "ac23bd78b68a84f8fa4e867980211ae1bdb201081179c54077b96dd4f0264a6a",
+    "endpoint_sha256": "619687b78a2aa214ef8d9af36d1d09a940fda9a75d3759d93bffaaddcf010869",
+    "foundation_build_inventory_sha256": "ad66f08c97a20dd91d9b0280f465222066d1e3c2b1977587a68e1bc63a9d9a30",
+    "foundation_sources": {
+      "work/direct_fit_launch_sidis/flavors.py": "10733658191194dd31dd23b9613fb8419d90cc1ca37e2c7c1e0bb6cd8384255f",
+      "work/hermes_kaon_channel_extension/ANALYSIS.json": "f8273e343214bb49fdca8e710e6db01d3ec98a65fa4184b3fa2cded2c19c945a",
+      "work/hermes_kaon_channel_extension/API.md": "24ecbb7636f3cacf827f996cea1d60ea5dc7c5515ce3af58d398f0b155905349",
+      "work/hermes_kaon_channel_extension/QA_RECEIPT.json": "8a4777cd38978381ce055cdf186b366f2503f03b088dc807c995ce3240ad7ee5",
+      "work/regional_matching/panel.py": "f74a0c17d4209c3402778ec751894bdd8f53f7c781e26c1ce18c66371a6aa2e5",
+      "work/regional_matching/service.py": "9d6ae0c6c4e00ba2475b8f03999865d41d3ad0eeab01747e5a1f74fdac501a0f",
+      "work/regional_matching/w.py": "31f9b4d01ca07d573073dbcf5398261176199222e02fd08dcf9be2ec7b5465df"
+    },
+    "manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4",
+    "prebuilt_binary_sha256": "44a146fa6a436501ecbe6dcb1b04242a2dd93dca20d06a368fe2cd25b8d6e6d7",
+    "prebuilt_provenance_receipt_sha256": "ef0eae67e063925d541249b45e68de068819449f5c669e475a76079a04897c42",
+    "producer_sources": {
+      "scripts/audit_pv17_hermes_kminus_sign.py": "d9c881702ee6fa3325727a4a79cd83c2abe781e0a32eadf7a36efbcd264ae82e",
+      "scripts/run_pv17_sidis_point_pilot.py": "04d2a47e07bae14a626e873ee0eef57952bf931aaadd666fadf4a40cb7f0875b",
+      "tmdlab/models.py": "8c0e57c6a40af7935ae73257d67071f7984033d23079214e121b06c78cc2c496",
+      "tmdlab/pv17.py": "cf779ade8d439000d5b116dd1424d3c274a0b34a8d21cb0b0e0c1f0b9602db21"
+    }
+  },
+  "status": "central_theory_matching_sign_failure_numerically_reproduced"
+}

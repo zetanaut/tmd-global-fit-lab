@@ -1,0 +1,1239 @@
+{
+  "arrays": {
+    "manifest": {
+      "Gaussian_controls": {
+        "bytes_sha256": "91befb7a2680622d874fe75f65eb2c6fae35699c2f411fbffa1aea4fb016e295",
+        "dtype": "float64",
+        "shape": [
+          23
+        ]
+      },
+      "active_nf": {
+        "bytes_sha256": "7e8bd326796899d2290e643fa958db75a255e7d82bb39c20e3a4e4d173a21795",
+        "dtype": "int8",
+        "shape": [
+          720
+        ]
+      },
+      "coordinate_offsets": {
+        "bytes_sha256": "b660c7f02254740be49848755a3bd18fe3d07f6842babaddfabfa10d17e6201b",
+        "dtype": "int64",
+        "shape": [
+          24
+        ]
+      },
+      "coordinates": {
+        "bytes_sha256": "5aff7a87b9ab4f4a289a89143f760630bdc0642346046285b5e2e348da5c1b77",
+        "dtype": "float64",
+        "shape": [
+          720,
+          4
+        ]
+      },
+      "fixed_predictions": {
+        "bytes_sha256": "bcc0c2b450c7c489061e6d6a5c93de82d762d68677eb38a3881e20bbab58ed43",
+        "dtype": "float64",
+        "shape": [
+          23
+        ]
+      },
+      "nucleon": {
+        "bytes_sha256": "8f9c24b5b03fb6cd6aad2cc07128af3a3f876059b765b28ffe893dba286d35ae",
+        "dtype": "int8",
+        "shape": [
+          7200
+        ]
+      },
+      "point_index": {
+        "bytes_sha256": "cea6cd97289689848b85e51a52d101bc85080fb6093ecad713866f09b0ed3489",
+        "dtype": "int64",
+        "shape": [
+          7200
+        ]
+      },
+      "species1": {
+        "bytes_sha256": "4940a9c3397087f2ea4abb8ff7b7c24043e4a19e8af9db45b81bed63a074c6a7",
+        "dtype": "int64",
+        "shape": [
+          7200
+        ]
+      },
+      "species2": {
+        "bytes_sha256": "f2f94e27a350813eb7cd9c6304e6bf525e7f66a70d4f35f0732eee1d66cc343c",
+        "dtype": "int64",
+        "shape": [
+          7200
+        ]
+      },
+      "struck_pid": {
+        "bytes_sha256": "0c029da0db9cfd6592cf014c9c57fa437a23303343bb76694271945bada869b3",
+        "dtype": "int8",
+        "shape": [
+          7200
+        ]
+      },
+      "weight_offsets": {
+        "bytes_sha256": "7a780ab602b9f42a871d894d9db250bfa61139451eca8fd0e0b759a3d0a8d06b",
+        "dtype": "int64",
+        "shape": [
+          24
+        ]
+      },
+      "weights": {
+        "bytes_sha256": "69772da955711d5791bfa6d81d05cf0fda762d12314e383dde8d64235cabb5de",
+        "dtype": "float64",
+        "shape": [
+          7200
+        ]
+      }
+    },
+    "npz_sha256": "45627e48630caf730cb76c0b33ac8d61b5772ae822164e51d372c497724a0ad3",
+    "operators": 23
+  },
+  "current_DNN_CPU_replay": {
+    "CUDA_initialized": false,
+    "DNN_coupled_COMPASS_denominator_row": 1,
+    "Gaussian_maximum_absolute_replay_error": 5.551115123125783e-17,
+    "device": "cpu",
+    "directional_derivative_AD": 0.0031645679085913277,
+    "directional_derivative_FD": 0.0031645678900531493,
+    "directional_derivative_absolute_error": 1.853817837085825e-11,
+    "fixed_only_COMPASS_numerator_row": 3,
+    "fixed_only_ratio": 1.0556342182848526,
+    "fixed_only_ratio_gradient_l2": 0.32679533248291937,
+    "model": "local PyTorch Nested-FiLM width-8 registered Gaussian start",
+    "optimizer_run": false,
+    "rows": 23
+  },
+  "diagnostics": {
+    "maximum_Gaussian_operator_recovery_absolute_error": 8.881784197001252e-16,
+    "maximum_narrow_bin_multiplicity_relative_difference": 1.1237077538091829e-07,
+    "wall_seconds_informational": 1.3905228422954679
+  },
+  "identity": "6400a3b5439d580c032ac37b5f57f252bd540205cdd369df21299b30dc892624",
+  "invariants": {
+    "COMPASS_has_one_denominator_and_21_scored_numerators": true,
+    "all_Gaussian_operator_recoveries_below_2e_minus_8": true,
+    "all_predictions_finite": true,
+    "all_predictions_positive": true,
+    "current_DNN_Gaussian_replay_below_2e_minus_12": true,
+    "fixed_only_COMPASS_ratio_directional_AD_FD_below_2e_minus_8": true,
+    "fixed_only_COMPASS_ratio_gradient_finite_and_nonzero": true,
+    "foundation_build_inventory_unchanged": true,
+    "narrow_bin_multiplicity_checks_below_2e_minus_3": true,
+    "one_HERMES_and_complete_22_row_COMPASS_spectrum": true
+  },
+  "next_gate": "Independently review the point observable and numerical tolerances, then construct the 7990-row SIDIS operator campaign with resumable per-spectrum receipts.",
+  "results": [
+    {
+      "Gaussian_prediction_per_dPhT": 7.94646235223127,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.1016775,
+        "Q": 1.2288104003466116,
+        "Q2": 1.509975,
+        "qT": 0.3044891999205817,
+        "qT2": 0.09271367286827598,
+        "qT_over_Q": 0.24779184798134374,
+        "x": 0.06109764,
+        "y": 0.47717474151927214,
+        "z": 0.3339281
+      },
+      "label": "HERMES",
+      "narrow_bin_validation": {
+        "component_max_relative_difference": 1.8009076163212333e-06,
+        "component_relative_differences": {
+          "FO_L": 4.359361211698226e-08,
+          "FO_T": 1.4988594784885104e-07,
+          "f_ASY": 1.8009076163212333e-06,
+          "f_W": 6.639164763712531e-07
+        },
+        "multiplicity_per_dPhT": 7.946461459281134,
+        "multiplicity_relative_difference": 1.1237077538091829e-07,
+        "relative_qT2_width": 0.001
+      },
+      "nf_OPE_sampled": [
+        3
+      ],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 1.1868458747624323e-08,
+        "FO_fraction_abs_T_L": [
+          4.8882791085320336e-05,
+          1.3514928974817138e-06
+        ],
+        "W_b_rule_refinement_abs": 9.899474401450756e-13,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.1721811650171588,
+        "Gaussian_absolute_recovery_error": 8.881784197001252e-16,
+        "Gaussian_control": 7.946462352231269,
+        "Gaussian_scalar_prediction": 7.94646235223127,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 240,
+        "fixed_prediction": 7.77428118721411,
+        "negative_weights": 108,
+        "signed_weights": 1440
+      },
+      "selected_index": 389,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_piplus.list:line97",
+      "transition_weight": 0.23215616134939276
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.17634285289937707,
+      "is_COMPASS_fixed_denominator": true,
+      "kinematics": {
+        "PhT": 0.1118034,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.17200523076923077,
+        "qT2": 0.02958579941197633,
+        "qT_over_Q": 0.1413874287484291,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": {
+        "component_max_relative_difference": 1.5672861172740195e-07,
+        "component_relative_differences": {
+          "FO_L": 2.5247500026951276e-08,
+          "FO_T": 1.3416574406634328e-07,
+          "f_ASY": 1.5672861172740195e-07,
+          "f_W": 3.4215041992212586e-11
+        },
+        "multiplicity_per_dPhT": 0.17634285727979554,
+        "multiplicity_relative_difference": 2.4840351623966343e-08,
+        "relative_qT2_width": 0.001
+      },
+      "nf_OPE_sampled": [
+        3
+      ],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 3.515975755932656e-08,
+        "FO_fraction_abs_T_L": [
+          0.00021020544350717788,
+          6.023662976048018e-06
+        ],
+        "W_b_rule_refinement_abs": 3.719025087889349e-12,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.018322042906238716,
+        "Gaussian_absolute_recovery_error": 2.7755575615628914e-17,
+        "Gaussian_control": 0.17634285289937704,
+        "Gaussian_scalar_prediction": 0.17634285289937707,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 240,
+        "fixed_prediction": 0.15802080999313833,
+        "negative_weights": 84,
+        "signed_weights": 2880
+      },
+      "selected_index": 1265,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1164",
+      "transition_weight": 1.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.27850609660216163,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.1936492,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.29792184615384615,
+        "qT2": 0.08875742641571598,
+        "qT_over_Q": 0.24489024901917383,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": {
+        "component_max_relative_difference": 1.8901338593016333e-06,
+        "component_relative_differences": {
+          "FO_L": 4.55011720325975e-08,
+          "FO_T": 1.4977989526476582e-07,
+          "f_ASY": 1.8901338593016333e-06,
+          "f_W": 5.33174979626888e-07
+        },
+        "multiplicity_per_dPhT": 0.2785060771284544,
+        "multiplicity_relative_difference": 6.992201425907428e-08,
+        "relative_qT2_width": 0.001
+      },
+      "nf_OPE_sampled": [
+        3
+      ],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 9.21376517157516e-09,
+        "FO_fraction_abs_T_L": [
+          4.408262274159551e-05,
+          3.399401540658444e-06
+        ],
+        "W_b_rule_refinement_abs": 7.874292911893642e-13,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.00786021000036756,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.27850609660216163,
+        "Gaussian_scalar_prediction": 0.27850609660216163,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 240,
+        "fixed_prediction": 0.27064588660179406,
+        "negative_weights": 216,
+        "signed_weights": 2880
+      },
+      "selected_index": 1266,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1165",
+      "transition_weight": 0.26278371710863535
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.18615354967055459,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.25,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.3846153846153846,
+        "qT2": 0.14792899408284022,
+        "qT_over_Q": 0.3161518986641486,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          4.39504507324347e-05,
+          5.293552699800253e-06
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.18615354967055459,
+        "Gaussian_scalar_prediction": 0.18615354967055459,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.18615354967055459,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1267,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1166",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.1319785860979996,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.295804,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.4550830769230769,
+        "qT2": 0.20710060690177515,
+        "qT_over_Q": 0.3740759849297993,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          4.762395304808843e-05,
+          7.042588445243663e-06
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.1319785860979996,
+        "Gaussian_scalar_prediction": 0.1319785860979996,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.1319785860979996,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1268,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1167",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.10113948198820025,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.3354102,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.5160156923076923,
+        "qT2": 0.26627219470778696,
+        "qT_over_Q": 0.42416228624528735,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          2.194090404551505e-05,
+          3.7569135426403524e-06
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.10113948198820025,
+        "Gaussian_scalar_prediction": 0.10113948198820025,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.10113948198820025,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1269,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1168",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.08123687751564895,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.3708099,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.5704767692307693,
+        "qT2": 0.3254437442319764,
+        "qT_over_Q": 0.4689290157138524,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          1.7249097248111406e-05,
+          3.0213176510688125e-06
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.08123687751564895,
+        "Gaussian_scalar_prediction": 0.08123687751564895,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.08123687751564895,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1270,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1169",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.06734757174636524,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.4031129,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.6201736923076923,
+        "qT2": 0.38461540863055615,
+        "qT_over_Q": 0.5097796348440443,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          1.8939372017277904e-05,
+          3.5168364375615857e-06
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.06734757174636524,
+        "Gaussian_scalar_prediction": 0.06734757174636524,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.06734757174636524,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1271,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1170",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.057122017521945595,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.4330127,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.6661733846153846,
+        "qT2": 0.4437869783699171,
+        "qT_over_Q": 0.5475911490027576,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          1.1198518812990341e-05,
+          2.2489093940321523e-06
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.057122017521945595,
+        "Gaussian_scalar_prediction": 0.057122017521945595,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.057122017521945595,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1272,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1171",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.04929438553888986,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.4609772,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.7091956923076922,
+        "qT2": 0.5029585299877868,
+        "qT_over_Q": 0.5829552680835318,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          4.203172485368707e-06,
+          7.062082601306223e-07
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.04929438553888986,
+        "Gaussian_scalar_prediction": 0.04929438553888986,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.04929438553888986,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1273,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1172",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.0431220841447708,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.4873397,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.7497533846153845,
+        "qT2": 0.5621301377422248,
+        "qT_over_Q": 0.6162934857976664,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          5.776614167232438e-06,
+          1.1902829958139183e-06
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.0431220841447708,
+        "Gaussian_scalar_prediction": 0.0431220841447708,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.0431220841447708,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1274,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1173",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.03813977125156957,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.5123475,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.788226923076923,
+        "qT2": 0.6213016822633135,
+        "qT_over_Q": 0.6479185396033196,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          1.2704979666143991e-05,
+          2.5905737521889276e-06
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.03813977125156957,
+        "Gaussian_scalar_prediction": 0.03813977125156957,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.03813977125156957,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1275,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1174",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.03404146114643346,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.5361903,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.8249081538461538,
+        "qT2": 0.6804734622818698,
+        "qT_over_Q": 0.6780703255611978,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          3.735136627905235e-06,
+          7.044670170439495e-07
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.03404146114643346,
+        "Gaussian_scalar_prediction": 0.03404146114643346,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.03404146114643346,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1276,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1175",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.030617496177506084,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.559017,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.8600261538461538,
+        "qT2": 0.7396449852994081,
+        "qT_over_Q": 0.7069371437421456,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          5.325246621527532e-06,
+          1.0655666433136326e-06
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.030617496177506084,
+        "Gaussian_scalar_prediction": 0.030617496177506084,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.030617496177506084,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1277,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1176",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.027719119418974827,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.5809475,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.8937653846153845,
+        "qT2": 0.7988165627366861,
+        "qT_over_Q": 0.7346706205967619,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          6.054988559565149e-06,
+          1.2220440130600462e-06
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.027719119418974827,
+        "Gaussian_scalar_prediction": 0.027719119418974827,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.027719119418974827,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1278,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1177",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.02523824334609875,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.6020797,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.9262764615384615,
+        "qT2": 0.857988083200213,
+        "qT_over_Q": 0.7613945612085641,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          2.1528360989189785e-06,
+          3.348435412927911e-07
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.02523824334609875,
+        "Gaussian_scalar_prediction": 0.02523824334609875,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.02523824334609875,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1279,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1178",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.023094151513609194,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.622495,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.9576846153846154,
+        "qT2": 0.9171598225443787,
+        "qT_over_Q": 0.7872119046357569,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          4.863640627751508e-06,
+          9.207379510706709e-07
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.023094151513609194,
+        "Gaussian_scalar_prediction": 0.023094151513609194,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.023094151513609194,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1280,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1179",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.02122547962453356,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.6422616,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 0.9880947692307692,
+        "qT2": 0.976331272981207,
+        "qT_over_Q": 0.812208897116296,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          8.056529864705147e-07,
+          7.952586643885914e-08
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.02122547962453356,
+        "Gaussian_scalar_prediction": 0.02122547962453356,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.02122547962453356,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1281,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1180",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.01958475605829424,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.6614378,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 1.0175966153846152,
+        "qT2": 1.0355028716422245,
+        "qT_over_Q": 0.8364592652729496,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          4.194310491328422e-06,
+          7.738378303684507e-07
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.01958475605829424,
+        "Gaussian_scalar_prediction": 0.01958475605829424,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.01958475605829424,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1282,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1181",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.018134692553783208,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.6800735,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 1.046266923076923,
+        "qT2": 1.094674474324852,
+        "qT_over_Q": 0.8600261130246916,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          9.29529273610746e-07,
+          5.473162118760047e-08
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.018134692553783208,
+        "Gaussian_scalar_prediction": 0.018134692553783208,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.018134692553783208,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1283,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1182",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.016845594133977536,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.698212,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 1.0741723076923078,
+        "qT2": 1.1538461466130179,
+        "qT_over_Q": 0.8829641978803703,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          4.857219242315688e-06,
+          8.49439697791662e-07
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.016845594133977536,
+        "Gaussian_scalar_prediction": 0.016845594133977536,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.016845594133977536,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1284,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1183",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.01569344480531012,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.7158911,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 1.101370923076923,
+        "qT2": 1.2130179101993137,
+        "qT_over_Q": 0.9053213220070637,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          1.2535673009181072e-06,
+          1.3825415352784315e-07
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.01569344480531012,
+        "Gaussian_scalar_prediction": 0.01569344480531012,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.01569344480531012,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1285,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1184",
+      "transition_weight": 0.0
+    },
+    {
+      "Gaussian_prediction_per_dPhT": 0.014658920012870034,
+      "is_COMPASS_fixed_denominator": false,
+      "kinematics": {
+        "PhT": 0.7331439,
+        "Q": 1.2165525060596438,
+        "Q2": 1.48,
+        "qT": 1.1279136923076922,
+        "qT2": 1.2721892972951714,
+        "qT_over_Q": 0.9271393439161549,
+        "x": 0.007,
+        "y": 0.703696973417818,
+        "z": 0.65
+      },
+      "label": "COMPASS",
+      "narrow_bin_validation": null,
+      "nf_OPE_sampled": [],
+      "nf_hard_and_recoil": 3,
+      "numerical_indicators": {
+        "ASY_abs": 0.0,
+        "FO_fraction_abs_T_L": [
+          3.035541696265299e-06,
+          5.162557172371366e-07
+        ],
+        "W_b_rule_refinement_abs": 0.0,
+        "b_order": 12,
+        "b_stop_GeV_inv": 16.0
+      },
+      "operator": {
+        "Gaussian_W_prediction": 0.0,
+        "Gaussian_absolute_recovery_error": 0.0,
+        "Gaussian_control": 0.014658920012870034,
+        "Gaussian_scalar_prediction": 0.014658920012870034,
+        "NP_in_weights": false,
+        "b_order": 24,
+        "b_stop_GeV_inv": 16.0,
+        "coordinates": 0,
+        "fixed_prediction": 0.014658920012870034,
+        "negative_weights": 0,
+        "signed_weights": 0
+      },
+      "selected_index": 1286,
+      "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/Compass_Multiplicities_piminus.dat:line1185",
+      "transition_weight": 0.0
+    }
+  ],
+  "schema": "pv17-current-regional-sidis-point-pilot-v1",
+  "scope": {
+    "COMPASS_raw_spectrum_rows": 22,
+    "COMPASS_scored_numerators": 21,
+    "GPU_used": false,
+    "HERMES_points": 1,
+    "heavy_threshold_complete": false,
+    "observable": "legacy PV17 dM/dPhT at published average x,z,Q2,PhT",
+    "optimizer_run": false,
+    "production_authorized": false,
+    "theory": "current regional unprimed N3LL W plus NLO recoil and NLO DIS denominator"
+  },
+  "source_receipts": {
+    "current_theory_python_sources": {
+      "src/bttmd_foundation/sidis_common_matching.py": "1a008128cbde159b187eab0dac445956547eef1054d266ac2589ca8090e43df1",
+      "src/bttmd_foundation/sidis_common_w.py": "f53e60c396d0fe8d28544f8ffb02bce73a7f803223c7c6fa40a66c0c5f86b9d0",
+      "src/bttmd_foundation/sidis_uv_subtraction.py": "10dd17781fcfe8d2564d8ffbbf9abb46e59ecb4f5a6fb8002625bf7b3de90755",
+      "work/conditional_delivered_sidis_pilot/pilot.py": "8aa79748c1d6ced0788b4b061104a50d20777f04d6acf5602f4a2d97c7d15368",
+      "work/direct_fit_launch_sidis/flavors.py": "10733658191194dd31dd23b9613fb8419d90cc1ca37e2c7c1e0bb6cd8384255f",
+      "work/regional_matching/coupling.py": "e90f3b00836926a31ccec8cbb391090365833140390914b55fdc3ba1788b8d5d",
+      "work/regional_matching/panel.py": "f74a0c17d4209c3402778ec751894bdd8f53f7c781e26c1ce18c66371a6aa2e5",
+      "work/regional_matching/pilot.py": "7b71ccc4dfaf9f46e0430bd45b214d213e9783f3bf32aaaf3f16360581f24a0e",
+      "work/regional_matching/service.py": "9d6ae0c6c4e00ba2475b8f03999865d41d3ad0eeab01747e5a1f74fdac501a0f",
+      "work/regional_matching/w.py": "31f9b4d01ca07d573073dbcf5398261176199222e02fd08dcf9be2ec7b5465df"
+    },
+    "foundation_build_inventory_sha256": "ad66f08c97a20dd91d9b0280f465222066d1e3c2b1977587a68e1bc63a9d9a30",
+    "prebuilt_binary_sha256": "44a146fa6a436501ecbe6dcb1b04242a2dd93dca20d06a368fe2cd25b8d6e6d7",
+    "prebuilt_provenance_receipt_sha256": "ef0eae67e063925d541249b45e68de068819449f5c669e475a76079a04897c42",
+    "producer_sources": {
+      "scripts/run_pv17_sidis_point_pilot.py": "04d2a47e07bae14a626e873ee0eef57952bf931aaadd666fadf4a40cb7f0875b",
+      "tmdlab/models.py": "8c0e57c6a40af7935ae73257d67071f7984033d23079214e121b06c78cc2c496",
+      "tmdlab/pv17.py": "cf779ade8d439000d5b116dd1424d3c274a0b34a8d21cb0b0e0c1f0b9602db21"
+    },
+    "pv17_manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4"
+  },
+  "status": "registered_point_operator_pilot_passed_bulk_construction_not_started"
+}

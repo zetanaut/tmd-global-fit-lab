@@ -4,7 +4,7 @@ A portable experiment and results repository for the fixed-physics, unpolarized
 DY/SIDIS b-space architecture study. It is designed for autonomous Codex agents,
 local GPU workstations, and UVA Rivanna/Afton CPU/GPU allocations.
 
-**Status, 15 September 2026:** The local RTX 4090 width-8 continuation now has
+**Status, 16 September 2026:** The local RTX 4090 width-8 continuation now has
 658 cumulative accepted updates and q/N = 15.919207239. The second bounded
 window stopped at a reproducible 32-trial line-search exhaustion while proposing
 update 659; its saved endpoint audit passes, but convergence remains unestablished
@@ -16,6 +16,22 @@ update 658, with unit backtracking retained as control. Widths 16/24 remain at
 unequal optimization maturities, so the architecture study remains active. Read the
 [current study plan](docs/CURRENT_STUDY_PLAN.md)
 and [published results](RESULTS.md) before claiming any further work.
+
+The separate W09 PV17 current-method baseline has closed the 8,059-point row
+accounting, static metric and all 7,990 SIDIS point operators.  Its GPU fit is
+held: the transferred width-8 endpoint gives 16 nonpositive HERMES `K-`
+predictions.  A 19-row component audit shows that this is a numerically stable
+central matching cancellation, not operator serialization or coarse
+quadrature.  The eight normalized D0 Run-II rows map exactly to the first eight
+bins of the corrected 23-row contract, but physical evaluation still lacks the
+bound full-support denominator/provider and normalized covariance.  See the
+[B0/B1 outcome](decisions/2026-09-15-pv17-b0-b1-preparation-outcome.md).
+
+The underlying foundation also contains a bounded NNLO kaon-FF comparison:
+central HAPS-KaFF10 makes the full matched prediction positive in three tested
+K⁻ bins where central NNFF10 is negative.  This is evidence for an
+input-dependent, potentially resolvable obstruction—not yet a selection of HAPS
+or a 19-row PV17 result.
 
 ## Scientific purpose
 

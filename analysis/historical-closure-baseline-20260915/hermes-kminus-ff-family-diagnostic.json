@@ -1,0 +1,550 @@
+{
+  "schema": "pv17-hermes-kminus-ff-family-diagnostic-v1",
+  "indices": [
+    84,
+    108,
+    114,
+    121,
+    149,
+    155,
+    156,
+    162,
+    163,
+    170,
+    840,
+    864,
+    870,
+    877,
+    905,
+    912,
+    918,
+    919,
+    925
+  ],
+  "scope": {
+    "theory_only": true,
+    "observable": "current PV17 dM/dPhT",
+    "NP": "Gaussian exp(-b^2/4)",
+    "b_order": 8,
+    "production_changed": false,
+    "fit_run": false
+  },
+  "families": {
+    "NNFF10_nnlo": [
+      {
+        "selected_index": 84,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line209",
+        "target": "proton",
+        "transition_weight": 0.9529630343391161,
+        "prediction": -0.1097542301235068,
+        "pieces": {
+          "f_W": -0.027118098975737366,
+          "FO_T": 1.5662537681690227,
+          "FO_L": 0.0862525788772065,
+          "f_ASY": 1.760959309335182
+        }
+      },
+      {
+        "selected_index": 108,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line251",
+        "target": "proton",
+        "transition_weight": 0.7676687092158957,
+        "prediction": -1.3461688053209464,
+        "pieces": {
+          "f_W": -0.26072785417398,
+          "FO_T": 0.25675703846602527,
+          "FO_L": 0.015066790804103851,
+          "f_ASY": 0.42252201662761807
+        }
+      },
+      {
+        "selected_index": 114,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line258",
+        "target": "proton",
+        "transition_weight": 0.9918322724724258,
+        "prediction": -0.7207193921344153,
+        "pieces": {
+          "f_W": -0.162289658930155,
+          "FO_T": 0.36129645022604673,
+          "FO_L": 0.015175345052214372,
+          "f_ASY": 0.5498367473713145
+        }
+      },
+      {
+        "selected_index": 121,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line265",
+        "target": "proton",
+        "transition_weight": 1.0,
+        "prediction": -0.20588191246296547,
+        "pieces": {
+          "f_W": -0.04291524206152469,
+          "FO_T": 0.6414747668689135,
+          "FO_L": 0.01799797037718616,
+          "f_ASY": 0.7602660673969334
+        }
+      },
+      {
+        "selected_index": 149,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line307",
+        "target": "proton",
+        "transition_weight": 1.0,
+        "prediction": -1.9167147651274399,
+        "pieces": {
+          "f_W": -0.17796468905612448,
+          "FO_T": 0.09114006332335813,
+          "FO_L": 0.0019747037641066586,
+          "f_ASY": 0.19461779033768456
+        }
+      },
+      {
+        "selected_index": 155,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line314",
+        "target": "proton",
+        "transition_weight": 1.0,
+        "prediction": -0.8041377073798543,
+        "pieces": {
+          "f_W": -0.09031383224975105,
+          "FO_T": 0.1145546388227406,
+          "FO_L": 0.002299207334899724,
+          "f_ASY": 0.17826073841867604
+        }
+      },
+      {
+        "selected_index": 156,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line315",
+        "target": "proton",
+        "transition_weight": 0.33892542269326364,
+        "prediction": -0.15425401729773947,
+        "pieces": {
+          "f_W": -0.019029151119041396,
+          "FO_T": 0.02292378111764665,
+          "FO_L": 0.0014156305190605228,
+          "f_ASY": 0.0194319650993718
+        }
+      },
+      {
+        "selected_index": 162,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line321",
+        "target": "proton",
+        "transition_weight": 1.0,
+        "prediction": -0.16582176986319475,
+        "pieces": {
+          "f_W": -0.01939142623279628,
+          "FO_T": 0.1901131591076756,
+          "FO_L": 0.002887416206481896,
+          "f_ASY": 0.2202377418721717
+        }
+      },
+      {
+        "selected_index": 163,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line322",
+        "target": "proton",
+        "transition_weight": 0.858056270874664,
+        "prediction": -0.20053007811193468,
+        "pieces": {
+          "f_W": -0.016965049943367623,
+          "FO_T": 0.032256360616462615,
+          "FO_L": 0.0015457433107354283,
+          "f_ASY": 0.04455850838128558
+        }
+      },
+      {
+        "selected_index": 170,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line329",
+        "target": "proton",
+        "transition_weight": 0.9813082950523452,
+        "prediction": 0.05043922602846002,
+        "pieces": {
+          "f_W": 0.010120277291496371,
+          "FO_T": 0.034400489162615115,
+          "FO_L": 0.0013951586753362635,
+          "f_ASY": 0.036110020405612855
+        }
+      },
+      {
+        "selected_index": 840,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line209",
+        "target": "deuteron",
+        "transition_weight": 0.952688746918814,
+        "prediction": 0.022856475397367133,
+        "pieces": {
+          "f_W": 0.01321460344324205,
+          "FO_T": 1.5160335247153303,
+          "FO_L": 0.08462497520751792,
+          "f_ASY": 1.5788451249992017
+        }
+      },
+      {
+        "selected_index": 864,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line251",
+        "target": "deuteron",
+        "transition_weight": 0.7250673290175211,
+        "prediction": -0.9795666720782494,
+        "pieces": {
+          "f_W": -0.177916860249611,
+          "FO_T": 0.23081859619674053,
+          "FO_L": 0.014498797159214913,
+          "f_ASY": 0.31978113241058287
+        }
+      },
+      {
+        "selected_index": 870,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line258",
+        "target": "deuteron",
+        "transition_weight": 0.9922358269662961,
+        "prediction": -0.6334592988983674,
+        "pieces": {
+          "f_W": -0.1232901794801563,
+          "FO_T": 0.328843394280952,
+          "FO_L": 0.014349443839144237,
+          "f_ASY": 0.4685653700923741
+        }
+      },
+      {
+        "selected_index": 877,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line265",
+        "target": "deuteron",
+        "transition_weight": 1.0,
+        "prediction": -0.1275271423662526,
+        "pieces": {
+          "f_W": -0.01790798903981558,
+          "FO_T": 0.5352646666641853,
+          "FO_L": 0.01587189431129016,
+          "f_ASY": 0.6081652578202066
+        }
+      },
+      {
+        "selected_index": 905,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line307",
+        "target": "deuteron",
+        "transition_weight": 1.0,
+        "prediction": -1.9435714986016837,
+        "pieces": {
+          "f_W": -0.1429824120977038,
+          "FO_T": 0.07661102692024437,
+          "FO_L": 0.0017477004430398878,
+          "f_ASY": 0.16236872549794915
+        }
+      },
+      {
+        "selected_index": 912,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line314",
+        "target": "deuteron",
+        "transition_weight": 0.9975891218923036,
+        "prediction": -1.0565282324330942,
+        "pieces": {
+          "f_W": -0.06977217616784581,
+          "FO_T": 0.04809891042577107,
+          "FO_L": 0.001679426794606106,
+          "f_ASY": 0.09196145957547251
+        }
+      },
+      {
+        "selected_index": 918,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line321",
+        "target": "deuteron",
+        "transition_weight": 1.0,
+        "prediction": -0.18341748249776527,
+        "pieces": {
+          "f_W": -0.01711639582474162,
+          "FO_T": 0.1527311298101176,
+          "FO_L": 0.0023483134132389768,
+          "f_ASY": 0.17882370899855515
+        }
+      },
+      {
+        "selected_index": 919,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line322",
+        "target": "deuteron",
+        "transition_weight": 0.8331099357633528,
+        "prediction": -0.17576598502449728,
+        "pieces": {
+          "f_W": -0.011766717444917526,
+          "FO_T": 0.023754451018354925,
+          "FO_L": 0.0012015080078845533,
+          "f_ASY": 0.03222687459291779
+        }
+      },
+      {
+        "selected_index": 925,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line328",
+        "target": "deuteron",
+        "transition_weight": 1.0,
+        "prediction": 0.03227419270236828,
+        "pieces": {
+          "f_W": 0.01212082893888296,
+          "FO_T": 0.22908790526487022,
+          "FO_L": 0.0024199934888847452,
+          "f_ASY": 0.23253558815612133
+        }
+      }
+    ],
+    "HAPS_KaFF10_nnlo": [
+      {
+        "selected_index": 84,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line209",
+        "target": "proton",
+        "transition_weight": 0.9529630343391161,
+        "prediction": 0.13506845820333926,
+        "pieces": {
+          "f_W": 0.047359374688863004,
+          "FO_T": 0.8876875039097836,
+          "FO_L": 0.06414658787334587,
+          "f_ASY": 0.8162108716339841
+        }
+      },
+      {
+        "selected_index": 108,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line251",
+        "target": "proton",
+        "transition_weight": 0.7676687092158957,
+        "prediction": 0.6190854091472365,
+        "pieces": {
+          "f_W": 0.04762145786012295,
+          "FO_T": 0.3063699062274835,
+          "FO_L": 0.018653962614423734,
+          "f_ASY": 0.1804508239647208
+        }
+      },
+      {
+        "selected_index": 114,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line258",
+        "target": "proton",
+        "transition_weight": 0.9918322724724258,
+        "prediction": 0.23300365057748393,
+        "pieces": {
+          "f_W": 0.04258097594346562,
+          "FO_T": 0.30249877649709783,
+          "FO_L": 0.014223206157773461,
+          "f_ASY": 0.2485560899314909
+        }
+      },
+      {
+        "selected_index": 121,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line265",
+        "target": "proton",
+        "transition_weight": 1.0,
+        "prediction": 0.0986535628991313,
+        "pieces": {
+          "f_W": 0.02643275638533276,
+          "FO_T": 0.3173335236072666,
+          "FO_L": 0.010772606243746229,
+          "f_ASY": 0.283414022365937
+        }
+      },
+      {
+        "selected_index": 149,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line307",
+        "target": "proton",
+        "transition_weight": 1.0,
+        "prediction": 0.37735160224126246,
+        "pieces": {
+          "f_W": 0.02559249957205589,
+          "FO_T": 0.14266698404932365,
+          "FO_L": 0.0033891557936653383,
+          "f_ASY": 0.11609028040868333
+        }
+      },
+      {
+        "selected_index": 155,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line314",
+        "target": "proton",
+        "transition_weight": 1.0,
+        "prediction": 0.18901077760137636,
+        "pieces": {
+          "f_W": 0.01630065492890117,
+          "FO_T": 0.09592958688707649,
+          "FO_L": 0.00218096296808831,
+          "f_ASY": 0.0783617636836895
+        }
+      },
+      {
+        "selected_index": 156,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line315",
+        "target": "proton",
+        "transition_weight": 0.33892542269326364,
+        "prediction": 0.16771368517768037,
+        "pieces": {
+          "f_W": 0.00391070210917607,
+          "FO_T": 0.011656768907639238,
+          "FO_L": 0.0008425024316335214,
+          "f_ASY": 0.000716568471593459
+        }
+      },
+      {
+        "selected_index": 162,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line321",
+        "target": "proton",
+        "transition_weight": 1.0,
+        "prediction": 0.06524966604793385,
+        "pieces": {
+          "f_W": 0.0076580187346773285,
+          "FO_T": 0.07591106943937057,
+          "FO_L": 0.0013427511560323672,
+          "f_ASY": 0.06621055548064755
+        }
+      },
+      {
+        "selected_index": 163,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line322",
+        "target": "proton",
+        "transition_weight": 0.858056270874664,
+        "prediction": 0.0979518642143875,
+        "pieces": {
+          "f_W": 0.005988245181146068,
+          "FO_T": 0.011885943580873056,
+          "FO_L": 0.0006753298673442707,
+          "f_ASY": 0.004804725735122664
+        }
+      },
+      {
+        "selected_index": 170,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.proton.zxpt-3D.vmsub.mults_kminus.list:line329",
+        "target": "proton",
+        "transition_weight": 0.9813082950523452,
+        "prediction": 0.03427346501946041,
+        "pieces": {
+          "f_W": 0.002870331063065673,
+          "FO_T": 0.008755464044450734,
+          "FO_L": 0.0004441154027616408,
+          "f_ASY": 0.005478508911844194
+        }
+      },
+      {
+        "selected_index": 840,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line209",
+        "target": "deuteron",
+        "transition_weight": 0.952688746918814,
+        "prediction": 0.14326242996950286,
+        "pieces": {
+          "f_W": 0.04697936515755351,
+          "FO_T": 0.839921245831963,
+          "FO_L": 0.06296489906258712,
+          "f_ASY": 0.7750081908328111
+        }
+      },
+      {
+        "selected_index": 864,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line251",
+        "target": "deuteron",
+        "transition_weight": 0.7250673290175211,
+        "prediction": 0.5817081024885444,
+        "pieces": {
+          "f_W": 0.033472715222708366,
+          "FO_T": 0.23402643626498537,
+          "FO_L": 0.015827522755192742,
+          "f_ASY": 0.13060091999665766
+        }
+      },
+      {
+        "selected_index": 870,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line258",
+        "target": "deuteron",
+        "transition_weight": 0.9922358269662961,
+        "prediction": 0.22654708885961647,
+        "pieces": {
+          "f_W": 0.03433636793860279,
+          "FO_T": 0.26378546337522774,
+          "FO_L": 0.013189582588646703,
+          "f_ASY": 0.22024314323647587
+        }
+      },
+      {
+        "selected_index": 877,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line265",
+        "target": "deuteron",
+        "transition_weight": 1.0,
+        "prediction": 0.08977818225299865,
+        "pieces": {
+          "f_W": 0.020747315776242305,
+          "FO_T": 0.24789186131609428,
+          "FO_L": 0.009299929407703366,
+          "f_ASY": 0.22279526483924908
+        }
+      },
+      {
+        "selected_index": 905,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line307",
+        "target": "deuteron",
+        "transition_weight": 1.0,
+        "prediction": 0.31608004622572194,
+        "pieces": {
+          "f_W": 0.015808698276535117,
+          "FO_T": 0.11322010311083282,
+          "FO_L": 0.002758379562392534,
+          "f_ASY": 0.09443681391529445
+        }
+      },
+      {
+        "selected_index": 912,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line314",
+        "target": "deuteron",
+        "transition_weight": 0.9975891218923036,
+        "prediction": 0.1979377579644467,
+        "pieces": {
+          "f_W": 0.009752316003225382,
+          "FO_T": 0.032356760792990893,
+          "FO_L": 0.001338869335588435,
+          "f_ASY": 0.022236872828658848
+        }
+      },
+      {
+        "selected_index": 918,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line321",
+        "target": "deuteron",
+        "transition_weight": 1.0,
+        "prediction": 0.05392021867184536,
+        "pieces": {
+          "f_W": 0.004672261593734534,
+          "FO_T": 0.06095370485720818,
+          "FO_L": 0.0011349593074610517,
+          "f_ASY": 0.05448817110368741
+        }
+      },
+      {
+        "selected_index": 919,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line322",
+        "target": "deuteron",
+        "transition_weight": 0.8331099357633528,
+        "prediction": 0.07781147240120799,
+        "pieces": {
+          "f_W": 0.0033648138939898144,
+          "FO_T": 0.00856718188602789,
+          "FO_L": 0.000541039908353533,
+          "f_ASY": 0.003891597039685235
+        }
+      },
+      {
+        "selected_index": 925,
+        "source_id": "git:7df66f4801151ce2384ca211422bdbfc70058832:resources/fortran_fitcode/data/hermes.deuteron.zxpt-3D.vmsub.mults_kminus.list:line328",
+        "target": "deuteron",
+        "transition_weight": 1.0,
+        "prediction": 0.015940404837222165,
+        "pieces": {
+          "f_W": 0.0016381650838305456,
+          "FO_T": 0.052507516358390155,
+          "FO_L": 0.0007206452930101983,
+          "f_ASY": 0.04945520735005882
+        }
+      }
+    ]
+  },
+  "summary": {
+    "NNFF10_nnlo": {
+      "negative": 16,
+      "minimum": -1.9435714986016837,
+      "positive": 3
+    },
+    "HAPS_KaFF10_nnlo": {
+      "negative": 0,
+      "minimum": 0.015940404837222165,
+      "positive": 19
+    }
+  },
+  "inputs": {
+    "manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4",
+    "haps_input_sha256": "0d69be073b8476e06328a5d1bc4bc86f4ef3578aa3dbb073beeea3bc6cab164b",
+    "producer_sha256": "e921f2bf5756f0c4353678b1c68afd790c6f802fd45f0586f53900ab4ba6c046"
+  },
+  "identity": "3b11de3627b2c28de4d775868b163147a5f27d6f5cef735c3fd3287f3e6a9b09"
+}

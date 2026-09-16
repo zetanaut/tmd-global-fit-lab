@@ -1,0 +1,94 @@
+{
+  "by_experiment_and_status": [
+    {
+      "experiment": "CDF_RunI",
+      "rows": 31,
+      "status": "reuse_completed_current_theory_operator_with_unit_adapter"
+    },
+    {
+      "experiment": "CDF_RunII",
+      "rows": 37,
+      "status": "reuse_completed_current_theory_operator_with_unit_adapter"
+    },
+    {
+      "experiment": "COMPASS",
+      "rows": 6476,
+      "status": "new_current_theory_point_operator_required"
+    },
+    {
+      "experiment": "D0_RunI",
+      "rows": 14,
+      "status": "reuse_completed_current_theory_operator_with_unit_adapter"
+    },
+    {
+      "experiment": "D0_RunII",
+      "rows": 8,
+      "status": "blocked_normalized_fiducial_numerator_denominator_contract"
+    },
+    {
+      "experiment": "E288_200",
+      "rows": 45,
+      "status": "reuse_completed_current_theory_operator_with_unit_adapter"
+    },
+    {
+      "experiment": "E288_300",
+      "rows": 45,
+      "status": "reuse_completed_current_theory_operator_with_unit_adapter"
+    },
+    {
+      "experiment": "E288_400",
+      "rows": 78,
+      "status": "reuse_completed_current_theory_operator_with_unit_adapter"
+    },
+    {
+      "experiment": "E605",
+      "rows": 35,
+      "status": "reuse_completed_current_theory_operator_with_unit_adapter"
+    },
+    {
+      "experiment": "HERMES",
+      "rows": 1514,
+      "status": "new_current_theory_point_operator_required"
+    }
+  ],
+  "construction": {
+    "COMPASS": "construct all 6476 retained raw multiplicities first, then form 6252 numerator/lowest-PhT prediction ratios",
+    "D0_RunII": "blocked: retain the published normalized shape and construct a current-theory numerator/normalization-denominator quotient on corrected source support; do not use the inherited 70--110 GeV card or PV17's theory-derived 255.8 pb conversion",
+    "new_SIDIS": "construct current matched-theory multiplicities at the PV17 published average x,z,Q2,PhT points; do not substitute the current bin-integrated HEPData operators",
+    "reused_CDF_D0_RunI_adapter": "identity pb/GeV; do not apply PV17 fixed theory-normalization factors",
+    "reused_low_energy_DY_adapter": "multiply the existing legacy-CS operator, including its fixed term, by PreFactor*1e-36 to predict the PV17 E*d3sigma/dp3 units"
+  },
+  "counts": {
+    "blocked_D0_RunII_rows": 8,
+    "existing_current_theory_operators_reusable": 285,
+    "new_SIDIS_point_operators_required": 7990,
+    "nonreusable_raw_rows": 7998,
+    "selected_raw_rows": 8283
+  },
+  "current_model_contract_identity": "1ca00a92c1b8576e278946332fe533a5245444509d29119d4e2b4d6a335e4ec6",
+  "diagnostics": {
+    "max_existing_Z_central_value_absolute_difference": 0.0,
+    "max_low_energy_source_value_relative_rounding_difference": 9.148051999079143e-07
+  },
+  "identity": "7cffe79d4c0a32192359fad08ffa2b3afdb670b053b8dfbe1afa2696596d5e5a",
+  "invariants": {
+    "all_293_DY_Z_rows_have_current_source_geometry": true,
+    "blocked_D0_RunII_normalized_contract_count_equal_8": true,
+    "completed_operator_reuse_count_equal_285": true,
+    "coverage_sums_to_selected_raw_rows": true,
+    "existing_Z_central_values_match_exactly": true,
+    "low_energy_source_values_match_within_rounding": true,
+    "new_SIDIS_point_operator_count_equal_7990": true,
+    "selected_raw_rows_equal_8283": true
+  },
+  "next_gate": "Complete and independently review the D0 Run-II source-support and normalized numerator/denominator contract; SIDIS point-operator construction can proceed separately.",
+  "reused_reference_digest_sha256": "4c650ddd280d70fa527fec1bbdb01ebcdd250a0566b9be4d90a62a3841f818f5",
+  "schema": "pv17-current-theory-operator-coverage-v1",
+  "source_receipts": {
+    "current_operator_catalog_identity": "74560ae1632692e83c8c2410e4bae7e3c4658169e7eed5a2f3860a8f337af031",
+    "current_operator_catalog_sha256": "a23016fd6c38633cbfcfa4fa8a0ee29718f36d356f36637f0979bb2c68a349f9",
+    "current_prepared_DY_rows_sha256": "ebdc54457cc04763a4c204eeb67680be5220816087469db4668ff60e62a393e0",
+    "pv17_manifest_sha256": "3b40402fc42e3a7c85a0c3842e97cce3dbdbbb872de7478649dbe8c60e4a83c4"
+  },
+  "status": "coverage_closed_SIDIS_construction_open_D0II_contract_blocked"
+}
