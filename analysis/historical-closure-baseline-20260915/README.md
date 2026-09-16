@@ -313,6 +313,14 @@ metric require their own versioned contracts before fitting.
 
 ## Scientifically sound next move
 
+The all-19-row family diagnostic is now complete and is recorded in
+`hermes-kminus-ff-family-diagnostic.json`: NNFF10 is negative in 16/19 rows
+(minimum −1.944), while HAPS-KaFF10 is positive in all 19 (minimum +0.0159)
+under the current Gaussian NP control.  This is a conditional theory-input
+result only; no fit, operator replacement, uncertainty calibration, or
+production selection was performed.  HAPS still requires an independence and
+data-overlap review before any global-fit use.
+
 1. Extend the demonstrated HAPS-vs-NNFF comparison coherently to all 19
    implicated PV17 K⁻ rows, retaining NNFF10 as a sensitivity reference.  If
    positivity closes, compare the average-point result with a qualified
