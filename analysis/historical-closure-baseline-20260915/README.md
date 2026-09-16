@@ -321,6 +321,11 @@ result only; no fit, operator replacement, uncertainty calibration, or
 production selection was performed.  HAPS still requires an independence and
 data-overlap review before any global-fit use.
 
+The production-readiness gate is documented in `haps-production-readiness.md`.
+Because HAPS was fitted using HERMES and COMPASS SIDIS data, its current tables
+cannot be promoted into the same HERMES likelihood without a leave-one-out
+refit, explicit cross-covariance treatment, and license clearance.
+
 1. Extend the demonstrated HAPS-vs-NNFF comparison coherently to all 19
    implicated PV17 K⁻ rows, retaining NNFF10 as a sensitivity reference.  If
    positivity closes, compare the average-point result with a qualified
